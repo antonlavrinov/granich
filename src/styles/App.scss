@@ -1,0 +1,288 @@
+//import variables
+@import './base/_variables';
+@import './base/_fonts';
+
+
+
+
+@font-face {
+	font-family: 'Cormorant Garamond';
+	src: url('../fonts/cormorant/CormorantGaramond-BoldItalic.eot');
+    src: local('☺'), url('../fonts/cormorant/CormorantGaramond-BoldItalic.woff') format('woff'), 
+    url('../fonts/cormorant/CormorantGaramond-BoldItalic.ttf') format('truetype'), 
+    url('../fonts/cormorant/CormorantGaramond-BoldItalic.svg') format('svg');
+	font-weight: 700;
+	font-style: italic;
+}
+
+
+
+@font-face {
+	font-family: 'Inter';
+	src: url('../fonts/inter/Inter-Regular-slnt=0.eot');
+    src: local('☺'), url('../fonts/inter/Inter-Regular-slnt=0.woff') format('woff'), 
+    url('../fonts/inter/Inter-Regular-slnt=0.ttf') format('truetype'), 
+    url('../fonts/inter/Inter-Regular-slnt=0.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Medium.eot');
+    src: url('../fonts/Inter-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Inter-Medium.woff2') format('woff2'),
+    url('../fonts/Inter-Medium.woff') format('woff'),
+    url('../fonts/Inter-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-SemiBold.eot');
+    src: url('../fonts/Inter-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Inter-SemiBold.woff2') format('woff2'),
+    url('../fonts/Inter-SemiBold.woff') format('woff'),
+    url('../fonts/Inter-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Bold.eot');
+    src: url('../fonts/Inter-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Inter-Bold.woff2') format('woff2'),
+    url('../fonts/Inter-Bold.woff') format('woff'),
+    url('../fonts/Inter-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/EBGaramond-Italic.eot');
+    src: url('../fonts/EBGaramond-Italic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/EBGaramond-Italic.woff2') format('woff2'),
+    url('../fonts/EBGaramond-Italic.woff') format('woff'),
+    url('../fonts/EBGaramond-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/EBGaramond-MediumItalic.eot');
+    src: url('../fonts/EBGaramond-MediumItalic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/EBGaramond-MediumItalic.woff2') format('woff2'),
+    url('../fonts/EBGaramond-MediumItalic.woff') format('woff'),
+    url('../fonts/EBGaramond-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+
+
+
+
+html {
+    overflow-x: hidden;
+    // scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: .05em;
+    // font-family: 'Inter', sans-serif;
+    font-family: 'Inter', serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: $black;
+}
+
+input, input:hover, input:active, input:focus {
+    outline: none;
+}
+
+img {
+    align-self: start;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+	display: block;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+div, p, a, span, input, form, button {
+    box-sizing: border-box;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    font-size: inherit;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+
+
+
+// a {
+//     display: block;
+// }
+
+
+// .button {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     position: relative;
+//     min-width: 155px;
+//     height: 60px;
+//     border-radius: 8px;
+//     border: none;
+//     background: black;
+//     color: white;
+//     text-transform: uppercase;
+
+//     font-size: 18px;
+//     letter-spacing: .070em;
+//     padding: 5px;
+// }
+
+button {
+    border: none;
+    
+    &:focus {
+        outline: none
+    }
+    
+}
+
+
+
+ul, li {
+	display: block;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+::-webkit-input-placeholder { /* Edge */
+    color: $light-grey-characters;
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $light-grey-characters;
+}
+  
+::placeholder {
+    color: $light-grey-characters;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.section-title {
+    font-size: 25px;
+    margin: 25px 0;
+}
+
+#unblurred {
+    filter: blur(0px);
+}
+
+#gatsby-focus-wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+// #___gatsby {
+//     height: 100%;
+//     width: 100%;
+// }
+
+
+//import blocks
+// @import './blocks/_header';
+// @import './blocks/_footer';
+// @import './blocks/_offer';
+// @import './blocks/_courses';
+// @import './blocks/_about-us';
+// @import './blocks/_lead-magnit';
+// @import './blocks/_politika';
+// @import './blocks/_soglash';
+// @import './blocks/_scroll-up';
+// @import './blocks/_custom-button';
+// @import './blocks/_filter';
+// @import './blocks/_header';
+// @import './blocks/_homepage';
+// @import './blocks/_logo';
+// @import './blocks/_product-item';
+// @import './blocks/_products-list';
+// @import './blocks/_search-field';
+// @import './blocks/_slider';
+// @import './blocks/_white-overlay';
+// @import './blocks/_search-dropdown';
+// @import './blocks/_signin-dropdown';
+// @import './blocks/_google-button';
+// @import './blocks/_form';
+// @import './blocks/_checkbox';
+// @import './blocks/_cart-popup';
+// @import './blocks/_overlay';
+// @import './blocks/_sign-up-page';
+// @import './blocks/_breadcrumbs';
+// @import './blocks/_section-collection';
+// @import './blocks/_catalog-collection';
+// @import './blocks/_section-page';
+// @import './blocks/_catalog-page';
+// @import './blocks/_footer';
+//import media
+@import './base/_media';
