@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-        {/* <GlobalStyle/> */}
+        <GlobalStyle/>
         <Header siteTitle={data.site.siteMetadata.title} />
             <main>{children}</main>
         <PageTop/>
