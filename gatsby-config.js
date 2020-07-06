@@ -11,6 +11,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-smoothscroll`,
+    `gatsby-background-image`,
     `gatsby-plugin-styled-components`,
     {
       resolve: "gatsby-plugin-react-svg",

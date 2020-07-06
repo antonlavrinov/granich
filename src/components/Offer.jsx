@@ -74,6 +74,10 @@ const OfferSvgClip = styled(props => <BackgroundClip {...props}/>)`
     z-index: 0;
 `
 
+
+
+
+
 const Offer = () => {
     return (
         <OfferSection id="offer" style={{

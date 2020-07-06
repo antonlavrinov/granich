@@ -34,7 +34,7 @@ const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Онлайн-школа Granich" />
     <Offer/>
-    <Courses/>
+    {/* <Courses/> */}
     <Manifest/>
     <Mailing/>
   </Layout>
