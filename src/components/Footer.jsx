@@ -8,7 +8,7 @@ import mastercard from '../assets/images/mastercard.png';
 
 const FooterSection = styled.footer`
     margin-top: auto;   
-    background: grey;
+    padding: 50px 0;
 `
 
 const FooterWrapper = styled.div`
@@ -17,30 +17,41 @@ const FooterWrapper = styled.div`
 `
 
 const FooterLogo = styled.img`
-    width: 5vw;
+    width: 63px;
+    margin-right: 20px;
 `
 
 const FooterInfo = styled.div`
-
+    margin-right: 60px;
 `
 
 const FooterInfoYear = styled.div`
-
+    font-size: 16px;
+    line-height: 1.2;
 `
 
 const FooterInfoMail = styled.a`
-
+    font-size: 16px;
+    text-decoration: underline;
 `
 const FooterLink = styled(props => <Link {...props}/>)`
-
+    line-height: 1.5;
+    font-size: 15px;
+    margin-right: 48px;
 `
 
 const FooterCredentials = styled.div`
-
+    margin-left: 25px;
+    font-size: 11px;
+    line-height: 1.2;
+    width: 300px;
 `
 
 const FooterPayment = styled.div`
     display: flex;
+    img {
+        width: 80px;
+    }
 `
 
 

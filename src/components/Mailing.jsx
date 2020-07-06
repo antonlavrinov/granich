@@ -8,33 +8,31 @@ const MailingSection = styled.section`
 `
 
 const MailingWrapper = styled.div`
-    width: 45vw;
-    height: 20vw;
+    width: 610px;
+    min-height: 275px;
     background: white;
-    border-radius: 0.8vw;
+    border-radius: 12px;
     position: relative;
 `
 
 const MailingContainer = styled.div`
-    padding: 2vw 2.5vw;
+    padding: 30px 35px 135px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 `
 const MailingTitle = styled.div`
     width: 100%;
-    font-size: 1.5vw;
+    font-size: 21px;
     font-weight: 600;
-    letter-spacing: 0vw;
-    line-height: 2vw;
+    line-height: 1.26;
 
 `
 const MailingText = styled.div`
-    font-size: 1.5vw;
+    font-size: 21px;
     font-weight: 400;
-    letter-spacing: 0vw;
-    width: 30vw;
-    line-height: 2vw;
+    width: 80%;
+    line-height: 1.26;
 
 
 `
@@ -42,31 +40,36 @@ const MailingText = styled.div`
 const MailingBackground = styled.div`
     background: var(--granich-red);
     width: 100%;
-    height: 8vw;
-    border-radius: 0 0 0.8vw 0.8vw;
+    border-radius: 0 0 12px 12px;
     position: absolute;
     bottom: 0;
     left: 0;
+    #mailingContainer {
+        padding-top: 20px;
+        padding-bottom: 35px;
+    }
 `
 
 const MailingForm = styled.form`
-    height: 3vw;
     width: 100%;
+    display: flex;
 
 `
 
 const MailingInput = styled.input`
-    height: 3vw;
+    height: 50px;
     border: none;
-    padding: 1vw;
-    width: 80%;
+    padding: 15px 25px;
+    width: 78%;
+    font-size: 20px;
+
     
 `
 
 const MailingButton = styled.button`
-    height: 3vw;
+    height: 50px;
     border: none;
-    width: 20%;
+    width: 22%;
     background: var(--granich-black);
     :hover {
         cursor: pointer;
@@ -90,7 +93,7 @@ const Mailing = () => {
 
                     </MailingContainer>
                     <MailingBackground>
-                        <MailingContainer>
+                        <MailingContainer id="mailingContainer">
                             <MailingForm>
                                 <MailingInput placeholder={'Электропочта'}/>
                                 <MailingButton>стрелка</MailingButton>

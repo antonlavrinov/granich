@@ -13,13 +13,24 @@ const CourseWrapper = styled.div`
     
 `
 const CourseContainer = styled.div`
-    padding: 1vw;
+    padding: 12px;
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
 `
+const CourseTagList = styled.div`
+    margin-bottom: 5px;
+`
 
 const CourseTag = styled.div`
-
+    border: 1.5px solid black;
+    border-radius: 100px;
+    font-weight: 600;
+    line-height: 1;
+    font-size: 12px;
+    padding: 2px 5px;
+    display: inline-block;
+    letter-spacing: -0.05em;
 `
 
 const CourseTitle = styled.div`
@@ -37,7 +48,7 @@ const CourseButton = styled.div`
 `
 const CourseButtonText = styled.div`
     color: white;
-    font-size: 1.5vw;
+    font-size: 20px;
     font-weight: 600;
     line-height: 1.5vw;
 
@@ -47,7 +58,10 @@ const Course = () => {
     return (
         <CourseWrapper>
             <CourseContainer>
-                ff
+                <CourseTagList>
+                    <CourseTag>Базовый</CourseTag>
+                </CourseTagList>
+
                 <div style={{background: 'grey', width: '100%', height: `13vw`}}></div>
                 <CourseTitle>Осознанный графдизайн</CourseTitle>
             </CourseContainer>

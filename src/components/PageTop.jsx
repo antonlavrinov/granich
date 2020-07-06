@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 // import {scrollToElem} from '../utils/scroll-behavior';
 
 
@@ -15,20 +16,19 @@ const PageTopWrapper = styled.div`
 const PageTop = () => {
     const [pageTop, setPageTop] = useState(false)
     useEffect(() => {
-        // window.addEventListener('scroll', () => {
-        //     if(window.pageYOffset > 900) {
-        //         setPageTop(true)
-        //     } else {
-        //         setPageTop(false)
-        //     }
-        // })
+        window.addEventListener('scroll', () => {
+            if(window.pageYOffset > 900) {
+                setPageTop(true)
+            } else {
+                setPageTop(false)
+            }
+        })
     }, [])
 
     return (
-        <div></div>
-        // <PageTopWrapper style={{right: `${pageTop ? '0' : '-50px'}`}} onClick={() => scrollToElem('#offer')}>
-        //     TOP
-        // </PageTopWrapper>
+        <PageTopWrapper style={{right: `${pageTop ? '0' : '-50px'}`}} onClick={() => scrollTo('#offer')}>
+            TOP
+        </PageTopWrapper>
     )
 }
 

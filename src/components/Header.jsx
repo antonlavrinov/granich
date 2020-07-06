@@ -19,24 +19,25 @@ const HeaderSection = styled.header`
 const LogoWrapper = styled(props => <Link {...props} />)`
   display: flex;
   align-items: center;
-  width: 5vw;
-  height: 3.6vw;
-  margin-left: 0.8vw;
+  width: 65px;
+  height: 50px;
+  margin-left: 1px;
   img {
     display: block;
+    max-width: 100%;
   }
 `
 
 const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 2.8vw 0;
+  padding: 42px 0;
 `
 
 const NavLinks = styled.nav`
   color: white;
-  margin-left: 3.5vw;
-  margin-top: -1vw;
+  margin-left: 46px;
+  margin-top: -16px;
   ul {
     display: flex;
   }
@@ -45,26 +46,25 @@ const NavLinks = styled.nav`
 const NavLink = styled.a`
   position: relative;
   color: white;
-  font-size: 1.15vw;
+  font-size: 16px;
   text-transform: uppercase;
   font-weight: 700;
-  margin-right: 3vw;
-  padding-bottom: 0.2vw;
+  margin-right: 42px;
   :hover {
-    font-size: 1.15vw;
+    font-size: 16px;
     font-weight: 700;
     color: white;
     cursor: pointer;
-    border-bottom: solid 0.2vw white;
+    border-bottom: solid 2px white;
 
   }
 
 `
 const ArrowLink = styled.img`
   position: absolute;
-  top: -0.7vw;
-  right: -1.3vw;
-  width: 1.2vw;
+  top: -8px;
+  right: -17px;
+  width: 14px;
 
 `
 
@@ -72,14 +72,13 @@ const LoginButton = styled.button`
   color: white;
   background: var(--granich-red);
   margin-left: auto;
-  padding: 0.3vw 1vw;
-  // width: 300px;
-  border-radius: 100vw;
-  font-size: 1.1vw;
+  padding: 1px 2px;
+  border-radius: 100px;
+  font-size: 12px;
   text-transform: uppercase;
   font-weight: 600;
   transition: all 0.2s ease;
-  margin-right: 0.8vw;
+  margin-right: 0px;
   :hover {
     transform: scale(1.1);
     cursor: pointer;

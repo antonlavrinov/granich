@@ -9,7 +9,7 @@ const CoursesSection = styled.section`
 `
 
 const CoursesWrapper = styled.div`
-    padding: 0 1vw;
+    // padding: 0 1vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 1.6vw;
