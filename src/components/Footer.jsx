@@ -2,10 +2,12 @@ import React from 'react'
 import { Container } from './style';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import logo from '../assets/images/logo-black.png';
-import visa from '../assets/images/visa.png';
-import mastercard from '../assets/images/mastercard.png';
 import BlackLogo from '../assets/svgs/granich-logo.svg';
+import VisaIcon from '../assets/svgs/Visa.svg';
+import MastercardIcon from '../assets/svgs/Mastercard.svg';
+import RobokasaIcon from '../assets/svgs/Robokassa.svg';
+
+
 
 const FooterSection = styled.footer`
     margin-top: auto;   
@@ -49,14 +51,14 @@ const FooterInfoMail = styled.a`
     }
 `
 const FooterLink = styled(props => <Link {...props}/>)`
-    width: 150px;
+    // width: 150px;
     line-height: 1.3;
     color: var(--granich-grey);
     font-size: 16px;
-    margin-right: 18px;
+    margin-right: 22px;
 
     :last-of-type {
-        margin-right: 12px;
+        margin-right: 22px;
         span {
             letter-spacing: -0.01em;
         }
@@ -77,16 +79,20 @@ const FooterLink = styled(props => <Link {...props}/>)`
 `
 
 const FooterCredentials = styled.div`
-    margin-left: 25px;
+    // display: inline-block;
+    // margin-left: 25px;
     line-height: 1.2;
-    width: 300px;
+    // width: 300px;
     font-size: 11px;
     letter-spacing: -0.03em;
     color: var(--granich-grey);
+    // width: 180px;
+    // margin-right: 38px;
 `
 
 const FooterPayment = styled.div`
     display: flex;
+    margin-left: auto;
     img {
         width: 80px;
     }
@@ -106,8 +112,8 @@ const Footer = () => {
                         <FooterInfoYear>© {new Date().getFullYear()}</FooterInfoYear>
                         <FooterInfoMail href="mailto:info@granich.ru">info@granich.ru</FooterInfoMail>
                     </FooterInfo>
-                    <FooterLink to="/public-offer"><span>Пользовательское соглашение</span></FooterLink>
-                    <FooterLink to="/privacy"><span>Политика конфиденциальности</span></FooterLink>
+                    <FooterLink to="/public-offer"><span>Пользовательское <br/>соглашение</span></FooterLink>
+                    <FooterLink to="/privacy"><span>Политика <br/>конфиденциальности</span></FooterLink>
                     <FooterCredentials>
                     ИП Гранич Вадим Владимирович <br/>
                     ОГРНИП 319784700098871 <br/>
@@ -115,10 +121,11 @@ const Footer = () => {
 
  
                     </FooterCredentials>
-                    {/* <FooterPayment>
-                        <img src={visa} alt="visa"/>
-                        <img src={mastercard} alt="mastercard"/>
-                    </FooterPayment> */}
+                    <FooterPayment>
+                        <RobokasaIcon style={{marginRight: '12px'}}/>
+                        <VisaIcon style={{marginRight: '12px'}}/>
+                        <MastercardIcon/>
+                    </FooterPayment>
                 </FooterWrapper>
             </Container>
         </FooterSection>
