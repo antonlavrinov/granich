@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     * {
         font-family: 'Inter', sans-serif;
         --granich-red: rgb(228, 5, 33);
-        --granich-black: #0f0f0f;
+        --granich-black: #2d2d2d;
         --granich-background-color: #f2f2f2;
         --granich-grey: #888989;
         color: var(--granich-black);

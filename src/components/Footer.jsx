@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 import logo from '../assets/images/logo-black.png';
 import visa from '../assets/images/visa.png';
 import mastercard from '../assets/images/mastercard.png';
+import BlackLogo from '../assets/svgs/granich-logo.svg';
 
 const FooterSection = styled.footer`
     margin-top: auto;   
@@ -13,38 +14,75 @@ const FooterSection = styled.footer`
 
 const FooterWrapper = styled.div`
     display: flex;
-    justify-content: space-between;
 `
 
-const FooterLogo = styled.img`
-    width: 63px;
-    margin-right: 20px;
+const LogoWrapper = styled(props => <Link to="/" {...props} />)`
+  width: 65px;
+  height: auto;
+//   margin-left: 1px;
+  fill: var(--granich-black);
+  margin-right: 13px;
+
 `
 
 const FooterInfo = styled.div`
-    margin-right: 60px;
+    margin-right: 30px;
+    letter-spacing: -0.01em;
+
 `
 
 const FooterInfoYear = styled.div`
     font-size: 16px;
-    line-height: 1.2;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--granich-black);
 `
 
+
 const FooterInfoMail = styled.a`
+    font-weight: 500;
     font-size: 16px;
-    text-decoration: underline;
+    color: var(--granich-black);
+    :hover {
+        font-weight: 500;
+        font-size: 16px;
+    }
 `
 const FooterLink = styled(props => <Link {...props}/>)`
-    line-height: 1.5;
-    font-size: 15px;
-    margin-right: 48px;
+    width: 150px;
+    line-height: 1.3;
+    color: var(--granich-grey);
+    font-size: 16px;
+    margin-right: 18px;
+
+    :last-of-type {
+        margin-right: 12px;
+        span {
+            letter-spacing: -0.01em;
+        }
+    }
+    span {
+
+        color: inherit;
+        font-size: inherit;
+        :hover {
+            border-bottom: 1px solid var(--granich-grey);
+        }
+    }
+    :hover {
+        font-size: 16px;
+        color: var(--granich-grey);
+    }
+
 `
 
 const FooterCredentials = styled.div`
     margin-left: 25px;
-    font-size: 11px;
     line-height: 1.2;
     width: 300px;
+    font-size: 11px;
+    letter-spacing: -0.03em;
+    color: var(--granich-grey);
 `
 
 const FooterPayment = styled.div`
@@ -60,13 +98,16 @@ const Footer = () => {
         <FooterSection>
             <Container>
                 <FooterWrapper>
-                    <FooterLogo src={logo} alt={`logo`}/>
+                    <LogoWrapper>
+                        <BlackLogo/>
+                    </LogoWrapper>
+                    
                     <FooterInfo>
                         <FooterInfoYear>© {new Date().getFullYear()}</FooterInfoYear>
-                        <FooterInfoMail>info@granich.ru</FooterInfoMail>
+                        <FooterInfoMail href="mailto:info@granich.ru">info@granich.ru</FooterInfoMail>
                     </FooterInfo>
-                    <FooterLink to="/polz">Пользовательское соглашение</FooterLink>
-                    <FooterLink to="/politica">Политика конфиденциальности</FooterLink>
+                    <FooterLink to="/public-offer"><span>Пользовательское соглашение</span></FooterLink>
+                    <FooterLink to="/privacy"><span>Политика конфиденциальности</span></FooterLink>
                     <FooterCredentials>
                     ИП Гранич Вадим Владимирович <br/>
                     ОГРНИП 319784700098871 <br/>
@@ -74,10 +115,10 @@ const Footer = () => {
 
  
                     </FooterCredentials>
-                    <FooterPayment>
+                    {/* <FooterPayment>
                         <img src={visa} alt="visa"/>
                         <img src={mastercard} alt="mastercard"/>
-                    </FooterPayment>
+                    </FooterPayment> */}
                 </FooterWrapper>
             </Container>
         </FooterSection>

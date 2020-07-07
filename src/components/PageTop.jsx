@@ -7,28 +7,38 @@ import PageUpIcon from '../assets/svgs/page-up.svg';
 
 const PageUpWrapper = styled(props => <PageUpIcon {...props}/>)`
     position: fixed;
-    bottom: 100px;
+    bottom: 260px;
     transition: all 0.3s ease;
     :hover {
         cursor: pointer;
+        transform: scale(1.1)
     }
 `
 
 
-const PageTop = () => {
-    const [pageTop, setPageTop] = useState(false)
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if(window.pageYOffset > 900) {
-                setPageTop(true)
-            } else {
-                setPageTop(false)
-            }
-        })
-    }, [])
+
+
+const PageTop = ({pageTop}) => {
+    // const [pageTop, setPageTop] = useState(false)
+    // useEffect(() => {
+    //     // const scrollFunc = () => {
+    
+    //     // }
+
+    //     window.addEventListener('scroll', () => {
+    //         if(window.pageYOffset > 900) {
+    //             setPageTop(true)
+    //         } else {
+    //             setPageTop(false)
+    //         }
+    //     })
+    //     // return () => {
+
+    //     // }
+    // }, [])
 
     return (
-        <PageUpWrapper style={{right: `${pageTop ? '25px' : '-45px'}`}} onClick={() => scrollTo('#offer')}/>
+        <PageUpWrapper style={{right: `${pageTop ? '45px' : '-45px'}`}} onClick={() => scrollTo('#offer')}/>
     )
 }
 

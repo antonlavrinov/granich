@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import {Container} from './style';
 import logo from '../assets/images/logo-white.png';
 import arrow from '../assets/images/arrow.png';
-import WhiteLogo from '../assets/svgs/granich-logo-white.svg';
+import WhiteLogo from '../assets/svgs/granich-logo.svg';
 import ArrowDown from '../assets/svgs/header-arrow-icon-down.svg';
 import ArrowOut from '../assets/svgs/header-arrow-icon-out.svg';
 import LoginButtonIcon from '../assets/svgs/login-button-icon.svg';
@@ -25,6 +25,7 @@ const LogoWrapper = styled(props => <Link {...props} />)`
   width: 65px;
   // height: 50px;
   margin-left: 1px;
+  fill: white;
   svg {
     // width: 100%;
   }
