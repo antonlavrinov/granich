@@ -6,6 +6,7 @@ const ChatWrapper = styled(props => <ChatIcon {...props}/>)`
     position: fixed;
     bottom: 205px;
     right: 45px;
+    
     transition: all 0.3s ease;
     :hover {
         cursor: pointer;
