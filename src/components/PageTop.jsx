@@ -1,15 +1,17 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components';
 import scrollTo from 'gatsby-plugin-smoothscroll';
-// import {scrollToElem} from '../utils/scroll-behavior';
+import PageUpIcon from '../assets/svgs/page-up.svg';
 
 
 
-const PageTopWrapper = styled.div`
+const PageUpWrapper = styled(props => <PageUpIcon {...props}/>)`
     position: fixed;
-    bottom: 0;
-    transition: all 0.5s ease;
-    background: black;
+    bottom: 100px;
+    transition: all 0.3s ease;
+    :hover {
+        cursor: pointer;
+    }
 `
 
 
@@ -26,10 +28,12 @@ const PageTop = () => {
     }, [])
 
     return (
-        <PageTopWrapper style={{right: `${pageTop ? '0' : '-50px'}`}} onClick={() => scrollTo('#offer')}>
-            TOP
-        </PageTopWrapper>
+        <PageUpWrapper style={{right: `${pageTop ? '25px' : '-45px'}`}} onClick={() => scrollTo('#offer')}/>
     )
 }
 
 export default PageTop
+
+{/* <PageTopWrapper style={{right: `${pageTop ? '0' : '-50px'}`}} onClick={() => scrollTo('#offer')}>
+TOP
+</PageTopWrapper> */}

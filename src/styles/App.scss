@@ -12,7 +12,8 @@
     url('../fonts/cormorant/CormorantGaramond-BoldItalic.ttf') format('truetype'), 
     url('../fonts/cormorant/CormorantGaramond-BoldItalic.svg') format('svg');
 	font-weight: 700;
-	font-style: italic;
+    font-style: italic;
+    font-display: swap;
 }
 
 
@@ -24,7 +25,8 @@
     url('../fonts/inter/Inter-Regular.ttf') format('truetype'), 
     url('../fonts/inter/Inter-Regular.svg') format('svg');
 	font-weight: 400;
-	font-style: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 
@@ -38,6 +40,7 @@
     url('../fonts/Inter-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -49,6 +52,7 @@
     url('../fonts/Inter-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -60,6 +64,7 @@
     url('../fonts/Inter-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -71,6 +76,7 @@
     url('../fonts/EBGaramond-Italic.ttf') format('truetype');
     font-weight: 400;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -82,6 +88,7 @@
     url('../fonts/EBGaramond-MediumItalic.ttf') format('truetype');
     font-weight: 500;
     font-style: italic;
+    font-display: swap;
 }
 
 
