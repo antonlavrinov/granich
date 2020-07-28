@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
 export const Container = styled.div`
-    width: 78%;
+    // width: 78%;
     width: 1024px;
     max-width: 1024px;
     margin: 0 auto;
