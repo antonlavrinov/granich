@@ -20,11 +20,7 @@ const OfferSection = styled(props => <BackgroundImage {...props}></BackgroundIma
     position: relative;
     width: 100%;
     padding: 12em 0 10em;
-    // padding: 15% 0 5%;
-    // min-height: 620px;
-    // min-height: 45em;
     max-height: 900px;
-    // max-height: 60em;
 
 
 `
@@ -48,7 +44,6 @@ const OfferDescr = styled.div`
     font-size: 33.5px;
     line-height: 0.9;
     font-family: Cormorant Garamond;
-    // font-weight: 500;
     position: relative;
     span {
         font-weight: inherit;

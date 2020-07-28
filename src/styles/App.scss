@@ -101,6 +101,10 @@ html {
     // scroll-behavior: smooth;
 }
 
+body {
+    width: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -252,8 +256,8 @@ ul, li {
 }
 
 // #___gatsby {
-//     height: 100%;
-//     width: 100%;
+//     // height: 100%;
+//     width: 100% !important;
 // }
 
 

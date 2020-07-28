@@ -37,7 +37,7 @@ const IndexPage = ({data}) => (
     <Offer/>
     {/* <Courses/> */}
     <Manifest/>
-    {/* <Manifest1/> */}
+    <Manifest1/>
     <Mailing/>
   </Layout>
 )

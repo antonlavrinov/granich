@@ -104,11 +104,22 @@ const ManifestRuleNumber = styled.div`
     font-weight: 400;
 `
 
+const Container1 = styled.div`
+    // width: 78%;
+    width: 78vw;
+    max-width: 78vw;
+    margin: 0 auto;
+
+    // @media(max-width: 991px) {
+    //     width: 90%;
+    // }
+`
+
 
 const Manifest = () => {
     return (
         <ManifestSection>
-            <Container>
+            <Container1>
                 <ManifestWrapper>
                     <ManifestAuthor>
                         <ManifestAuthorImage style={{background: `url(${author})`,
@@ -143,7 +154,7 @@ const Manifest = () => {
                         </ManifestInfoRules>
                     </ManifestInfo>
                 </ManifestWrapper>
-            </Container>
+            </Container1>
         </ManifestSection>
     )
 }
