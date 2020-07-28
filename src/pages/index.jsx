@@ -9,6 +9,7 @@ import Offer from '../components/Offer';
 import Courses from "../components/Courses"
 import Mailing from "../components/Mailing"
 import Manifest from "../components/Manifest"
+import Manifest1 from "../components/Manifest1"
 
 
 export const courseQuery = graphql`
@@ -36,6 +37,7 @@ const IndexPage = ({data}) => (
     <Offer/>
     {/* <Courses/> */}
     <Manifest/>
+    <Manifest1/>
     <Mailing/>
   </Layout>
 )
