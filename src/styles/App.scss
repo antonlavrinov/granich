@@ -102,7 +102,7 @@ html {
 }
 
 body {
-    width: 100%;
+    width: 100% !important;
 }
 
 * {
@@ -255,10 +255,10 @@ ul, li {
     flex-direction: column;
 }
 
-// #___gatsby {
-//     // height: 100%;
-//     width: 100% !important;
-// }
+#___gatsby {
+    // height: 100%;
+    width: 100% !important;
+}
 
 
 //import blocks
