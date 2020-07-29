@@ -56,7 +56,7 @@ const Layout = ({ children }) => {
   return (
     <>
         <GlobalStyle/>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
             <main>{children}</main>
         <PageTop pageTop={pageTop}/>
         <Support/>

@@ -38,7 +38,7 @@ const PageTop = ({pageTop}) => {
     // }, [])
 
     return (
-        <PageUpWrapper style={{right: `${pageTop ? '45px' : '-45px'}`}} onClick={() => scrollTo('#offer')}/>
+        <PageUpWrapper style={{right: `${pageTop ? '45px' : '-45px'}`}} onClick={() => scrollTo('#header')}/>
     )
 }
 

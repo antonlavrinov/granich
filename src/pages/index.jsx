@@ -10,6 +10,8 @@ import Courses from "../components/Courses"
 import Mailing from "../components/Mailing"
 import Manifest from "../components/Manifest"
 import Manifest1 from "../components/Manifest1"
+import Header from '../components/Header';
+import PreCoursePreparation from "../components/PreCoursePreparation"
 
 
 export const courseQuery = graphql`
@@ -33,11 +35,13 @@ export const courseQuery = graphql`
 
 const IndexPage = ({data}) => (
   <Layout>
+    <Header/>
     <SEO title="Онлайн-школа Granich" />
     <Offer/>
-    {/* <Courses/> */}
+    <Courses/>
     <Manifest/>
-    <Manifest1/>
+    <PreCoursePreparation/>
+    {/* <Manifest1/> */}
     <Mailing/>
   </Layout>
 )

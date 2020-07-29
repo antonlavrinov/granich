@@ -6,8 +6,15 @@ import parse from 'html-react-parser';
 
 const ManifestSection = styled.section`
     padding: 154px 0px;
+
 `
 const ManifestWrapper = styled.div`
+
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+`
+const ManifestSecondaryWrapper = styled.div`
     display: flex;
 `
 const ManifestAuthor = styled.div`
@@ -41,26 +48,28 @@ const ManifestAuthorText = styled.div`
 
 const ManifestInfoTitle = styled.h2`
     font-family: EB Garamond;
+    font-style: italic;
     font-weight: 500;
-    font-size: 85px;
-    width: 600px;
+    font-size: 70px;
+    // width: 600px;
     line-height: 0.75;
     position: relative;
     margin-bottom: 50px;
+    margin-left: 15px;
     :after {
         content: '»';
         margin-left: 20px;
         margin-top: 5px;
         position: absolute;
-        font-size: 95px;
+        font-size: 70px;
 
     }
     :before {
         content: '«';
         position: absolute;
-        font-size: 95px;
+        font-size: 70px;
         top: -12px;
-        left: -65px;
+        left: -45px;
     }
 
 `
@@ -111,38 +120,42 @@ const Manifest = () => {
         <ManifestSection id="manifest">
             <Container>
                 <ManifestWrapper>
-                    <ManifestAuthor>
-                        <ManifestAuthorImage style={{background: `url(${author})`,
-                        backgroundSize: 'cover'}}/>
-                        <ManifestAuthorName>Вадим Гранич</ManifestAuthorName>
-                        <ManifestAuthorText>Создатель школы, <br/>автор курсов</ManifestAuthorText>
-                    </ManifestAuthor>
-                    <ManifestInfo>
-                        <ManifestInfoTitle>
-                            Делай из любви, а не страха
-                        </ManifestInfoTitle>
-                        <ManifestInfoText>
-                            Сюда приходят, чтобы с любовью развивать в себе твердые навыки, а не из страха срочно понахвататься каких-то знаний. Поэтому, создавая курсы, я придерживаясь трех принципов:
-                        </ManifestInfoText>
-                        <ManifestInfoRules>
-                            <ManifestRule title={`Выточенно —`}
-                                          text={`Вся информация <br/>
-                                            на курсах очищена <br/>
-                                            от лишнего, <br/>
-                                            грамотно подана <br/>
-                                            и структурирована`}
-                                          number={1}
-                            />
-                            <ManifestRule title={`Интенсивно —`}
-                                          text={`Курсы занимают много времени, акцент на практику (смотрите фильм Одержимость)`}
-                                          number={2}
-                            />
-                            <ManifestRule title={`С дедлайнами —`}
-                                          text={`Не получится просто взять курс и забыть о нем. Дедлайны будут постоянно вас толкать вперед`}
-                                          number={3}
-                            />
-                        </ManifestInfoRules>
-                    </ManifestInfo>
+                    <ManifestInfoTitle>
+                        Делай из любви, а не страха
+                    </ManifestInfoTitle>
+                    <ManifestSecondaryWrapper>
+                        <ManifestAuthor>
+                            <ManifestAuthorImage style={{background: `url(${author})`,
+                            backgroundSize: 'cover'}}/>
+                            <ManifestAuthorName>Вадим Гранич</ManifestAuthorName>
+                            <ManifestAuthorText>Создатель школы, <br/>автор курсов</ManifestAuthorText>
+                        </ManifestAuthor>
+                        <ManifestInfo>
+
+                            <ManifestInfoText>
+                                Сюда приходят, чтобы с любовью развивать в себе твердые навыки, а не из страха срочно понахвататься каких-то знаний. Поэтому, создавая курсы, я придерживаясь трех принципов:
+                            </ManifestInfoText>
+                            <ManifestInfoRules>
+                                <ManifestRule title={`Выточенно —`}
+                                            text={`Вся информация <br/>
+                                                на курсах очищена <br/>
+                                                от лишнего, <br/>
+                                                грамотно подана <br/>
+                                                и структурирована`}
+                                            number={1}
+                                />
+                                <ManifestRule title={`Интенсивно —`}
+                                            text={`Курсы занимают много времени, акцент на практику (смотрите фильм Одержимость)`}
+                                            number={2}
+                                />
+                                <ManifestRule title={`С дедлайнами —`}
+                                            text={`Не получится просто взять курс и забыть о нем. Дедлайны будут постоянно вас толкать вперед`}
+                                            number={3}
+                                />
+                            </ManifestInfoRules>
+                        </ManifestInfo>
+                    </ManifestSecondaryWrapper>
+
                 </ManifestWrapper>
             </Container>
         </ManifestSection>

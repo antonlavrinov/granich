@@ -14,6 +14,9 @@ export const GlobalStyle = createGlobalStyle`
         --granich-background-color: #f2f2f2;
         --granich-grey: #888989;
         color: var(--granich-black);
+        --granich-red-gradient: linear-gradient(167deg, rgba(230,25,51,1) 0%, rgba(213,12,34,1) 39%, rgba(189,3,27,1) 61%);
+        --granich-red-gradient-horizontal: linear-gradient(90deg, rgba(230,25,51,1) 0%, rgba(213,12,34,1) 50%, rgba(189,3,27,1) 100%);
+
         letter-spacing: 0vw;
         font-weight: 400;
     }

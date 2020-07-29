@@ -68,7 +68,7 @@ const FooterLink = styled(props => <Link {...props}/>)`
         color: inherit;
         font-size: inherit;
         :hover {
-            border-bottom: 1px solid var(--granich-grey);
+            border-bottom: 1px dashed var(--granich-grey);
         }
     }
     :hover {

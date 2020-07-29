@@ -8,7 +8,10 @@ import arrow from '../assets/images/arrow.png';
 import WhiteLogo from '../assets/svgs/granich-logo.svg';
 import ArrowDown from '../assets/svgs/header-arrow-icon-down.svg';
 import ArrowOut from '../assets/svgs/header-arrow-icon-out.svg';
+import ArrowBack from '../assets/svgs/header-arrow-back.svg';
 import LoginButtonIcon from '../assets/svgs/login-button-icon.svg';
+
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const HeaderSection = styled.header`
   position: absolute;
@@ -23,13 +26,13 @@ const LogoWrapper = styled(props => <Link {...props} />)`
   display: flex;
   align-items: center;
   width: 65px;
-  // height: 50px;
   margin-left: 1px;
   fill: white;
-  svg {
-    // width: 100%;
-  }
-`
+  ${(props) => props.propstyle && `
+    fill: var(--granich-black);
+    
+    `}
+  `
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -46,7 +49,7 @@ const NavLinks = styled.nav`
   }
 `
 
-const NavLink = styled.a`
+const NavLink = styled(props => <AnchorLink {...props} />)`
   position: relative;
   color: white;
   font-size: 16px;
@@ -62,6 +65,16 @@ const NavLink = styled.a`
     border-bottom: solid 2px white;
 
   }
+  ${(props) => props.propstyle && `
+  color: var(--granich-black);
+  :hover {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--granich-black);
+    cursor: pointer;
+    border-bottom: solid 2px var(--granich-black);
+  }
+`}
 
 `
 const ArrowLinkDown = styled(props => <ArrowDown {...props}/>)`
@@ -79,17 +92,24 @@ const ArrowLinkOut = styled(props => <ArrowOut {...props}/>)`
   // width: 14px;
 
 `
+const ArrowLinkBack = styled(props => <ArrowBack {...props}/>)`
+  position: absolute;
+  top: -8px;
+  right: -17px;
+  // width: 14px;
+
+`
 
 const LoginButton = styled.a`
   display: flex;
   align-items: center;
   color: white;
-  background: var(--granich-red);
+  background: var(--granich-red-gradient);
   margin-top: -10px;
   margin-left: auto;
   padding: 8px 16px;
   letter-spacing: 0.02em;
-  border-radius: 100px;
+  border-radius: 8px;
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 600;
@@ -110,30 +130,30 @@ const LoginButton = styled.a`
 
 
 
-const Header = ({ siteTitle }) => (
-  <HeaderSection>
+const Header = ({ siteTitle, style }) => (
+  <HeaderSection id="header">
       <Container>
         <HeaderWrapper>
 
-          <LogoWrapper to="/">
-            <WhiteLogo/>
+          <LogoWrapper to="/" propstyle={style}>
+            <WhiteLogo  />
           </LogoWrapper>
-          <NavLinks>
-            <ul>
+          <NavLinks >
+            <ul >
               <li>
-                <NavLink>
+                <NavLink propstyle={style} to="/osoznanny-graph-design">
                   Курсы
-                  <ArrowLinkDown/>
+                  {style === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
                 </NavLink>
               </li>  
               <li>
-                <NavLink>
+                <NavLink to="/#preparation" propstyle={style}>
                   Подготовка
-                  <ArrowLinkDown/>
+                  {style === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
                 </NavLink>
               </li>  
               <li>
-                <NavLink>
+                <NavLink propstyle={style}>
                   Блог
                   <ArrowLinkOut/>
                 </NavLink>

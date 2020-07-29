@@ -91,6 +91,18 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/EBGaramond-Medium.eot');
+    src: url('../fonts/EBGaramond-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/EBGaramond-Medium.woff2') format('woff2'),
+    url('../fonts/EBGaramond-Medium.woff') format('woff'),
+    url('../fonts/EBGaramond-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 
 
