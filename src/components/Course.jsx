@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
 import WhiteArrowNewPage from '../assets/svgs/arrow-white-newpage.svg';
+import BackgroundImage from 'gatsby-image';
+import { graphql, useStaticQuery } from 'gatsby'
 
 const CourseWrapper = styled.div`
     background: white;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+    border-radius: 0.7vw;
+    box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
     transition: all 0.4s ease;
     :hover {
         cursor: pointer;
@@ -14,53 +16,58 @@ const CourseWrapper = styled.div`
     
 `
 const CourseContainer = styled.div`
-    padding: 12px;
-    padding-top: 10px;
+    padding: 0.8vw;
+    padding-top: 0.9vw;
     display: flex;
     flex-direction: column;
 `
 const CourseTagList = styled.div`
-    margin-bottom: 10px;
+    margin-bottom: 0.9vw;
 `
 
 const CourseMainTag = styled.div`
-    border: 1.5px solid var(--granich-red);
+    border: 0.1vw solid var(--granich-red);
     color: white;
-    border-radius: 100px;
+    border-radius: 100vw;
     background: var(--granich-red);
     font-weight: 600;
     line-height: 1;
-    font-size: 12px;
-    padding: 2px 15px 3px;
+    font-size: 0.83vw;
+    padding: 0.15vw 1vw 0.17vw;
     display: inline-block;
     letter-spacing: -0.05em;
     margin-right: 5px;
 `
 
 const CourseTag = styled.div`
-    border: 1.5px solid var(--granich-red);
+    border: 0.1vw solid var(--granich-red);
     color: var(--granich-red);
-    border-radius: 100px;
+    border-radius: 100vw;
     font-weight: 600;
     line-height: 1;
-    font-size: 12px;
-    padding: 2px 5px 3px;
+    font-size: 0.83vw;
+    padding: 0.15vw 0.4vw 0.17vw;
     display: inline-block;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.03vw;
 `
 
 const CourseTitle = styled.div`
-    font-size: 20px;
-    line-height: 1;
+    font-size: 1.75vw;
+    margin-left: 0.3vw;
+    line-height: 0.9;
     font-weight: 600;
     letter-spacing: 0;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 0.9vw;
+`
+
+const CourseImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
+    margin-bottom: 0.4vw;
+    height: 14.5vw;
 `
 
 const CourseButton = styled.div`
     background: var(--granich-red);
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 0.7vw 0.7vw;
     color: white;
     
 `
@@ -71,25 +78,35 @@ const CourseButtonWrapper = styled.div`
 `
 const CourseButtonText = styled.div`
     color: white;
-    font-size: 20px;
+    font-size: 1.45vw;
     font-weight: 600;
-    line-height: 1;
+    line-height: 0.95;
+    margin-left: 0.3vw;
+    margin-top: -0.1vw;
 
 `
 
 const CourseInfo = styled.div`
     display: flex;
+    margin-left: 0.3vw;
+    font-size: 1vw;
+    line-height: 1;
+    margin-bottom: 0.45vw;
 `
 const CourseStart = styled.div`
-    margin-right: 15px;
+    font-size: inherit;
+    margin-right: 1.1vw;
     span {
         font-weight: 700;
+        font-size: inherit;
     }
 `
 
 const CourseDuration = styled.div`
+    font-size: inherit;
     span {
         font-weight: 700;
+        font-size: inherit;
     }
 `
 
@@ -100,11 +117,29 @@ const CourseTeachers = styled.div`
 const CourseTeacher = styled.div`
     background: grey;
     border-radius: 100px;
-    height: 30px;
-    width: 30px;
+    margin-top: -0.2vw;
+    margin-right: 0.1vw;
+    height: 2.2vw;
+    width: 2.2vw;
+    :first-child {
+        transform: translateX(17%);
+    }
 `
 
 const Course = () => {
+    const data = useStaticQuery(graphql`
+        query CourseImage {
+            placeholderImage: file(relativePath: { eq: "course_image.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 600, quality: 100) {
+
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    `)
+    const imageData = data.placeholderImage.childImageSharp.fluid
     return (
         <CourseWrapper>
             <CourseContainer>
@@ -113,7 +148,7 @@ const Course = () => {
                     <CourseTag>Базовый</CourseTag>
                 </CourseTagList>
 
-                <div style={{background: 'grey', width: '100%', height: '200px'}}></div>
+                <CourseImage fluid={imageData}></CourseImage>
                 <CourseTitle>Осознанный графдизайн</CourseTitle>
                 <CourseInfo>
                     <CourseStart>
@@ -123,6 +158,7 @@ const Course = () => {
                         Учимся <br/> <span>2 месяца</span>
                     </CourseDuration>
                     <CourseTeachers>
+                        <CourseTeacher/>
                         <CourseTeacher/>
                     </CourseTeachers>
                 </CourseInfo>

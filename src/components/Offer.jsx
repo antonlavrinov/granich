@@ -19,8 +19,8 @@ import Img from 'gatsby-image';
 const OfferSection = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     position: relative;
     width: 100%;
-    padding: 12em 0 10em;
-    max-height: 900px;
+    padding: 12.2vw 0 5vw 0;
+    height: 46vw;
 
 
 `
@@ -28,21 +28,20 @@ const OfferSection = styled(props => <BackgroundImage {...props}></BackgroundIma
 const OfferTitle = styled.h1`
     font-family: Inter, sans-serif;
     font-weight: 700;
-    font-size: 88px;
+    font-size: 6.9vw;
     color: white;
     line-height: 0.88;
-    letter-spacing: -.06em;
-    width: 500px;
-    width: 70%;
-    margin-bottom: 4.5%;
-    margin-left: -0.17em;
+    letter-spacing: -.4vw;
+    width: 60vw;
+    margin-bottom: 2.5vw;
+    margin-left: -1.1vw;
 `
 const OfferDescr = styled.div`
-    margin-left: -0.05em;
+    margin-left: -.3vw;
     color: white;
-    letter-spacing: .015em;
-    font-size: 33.5px;
-    line-height: 0.9;
+    letter-spacing: .01vw;
+    font-size: 2.35vw;
+    line-height: 1;
     font-family: Cormorant Garamond;
     position: relative;
     span {
@@ -59,10 +58,10 @@ const OfferDescr = styled.div`
 `
 
 const OfferUnderlineIcon = styled(props => <UnderlineLinkIcon {...props}/>)`
-    width: 280px;
+    width: 20.8vw;
     position: absolute;
-    bottom: -18px;
-    left: 5px;
+    bottom: -1.1vw;
+    left: 0.4vw;
     // left: 1.8em;
 
     
@@ -73,6 +72,13 @@ const OfferSvgClip = styled(props => <BackgroundClip {...props}/>)`
     bottom: 0;
     z-index: 0;
 `
+
+const OfferFlagsImg = styled(props => <Img {...props} />)`
+    margin-left: 1vw;
+    top: 0.2vw;
+    width: 2vw;
+    display: inline-block;
+` 
 
 
 
@@ -93,9 +99,9 @@ const Offer = () => {
 
             flags: file(relativePath: { eq: "flags.png" }) {
                 childImageSharp {
-                    fixed(width: 28, height: 28, quality: 100) {
+                    fluid(maxWidth: 50, quality: 100) {
 
-                        ...GatsbyImageSharpFixed
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -111,15 +117,15 @@ const Offer = () => {
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             // backgroundAttachment: 'fixed',
-            backgroundPosition: 'center',
-            // backgroundSize: '140%'
+            backgroundPosition: 'top',
+            backgroundSize: '112%'
             }}>
         {/* <BackgroundImage fluid={imageData}> */}
 
             <Container>
                 <OfferTitle>Онлайн-школа Granich</OfferTitle>
                 <OfferDescr>
-                    Онлайн-курсы <Img alt="flags" fixed={data.flags.childImageSharp.fixed} /> <br/> с <span onClick={() => scrollTo('#manifest')}>осознанным подходом <OfferUnderlineIcon/></span>
+                    Онлайн-курсы <OfferFlagsImg alt="flags" fluid={data.flags.childImageSharp.fluid} /> <br/> с <span onClick={() => scrollTo('#manifest')}>осознанным подходом <OfferUnderlineIcon/></span>
                 </OfferDescr>
                 
 

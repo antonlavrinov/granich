@@ -34,8 +34,9 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Container = styled.div`
     // width: 78%;
-    width: 1024px;
-    max-width: 1024px;
+    // width: 1024px;
+    // max-width: 1024px;
+    width: 75.5vw;
     margin: 0 auto;
 
     // @media(max-width: 991px) {

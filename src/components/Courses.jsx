@@ -5,14 +5,15 @@ import Course from './Course';
 
 const CoursesSection = styled.section`
     position: relative;
-    margin-top: -4vw;
+    margin-top: -4.5vw;
+    margin-bottom: 2.6vw;
 `
 
 const CoursesWrapper = styled.div`
     // padding: 0 1vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 1.6vw;
+    grid-column-gap: 1.7vw;
     // position: absolute;
     // top: 0;
 

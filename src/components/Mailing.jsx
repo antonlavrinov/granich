@@ -11,32 +11,35 @@ const MailingSection = styled.section`
 const MailingWrapper = styled.div`
     width: 100%;
     background: var(--granich-red);
-    border-radius: 12px;
+    border-radius: 0.9vw;
     position: relative;
 `
 
 const MailingContainer = styled.div`
-    padding: 30px 30px;
+    padding: 2.1vw 2.4vw;
+    padding-right: 1.8vw;
     display: flex;
     justify-content: space-between;
 `
 const MailingTitle = styled.div`
     width: 100%;
-    font-size: 21px;
+    font-size: 5vw;
     font-weight: 600;
     line-height: 1.26;
 
 `
 const MailingText = styled.div`
-    font-size: 21px;
+    font-size: 1.44vw;
     font-weight: 400;
-    width: 60%;
-    line-height: 1.26;
+    width: 38vw;
+    line-height: 1.2;
     color: white;
+    // letter-spacing: -0.03vw;
     span {
+        letter-spacing: -0.01vw;
         font-style: italic;
         color: inherit;
-        font-size: 30px;
+        font-size: 1.94vw;
         line-height: 0.5;
         font-family: EB Garamond;
     }
@@ -65,20 +68,24 @@ const MailingForm = styled.form`
 `
 
 const MailingInput = styled.input`
-    height: 45px;
+    height: 3.2vw;
     border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5) inset;
-    padding: 10px 25px;
-    // width: 78%;
-    font-size: 20px;
-    margin-right: 15px;
+    border-radius: 0.6vw;
+    box-shadow: 0 0 0.5vw rgba(0,0,0,0.5) inset;
+    padding: 0.8vw 1.1vw;
+    padding: 1vw 1.1vw;
+    width: 27.5vw;
+    font-size: 1.55vw;
+    margin-right: 1.1vw;
+    ::placeholder {
+        font-size: 1.55vw;
+    }
 
     
 `
 
 const MailingButton = styled.button`
-    height: 50px;
+    height: 3.4vw;
     border: none;
     // width: 22%;
     background: none;

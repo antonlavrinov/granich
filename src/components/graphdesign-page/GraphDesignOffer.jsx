@@ -3,14 +3,14 @@ import { Container } from '../style';
 import styled from 'styled-components';
 import CourseArrowDown from '../../assets/svgs/course-arrow-down-27.svg';
 
-const CourseOfferSection = styled.section`
+const GraphDesignOfferSection = styled.section`
     padding: 150px 0 0;
     margin-bottom: 50px;
 
 
 `
 
-const CourseOfferWrapper = styled.div`
+const GraphDesignOfferWrapper = styled.div`
     background: white;
     border: 1.5px solid var(--granich-grey);
     border-radius: 5px;
@@ -19,10 +19,10 @@ const CourseOfferWrapper = styled.div`
 
 `
 
-const CourseOfferTags = styled.div`
+const GraphDesignOfferTags = styled.div`
     display: flex;
 `
-const CourseOfferTag = styled.div`
+const GraphDesignOfferTag = styled.div`
     font-size: 18px;
     display: flex;
     color: var(--granich-red);
@@ -32,7 +32,7 @@ const CourseOfferTag = styled.div`
     margin-right: 10px;
     font-weight: 500;
 `
-const CourseOfferTitle = styled.h1`
+const GraphDesignOfferTitle = styled.h1`
     font-size: 110px;
     line-height: 0.8;
     font-family: EB Garamond;
@@ -47,13 +47,13 @@ const CourseOfferTitle = styled.h1`
         font-family: EB Garamond;
     }
 `
-const CourseOfferDescr = styled.div`
+const GraphDesignOfferDescr = styled.div`
     width: 520px;
     font-size: 25px;
     margin-bottom: 50px;
 `
 
-const CourseOfferButton = styled.a`
+const GraphDesignOfferButton = styled.a`
   display: inline-flex;
   align-items: center;
   color: white;
@@ -82,30 +82,30 @@ const CourseOfferButton = styled.a`
 `
 
 
-const CourseOffer = () => {
+const GraphDesignOffer = () => {
     return (
-        <CourseOfferSection>
+        <GraphDesignOfferSection>
             <Container>
-                <CourseOfferWrapper>
-                    <CourseOfferTags>
-                        <CourseOfferTag>17 поток</CourseOfferTag>
-                        <CourseOfferTag>Старт 1 сентября</CourseOfferTag>
-                        <CourseOfferTag>2 месяца интенсива</CourseOfferTag>
-                    </CourseOfferTags>
-                    <CourseOfferTitle>
+                <GraphDesignOfferWrapper>
+                    <GraphDesignOfferTags>
+                        <GraphDesignOfferTag>17 поток</GraphDesignOfferTag>
+                        <GraphDesignOfferTag>Старт 1 сентября</GraphDesignOfferTag>
+                        <GraphDesignOfferTag>2 месяца интенсива</GraphDesignOfferTag>
+                    </GraphDesignOfferTags>
+                    <GraphDesignOfferTitle>
                         <span>Осознанный</span> <br/> графдизайн
-                    </CourseOfferTitle>
-                    <CourseOfferDescr>
+                    </GraphDesignOfferTitle>
+                    <GraphDesignOfferDescr>
                         За 2 месяца вы получите упорядоченные знания о графическом дизайне
                         и создадите свое портфолио
-                    </CourseOfferDescr>
-                    <CourseOfferButton><CourseArrowDown/>Учавствовать</CourseOfferButton>
+                    </GraphDesignOfferDescr>
+                    <GraphDesignOfferButton><CourseArrowDown/>Учавствовать</GraphDesignOfferButton>
                     
-                </CourseOfferWrapper>
+                </GraphDesignOfferWrapper>
             </Container>
 
-        </CourseOfferSection>
+        </GraphDesignOfferSection>
     )
 }
 
-export default CourseOffer
+export default GraphDesignOffer

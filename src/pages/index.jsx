@@ -12,6 +12,7 @@ import Manifest from "../components/Manifest"
 import Manifest1 from "../components/Manifest1"
 import Header from '../components/Header';
 import PreCoursePreparation from "../components/PreCoursePreparation"
+import OurTeam from "../components/OurTeam"
 
 
 export const courseQuery = graphql`
@@ -43,6 +44,7 @@ const IndexPage = ({data}) => (
     <PreCoursePreparation/>
     {/* <Manifest1/> */}
     <Mailing/>
+    <OurTeam/>
   </Layout>
 )
 

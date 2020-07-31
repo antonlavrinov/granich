@@ -13,7 +13,6 @@ module.exports = {
     `gatsby-plugin-smoothscroll`,
     `gatsby-background-image`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-anchor-links`,
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

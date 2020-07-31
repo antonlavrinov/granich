@@ -10,8 +10,9 @@ import ArrowDown from '../assets/svgs/header-arrow-icon-down.svg';
 import ArrowOut from '../assets/svgs/header-arrow-icon-out.svg';
 import ArrowBack from '../assets/svgs/header-arrow-back.svg';
 import LoginButtonIcon from '../assets/svgs/login-button-icon.svg';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+
 
 const HeaderSection = styled.header`
   position: absolute;
@@ -25,8 +26,6 @@ const HeaderSection = styled.header`
 const LogoWrapper = styled(props => <Link {...props} />)`
   display: flex;
   align-items: center;
-  width: 65px;
-  margin-left: 1px;
   fill: white;
   ${(props) => props.propstyle && `
     fill: var(--granich-black);
@@ -37,66 +36,94 @@ const LogoWrapper = styled(props => <Link {...props} />)`
 const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 42px 0;
+  padding: 3.2vw 0;
 `
 
 const NavLinks = styled.nav`
   color: white;
-  margin-left: 46px;
-  margin-top: -12px;
+  margin-left: 3.5vw;
+  margin-top: -1vw;
   ul {
     display: flex;
   }
 `
 
-const NavLink = styled(props => <AnchorLink {...props} />)`
+const NavLink = styled(props => <Link {...props} />)`
   position: relative;
   color: white;
-  font-size: 16px;
+  font-size: 1.2vw;
   text-transform: uppercase;
   font-weight: 700;
-  margin-right: 42px;
-  padding-bottom: 5px;
+  margin-right: 3.2vw;
+  padding-bottom: 0.4vw;
   :hover {
-    font-size: 16px;
+    font-size: 1.2vw;
     font-weight: 700;
     color: white;
     cursor: pointer;
-    border-bottom: solid 2px white;
+    border-bottom: solid 0.15vw white;
 
   }
   ${(props) => props.propstyle && `
   color: var(--granich-black);
   :hover {
-    font-size: 16px;
+    font-size: 1.2vw;
     font-weight: 700;
     color: var(--granich-black);
     cursor: pointer;
-    border-bottom: solid 2px var(--granich-black);
+    border-bottom: solid 0.15vw var(--granich-black);
   }
 `}
 
 `
+const NavLinkExternal = styled.a`
+  position: relative;
+  color: white;
+  font-size: 1.2vw;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-right: 3.2vw;
+  padding-bottom: 0.4vw;
+  :hover {
+    font-size: 1.2vw;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    border-bottom: solid 0.15vw white;
+
+  }
+  ${(props) => props.propstyle && `
+  color: var(--granich-black);
+  :hover {
+    font-size: 1.2vw;
+    font-weight: 700;
+    color: var(--granich-black);
+    cursor: pointer;
+    border-bottom: solid 0.15vw var(--granich-black);
+  }
+  `}
+`
+
 const ArrowLinkDown = styled(props => <ArrowDown {...props}/>)`
   position: absolute;
-  top: -8px;
-  right: -17px;
-  // width: 14px;
+  top: -0.5vw;
+  right: -1.4vw;
+
 
 `
 
 const ArrowLinkOut = styled(props => <ArrowOut {...props}/>)`
   position: absolute;
-  top: -8px;
-  right: -17px;
-  // width: 14px;
+  top: -0.5vw;
+  right: -1.4vw;
+
 
 `
 const ArrowLinkBack = styled(props => <ArrowBack {...props}/>)`
   position: absolute;
-  top: -8px;
-  right: -17px;
-  // width: 14px;
+  top: -0.5vw;
+  right: -1.4vw;
+
 
 `
 
@@ -105,25 +132,25 @@ const LoginButton = styled.a`
   align-items: center;
   color: white;
   background: var(--granich-red-gradient);
-  margin-top: -10px;
+  margin-top: -1.6vw;
   margin-left: auto;
-  padding: 8px 16px;
-  letter-spacing: 0.02em;
-  border-radius: 8px;
-  font-size: 15px;
+  padding: 0.6vw 1.1vw;
+  letter-spacing: 0.05vw;
+  border-radius: 0.5vw;
+  font-size: 1.15vw;
   text-transform: uppercase;
   font-weight: 600;
   transition: all 0.2s ease;
   user-select: none;
   svg {
-    width: 14px;
-    margin-right: 5px;
+    width: 1.1vw;
+    margin-right: 0.35vw;
   }
   :hover {
     transform: scale(1.1);
     cursor: pointer;
     color: white;
-    font-size: 15px;
+    font-size: 1.15vw;
     font-weight: 600;
   }
 `
@@ -147,16 +174,24 @@ const Header = ({ siteTitle, style }) => (
                 </NavLink>
               </li>  
               <li>
-                <NavLink to="/#preparation" propstyle={style}>
-                  Подготовка
-                  {style === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
-                </NavLink>
+                {style === 'dark' ? (
+                  <NavLink to="/#preparation" propstyle={style}>
+                    Подготовка
+                    {style === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
+                  </NavLink>
+                ) : (
+                  <NavLinkExternal onClick={() => scrollTo('#preparation')} propstyle={style}>
+                    Подготовка
+                    {style === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
+                  </NavLinkExternal>
+                )}
+
               </li>  
               <li>
-                <NavLink propstyle={style}>
+                <NavLinkExternal href="www.github.com" target="_blank" propstyle={style}>
                   Блог
                   <ArrowLinkOut/>
-                </NavLink>
+                </NavLinkExternal>
               </li>  
 
             </ul>

@@ -7,7 +7,7 @@ import PageUpIcon from '../assets/svgs/page-up.svg';
 
 const PageUpWrapper = styled(props => <PageUpIcon {...props}/>)`
     position: fixed;
-    bottom: 260px;
+    bottom: 7vw;
     transition: all 0.3s ease;
     :hover {
         cursor: pointer;
@@ -38,7 +38,7 @@ const PageTop = ({pageTop}) => {
     // }, [])
 
     return (
-        <PageUpWrapper style={{right: `${pageTop ? '45px' : '-45px'}`}} onClick={() => scrollTo('#header')}/>
+        <PageUpWrapper style={{right: `${pageTop ? '4.3vw' : '-4.3vw'}`}} onClick={() => scrollTo('#header')}/>
     )
 }
 

@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const ChatWrapper = styled(props => <ChatIcon {...props}/>)`
     position: fixed;
-    bottom: 205px;
-    right: 45px;
+    bottom: 2.8vw;
+    right: 4.3vw;
     
     transition: all 0.3s ease;
     :hover {
