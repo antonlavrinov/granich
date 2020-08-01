@@ -15,17 +15,50 @@ import PreCoursePreparation from "../components/PreCoursePreparation"
 import OurTeam from "../components/OurTeam"
 
 
-export const courseQuery = graphql`
-  query {
-    courses: allContentfulGranichMainCourses {
-      edges {
-        node {
-          courseCardName
+
+
+export const contentfulQuery = graphql`
+    query contentfulQuery {
+        courseCards: allContentfulGranichMainCourseCard {
+          edges {
+            node {
+              id
+              cardActive
+              cardDate
+              cardDescription {
+                cardDescription
+              }
+              cardDuration
+              cardImage {
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              cardTags
+              cardTeachers {
+                id
+                fluid(maxWidth: 100) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              cardTitle
+              typeOfCard
+            }
+          }
         }
-      }
     }
-  }
 `
+// export const courseQuery = graphql`
+//   query {
+//     courses: allContentfulGranichMainCourses {
+//       edges {
+//         node {
+//           courseCardName
+//         }
+//       }
+//     }
+//   }
+// `
 
     {/* {data.courses.edges.map((edge, idx) => {
       return (
@@ -39,7 +72,8 @@ const IndexPage = ({data}) => (
     <Header/>
     <SEO title="Онлайн-школа Granich" />
     <Offer/>
-    <Courses/>
+    {console.log('contentful page', data)}
+    <Courses data={data.courseCards} />
     <Manifest/>
     <PreCoursePreparation/>
     {/* <Manifest1/> */}

@@ -36,8 +36,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: 'qaie31l8q00f',
-        accessToken: 'AfDCuckrJ6gFtZYucdAWoABGUumqSwPjdsDV1VvXLD0',
+        spaceId: 'yej6fivg4hs3',
+        accessToken: 'qM75FANyENYf6D1mk7FPZmm4IG4tMGyQKGkvF5LRJQ4',
       }
     },
     {
@@ -49,7 +49,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`,
+        icon: `src/assets/images/granich-icon.png`,
         cache_busting_mode: 'none' // This path is relative to the root of the site.
       },
     },

@@ -11,7 +11,7 @@ import RobokasaIcon from '../assets/svgs/Robokassa.svg';
 
 const FooterSection = styled.footer`
     margin-top: auto;   
-    padding: 50px 0;
+    padding: 2.9vw 0 3.6vw;
 `
 
 const FooterWrapper = styled.div`
@@ -19,22 +19,20 @@ const FooterWrapper = styled.div`
 `
 
 const LogoWrapper = styled(props => <Link to="/" {...props} />)`
-  width: 65px;
   height: auto;
-//   margin-left: 1px;
   fill: var(--granich-black);
-  margin-right: 13px;
+  margin-right: 0.7vw;
 
 `
 
 const FooterInfo = styled.div`
-    margin-right: 30px;
+    margin-right: 1.5vw;
     letter-spacing: -0.01em;
 
 `
 
 const FooterInfoYear = styled.div`
-    font-size: 16px;
+    font-size: 1.1vw;
     font-weight: 500;
     line-height: 1.4;
     color: var(--granich-black);
@@ -43,22 +41,25 @@ const FooterInfoYear = styled.div`
 
 const FooterInfoMail = styled.a`
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1.16vw;
     color: var(--granich-black);
+    padding-bottom: 0.1vw;
+    border-bottom: solid 0.07vw var(--granich-black);
+    line-height: 1.2;
     :hover {
         font-weight: 500;
-        font-size: 16px;
+        font-size: 1.16vw;
     }
 `
 const FooterLink = styled(props => <Link {...props}/>)`
-    // width: 150px;
     line-height: 1.3;
-    color: var(--granich-grey);
-    font-size: 16px;
-    margin-right: 22px;
+    color: var(--granich-light-grey);
+    font-size: 1.16vw;
+    margin-right: 2vw;
+
 
     :last-of-type {
-        margin-right: 22px;
+        margin-right: 1.4vw;
         span {
             letter-spacing: -0.01em;
         }
@@ -67,34 +68,35 @@ const FooterLink = styled(props => <Link {...props}/>)`
 
         color: inherit;
         font-size: inherit;
+        border-bottom: 0.1vw dotted var(--granich-light-grey);
         :hover {
-            border-bottom: 1px dashed var(--granich-grey);
+            border-bottom: none;
         }
     }
     :hover {
-        font-size: 16px;
-        color: var(--granich-grey);
+        font-size: 1.16vw;
+        color: var(--granich-light-grey);
     }
 
 `
 
 const FooterCredentials = styled.div`
-    // display: inline-block;
-    // margin-left: 25px;
     line-height: 1.2;
-    // width: 300px;
-    font-size: 11px;
-    letter-spacing: -0.03em;
-    color: var(--granich-grey);
-    // width: 180px;
-    // margin-right: 38px;
+    font-size: 0.8vw;
+    letter-spacing: -0.02em;
+    color: var(--granich-light-grey);
+
 `
 
 const FooterPayment = styled.div`
     display: flex;
     margin-left: auto;
-    img {
-        width: 80px;
+    margin-right: -0.3vw;
+    svg {
+        margin-right: 0.8vw;
+        :last-child {
+            margin-right: 0;
+        }
     }
 `
 
@@ -110,7 +112,7 @@ const Footer = () => {
                     
                     <FooterInfo>
                         <FooterInfoYear>© {new Date().getFullYear()}</FooterInfoYear>
-                        <FooterInfoMail href="mailto:info@granich.ru">info@granich.ru</FooterInfoMail>
+                        <FooterInfoMail href="mailto:hello@granich.design">hello@granich.design</FooterInfoMail>
                     </FooterInfo>
                     <FooterLink to="/public-offer"><span>Пользовательское <br/>соглашение</span></FooterLink>
                     <FooterLink to="/privacy"><span>Политика <br/>конфиденциальности</span></FooterLink>
@@ -122,8 +124,8 @@ const Footer = () => {
  
                     </FooterCredentials>
                     <FooterPayment>
-                        <RobokasaIcon style={{marginRight: '12px'}}/>
-                        <VisaIcon style={{marginRight: '12px'}}/>
+                        <RobokasaIcon/>
+                        <VisaIcon/>
                         <MastercardIcon/>
                     </FooterPayment>
                 </FooterWrapper>

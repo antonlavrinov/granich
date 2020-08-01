@@ -82,6 +82,7 @@ const ManifestInfoTitle = styled.h2`
 `
 
 const ManifestInfoText = styled.p`
+    font-weight: 500;
     font-size: 1.55vw;
     line-height: 1.5;
     width: 45vw;
