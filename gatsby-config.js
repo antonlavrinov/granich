@@ -44,7 +44,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Онлайн-школа Granich`,
-        short_name: `Granichh`,
+        short_name: `Granich`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
