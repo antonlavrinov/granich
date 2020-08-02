@@ -27,6 +27,7 @@ export const contentfulQuery = graphql`
               cardDate
               cardDescription {
                 cardDescription
+                
               }
               cardDuration
               cardImage {
