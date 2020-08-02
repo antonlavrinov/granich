@@ -73,7 +73,7 @@ const IndexPage = ({data}) => (
     <SEO title="Онлайн-школа Granich" />
     <Offer/>
     {console.log('contentful page', data)}
-    <Courses data={data.courseCards}  />
+    <Courses data={data.courseCards} />
     <Manifest/>
     <PreCoursePreparation/>
     {/* <Manifest1/> */}
