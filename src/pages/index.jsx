@@ -75,7 +75,6 @@ const IndexPage = ({data}) => (
     {console.log('contentful page', data)}
     <Courses data={data.courseCards}  />
     <Manifest/>
-    <Manifest/>
     <PreCoursePreparation/>
     {/* <Manifest1/> */}
     <Mailing/>

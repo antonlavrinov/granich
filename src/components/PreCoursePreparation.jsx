@@ -10,36 +10,46 @@ const PreparationSection = styled.section`
 const PreparationWrapper = styled.div`
 
     background: lightgrey;
-    padding: 50px;
-    border-radius: 10px;
+    padding: 3.5vw 4.4vw;
+    border-radius: 1vw;
 `
 
 const PreparationHeader = styled.div`
     display: flex;
+    margin-bottom: 3.5vw;
 `
 
 const PreparationTitle = styled.div`
     color: black;
-    font-size: 50px;
+    font-size: 4.04vw;
     font-weight: 700;
+    line-height: 1.1;
+    margin-right: 3.7vw;
 
 `
 
 const PreparationText = styled.div`
     color: black;
-    font-size: 15px;
+    font-size: 1.5vw;
+    margin-top: 0.8vw;
+    line-height: 1.5;
+    letter-spacing: 0.03vw;
 
 `
 
 const PreparationFilters = styled.div`
     display: flex;
     padding: 15px 0;
-    border-bottom: 2px solid grey;
+    border-bottom: 0.1vw solid var(--granich-light-grey);
 `
 const PreparationFilter = styled.div`
-    margin-right: 10px;
+    font-size: 1.2vw;
+    margin-right: 2.6vw;
     :hover {
         cursor: pointer;
+    }
+    :first-child {
+        margin-left: 0.25vw;
     }
 
 `
@@ -68,10 +78,10 @@ const PreCoursePreparation = () => {
                 <PreparationWrapper>
                     <PreparationHeader>
                         <PreparationTitle>
-                            Подготовка к курсам
+                            Подготовка <br/>к курсам
                         </PreparationTitle>
                         <PreparationText>
-                        Сомневаетесь записаться ли на курс? Изучите бесплатные материалы школы и познакомьтесь с нашим подходом
+                        Сомневаетесь записаться ли на курс? <br/>Изучите бесплатные материалы школы <br/>и познакомьтесь с нашим подходом
                         </PreparationText>
 
                     </PreparationHeader>
@@ -79,14 +89,12 @@ const PreCoursePreparation = () => {
                         <PreparationFilter>
                             Рекомендуемое
                         </PreparationFilter>
-                        <PreparationFilter>
-                            Популярное
-                        </PreparationFilter>
+
                         <PreparationFilter>
                             Новое
                         </PreparationFilter>
                         <PreparationFilter>
-                            Всё
+                            Популярное
                         </PreparationFilter>
                     </PreparationFilters>
                     <PreparationTags>

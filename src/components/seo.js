@@ -10,12 +10,12 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import favicon16x16 from "../assets/images/16x16.png";
-import favicon32x32 from "../assets/images/32x32.png";
+import favicon32x32 from "../assets/images/favicons/32x32.png";
 import favicon64x64 from "../assets/images/64x64.png";
 
 const faviconLinks = [
-  { rel: "icon", type: "image/png", sizes: "16x16", href: favicon16x16 },
-  { rel: "icon", type: "image/png", sizes: "32x32", href: favicon32x32 },
+  { rel: "icon", href: favicon16x16 },
+  { rel: "icon", href: favicon32x32 },
   { rel: "shortcut icon", type: "image/png", href: favicon64x64 },
 ]
 
