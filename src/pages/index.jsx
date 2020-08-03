@@ -7,9 +7,8 @@ import SEO from "../components/seo"
 import {graphql} from 'gatsby'
 import Offer from '../components/Offer';
 import Courses from "../components/Courses"
-import Mailing from "../components/Mailing"
-import Manifest from "../components/Manifest"
-import Manifest1 from "../components/Manifest1"
+import Mailing from "../components/Mailing";
+import Manifest from "../components/Manifest";
 import Header from '../components/Header';
 import PreCoursePreparation from "../components/PreCoursePreparation"
 import OurTeam from "../components/OurTeam"
@@ -45,26 +44,28 @@ export const contentfulQuery = graphql`
               typeOfCard
             }
           }
+        },
+        postCards: allContentfulGranichMainPostCard {
+          edges {
+            node {
+              postDescription {
+                postDescription
+              }
+              postRecommended
+              postTags
+              postTitle
+              postType
+              postSlug
+              postLinkPinterest {
+                postLinkPinterest
+              }
+            }
+          }
         }
     }
 `
-// export const courseQuery = graphql`
-//   query {
-//     courses: allContentfulGranichMainCourses {
-//       edges {
-//         node {
-//           courseCardName
-//         }
-//       }
-//     }
-//   }
-// `
 
-    {/* {data.courses.edges.map((edge, idx) => {
-      return (
-        <div key={idx}>{edge.node.courseCardName}</div> 
-      )
-    })} */}
+
 
 
 const IndexPage = ({data}) => (
@@ -75,7 +76,7 @@ const IndexPage = ({data}) => (
     {console.log('contentful page', data)}
     <Courses data={data.courseCards}  />
     <Manifest/>
-    <PreCoursePreparation/>
+    <PreCoursePreparation data={data.postCards}/>
     {/* <Manifest1/> */}
     <Mailing/>
     <OurTeam/>

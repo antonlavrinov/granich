@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from './style';
 import styled from 'styled-components';
-import PreparationItem from './PreparationItem';
+import PreparationPost from './PreparationPost';
 
 const PreparationSection = styled.section`
     padding: 154px 0px;
@@ -16,15 +16,16 @@ const PreparationWrapper = styled.div`
 
 const PreparationHeader = styled.div`
     display: flex;
-    margin-bottom: 3.5vw;
+    margin-bottom: 3.4vw;
 `
 
 const PreparationTitle = styled.div`
     color: black;
-    font-size: 4.04vw;
+    font-size: 4.3vw;
+    letter-spacing: -0.2vw;
     font-weight: 700;
-    line-height: 1.1;
-    margin-right: 3.7vw;
+    line-height: 1.05;
+    margin-right: 4vw;
 
 `
 
@@ -39,17 +40,21 @@ const PreparationText = styled.div`
 
 const PreparationFilters = styled.div`
     display: flex;
-    padding: 15px 0;
+    padding: 15px 0 0;
     border-bottom: 0.1vw solid var(--granich-light-grey);
+    margin-bottom: 1vw;
 `
 const PreparationFilter = styled.div`
-    font-size: 1.2vw;
+    font-size: 1.15vw;
     margin-right: 2.6vw;
+    margin-bottom: -0.1vw;
+    padding-bottom: 1vw;
+    border-bottom: 0.1vw solid var(--granich-red);
     :hover {
         cursor: pointer;
     }
     :first-child {
-        margin-left: 0.25vw;
+        padding-left: 0.25vw;
     }
 
 `
@@ -62,8 +67,12 @@ const PreparationTag = styled.div`
     padding: 5px;
 `
 
-const PreparationItems = styled.div`
-    display: flex;
+const PreparationPosts = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 2vw;
+    grid-row-gap: 2vw;
+    padding: 0 0.2vw;
 `
 
 const PreparationButtonMore = styled.div`
@@ -71,7 +80,7 @@ const PreparationButtonMore = styled.div`
 `
 
 
-const PreCoursePreparation = () => {
+const PreCoursePreparation = ({data}) => {
     return (
         <PreparationSection id="preparation">
             <Container>
@@ -108,12 +117,16 @@ const PreCoursePreparation = () => {
                             Фриланс
                         </PreparationTag>
                     </PreparationTags>
-                    <PreparationItems>
-                        <PreparationItem/>
-                        <PreparationItem/>
-                        <PreparationItem/>
+                    <PreparationPosts>
 
-                    </PreparationItems>
+                        {data.edges.map((post, idx) => {
+                            return (
+                                <PreparationPost key={idx} post={post}/>
+                            )
+                        })}
+
+
+                    </PreparationPosts>
                 </PreparationWrapper>
             </Container>
 

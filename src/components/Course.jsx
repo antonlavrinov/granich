@@ -221,7 +221,7 @@ const Course = ({courseData}) => {
                     <>
                         {courseData.node.cardTags.map((cardTag, idx) => {
                             return (
-                                <CourseTag active={courseData.node.cardActive}>{cardTag}</CourseTag>
+                                <CourseTag key={idx} active={courseData.node.cardActive}>{cardTag}</CourseTag>
                             )
                         })}
                         

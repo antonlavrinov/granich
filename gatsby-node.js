@@ -1,7 +1,33 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path');
+const {createFilePath} = require('gatsby-source-filesystem');
 
-// You can delete this file if you're not using it
+exports.createPages = ({graphql, actions}) => {
+    const {createPage} = actions;
+    const contentPost = path.resolve('./src/pages/content-post.jsx');
+    return graphql(`
+        {
+            allContentfulGranichMainPostCard {
+                edges {
+                    node {
+                        postSlug
+                    }
+                }
+            }
+        }
+
+    `).then(result => {
+        if(result.errors) {
+            throw result.errors
+        }
+        const posts = result.data.allContentfulGranichMainPostCard.edges;
+        posts.forEach((post, index) => {
+            createPage({
+                path: post.node.postSlug,
+                component: contentPost,
+                context: {
+                    slug: post.node.postSlug
+                }
+            })
+        })
+    })
+}
