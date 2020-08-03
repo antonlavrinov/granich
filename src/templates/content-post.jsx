@@ -16,6 +16,7 @@ const PostWrapper = styled.section`
 export const pageQuery = graphql`
     query ContentfulPostBySlug($slug: String!) {
         contentfulPost: contentfulGranichMainPostCard( postSlug: { eq: $slug }) {
+            postSlug
             postTitle
             postDescription {
                 postDescription
@@ -32,6 +33,7 @@ const PostPage = ({data}) => {
             <PostSection>
                 <Container>
                     <PostWrapper>
+                        {console.log('SLUG', data.contentfulPost)}
                         <div>{data.contentfulPost.postTitle}</div>
                         <div>{data.contentfulPost.postDescription.postDescription}</div>
                     </PostWrapper>

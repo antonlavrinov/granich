@@ -3,7 +3,7 @@ const {createFilePath} = require('gatsby-source-filesystem');
 
 exports.createPages = ({graphql, actions}) => {
     const {createPage} = actions;
-    const contentPost = path.resolve('./src/pages/content-post.jsx');
+    const contentPost = path.resolve('./src/templates/content-post.jsx');
     return graphql(`
         {
             allContentfulGranichMainPostCard {
@@ -25,7 +25,8 @@ exports.createPages = ({graphql, actions}) => {
                 path: post.node.postSlug,
                 component: contentPost,
                 context: {
-                    slug: post.node.postSlug
+                    slug: post.node.postSlug,
+                    title: post.node.postTitle
                 }
             })
         })
