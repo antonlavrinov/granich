@@ -79,7 +79,9 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      {/* <script src="//code-ya.jivosite.com/widget/KT2GyOyeED" async></script> */}
+    </Helmet>
   )
 }
 

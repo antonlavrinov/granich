@@ -8,14 +8,14 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 
 const ManifestSection = styled.section`
-
+    margin-bottom: 4vw;
 
 `
 const ManifestWrapper = styled.div`
 
     background: white;
     padding: 4vw 5.3vw 5vw;
-    border-radius: 1vw;
+    border-radius: 0.6vw;
 `
 const ManifestSecondaryWrapper = styled.div`
     display: flex;

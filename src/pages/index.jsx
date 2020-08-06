@@ -18,6 +18,26 @@ import OurTeam from "../components/OurTeam"
 
 export const contentfulQuery = graphql`
     query contentfulQuery {
+        header:   allContentfulGranichMainHeader {
+          edges {
+            node {
+              headerImage {
+                fluid(maxWidth: 2729, quality: 100) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              headerSubtitleImage {
+                fluid(maxWidth: 50, quality: 100) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              headerSubtitle_01
+              headerSubtitle_02
+              headerSubtitle_03
+              headerTitle
+            }
+          }
+        }
         courseCards: allContentfulGranichMainCourseCard {
           edges {
             node {
@@ -42,6 +62,7 @@ export const contentfulQuery = graphql`
               }
               cardTitle
               typeOfCard
+              cardSlug
             }
           }
         },
@@ -54,10 +75,24 @@ export const contentfulQuery = graphql`
               postRecommended
               postTags
               postTitle
+              postImage {
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid
+                }
+              }
               postType
               postSlug
               postLinkPinterest {
                 postLinkPinterest
+              }
+              postLinkBehance {
+                postLinkBehance
+              }
+              postLinkYoutube {
+                postLinkYoutube
+              }
+              postLinkMedium {
+                postLinkMedium
               }
             }
           }
@@ -72,13 +107,14 @@ const IndexPage = ({data}) => (
   <Layout>
     <Header/>
     <SEO title="Онлайн-школа Granich" />
-    <Offer/>
+    <Offer data={data.header}/>
     {console.log('contentful page', data)}
     <Courses data={data.courseCards}  />
     <Manifest/>
+    <Mailing/>
     <PreCoursePreparation data={data.postCards}/>
     {/* <Manifest1/> */}
-    <Mailing/>
+
     <OurTeam/>
   </Layout>
 )

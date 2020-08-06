@@ -5,13 +5,13 @@ import BlackArrowRight from '../assets/svgs/arrow-black-right.svg';
 import { Container } from './style';
 
 const MailingSection = styled.section`
-
+    margin-bottom: 4vw;
 `
 
 const MailingWrapper = styled.div`
     width: 100%;
     background: var(--granich-red);
-    border-radius: 0.9vw;
+    border-radius: 0.6vw;
     position: relative;
 `
 

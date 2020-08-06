@@ -36,7 +36,7 @@ import {graphql} from 'gatsby';
 const CoursesSection = styled.section`
     position: relative;
     margin-top: -4.5vw;
-    margin-bottom: 2.6vw;
+    margin-bottom: 4vw;
 `
 
 const CoursesWrapper = styled.div`
@@ -70,9 +70,9 @@ const Courses = ({data}) => {
     console.log('courses', data)
 
     return (
-        <CoursesSection>
+        <CoursesSection id="courses">
             <Container>
-                <CoursesWrapper>
+                <CoursesWrapper >
                     {data.edges.map((course, idx) => {
                         return (
                             <Course key={idx} courseData={course}/>

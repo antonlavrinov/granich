@@ -41,7 +41,7 @@ const HeaderWrapper = styled.div`
 
 const NavLinks = styled.nav`
   color: white;
-  margin-left: 3.5vw;
+  margin-left: 3.15vw;
   margin-top: -1vw;
   ul {
     display: flex;
@@ -51,13 +51,13 @@ const NavLinks = styled.nav`
 const NavLink = styled(props => <Link {...props} />)`
   position: relative;
   color: white;
-  font-size: 1.2vw;
+  font-size: 1.15vw;
   text-transform: uppercase;
   font-weight: 700;
   margin-right: 3.2vw;
   padding-bottom: 0.4vw;
   :hover {
-    font-size: 1.2vw;
+    font-size: 1.15vw;
     font-weight: 700;
     color: white;
     cursor: pointer;
@@ -168,10 +168,17 @@ const Header = ({ siteTitle, style }) => (
           <NavLinks >
             <ul >
               <li>
-                <NavLink propstyle={style} to="/osoznanny-graph-design">
-                  Курсы
-                  {style === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
-                </NavLink>
+                {style === 'dark' ? (
+                    <NavLink to="/#courses" propstyle={style}>
+                      Курсы
+                      {style === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
+                    </NavLink>
+                  ) : (
+                    <NavLinkExternal onClick={() => scrollTo('#courses')} propstyle={style}>
+                      Курсы
+                      {style === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
+                    </NavLinkExternal>
+                )}
               </li>  
               <li>
                 {style === 'dark' ? (
@@ -188,7 +195,7 @@ const Header = ({ siteTitle, style }) => (
 
               </li>  
               <li>
-                <NavLinkExternal href="www.github.com" target="_blank" propstyle={style}>
+                <NavLinkExternal href="https://granich.ru/cms/system/login" target="_blank" propstyle={style}>
                   Блог
                   <ArrowLinkOut/>
                 </NavLinkExternal>
@@ -196,7 +203,7 @@ const Header = ({ siteTitle, style }) => (
 
             </ul>
           </NavLinks>
-          <LoginButton>
+          <LoginButton href="https://granich.ru/cms/system/login" target="_blank">
             <LoginButtonIcon/>Войти
           </LoginButton>
 

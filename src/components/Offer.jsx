@@ -42,7 +42,8 @@ const OfferDescr = styled.div`
     letter-spacing: .01vw;
     font-size: 2.35vw;
     line-height: 1;
-    font-family: Cormorant Garamond;
+    font-family: EB Garamond;
+    font-style: italic;
     position: relative;
     span {
         font-weight: inherit;
@@ -74,7 +75,7 @@ const OfferSvgClip = styled(props => <BackgroundClip {...props}/>)`
 `
 
 const OfferFlagsImg = styled(props => <Img {...props} />)`
-    margin-left: 1vw;
+    margin-left: 0.3vw;
     top: 0.2vw;
     width: 2vw;
     display: inline-block;
@@ -84,48 +85,55 @@ const OfferFlagsImg = styled(props => <Img {...props} />)`
 
 
 
-const Offer = () => {
+const Offer = ({data}) => {
 
-    const data = useStaticQuery(graphql`
-        query flagsImageAndOfferBackground {
-            placeholderImage: file(relativePath: { eq: "background1.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2729, quality: 100) {
+    // const data = useStaticQuery(graphql`
+    //     query flagsImageAndOfferBackground {
+    //         placeholderImage: file(relativePath: { eq: "background1.jpg" }) {
+    //             childImageSharp {
+    //                 fluid(maxWidth: 2729, quality: 100) {
 
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
+    //                     ...GatsbyImageSharpFluid
+    //                 }
+    //             }
+    //         }
 
-            flags: file(relativePath: { eq: "flags.png" }) {
-                childImageSharp {
-                    fluid(maxWidth: 50, quality: 100) {
+    //         flags: file(relativePath: { eq: "flags.png" }) {
+    //             childImageSharp {
+    //                 fluid(maxWidth: 50, quality: 100) {
 
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-        }
-    `)
+    //                     ...GatsbyImageSharpFluid
+    //                 }
+    //             }
+    //         }
+    //     }
+    // `)
 
-        console.log('data', data)
-        const imageData = data.placeholderImage.childImageSharp.fluid
-        console.log('data', imageData)
+
+        // const imageData = data.placeholderImage.childImageSharp.fluid
+        const headerImage = data.edges[0].node.headerImage.fluid
+        const headerSubtitleImage = data.edges[0].node.headerSubtitleImage.fluid
+        const headerSubtitle_01 = data.edges[0].node.headerSubtitle_01
+        const headerSubtitle_02 = data.edges[0].node.headerSubtitle_02
+        const headerSubtitle_03 = data.edges[0].node.headerSubtitle_03
+        const headerTitle = data.edges[0].node.headerTitle
+
     return (
-        <OfferSection fluid={imageData} id="offer" style={{
+        <OfferSection fluid={headerImage} id="offer" style={{
             // background: `url('${background}')`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             // backgroundAttachment: 'fixed',
             backgroundPosition: 'top',
-            backgroundSize: '112%'
+            // backgroundSize: '112%'
+            backgroundSize: '100%'
             }}>
         {/* <BackgroundImage fluid={imageData}> */}
 
             <Container>
-                <OfferTitle>Онлайн-школа Granich</OfferTitle>
+                <OfferTitle>{headerTitle}</OfferTitle>
                 <OfferDescr>
-                    Онлайн-курсы <OfferFlagsImg alt="flags" fluid={data.flags.childImageSharp.fluid} /> <br/> с <span onClick={() => scrollTo('#manifest')}>осознанным подходом <OfferUnderlineIcon/></span>
+                    {headerSubtitle_01} <OfferFlagsImg alt="flags" fluid={headerSubtitleImage} /> <br/> {headerSubtitle_02} <span onClick={() => scrollTo('#manifest')}>{headerSubtitle_03} <OfferUnderlineIcon/></span>
                 </OfferDescr>
                 
 

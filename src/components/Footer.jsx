@@ -44,11 +44,12 @@ const FooterInfoMail = styled.a`
     font-size: 1.16vw;
     color: var(--granich-black);
     padding-bottom: 0.1vw;
-    border-bottom: solid 0.07vw var(--granich-black);
+
     line-height: 1.2;
     :hover {
         font-weight: 500;
         font-size: 1.16vw;
+        border-bottom: solid 0.07vw var(--granich-black);
     }
 `
 const FooterLink = styled(props => <Link {...props}/>)`
@@ -68,9 +69,10 @@ const FooterLink = styled(props => <Link {...props}/>)`
 
         color: inherit;
         font-size: inherit;
-        border-bottom: 0.1vw dotted var(--granich-light-grey);
+
         :hover {
             border-bottom: none;
+            border-bottom: 0.1vw solid var(--granich-light-grey);
         }
     }
     :hover {
@@ -83,7 +85,7 @@ const FooterLink = styled(props => <Link {...props}/>)`
 const FooterCredentials = styled.div`
     line-height: 1.2;
     font-size: 0.8vw;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01vw;
     color: var(--granich-light-grey);
 
 `

@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import WhiteArrowNewPage from '../assets/svgs/arrow-white-newpage.svg';
 import BlackArrowNewPage from '../assets/svgs/arrow-black-newpage.svg';
 import BackgroundImage from 'gatsby-image';
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
-const CourseWrapper = styled.div`
+const CourseWrapper = styled(props => <Link {...props}/>)`
     background: white;
-    border-radius: 0.7vw;
+    border-radius: 0.6vw;
     box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
     transition: all 0.4s ease;
     display: flex;
@@ -16,7 +16,7 @@ const CourseWrapper = styled.div`
 
     :hover {
         cursor: pointer;
-        transform: scale(1.04);
+        transform: scale(1.03);
     }
     
 `
@@ -55,7 +55,7 @@ const CourseMainTag = styled.div`
 `
 
 const CourseTag = styled.div`
-    border: 0.1vw solid var(--granich-red);
+    border: 0.05vw solid var(--granich-red);
     color: var(--granich-red);
     border-radius: 100vw;
     font-weight: 600;
@@ -89,7 +89,7 @@ const CourseTitle = styled.div`
 
     `}
     ${(props) => !props.active && `
-        filter: opacity(30%);
+        color: var(--granich-light-grey);
     `}
 `
 
@@ -100,7 +100,7 @@ const CourseImage = styled(props => <BackgroundImage {...props}></BackgroundImag
 
 const CourseButton = styled.div`
     background: var(--granich-red);
-    border-radius: 0 0 0.7vw 0.7vw;
+    border-radius: 0 0 0.6vw 0.6vw;
     color: white;
     margin-top: auto;
     ${(props) => !props.active && `
@@ -118,7 +118,7 @@ const CourseButtonWrapper = styled.div`
 const CourseButtonText = styled.div`
     color: white;
     font-size: 1.45vw;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 0.95;
     margin-left: 0.3vw;
     margin-top: -0.5vw;
@@ -134,42 +134,53 @@ const CourseInfo = styled.div`
     margin-top: 0.9vw;
     height: 100%;
     align-items: center;
-    ${(props) => !props.active && `
-        filter: opacity(30%) grayscale(100%);
-    `}
+    // ${(props) => !props.active && `
+    //     filter: opacity(30%) grayscale(100%);
+    // `}
 `
 const CourseDescr = styled.div`
     font-size: 1vw;
     margin-left: 0.3vw;
-    color: grey;
+    color: var(--granich-light-grey);
     letter-spacing: -0.01vw;
     font-weight: 500;
     margin-top: 0.2vw;
     height: 100%;
+    line-height: 1;
+    margin-top: 0.5vw;
     ${(props) => !props.active && `
-        filter: opacity(40%) grayscale(100%);
+        color: var(--granich-light-grey);
     `}
 `
 
 const CourseStart = styled.div`
     font-size: inherit;
     margin-right: 1.1vw;
-    font-weight: 700;
-    color: grey;
+    font-weight: 600;
+    color: var(--granich-light-grey);
     span {
         font-weight: inherit;
         font-size: inherit;
+        color: black;
+        ${(props) => !props.active && `
+            color: var(--granich-light-grey);
+        `}
     }
 `
 
 const CourseDuration = styled.div`
     font-size: inherit;
-    font-weight: 700;
-    color: grey;
+    font-weight: 600;
+    color: var(--granich-light-grey);
     span {
         font-weight: inherit;
         font-size: inherit;
+        color: black;
+        ${(props) => !props.active && `
+            color: var(--granich-light-grey);
+        `}
     }
+    
 `
 
 const CourseTeachers = styled.div`
@@ -208,7 +219,7 @@ const Course = ({courseData}) => {
     const imageData = data.placeholderImage.childImageSharp.fluid
     console.log('courseData', courseData)
     return (
-        <CourseWrapper>
+        <CourseWrapper to={courseData.node.cardSlug}>
             <CourseContainer>
                 <CourseTagList>
                     <>
@@ -234,10 +245,10 @@ const Course = ({courseData}) => {
                 <CourseTitle cardType={courseData.node.typeOfCard === 'Курс' ? true : false} active={courseData.node.cardActive}>{courseData.node.cardTitle}</CourseTitle>
                 {courseData.node.typeOfCard === 'Курс' ? (
                     <CourseInfo active={courseData.node.cardActive}>
-                        <CourseStart>
+                        <CourseStart active={courseData.node.cardActive}>
                             Стартуем <br/> <span>{courseData.node.cardDate}</span>
                         </CourseStart>
-                        <CourseDuration>
+                        <CourseDuration active={courseData.node.cardActive}>
                             Учимся <br/> <span>{courseData.node.cardDuration}</span>
                         </CourseDuration>
                         <CourseTeachers>
