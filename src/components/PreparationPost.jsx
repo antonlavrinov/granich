@@ -261,7 +261,12 @@ const PreparationPost = ({post}) => {
                         </PostTagList>
                         <PostImage fluid={post.postImage.fluid}></PostImage>
                         <PostTitle>{post.postTitle}</PostTitle>
-                        <PostDescr>{post.postDescription.postDescription}</PostDescr>
+                        {post.postDescription ? (
+                            <PostDescr>{post.postDescription.postDescription}</PostDescr>
+                        ) : (
+                            <div></div>
+                        )}
+                        
                     </PostContainer>
                     <PostButton type={post.postType}>
                         <PostContainer>
