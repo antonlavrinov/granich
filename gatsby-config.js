@@ -50,13 +50,13 @@ module.exports = {
         theme_color: `#ffffff`,
         display: `minimal-ui`,
         icon: `src/assets/images/512x512.png`,
-        icons: [
-          {
-            "src": "favicons/32x32.png",
-            "sizes": "32x32",
-            "type": "image/png"
-          },
-        ],
+        // icons: [
+        //   {
+        //     "src": "favicons/32x32.png",
+        //     "sizes": "32x32",
+        //     "type": "image/png"
+        //   },
+        // ],
         //   {
         //     "src": "32x32.png",
         //     "sizes": "32x32",
