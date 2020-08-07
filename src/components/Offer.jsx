@@ -33,18 +33,19 @@ const OfferTitle = styled.h1`
     line-height: 0.88;
     letter-spacing: -.4vw;
     width: 60vw;
-    margin-bottom: 2.5vw;
+    margin-bottom: 2.2vw;
     margin-left: -1.1vw;
 `
 const OfferDescr = styled.div`
     margin-left: -.3vw;
     color: white;
     letter-spacing: .01vw;
-    font-size: 2.35vw;
+    font-size: 2.32vw;
     line-height: 1;
     font-family: EB Garamond;
     font-style: italic;
     position: relative;
+    font-weight: 500;
     span {
         font-weight: inherit;
         font-size: inherit;
@@ -62,7 +63,7 @@ const OfferUnderlineIcon = styled(props => <UnderlineLinkIcon {...props}/>)`
     width: 20.8vw;
     position: absolute;
     bottom: -1.1vw;
-    left: 0.4vw;
+    left: 0.2vw;
     // left: 1.8em;
 
     
@@ -75,7 +76,7 @@ const OfferSvgClip = styled(props => <BackgroundClip {...props}/>)`
 `
 
 const OfferFlagsImg = styled(props => <Img {...props} />)`
-    margin-left: 0.3vw;
+    margin-left: 0.1vw;
     top: 0.2vw;
     width: 2vw;
     display: inline-block;

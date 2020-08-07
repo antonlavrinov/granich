@@ -38,7 +38,7 @@ export const contentfulQuery = graphql`
             }
           }
         }
-        courseCards: allContentfulGranichMainCourseCard {
+        courseCards: allContentfulGranichMainCourseCard(sort: {fields: [cardOrderNumber], order: ASC}) {
           edges {
             node {
               id
@@ -66,7 +66,7 @@ export const contentfulQuery = graphql`
             }
           }
         },
-        postCards: allContentfulGranichMainPostCard {
+        postCards: allContentfulGranichMainPostCard(sort: {fields: [createdAt], order: DESC}) {
           edges {
             node {
               postDescription {
@@ -96,7 +96,29 @@ export const contentfulQuery = graphql`
               }
             }
           }
+        },
+        team: allContentfulGranichMainTeachers {
+          edges {
+            node {
+              id
+              teacherDescription
+              teacherEmail
+              teacherImage {
+                fluid(maxWidth: 400) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              teacherName
+              teacherSocialInstagram
+              teacherSocialPinterest
+              teacherSocialTelegram
+              teacherSocialVK
+              teacherSocialsOrder
+            }
+          }
         }
+      
+        
     }
 `
 
@@ -115,7 +137,7 @@ const IndexPage = ({data}) => (
     <PreCoursePreparation data={data.postCards}/>
     {/* <Manifest1/> */}
 
-    <OurTeam/>
+    <OurTeam data={data.team}/>
   </Layout>
 )
 

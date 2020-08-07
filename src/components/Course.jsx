@@ -21,7 +21,7 @@ const CourseWrapper = styled(props => <Link {...props}/>)`
     
 `
 const CourseContainer = styled.div`
-    padding: 0.8vw;
+    padding: 0.9vw;
     padding-top: 0.9vw;
     display: flex;
     flex-direction: column;
@@ -30,6 +30,7 @@ const CourseContainer = styled.div`
 `
 const CourseTagList = styled.div`
     margin-bottom: 0.9vw;
+    display: flex;
     width: 100%;
 `
 
@@ -78,6 +79,7 @@ const CourseTag = styled.div`
 
 const CourseTitle = styled.div`
     font-size: 1.75vw;
+    margin-top: 0.4vw;
     margin-left: 0.3vw;
     line-height: 0.9;
     font-weight: 600;
@@ -94,8 +96,14 @@ const CourseTitle = styled.div`
 `
 
 const CourseImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-    margin-bottom: 0.4vw;
-    min-height: 14.5vw;
+    // margin-bottom: 0.4vw;
+    min-height: 15.7vw;
+    width: 100%;
+    position: relative;
+`
+
+const CourseImageWrapper = styled.div`
+    position: relative;
 `
 
 const CourseButton = styled.div`
@@ -134,9 +142,7 @@ const CourseInfo = styled.div`
     margin-top: 0.9vw;
     height: 100%;
     align-items: center;
-    // ${(props) => !props.active && `
-    //     filter: opacity(30%) grayscale(100%);
-    // `}
+
 `
 const CourseDescr = styled.div`
     font-size: 1vw;
@@ -184,19 +190,26 @@ const CourseDuration = styled.div`
 `
 
 const CourseTeachers = styled.div`
+    position: absolute;
     display: flex;
-    margin-left: auto;
+    // margin-left: auto;
+    bottom: 0.8vw;
+    left: 0.8vw;
+    z-index: 100;
+    ${(props) => !props.active && `
+        filter: opacity(30%) grayscale(100%);
+    `}
 `
 const CourseTeacher = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     background: grey;
     border-radius: 100px;
     margin-top: -0.2vw;
     margin-right: 0.1vw;
-    height: 2.2vw;
-    width: 2.2vw;
+    height: 2.4vw;
+    width: 2.4vw;
     ${props => props.several && `
-        :first-child {
-            transform: translateX(17%);
+        :last-child {
+            transform: translateX(-17%);
             z-index: 1;
         }
     `}
@@ -241,7 +254,27 @@ const Course = ({courseData}) => {
                     
                 </CourseTagList>
 
-                <CourseImage fluid={courseData.node.cardImage.fluid}></CourseImage>
+                <CourseImageWrapper>
+                    <CourseImage fluid={courseData.node.cardImage.fluid}>
+                    </CourseImage>
+                    <CourseTeachers active={courseData.node.cardActive}>
+                        {courseData.node.cardTeachers.length > 1 ? (
+                            <>
+                                {courseData.node.cardTeachers.map((teacher, idx) => {
+                                    return (
+                                        <CourseTeacher several={true} key={idx} fluid={teacher.fluid}/>
+                                    )
+                                })}
+                            </>
+
+                        ) : (
+                            <CourseTeacher  fluid={courseData.node.cardTeachers[0].fluid}/>
+                        )}
+                    </CourseTeachers>
+                </CourseImageWrapper>
+
+
+
                 <CourseTitle cardType={courseData.node.typeOfCard === 'Курс' ? true : false} active={courseData.node.cardActive}>{courseData.node.cardTitle}</CourseTitle>
                 {courseData.node.typeOfCard === 'Курс' ? (
                     <CourseInfo active={courseData.node.cardActive}>
@@ -251,21 +284,7 @@ const Course = ({courseData}) => {
                         <CourseDuration active={courseData.node.cardActive}>
                             Учимся <br/> <span>{courseData.node.cardDuration}</span>
                         </CourseDuration>
-                        <CourseTeachers>
-                            {courseData.node.cardTeachers.length > 1 ? (
-                                <>
-                                    {courseData.node.cardTeachers.map((teacher) => {
-                                        return (
-                                            <CourseTeacher several={true} key={teacher.id} fluid={teacher.fluid}/>
-                                        )
-                                    })}
-                                </>
 
-                            ) : (
-                                <CourseTeacher  fluid={courseData.node.cardTeachers[0].fluid}/>
-                            )}
-
-                        </CourseTeachers>
                     </CourseInfo>
                 ) : (
                     <CourseDescr active={courseData.node.cardActive}>
@@ -281,7 +300,7 @@ const Course = ({courseData}) => {
                             <>  
                                 {courseData.node.typeOfCard === "Курс" ? (
                                     <CourseButtonText>
-                                        Набираем <br/>поток
+                                        Участвовать
                                     </CourseButtonText>
                                 ) : (
                                     <CourseButtonText>

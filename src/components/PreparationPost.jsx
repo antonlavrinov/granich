@@ -9,13 +9,34 @@ import BehanceLinkOut from '../assets/svgs/behance-link-out.svg';
 import MediumIcon from '../assets/svgs/medium-icon.svg';
 import YoutubeIcon from '../assets/svgs/youtube-icon.svg';
 
+
+const Behance = styled(props => <BehanceIcon {...props}/>)`
+    width: 2.2vw;
+`
+const Youtube = styled(props => <YoutubeIcon {...props}/>)`
+    height: 2.4vw;
+`
+const Medium = styled(props => <MediumIcon {...props}/>)`
+    width: 2.2vw;
+`
+const Pinterest = styled(props => <PinterestIcon {...props}/>)`
+    width: 2.1vw;
+`
+const PinterestOut = styled(props => <PinterestLinkOut {...props}/>)`
+    width: 2.1vw;
+`
+const BehanceOut = styled(props => <BehanceLinkOut {...props}/>)`
+    width: 2.1vw;
+`
+
 const PostWrapperLink = styled(props => <Link {...props}/>)`
 
     background: #2b2b2b;
-    border-radius: 0.4vw;
+    border-radius: 0.5vw;
     display: flex;
     flex-direction: column;
     transition: all 0.2s ease;
+    min-height: 18vw;
     :hover {
         transform: scale(1.05);
         cursor: pointer;
@@ -26,10 +47,11 @@ const PostWrapperLink = styled(props => <Link {...props}/>)`
 
 const PostWrapperExternalLink = styled.a`
     background: red;
-    border-radius: 0.4vw;
+    border-radius: 0.5vw;
     display: flex;
     flex-direction: column;
     transition: all 0.2s ease;
+    min-height: 18vw;
     :hover {
         cursor: pointer;
         transform: scale(1.05);
@@ -49,7 +71,7 @@ const PostContainer = styled.div`
 
 const PostButton = styled.div`
     background: none;
-    border-radius: 0 0 0.4vw 0.4vw;
+    border-radius: 0 0 0.5vw 0.5vw;
     margin-top: auto;
     ${props => props.type === 'Youtube' && `
     background: #222222;
@@ -63,11 +85,14 @@ const PostButton = styled.div`
 `
 
 const PostTagList = styled.div`
-    margin-bottom: 0.6vw;
+    display: flex;
+    margin-bottom: 0.8vw;
     margin-left: -0.2vw;
     margin-right: -0.2vw;
-    max-width: 13vw;
-    width: 100%;
+    margin-top: 0.4vw;
+    flex-wrap: wrap;
+    // max-width: 13vw;
+    // width: 100%;
     line-height: 1;
 `
 
@@ -100,7 +125,7 @@ const PostTitle = styled.div`
 
 const PostImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     margin-bottom: 1vw;
-    max-height: 7.2vw;
+    max-height: 7.4vw;
 `
 
 const PostDescr = styled.div`
@@ -117,15 +142,34 @@ const PostButtonWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.2vw 0;
-    // padding-bottom: 0.2vw;
-    // ${props => props.type === 'Youtube' && `
-    //     padding: 0.45vw 0;
-    // `}
+    // padding: 0.2vw 0;
 `
 
 const PostButtonTextWrapper = styled.div`
 
+`
+
+const PostButtonYoutubeSection = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    svg {
+        margin-right: -0.4vw;
+    }
+`
+const PostButtonYoutubeSectionTextWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.8vw;
+`
+
+const PostButtonYoutubeText = styled.div`
+
+    margin-top: -0.8vw;
+    font-size: 1.2vw;
+    font-weight: 500;
+    color: white;
 `
 
 const PostButtonText = styled.div`
@@ -150,17 +194,18 @@ const PostIconsWrapper = styled.div`
     align-items: center;
     svg {
         :first-child {
-            margin-right: -0.2vw;
+            margin-right: -0.4vw;
         }
     }
 `
 
 const PostButtonWatchBlockWrapper = styled.div`
-
+    // margin-bottom: -0.6vw;
 `
 
 const PostButtonWatchBlock = styled.div`
-
+    display: flex;
+    align-items: flex-end;
 `
 const PostButtonBlockTitle = styled.div`
     color: grey;
@@ -168,7 +213,7 @@ const PostButtonBlockTitle = styled.div`
 `
 
 const PostButtonReadBlockWrapper = styled.div`
-
+    margin-bottom: -0.6vw;
 `
 
 const PostButtonReadBlock = styled.div`
@@ -216,13 +261,13 @@ const PreparationPost = ({post}) => {
                             
                             <PostButtonWrapper type={post.postType}>
                                 {post.postType === youtube ? (
-                                    <>
-                                        <PostButtonTextWrapper>
-                                            <PostButtonText>Посмотреть</PostButtonText>
+                                    <PostButtonYoutubeSection>
+                                        <PostButtonYoutubeSectionTextWrapper>
+                                            <PostButtonYoutubeText>Посмотреть</PostButtonYoutubeText>
                                             <PostButtonTiming>33:05</PostButtonTiming>
-                                        </PostButtonTextWrapper>
-                                        <YoutubeIcon/>
-                                    </>
+                                        </PostButtonYoutubeSectionTextWrapper>
+                                        <Youtube/>
+                                    </PostButtonYoutubeSection>
 
                                     
                                 ) : (
@@ -230,15 +275,15 @@ const PreparationPost = ({post}) => {
                                         <PostButtonWatchBlockWrapper>
                                             <PostButtonBlockTitle>Посмотреть</PostButtonBlockTitle>
                                             <PostButtonWatchBlock>
-                                                <YoutubeIcon/>
+                                                <Youtube/>
                                                 <PostButtonTiming>8:43</PostButtonTiming>
                                             </PostButtonWatchBlock>
                                         </PostButtonWatchBlockWrapper>
                                         <PostButtonReadBlockWrapper>
                                             <PostButtonBlockTitle>Почитать</PostButtonBlockTitle>
                                             <PostButtonReadBlock>
-                                                <MediumIcon/>
-                                                <BehanceIcon/>
+                                                <Medium/>
+                                                <Behance/>
                                             </PostButtonReadBlock>
                                         </PostButtonReadBlockWrapper>
                                     </>
@@ -274,13 +319,13 @@ const PreparationPost = ({post}) => {
                                 <PostButtonText>Изучить</PostButtonText>
                                     {post.postType === pinterest ? (
                                         <PostIconsWrapper>
-                                            <PinterestIcon/>
-                                            <PinterestLinkOut/>
+                                            <Pinterest/>
+                                            <PinterestOut/>
                                         </PostIconsWrapper>
                                     ) : (
                                         <PostIconsWrapper>
-                                            <BehanceIcon/>
-                                            <BehanceLinkOut/>
+                                            <Behance/>
+                                            <BehanceOut/>
                                         </PostIconsWrapper>
                                     )}
 

@@ -3,8 +3,6 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components';
 import {Container} from './style';
-import logo from '../assets/images/logo-white.png';
-import arrow from '../assets/images/arrow.png';
 import WhiteLogo from '../assets/svgs/granich-logo.svg';
 import ArrowDown from '../assets/svgs/header-arrow-icon-down.svg';
 import ArrowOut from '../assets/svgs/header-arrow-icon-out.svg';
@@ -27,6 +25,7 @@ const LogoWrapper = styled(props => <Link {...props} />)`
   display: flex;
   align-items: center;
   fill: white;
+  height: auto;
   ${(props) => props.propstyle && `
     fill: var(--granich-black);
     

@@ -35,7 +35,10 @@ const PostPage = ({data}) => {
                     <PostWrapper>
                         {console.log('SLUG', data.contentfulPost)}
                         <div>{data.contentfulPost.postTitle}</div>
-                        <div>{data.contentfulPost.postDescription.postDescription}</div>
+                        {data.contentfulPost.postDescription ? (
+                            <div>{data.contentfulPost.postDescription.postDescription}</div>
+                        ) : (null)}
+                        
                     </PostWrapper>
                 </Container>
             </PostSection>

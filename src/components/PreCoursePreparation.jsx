@@ -61,18 +61,41 @@ const PreparationFilter = styled.div`
 
 `
 
+const PreparationFilterCross = styled.div`
+    display: none;
+    ${props => props.active && `
+        display: inline-block;
+        background: var(--granich-red);
+        border-radius: 100vw;
+        padding: 0.2vw;
+        color: white;
+        line-height: 0.5;
+    `}
+`
+
 const PreparationTags = styled.div`
     display: flex;
+    margin-bottom: 1vw;
+    flex-wrap: wrap;
+    width: 100%;
 `
 const PreparationTag = styled.div`
-    border: 0.05vw solid grey;
+    border: 0.05vw solid var(--granich-grey);
     padding: 0.5vw;
     border-radius: 100vw;
     transition: all 0.2s ease;
-    font-size: 0.5vw;
+    font-size: 0.73vw;
+    padding: 0.1vw 0.4vw 0.16vw;
+    margin-right: 0.5vw;
+    margin-bottom: 0.5vw;
+    color: var(--granich-grey);
+    :last-child {
+        margin-right: 0;
+    }
     :hover {
         cursor: pointer;
-        color: black;
+        color: var(--granich-black);
+        border-color: var(--granich-black);
     }
     ${props => props.active && `
         color: var(--granich-red);
@@ -233,7 +256,7 @@ const PreCoursePreparation = ({data}) => {
                         {postTags.map((postTag, idx) => {
                             return (
                                 <PreparationTag key={idx} active={postTag.active}  onClick={() => {triggerFiltering(postTag)}}>
-                                    {postTag.name}
+                                    {postTag.name} <PreparationFilterCross active={postTag.active}>×</PreparationFilterCross>
                                 </PreparationTag>
                             )
                         })}
