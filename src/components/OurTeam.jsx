@@ -79,6 +79,11 @@ const OurTeam = ({data}) => {
                         )
                     })}
                 </OurTeamWrapper>
+                <div style={{width: '5em', height: '150px', background: 'black', fontSize: '2vw'}}>
+                    <div style={{fontSize: '2em', color: 'white'}}>
+                        dfdffd
+                    </div>
+                </div>
             </Container>
         </OurTeamSection>
     )

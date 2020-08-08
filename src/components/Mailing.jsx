@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components';
 import BlackArrowRight from '../assets/svgs/arrow-black-right.svg';
-
+import {Formik} from 'formik';
+import * as Yup from 'yup';
 import { Container } from './style';
+import { CSSTransition } from 'react-transition-group';
+
 
 const MailingSection = styled.section`
     margin-bottom: 4vw;
@@ -64,6 +67,7 @@ const MailingForm = styled.form`
     // width: 100%;
     display: flex;
     align-items: center;
+    position: relative;
 
 `
 
@@ -105,7 +109,19 @@ const MailingButton = styled.button`
 
 `
 
+const MailingWarning = styled.div`
+    position: absolute;
+    top: -5vw;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 1vw 1.5vw;
+    border-radius: 0.5vw;
+
+`
+
 const Mailing = () => {
+    const formEl = useRef(null)
     return (
         <MailingSection>
             <Container>
@@ -115,11 +131,55 @@ const Mailing = () => {
                         <MailingText>
                             <span>Оставьте почту,</span> чтобы узнать о наборах на курсы и новом бесплатном контенте. Без спама.
                         </MailingText>
-                        <MailingForm>
-                                <MailingInput placeholder={'Электропочта'}/>
-                                <MailingButton><BlackArrowRight/></MailingButton>
-                                {/* <BlackArrowRight/> */}
-                        </MailingForm>
+                        <Formik     initialValues={{formParams: {
+                                    email: ''
+                        }}}
+                        
+                        onSubmit={(values, {setSubmitting}, e) => {
+                            formEl.current.submit();
+                        }}
+                        validationSchema={Yup.object().shape({
+                            formParams: Yup.object().shape({
+                                email: Yup.string().email('Неверный формат электронного адреса').required('Заполните поле Емейл'),
+                            })
+                        })}
+                        
+                        >
+
+                        {props => {
+                            const {
+                                values, 
+                                touched, 
+                                errors, 
+                                isSubmitting, 
+                                handleChange, 
+                                handleBlur, 
+                                handleSubmit
+                            } = props;
+                            return (
+                                <MailingForm action="https://english-school.getcourse.ru/pl/lite/block-public/process-html?id=728049569" method="post" ref={formEl} onSubmit={handleSubmit}>
+                                    <MailingInput 
+                                    type="text" 
+                                    maxLength="60"  
+                                    placeholder={'Электропочта'} 
+                                    name="formParams[email]"
+                                    value={values.formParams.email}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    className={((errors || {}).formParams || {}).email && ((touched || {}).formParams || {}).email && 'error'}
+                                    />
+                                    <CSSTransition timeout={300} classNames="warning-message" unmountOnExit in={errors.formParams ? (errors.formParams.email ? true : false) : false}>
+                                        
+                                        <MailingWarning>{errors.formParams && errors.formParams.email}</MailingWarning>
+                                       
+                                    </CSSTransition>
+
+                                    <MailingButton type="submit" disabled={isSubmitting}><BlackArrowRight/></MailingButton>
+                                </MailingForm>
+                            )}}
+
+                        </Formik>
+
 
                     </MailingContainer>
                     {/* <MailingBackground>

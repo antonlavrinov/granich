@@ -40,7 +40,7 @@ export const Container = styled.div`
     width: 75.5vw;
     margin: 0 auto;
     @media only screen and (max-width: 768px) {
-        width: 90vw;
+        width: 90%;
         
       }
 

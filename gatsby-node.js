@@ -3,13 +3,13 @@ const {createFilePath} = require('gatsby-source-filesystem');
 
 exports.createPages = ({graphql, actions}) => {
     const {createPage} = actions;
-    const contentPost = path.resolve('./src/templates/content-post.jsx');
+    const contentContent = path.resolve('./src/templates/content-post.jsx');
     return graphql(`
         {
-            allContentfulGranichMainPostCard {
+            allContentfulGranichMainContentCard {
                 edges {
                     node {
-                        postSlug
+                        contentSlug
                     }
                 }
             }
@@ -19,14 +19,14 @@ exports.createPages = ({graphql, actions}) => {
         if(result.errors) {
             throw result.errors
         }
-        const posts = result.data.allContentfulGranichMainPostCard.edges;
-        posts.forEach((post, index) => {
+        const contents = result.data.allContentfulGranichMainContentCard.edges;
+        contents.forEach((content, index) => {
             createPage({
-                path: post.node.postSlug,
-                component: contentPost,
+                path: content.node.contentSlug,
+                component: contentContent,
                 context: {
-                    slug: post.node.postSlug,
-                    title: post.node.postTitle
+                    slug: content.node.contentSlug,
+                    title: content.node.contentTitle
                 }
             })
         })

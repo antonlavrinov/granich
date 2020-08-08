@@ -6,45 +6,45 @@ import {graphql} from 'gatsby'
 import styled from 'styled-components';
 import {Container} from '../components/style';
 
-const PostSection = styled.section`
+const ContentSection = styled.section`
     padding-top: 10vw;
 `
-const PostWrapper = styled.section`
+const ContentWrapper = styled.section`
 
 `
 
 export const pageQuery = graphql`
-    query ContentfulPostBySlug($slug: String!) {
-        contentfulPost: contentfulGranichMainPostCard( postSlug: { eq: $slug }) {
-            postSlug
-            postTitle
-            postDescription {
-                postDescription
+    query ContentfulContentBySlug($slug: String!) {
+        contentfulContent: contentfulGranichMainContentCard( contentSlug: { eq: $slug }) {
+            contentSlug
+            contentTitle
+            contentDescription {
+                contentDescription
             }
 
         }
     }
 `
 
-const PostPage = ({data}) => {
+const ContentPage = ({data}) => {
     return (
         <Layout>
             <Header style="dark"/>
-            <PostSection>
+            <ContentSection>
                 <Container>
-                    <PostWrapper>
-                        {console.log('SLUG', data.contentfulPost)}
-                        <div>{data.contentfulPost.postTitle}</div>
-                        {data.contentfulPost.postDescription ? (
-                            <div>{data.contentfulPost.postDescription.postDescription}</div>
+                    {/* <ContentWrapper>
+                        {console.log('SLUG', data.contentfulContent)}
+                        <div>{data.contentfulContent.contentTitle}</div>
+                        {data.contentfulContent.contentDescription ? (
+                            <div>{data.contentfulContent.contentDescription.contentDescription}</div>
                         ) : (null)}
                         
-                    </PostWrapper>
+                    </ContentWrapper> */}
                 </Container>
-            </PostSection>
+            </ContentSection>
             <SEO title="Онлайн-школа Granich" />
         </Layout>
     )
 }
 
-export default PostPage
+export default ContentPage

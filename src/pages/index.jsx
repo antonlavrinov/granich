@@ -66,33 +66,62 @@ export const contentfulQuery = graphql`
             }
           }
         },
-        postCards: allContentfulGranichMainPostCard(sort: {fields: [createdAt], order: DESC}) {
+        contentCardsNew: allContentfulGranichMainContentCard(sort: {fields: [createdAt], order: DESC}) {
           edges {
             node {
-              postDescription {
-                postDescription
+              contentDescription {
+                contentDescription
               }
-              postRecommended
-              postTags
-              postTitle
-              postImage {
+              contentTags
+              contentTitle
+              contentImage {
                 fluid(maxWidth: 600) {
                   ...GatsbyContentfulFluid
                 }
               }
-              postType
-              postSlug
-              postLinkPinterest {
-                postLinkPinterest
+              contentType
+              contentSlug
+              contentLinkPinterest {
+                contentLinkPinterest
               }
-              postLinkBehance {
-                postLinkBehance
+              contentLinkBehance {
+                contentLinkBehance
               }
-              postLinkYoutube {
-                postLinkYoutube
+              contentLinkYoutube {
+                contentLinkYoutube
               }
-              postLinkMedium {
-                postLinkMedium
+              contentLinkMedium {
+                contentLinkMedium
+              }
+            }
+          }
+        },
+        contentCardsRecommended: allContentfulGranichMainContentCard(sort: {fields: [contentOrderNumber], order: DESC}) {
+          edges {
+            node {
+              contentDescription {
+                contentDescription
+              }
+              contentTags
+              contentTitle
+              contentImage {
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              contentType
+              contentSlug
+              contentLinkPinterest {
+                contentLinkPinterest
+              }
+              contentLinkBehance {
+                contentLinkBehance
+              }
+              contentLinkYoutube {
+                contentLinkYoutube
+              }
+              contentLinkMedium {
+                contentLinkMedium
               }
             }
           }
@@ -131,13 +160,14 @@ const IndexPage = ({data}) => (
     <SEO title="Онлайн-школа Granich" />
     <Offer data={data.header}/>
     {console.log('contentful page', data)}
-    <Courses data={data.courseCards}  />
+    {/* <Courses data={data.courseCards}  /> */}
     <Manifest/>
     <Mailing/>
-    <PreCoursePreparation data={data.postCards}/>
+    {/* <PreCoursePreparation dataRecommended={data.contentCardsRecommended} dataNew={data.contentCardsNew}/> */}
     {/* <Manifest1/> */}
 
     <OurTeam data={data.team}/>
+
   </Layout>
 )
 

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { Container } from './style';
 import styled from 'styled-components';
-import PreparationPost from './PreparationPost';
+import PreparationContent from './PreparationContent';
 
 
 
@@ -58,6 +58,14 @@ const PreparationFilter = styled.div`
     :first-child {
         padding-left: 0.25vw;
     }
+    ${props => props.active && `
+    color: var(--granich-red);
+    border-color: var(--granich-red);
+    :hover {
+        color: var(--granich-red);
+        border-color: var(--granich-red);
+    }
+`}
 
 `
 
@@ -108,7 +116,7 @@ const PreparationTag = styled.div`
 
 `
 
-const PreparationPosts = styled.div`
+const PreparationContents = styled.div`
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -123,44 +131,55 @@ const PreparationButtonMore = styled.div`
 `
 
 
-const PreCoursePreparation = ({data}) => {
-    const [contentPosts, setContentPosts] = useState([])
-    const [postTags, setPostTags] = useState([])
+const PreCoursePreparation = ({dataRecommended, dataNew}) => {
+    const [contentContents, setContentContents] = useState([])
+    const [contentTags, setContentTags] = useState([])
     const [filters, setFilters] = useState({
-        postTags: []
+        contentTags: []
     })
+    const [contentPagination, setContentPagination] = useState(4);
+    const [filterData, setFilterData] = useState('recommended');
+    const [data, setData] = useState(dataRecommended);
+    const [topFilters, setTopFilters] = useState(['Рекомендуемое', 'Новое']);
+    const [selectedTopFilters, setSelectedTopFilters] = useState('Рекомендуемое');
     useEffect(() => {
-        const postTagsArray = [];
-        const contentPostsArray = [];
-        const posts = data.edges;
-        posts.map(post => {
-            contentPostsArray.push(post.node)
-            post.node.postTags.forEach((postTag) => {
-                postTagsArray.push(postTag)
+        const contentTagsArray = [];
+        const contentContentsArray = [];
+        const contents = data.edges;
+        contents.map(content => {
+            contentContentsArray.push(content.node)
+            content.node.contentTags.forEach((contentTag) => {
+                contentTagsArray.push(contentTag)
             })
         })
-        console.log('postTagsArray', postTagsArray)
+        console.log('contentTagsArray', contentTagsArray)
 
-        const uniqueSetOfTags = new Set(postTagsArray);
+        const uniqueSetOfTags = new Set(contentTagsArray);
         const backToTagsArray = [...uniqueSetOfTags];
+        const sortedByAlphabet = backToTagsArray.sort(function(a, b) {
+            if (a < b) return -1;
+            else if(a > b) return 1;
+            return 0;
+        });
 
         const tags = [];
-        backToTagsArray.forEach((tag, idx) => {
+        sortedByAlphabet.forEach((tag, idx) => {
             tags[idx] = {
                 name: tag,
                 active: false
             }
         })
         console.log('tags', tags)
-        setPostTags(tags)
-        setContentPosts(contentPostsArray)
+        setContentTags(tags)
+        setContentContents(contentContentsArray)
+        console.log('ANOTHER EFFECT')
 
 
         console.log('data edges', data.edges)
-        console.log('contentPostsArray', contentPosts)
+        console.log('contentContentsArray', contentContents)
 
 
-    }, [])
+    }, [data])
 
     const multiPropsFilter = (products, filters) => {
         // const filterKeys = Object.keys(filters);
@@ -192,21 +211,21 @@ const PreCoursePreparation = ({data}) => {
     }
 
     const triggerFiltering = (tag) => {
-        const tagToRemove = filters.postTags.find((tagg) => tagg === tag.name) 
+        const tagToRemove = filters.contentTags.find((tagg) => tagg === tag.name) 
         // console.log('tag to remove', tagToRemove)
         toggleTagColor(tag)
         if(tagToRemove) {
             //delete the tag
-            const idx = filters.postTags.findIndex((el) => el === tag.name);
-            const before = filters.postTags.slice(0, idx)
-            const after = filters.postTags.slice(idx +1)
+            const idx = filters.contentTags.findIndex((el) => el === tag.name);
+            const before = filters.contentTags.slice(0, idx)
+            const after = filters.contentTags.slice(idx +1)
             const newArray = [...before, ...after]
-            setFilters({postTags: newArray})
+            setFilters({contentTags: newArray})
             // console.log('tag remove')
 
         } else {
             //add new tag
-            setFilters({postTags: [...filters.postTags, tag.name]})
+            setFilters({contentTags: [...filters.contentTags, tag.name]})
 
             console.log('tag choose', filters)
         }
@@ -214,22 +233,62 @@ const PreCoursePreparation = ({data}) => {
 
 
     const toggleTagColor = (tagName) => {
-        const idx = postTags.findIndex((tag) => tag === tagName)
-        const oldItem = postTags[idx];
+        const idx = contentTags.findIndex((tag) => tag === tagName)
+        const oldItem = contentTags[idx];
         const newItem = {
             ...oldItem,
             active: !oldItem.active
         }
         const newArray = [
-            ...postTags.slice(0, idx),
+            ...contentTags.slice(0, idx),
             newItem,
-            ...postTags.slice(idx + 1)
+            ...contentTags.slice(idx + 1)
         ]
 
-        setPostTags(newArray)
+        setContentTags(newArray)
     }
 
-    const filteredPosts = multiPropsFilter(contentPosts, filters);
+    const toggleTopFilterActive = (topFilter) => {
+        if(topFilter === selectedTopFilters) {
+            return;
+        }
+        if(topFilter === 'Новое') {
+            setSelectedTopFilters('Рекомендуемое');
+        } else {
+            setSelectedTopFilters('Новое');
+        }
+
+        // if(topFilter === )
+        // const idx1 = topFilters.findIndex((filter) => filter.name === topFilter)
+        // const idx2 = topFilters.findIndex((filter) => filter.name !== topFilter)
+        // const oldItem = topFilters[idx];
+        // console.log('old item', idx)
+        // const newItem = {
+        //     ...oldItem,
+        //     active: !oldItem.active
+        // }
+        // const newArray = [
+        //     ...topFilters.slice(0, idx),
+        //     newItem,
+        //     ...topFilters.slice(idx + 1)
+        // ]
+
+        // setTopFilters(newArray)
+    }
+
+    const triggerFilteringNewAndRecommended = (filter) => {
+        if (filter === 'recommended') {
+            setData(dataRecommended);
+        } else {
+            setData(dataNew);
+
+        }
+         
+        // if (data === )
+        setFilters({...filters, contentTags: []})
+    }
+
+    const filteredContents = multiPropsFilter(contentContents, filters);
 
     return (
         <PreparationSection id="preparation">
@@ -240,34 +299,36 @@ const PreCoursePreparation = ({data}) => {
                             Подготовка <br/>к курсам
                         </PreparationTitle>
                         <PreparationText>
-                        Сомневаетесь записаться ли на курс? <br/>Изучите бесплатные материалы школы <br/>и познакомьтесь с нашим подходом
+                            Сомневаетесь записаться ли на курс? <br/>Изучите бесплатные материалы школы <br/>и познакомьтесь с нашим подходом
                         </PreparationText>
-
                     </PreparationHeader>
                     <PreparationFilters>
-                        <PreparationFilter>
-                            Рекомендуемое
-                        </PreparationFilter>
-                        <PreparationFilter>
-                            Новое
-                        </PreparationFilter>
+                        {topFilters.map((filter, idx) => {
+                            return (
+                                <PreparationFilter active={filter === selectedTopFilters} onClick={() => toggleTopFilterActive(filter)} key={idx}>{filter}</PreparationFilter>
+                            )
+                        })}
                     </PreparationFilters>
                     <PreparationTags>
-                        {postTags.map((postTag, idx) => {
+                        {contentTags.map((contentTag, idx) => {
                             return (
-                                <PreparationTag key={idx} active={postTag.active}  onClick={() => {triggerFiltering(postTag)}}>
-                                    {postTag.name} <PreparationFilterCross active={postTag.active}>×</PreparationFilterCross>
+                                <PreparationTag key={idx} active={contentTag.active}  onClick={() => {triggerFiltering(contentTag)}}>
+                                    {contentTag.name} <PreparationFilterCross active={contentTag.active}>×</PreparationFilterCross>
                                 </PreparationTag>
                             )
                         })}
                     </PreparationTags>
-                    <PreparationPosts>
-                        {filteredPosts.map((post, idx) => {
+                    <PreparationContents>
+                        {filteredContents.slice(0, contentPagination).map((content, idx) => {
                             return (
-                                <PreparationPost key={idx} post={post}/>
+                                <PreparationContent key={idx} content={content}/>
                             )
                         })}
-                    </PreparationPosts>
+                    </PreparationContents>
+                    {data.edges.length > 4 ? (
+                        <div onClick={() => setContentPagination(contentPagination + 4)}>Показать больше</div>
+                    ) : (null)}
+                    
                 </PreparationWrapper>
             </Container>
 

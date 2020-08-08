@@ -35,6 +35,15 @@ const OfferTitle = styled.h1`
     width: 60vw;
     margin-bottom: 2.2vw;
     margin-left: -1.1vw;
+
+    @media only screen and (max-width: 575px) {
+        width: 100%;
+        font-size: 16vw;
+        letter-spacing: 0em;
+        width: 100px;
+
+        
+    }
 `
 const OfferDescr = styled.div`
     margin-left: -.3vw;
