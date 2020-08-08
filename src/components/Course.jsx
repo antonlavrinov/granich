@@ -189,16 +189,26 @@ const CourseDuration = styled.div`
     
 `
 
+const CourseShadow = styled.div`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 10vw;
+    width: 20vw;
+    
+`
+
 const CourseTeachers = styled.div`
     position: absolute;
     display: flex;
     // margin-left: auto;
-    bottom: 0.8vw;
-    left: 0.8vw;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.8vw 0.5vw 0.4vw;
+    background: linear-gradient(360deg, rgba(0,0,0,0.3) 0%, rgba(45,45,45,0) 80%);
     z-index: 100;
-    ${(props) => !props.active && `
-        filter: opacity(30%) grayscale(100%);
-    `}
+    
 `
 const CourseTeacher = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     background: grey;
@@ -256,8 +266,9 @@ const Course = ({courseData}) => {
 
                 <CourseImageWrapper>
                     <CourseImage fluid={courseData.node.cardImage.fluid}>
+                        <CourseShadow></CourseShadow>
                     </CourseImage>
-                    <CourseTeachers active={courseData.node.cardActive}>
+                    <CourseTeachers>
                         {courseData.node.cardTeachers.length > 1 ? (
                             <>
                                 {courseData.node.cardTeachers.map((teacher, idx) => {

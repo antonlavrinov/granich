@@ -20,7 +20,21 @@ const OfferSection = styled(props => <BackgroundImage {...props}></BackgroundIma
     position: relative;
     width: 100%;
     padding: 12.2vw 0 5vw 0;
-    height: 46vw;
+    height: 43.5vw;
+    background-size: 'cover';
+    background-repeat: 'no-repeat';
+    background-size: '100%';
+    @media only screen and (max-width: 575px) {
+        height: 124vw;
+        letter-spacing: 0em;
+        background-size: 150%;
+        background-position: center top;
+        background-repeat: 'no-repeat';
+        padding: 20vw 0 0 0;
+
+
+        
+    }
 
 
 `
@@ -38,9 +52,11 @@ const OfferTitle = styled.h1`
 
     @media only screen and (max-width: 575px) {
         width: 100%;
-        font-size: 16vw;
-        letter-spacing: 0em;
+        font-size: 17vw;
+        letter-spacing: -.8vw;
         width: 100px;
+        margin-bottom: 17vw;
+        width: 100%;
 
         
     }
@@ -66,6 +82,11 @@ const OfferDescr = styled.div`
             cursor: pointer;
         }
     }
+    @media only screen and (max-width: 575px) {
+        font-size: 7.2vw;
+        margin-left: -1vw;
+   
+    }
 `
 
 const OfferUnderlineIcon = styled(props => <UnderlineLinkIcon {...props}/>)`
@@ -74,14 +95,23 @@ const OfferUnderlineIcon = styled(props => <UnderlineLinkIcon {...props}/>)`
     bottom: -1.1vw;
     left: 0.2vw;
     // left: 1.8em;
+    @media only screen and (max-width: 575px) {
+        width: 65vw;
+        bottom: -3.2vw;
+    }
 
     
 `
 
 const OfferSvgClip = styled(props => <BackgroundClip {...props}/>)`
     position: absolute;
-    bottom: 0;
+    bottom: -2.5vw;
+    width: 100%;
+    
     z-index: 0;
+    @media only screen and (max-width: 575px) {
+        display: none;
+    }
 `
 
 const OfferFlagsImg = styled(props => <Img {...props} />)`
@@ -89,6 +119,10 @@ const OfferFlagsImg = styled(props => <Img {...props} />)`
     top: 0.2vw;
     width: 2vw;
     display: inline-block;
+    @media only screen and (max-width: 575px) {
+        width: 6vw;
+        margin-left: 1.5vw;
+    }
 ` 
 
 
@@ -129,15 +163,7 @@ const Offer = ({data}) => {
         const headerTitle = data.edges[0].node.headerTitle
 
     return (
-        <OfferSection fluid={headerImage} id="offer" style={{
-            // background: `url('${background}')`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            // backgroundAttachment: 'fixed',
-            backgroundPosition: 'top',
-            // backgroundSize: '112%'
-            backgroundSize: '100%'
-            }}>
+        <OfferSection fluid={headerImage} id="offer" >
         {/* <BackgroundImage fluid={imageData}> */}
 
             <Container>

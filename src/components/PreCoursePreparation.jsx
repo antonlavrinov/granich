@@ -12,18 +12,18 @@ const PreparationSection = styled.section`
 const PreparationWrapper = styled.div`
 
     background: #E8E8E8;
-    padding: 3.5vw 4.4vw;
+    padding: 3vw 3vw;
     border-radius: 0.6vw;
 `
 
 const PreparationHeader = styled.div`
     display: flex;
-    margin-bottom: 3.4vw;
+    margin-bottom: 3.2vw;
 `
 
 const PreparationTitle = styled.div`
     color: var(--granich-black);
-    font-size: 4.3vw;
+    font-size: 4.55vw;
     letter-spacing: -0.2vw;
     font-weight: 700;
     line-height: 1.05;
@@ -34,9 +34,10 @@ const PreparationTitle = styled.div`
 const PreparationText = styled.div`
     color: var(--granich-black);
     font-size: 1.5vw;
-    margin-top: 0.8vw;
-    line-height: 1.5;
-    letter-spacing: 0.03vw;
+    margin-top: 1.5vw;
+    line-height: 1.55;
+    letter-spacing: 0.02vw;
+    font-weight: 500;
 
 `
 
@@ -45,10 +46,11 @@ const PreparationFilters = styled.div`
     padding: 15px 0 0;
     border-bottom: 0.1vw solid var(--granich-light-grey);
     margin-bottom: 1vw;
+    margin-left: 0.3vw;
 `
 const PreparationFilter = styled.div`
     font-size: 1.15vw;
-    margin-right: 2.6vw;
+    margin-right: 1.5vw;
     margin-bottom: -0.1vw;
     padding-bottom: 1vw;
     // border-bottom: 0.1vw solid var(--granich-red);
@@ -56,7 +58,8 @@ const PreparationFilter = styled.div`
         cursor: pointer;
     }
     :first-child {
-        padding-left: 0.25vw;
+        padding-left: 0.3vw;
+        
     }
     ${props => props.active && `
     color: var(--granich-red);
@@ -83,10 +86,19 @@ const PreparationFilterCross = styled.div`
 
 const PreparationTags = styled.div`
     display: flex;
-    margin-bottom: 1vw;
+    margin-bottom: 0.8vw;
     flex-wrap: wrap;
     width: 100%;
+
+
 `
+const PreparationTagsTitle = styled.div`
+    font-size: 0.8vw;
+    margin-right: 1vw;
+    color: var(--granich-grey);
+    padding-left: 0.6vw;
+`
+
 const PreparationTag = styled.div`
     border: 0.05vw solid var(--granich-grey);
     padding: 0.5vw;
@@ -120,14 +132,26 @@ const PreparationContents = styled.div`
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    // grid-template-columns: 15.1vw 15.1vw 15.1vw 15.1vw;
-    grid-column-gap: 2.1vw;
-    grid-row-gap: 2.1vw;
+
+    grid-column-gap: 1.65vw;
+    grid-row-gap: 1.65vw;
+    // grid-template-rows: minmax(25vw, 25vw)
+
     padding: 0 0.2vw;
 `
 
 const PreparationButtonMore = styled.div`
-
+        width: 100%;
+        text-align: center;
+        background: #DEDEDE;
+        padding: 1.5vw 0;
+        font-weight: 400;
+        color: #8e8e8e;
+        border-radius: 0.5vw;
+        margin-top: 1.65vw;
+        :hover {
+            cursor: pointer;
+        }
 `
 
 
@@ -142,6 +166,8 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
     const [data, setData] = useState(dataRecommended);
     const [topFilters, setTopFilters] = useState(['Рекомендуемое', 'Новое']);
     const [selectedTopFilters, setSelectedTopFilters] = useState('Рекомендуемое');
+    const [contentBatchCount, setContentBatchCount] = useState(0);
+    const [buttonMoreClickCount, setButtonMoreClickCount] = useState(0);
     useEffect(() => {
         const contentTagsArray = [];
         const contentContentsArray = [];
@@ -180,6 +206,10 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
 
 
     }, [data])
+
+    useEffect(() => {
+        setContentBatchCount(Math.floor(data.edges.length/4))
+    }, [])
 
     const multiPropsFilter = (products, filters) => {
         // const filterKeys = Object.keys(filters);
@@ -310,6 +340,7 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
                         })}
                     </PreparationFilters>
                     <PreparationTags>
+                        <PreparationTagsTitle>Поиск по тегам:</PreparationTagsTitle>
                         {contentTags.map((contentTag, idx) => {
                             return (
                                 <PreparationTag key={idx} active={contentTag.active}  onClick={() => {triggerFiltering(contentTag)}}>
@@ -325,9 +356,17 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
                             )
                         })}
                     </PreparationContents>
-                    {data.edges.length > 4 ? (
-                        <div onClick={() => setContentPagination(contentPagination + 4)}>Показать больше</div>
-                    ) : (null)}
+
+                        {filteredContents.length > 4 ? (
+                            <>
+                                {buttonMoreClickCount < contentBatchCount ? (
+                                    <PreparationButtonMore onClick={() => {setContentPagination(contentPagination + 4); setButtonMoreClickCount(buttonMoreClickCount + 1)}}>Показать больше</PreparationButtonMore>
+                                ) : null}
+                            </>
+                            
+                        ) : (null)}
+
+
                     
                 </PreparationWrapper>
             </Container>

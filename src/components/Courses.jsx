@@ -8,7 +8,7 @@ import Course from './Course';
 
 const CoursesSection = styled.section`
     position: relative;
-    margin-top: -5.5vw;
+    margin-top: -2.7vw;
     margin-bottom: 4vw;
 `
 
@@ -17,6 +17,10 @@ const CoursesWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 1.7vw;
     grid-row-gap: 1.7vw;
+    @media only screen and (max-width: 575px) {
+        grid-template-columns: 1fr 1fr;
+
+    }
 
 
 

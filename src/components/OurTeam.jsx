@@ -9,6 +9,8 @@ import VKIcon from '../assets/svgs/granich-main-team/vk.svg';
 import TelegramIcon from '../assets/svgs/granich-main-team/telegram.svg';
 
 
+
+
 const OurTeamSection = styled.section`
     margin-bottom: 50px;
 `
@@ -17,7 +19,7 @@ const OurTeamSection = styled.section`
 const OurTeamWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 1.7vw;
+    grid-column-gap: 1.6vw;
     justify-content: space-between;
 
 `
@@ -25,39 +27,74 @@ const OurTeamWrapper = styled.div`
 const TeacherWrapper = styled.div`
     background: #E8E8E8;
     border-radius: 0.6vw;
-    padding: 1vw;
+    padding: 1.7vw 1.5vw 2vw 2.8vw; 
 `
 
 const TeacherHeader = styled.div`
     display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.2vw;
 `
 const TeacherImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-    width: 6.5vw;
-    height: 6.5vw;
+    width: 4.8vw;
+    height: 4.8vw;
     border-radius: 100vw;
     overflow: hidden;
 `
 const TeacherSocials = styled.div`
-    // display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 0.8vw;
+
 
 `
 const TeacherSocialIcons = styled.div`
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0.6vw;
+    margin-bottom: 0.1vw;
+    svg {
+        transition: all 0.2s ease;
+        :hover {
+            transform: scale(1.1);
+        }
+    }
+
 `
-const TeacherEmail = styled.div`
-    font-size: 1vw;
+const TeacherEmail = styled.a`
+    font-size: 0.75vw;
+    font-weight: 500;
     color: var(--granich-grey);
+    padding-bottom: 0.2vw;
+    margin-right: 0.4vw;
+    border-bottom: 0.1vw dotted var(--granich-light-grey);
+    :hover {
+        font-size: 0.75vw;
+        font-weight: 500;
+        color: var(--granich-grey);
+        cursor: pointer;
+    }
 `
 const TeacherInfo = styled.div`
-    color: var(--granich-grey);
-    font-size: 1.1vw;
-    border-left: 0.1vw solid var(--granich-grey);
-    padding-left: 2vw;
-    margin-left: 2vw;
+
+    border-left: 0.1vw solid #D7D7D7;
+    padding-left: 1.4vw;
+    margin-left: -0.4vw;
+    min-height: 5.8vw;
     span {
         font-weight: 600;
+        font-size: 1.16vw;
+
     }
+`
+const TeacherInfoText = styled.div`
+    margin-top: 0.2vw;
+    color: var(--granich-grey);
+    font-size: 1.16vw;
+    font-weight: 500;
+    line-height: 1.2;
 `
 
 const SocialLink = styled.a`
@@ -79,11 +116,6 @@ const OurTeam = ({data}) => {
                         )
                     })}
                 </OurTeamWrapper>
-                <div style={{width: '5em', height: '150px', background: 'black', fontSize: '2vw'}}>
-                    <div style={{fontSize: '2em', color: 'white'}}>
-                        dfdffd
-                    </div>
-                </div>
             </Container>
         </OurTeamSection>
     )
@@ -114,17 +146,17 @@ const TeacherBlock = ({teacher}) => {
                             )
                         })}
                     </TeacherSocialIcons>
-                    <TeacherEmail>{teacher.teacherEmail}</TeacherEmail>
+                    <TeacherEmail href={`mailto:${teacher.teacherEmail}`}>{teacher.teacherEmail}</TeacherEmail>
                 </TeacherSocials>
 
             </TeacherHeader>
             <TeacherInfo>
                     <span>{teacher.teacherName}</span>
-                        {teacher.teacherDescription.map((descr, idx) => {
-                            return (
-                                <div key={idx}>{descr}</div>
-                            )
-                        })}
+                    {teacher.teacherDescription.map((descr, idx) => {
+                        return (
+                            <TeacherInfoText key={idx}>{descr}</TeacherInfoText>
+                        )
+                    })}
             </TeacherInfo>
         </TeacherWrapper>
     )

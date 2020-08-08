@@ -14,7 +14,7 @@ const ManifestSection = styled.section`
 const ManifestWrapper = styled.div`
 
     background: white;
-    padding: 4vw 5.3vw 5vw;
+    padding: 4.9vw 5.6vw 5vw;
     border-radius: 0.6vw;
 `
 const ManifestSecondaryWrapper = styled.div`
@@ -22,7 +22,8 @@ const ManifestSecondaryWrapper = styled.div`
 `
 const ManifestAuthor = styled.div`
     margin-top: -1.6vw;
-    margin-right: 7vw;
+    margin-right: 6vw;
+    margin-left: 1vw;
 `
 
 const ManifestInfo = styled.div`
@@ -60,13 +61,11 @@ const ManifestInfoTitle = styled.h2`
     font-size: 5.5vw;
     line-height: 0.75;
     position: relative;
-    margin-bottom: 3.1vw;
+    margin-bottom: 2.9vw;
     margin-left: 1.4vw;
     letter-spacing: -0.115vw;
     :after {
         content: '»';
-        margin-left: 1vw;
-        margin-top: 0.4vw;
         position: absolute;
         font-size: 5.5vw;
 
@@ -75,8 +74,8 @@ const ManifestInfoTitle = styled.h2`
         content: '«';
         position: absolute;
         font-size: 5.5vw;
-        top: -0.8vw;
-        left: -3.5vw;
+        top: 0;
+        left: -3.2vw;
     }
 
 `
@@ -86,7 +85,7 @@ const ManifestInfoText = styled.p`
     font-size: 1.55vw;
     line-height: 1.5;
     width: 45vw;
-    margin-bottom: 2.5vw;
+    margin-bottom: 2.8vw;
 
 
 `
@@ -101,7 +100,7 @@ const ManifestInfoRule = styled.div`
     color: var(--granich-grey);
     width: 13.1vw;
     line-height: 1.4;
-    margin-right: 2.1vw;
+    margin-right: 1.7vw;
 
 `
 
@@ -114,12 +113,12 @@ const ManifestRuleTitle = styled.span`
 
 const ManifestRuleNumber = styled.div`
     position: absolute;
-    top: 0.5vw;
-    left: -2.5vw;
-    font-size: 2.5vw;
+    top: 0;
+    left: -2vw;
+    font-size: 2.3vw;
     font-family: EB Garamond;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 0.5;
 `
 
