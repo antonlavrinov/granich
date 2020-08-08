@@ -39,8 +39,8 @@ export const Container = styled.div`
     // max-width: 1024px;
     width: 75.5vw;
     margin: 0 auto;
-    @media only screen and (max-width: 768px) {
-        width: 76vw;
+    @media only screen and (max-width: 575px) {
+        width: 88.3vw;
         
       }
 
