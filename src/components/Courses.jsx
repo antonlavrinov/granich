@@ -10,6 +10,10 @@ const CoursesSection = styled.section`
     position: relative;
     margin-top: -2.7vw;
     margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-top: -5vw;
+        margin-bottom: 11vw;
+    }
 `
 
 const CoursesWrapper = styled.div`
@@ -18,7 +22,9 @@ const CoursesWrapper = styled.div`
     grid-column-gap: 1.7vw;
     grid-row-gap: 1.7vw;
     @media only screen and (max-width: 575px) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+        padding: 0 6.8vw;
+        grid-row-gap: 9.5vw;
 
     }
 

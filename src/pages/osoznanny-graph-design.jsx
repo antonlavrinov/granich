@@ -1,10 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/Layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
-import {graphql} from 'gatsby'
 import GraphDesignOffer from '../components/graphdesign-page/GraphDesignOffer';
 import Header from "../components/Header"
 import GraphDesignAnswers from "../components/graphdesign-page/GraphDesignAnswers"
@@ -22,7 +18,7 @@ import GraphDesignParticipation from "../components/graphdesign-page/GraphDesign
 
 const OsoznannyGraphDesignPage = ({data}) => (
   <Layout>
-    <Header style={'dark'}/>
+    <Header type={'dark'}/>
     <SEO title="Осознанный графдизайн" />
     <GraphDesignOffer/>
     <GraphDesignAnswers/>

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import author from '../assets/images/author.jpg';
 import { Container } from './style';
 import parse from 'html-react-parser';
 import BackgroundImage from 'gatsby-background-image'
@@ -18,6 +17,7 @@ const ManifestWrapper = styled.div`
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
         padding: 11vw 5vw 11vw 9.3vw;
+        border-radius: 3vw;
     }
 `
 const ManifestSecondaryWrapper = styled.div`

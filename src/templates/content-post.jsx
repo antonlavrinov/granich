@@ -9,9 +9,7 @@ import {Container} from '../components/style';
 const ContentSection = styled.section`
     padding-top: 10vw;
 `
-const ContentWrapper = styled.section`
 
-`
 
 export const pageQuery = graphql`
     query ContentfulContentBySlug($slug: String!) {
@@ -29,7 +27,7 @@ export const pageQuery = graphql`
 const ContentPage = ({data}) => {
     return (
         <Layout>
-            <Header style="dark"/>
+            <Header type="dark"/>
             <ContentSection>
                 <Container>
                     {/* <ContentWrapper>

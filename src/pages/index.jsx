@@ -1,8 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/Layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import {graphql} from 'gatsby'
 import Offer from '../components/Offer';
@@ -23,6 +21,11 @@ export const contentfulQuery = graphql`
             node {
               headerImage {
                 fluid(maxWidth: 2729, quality: 100) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              headerImageMobile {
+                fluid(maxWidth: 575, quality: 100) {
                   ...GatsbyContentfulFluid
                 }
               }

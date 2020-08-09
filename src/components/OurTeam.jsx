@@ -8,11 +8,43 @@ import InstagramIcon from '../assets/svgs/granich-main-team/instagram.svg';
 import VKIcon from '../assets/svgs/granich-main-team/vk.svg';
 import TelegramIcon from '../assets/svgs/granich-main-team/telegram.svg';
 
-
+const VK = styled(props => <VKIcon {...props}/>)`
+    width: 2.1vw;
+    @media only screen and (max-width: 575px) {
+        width: 7.5vw;
+    }
+`
+const Pinterest = styled(props => <PinterestIcon {...props}/>)`
+    width: 2vw;
+    @media only screen and (max-width: 575px) {
+        width: 7vw;
+    }
+`
+const Behance = styled(props => <BehanceIcon {...props}/>)`
+    width: 2.1vw;
+    @media only screen and (max-width: 575px) {
+        width: 7.5vw;
+    }
+`
+const Instagram = styled(props => <InstagramIcon {...props}/>)`
+    width: 2.1vw;
+    @media only screen and (max-width: 575px) {
+        width: 7.5vw;
+    }
+`
+const Telegram = styled(props => <TelegramIcon {...props}/>)`
+    width: 2vw;
+    @media only screen and (max-width: 575px) {
+        width: 7vw;
+    }
+`
 
 
 const OurTeamSection = styled.section`
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
+    // @media only screen and (max-width: 575px) {
+    //     margin-bottom: 10px;
+    // }
 `
 
 
@@ -21,6 +53,10 @@ const OurTeamWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 1.6vw;
     justify-content: space-between;
+    @media only screen and (max-width: 575px) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 10vw;
+    }
 
 `
 
@@ -28,16 +64,23 @@ const TeacherWrapper = styled.div`
     background: #E8E8E8;
     border-radius: 0.6vw;
     padding: 1.7vw 1.5vw 2vw 2.8vw; 
+    @media only screen and (max-width: 575px) {
+        border-radius: 3vw;
+        padding: 6.5vw 8vw 8vw 10vw; 
+    }
 `
 
 const TeacherHeader = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.2vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 3vw;
+    }
 `
 const TeacherImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-    width: 4.8vw;
-    height: 4.8vw;
+    width: 19.5vw;
+    height: 19.5vw;
     border-radius: 100vw;
     overflow: hidden;
 `
@@ -46,6 +89,9 @@ const TeacherSocials = styled.div`
     flex-direction: column;
     align-items: flex-end;
     margin-right: 0.8vw;
+    @media only screen and (max-width: 575px) {
+        margin-right: 0;
+    }
 
 
 `
@@ -60,6 +106,10 @@ const TeacherSocialIcons = styled.div`
         :hover {
             transform: scale(1.1);
         }
+    }
+    @media only screen and (max-width: 575px) {
+        margin-top: 2vw;
+        margin-bottom: 1.5vw;
     }
 
 `
@@ -76,6 +126,15 @@ const TeacherEmail = styled.a`
         color: var(--granich-grey);
         cursor: pointer;
     }
+    @media only screen and (max-width: 575px) {
+        font-size: 2.6vw;
+        margin-right: 1vw;
+        padding-bottom: 0.2vw;
+        border-bottom: 0.3vw dotted var(--granich-light-grey);
+        :hover {
+            font-size: 2.9vw;
+        }
+    }
 `
 const TeacherInfo = styled.div`
 
@@ -88,6 +147,16 @@ const TeacherInfo = styled.div`
         font-size: 1.16vw;
 
     }
+    @media only screen and (max-width: 575px) {
+        border-left: 0.5vw solid #D7D7D7;
+        padding-left: 4.5vw;
+        margin-left: -0.5vw;
+        min-height: 21vw;
+        span {
+            font-size: 4.4vw;
+    
+        }
+    }
 `
 const TeacherInfoText = styled.div`
     margin-top: 0.2vw;
@@ -95,6 +164,11 @@ const TeacherInfoText = styled.div`
     font-size: 1.16vw;
     font-weight: 500;
     line-height: 1.2;
+    @media only screen and (max-width: 575px) {
+        font-size: 4.4vw;
+        line-height: 1.3;
+        margin-top: 0;
+    }
 `
 
 const SocialLink = styled.a`
@@ -132,15 +206,15 @@ const TeacherBlock = ({teacher}) => {
                             return (
                                 <React.Fragment key={idx}>
                                     {social.toLowerCase() === 'vk' ? (
-                                        <SocialLink  href={teacher.teacherSocialVK} target="_blank"><VKIcon/></SocialLink>
+                                        <SocialLink  href={teacher.teacherSocialVK} target="_blank"><VK/></SocialLink>
                                     ) : social.toLowerCase() === 'behance' ? (
-                                        <SocialLink href={teacher.teacherSocialBehance} target="_blank"><BehanceIcon/></SocialLink>
+                                        <SocialLink href={teacher.teacherSocialBehance} target="_blank"><Behance/></SocialLink>
                                     ) : social.toLowerCase() === 'telegram' ? (
-                                        <SocialLink  href={teacher.teacherSocialTelegram} target="_blank"><TelegramIcon/></SocialLink>
+                                        <SocialLink  href={teacher.teacherSocialTelegram} target="_blank"><Telegram/></SocialLink>
                                     ) : social.toLowerCase() === 'pinterest' ? (
-                                        <SocialLink  href={teacher.teacherSocialPinterest} target="_blank"><PinterestIcon/></SocialLink>
+                                        <SocialLink  href={teacher.teacherSocialPinterest} target="_blank"><Pinterest/></SocialLink>
                                     ) : social.toLowerCase() === 'instagram' ? (
-                                        <SocialLink  href={teacher.teacherSocialInstagram} target="_blank"><InstagramIcon/></SocialLink>
+                                        <SocialLink  href={teacher.teacherSocialInstagram} target="_blank"><Instagram/></SocialLink>
                                     ) : null}
                                 </React.Fragment>
                             )

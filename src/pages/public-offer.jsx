@@ -5,7 +5,7 @@ import Header from '../components/Header'
 const PublicOfferPage = () => {
     return (
         <Layout>
-            <Header style={'dark'}/>
+            <Header type={'dark'}/>
                 public offer
         </Layout>
     )

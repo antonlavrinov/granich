@@ -12,39 +12,64 @@ import YoutubeIcon from '../assets/svgs/youtube-icon.svg';
 
 const Behance = styled(props => <BehanceIcon {...props}/>)`
     width: 2.3vw;
+    @media only screen and (max-width: 575px) {
+        width: 6.5vw;
+    }
 `
 
 const BehanceMixed = styled(props => <BehanceIcon {...props}/>)`
     width: 2.7vw;
+    @media only screen and (max-width: 575px) {
+        width: 7vw;
+    }
 `
 
 const Youtube = styled(props => <YoutubeIcon {...props}/>)`
     height: 2.6vw;
     margin-right: -0.5vw;
+    @media only screen and (max-width: 575px) {
+        height: 7vw;
+        margin-right: -1.3vw;
+    }
 `
 
 const YoutubeMixed = styled(props => <YoutubeIcon {...props}/>)`
     height: 2.9vw;
     margin-left: -0.1vw;
+    @media only screen and (max-width: 575px) {
+        height: 7.4vw;
+        margin-left: -1vw;
+    }
 `
 const Medium = styled(props => <MediumIcon {...props}/>)`
     width: 2.7vw;
     margin-right: 0.4vw;
+    @media only screen and (max-width: 575px) {
+        width: 7vw;
+    }
 `
 const Pinterest = styled(props => <PinterestIcon {...props}/>)`
     width: 2.1vw;
+    @media only screen and (max-width: 575px) {
+        width: 6.5vw;
+    }
 
 `
 const PinterestOut = styled(props => <PinterestLinkOut {...props}/>)`
     width: 2.2vw;
+    @media only screen and (max-width: 575px) {
+        width: 6.5vw;
+    }
 
 `
 const BehanceOut = styled(props => <BehanceLinkOut {...props}/>)`
     width: 2.2vw;
+    @media only screen and (max-width: 575px) {
+        width: 6.5vw;
+    }
 `
 
 const ContentWrapperLink = styled(props => <Link {...props}/>)`
-
     background: #2b2b2b;
     border-radius: 0.5vw;
     display: flex;
@@ -54,6 +79,10 @@ const ContentWrapperLink = styled(props => <Link {...props}/>)`
     :hover {
         transform: scale(1.03);
         cursor: pointer;
+    }
+    @media only screen and (max-width: 575px) {
+        height: 55vw;
+        border-radius: 1.3vw;
     }
 
 
@@ -65,7 +94,6 @@ const ContentWrapperExternalLink = styled.a`
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
-    // min-height: 18vw;
     height: 20.3vw;
     :hover {
         cursor: pointer;
@@ -76,12 +104,18 @@ const ContentWrapperExternalLink = styled.a`
     ` }
     ${props => props.type === 'Behance' && `
         background: #0E3983;
-    ` }    
+    ` }   
+    @media only screen and (max-width: 575px) {
+        height: 55vw;
+        border-radius: 1.3vw;
+    } 
 `
 
 const ContentContainer = styled.div`
-    padding: 0.9vw 1.05vw 0.7vw;
-    padding-top: 0.5vw;
+    padding: 0.5vw 1.05vw 0.7vw;
+    @media only screen and (max-width: 575px) {
+        padding: 1.9vw 2.8vw 2.2vw;
+    }
 `
 
 
@@ -93,9 +127,11 @@ const ContentTagList = styled.div`
     margin-right: -0.2vw;
     margin-top: 0.3vw;
     flex-wrap: wrap;
-    // max-width: 13vw;
-    // width: 100%;
     line-height: 1;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 2vw;
+        margin-top: 0.5vw;
+    }
 `
 
 
@@ -104,7 +140,6 @@ const ContentTag = styled.div`
     color: white;
     border-radius: 100vw;
     font-weight: 400;
-    // line-height: 1;
     font-size: 0.8vw;
     padding: 0.1vw 0.4vw 0.16vw;
     display: inline-block;
@@ -112,6 +147,14 @@ const ContentTag = styled.div`
     margin-right: 0.3vw;
     :last-child {
         margin-right: 0;
+    }
+    @media only screen and (max-width: 575px) {
+        font-size: 2vw;
+        padding: 0.5vw 0.7vw 0.5vw;
+        margin-right: 1vw;
+        :last-child {
+            margin-right: 0;
+        }
     }
 `
 
@@ -123,12 +166,19 @@ const ContentTitle = styled.div`
     color: white;
     max-width: 14vw;
     margin-left: -0.1vw;
-    // margin-bottom: 0.2vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.2vw;
+        max-width: 100%;
+    }
 `
 
 const ContentImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     margin-bottom: 1vw;
     max-height: 7.8vw;
+    @media only screen and (max-width: 575px) {
+        max-height: 21vw;
+        margin-bottom: 2.8vw;
+    }
 `
 
 const ContentDescr = styled.div`
@@ -140,6 +190,11 @@ const ContentDescr = styled.div`
     line-height: 1.15;
     margin-left: -0.2vw;
     letter-spacing: -0.01vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 2.2vw;
+        max-width: 100%;
+        margin-top: 1vw;
+    }
 `
 
 const ContentButtonContainer = styled.div`
@@ -152,6 +207,17 @@ const ContentButtonContainer = styled.div`
         display: flex;
         padding: 0.3vw 1.1vw 1vw;
     `}
+    @media only screen and (max-width: 575px) {
+        padding: 1.5vw 3vw 2.4vw;
+        ${props => props.type === 'Youtube' && `
+        display: flex;
+        padding: 1.5vw 3vw 2.4vw;
+        `}
+        ${props => props.type === 'Youtube + Medium + Behance' && `
+            display: flex;
+            padding: 1.5vw 3vw 2.4vw;
+        `}
+    }
 `
 
 const ContentButton = styled.div`
@@ -167,6 +233,10 @@ const ContentButton = styled.div`
     ${props => props.type === 'Behance' && `
         background: #011E4B;
     ` }
+
+    @media only screen and (max-width: 575px) {
+        border-radius: 0 0 1.3vw 1.3vw;
+    }
 `
 
 const ContentButtonWrapper = styled.div`
@@ -180,9 +250,6 @@ const ContentButtonWrapper = styled.div`
     }
 `
 
-const ContentButtonTextWrapper = styled.div`
-
-`
 
 const ContentButtonText = styled.div`
     color: white;
@@ -191,6 +258,9 @@ const ContentButtonText = styled.div`
     line-height: 0.95;
 
     margin-left: -0.1vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.5vw;
+    }
 
 `
 
@@ -204,17 +274,17 @@ const ContentIconsWrapper = styled.div`
             margin-right: -0.4vw;
         }
     }
+    @media only screen and (max-width: 575px) {
+        margin-right: -1vw;
+        svg {
+            :first-child {
+                margin-right: -1.4vw;
+            }
+        }
+    }
 `
 
-// const ContentButtonYoutubeSection = styled.div`
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     width: 100%;
-//     svg {
-//         margin-right: -0.4vw;
-//     }
-// `
+
 
 // YOUTUBE
 const ContentButtonYoutubeTextWrapper = styled.div`
@@ -226,22 +296,25 @@ const ContentButtonYoutubeTextWrapper = styled.div`
 const ContentButtonYoutubeText = styled.div`
 
     margin-top: -1vw;
-    font-size: 2vw;
-    font-weight: 500;
-    color: white;
-
     color: white;
     font-size: 1.3vw;
     font-weight: 500;
     line-height: 0.95;
 
     margin-left: -0.1vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.6vw;
+    }
 `
 
 const ContentButtonYoutubeTiming = styled.div`
     color: white;
     font-size: 0.67vw;
     margin-top: 0.2vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 1.8vw;
+        margin-top: 0.6vw;
+    }
 
 `
 
@@ -263,6 +336,10 @@ const ContentButtonBlockTitle = styled.div`
     color: grey;
     font-size: 0.8vw;
     margin-bottom: 0.3vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 2.2vw;
+        margin-bottom: 1vw;
+    }
 `
 
 const ContentButtonReadBlockWrapper = styled.div`
@@ -271,36 +348,37 @@ const ContentButtonReadBlockWrapper = styled.div`
 
 const ContentButtonReadBlock = styled.div`
     margin-right: -0.3vw;
+    @media only screen and (max-width: 575px) {
+        margin-right: -1vw;
+    }
 `
 const ContentButtonMixedTiming = styled.div`
     color: white;
     font-size: 0.67vw;
     padding-bottom: 0.3vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 1.8vw;
+        padding-bottom: 0.8vw;
+    }
 
 `
 
 
-// const getExternalContentLink = (ContentType) => {
-//     switch(ContentType) {
-//         case 'Youtube' :
-//             return 
-//     }
-// }
+
 
 const PreparationContent = ({content}) => {
-    console.log('contenttype', content.contentType)
+
     const youtube = 'Youtube';
     const behance = 'Behance';
     const pinterest = 'Pinterest';
     const mixed = 'Youtube + Medium + Behance';
-    console.log(content.contentLinkPinterest ? content.contentLinkPinterest.contentLinkPinterest : null)
     const contentExternalLink = content.contentType === pinterest ? (
         content.contentLinkPinterest ? content.contentLinkPinterest.contentLinkPinterest : '/' 
     ) : content.contentType === behance ? (content.contentLinkBehance ? content.contentLinkBehance.contentLinkBehance : '/') : '/';
 
 
     return (
-        <>
+        <div className="content">
             {content.contentType === youtube || content.contentType === mixed ? (
                 <ContentWrapperLink to={content.contentSlug} type={content.contentType} >
                     <ContentContainer>
@@ -395,7 +473,7 @@ const PreparationContent = ({content}) => {
                     </ContentButton>
                 </ContentWrapperExternalLink>
             )}
-        </>
+        </div>
 
     )
 }

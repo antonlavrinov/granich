@@ -3,7 +3,22 @@ import styled from 'styled-components';
 import WhiteArrowNewPage from '../assets/svgs/arrow-white-newpage.svg';
 import BlackArrowNewPage from '../assets/svgs/arrow-black-newpage.svg';
 import BackgroundImage from 'gatsby-image';
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { Link } from 'gatsby'
+
+const RedArrow = styled(props => <WhiteArrowNewPage {...props}/>)`
+    width: 3.1vw; 
+    @media only screen and (max-width: 575px) {
+        width: 14vw; 
+        margin-right: -1vw;
+    }
+`
+const BlackArrow = styled(props => <BlackArrowNewPage {...props}/>)`
+    width: 3.1vw; 
+    @media only screen and (max-width: 575px) {
+        width: 14vw; 
+        margin-right: -1vw;
+    }
+`
 
 const CourseWrapper = styled(props => <Link {...props}/>)`
     background: white;
@@ -18,20 +33,41 @@ const CourseWrapper = styled(props => <Link {...props}/>)`
         cursor: pointer;
         transform: scale(1.03);
     }
+    @media only screen and (max-width: 575px) {
+        border-radius: 3vw;
+        box-shadow: 0 0 2.5vw rgba(0,0,0,0.25);
+    }
     
 `
 const CourseContainer = styled.div`
     padding: 0.9vw;
-    padding-top: 0.9vw;
     display: flex;
     flex-direction: column;
     height: 100%;
+    @media only screen and (max-width: 575px) {
+        padding: 4vw 5vw 4vw;
+    }
 
 `
+const CourseButtonContainer = styled.div`
+    padding: 0.9vw;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    @media only screen and (max-width: 575px) {
+        padding: 3vw 5vw 3vw;
+    }
+`
+
 const CourseTagList = styled.div`
     margin-bottom: 0.9vw;
     display: flex;
     width: 100%;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 4vw;
+        margin-top: 0.5vw;
+        margin-left: -0.5vw;
+    }
 `
 
 const CourseMainTag = styled.div`
@@ -44,7 +80,7 @@ const CourseMainTag = styled.div`
     font-size: 0.83vw;
     padding: 0.15vw 0.4vw 0.17vw;
     display: inline-block;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.05vw;
     margin-right: 0.3vw;
     ${(props) => !props.active && `
         filter: opacity(30%);
@@ -52,6 +88,14 @@ const CourseMainTag = styled.div`
         border-color: black;
 
     `}
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+        padding: 0.5vw 2.5vw 0.8vw;
+        font-weight: 500;
+        margin-right: 1.5vw;
+        border-width: 0.3vw;
+        letter-spacing: -0.1vw;
+    }
 
 `
 
@@ -75,6 +119,14 @@ const CourseTag = styled.div`
         color: black;
 
     `}
+    @media only screen and (max-width: 575px) {
+        border-width: 0.3vw;
+        font-size: 3.7vw;
+        padding: 0.5vw 2.5vw 0.8vw;
+        font-weight: 500;
+        margin-right: 1.5vw;
+        letter-spacing: -0.1vw;
+    }
 `
 
 const CourseTitle = styled.div`
@@ -84,22 +136,25 @@ const CourseTitle = styled.div`
     line-height: 0.9;
     font-weight: 600;
     letter-spacing: 0;
-    // margin-bottom: 0.9vw;
     max-width: 15.5vw;
-    ${(props) => !props.cardType && `
-        max-width: 13.5vw;
-
-    `}
     ${(props) => !props.active && `
         color: var(--granich-light-grey);
     `}
+    @media only screen and (max-width: 575px) {
+        font-size: 7.65vw;
+        margin-top: 2vw;
+        margin-left: -0.5vw;
+        max-width: 68vw;
+    }
 `
 
 const CourseImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-    // margin-bottom: 0.4vw;
     min-height: 15.7vw;
     width: 100%;
     position: relative;
+    @media only screen and (max-width: 575px) {
+        min-height: 66vw;
+    }
 `
 
 const CourseImageWrapper = styled.div`
@@ -115,6 +170,9 @@ const CourseButton = styled.div`
         background: black;
     
     `}
+    @media only screen and (max-width: 575px) {
+        border-radius: 0 0 3vw 3vw;
+    }
     
 `
 
@@ -122,6 +180,8 @@ const CourseButtonWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+
 `
 const CourseButtonText = styled.div`
     color: white;
@@ -130,6 +190,10 @@ const CourseButtonText = styled.div`
     line-height: 0.95;
     margin-left: 0.3vw;
     margin-top: -0.5vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 6.2vw;
+        margin-top: -1vw;
+    }
 
 `
 
@@ -142,6 +206,12 @@ const CourseInfo = styled.div`
     margin-top: 0.9vw;
     height: 100%;
     align-items: center;
+    @media only screen and (max-width: 575px) {
+        font-size: 4.3vw;
+        margin-top: 4vw;
+        margin-bottom: 0vw;
+        margin-left: -0.5vw;
+    }
 
 `
 const CourseDescr = styled.div`
@@ -150,13 +220,16 @@ const CourseDescr = styled.div`
     color: var(--granich-light-grey);
     letter-spacing: -0.01vw;
     font-weight: 500;
-    margin-top: 0.2vw;
     height: 100%;
     line-height: 1;
     margin-top: 0.5vw;
     ${(props) => !props.active && `
         color: var(--granich-light-grey);
     `}
+    @media only screen and (max-width: 575px) {
+        font-size: 4.3vw;
+        margin-top: 2vw;
+    }
 `
 
 const CourseStart = styled.div`
@@ -172,6 +245,11 @@ const CourseStart = styled.div`
             color: var(--granich-light-grey);
         `}
     }
+    @media only screen and (max-width: 575px) {
+        margin-right: 4vw;
+    }
+
+
 `
 
 const CourseDuration = styled.div`
@@ -189,25 +267,20 @@ const CourseDuration = styled.div`
     
 `
 
-const CourseShadow = styled.div`
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 10vw;
-    width: 20vw;
-    
-`
+
 
 const CourseTeachers = styled.div`
     position: absolute;
     display: flex;
-    // margin-left: auto;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 0.8vw 0.5vw 0.4vw;
     background: linear-gradient(360deg, rgba(0,0,0,0.3) 0%, rgba(45,45,45,0) 80%);
     z-index: 100;
+    @media only screen and (max-width: 575px) {
+        padding: 2.2vw 3vw 2.2vw;
+    }
     
 `
 const CourseTeacher = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
@@ -223,24 +296,14 @@ const CourseTeacher = styled(props => <BackgroundImage {...props}></BackgroundIm
             z-index: 1;
         }
     `}
+    @media only screen and (max-width: 575px) {
+        height: 10.2vw;
+        width: 10.2vw;
+    }
 
 `
 
 const Course = ({courseData}) => {
-    const data = useStaticQuery(graphql`
-        query CourseImage {
-            placeholderImage: file(relativePath: { eq: "course_image.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 600, quality: 100) {
-
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-        }
-    `)
-    const imageData = data.placeholderImage.childImageSharp.fluid
-    console.log('courseData', courseData)
     return (
         <CourseWrapper to={courseData.node.cardSlug}>
             <CourseContainer>
@@ -266,7 +329,6 @@ const Course = ({courseData}) => {
 
                 <CourseImageWrapper>
                     <CourseImage fluid={courseData.node.cardImage.fluid}>
-                        <CourseShadow></CourseShadow>
                     </CourseImage>
                     <CourseTeachers>
                         {courseData.node.cardTeachers.length > 1 ? (
@@ -305,7 +367,7 @@ const Course = ({courseData}) => {
 
             </CourseContainer>
             <CourseButton active={courseData.node.cardActive}>
-                <CourseContainer>
+                <CourseButtonContainer>
                     <CourseButtonWrapper>
                         {courseData.node.cardActive ? (
                             <>  
@@ -319,23 +381,27 @@ const Course = ({courseData}) => {
                                     </CourseButtonText>
                                 )}
 
-                                <WhiteArrowNewPage/>
+                                <RedArrow/>
                             </>
                         ) : (
                             <>
-                                <CourseButtonText>
-                                    Узнать <br/>о наборе
-                                </CourseButtonText>
-                                <BlackArrowNewPage/>
+                                {courseData.node.typeOfCard === "Курс" ? (
+                                    <CourseButtonText>
+                                        Узнать <br/>о наборе
+                                    </CourseButtonText>
+                                ) : (
+                                    <CourseButtonText>
+                                        Предзаказ
+                                    </CourseButtonText>
+                                )}
+
+                                <BlackArrow/>
                             </>
                         )}
 
                     </CourseButtonWrapper>
-
-
-                    
-                    
-                </CourseContainer>
+ 
+                </CourseButtonContainer>
             </CourseButton>
         </CourseWrapper> 
     )

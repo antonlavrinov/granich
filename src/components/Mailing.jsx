@@ -7,6 +7,13 @@ import { Container } from './style';
 import { CSSTransition } from 'react-transition-group';
 
 
+const ArrowRightButton = styled(props => <BlackArrowRight {...props}/>)`
+    width: 3.6vw;
+    @media only screen and (max-width: 575px) {
+        width: 11.5vw;
+    }
+`
+
 const MailingSection = styled.section`
     margin-bottom: 4vw;
 `
@@ -16,6 +23,10 @@ const MailingWrapper = styled.div`
     background: var(--granich-red);
     border-radius: 0.6vw;
     position: relative;
+    @media only screen and (max-width: 575px) {
+        border-radius: 3vw;
+    }
+
 `
 
 const MailingContainer = styled.div`
@@ -23,45 +34,41 @@ const MailingContainer = styled.div`
     padding-right: 1.8vw;
     display: flex;
     justify-content: space-between;
+    @media only screen and (max-width: 575px) {
+        flex-direction: column;
+        padding: 7.2vw 5.5vw 8vw;
+    }
 `
-const MailingTitle = styled.div`
-    width: 100%;
-    font-size: 5vw;
-    font-weight: 600;
-    line-height: 1.26;
 
-`
 const MailingText = styled.div`
     font-size: 1.44vw;
     font-weight: 400;
     width: 38vw;
     line-height: 1.2;
     color: white;
-    // letter-spacing: -0.03vw;
     span {
         letter-spacing: -0.01vw;
         font-style: italic;
         color: inherit;
         font-size: 1.94vw;
         line-height: 0.5;
+        font-weight: 500;
         font-family: EB Garamond;
     }
-
-
-`
-
-const MailingBackground = styled.div`
-    background: var(--granich-red);
-    width: 100%;
-    border-radius: 0 0 12px 12px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    #mailingContainer {
-        padding-top: 20px;
-        padding-bottom: 35px;
+    @media only screen and (max-width: 575px) {
+        font-size: 4vw;
+        width: 70vw;
+        line-height: 1.3;
+        margin-bottom: 6vw;
+        span {
+            letter-spacing: -0.01vw;
+            font-size: 5.4vw;
+        }
     }
+
+
 `
+
 
 const MailingForm = styled.form`
     // width: 100%;
@@ -76,13 +83,25 @@ const MailingInput = styled.input`
     border: none;
     border-radius: 0.6vw;
     box-shadow: 0 0 0.5vw rgba(0,0,0,0.5) inset;
-    padding: 0.8vw 1.1vw;
     padding: 1vw 1.1vw;
     width: 27.5vw;
     font-size: 1.55vw;
     margin-right: 1.1vw;
     ::placeholder {
         font-size: 1.55vw;
+    }
+    @media only screen and (max-width: 575px) {
+        border-radius: 3vw;
+        width: 65vw;
+        height: 10.5vw;
+        padding: 0 4vw;
+        font-size: 4.1vw;
+        margin-right: 4vw;
+        margin-left: 0.5vw;
+        box-shadow: 0 0 1.5vw rgba(0,0,0,0.5) inset;
+        ::placeholder {
+            font-size: 4.1vw;
+        }
     }
 
     
@@ -174,7 +193,7 @@ const Mailing = () => {
                                        
                                     </CSSTransition>
 
-                                    <MailingButton type="submit" disabled={isSubmitting}><BlackArrowRight/></MailingButton>
+                                    <MailingButton type="submit" disabled={isSubmitting}><ArrowRightButton/></MailingButton>
                                 </MailingForm>
                             )}}
 

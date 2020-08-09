@@ -5,7 +5,7 @@ import Header from '../components/Header'
 const PrivacyPage = () => {
     return (
         <Layout>
-            <Header style={'dark'}/>
+            <Header type={'dark'}/>
                 privacy
         </Layout>
     )

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { Container } from './style';
 import styled from 'styled-components';
 import PreparationContent from './PreparationContent';
-
+import TagCross from '../assets/svgs/tag-cross-icon-01.svg';
 
 
 const PreparationSection = styled.section`
@@ -14,11 +14,32 @@ const PreparationWrapper = styled.div`
     background: #E8E8E8;
     padding: 3vw 3vw;
     border-radius: 0.6vw;
+    @media only screen and (max-width: 575px) {
+        padding: 0;
+        background: none;
+        border-radius: 0;
+        
+    }
+
 `
 
 const PreparationHeader = styled.div`
     display: flex;
     margin-bottom: 3.2vw;
+    @media only screen and (max-width: 575px) {
+        flex-direction: column;
+        margin-bottom: 5vw;
+        
+    }
+`
+
+const PreparationMobileWrapper = styled.div`
+    @media only screen and (max-width: 575px) {
+        background: #E8E8E8;
+        padding: 9vw 6vw;
+        border-radius: 3vw;
+        margin-bottom: 3vw;
+    }
 `
 
 const PreparationTitle = styled.div`
@@ -28,6 +49,13 @@ const PreparationTitle = styled.div`
     font-weight: 700;
     line-height: 1.05;
     margin-right: 4vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 11.9vw;
+        letter-spacing: -0.7vw;
+        line-height: 1;
+        margin-right: 0;
+        margin-bottom: 4vw;
+    }
 
 `
 
@@ -38,22 +66,33 @@ const PreparationText = styled.div`
     line-height: 1.55;
     letter-spacing: 0.02vw;
     font-weight: 500;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.9vw;
+        letter-spacing: -0.08vw;
+    }
 
 `
 
 const PreparationFilters = styled.div`
     display: flex;
-    padding: 15px 0 0;
     border-bottom: 0.1vw solid var(--granich-light-grey);
     margin-bottom: 1vw;
     margin-left: 0.3vw;
+    @media only screen and (max-width: 575px) {
+        border-bottom: 0.3vw solid var(--granich-light-grey);
+        padding-bottom: 0vw;
+        margin-bottom: 1vw;
+
+    }
 `
 const PreparationFilter = styled.div`
     font-size: 1.15vw;
     margin-right: 1.5vw;
     margin-bottom: -0.1vw;
     padding-bottom: 1vw;
-    // border-bottom: 0.1vw solid var(--granich-red);
+    color: var(--granich-light-grey);
+    font-weight: 400;
+    
     :hover {
         cursor: pointer;
     }
@@ -62,25 +101,41 @@ const PreparationFilter = styled.div`
         
     }
     ${props => props.active && `
-    color: var(--granich-red);
+    font-weight: 500;
+    color: var(--granich-black);
     border-color: var(--granich-red);
+    border-bottom: 0.15vw solid var(--granich-red);
     :hover {
-        color: var(--granich-red);
+        color: var(--granich-black);
         border-color: var(--granich-red);
     }
-`}
+    `}
+    @media only screen and (max-width: 575px) {
+        font-size: 3.8vw;
+        margin-right: 5.2vw;
+        padding-bottom: 2.7vw;
+        :first-child {
+            margin-left: -0.7vw;
+            
+        }
+        ${props => props.active && `
+        border-bottom: 0.4vw solid var(--granich-red);
+        :hover {
+            color: var(--granich-black);
+            border-color: var(--granich-red);
+        }
+        `}
+    }
 
 `
 
-const PreparationFilterCross = styled.div`
+const PreparationFilterCross = styled(props => <TagCross {...props}/>)`
     display: none;
     ${props => props.active && `
         display: inline-block;
-        background: var(--granich-red);
-        border-radius: 100vw;
-        padding: 0.2vw;
-        color: white;
-        line-height: 0.5;
+        height: 0.8vw;
+        width: 0.9vw;
+        margin-left: 0.2vw;
     `}
 `
 
@@ -97,6 +152,10 @@ const PreparationTagsTitle = styled.div`
     margin-right: 1vw;
     color: var(--granich-grey);
     padding-left: 0.6vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.5vw;
+        margin-right: 4vw;
+    }
 `
 
 const PreparationTag = styled.div`
@@ -104,11 +163,14 @@ const PreparationTag = styled.div`
     padding: 0.5vw;
     border-radius: 100vw;
     transition: all 0.2s ease;
-    font-size: 0.73vw;
-    padding: 0.1vw 0.4vw 0.16vw;
+    font-size: 0.9vw;
+    padding: 0.1vw 0.4vw 0.1vw;
     margin-right: 0.5vw;
     margin-bottom: 0.5vw;
     color: var(--granich-grey);
+    display: flex;
+    align-items: center;
+    user-select: none;
     :last-child {
         margin-right: 0;
     }
@@ -125,6 +187,13 @@ const PreparationTag = styled.div`
             border-color: var(--granich-red);
         }
     `}
+    @media only screen and (max-width: 575px) {
+        font-size: 3.8vw;
+        border: 0.3vw solid var(--granich-grey);
+        padding: 0.5vw 1.5vw;
+        margin-right: 2vw;
+        margin-bottom: 2vw;
+    }
 
 `
 
@@ -138,6 +207,11 @@ const PreparationContents = styled.div`
     // grid-template-rows: minmax(25vw, 25vw)
 
     padding: 0 0.2vw;
+    @media only screen and (max-width: 575px) {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 3vw;
+        grid-row-gap: 3vw;
+    }
 `
 
 const PreparationButtonMore = styled.div`
@@ -162,12 +236,18 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
         contentTags: []
     })
     const [contentPagination, setContentPagination] = useState(4);
-    const [filterData, setFilterData] = useState('recommended');
+    const [filterData, setFilterData] = useState('Рекомендуемое');
     const [data, setData] = useState(dataRecommended);
-    const [topFilters, setTopFilters] = useState(['Рекомендуемое', 'Новое']);
-    const [selectedTopFilters, setSelectedTopFilters] = useState('Рекомендуемое');
-    const [contentBatchCount, setContentBatchCount] = useState(0);
-    const [buttonMoreClickCount, setButtonMoreClickCount] = useState(0);
+    const [topFilters, setTopFilters] = useState([
+        {
+            name: 'Рекомендуемое',
+            active: true
+        },
+        {
+            name: 'Новое',
+            active: false
+        },]);
+    const [contentShown, setContentShown] = useState(4);
     useEffect(() => {
         const contentTagsArray = [];
         const contentContentsArray = [];
@@ -177,8 +257,8 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
             content.node.contentTags.forEach((contentTag) => {
                 contentTagsArray.push(contentTag)
             })
+            return content;
         })
-        console.log('contentTagsArray', contentTagsArray)
 
         const uniqueSetOfTags = new Set(contentTagsArray);
         const backToTagsArray = [...uniqueSetOfTags];
@@ -195,33 +275,21 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
                 active: false
             }
         })
-        console.log('tags', tags)
+
         setContentTags(tags)
         setContentContents(contentContentsArray)
-        console.log('ANOTHER EFFECT')
-
-
-        console.log('data edges', data.edges)
-        console.log('contentContentsArray', contentContents)
 
 
     }, [data])
 
+
     useEffect(() => {
-        setContentBatchCount(Math.floor(data.edges.length/4))
-    }, [])
+        const content = document.querySelectorAll('.content');
+        setContentShown(content.length);
+        console.log('CONTENT', content)
+    }, [contentPagination])
 
     const multiPropsFilter = (products, filters) => {
-        // const filterKeys = Object.keys(filters);
-        // return products.filter(product => {
-        //     return filterKeys.every(key => {
-        //         if(!filters[key].length) return true;
-        //         if(Array.isArray(product[key])) {
-        //             return product[key].some(keyElem => filters[key].includes(keyElem))
-        //         }
-        //         return filters[key].includes(product[key])
-        //     })
-        // })
         const filterKeys = Object.keys(filters);
         return products.filter(item => {
           // validates all filter criteria
@@ -279,43 +347,46 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
     }
 
     const toggleTopFilterActive = (topFilter) => {
-        if(topFilter === selectedTopFilters) {
-            return;
+        const resetFilters = []
+        topFilters.forEach((filter) => {
+            resetFilters.push({...filter, active: false})
+        })
+        // console.log('activeee', topFilter)
+        const idx = resetFilters.findIndex((filter) => filter.name === topFilter.name)
+        const oldItem = resetFilters[idx];
+        const newItem = {
+            ...oldItem,
+            active: true
         }
-        if(topFilter === 'Новое') {
-            setSelectedTopFilters('Рекомендуемое');
-        } else {
-            setSelectedTopFilters('Новое');
-        }
+        const newArray = [
+            ...resetFilters.slice(0, idx),
+            newItem,
+            ...resetFilters.slice(idx + 1)
+        ]
+        console.log('NEW ARR', idx)
 
-        // if(topFilter === )
-        // const idx1 = topFilters.findIndex((filter) => filter.name === topFilter)
-        // const idx2 = topFilters.findIndex((filter) => filter.name !== topFilter)
-        // const oldItem = topFilters[idx];
-        // console.log('old item', idx)
-        // const newItem = {
-        //     ...oldItem,
-        //     active: !oldItem.active
-        // }
-        // const newArray = [
-        //     ...topFilters.slice(0, idx),
-        //     newItem,
-        //     ...topFilters.slice(idx + 1)
-        // ]
+        setTopFilters(newArray)
 
-        // setTopFilters(newArray)
     }
 
     const triggerFilteringNewAndRecommended = (filter) => {
-        if (filter === 'recommended') {
-            setData(dataRecommended);
+        if (filterData === filter.name) {
+            return;
+        } 
+        setFilterData(filter.name);
+        if (filter.name === 'Рекомендуемое') {
+            setData(dataRecommended)
         } else {
-            setData(dataNew);
-
+            setData(dataNew)
         }
+        const emptyFilters = {
+            contentTags: []
+        }
+        setFilters(emptyFilters)
+
          
         // if (data === )
-        setFilters({...filters, contentTags: []})
+        // setFilters({...filters, contentTags: []})
     }
 
     const filteredContents = multiPropsFilter(contentContents, filters);
@@ -324,43 +395,46 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
         <PreparationSection id="preparation">
             <Container>
                 <PreparationWrapper>
-                    <PreparationHeader>
-                        <PreparationTitle>
-                            Подготовка <br/>к курсам
-                        </PreparationTitle>
-                        <PreparationText>
-                            Сомневаетесь записаться ли на курс? <br/>Изучите бесплатные материалы школы <br/>и познакомьтесь с нашим подходом
-                        </PreparationText>
-                    </PreparationHeader>
-                    <PreparationFilters>
-                        {topFilters.map((filter, idx) => {
-                            return (
-                                <PreparationFilter active={filter === selectedTopFilters} onClick={() => toggleTopFilterActive(filter)} key={idx}>{filter}</PreparationFilter>
-                            )
-                        })}
-                    </PreparationFilters>
-                    <PreparationTags>
-                        <PreparationTagsTitle>Поиск по тегам:</PreparationTagsTitle>
-                        {contentTags.map((contentTag, idx) => {
-                            return (
-                                <PreparationTag key={idx} active={contentTag.active}  onClick={() => {triggerFiltering(contentTag)}}>
-                                    {contentTag.name} <PreparationFilterCross active={contentTag.active}>×</PreparationFilterCross>
-                                </PreparationTag>
-                            )
-                        })}
-                    </PreparationTags>
+                    <PreparationMobileWrapper>
+                        <PreparationHeader>
+                            <PreparationTitle>
+                                Подготовка <br/>к курсам
+                            </PreparationTitle>
+                            <PreparationText>
+                                Сомневаетесь записаться ли на курс? <br/>Изучите бесплатные материалы школы <br/>и познакомьтесь с нашим подходом
+                            </PreparationText>
+                        </PreparationHeader>
+                        <PreparationFilters>
+                            {topFilters.map((filter, idx) => {
+                                return (
+                                    <PreparationFilter active={filter.active}  onClick={() => {toggleTopFilterActive(filter); triggerFilteringNewAndRecommended(filter)}} key={idx}>{filter.name}</PreparationFilter>
+                                )
+                            })}
+                        </PreparationFilters>
+                        <PreparationTags>
+                            <PreparationTagsTitle>Поиск по тегам:</PreparationTagsTitle>
+                            {contentTags.map((contentTag, idx) => {
+                                return (
+                                    <PreparationTag key={idx} active={contentTag.active }  onClick={() => {triggerFiltering(contentTag)}}>
+                                        {contentTag.name} <PreparationFilterCross active={contentTag.active ? 1 : 0}>×</PreparationFilterCross>
+                                    </PreparationTag>
+                                )
+                            })}
+                        </PreparationTags>
+                    </PreparationMobileWrapper>
+                    
                     <PreparationContents>
                         {filteredContents.slice(0, contentPagination).map((content, idx) => {
                             return (
-                                <PreparationContent key={idx} content={content}/>
+                                <PreparationContent  key={idx} content={content}/>
                             )
                         })}
                     </PreparationContents>
 
                         {filteredContents.length > 4 ? (
                             <>
-                                {buttonMoreClickCount < contentBatchCount ? (
-                                    <PreparationButtonMore onClick={() => {setContentPagination(contentPagination + 4); setButtonMoreClickCount(buttonMoreClickCount + 1)}}>Показать больше</PreparationButtonMore>
+                                {contentShown < filteredContents.length ? (
+                                    <PreparationButtonMore onClick={() => setContentPagination(contentPagination + 4)}>Показать больше</PreparationButtonMore>
                                 ) : null}
                             </>
                             

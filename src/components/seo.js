@@ -8,10 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
-import favicon16x16 from "../assets/images/16x16.png";
-import favicon32x32 from "../assets/images/favicons/32x32.png";
-import favicon64x64 from "../assets/images/64x64.png";
+import { useStaticQuery, graphql } from "gatsby";
 
 // const faviconLinks = [
 //   { rel: "icon", href: favicon16x16 },
