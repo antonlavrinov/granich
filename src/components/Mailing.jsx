@@ -101,14 +101,15 @@ const MailingInput = styled.input`
     width: 27.5vw;
     font-size: 1.55vw;
     margin-right: 1.1vw;
+    ${props => props.errorStyle && `
+    ::placeholder {
+        color: var(--granich-red);
+    }
+    `}
     ::placeholder {
         font-size: 1.55vw;
     }
-    ${props => props.errorStyle && `
-        ::placeholder {
-            color: var(--granich-red);
-        }
-    `}
+
     @media only screen and (max-width: 575px) {
         border-radius: 3vw;
         width: 65vw;

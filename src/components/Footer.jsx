@@ -189,7 +189,7 @@ const FooterLinks = styled.div`
 `
 const FooterCredentialsAndPayment = styled.div`
     display: flex;
-    margin-left: auto;
+    // margin-left: auto;
     @media only screen and (max-width: 575px) {
         margin-left: 0;
         align-items: center;

@@ -23,7 +23,7 @@ const CoursesWrapper = styled.div`
     grid-row-gap: 1.7vw;
     @media only screen and (max-width: 575px) {
         grid-template-columns: 1fr;
-        padding: 0 6.8vw;
+        padding: 0 5.5vw;
         grid-row-gap: 9.5vw;
 
     }
