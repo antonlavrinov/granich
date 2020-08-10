@@ -84,6 +84,12 @@ export const contentfulQuery = graphql`
               }
               contentType
               contentSlug
+              contentPDF {
+                file { 
+                  url 
+                }
+              }
+              contentYoutubeVideoLink
               contentLinkPinterest {
                 contentLinkPinterest
               }
@@ -114,6 +120,12 @@ export const contentfulQuery = graphql`
               }
               contentType
               contentSlug
+              contentYoutubeVideoLink
+              contentPDF {
+                file { 
+                  url 
+                }
+              }
               contentLinkPinterest {
                 contentLinkPinterest
               }

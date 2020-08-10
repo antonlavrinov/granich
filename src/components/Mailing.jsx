@@ -1,11 +1,25 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import styled from 'styled-components';
 import BlackArrowRight from '../assets/svgs/arrow-black-right.svg';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import { Container } from './style';
-import { CSSTransition } from 'react-transition-group';
+import posed from "react-pose";
 
+
+const ShakeForm = posed.div({
+    shake: {
+      applyAtEnd: { x: 0 },
+      applyAtStart: { x: -10 },
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 1000,
+        damping: 10,
+        duration: 4
+      }
+    }
+  });
 
 const ArrowRightButton = styled(props => <BlackArrowRight {...props}/>)`
     width: 3.6vw;
@@ -90,6 +104,11 @@ const MailingInput = styled.input`
     ::placeholder {
         font-size: 1.55vw;
     }
+    ${props => props.errorStyle && `
+        ::placeholder {
+            color: var(--granich-red);
+        }
+    `}
     @media only screen and (max-width: 575px) {
         border-radius: 3vw;
         width: 65vw;
@@ -140,72 +159,93 @@ const MailingWarning = styled.div`
 `
 
 const Mailing = () => {
+    const [shakeTrigger, setShakeTrigger] = useState(3);
+
     const formEl = useRef(null)
+
+    //initial Validation
+    function isInitialValid(props) {
+        if (!props.validationSchema) return true;
+        return props.validationSchema.isValidSync(props.initialValues);
+      }
     return (
         <MailingSection>
             <Container>
-                <MailingWrapper>
-                    <MailingContainer>
-                        {/* <MailingTitle>Хотите быть с нами на связи?</MailingTitle> */}
-                        <MailingText>
-                            <span>Оставьте почту,</span> чтобы узнать о наборах на курсы и новом бесплатном контенте. Без спама.
-                        </MailingText>
-                        <Formik     initialValues={{formParams: {
-                                    email: ''
-                        }}}
+                <ShakeForm pose={["shake"]} poseKey={shakeTrigger}>
+                    <MailingWrapper>
+                        <MailingContainer>
+                            
+                            <MailingText>
+                                <span>Оставьте почту,</span> чтобы узнать о наборах на курсы и новом бесплатном контенте. Без спама.
+                            </MailingText>
+                            
+                                <Formik isInitialValid={isInitialValid}  initialValues={{formParams: {
+                                            email: ''
+                                }}}
+                                
+                                onSubmit={(values, {setSubmitting}, e) => {
+                                    formEl.current.submit();
+                                }}
+                                validationSchema={Yup.object().shape({
+                                    formParams: Yup.object().shape({
+                                        email: Yup.string().email('Неверный формат').required('Заполните поле'),
+                                    })
+                                })}
+                                
+                                >
+
+                                {props => {
+                                    const {
+                                        values, 
+                                        errors, 
+                                        isSubmitting, 
+                                        handleChange, 
+                                        handleSubmit,
+                                        isValid,
+                                    } = props;
+                                    return (
+                                        <MailingForm className="main-page-form" action="https://english-school.getcourse.ru/pl/lite/block-public/process-html?id=728049569" 
+                                                    method="post" 
+                                                    ref={formEl} 
+                                                    onSubmit={ (e) => {
+                                                        if(isValid) {
+                                                            handleSubmit(e);
+                                                            console.log(isValid)
+                                                        } else {
+                                                            handleSubmit(e);
+                                                            console.log(isValid)
+                                                            setShakeTrigger(shakeTrigger + 1)
+                                                            values.formParams.email = '';
+
+                                                        }
+                                                    }
+
+                                            }>
+                                            <MailingInput 
+                                            type="text" 
+                                            maxLength="60"  
+                                            placeholder={errors.formParams && errors.formParams.email ? errors.formParams.email : 'Электропочта'} 
+                                            name="formParams[email]"
+                                            value={values.formParams.email}
+                                            onChange={handleChange}
+                                            errorStyle={errors.formParams ? 1 : 0}
+                                            />
+
+
+                                            <MailingButton type="submit" disabled={isSubmitting}><ArrowRightButton/></MailingButton>
+                                        </MailingForm>
+                                    )}}
+
+                                </Formik>
+
+                            
+
+
+                        </MailingContainer>
+
                         
-                        onSubmit={(values, {setSubmitting}, e) => {
-                            formEl.current.submit();
-                        }}
-                        validationSchema={Yup.object().shape({
-                            formParams: Yup.object().shape({
-                                email: Yup.string().email('Неверный формат электронного адреса').required('Заполните поле Емейл'),
-                            })
-                        })}
-                        
-                        >
-
-                        {props => {
-                            const {
-                                values, 
-                                touched, 
-                                errors, 
-                                isSubmitting, 
-                                handleChange, 
-                                handleBlur, 
-                                handleSubmit
-                            } = props;
-                            return (
-                                <MailingForm action="https://english-school.getcourse.ru/pl/lite/block-public/process-html?id=728049569" method="post" ref={formEl} onSubmit={handleSubmit}>
-                                    <MailingInput 
-                                    type="text" 
-                                    maxLength="60"  
-                                    placeholder={'Электропочта'} 
-                                    name="formParams[email]"
-                                    value={values.formParams.email}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    className={((errors || {}).formParams || {}).email && ((touched || {}).formParams || {}).email && 'error'}
-                                    />
-                                    <CSSTransition timeout={300} classNames="warning-message" unmountOnExit in={errors.formParams ? (errors.formParams.email ? true : false) : false}>
-                                        
-                                        <MailingWarning>{errors.formParams && errors.formParams.email}</MailingWarning>
-                                       
-                                    </CSSTransition>
-
-                                    <MailingButton type="submit" disabled={isSubmitting}><ArrowRightButton/></MailingButton>
-                                </MailingForm>
-                            )}}
-
-                        </Formik>
-
-
-                    </MailingContainer>
-                    {/* <MailingBackground>
-
-                    </MailingBackground> */}
-                    
-                </MailingWrapper>
+                    </MailingWrapper>
+                </ShakeForm>
             </Container>
         </MailingSection>
     )

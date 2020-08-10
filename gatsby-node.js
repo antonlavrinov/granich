@@ -10,6 +10,7 @@ exports.createPages = ({graphql, actions}) => {
                 edges {
                     node {
                         contentSlug
+                        contentYoutubeVideoLink
                     }
                 }
             }

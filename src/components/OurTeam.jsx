@@ -41,10 +41,7 @@ const Telegram = styled(props => <TelegramIcon {...props}/>)`
 
 
 const OurTeamSection = styled.section`
-    // margin-bottom: 50px;
-    // @media only screen and (max-width: 575px) {
-    //     margin-bottom: 10px;
-    // }
+
 `
 
 
@@ -64,6 +61,8 @@ const TeacherWrapper = styled.div`
     background: #E8E8E8;
     border-radius: 0.6vw;
     padding: 1.7vw 1.5vw 2vw 2.8vw; 
+    display: flex;
+    flex-direction: column;
     @media only screen and (max-width: 575px) {
         border-radius: 3vw;
         padding: 6.5vw 8vw 8vw 10vw; 
@@ -79,10 +78,14 @@ const TeacherHeader = styled.div`
     }
 `
 const TeacherImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-    width: 19.5vw;
-    height: 19.5vw;
+    width: 5.1vw;
+    height: 5.1vw;
     border-radius: 100vw;
     overflow: hidden;
+    @media only screen and (max-width: 575px) {
+        width: 19.5vw;
+        height: 19.5vw;
+    }
 `
 const TeacherSocials = styled.div`
     display: flex;
