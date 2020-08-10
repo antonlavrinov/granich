@@ -6,25 +6,24 @@ import PageUpIcon from '../assets/svgs/page-up.svg';
 
 
 const PageUpWrapper = styled(props => <PageUpIcon {...props}/>)`
-    position: fixed;
-    bottom: 7vw;
+    width: 3.6vw;
     transition: all 0.3s ease;
     :hover {
         cursor: pointer;
         transform: scale(1.1)
     }
     @media only screen and (max-width: 575px) {
-        display: none;
+        width: 8vw;
     }
 `
 
 
 
 
-const PageTop = () => {
+const PageTop = ({chatOpen}) => {
 
     return (
-        <PageUpWrapper style={{right: '4.3vw'}} onClick={() => scrollTo('#header')}/>
+        <PageUpWrapper  onClick={() => scrollTo('#header')}/>
     )
 }
 

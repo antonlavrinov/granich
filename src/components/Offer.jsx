@@ -34,7 +34,7 @@ const OfferMobileSection = styled(props => <BackgroundImage {...props}></Backgro
         background-size: 'cover';
         background-position: center top;
         background-repeat: 'no-repeat';
-        padding: 25vw 11vw 0;    
+        padding: 25vw 10vw 0;    
     }
 `
 
@@ -57,6 +57,7 @@ const OfferTitle = styled.h1`
         margin-bottom: 17vw;
         width: 100%;
         line-height: 0.83;
+        margin-left: 0;
 
         
     }
@@ -71,6 +72,7 @@ const OfferDescr = styled.div`
     font-style: italic;
     position: relative;
     font-weight: 500;
+
     span {
         font-weight: inherit;
         font-size: inherit;
@@ -81,10 +83,16 @@ const OfferDescr = styled.div`
         :hover {
             cursor: pointer;
         }
+        :focus {
+            outline: none;
+        }
+        :active {
+            outline: none;
+        }
     }
     @media only screen and (max-width: 575px) {
         font-size: 7.2vw;
-        margin-left: 0;
+        margin-left: 1.2vw;
    
     }
 `

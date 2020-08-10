@@ -3,10 +3,10 @@ import ChatIcon from '../assets/svgs/chat.svg';
 import styled from 'styled-components';
 
 const ChatWrapper = styled(props => <ChatIcon {...props}/>)`
-    position: fixed;
-    bottom: 2.8vw;
-    right: 4.3vw;
-    
+    // position: fixed;
+    // bottom: 2.8vw;
+    // right: 4.3vw;
+    width: 3.6vw;
     transition: all 0.3s ease;
     :hover {
         cursor: pointer;
@@ -14,14 +14,16 @@ const ChatWrapper = styled(props => <ChatIcon {...props}/>)`
 
     }
     @media only screen and (max-width: 575px) {
-        display: none;
+        width: 8vw;
     }
+
 `
 
 
-const Support = () => {
+const Support = ({toggleChatOpen}) => {
+
     return (
-        <ChatWrapper />
+        <ChatWrapper onClick={toggleChatOpen}/>
     )
 }
 

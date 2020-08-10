@@ -66,7 +66,7 @@ const NavLinks = styled.nav`
     ul {
       li {
         margin-right: 11vw;
-        last-child {
+        :last-child {
           margin-right: 0;
         }
       }

@@ -12,30 +12,35 @@ const VK = styled(props => <VKIcon {...props}/>)`
     width: 2.1vw;
     @media only screen and (max-width: 575px) {
         width: 7.5vw;
+        height: 7.5vw;
     }
 `
 const Pinterest = styled(props => <PinterestIcon {...props}/>)`
     width: 2vw;
     @media only screen and (max-width: 575px) {
         width: 7vw;
+        height: 7.5vw;
     }
 `
 const Behance = styled(props => <BehanceIcon {...props}/>)`
     width: 2.1vw;
     @media only screen and (max-width: 575px) {
         width: 7.5vw;
+        height: 7.5vw;
     }
 `
 const Instagram = styled(props => <InstagramIcon {...props}/>)`
     width: 2.1vw;
     @media only screen and (max-width: 575px) {
         width: 7.5vw;
+        height: 7.5vw;
     }
 `
 const Telegram = styled(props => <TelegramIcon {...props}/>)`
     width: 2vw;
     @media only screen and (max-width: 575px) {
         width: 7vw;
+        height: 7.5vw;
     }
 `
 
@@ -135,7 +140,7 @@ const TeacherEmail = styled.a`
         padding-bottom: 0.2vw;
         border-bottom: 0.3vw dotted var(--granich-light-grey);
         :hover {
-            font-size: 2.9vw;
+            font-size: 2.6vw;
         }
     }
 `
@@ -145,22 +150,22 @@ const TeacherInfo = styled.div`
     padding-left: 1.4vw;
     margin-left: -0.4vw;
     min-height: 5.8vw;
-    span {
-        font-weight: 600;
-        font-size: 1.16vw;
-
-    }
     @media only screen and (max-width: 575px) {
         border-left: 0.5vw solid #D7D7D7;
         padding-left: 4.5vw;
         margin-left: -0.5vw;
         min-height: 21vw;
-        span {
-            font-size: 4.4vw;
-    
-        }
     }
 `
+const TeacherInfoName = styled.div`
+    font-weight: 600;
+    font-size: 1.16vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 4.4vw;
+        line-height: 1.3;
+    }
+`
+
 const TeacherInfoText = styled.div`
     margin-top: 0.2vw;
     color: var(--granich-grey);
@@ -168,7 +173,7 @@ const TeacherInfoText = styled.div`
     font-weight: 500;
     line-height: 1.2;
     @media only screen and (max-width: 575px) {
-        font-size: 4.4vw;
+        font-size: 4.3vw;
         line-height: 1.3;
         margin-top: 0;
     }
@@ -228,7 +233,7 @@ const TeacherBlock = ({teacher}) => {
 
             </TeacherHeader>
             <TeacherInfo>
-                    <span>{teacher.teacherName}</span>
+                    <TeacherInfoName>{teacher.teacherName}</TeacherInfoName>
                     {teacher.teacherDescription.map((descr, idx) => {
                         return (
                             <TeacherInfoText key={idx}>{descr}</TeacherInfoText>

@@ -139,7 +139,7 @@ const PreparationFilterCross = styled(props => <TagCross {...props}/>)`
     display: none;
     ${props => props.active && `
         display: inline-block;
-        height: 0.8vw;
+        height: 1vw;
         width: 0.9vw;
         margin-left: 0.2vw;
     `}
@@ -176,8 +176,8 @@ const PreparationTag = styled.div`
     padding: 0.5vw;
     border-radius: 100vw;
     transition: all 0.2s ease;
-    font-size: 0.9vw;
-    padding: 0.1vw 0.4vw 0.1vw;
+    font-size: 1.1vw;
+    padding: 0.1vw 0.5vw 0.15vw;
     margin-right: 0.5vw;
     margin-bottom: 0.5vw;
     color: var(--granich-grey);
