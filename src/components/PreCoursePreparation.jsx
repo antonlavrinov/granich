@@ -209,8 +209,9 @@ const PreparationContents = styled.div`
     padding: 0 0.2vw;
     @media only screen and (max-width: 575px) {
         grid-template-columns: 1fr 1fr;
-        grid-column-gap: 3.5vw;
-        grid-row-gap: 3.5vw;
+        grid-row-gap: 4.5vw;
+        grid-column-gap: 4vw;
+
     }
 `
 

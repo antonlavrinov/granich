@@ -102,9 +102,9 @@ const MailingInput = styled.input`
     font-size: 1.55vw;
     margin-right: 1.1vw;
     ${props => props.errorStyle && `
-    ::placeholder {
-        color: var(--granich-red);
-    }
+        ::placeholder {
+            color: var(--granich-red);
+        }
     `}
     ::placeholder {
         font-size: 1.55vw;
@@ -144,6 +144,9 @@ const MailingButton = styled.button`
         :hover {
             transform: scale(1.1);
         }
+    }
+    @media only screen and (max-width: 575px) {
+        height: 100%;
     }
 
 `
