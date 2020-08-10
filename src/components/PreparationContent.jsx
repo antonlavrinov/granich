@@ -388,6 +388,7 @@ const PreparationContent = ({content}) => {
                                 return (
                                     <ContentTag key={idx}>{contentTag}</ContentTag>
                                 )
+                                
                             })}
                         </ContentTagList>
                         <ContentImage fluid={content.contentImage.fluid}></ContentImage>
