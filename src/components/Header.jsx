@@ -260,6 +260,7 @@ const LogoAndLoginButtonWrapper = styled.div`
 const LoginMobileButton = styled.a`
   display: none;
     @media only screen and (max-width: 575px) {
+      box-shadow: 0.7vw 0.7vw 1.5vw rgba(0,0,0,0.3);
       display: flex;
       align-items: center;
       color: white;

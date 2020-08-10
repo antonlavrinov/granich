@@ -109,9 +109,7 @@ const OfferSvgClip = styled(props => <BackgroundClip {...props}/>)`
     width: 100%;
     z-index: 0;
     @media only screen and (max-width: 575px) {
-        // display: none;
         width: 100%;
-        transform: scale(1.5);
     }
 `
 

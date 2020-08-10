@@ -52,7 +52,7 @@ const OurTeamWrapper = styled.div`
     justify-content: space-between;
     @media only screen and (max-width: 575px) {
         grid-template-columns: 1fr;
-        grid-row-gap: 10vw;
+        grid-row-gap: 4vw;
     }
 
 `

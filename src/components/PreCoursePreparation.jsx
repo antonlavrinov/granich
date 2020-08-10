@@ -7,6 +7,9 @@ import TagCross from '../assets/svgs/tag-cross-icon-01.svg';
 
 const PreparationSection = styled.section`
     margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 10vw;
+    }
 
 `
 const PreparationWrapper = styled.div`
@@ -36,9 +39,9 @@ const PreparationHeader = styled.div`
 const PreparationMobileWrapper = styled.div`
     @media only screen and (max-width: 575px) {
         background: #E8E8E8;
-        padding: 9vw 6vw;
+        padding: 9vw 6vw 4vw;
         border-radius: 3vw;
-        margin-bottom: 3vw;
+        margin-bottom: 4vw;
     }
 `
 
@@ -81,7 +84,7 @@ const PreparationFilters = styled.div`
     @media only screen and (max-width: 575px) {
         border-bottom: 0.3vw solid var(--granich-light-grey);
         padding-bottom: 0vw;
-        margin-bottom: 1vw;
+        margin-bottom: 4vw;
 
     }
 `
@@ -105,26 +108,29 @@ const PreparationFilter = styled.div`
     color: var(--granich-black);
     border-color: var(--granich-red);
     border-bottom: 0.15vw solid var(--granich-red);
+    @media only screen and (max-width: 575px) {
+        border-bottom: 0.4vw solid var(--granich-red);
+    }
     :hover {
         color: var(--granich-black);
         border-color: var(--granich-red);
+        @media only screen and (max-width: 575px) {
+            color: var(--granich-black);
+            border-color: var(--granich-red);
+        }
     }
     `}
     @media only screen and (max-width: 575px) {
         font-size: 3.8vw;
         margin-right: 5.2vw;
-        padding-bottom: 2.7vw;
+        padding-bottom: 2.9vw;
+        margin-bottom: -0.2vw;
         :first-child {
-            margin-left: -0.7vw;
-            
+            margin-left: -0.2vw;
+            padding-left: 0;
+
         }
-        ${props => props.active && `
-        border-bottom: 0.4vw solid var(--granich-red);
-        :hover {
-            color: var(--granich-black);
-            border-color: var(--granich-red);
-        }
-        `}
+
     }
 
 `
@@ -137,6 +143,13 @@ const PreparationFilterCross = styled(props => <TagCross {...props}/>)`
         width: 0.9vw;
         margin-left: 0.2vw;
     `}
+    @media only screen and (max-width: 575px) {
+        ${props => props.active && `
+            height: 3vw;
+            width: 3vw;
+            margin-left: 1vw;
+        `}
+    }
 `
 
 const PreparationTags = styled.div`
@@ -189,10 +202,19 @@ const PreparationTag = styled.div`
     `}
     @media only screen and (max-width: 575px) {
         font-size: 3.8vw;
-        border: 0.3vw solid var(--granich-grey);
+        border: 0.3vw solid var(--granich-light-grey);
         padding: 0.5vw 1.5vw;
         margin-right: 2vw;
         margin-bottom: 2vw;
+        color: var(--granich-light-grey);
+        ${props => props.active && `
+            color: var(--granich-red);
+            border-color: var(--granich-red);
+            :hover {
+                color: var(--granich-red);
+                border-color: var(--granich-red);
+            }
+        `}
     }
 
 `
@@ -219,14 +241,30 @@ const PreparationButtonMore = styled.div`
         width: 100%;
         text-align: center;
         background: #DEDEDE;
-        padding: 1.5vw 0;
-        font-weight: 400;
-        color: #8e8e8e;
+        padding: 1vw 0 1.4vw;
         border-radius: 0.5vw;
         margin-top: 1.65vw;
         :hover {
             cursor: pointer;
         }
+        @media only screen and (max-width: 575px) {
+            padding: 3vw 0 3.5vw;
+            border-radius: 1.3vw;
+            margin-top: 4vw;
+        }
+`
+const PreparationButtonMoreText = styled.div`
+    display: inline-block;
+    font-size: 1.1vw;
+    font-weight: 400;
+    color: #8e8e8e;
+    padding-bottom: 0.15vw;
+    border-bottom: 0.15vw dotted var(--granich-light-grey);
+    @media only screen and (max-width: 575px) {
+        padding-bottom: 0.3vw;
+        font-size: 3.5vw;
+        border-bottom: 0.5vw dotted var(--granich-light-grey);
+    }
 `
 
 
@@ -435,7 +473,7 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
                         {filteredContents.length > 4 ? (
                             <>
                                 {contentShown < filteredContents.length ? (
-                                    <PreparationButtonMore onClick={() => setContentPagination(contentPagination + 4)}>Показать больше</PreparationButtonMore>
+                                    <PreparationButtonMore onClick={() => setContentPagination(contentPagination + 4)}><PreparationButtonMoreText>Показать еще</PreparationButtonMoreText></PreparationButtonMore>
                                 ) : null}
                             </>
                             

@@ -174,14 +174,11 @@ const IndexPage = ({data}) => (
     <Header/>
     <SEO title="Онлайн-школа Granich" />
     <Offer data={data.header}/>
-    {console.log('contentful page', data)}
     <Courses data={data.courseCards}  />
     <Manifest/>
     <Mailing/>
     <PreCoursePreparation dataRecommended={data.contentCardsRecommended} dataNew={data.contentCardsNew}/>
-    {/* <Manifest1/> */}
-
-    <OurTeam data={data.team}/>
+    <OurTeam data={data.team}/> 
 
   </Layout>
 )

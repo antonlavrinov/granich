@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import WhiteArrowNewPage from '../assets/svgs/arrow-white-newpage.svg';
 import BlackArrowNewPage from '../assets/svgs/arrow-black-newpage.svg';
 import BackgroundImage from 'gatsby-image';
-import { Link } from 'gatsby'
+import { Link } from 'gatsby';
 
 const RedArrow = styled(props => <WhiteArrowNewPage {...props}/>)`
     width: 3.1vw; 
@@ -191,7 +191,7 @@ const CourseButtonText = styled.div`
     margin-left: 0.3vw;
     margin-top: -0.5vw;
     @media only screen and (max-width: 575px) {
-        font-size: 6.2vw;
+        font-size: 6.3vw;
         margin-top: -1vw;
     }
 
