@@ -27,14 +27,14 @@ const OfferMobileSection = styled(props => <BackgroundImage {...props}></Backgro
     display: none;
     @media only screen and (max-width: 575px) {
         display: block;
-        height: 129vw;
+        height: 134vw;
         position: relative;
         width: 100%;
         letter-spacing: 0em;
         background-size: 'cover';
-        background-position: center top;
+        background-position: top center;
         background-repeat: 'no-repeat';
-        padding: 25vw 10vw 0;    
+        padding: 28vw 10vw 0;    
     }
 `
 
@@ -57,7 +57,7 @@ const OfferTitle = styled.h1`
         margin-bottom: 17vw;
         width: 100%;
         line-height: 0.83;
-        margin-left: 0;
+        margin-left: -0.5vw;
 
         
     }
@@ -92,7 +92,7 @@ const OfferDescr = styled.div`
     }
     @media only screen and (max-width: 575px) {
         font-size: 7.2vw;
-        margin-left: 1.2vw;
+        margin-left: 1vw;
    
     }
 `

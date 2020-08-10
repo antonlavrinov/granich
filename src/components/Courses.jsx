@@ -11,7 +11,7 @@ const CoursesSection = styled.section`
     margin-top: -2.7vw;
     margin-bottom: 4vw;
     @media only screen and (max-width: 575px) {
-        margin-top: -5vw;
+        margin-top: -7vw;
         margin-bottom: 11vw;
     }
 `

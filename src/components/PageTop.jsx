@@ -13,7 +13,7 @@ const PageUpWrapper = styled(props => <PageUpIcon {...props}/>)`
         transform: scale(1.1)
     }
     @media only screen and (max-width: 575px) {
-        width: 8vw;
+        width: 11vw;
     }
 `
 

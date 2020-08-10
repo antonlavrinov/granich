@@ -265,7 +265,7 @@ const LoginMobileButton = styled.a`
       align-items: center;
       color: white;
       background: var(--granich-red-gradient);
-      padding: 0.6vw 4.5vw 0.6vw 3.5vw;
+      padding: 0.5vw 4.8vw 0.5vw 3.8vw;
       letter-spacing: 0.05vw;
       border-radius: 1.5vw;
       font-size: 3.5vw;
@@ -274,7 +274,7 @@ const LoginMobileButton = styled.a`
       transition: all 0.2s ease;
       user-select: none;
       svg {
-        width: 3.5vw;
+        width: 3.3vw;
         margin-right: 1vw;
       }
       :hover {

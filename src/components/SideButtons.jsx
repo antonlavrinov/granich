@@ -36,8 +36,8 @@ const SideButtonsWrapper = styled.div`
         height: 25vw;
     `}
     @media only screen and (max-width: 575px) {
-        height: 17.5vw;
-        bottom: 2.8vw;
+        height: 23vw;
+        bottom: 35vw;
         right: 2.8vw;
         ${props => props.chatOpen && `
             height: 50vw;
