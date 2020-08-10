@@ -81,7 +81,7 @@ const ContentWrapperLink = styled(props => <Link {...props}/>)`
         cursor: pointer;
     }
     @media only screen and (max-width: 575px) {
-        height: 55vw;
+        height: 56vw;
         border-radius: 1.3vw;
     }
 
@@ -152,6 +152,7 @@ const ContentTag = styled.div`
         font-size: 2vw;
         padding: 0.5vw 0.7vw 0.5vw;
         margin-right: 1vw;
+        border-width: 0.1vw;
         :last-child {
             margin-right: 0;
         }

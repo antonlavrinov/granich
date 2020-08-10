@@ -124,7 +124,7 @@ const PreparationFilter = styled.div`
         font-size: 3.8vw;
         margin-right: 5.2vw;
         padding-bottom: 2.9vw;
-        margin-bottom: -0.2vw;
+        margin-bottom: -0.4vw;
         :first-child {
             margin-left: -0.2vw;
             padding-left: 0;

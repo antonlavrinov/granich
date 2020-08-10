@@ -34,7 +34,7 @@ const OfferMobileSection = styled(props => <BackgroundImage {...props}></Backgro
         background-size: 'cover';
         background-position: center top;
         background-repeat: 'no-repeat';
-        padding: 25vw 10vw 0;    
+        padding: 25vw 11vw 0;    
     }
 `
 
