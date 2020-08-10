@@ -147,6 +147,9 @@ const MailingButton = styled.button`
     }
     @media only screen and (max-width: 575px) {
         height: 100%;
+        svg {
+            margin-left: -1vw; 
+        }
     }
 
 `

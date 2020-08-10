@@ -106,7 +106,7 @@ const ContentWrapperExternalLink = styled.a`
         background: #0E3983;
     ` }   
     @media only screen and (max-width: 575px) {
-        height: 55vw;
+        height: 56vw;
         border-radius: 1.3vw;
     } 
 `
