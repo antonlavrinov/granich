@@ -176,9 +176,13 @@ const ContentTitle = styled.div`
 const ContentImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     margin-bottom: 1vw;
     max-height: 7.8vw;
+    min-height: 7.8vw;
+    height: 7.8vw;
     @media only screen and (max-width: 575px) {
         max-height: 21vw;
         margin-bottom: 2.8vw;
+        min-height: 2.8vw;
+        height: 2.8vw;
     }
 `
 
