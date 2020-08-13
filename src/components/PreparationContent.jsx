@@ -75,14 +75,18 @@ const ContentWrapperLink = styled(props => <Link {...props}/>)`
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
-    height: 20.3vw;
+    // height: 20.3vw;
+    height: 100%;
+    min-height: 20.3vw;
     :hover {
         transform: scale(1.03);
         cursor: pointer;
     }
     @media only screen and (max-width: 575px) {
-        height: 56vw;
+        // height: 56vw;
+        // height: auto;
         border-radius: 1.3vw;
+        min-height: 56vw;
     }
 
 
@@ -94,7 +98,9 @@ const ContentWrapperExternalLink = styled.a`
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
-    height: 20.3vw;
+    // height: 20.3vw;
+    height: 100%;
+    min-height: 20.3vw;
     :hover {
         cursor: pointer;
         transform: scale(1.03);
@@ -106,7 +112,9 @@ const ContentWrapperExternalLink = styled.a`
         background: #0E3983;
     ` }   
     @media only screen and (max-width: 575px) {
-        height: 56vw;
+        // height: 56vw;
+        min-height: 56vw;
+
         border-radius: 1.3vw;
     } 
 `
@@ -122,15 +130,16 @@ const ContentContainer = styled.div`
 
 const ContentTagList = styled.div`
     display: flex;
-    margin-bottom: 0.95vw;
+    margin-bottom: 0.7vw;
     margin-left: -0.2vw;
     margin-right: -0.2vw;
     margin-top: 0.3vw;
     flex-wrap: wrap;
     line-height: 1;
     @media only screen and (max-width: 575px) {
-        margin-bottom: 2vw;
+        // margin-bottom: 2vw;
         margin-top: 0.5vw;
+        margin-bottom: 1vw;
     }
 `
 
@@ -140,8 +149,8 @@ const ContentTag = styled.div`
     color: white;
     border-radius: 100vw;
     font-weight: 400;
-    font-size: 0.8vw;
-    padding: 0.1vw 0.4vw 0.16vw;
+    font-size: 0.9vw;
+    padding: 0.16vw 0.4vw 0.2vw;
     display: inline-block;
     letter-spacing: -0.03vw;
     margin-right: 0.3vw;
@@ -149,26 +158,35 @@ const ContentTag = styled.div`
         margin-right: 0;
     }
     @media only screen and (max-width: 575px) {
-        font-size: 2vw;
-        padding: 0.5vw 0.7vw 0.5vw;
+        // font-size: 2vw;
+        // padding: 0.5vw 0.7vw 0.5vw;
+        // margin-right: 1vw;
+        // border-width: 0.1vw;
+        // :last-child {
+        //     margin-right: 0;
+        // }
+
+        border-width: 0.2vw;
+        font-size: 2.5vw;
+        padding: 0.2vw 1vw 0.2vw;
+        font-weight: 500;
         margin-right: 1vw;
-        border-width: 0.1vw;
-        :last-child {
-            margin-right: 0;
-        }
+        letter-spacing: -0.05vw;
+        margin-bottom: 1vw;
     }
 `
 
 const ContentTitle = styled.div`
-    font-size: 1.18vw;
+    font-size: 1.25vw;
     line-height: 1;
     font-weight: 500;
-    letter-spacing: 0;
+    letter-spacing: -0.05vw;
     color: white;
     max-width: 14vw;
-    margin-left: -0.1vw;
+    margin-left: -0.2vw;
     @media only screen and (max-width: 575px) {
-        font-size: 3.2vw;
+        // font-size: 3.2vw;
+        font-size: 3.8vw;
         max-width: 100%;
     }
 `
@@ -181,13 +199,14 @@ const ContentImage = styled(props => <BackgroundImage {...props}></BackgroundIma
     @media only screen and (max-width: 575px) {
         max-height: 21vw;
         margin-bottom: 2.8vw;
-        min-height: 2.8vw;
-        height: 2.8vw;
+        min-height: 21vw;
+        height: 21vw;
     }
 `
 
 const ContentDescr = styled.div`
-    font-size: 0.8vw;
+    // font-size: 0.8vw;
+    font-size: 0.9vw;
     color: white;
     font-weight: 400;
     margin-top: 0.3vw;
@@ -196,9 +215,11 @@ const ContentDescr = styled.div`
     margin-left: -0.2vw;
     letter-spacing: -0.01vw;
     @media only screen and (max-width: 575px) {
-        font-size: 2.2vw;
+        // font-size: 2.2vw;
         max-width: 100%;
         margin-top: 1vw;
+
+        font-size: 2.8vw;
     }
 `
 
@@ -264,7 +285,8 @@ const ContentButtonText = styled.div`
 
     margin-left: -0.1vw;
     @media only screen and (max-width: 575px) {
-        font-size: 3.5vw;
+        // font-size: 3.5vw;
+        font-size: 4vw;
     }
 
 `
@@ -308,7 +330,7 @@ const ContentButtonYoutubeText = styled.div`
 
     margin-left: -0.1vw;
     @media only screen and (max-width: 575px) {
-        font-size: 3.6vw;
+        font-size: 4vw;
     }
 `
 
@@ -317,7 +339,7 @@ const ContentButtonYoutubeTiming = styled.div`
     font-size: 0.67vw;
     margin-top: 0.2vw;
     @media only screen and (max-width: 575px) {
-        font-size: 1.8vw;
+        font-size: 2vw;
         margin-top: 0.6vw;
     }
 
@@ -342,7 +364,7 @@ const ContentButtonBlockTitle = styled.div`
     font-size: 0.8vw;
     margin-bottom: 0.3vw;
     @media only screen and (max-width: 575px) {
-        font-size: 2.2vw;
+        font-size: 2.5vw;
         margin-bottom: 1vw;
     }
 `
@@ -362,7 +384,7 @@ const ContentButtonMixedTiming = styled.div`
     font-size: 0.67vw;
     padding-bottom: 0.3vw;
     @media only screen and (max-width: 575px) {
-        font-size: 1.8vw;
+        font-size: 2vw;
         padding-bottom: 0.8vw;
     }
 

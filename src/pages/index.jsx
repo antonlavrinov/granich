@@ -141,7 +141,7 @@ export const contentfulQuery = graphql`
             }
           }
         },
-        team: allContentfulGranichMainTeachers {
+        team: allContentfulGranichMainTeachers(sort: {fields: [teacherOrderNumber], order: ASC}) {
           edges {
             node {
               id
@@ -158,6 +158,7 @@ export const contentfulQuery = graphql`
               teacherSocialTelegram
               teacherSocialVK
               teacherSocialsOrder
+              
             }
           }
         }

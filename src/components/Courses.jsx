@@ -8,10 +8,11 @@ import Course from './Course';
 
 const CoursesSection = styled.section`
     position: relative;
-    margin-top: -2.7vw;
+    margin-top: -6.2vw;
     margin-bottom: 4vw;
+    padding-top: 3vw;
     @media only screen and (max-width: 575px) {
-        margin-top: -7vw;
+        margin-top: -9vw;
         margin-bottom: 11vw;
     }
 `
@@ -23,8 +24,11 @@ const CoursesWrapper = styled.div`
     grid-row-gap: 1.7vw;
     @media only screen and (max-width: 575px) {
         grid-template-columns: 1fr;
-        padding: 0 5.5vw;
-        grid-row-gap: 9.5vw;
+        grid-template-columns: 1fr 1fr;
+        // padding: 0 5.5vw;
+        // grid-row-gap: 9.5vw;
+        grid-row-gap: 4vw;
+        grid-column-gap: 4vw;
 
     }
 

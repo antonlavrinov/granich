@@ -1,107 +1,91 @@
 import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
-import Img from "gatsby-image";
+import BackgroundImage from "gatsby-image";
 import { graphql, useStaticQuery } from 'gatsby'
 
 
 
 
 const ForWhomSection = styled.section`
-    margin-bottom: 50px;
+    margin-bottom: 10vw;
 `
 
 const ForWhomSectionTitle = styled.div`
-    font-size: 50px;
-    font-weight: 600;
+    font-size: 4.55vw;
+    font-weight: 700;
+    letter-spacing: -0.2vw;
+    margin-bottom: 2.4vw;
 `
 
 const ForWhomWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1.5vw;
+    grid-row-gap: 1.5vw;
+
 `
 
 const ForWhomBlockWrapper = styled.div`
-    width: 33,3%;
     background: white;
-    padding: 20px 35px;
-    margin-right: 20px;
-    :last-child {
-        margin-right: 0;
-    }
+    padding: 1.8vw;
+    border-radius: 0.5vw;
 
 `
 const ForWhomBlockTitle = styled.div`
-    font-size: 40px;
+    font-size: 1.5vw;
     line-height: 0.8;
+    text-align: center;
     font-family: EB Garamond;
-    font-style: italic;
     font-weight: 500;
-
+    text-transform: uppercase;
+    letter-spacing: 0.7vw;
+    margin-top: 3.6vw;
+    width: 100%;
+    position: relative;
+    margin-bottom: 2.15vw;
     :before {
-        content: '.';
-        color: var(--granich-red);
-        font-size: 80px;
-        line-height: 0.5;
-        margin-left: -20px;
+        content: '';
+        background: var(--granich-red);
+        position: absolute;
+        top: -2.8vw;
+        left: 10vw;
+        width: 0.68vw;
+        height: 0.68vw;
+        border-radius: 100vw;
+        transform: translateX(-50%);
+        font-size: 1vw;
+        // line-height: 0.5;
 
     }
 `
-const ForWhomBlockImage = styled(props => <Img {...props}/>)`
+const ForWhomBlockImage = styled(props => <BackgroundImage {...props}/>)`
     background: url(${props => props.image}) center center no-repeat;
     background-size: 90%;
     width: 100%;
-    height: 300px;
+    height: 19.4vw;
+    border-radius: 0.2vw;
+    margin-bottom: 2vw;
 `
 const ForWhomBlockTextBlock = styled.div`
-    display: flex;
+    font-size: 1.2vw;
+    color: var(--granich-grey);
+    letter-spacing: -0.02vw;
+    line-height: 1.3;
+    margin-left: -0.1vw;
 `
 
-const ForWhomBlockText = styled.div`
-    color: grey;
-    font-size: 16px;
-    span {
-        font-weight: 600;
-        font-size: inherit;
-        color: black;
-    }
-`
 
-const ForWhomBlockTextLine = styled.div`
-    width: 25%;
-    margin-right: 5px;
-`
 
-const ForWhomBlockRedLine = styled.div`
-    height: 40%;
-    background: var(--granich-red);
-    width: 2px;
-
-`
-const ForWhomBlockGreyLine = styled.div`
-    height: 60%;
-    background: var(--granich-grey);
-    width: 2px;
-`
-
-const ForWhomBlock = ({image, title, subtitle, text }) => {
+const ForWhomBlock = ({image, title, text }) => {
 
     return (
         <ForWhomBlockWrapper>
             <ForWhomBlockTitle>{title}</ForWhomBlockTitle>
-            <ForWhomBlockImage fixed={image}/>
+            <ForWhomBlockImage fluid={image}/>
             <ForWhomBlockTextBlock>
-                <ForWhomBlockTextLine>
-                    <ForWhomBlockRedLine/>
-                    <ForWhomBlockGreyLine/>
-                </ForWhomBlockTextLine>
-                <ForWhomBlockText>
-                <span>{subtitle}</span> <br/>
                 {text}
-            </ForWhomBlockText>
             </ForWhomBlockTextBlock>
-
-
         </ForWhomBlockWrapper> 
     )
 }
@@ -109,33 +93,33 @@ const ForWhomBlock = ({image, title, subtitle, text }) => {
 const ForWhom = () => {
     const data = useStaticQuery(graphql`
         query {
-            image1 : file(relativePath: { eq: "course-page-answers-section-01.png" }) {
+            image1 : file(relativePath: { eq: "graph-design/for-whom/for-whom-01.jpg" }) {
                 childImageSharp {
-                    fixed(width: 125, height: 125) {
-                    ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 600) {
+                    ...GatsbyImageSharpFluid
                     }
                 }
             }
-            image2 : file(relativePath: { eq: "course-page-answers-section-01.png" }) {
+            image2 : file(relativePath: { eq: "graph-design/for-whom/for-whom-02.jpg" }) {
                 childImageSharp {
-                    fixed(width: 125, height: 125) {
-                    ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 600) {
+                    ...GatsbyImageSharpFluid
                     }
                 }
             }
-            image3 : file(relativePath: { eq: "course-page-answers-section-01.png" }) {
+            image3 : file(relativePath: { eq: "graph-design/for-whom/for-whom-03.jpg" }) {
                 childImageSharp {
-                    fixed(width: 125, height: 125) {
-                    ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 600) {
+                    ...GatsbyImageSharpFluid
                     }
                 }
             }
         }
         `
     )
-    const image1 = data.image1.childImageSharp.fixed
-    const image2 = data.image2.childImageSharp.fixed
-    const image3 = data.image3.childImageSharp.fixed
+    const image1 = data.image1.childImageSharp.fluid
+    const image2 = data.image2.childImageSharp.fluid
+    const image3 = data.image3.childImageSharp.fluid
     return (
         <ForWhomSection>
             <Container>
@@ -144,21 +128,18 @@ const ForWhom = () => {
                 </ForWhomSectionTitle>
                 <ForWhomWrapper>
                     <ForWhomBlock image={image1}
-                                  title="Что такое графдизайн?"
-                                  subtitle="Графдизайн — это вид визуальной коммуникации"
-                                  text="Главный канал этой коммуникации — печатный или цифровой макет (layout). Через него графдизайнер помогает бизнесу говорить с аудиторией: оповещать, обучать, убеждать"
+                                  title="Нужен навык"
+                                  text="Знания с курса станут навыком. Вы сможете выполнять заказы на печатную продукцию (визитки, постеры, журналы) и на электронные макеты"
                     
                     />
                     <ForWhomBlock image={image2}
-                                  title="Что создают графдизайнеры?"
-                                  subtitle="Информационные, имиджевые и рекламные макеты"
-                                  text="Информационные, чтобы информация быстро и прочно попала в сознание зрителя. Имиджевые транслируют нужный образ компании. Рекламные убеждают что-либо купить"
+                                  title="Ищете себя"
+                                  text="Недавно уволились из офиса? Устали от кадастрового кадастра? Хотите понять, интересно ли вам будет строить карьеру в дизайне? У меня, за 2 интенсивных месяца, точно поймете."
                     
                     />
                     <ForWhomBlock image={image3}
-                                  title="Что после графдизайна?"
-                                  subtitle="Печатка, веб,айдентика и медиадизайн"
-                                  text="Часто графические дизайнеры переходят к созданию айдентики. Другие отправляются в веб-дизайн. Ну а третьи штурмуют периодические издания. Причем как печатные так и онлайновые"
+                                  title="Управленец"
+                                  text="Часто ставите задачи дизайнерам? Хотите лучше понимать их мир? Я преподнесу вам язык дизайна. Постановка задач станет проще"
                     
                     />
                 </ForWhomWrapper>

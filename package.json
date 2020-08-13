@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Vadim Granich <vadim.granich@gmail.com>",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^14.1.1",
     "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^8.2.0",
     "formik": "^2.1.5",
@@ -28,10 +29,13 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-auto-scale": "^1.0.4",
+    "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-pose": "^4.0.10",
+    "react-spring": "^8.0.27",
     "react-transition-group": "^4.4.1",
+    "resize-observer-polyfill": "^1.5.1",
     "styled-components": "^5.1.1",
     "yup": "^0.29.3"
   },

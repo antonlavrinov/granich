@@ -8,76 +8,93 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 
 const AnswersSection = styled.section`
-    margin-bottom: 50px;
+    margin-bottom: 5vw;
 `
 
 
 const AnswersWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1.5vw;
+    grid-row-gap: 1.5vw;
 `
 
 const AnswersBlockWrapper = styled.div`
-    width: 33,3%;
     background: white;
-    padding: 20px 35px;
-    margin-right: 20px;
-    :last-child {
-        margin-right: 0;
-    }
+    border-radius: 0.5vw;
+    padding: 2.3vw 1.7vw 2.3vw;
+    position: relative;
+    
 
 `
 const AnswersBlockTitle = styled.div`
-    font-size: 40px;
-    line-height: 0.8;
+    font-size: 2.3vw;
+    line-height: 1;
     font-family: EB Garamond;
     font-style: italic;
     font-weight: 500;
+    width: 14vw;
+    margin-bottom: 2.5vw;
 
     :before {
-        content: '.';
-        color: var(--granich-red);
-        font-size: 80px;
-        line-height: 0.5;
-        margin-left: -20px;
+        content: '';
+        background: var(--granich-red);
+        position: absolute;
+        top: 2.5vw;
+        right: 1.5vw;
+        width: 0.68vw;
+        height: 0.68vw;
+        border-radius: 100vw;
+        transform: translateX(-50%);
+        font-size: 1vw;
 
     }
 `
-const AnswersBlockImage = styled(props => <Img {...props}/>)`
-    background: url(${props => props.image}) center center no-repeat;
-    background-size: 90%;
+const AnswersBlockImage = styled.div`
+    display: flex;
+    justify-content: center;
     width: 100%;
-    height: 300px;
+    height: 17vw;
+    margin-bottom: 2.2vw;
+
 `
+const AnswersImage = styled(props => <Img {...props}/>)`
+    width: 88%;
+`
+
 const AnswersBlockTextBlock = styled.div`
     display: flex;
 `
 
 const AnswersBlockText = styled.div`
     color: grey;
-    font-size: 16px;
-    span {
-        font-weight: 600;
-        font-size: inherit;
-        color: black;
-    }
+    font-size: 1.17vw;
+    letter-spacing: -0.01vw;
+    line-height: 1.55vw;
+`
+
+const AnswersBlockTextTitle = styled.div`
+    letter-spacing: inherit;
+    font-weight: 500;
+    font-size: inherit;
 `
 
 const AnswersBlockTextLine = styled.div`
-    width: 25%;
-    margin-right: 5px;
+    // width: 25%;
+    margin-right: 0.9vw;
+    margin-left: 0.5vw;
 `
 
 const AnswersBlockRedLine = styled.div`
-    height: 40%;
+    height: 23%;
     background: var(--granich-red);
-    width: 2px;
+    width: 0.1vw;
 
 `
 const AnswersBlockGreyLine = styled.div`
-    height: 60%;
-    background: var(--granich-grey);
-    width: 2px;
+    height: 77%;
+    background: #E2E2E2;
+    width: 0.1vw;
 `
 
 const AnswersBlock = ({image, title, subtitle, text }) => {
@@ -85,16 +102,18 @@ const AnswersBlock = ({image, title, subtitle, text }) => {
     return (
         <AnswersBlockWrapper>
             <AnswersBlockTitle>{title}</AnswersBlockTitle>
-            <AnswersBlockImage fixed={image}/>
+            <AnswersBlockImage>
+                <AnswersImage fluid={image}/>
+            </AnswersBlockImage>
             <AnswersBlockTextBlock>
                 <AnswersBlockTextLine>
                     <AnswersBlockRedLine/>
                     <AnswersBlockGreyLine/>
                 </AnswersBlockTextLine>
                 <AnswersBlockText>
-                <span>{subtitle}</span> <br/>
-                {text}
-            </AnswersBlockText>
+                    <AnswersBlockTextTitle>{subtitle}</AnswersBlockTextTitle>
+                    {text}
+                </AnswersBlockText>
             </AnswersBlockTextBlock>
 
 
@@ -107,31 +126,31 @@ const Answers = () => {
         query {
             image1 : file(relativePath: { eq: "course-page-answers-section-01.png" }) {
                 childImageSharp {
-                    fixed(width: 125, height: 125) {
-                    ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 600) {
+                    ...GatsbyImageSharpFluid
                     }
                 }
             }
             image2 : file(relativePath: { eq: "course-page-answers-section-01.png" }) {
                 childImageSharp {
-                    fixed(width: 125, height: 125) {
-                    ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 600) {
+                    ...GatsbyImageSharpFluid
                     }
                 }
             }
             image3 : file(relativePath: { eq: "course-page-answers-section-01.png" }) {
                 childImageSharp {
-                    fixed(width: 125, height: 125) {
-                    ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 600) {
+                    ...GatsbyImageSharpFluid
                     }
                 }
             }
         }
         `
     )
-    const image1 = data.image1.childImageSharp.fixed
-    const image2 = data.image2.childImageSharp.fixed
-    const image3 = data.image3.childImageSharp.fixed
+    const image1 = data.image1.childImageSharp.fluid
+    const image2 = data.image2.childImageSharp.fluid
+    const image3 = data.image3.childImageSharp.fluid
     return (
         <AnswersSection>
             <Container>

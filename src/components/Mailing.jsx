@@ -195,7 +195,7 @@ const Mailing = () => {
                                 }}
                                 validationSchema={Yup.object().shape({
                                     formParams: Yup.object().shape({
-                                        email: Yup.string().email('Неверный формат').required('Заполните поле'),
+                                        email: Yup.string().email('Это не электропочта  >__<').required('Сперва впишите почту :)'),
                                     })
                                 })}
                                 

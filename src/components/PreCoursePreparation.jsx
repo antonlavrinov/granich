@@ -93,15 +93,11 @@ const PreparationFilter = styled.div`
     margin-right: 1.5vw;
     margin-bottom: -0.1vw;
     padding-bottom: 1vw;
-    color: var(--granich-light-grey);
+    color: var(--granich-grey);
     font-weight: 400;
     
     :hover {
         cursor: pointer;
-    }
-    :first-child {
-        padding-left: 0.3vw;
-        
     }
     ${props => props.active && `
     font-weight: 500;
@@ -157,14 +153,17 @@ const PreparationTags = styled.div`
     margin-bottom: 0.8vw;
     flex-wrap: wrap;
     width: 100%;
+    margin-left: 0.1vw;
 
 
 `
 const PreparationTagsTitle = styled.div`
-    font-size: 0.8vw;
+    font-size: 1vw;
     margin-right: 1vw;
+    margin-top: 0.15vw;
+    margin-left: 0.2vw;
     color: var(--granich-grey);
-    padding-left: 0.6vw;
+    // padding-left: 0.6vw;
     @media only screen and (max-width: 575px) {
         font-size: 3.5vw;
         margin-right: 4vw;
@@ -172,7 +171,7 @@ const PreparationTagsTitle = styled.div`
 `
 
 const PreparationTag = styled.div`
-    border: 0.05vw solid var(--granich-grey);
+    border: 0.05vw solid var(--granich-light-grey);
     padding: 0.5vw;
     border-radius: 100vw;
     transition: all 0.2s ease;
@@ -180,7 +179,7 @@ const PreparationTag = styled.div`
     padding: 0.1vw 0.5vw 0.15vw;
     margin-right: 0.5vw;
     margin-bottom: 0.5vw;
-    color: var(--granich-grey);
+    color: var(--granich-light-grey);
     display: flex;
     align-items: center;
     user-select: none;
@@ -244,8 +243,14 @@ const PreparationButtonMore = styled.div`
         padding: 1vw 0 1.4vw;
         border-radius: 0.5vw;
         margin-top: 1.65vw;
+        transition: all 0.2s ease;
         :hover {
             cursor: pointer;
+            background: #cfcfcf;
+            div {
+                color: var(--granich-grey);
+                
+            }
         }
         @media only screen and (max-width: 575px) {
             padding: 3vw 0 3.5vw;
@@ -259,7 +264,8 @@ const PreparationButtonMoreText = styled.div`
     font-weight: 400;
     color: #8e8e8e;
     padding-bottom: 0.15vw;
-    border-bottom: 0.15vw dotted var(--granich-light-grey);
+    border-bottom: 0.1vw dotted var(--granich-light-grey);
+    transition: all 0.2s ease;
     @media only screen and (max-width: 575px) {
         padding-bottom: 0.3vw;
         font-size: 3.5vw;
@@ -274,7 +280,7 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
     const [filters, setFilters] = useState({
         contentTags: []
     })
-    const [contentPagination, setContentPagination] = useState(4);
+    const [contentPagination, setContentPagination] = useState(12);
     const [filterData, setFilterData] = useState('Рекомендуемое');
     const [data, setData] = useState(dataRecommended);
     const [topFilters, setTopFilters] = useState([
@@ -470,10 +476,10 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
                         })}
                     </PreparationContents>
 
-                        {filteredContents.length > 4 ? (
+                        {filteredContents.length > 12 ? (
                             <>
                                 {contentShown < filteredContents.length ? (
-                                    <PreparationButtonMore onClick={() => setContentPagination(contentPagination + 4)}><PreparationButtonMoreText>Показать еще</PreparationButtonMoreText></PreparationButtonMore>
+                                    <PreparationButtonMore onClick={() => setContentPagination(contentPagination + 12)}><PreparationButtonMoreText>Показать еще</PreparationButtonMoreText></PreparationButtonMore>
                                 ) : null}
                             </>
                             

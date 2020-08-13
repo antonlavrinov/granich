@@ -93,7 +93,7 @@ const NavLink = styled(props => <Link {...props} />)`
   ${(props) => props.propstyle && `
   color: var(--granich-black);
   :hover {
-    font-size: 1.2vw;
+    font-size: 1.15vw;
     font-weight: 700;
     color: var(--granich-black);
     cursor: pointer;
@@ -217,6 +217,7 @@ const LoginButton = styled.a`
   font-weight: 600;
   transition: all 0.2s ease;
   user-select: none;
+  box-shadow: .25vw .25vw .4vw rgba(0,0,0,0.25);
   svg {
     width: 1.1vw;
     margin-right: 0.35vw;

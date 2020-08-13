@@ -6,31 +6,43 @@ import Logo from '../assets/svgs/granich-logo.svg';
 import VisaIcon from '../assets/svgs/Visa.svg';
 import MastercardIcon from '../assets/svgs/Mastercard.svg';
 import RobokassaIcon from '../assets/svgs/Robokassa.svg';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
 
 const BlackLogo = styled(props => <Logo {...props}/>)`
     width: 4.8vw;
+    height: 3vw;
     @media only screen and (max-width: 575px) {
-        width: 15vw;
+        width: 16vw;
+        height: auto;
+        height: 11vw;
+
 
     }
 `
 
 const Visa = styled(props => <VisaIcon {...props}/>)`
     width: 5.5vw;
+    height: 3vw;
     @media only screen and (max-width: 575px) {
         width: 14vw;
+        height: 7.9vw;
     }
 `
 const Mastercard = styled(props => <MastercardIcon {...props}/>)`
     width: 4.8vw;
+    height: 3vw;
     @media only screen and (max-width: 575px) {
         width: 12.5vw;
+        height: 7.9vw;
     }
 `
 const Robokassa = styled(props => <RobokassaIcon {...props}/>)`
     width: 5vw;
+    height: 3.4vw;
     @media only screen and (max-width: 575px) {
         width: 14vw;
+        height: 7.9vw;
     }
 `
 
@@ -61,8 +73,9 @@ const LogoWrapper = styled(props => <Link to="/" {...props} />)`
 `
 
 const FooterInfo = styled.div`
-    margin-right: 1.5vw;
+    margin-right: 9.5vw;
     letter-spacing: -0.01vw;
+    line-height: 1.4;
     @media only screen and (max-width: 575px) {
         margin-right: 0;
     }
@@ -72,25 +85,91 @@ const FooterInfo = styled.div`
 const FooterInfoYear = styled.div`
     font-size: 1.1vw;
     font-weight: 500;
-    line-height: 1.4;
+    // line-height: 1.4;
     color: var(--granich-black);
+    user-select: none;
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
     }
 `
 
 
-const FooterInfoMail = styled.a`
+const FooterInfoMail = styled.button`
+    position: absolute;
     font-weight: 500;
     font-size: 1.16vw;
     color: var(--granich-black);
-    padding-bottom: 0.1vw;
-    line-height: 1.2;
+    margin-top: 0.2vw;
     display: block;
+    border-bottom: solid 0.07vw var(--granich-light-grey);
+    background: none;
     :hover {
         font-weight: 500;
         font-size: 1.16vw;
-        border-bottom: solid 0.07vw var(--granich-black);
+        cursor: pointer;
+        &:before, &:after {
+            display: block;
+        }
+    }
+    &:before {
+        content: '';
+        display: none;
+        position: absolute;
+        z-index: 9998;
+        top: -0.85vw;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+
+        
+        // border-left: 5px solid transparent;
+        // border-right: 5px solid transparent;
+        // border-bottom: 5px solid rgba(0,0,0,.72);
+
+        //bottom
+        border-right: 0.55vw solid transparent;
+        border-left: 0.55vw solid transparent;
+        border-top: 0.55vw solid var(--granich-black);
+
+        //right
+        // border-bottom: 5px solid transparent;
+        // border-top: 5px solid transparent;
+        // border-left: 5px solid rgba(0,0,0,.72);
+    }
+
+    &:after {
+        content: 'Скопировать';
+        display: none;
+        position: absolute;
+        z-index: 9999;
+        top: -2.8vw;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 0.8vw;
+        line-height: 1;
+        padding: 0.7vw 1vw;
+        min-width: 5vw; 
+        text-align: center;
+        background: rgba(0,0,0,.95);
+        background: var(--granich-black);
+        border-radius: 3px;
+    }
+
+
+
+    &:active, :focus {
+        outline: none;
+        
+        &:after {
+            content: 'Скопировано :)';
+            width: 6.5vw; 
+            background: var(--granich-red);
+        }
+        &:before {
+            border-top-color: var(--granich-red);
+        }
     }
     @media only screen and (max-width: 575px) {
         font-size: 3.8vw;
@@ -99,17 +178,33 @@ const FooterInfoMail = styled.a`
             font-size: 3.8vw;
             border-bottom: solid 0.2vw var(--granich-black);
         }
+        &:after {
+            font-size: 4.5vw;
+            padding: 3vw;
+            top: -13vw;
+        }
+        &:before {
+            top: -3.2vw;
+            border-right: 2vw solid transparent;
+            border-left: 2vw solid transparent;
+            border-top: 2vw solid var(--granich-black);
+        }
+        &:active, :focus {        
+            &:after {
+                width: 35vw; 
+            }
+        }
     }
 `
 const FooterLink = styled(props => <Link {...props}/>)`
-    line-height: 1.3;
+    line-height: 1.4;
     color: var(--granich-light-grey);
     font-size: 1.16vw;
-    margin-right: 2vw;
+    margin-right: 1.5vw;
 
 
     :last-of-type {
-        margin-right: 1.4vw;
+        margin-right: 0vw;
         span {
             letter-spacing: -0.01vw;
         }
@@ -118,10 +213,11 @@ const FooterLink = styled(props => <Link {...props}/>)`
 
         color: inherit;
         font-size: inherit;
+        border-bottom: 0.05vw solid var(--granich-light-grey);
 
         :hover {
             border-bottom: none;
-            border-bottom: 0.1vw solid var(--granich-light-grey);
+            border-bottom: 0.05vw solid var(--granich-light-grey);
         }
     }
     :hover {
@@ -147,12 +243,15 @@ const FooterLink = styled(props => <Link {...props}/>)`
 `
 
 const FooterCredentials = styled.div`
-    line-height: 1.2;
+    line-height: 1.4;
     font-size: 0.8vw;
     letter-spacing: -0.01vw;
     color: var(--granich-light-grey);
+    margin-right: 1.4vw;
     @media only screen and (max-width: 575px) {
         font-size: 2.5vw;
+        line-height: 1.3;
+        margin-right: 0;
     }
 
 `
@@ -160,6 +259,7 @@ const FooterCredentials = styled.div`
 const FooterPayment = styled.div`
     display: flex;
     margin-right: -0.3vw;
+    margin-top: -0.25vw;
     svg {
         margin-right: 0.8vw;
         :last-child {
@@ -189,7 +289,7 @@ const FooterLinks = styled.div`
 `
 const FooterCredentialsAndPayment = styled.div`
     display: flex;
-    // margin-left: auto;
+    margin-left: auto;
     @media only screen and (max-width: 575px) {
         margin-left: 0;
         align-items: center;
@@ -210,7 +310,10 @@ const Footer = () => {
                         
                         <FooterInfo>
                             <FooterInfoYear>© {new Date().getFullYear()}</FooterInfoYear>
-                            <FooterInfoMail href="mailto:hello@granich.design">hello@granich.design</FooterInfoMail>
+                            <CopyToClipboard text={'hello@granich.design'}>
+                                <FooterInfoMail>hello@granich.design</FooterInfoMail>
+                            </CopyToClipboard>
+
                         </FooterInfo>
                     </FooterLogoAndInfo>
                     <FooterLinks>

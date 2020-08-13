@@ -213,7 +213,6 @@ const Manifest = () => {
         }
     `)
 
-    console.log('data', data)
     const imageData = data.placeholderImage.childImageSharp.fluid
     return (
         <ManifestSection id="manifest">

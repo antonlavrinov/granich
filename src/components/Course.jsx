@@ -8,15 +8,19 @@ import { Link } from 'gatsby';
 const RedArrow = styled(props => <WhiteArrowNewPage {...props}/>)`
     width: 3.1vw; 
     @media only screen and (max-width: 575px) {
-        width: 14vw; 
-        margin-right: -1vw;
+        // width: 14vw; 
+        // margin-right: -1vw;
+        width: 7.5vw; 
+        margin-right: -0.5vw;
     }
 `
 const BlackArrow = styled(props => <BlackArrowNewPage {...props}/>)`
     width: 3.1vw; 
     @media only screen and (max-width: 575px) {
-        width: 14vw; 
-        margin-right: -1vw;
+        // width: 14vw; 
+        // margin-right: -1vw;
+        width: 7.5vw; 
+        margin-right: -0.5vw;
     }
 `
 
@@ -34,18 +38,23 @@ const CourseWrapper = styled(props => <Link {...props}/>)`
         transform: scale(1.03);
     }
     @media only screen and (max-width: 575px) {
-        border-radius: 3vw;
-        box-shadow: 0 0 2.5vw rgba(0,0,0,0.25);
+        // border-radius: 3vw;
+        // box-shadow: 0 0 2.5vw rgba(0,0,0,0.25);
+
+        border-radius: 1.5vw;
+        box-shadow: 0 0 1.5vw rgba(0,0,0,0.25);
     }
     
 `
 const CourseContainer = styled.div`
-    padding: 0.9vw;
+    padding: 0.9vw 1vw;
     display: flex;
     flex-direction: column;
     height: 100%;
     @media only screen and (max-width: 575px) {
-        padding: 4vw 5vw 4vw;
+        // padding: 4vw 5vw 4vw;
+
+        padding: 2.5vw;
     }
 
 `
@@ -55,18 +64,23 @@ const CourseButtonContainer = styled.div`
     flex-direction: column;
     height: 100%;
     @media only screen and (max-width: 575px) {
-        padding: 3vw 5vw 3vw;
+        // padding: 3vw 5vw 3vw;
+        padding: 2.5vw;
     }
 `
 
 const CourseTagList = styled.div`
-    margin-bottom: 0.9vw;
+    margin-bottom: 0.7vw;
     display: flex;
     width: 100%;
     @media only screen and (max-width: 575px) {
-        margin-bottom: 4vw;
-        margin-top: 0.5vw;
-        margin-left: -0.5vw;
+        // margin-bottom: 4vw;
+        // margin-top: 0.5vw;
+        // margin-left: -0.5vw;
+
+        margin-bottom: 1.5vw;
+        margin-top: 0;
+        margin-left: -0.2vw;
     }
 `
 
@@ -77,24 +91,31 @@ const CourseMainTag = styled.div`
     background: var(--granich-red);
     font-weight: 600;
     line-height: 1;
-    font-size: 0.83vw;
-    padding: 0.15vw 0.4vw 0.17vw;
+    font-size: 0.9vw;
+    padding: 0.14vw 0.5vw 0.24vw;
     display: inline-block;
     letter-spacing: -0.05vw;
-    margin-right: 0.3vw;
+    position: absolute;
+    bottom: 0.7vw;
+    left: 0.7vw;
+    z-index: 101;
     ${(props) => !props.active && `
-        filter: opacity(30%);
-        background: black;
-        border-color: black;
+        background: var(--granich-black);
+        border-color: var(--granich-black);
 
     `}
     @media only screen and (max-width: 575px) {
-        font-size: 3.7vw;
-        padding: 0.5vw 2.5vw 0.8vw;
-        font-weight: 500;
-        margin-right: 1.5vw;
+        // font-size: 3.7vw;
+        // padding: 0.5vw 2.5vw 0.8vw;
+        // font-weight: 500;
+        // margin-right: 1.5vw;
+        // border-width: 0.3vw;
+        // letter-spacing: -0.1vw;
+        font-size: 2.5vw;
+        padding: 0.2vw 1vw 0.2vw;
         border-width: 0.3vw;
-        letter-spacing: -0.1vw;
+        bottom: 1vw;
+        left: 1vw;
     }
 
 `
@@ -105,11 +126,11 @@ const CourseTag = styled.div`
     border-radius: 100vw;
     font-weight: 600;
     line-height: 1;
-    font-size: 0.83vw;
-    padding: 0.15vw 0.4vw 0.17vw;
+    font-size: 0.9vw;
+    padding: 0.16vw 0.5vw 0.2vw;
     display: inline-block;
     letter-spacing: -0.03vw;
-    margin-right: 0.3vw;
+    margin-right: 0.4vw;
     :last-child {
         margin-right: 0;
     }
@@ -120,12 +141,19 @@ const CourseTag = styled.div`
 
     `}
     @media only screen and (max-width: 575px) {
-        border-width: 0.3vw;
-        font-size: 3.7vw;
-        padding: 0.5vw 2.5vw 0.8vw;
+        // border-width: 0.3vw;
+        // font-size: 3.7vw;
+        // padding: 0.5vw 2.5vw 0.8vw;
+        // font-weight: 500;
+        // margin-right: 1.5vw;
+        // letter-spacing: -0.1vw;
+
+        border-width: 0.2vw;
+        font-size: 2.5vw;
+        padding: 0.2vw 1vw 0.2vw;
         font-weight: 500;
-        margin-right: 1.5vw;
-        letter-spacing: -0.1vw;
+        margin-right: 1vw;
+        letter-spacing: -0.05vw;
     }
 `
 
@@ -141,19 +169,27 @@ const CourseTitle = styled.div`
         color: var(--granich-light-grey);
     `}
     @media only screen and (max-width: 575px) {
-        font-size: 7.65vw;
-        margin-top: 2vw;
-        margin-left: -0.5vw;
-        max-width: 68vw;
+        // font-size: 7.65vw;
+        // margin-top: 2vw;
+        // margin-left: -0.5vw;
+        // max-width: 68vw;
+
+        font-size: 4.5vw;
+        font-size: 5vw;
+        margin-top: 1vw;
+        margin-left: -0.25vw;
+        max-width: 100%;
     }
 `
 
 const CourseImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-    min-height: 15.7vw;
+    min-height: 15.5vw;
     width: 100%;
     position: relative;
     @media only screen and (max-width: 575px) {
-        min-height: 66vw;
+        // min-height: 66vw;
+        min-height: 37vw;
+        max-height: 37vw;
     }
 `
 
@@ -171,7 +207,8 @@ const CourseButton = styled.div`
     
     `}
     @media only screen and (max-width: 575px) {
-        border-radius: 0 0 3vw 3vw;
+        // border-radius: 0 0 3vw 3vw;
+        border-radius: 0 0 1.5vw 1.5vw;
     }
     
 `
@@ -191,7 +228,11 @@ const CourseButtonText = styled.div`
     margin-left: 0.3vw;
     margin-top: -0.5vw;
     @media only screen and (max-width: 575px) {
-        font-size: 6.3vw;
+        // font-size: 6.3vw;
+        // margin-top: -1vw;
+
+        font-size: 3.5vw;
+        font-size: 4vw;
         margin-top: -1vw;
     }
 
@@ -207,10 +248,15 @@ const CourseInfo = styled.div`
     height: 100%;
     align-items: center;
     @media only screen and (max-width: 575px) {
-        font-size: 4.3vw;
-        margin-top: 4vw;
+        // font-size: 4.3vw;
+        // margin-top: 4vw;
+        // margin-bottom: 0vw;
+        // margin-left: -0.5vw;
+        font-size: 2.7vw;
+        font-size: 3vw;
+        margin-top: 2.5vw;
         margin-bottom: 0vw;
-        margin-left: -0.5vw;
+        margin-left: 0vw;
     }
 
 `
@@ -227,8 +273,12 @@ const CourseDescr = styled.div`
         color: var(--granich-light-grey);
     `}
     @media only screen and (max-width: 575px) {
-        font-size: 4.3vw;
-        margin-top: 2vw;
+        // font-size: 4.3vw;
+        // margin-top: 2vw;
+        margin-left: 0.1vw;
+        font-size: 2.7vw;
+        font-size: 3vw;
+        margin-top: 1vw;
     }
 `
 
@@ -246,7 +296,8 @@ const CourseStart = styled.div`
         `}
     }
     @media only screen and (max-width: 575px) {
-        margin-right: 4vw;
+        // margin-right: 4vw;
+        margin-right: 3vw;
     }
 
 
@@ -272,14 +323,16 @@ const CourseDuration = styled.div`
 const CourseTeachers = styled.div`
     position: absolute;
     display: flex;
+    justify-content: flex-end;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 0.8vw 0.5vw 0.4vw;
-    background: linear-gradient(360deg, rgba(0,0,0,0.3) 0%, rgba(45,45,45,0) 80%);
+    padding: 0.9vw 0.6vw 0.6vw;
+    background: linear-gradient(360deg, rgba(0,0,0,0.2) 0%, rgba(45,45,45,0) 80%);
     z-index: 100;
     @media only screen and (max-width: 575px) {
-        padding: 2.2vw 3vw 2.2vw;
+        // padding: 2.2vw 3vw 2.2vw;
+        padding: 1vw;
     }
     
 `
@@ -287,18 +340,30 @@ const CourseTeacher = styled(props => <BackgroundImage {...props}></BackgroundIm
     background: grey;
     border-radius: 100px;
     margin-top: -0.2vw;
-    margin-right: 0.1vw;
-    height: 2.4vw;
-    width: 2.4vw;
+    margin-right: 0vw;
+    height: 2.35vw;
+    width: 2.35vw;
+    border: 0.05vw solid var(--granich-black);
+    box-shadow: 0.15vw 0.12vw 0.2vw rgba(0,0,0,0.25);
     ${props => props.several && `
+        // transform: translateX(17%);
+        margin-right: -0.2vw;
         :last-child {
-            transform: translateX(-17%);
+            margin-right: 0;
             z-index: 1;
+        }
+        @media only screen and (max-width: 575px) {
+            margin-right: -1vw;
+            :last-child {
+                margin-right: 0;
+            }
         }
     `}
     @media only screen and (max-width: 575px) {
-        height: 10.2vw;
-        width: 10.2vw;
+        // height: 10.2vw;
+        // width: 10.2vw;
+        height: 5.8vw;
+        width: 5.8vw;
     }
 
 `
@@ -308,13 +373,6 @@ const Course = ({courseData}) => {
         <CourseWrapper to={courseData.node.cardSlug}>
             <CourseContainer>
                 <CourseTagList>
-                    <>
-                        {courseData.node.typeOfCard === 'Курс' ? (
-                            <CourseMainTag active={courseData.node.cardActive}>Курс</CourseMainTag>
-                        ) : (
-                            <CourseMainTag active={courseData.node.cardActive}>Мастер-класс</CourseMainTag>
-                        )}
-                    </>
                     <>
                         {courseData.node.cardTags.map((cardTag, idx) => {
                             return (
@@ -330,6 +388,13 @@ const Course = ({courseData}) => {
                 <CourseImageWrapper>
                     <CourseImage fluid={courseData.node.cardImage.fluid}>
                     </CourseImage>
+                    <>
+                        {courseData.node.typeOfCard === 'Курс' ? (
+                            <CourseMainTag active={courseData.node.cardActive}>Курс</CourseMainTag>
+                        ) : (
+                            <CourseMainTag active={courseData.node.cardActive}>Мастер-класс</CourseMainTag>
+                        )}
+                    </>
                     <CourseTeachers>
                         {courseData.node.cardTeachers.length > 1 ? (
                             <>

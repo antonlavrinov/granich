@@ -7,6 +7,7 @@ import PageUpIcon from '../assets/svgs/page-up.svg';
 
 const PageUpWrapper = styled(props => <PageUpIcon {...props}/>)`
     width: 3.6vw;
+    height: 3.6vw;
     transition: all 0.3s ease;
     :hover {
         cursor: pointer;
