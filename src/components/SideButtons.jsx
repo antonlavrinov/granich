@@ -62,14 +62,15 @@ const SideButtonsWrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
     transition: all 0.3s ease;
-    height: 22.25vw;
+    height: 23vw;
+    z-index: 300;
     // overflow-y: hidden;
     ${props => props.chatOpen && `
-        height: 22.25vw;
+        height: 50vw;
     `}
     @media only screen and (max-width: 575px) {
-        height: 50vw;
-        bottom: 10vw;
+        height: 23vw;
+        bottom: 8vw;
         right: 1vw;
         ${props => props.chatOpen && `
             height: 50vw;
@@ -87,14 +88,12 @@ const SupportAndPageUp = styled.div`
     bottom: 0;
     right: 0;
     height: 7.7vw;
+    // height: 10vw;
     z-index: 200;
     transition: all 0.3s ease;
-    // :hover {
-    //     height: 25vw;
-    // }
     @media only screen and (max-width: 575px) {
         height: 100%;
-    }
+    // }
     ${props => props.chatOpen && `
         height: 22.25vw;
         @media only screen and (max-width: 575px) {
@@ -134,6 +133,26 @@ const SocialsWrapper = styled.div`
     }
 `
 
+const SocialIcons = styled.div`
+    display: flex;
+    flex-direction: column;
+    svg {
+        margin-bottom: 0.2vw;
+    }
+    ${props => props.chatOpen && `
+        svg {
+            transform: translateY(400%);
+            opacity: 0;
+            :hover {
+                transform: translateY(400%) scale(1.1);
+            }
+            :first-child {
+                opacity: 1;
+            }
+        }
+    `}
+`
+
 const SideButtons = () => {
     const [chatOpen, setChatOpen] = useState(false);
     const toggleChatOpen = () => {
@@ -146,7 +165,7 @@ const SideButtons = () => {
                 <PageTop />
                 <Support toggleChatOpen={toggleChatOpen}/>
             </SupportAndPageUp>
-            <Socials >
+            {/* <Socials >
                 <CSSTransition in={chatOpen} timeout={300} unmountOnExit classNames="side-social-icons">
                     <SocialsWrapper>
                         <Telegram />
@@ -156,6 +175,15 @@ const SideButtons = () => {
                     </SocialsWrapper>
                 </CSSTransition>
             </Socials>
+
+            <SocialIcons chatOpen={chatOpen}>
+                <PageTop />
+                <Telegram />
+                <Email/>
+                <Whatsup/>
+                <VK/>
+            </SocialIcons>
+            <Support toggleChatOpen={toggleChatOpen}/> */}
 
 
         </SideButtonsWrapper>

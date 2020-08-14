@@ -103,6 +103,7 @@ const FooterInfoMail = styled.button`
     display: block;
     border-bottom: solid 0.07vw var(--granich-light-grey);
     background: none;
+    user-select: none;
     :hover {
         font-weight: 500;
         font-size: 1.16vw;
@@ -201,6 +202,7 @@ const FooterLink = styled(props => <Link {...props}/>)`
     color: var(--granich-light-grey);
     font-size: 1.16vw;
     margin-right: 1.5vw;
+    user-select: none;
 
 
     :last-of-type {
@@ -248,6 +250,7 @@ const FooterCredentials = styled.div`
     letter-spacing: -0.01vw;
     color: var(--granich-light-grey);
     margin-right: 1.4vw;
+    // user-select: none;
     @media only screen and (max-width: 575px) {
         font-size: 2.5vw;
         line-height: 1.3;

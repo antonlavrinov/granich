@@ -16,6 +16,7 @@ const ChatWrapper = styled(props => <ChatIcon {...props}/>)`
     }
     @media only screen and (max-width: 575px) {
         width: 11vw;
+        height: 11vw;
     }
 
 `
