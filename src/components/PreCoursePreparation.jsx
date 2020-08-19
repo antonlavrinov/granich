@@ -73,6 +73,7 @@ const PreparationText = styled.div`
         font-size: 3.9vw;
         letter-spacing: -0.08vw;
     }
+    
 
 `
 
