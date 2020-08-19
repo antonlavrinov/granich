@@ -2,13 +2,12 @@ import React, {useState} from 'react'
 import Support from './Support'
 import PageTop from './PageTop';
 import styled from 'styled-components';
-import Chat1 from '../assets/svgs/chat1.svg';
-import {CSSTransition} from 'react-transition-group';
 import EmailIcon from '../assets/svgs/social-side-icons/social-side-icon-email.svg';
 import TelegramIcon from '../assets/svgs/social-side-icons/social-side-icon-telegram.svg';
 import VKIcon from '../assets/svgs/social-side-icons/social-side-icon-vk.svg';
 import WhatsupIcon from '../assets/svgs/social-side-icons/social-side-icon-whatsup.svg';
-
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CSSTransition } from 'react-transition-group';
 
 
 
@@ -16,60 +15,241 @@ const VK = styled(props => <VKIcon {...props}/>)`
     width: 3.6vw;
     height: 3.6vw;
     transition: all 0.3s ease;
+    transform: translateY(0);
+    margin-bottom: 0.5vw;
     :hover {
         cursor: pointer;
-        transform: scale(1.1)
+        transform: translateY(0) scale(1.1)
 
     }
+    @media only screen and (max-width: 575px) {
+        width: 11vw;
+        height: 11vw;
+        margin-bottom: 1.5vw;
+    }
+    // ${props => !props.chatOpen && `
+    //     opacity: 0;
+    //     transform: translateY(30%);
+    //     :hover {
+    //         cursor: default;
+    //         transform: translateY(10vw) scale(1.1)
+    
+    //     }
+    // `}
 `
 
 const Telegram = styled(props => <TelegramIcon {...props}/>)`
     width: 3.6vw;
     height: 3.6vw;
     transition: all 0.3s ease;
+    transform: translateY(0);
+    margin-bottom: 0.5vw;
     :hover {
         cursor: pointer;
-        transform: scale(1.1)
+        transform: translateY(0) scale(1.1)
 
     }
+    @media only screen and (max-width: 575px) {
+        width: 11vw;
+        height: 11vw;
+        margin-bottom: 1.5vw;
+    }
+    // ${props => !props.chatOpen && `
+    //     opacity: 0;
+    //     transform: translateY(30%);
+    //     :hover {
+    //         cursor: default;
+    //         transform: translateY(10vw) scale(1.1)
+    
+    //     }
+    // `}
 `
 const Whatsup = styled(props => <WhatsupIcon {...props}/>)`
     width: 3.6vw;
-    transition: all 0.3s ease;
-    :hover {
-        cursor: pointer;
-        transform: scale(1.1)
-
-    }
-`
-const Email = styled(props => <EmailIcon {...props}/>)`
-    width: 3.6vw;
     height: 3.6vw;
     transition: all 0.3s ease;
+    transform: translateY(0);
+    margin-bottom: 0.5vw;
     :hover {
         cursor: pointer;
-        transform: scale(1.1)
+        transform: translateY(0) scale(1.1)
 
     }
+    @media only screen and (max-width: 575px) {
+        width: 11vw;
+        height: 11vw;
+        margin-bottom: 1.5vw;
+    }
+    // ${props => !props.chatOpen && `
+    //     opacity: 0;
+    //     transform: translateY(30%);
+    //     :hover {
+    //         cursor: default;
+    //         transform: translateY(10vw) scale(1.1)
+    
+    //     }
+    // `}
 `
 
-const SideButtonsWrapper = styled.div`
+const EmailWrapper = styled.div`
+    position: relative;
+    width: 3.6vw;
+    height: 3.6vw;
+    opacity: 1;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    margin-bottom: 0.5vw;
+    :hover {
+        cursor: pointer;
+        transform: translateY(0)
+
+    }
+    @media only screen and (max-width: 575px) {
+        width: 11vw;
+        height: 11vw;
+        margin-bottom: 1.5vw;
+    }
+    ${props => !props.chatOpen && `
+        opacity: 0;
+        transform: translateY(30%);
+        :hover {
+            cursor: default;
+            transform: translateY(10vw)
+    
+        }
+
+    `}
+`
+
+
+const Email = styled.button`
+    background: none;
+    position: absolute;
+    
+    svg {
+        width: 3.6vw;
+        height: 3.6vw;
+        transition: all 0.3s ease;
+        opacity: 1;
+        transition: all 0.3s ease;
+        transform: translateY(0);
+        :hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+        @media only screen and (max-width: 575px) {
+            width: 11vw;
+            height: 11vw;
+        }
+
+    }
+    :hover {
+
+        &:before, &:after {
+            display: block;
+        }
+    }
+    &:before {
+        content: '';
+        display: none;
+        position: absolute;
+        z-index: 9998;
+        top: 40%;
+        right: 4.1vw;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-bottom: 0.55vw solid transparent;
+        border-top: 0.55vw solid transparent;
+        border-left: 0.55vw solid var(--granich-black);
+    }
+
+    &:after {
+        content: 'Скопировать';
+        display: none;
+        position: absolute;
+        z-index: 9999;
+        top: 40%;
+        right: 4.5vw;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 0.8vw;
+        line-height: 1;
+        padding: 0.7vw 1vw;
+        background: rgba(0,0,0,.95);
+        background: var(--granich-black);
+        border-radius: 3px;
+        white-space: nowrap;
+
+    }
+    
+
+    
+    &:active, :focus {
+        outline: none;
+        
+        &:after {
+            content: 'Скопировано :)';
+            text-align: right;
+            background: var(--granich-red);
+        }
+        &:before {
+            border-left-color: var(--granich-red);
+        }
+    }
+    @media only screen and (max-width: 575px) {
+        font-size: 3.8vw;
+        padding-bottom: 0;
+        :hover {
+            font-size: 3.8vw;
+            // border-bottom: solid 0.2vw var(--granich-black);
+        }
+        &:after {
+            font-size: 4.5vw;
+            padding: 3vw;
+            // top: -13vw;
+            right: 15vw;
+        }
+        &:before {
+            // top: -3.2vw;
+            left: -4.5vw;
+            border-bottom: 2vw solid transparent;
+            border-top: 2vw solid transparent;
+            border-left: 2vw solid var(--granich-black);
+        }
+        &:active, :focus {        
+            &:after {
+                width: 35vw; 
+            }
+        }
+    }
+    ${props => !props.chatOpen && `
+        svg {
+            opacity: 0;
+            // transform: translateY(30%);
+            :hover {
+                cursor: default;
+                // transform: translateY(10vw)
+        
+            }
+        }
+    `}
+
+`
+
+const SideButtonsSection = styled.div`
     position: fixed;
-    bottom: 2.8vw;
-    right: 4.3vw;
+    bottom: 4.5vw;
+    right: 3.5vw;
     display: flex;
-    height: 7.7vw;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     transition: all 0.3s ease;
-    height: 23vw;
     z-index: 300;
-    // overflow-y: hidden;
-    ${props => props.chatOpen && `
-        height: 50vw;
-    `}
+
     @media only screen and (max-width: 575px) {
-        height: 23vw;
+        // height: 23vw;
         bottom: 8vw;
         right: 1vw;
         ${props => props.chatOpen && `
@@ -79,79 +259,25 @@ const SideButtonsWrapper = styled.div`
 
 
 `
-
-const SupportAndPageUp = styled.div`
+const SideButtonsWrapper = styled.div`
+    postition: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 7.7vw;
-    // height: 10vw;
-    z-index: 200;
-    transition: all 0.3s ease;
-    @media only screen and (max-width: 575px) {
-        height: 100%;
-    // }
-    ${props => props.chatOpen && `
-        height: 22.25vw;
-        @media only screen and (max-width: 575px) {
-            height: 50vw;
-        }
-    `}
+    svg {
+        margin-button: 0.5vw;
+    }
 
 `
+
 const Socials = styled.div`
-    position: relative;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    overflow: hidden;
-    height: 15.5vw;
-    width: 3.6vw;
-    margin-top: 3.8vw;
-    margin-bottom: 2.3vw;
-    // background: grey;
-    // bottom: 3.7vw;
-    // right: 0;
-    // transition: all 0.4s ease;
-
-
-`
-const SocialsWrapper = styled.div`
-    position: absolute;
-    width: 3.6vw;
-    top: 0;
-    bottom: 0;
-    transition: all 0.3s ease;
-    // background: lightgrey;
-    padding-bottom: 2vw;
-    svg {
-        margin-bottom: 0vw;
-    }
 `
 
-const SocialIcons = styled.div`
-    display: flex;
-    flex-direction: column;
-    svg {
-        margin-bottom: 0.2vw;
-    }
-    ${props => props.chatOpen && `
-        svg {
-            transform: translateY(400%);
-            opacity: 0;
-            :hover {
-                transform: translateY(400%) scale(1.1);
-            }
-            :first-child {
-                opacity: 1;
-            }
-        }
-    `}
-`
+
+
+
+
 
 const SideButtons = () => {
     const [chatOpen, setChatOpen] = useState(false);
@@ -160,33 +286,33 @@ const SideButtons = () => {
         console.log('open')
     }
     return (
-        <SideButtonsWrapper chatOpen={chatOpen}>
-            <SupportAndPageUp chatOpen={chatOpen}>
-                <PageTop />
-                <Support toggleChatOpen={toggleChatOpen}/>
-            </SupportAndPageUp>
-            {/* <Socials >
-                <CSSTransition in={chatOpen} timeout={300} unmountOnExit classNames="side-social-icons">
-                    <SocialsWrapper>
+        <SideButtonsSection>
+            <SideButtonsWrapper>
+
+                <CopyToClipboard text={'hello@granich.design'}>
+                    <EmailWrapper chatOpen={chatOpen}>
+                        <Email chatOpen={chatOpen}>
+                            <EmailIcon />
+                        </Email>
+                    </EmailWrapper>
+                </CopyToClipboard>
+
+                <CSSTransition in={chatOpen} timeout={300} unmountOnExit classNames="side-buttons-transition">
+                    <Socials>
                         <Telegram />
-                        <Email/>
-                        <Whatsup/>
-                        <VK/>
-                    </SocialsWrapper>
+                        <Whatsup  />
+                        <VK />
+                    </Socials>
+
                 </CSSTransition>
-            </Socials>
+                <Support toggleChatOpen={toggleChatOpen} />
 
-            <SocialIcons chatOpen={chatOpen}>
-                <PageTop />
-                <Telegram />
-                <Email/>
-                <Whatsup/>
-                <VK/>
-            </SocialIcons>
-            <Support toggleChatOpen={toggleChatOpen}/> */}
+                <PageTop/>
 
 
-        </SideButtonsWrapper>
+            </SideButtonsWrapper>
+
+        </SideButtonsSection>
     )
 }
 

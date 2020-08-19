@@ -300,6 +300,11 @@ const FooterCredentialsAndPayment = styled.div`
     }
 `
 
+const EmptyText = styled.div`
+    opacity: 0;
+    font-size: 0;
+`
+
 
 const Footer = () => {
     return (
@@ -312,6 +317,7 @@ const Footer = () => {
                         </LogoWrapper>
                         
                         <FooterInfo>
+                        <EmptyText>sdds</EmptyText>
                             <FooterInfoYear>© {new Date().getFullYear()}</FooterInfoYear>
                             <CopyToClipboard text={'hello@granich.design'}>
                                 <FooterInfoMail>hello@granich.design</FooterInfoMail>

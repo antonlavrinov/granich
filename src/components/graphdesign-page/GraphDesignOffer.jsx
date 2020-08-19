@@ -2,6 +2,27 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import CourseArrowDown from '../../assets/svgs/course-arrow-down-27.svg';
+import PotokIcon from '../../assets/svgs/graph-design/graph-design-potok-icon.svg';
+import DurationIcon from '../../assets/svgs/graph-design/graph-design-duration-icon.svg';
+import DateIcon from '../../assets/svgs/graph-design/graph-design-date-icon.svg';
+
+
+const Potok = styled(props => <PotokIcon {...props}/>)`
+    width: 1.3vw;
+    margin-right: 0.3vw;
+    fill: white;
+`
+
+const Duration = styled(props => <DurationIcon {...props}/>)`
+    width: 1.3vw;
+    fill: var(--granich-red);
+    margin-right: 0.3vw;
+`
+const Date = styled(props => <DateIcon {...props}/>)`
+    width: 1.3vw;
+    fill: var(--granich-red);
+    margin-right: 0.3vw;
+`
 
 const GraphDesignOfferSection = styled.section`
     padding-top: 8.4vw;
@@ -122,9 +143,9 @@ const GraphDesignOffer = () => {
             <Container>
                 <GraphDesignOfferWrapper>
                     <GraphDesignOfferTags>
-                        <GraphDesignOfferMainTag>17 поток</GraphDesignOfferMainTag>
-                        <GraphDesignOfferTag>Старт 1 сентября</GraphDesignOfferTag>
-                        <GraphDesignOfferTag>2 месяца интенсива</GraphDesignOfferTag>
+                        <GraphDesignOfferMainTag><Potok/>17 поток</GraphDesignOfferMainTag>
+                        <GraphDesignOfferTag><Date/>Старт 1 сентября</GraphDesignOfferTag>
+                        <GraphDesignOfferTag><Duration/>2 месяца интенсива</GraphDesignOfferTag>
                     </GraphDesignOfferTags>
                     <GraphDesignOfferTitle>
                         <span>Осознанный</span> <br/> графдизайн

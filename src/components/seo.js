@@ -78,6 +78,11 @@ const SEO = ({ description, lang, meta, title }) => {
       ].concat(meta)}
     >
       {/* <script src="//code-ya.jivosite.com/widget/KT2GyOyeED" async></script> */}
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossOrigin="anonymous"
+      />
     </Helmet>
   )
 }

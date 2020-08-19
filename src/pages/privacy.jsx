@@ -12,7 +12,13 @@ export const contentfulQuery = graphql`
                 node {
                     childContentfulGranichPrivacyPrivacyTextRichTextNode {
                         json
-                }
+                    }
+                    privacyDate
+                    privacyPDF {
+                        file { 
+                            url 
+                        }
+                    }
                 }
             }
         }
@@ -24,7 +30,7 @@ const PrivacyPage = ({data}) => {
     return (
         <Layout>
             <Header type={'dark'}/>
-             <Privacy data={data.privacy.edges[0].node.childContentfulGranichPrivacyPrivacyTextRichTextNode.json}/>
+             <Privacy data={data.privacy.edges[0].node}/>
         </Layout>
     )
 }

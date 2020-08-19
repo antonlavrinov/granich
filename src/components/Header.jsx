@@ -166,10 +166,12 @@ const ArrowLinkDown = styled(props => <ArrowDown {...props}/>)`
   top: -0.5vw;
   right: -1.4vw;
   width: 1vw;
+  height: 1vw;
   @media only screen and (max-width: 575px) {
     top: -1.6vw;
     right: -3.7vw;
     width: 3.1vw;
+    height: 3.1vw;
   }
 
 
@@ -180,10 +182,12 @@ const ArrowLinkOut = styled(props => <ArrowOut {...props}/>)`
   top: -0.5vw;
   right: -1.4vw;
   width: 1vw;
+  height: 1vw;
   @media only screen and (max-width: 575px) {
     top: -1.6vw;
     right: -3.7vw;
     width: 3.1vw;
+    height: 3.1vw;
   }
 
 
@@ -193,10 +197,12 @@ const ArrowLinkBack = styled(props => <ArrowBack {...props}/>)`
   top: -0.5vw;
   right: -1.4vw;
   width: 1vw;
+  height: 1vw;
   @media only screen and (max-width: 575px) {
     top: -1.6vw;
     right: -3.7vw;
     width: 3.1vw;
+    height: 3.1vw;
   }
 
 
