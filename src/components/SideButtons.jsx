@@ -10,13 +10,20 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { CSSTransition } from 'react-transition-group';
 
 
-
+const IconLink = styled.a`
+    height: 3.6vw;
+    margin-bottom: 0.5vw;
+    @media only screen and (max-width: 575px) {
+        height: 11vw;
+        margin-bottom: 1.5vw;
+    }
+`
 const VK = styled(props => <VKIcon {...props}/>)`
     width: 3.6vw;
     height: 3.6vw;
     transition: all 0.3s ease;
     transform: translateY(0);
-    margin-bottom: 0.5vw;
+    // margin-bottom: 0.5vw;
     :hover {
         cursor: pointer;
         transform: translateY(0) scale(1.1)
@@ -25,7 +32,7 @@ const VK = styled(props => <VKIcon {...props}/>)`
     @media only screen and (max-width: 575px) {
         width: 11vw;
         height: 11vw;
-        margin-bottom: 1.5vw;
+        // margin-bottom: 1.5vw;
     }
     // ${props => !props.chatOpen && `
     //     opacity: 0;
@@ -43,7 +50,7 @@ const Telegram = styled(props => <TelegramIcon {...props}/>)`
     height: 3.6vw;
     transition: all 0.3s ease;
     transform: translateY(0);
-    margin-bottom: 0.5vw;
+
     :hover {
         cursor: pointer;
         transform: translateY(0) scale(1.1)
@@ -52,7 +59,7 @@ const Telegram = styled(props => <TelegramIcon {...props}/>)`
     @media only screen and (max-width: 575px) {
         width: 11vw;
         height: 11vw;
-        margin-bottom: 1.5vw;
+        // margin-bottom: 1.5vw;
     }
     // ${props => !props.chatOpen && `
     //     opacity: 0;
@@ -69,7 +76,7 @@ const Whatsup = styled(props => <WhatsupIcon {...props}/>)`
     height: 3.6vw;
     transition: all 0.3s ease;
     transform: translateY(0);
-    margin-bottom: 0.5vw;
+    // margin-bottom: 0.5vw;
     :hover {
         cursor: pointer;
         transform: translateY(0) scale(1.1)
@@ -78,7 +85,7 @@ const Whatsup = styled(props => <WhatsupIcon {...props}/>)`
     @media only screen and (max-width: 575px) {
         width: 11vw;
         height: 11vw;
-        margin-bottom: 1.5vw;
+        // margin-bottom: 1.5vw;
     }
     // ${props => !props.chatOpen && `
     //     opacity: 0;
@@ -98,7 +105,7 @@ const EmailWrapper = styled.div`
     opacity: 1;
     transition: all 0.3s ease;
     transform: translateY(0);
-    margin-bottom: 0.5vw;
+    // margin-bottom: 0.5vw;
     :hover {
         cursor: pointer;
         transform: translateY(0)
@@ -109,16 +116,16 @@ const EmailWrapper = styled.div`
         height: 11vw;
         margin-bottom: 1.5vw;
     }
-    ${props => !props.chatOpen && `
-        opacity: 0;
-        transform: translateY(30%);
-        :hover {
-            cursor: default;
-            transform: translateY(10vw)
+    // ${props => !props.chatOpen && `
+    //     opacity: 0;
+    //     transform: translateY(30%);
+    //     :hover {
+    //         cursor: default;
+    //         transform: translateY(10vw)
     
-        }
+    //     }
 
-    `}
+    // `}
 `
 
 
@@ -223,17 +230,17 @@ const Email = styled.button`
             }
         }
     }
-    ${props => !props.chatOpen && `
-        svg {
-            opacity: 0;
-            // transform: translateY(30%);
-            :hover {
-                cursor: default;
-                // transform: translateY(10vw)
+    // ${props => !props.chatOpen && `
+    //     svg {
+    //         opacity: 0;
+    //         // transform: translateY(30%);
+    //         :hover {
+    //             cursor: default;
+    //             // transform: translateY(10vw)
         
-            }
-        }
-    `}
+    //         }
+    //     }
+    // `}
 
 `
 
@@ -289,19 +296,31 @@ const SideButtons = () => {
         <SideButtonsSection>
             <SideButtonsWrapper>
 
-                <CopyToClipboard text={'hello@granich.design'}>
-                    <EmailWrapper chatOpen={chatOpen}>
-                        <Email chatOpen={chatOpen}>
-                            <EmailIcon />
-                        </Email>
-                    </EmailWrapper>
-                </CopyToClipboard>
+
 
                 <CSSTransition in={chatOpen} timeout={300} unmountOnExit classNames="side-buttons-transition">
                     <Socials>
-                        <Telegram />
-                        <Whatsup  />
-                        <VK />
+                        <IconLink>
+                            <CopyToClipboard text={'hello@granich.design'}>
+                                <EmailWrapper>
+                                    <Email>
+                                        <EmailIcon />
+                                    </Email>
+                                </EmailWrapper>
+                            </CopyToClipboard>
+                        </IconLink>
+
+                        <IconLink target="_blank" href="https://t.me/granichannel">
+                            <Telegram />
+                        </IconLink>
+                        <IconLink target="_blank" href="https://t.me/granichannel">
+                            <Whatsup/>
+                        </IconLink>
+                        <IconLink target="_blank" href="https://t.me/granichannel">
+                            <VK/>
+                        </IconLink>
+
+
                     </Socials>
 
                 </CSSTransition>
