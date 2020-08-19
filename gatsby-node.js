@@ -6,7 +6,7 @@ exports.createPages = ({graphql, actions}) => {
     const contentContent = path.resolve('./src/templates/content-post.jsx');
     return graphql(`
         {
-            allContentfulGranichMainContentCard {
+            allContentfulGranichMainContentCard(filter: {contentType: {in: ["Youtube", "Youtube + Medium + Behance"]}}) {
                 edges {
                     node {
                         contentSlug
@@ -35,13 +35,13 @@ exports.createPages = ({graphql, actions}) => {
 }
 
 
-exports.onCreateWebpackConfig = ({
-    actions,
-  }) => {
-    const { setWebpackConfig } = actions;
-    setWebpackConfig({
-      externals: {
-        jquery: 'jQuery', // important: 'Q' capitalized
-      }
-    })
-  }
+// exports.onCreateWebpackConfig = ({
+//     actions,
+//   }) => {
+//     const { setWebpackConfig } = actions;
+//     setWebpackConfig({
+//       externals: {
+//         jquery: 'jQuery', // important: 'Q' capitalized
+//       }
+//     })
+//   }

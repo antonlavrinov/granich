@@ -78,7 +78,7 @@ const PreparationText = styled.div`
 
 const PreparationFilters = styled.div`
     display: flex;
-    border-bottom: 0.1vw solid var(--granich-light-grey);
+    border-bottom: 0.1vw solid #d4d4d4;
     margin-bottom: 1vw;
     margin-left: 0.3vw;
     @media only screen and (max-width: 575px) {
