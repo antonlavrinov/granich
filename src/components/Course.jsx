@@ -104,18 +104,13 @@ const CourseButtonContainer = styled.div`
 const CourseTagList = styled.div`
     margin-bottom: 0.7vw;
     display: flex;
+    align-items: flex-start;
 
     @media only screen and (max-width: 575px) {
-        // margin-bottom: 4vw;
-        // margin-top: 0.5vw;
-        // margin-left: -0.5vw;
         width: 38vw;
         margin-bottom: 1.5vw;
         margin-top: 0;
         margin-left: -0.2vw;
-        // min-height: 4vw;
-        // min-height: 6vw;
-        // min-height: 15vw;
     }
 `
 
@@ -140,12 +135,6 @@ const CourseMainTag = styled.div`
 
     `}
     @media only screen and (max-width: 575px) {
-        // font-size: 3.7vw;
-        // padding: 0.5vw 2.5vw 0.8vw;
-        // font-weight: 500;
-        // margin-right: 1.5vw;
-        // border-width: 0.3vw;
-        // letter-spacing: -0.1vw;
         font-size: 2.5vw;
         padding: 0.2vw 1vw 0.2vw;
         border-width: 0.3vw;
@@ -160,16 +149,12 @@ const CourseTag = styled.div`
     color: var(--granich-red);
     border-radius: 100vw;
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 1;
     font-size: 1vw;
     padding: 0.2vw 0.5vw 0.2vw;
     display: block;
     letter-spacing: -0.03vw;
     margin-right: 0.4vw;
-    align-items: flex-start;
-    // min-height: 6vw;
-    // max-height: 100%;
-    // height: 0%;
     :last-child {
         margin-right: 0;
     }
@@ -189,11 +174,10 @@ const CourseTag = styled.div`
     @media only screen and (max-width: 575px) {
         border-width: 1px;
         font-size: 2.85vw;
-        padding: 0 1vw;
+        padding: 0.8vw 1vw;
         font-weight: 500;
         margin-right: 0.8vw;
         letter-spacing: -0.05em;
-        // height: 0%;
 
     }
 `
@@ -206,17 +190,8 @@ const CourseTitle = styled.div`
     font-weight: 600;
     letter-spacing: 0;
     max-width: 15.5vw;
-    // ${(props) => !props.active && `
-    //     color: var(--granich-light-grey);
-    // `}
     @media only screen and (max-width: 575px) {
-        // font-size: 7.65vw;
-        // margin-top: 2vw;
-        // margin-left: -0.5vw;
-        // max-width: 68vw;
-
         font-size: 3.8vw;
-        // font-size: 5vw;
         margin-top: 3vw;
         margin-left: 0.25vw;
         line-height: 1;
@@ -296,7 +271,7 @@ const CourseInfo = styled.div`
     line-height: 1.1;
     margin-bottom: 0.45vw;
     margin-top: 0.9vw;
-    height: 100%;
+    // height: 100%;
     // align-items: center;
     ${(props) => !props.active && `
         color: var(--granich-black);

@@ -76,6 +76,7 @@ const ReviewButton = styled.a`
         display: inline-block;
         border-bottom: 1.5px dotted var(--granich-light-grey);
         padding-bottom: 0.1vw;
+        font-size: 1.05vw;
     }
     svg {
 

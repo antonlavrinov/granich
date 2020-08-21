@@ -6,6 +6,8 @@ import PotokIcon from '../../assets/svgs/graph-design/graph-design-potok-icon.sv
 import DurationIcon from '../../assets/svgs/graph-design/graph-design-duration-icon.svg';
 import DateIcon from '../../assets/svgs/graph-design/graph-design-date-icon.svg';
 import BackgroundImage from 'gatsby-background-image';
+import scrollTo from 'gatsby-plugin-smoothscroll';
+
 
 const Potok = styled(props => <PotokIcon {...props}/>)`
     width: 1.3vw;
@@ -170,7 +172,7 @@ const GraphDesignOffer = ({data}) => {
                         За 2 месяца вы получите упорядоченные знания о графическом дизайне
                         и создадите свое портфолио 
                     </GraphDesignOfferDescr>
-                    <GraphDesignOfferButton><CourseArrowDown/>Участвовать</GraphDesignOfferButton>
+                    <GraphDesignOfferButton onClick={() => scrollTo('#participation-section')}><CourseArrowDown/>Участвовать</GraphDesignOfferButton>
                     
                 </GraphDesignOfferWrapper>
             </Container>

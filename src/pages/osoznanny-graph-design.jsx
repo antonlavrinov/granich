@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import GraphDesignOffer from '../components/graphdesign-page/GraphDesignOffer';
 import Header from "../components/Header"
-import GraphDesignAnswers from "../components/graphdesign-page/GraphDesignAnswers"
+import GraphDesignExplanations from "../components/graphdesign-page/GraphDesignExplanations"
 import GraphDesignExample from "../components/graphdesign-page/GraphDesignExample"
 import GraphDesignForWhom from "../components/graphdesign-page/GraphDesignForWhom"
 import GraphDesignPortfolio from "../components/graphdesign-page/GraphDesignPortfolio"
@@ -14,6 +14,7 @@ import GraphDesignReviews from "../components/graphdesign-page/GraphDesignReview
 import GraphDesignParticipation from "../components/graphdesign-page/GraphDesignParticipation"
 import GraphDesignCommitment from "../components/graphdesign-page/GraphDesignCommitment"
 import {graphql} from 'gatsby';
+import GraphDesignAnswers from "../components/graphdesign-page/GraphDesignAnswers";
 
 
 
@@ -40,7 +41,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <Header type={'dark'}/>
     <SEO title="Осознанный графдизайн" />
     <GraphDesignOffer data={data.offer}/>
-    <GraphDesignAnswers/>
+    <GraphDesignExplanations/>
     <GraphDesignExample/>
     <GraphDesignCommitment/>
     <GraphDesignForWhom/>
@@ -50,6 +51,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <GraphDesignFeatures/>
     <GraphDesignReviews/>
     <GraphDesignParticipation/>
+    <GraphDesignAnswers/>
 
   </Layout>
 )
