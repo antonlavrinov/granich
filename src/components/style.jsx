@@ -16,6 +16,8 @@ export const GlobalStyle = createGlobalStyle`
         --granich-light-grey: #a5a5a5;
         color: var(--granich-black);
         --granich-red-gradient: linear-gradient(90deg, rgba(230,25,51,1) 0%, rgba(213,12,34,1) 30%, rgba(189,3,27,1) 70%);
+        --granich-telegram-gradient: linear-gradient(90deg, #32A1CD 0%, #36ADE0 50%);
+        --granich-vk-gradient: linear-gradient(90deg, #167CC2 0%, #0980C5 50%);
         --granich-red-gradient-horizontal: linear-gradient(90deg, rgba(230,25,51,1) 0%, rgba(213,12,34,1) 50%, rgba(189,3,27,1) 100%);
 
         letter-spacing: 0vw;

@@ -392,7 +392,52 @@ ul, li {
 }
 
 
+
+@keyframes ldio-6b142d04hhl {
+    0% { transform: translate(-50%,-50%) rotate(0deg); }
+    100% { transform: translate(-50%,-50%) rotate(360deg); }
+  }
+  .ldio-6b142d04hhl div {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    border: 1vw solid var(--granich-grey);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: ldio-6b142d04hhl 0.6s linear infinite;
+    top: 50%;
+    left: 50%;
+    // transform: translate(-50%, -50%);
+
+  }
+
+  .loadingio-spinner-rolling-ta5f1nqy5p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    overflow: hidden;
+    background: none;
+    z-index: 0;
+
+
+  }
+  .ldio-6b142d04hhl {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0; /* see note above */
+  }
+  .ldio-6b142d04hhl div { box-sizing: content-box; }
   
+
+.swiper-container {
+    width: 60%;
+}
 
 
 //import blocks

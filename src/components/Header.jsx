@@ -56,7 +56,7 @@ const HeaderWrapper = styled.div`
 const NavLinks = styled.nav`
   color: white;
   margin-left: 3.15vw;
-  margin-top: -1vw;
+  // margin-top: -1vw;
   ul {
     display: flex;
   }
@@ -213,7 +213,7 @@ const LoginButton = styled.a`
   align-items: center;
   color: white;
   background: var(--granich-red-gradient);
-  margin-top: -1.6vw;
+  // margin-top: -1.6vw;
   margin-left: auto;
   padding: 0.6vw 1.1vw;
   letter-spacing: 0.05vw;

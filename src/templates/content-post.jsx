@@ -5,6 +5,9 @@ import SEO from '../components/seo'
 import {graphql} from 'gatsby'
 import styled from 'styled-components';
 import {Container} from '../components/style';
+import YoutubeVideo from '../components/content-page/YoutubeVideo'
+import Mailing from '../components/Mailing';
+import ContentLinks from '../components/content-page/ContentLinks'
 
 const ContentSection = styled.section`
     padding-top: 10vw;
@@ -20,6 +23,12 @@ export const pageQuery = graphql`
             contentSlug
             contentTitle
             contentYoutubeVideoLink
+            contentLinkBehance {
+                contentLinkBehance
+            }
+            contentLinkMedium {
+                contentLinkMedium
+            }
             contentPDF {
                 file { 
                   url 
@@ -37,14 +46,12 @@ const ContentPage = ({data}) => {
     return (
         <Layout>
             <Header type="dark"/>
-            <ContentSection>
+            <YoutubeVideo data={data}/>
+            <ContentLinks data={data}/>
+            {/* <ContentSection>
                 <Container>
                     <ContentWrapper>
-                        {console.log('SLUG', data.contentfulContent.contentPDF)}
                         <div>{data.contentfulContent.contentTitle}</div>
-                        {/* {data.contentfulContent.contentDescription ? (
-                            <div>{data.contentfulContent.contentDescription.contentDescription}</div>
-                        ) : (null)} */}
                         {data.contentfulContent.contentPDF ? (
                             <a download target="_blank" href={data.contentfulContent.contentPDF.file.url}>Скачать PDF</a>
                         ) : null}
@@ -59,7 +66,8 @@ const ContentPage = ({data}) => {
                         
                     </ContentWrapper>
                 </Container>
-            </ContentSection>
+            </ContentSection> */}
+            <Mailing/>
             <SEO title="Онлайн-школа Granich" />
         </Layout>
     )

@@ -12,7 +12,26 @@ import GraphDesignCurriculum from "../components/graphdesign-page/GraphDesignCur
 import GraphDesignFeatures from "../components/graphdesign-page/GraphDesignFeatures"
 import GraphDesignReviews from "../components/graphdesign-page/GraphDesignReviews"
 import GraphDesignParticipation from "../components/graphdesign-page/GraphDesignParticipation"
+import GraphDesignCommitment from "../components/graphdesign-page/GraphDesignCommitment"
+import {graphql} from 'gatsby';
 
+
+
+export const contentfulQuery = graphql`
+    query graphDesignQuery {
+        offer:   allContentfulGranichMainCourseCard(filter: {cardTitle: {eq: "Осознанный графдизайн"}}) {
+          edges {
+            node {
+              courseMainImage {
+                fluid(maxWidth: 1200, quality: 100) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+            }
+          }
+        }
+      }
+      `
 
 
 
@@ -20,9 +39,10 @@ const OsoznannyGraphDesignPage = ({data}) => (
   <Layout>
     <Header type={'dark'}/>
     <SEO title="Осознанный графдизайн" />
-    <GraphDesignOffer/>
+    <GraphDesignOffer data={data.offer}/>
     <GraphDesignAnswers/>
     <GraphDesignExample/>
+    <GraphDesignCommitment/>
     <GraphDesignForWhom/>
     <GraphDesignPortfolio/>
     <GraphDesignTrainingPath/>

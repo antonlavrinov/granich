@@ -40,18 +40,15 @@ const CourseWrapper = styled(props => <Link {...props}/>)`
     background: white;
     border-radius: 0.6vw;
     box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    filter: greyscale(50%);
-
+    height: 100%;
     :hover {
         cursor: pointer;
         transform: scale(1.03);
     }
-    // :nth-child(n+5) {
-    //     display: none;
-    // }
+
     ${props => props.cardType === 'В разработке...' && `
         background: #E8E8E8;
         box-shadow: none;
@@ -64,11 +61,9 @@ const CourseWrapper = styled(props => <Link {...props}/>)`
         }
     `}
     @media only screen and (max-width: 575px) {
-        // border-radius: 3vw;
-        // box-shadow: 0 0 2.5vw rgba(0,0,0,0.25);
-
         border-radius: 1.5vw;
         box-shadow: 0 0 1.5vw rgba(0,0,0,0.25);
+        // min-height: 90vw;
     }
     
 `
@@ -86,13 +81,8 @@ const CourseDevelopingWrapper = styled.div`
 
 const CourseContainer = styled.div`
     padding: 0.9vw 1vw;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
     @media only screen and (max-width: 575px) {
-        // padding: 4vw 5vw 4vw;
-
-        padding: 2.5vw;
+        padding: 2.5vw 2.5vw 3.5vw;
     }
 
 `
@@ -114,15 +104,18 @@ const CourseButtonContainer = styled.div`
 const CourseTagList = styled.div`
     margin-bottom: 0.7vw;
     display: flex;
-    width: 100%;
+
     @media only screen and (max-width: 575px) {
         // margin-bottom: 4vw;
         // margin-top: 0.5vw;
         // margin-left: -0.5vw;
-
+        width: 38vw;
         margin-bottom: 1.5vw;
         margin-top: 0;
         margin-left: -0.2vw;
+        // min-height: 4vw;
+        // min-height: 6vw;
+        // min-height: 15vw;
     }
 `
 
@@ -134,7 +127,7 @@ const CourseMainTag = styled.div`
     font-weight: 600;
     line-height: 1;
     font-size: 0.9vw;
-    padding: 0.14vw 0.5vw 0.24vw;
+    padding: 0.20vw 0.5vw 0.20vw;
     display: inline-block;
     letter-spacing: -0.05vw;
     position: absolute;
@@ -163,16 +156,20 @@ const CourseMainTag = styled.div`
 `
 
 const CourseTag = styled.div`
-    border: 0.05vw solid var(--granich-red);
+    border: 1px solid var(--granich-red);
     color: var(--granich-red);
     border-radius: 100vw;
     font-weight: 600;
-    line-height: 1;
-    font-size: 0.9vw;
-    padding: 0.16vw 0.5vw 0.2vw;
-    display: inline-block;
+    line-height: 1.5;
+    font-size: 1vw;
+    padding: 0.2vw 0.5vw 0.2vw;
+    display: block;
     letter-spacing: -0.03vw;
     margin-right: 0.4vw;
+    align-items: flex-start;
+    // min-height: 6vw;
+    // max-height: 100%;
+    // height: 0%;
     :last-child {
         margin-right: 0;
     }
@@ -183,26 +180,21 @@ const CourseTag = styled.div`
 
     `}
     ${(props) => props.cardType === 'В разработке...' && `
-        border: 0.1vw solid #d4d4d4;
+        border: 1.5px solid #d4d4d4;
         filter: none;
         width: 100%;
         height: 1.45vw;
 
     `}
     @media only screen and (max-width: 575px) {
-        // border-width: 0.3vw;
-        // font-size: 3.7vw;
-        // padding: 0.5vw 2.5vw 0.8vw;
-        // font-weight: 500;
-        // margin-right: 1.5vw;
-        // letter-spacing: -0.1vw;
-
-        border-width: 0.2vw;
-        font-size: 2.5vw;
-        padding: 0.2vw 1vw 0.2vw;
+        border-width: 1px;
+        font-size: 2.85vw;
+        padding: 0 1vw;
         font-weight: 500;
-        margin-right: 1vw;
-        letter-spacing: -0.05vw;
+        margin-right: 0.8vw;
+        letter-spacing: -0.05em;
+        // height: 0%;
+
     }
 `
 
@@ -225,8 +217,9 @@ const CourseTitle = styled.div`
 
         font-size: 3.8vw;
         // font-size: 5vw;
-        margin-top: 1vw;
-        margin-left: -0.25vw;
+        margin-top: 3vw;
+        margin-left: 0.25vw;
+        line-height: 1;
         max-width: 100%;
     }
 `
@@ -239,6 +232,7 @@ const CourseImage = styled(props => <BackgroundImage {...props}></BackgroundImag
         // min-height: 66vw;
         min-height: 37vw;
         max-height: 37vw;
+        height: 37vw;
     }
 `
 
@@ -303,7 +297,7 @@ const CourseInfo = styled.div`
     margin-bottom: 0.45vw;
     margin-top: 0.9vw;
     height: 100%;
-    align-items: center;
+    // align-items: center;
     ${(props) => !props.active && `
         color: var(--granich-black);
     `}
@@ -326,7 +320,6 @@ const CourseDescr = styled.div`
     color: var(--granich-light-grey);
     letter-spacing: -0.01vw;
     font-weight: 500;
-    height: 100%;
     line-height: 1;
     margin-top: 0.5vw;
     ${(props) => !props.active && `
@@ -347,9 +340,9 @@ const CourseStart = styled.div`
     margin-right: 1.1vw;
     font-weight: 600;
     color: var(--granich-light-grey);
-    ${(props) => !props.active && `
-        color: var(--granich-black);
-    `}
+    // ${(props) => !props.active && `
+    //     color: var(--granich-black);
+    // `}
     span {
         font-weight: inherit;
         font-size: inherit;
@@ -368,9 +361,9 @@ const CourseDuration = styled.div`
     font-size: inherit;
     font-weight: 600;
     color: var(--granich-light-grey);
-    ${(props) => !props.active && `
-        color: var(--granich-black);
-    `}
+    // ${(props) => !props.active && `
+    //     color: var(--granich-black);
+    // `}
     span {
         font-weight: inherit;
         font-size: inherit;
@@ -405,7 +398,7 @@ const CourseTeacher = styled(props => <BackgroundImage {...props}></BackgroundIm
     margin-right: 0vw;
     height: 2.35vw;
     width: 2.35vw;
-    border: 0.05vw solid var(--granich-black);
+    border: 1px solid var(--granich-black);
     box-shadow: 0.15vw 0.12vw 0.2vw rgba(0,0,0,0.25);
     ${props => props.several && `
         // transform: translateX(17%);

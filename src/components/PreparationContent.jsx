@@ -69,7 +69,7 @@ const BehanceOut = styled(props => <BehanceLinkOut {...props}/>)`
     }
 `
 
-const ContentWrapperLink = styled(props => <Link {...props}/>)`
+const ContentWrapperLink = styled.a`
     background: #2b2b2b;
     border-radius: 0.5vw;
     display: flex;
@@ -145,12 +145,12 @@ const ContentTagList = styled.div`
 
 
 const ContentTag = styled.div`
-    border: 0.05vw solid white;
+    border: 1px solid white;
     color: white;
     border-radius: 100vw;
     font-weight: 400;
     font-size: 0.9vw;
-    padding: 0.16vw 0.4vw 0.2vw;
+    padding: 0.3vw 0.4vw 0.3vw;
     display: inline-block;
     letter-spacing: -0.03vw;
     margin-right: 0.3vw;
@@ -166,9 +166,9 @@ const ContentTag = styled.div`
         //     margin-right: 0;
         // }
 
-        border-width: 0.2vw;
+        border-width: 1px;
         font-size: 2.5vw;
-        padding: 0.2vw 1vw 0.2vw;
+        padding: 0.4vw 1vw 0.4vw;
         font-weight: 500;
         margin-right: 1vw;
         letter-spacing: -0.05vw;
@@ -224,20 +224,20 @@ const ContentDescr = styled.div`
 `
 
 const ContentButtonContainer = styled.div`
-    padding: 0.3vw 1.1vw 1vw;
+    padding: 1vw 1.1vw 1vw;
     ${props => props.type === 'Youtube' && `
         display: flex;
-        padding: 0.3vw 1.1vw 0.7vw;
+        padding: 0.9vw 1.1vw 0.9vw;
     `}
     ${props => props.type === 'Youtube + Medium + Behance' && `
         display: flex;
         padding: 0.3vw 1.1vw 1vw;
     `}
     @media only screen and (max-width: 575px) {
-        padding: 1.5vw 3vw 2.4vw;
+        padding: 2.4vw 3vw 2.4vw;
         ${props => props.type === 'Youtube' && `
         display: flex;
-        padding: 1.5vw 3vw 2.4vw;
+        padding: 2.4vw 3vw 2.4vw;
         `}
         ${props => props.type === 'Youtube + Medium + Behance' && `
             display: flex;
@@ -407,7 +407,7 @@ const PreparationContent = ({content}) => {
     return (
         <div className="content">
             {content.contentType === youtube || content.contentType === mixed ? (
-                <ContentWrapperLink to={content.contentSlug} type={content.contentType} >
+                <ContentWrapperLink href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
                     <ContentContainer>
                         <ContentTagList>
                             {content.contentTags.map((contentTag, idx) => {

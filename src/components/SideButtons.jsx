@@ -196,9 +196,11 @@ const Email = styled.button`
         outline: none;
         
         &:after {
-            content: 'Скопировано :)';
-            text-align: right;
+            content: 'Скопировано :) hello@granich.design';
+            text-align: center;
             background: var(--granich-red);
+            white-space: normal;
+            line-height: 1.5;
         }
         &:before {
             border-left-color: var(--granich-red);
@@ -224,11 +226,7 @@ const Email = styled.button`
             border-top: 2vw solid transparent;
             border-left: 2vw solid var(--granich-black);
         }
-        &:active, :focus {        
-            &:after {
-                width: 35vw; 
-            }
-        }
+
     }
     // ${props => !props.chatOpen && `
     //     svg {

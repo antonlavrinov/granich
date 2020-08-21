@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
-import ExampleArrow from '../../assets/svgs/example-arrow.svg';
+import ExampleArrow from '../../assets/svgs/graph-design/graph-design-example-arrow.svg';
 import { graphql, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 
@@ -13,12 +13,14 @@ const GraphDesignExampleWrapper = styled.div`
     flex-direction: column;
     background: white;
     justify-content: space-between;
-    padding: 4vw 4.8vw;
+    padding: 4vw 4.7vw;
     border-radius: 0.5vw;
     
     svg {
-        width: 20vw;
+        width: 13vw;
+        height: 2.2vw;
         margin: 0 auto;
+        margin-top: 2vw;
     }
 `
 
@@ -37,6 +39,7 @@ const GraphDesignExampleAuthorImage = styled(props => <BackgroundImage {...props
     border-radius: 100vw;
     margin-bottom: 0.3vw;
     overflow: hidden;
+
 `
 const GraphDesignExampleAuthorName = styled.div`
     font-size: 1.15vw;
@@ -84,9 +87,10 @@ const GraphDesignExampleInfoWrapper = styled.div`
 `
 const GraphDesignExampleImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     width: 100%;
-    height: 12.5vw;
+    height: 11.25vw;
     margin-bottom: 0;
     background-size: cover;
+    background-size: auto 100% ;
 `
 
 const GraphDesignExampleInfoBlock = styled.div`
@@ -95,13 +99,13 @@ const GraphDesignExampleInfoBlock = styled.div`
 const GraphDesignExampleInfoText = styled.div`
     color: var(--granich-grey);
     font-size: 1.15vw;
-    line-height: 1.2;
+    line-height: 1.45;
 `
 
 const GraphDesignExampleImageLine = styled.div`
-    width: 0.1vw;
+    width: 1.5px;
     background: #d4d4d4;
-    margin: 0 5vw;
+    margin: 0 3vw;
 `
 
 

@@ -5,7 +5,7 @@ import CourseArrowDown from '../../assets/svgs/course-arrow-down-27.svg';
 import PotokIcon from '../../assets/svgs/graph-design/graph-design-potok-icon.svg';
 import DurationIcon from '../../assets/svgs/graph-design/graph-design-duration-icon.svg';
 import DateIcon from '../../assets/svgs/graph-design/graph-design-date-icon.svg';
-
+import BackgroundImage from 'gatsby-background-image';
 
 const Potok = styled(props => <PotokIcon {...props}/>)`
     width: 1.3vw;
@@ -31,24 +31,28 @@ const GraphDesignOfferSection = styled.section`
 
 `
 
-const GraphDesignOfferWrapper = styled.div`
+const GraphDesignOfferWrapper = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     background: white;
     border-radius: 0.5vw;
     padding: 3.4vw 2.7vw 4.4vw;
     position: relative;
     box-shadow: 0.25vw 0.15vw 0.4vw rgba(0,0,0,0.1);
+    background-size: auto auto;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: right;
 
-    :before {
-        content: '';
-        width: 29.4vw;
-        height: 29.4vw;
-        background: var(--granich-red);
-        position: absolute;
-        top: 50%;
-        right: 3.2vw;
-        border-radius: 100vw;
-        transform: translateY(-50%);
-    }
+    // :before {
+    //     content: '';
+    //     width: 29.4vw;
+    //     height: 29.4vw;
+    //     background: var(--granich-red);
+    //     position: absolute;
+    //     top: 50%;
+    //     right: 3.2vw;
+    //     border-radius: 100vw;
+    //     transform: translateY(-50%);
+    // }
 
 
 `
@@ -99,11 +103,11 @@ const GraphDesignOfferTitle = styled.h1`
     }
 `
 const GraphDesignOfferDescr = styled.div`
-    width: 37.3vw;
+    width: 33vw;
     font-size: 1.55vw;
     margin-bottom: 2vw;
     margin-left: 0.8vw;
-    line-height: 1.45;
+    line-height: 1.47;
     font-weight: 500;
     letter-spacing: -0.01vw;
 `
@@ -114,7 +118,7 @@ const GraphDesignOfferButton = styled.a`
   color: white;
   background: var(--granich-red-gradient-horizontal);
   margin-left: 0.7vw;
-  padding: 0.8vw 1.4vw 1.1vw;
+  padding: 1vw 1.6vw 1.2vw 1.3vw;
   letter-spacing: 0.06vw;
   border-radius: 0.3vw;
   font-size: 1.61vw;
@@ -122,8 +126,10 @@ const GraphDesignOfferButton = styled.a`
   transition: all 0.2s ease;
   user-select: none;
   box-shadow: .25vw .25vw .4vw rgba(0,0,0,0.25);
+  letter-spacing: 0.05vw;
   svg {
     width: 1.5vw;
+    height: 1.5vw;
     margin-right: 0.5vw;
   }
   :hover {
@@ -136,12 +142,22 @@ const GraphDesignOfferButton = styled.a`
   }
 `
 
+const GraphDesignOfferImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
+  top: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 45vw;
+  width: 100%;
+`
 
-const GraphDesignOffer = () => {
+
+const GraphDesignOffer = ({data}) => {
+    console.log(data)
     return (
         <GraphDesignOfferSection>
             <Container>
-                <GraphDesignOfferWrapper>
+                <GraphDesignOfferWrapper fluid={data.edges[0].node.courseMainImage.fluid}>
+                    {/* {/* <GraphDesignOfferImage style={{position: 'absolute'}} fluid={data.edges[0].node.courseMainImage.fluid}/> */}
                     <GraphDesignOfferTags>
                         <GraphDesignOfferMainTag><Potok/>17 поток</GraphDesignOfferMainTag>
                         <GraphDesignOfferTag><Date/>Старт 1 сентября</GraphDesignOfferTag>
@@ -152,7 +168,7 @@ const GraphDesignOffer = () => {
                     </GraphDesignOfferTitle>
                     <GraphDesignOfferDescr>
                         За 2 месяца вы получите упорядоченные знания о графическом дизайне
-                        и создадите свое портфолио
+                        и создадите свое портфолио 
                     </GraphDesignOfferDescr>
                     <GraphDesignOfferButton><CourseArrowDown/>Участвовать</GraphDesignOfferButton>
                     

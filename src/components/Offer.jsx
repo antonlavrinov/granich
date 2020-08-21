@@ -25,6 +25,7 @@ const OfferSection = styled(props => <BackgroundImage {...props}></BackgroundIma
 `
 const OfferMobileSection = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     display: none;
+    position: relative;
     @media only screen and (max-width: 575px) {
         display: block;
         height: 134vw;
@@ -132,6 +133,20 @@ const OfferFlagsImg = styled(props => <Img {...props} />)`
     }
 ` 
 
+const OfferShadowMobile = styled.div`
+
+    // @media only screen and (max-width: 575px) {
+    //     background: linear-gradient(180deg, rgba(0,0,0,0.6) 50%, rgba(45,45,45,0) 100%);
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 35vw;
+    //     top: 0;
+    //     left: 0;
+    //     // z-index: 1000;
+    // }
+
+`
+
 
 
 
@@ -148,6 +163,7 @@ const Offer = ({data}) => {
     return (
         <>
             <OfferSection fluid={headerImage} id="offer" >
+
                 <Container>
                     <OfferTitle>{headerTitle}</OfferTitle>
                     <OfferDescr>
@@ -157,6 +173,7 @@ const Offer = ({data}) => {
                 <OfferSvgClip/>
             </OfferSection>
             <OfferMobileSection fluid={headerImageMobile} id="offer" >
+                <OfferShadowMobile></OfferShadowMobile>
                 <Container>
                     <OfferTitle>{headerTitle}</OfferTitle>
                     <OfferDescr>
