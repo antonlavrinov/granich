@@ -41,31 +41,28 @@ export const contentfulQuery = graphql`
             }
           }
         }
-        courseCards: allContentfulGranichMainCourseCard(sort: {fields: [cardOrderNumber], order: ASC}) {
+        courseCards: allContentfulGranichCourse(sort: {fields: [courseOrderNumber], order: ASC}) {
           edges {
             node {
-              id
-              cardActive
-              cardDate
-              cardDescription {
-                cardDescription
-              }
-              cardDuration
-              cardImage {
+              courseStatus
+              courseStart
+              courseDescr
+              courseDuration
+              coursePreviewImage {
                 fluid(maxWidth: 600) {
                   ...GatsbyContentfulFluid
                 }
               }
-              cardTags
-              cardTeachers {
+              courseTags
+              courseTeachers {
                 id
                 fluid(maxWidth: 100) {
                   ...GatsbyContentfulFluid
                 }
               }
-              cardTitle
-              typeOfCard
-              cardSlug
+              courseTitle
+              courseType
+              courseSlug
             }
           }
         },
@@ -144,11 +141,12 @@ export const contentfulQuery = graphql`
         team: allContentfulGranichMainTeachers(sort: {fields: [teacherOrderNumber], order: ASC}) {
           edges {
             node {
-              id
-              teacherDescription
+              teacherDescr {
+                json
+              }
               teacherEmail
               teacherImage {
-                fluid(maxWidth: 400) {
+                fluid(maxWidth: 250) {
                   ...GatsbyContentfulFluid
                 }
               }

@@ -32,13 +32,16 @@ const LegalDocumentRightBlock = styled.div`
 `
 
 const LegalDocumentInfoBlock = styled.div`
-    width: 13vw;
+    // width: 13vw;
     padding-top: 1.2vw;
 `
 const LegalDocumentInfoBlockText = styled.div`
-    font-size: 0.8vw;
-    color: var(--granich-grey);
+
     line-height: 1.3;
+    p {
+        font-size: 0.8vw;
+        color: var(--granich-grey);
+    }
 
 `
 
@@ -73,16 +76,26 @@ const LegalDocumentText = styled.div`
     font-size: 1.14vw;
     line-height: 1.5;
     margin-left: 0.4vw;
+    hr {
+        opacity: 0;
+        margin: 1vw 0;
+    }
     a {
         border-bottom: 0.05vw solid var(--granich-light-grey);
         :hover {
             border-bottom: none;
         }
     }
+    ul {
+        li {
+            padding-left: 1.5vw;
+        }
+    }
     p {
         margin-bottom: 0.5vw;
         color: var(--granich-grey);
         position: relative;
+
     }
     b {
         font-weight: 500;
@@ -91,11 +104,16 @@ const LegalDocumentText = styled.div`
     i {
         position: absolute;
         top: 0;
-        left: -19.5vw;
+        left: -19.6vw;
         width: 18vw;
         color: var(--granich-red);
         font-style: normal;
         font-weight: 500;
+    }
+    blockquote {
+        p {
+            margin-bottom: 0;
+        }
     }
 `
 const LegalDocumentMainContainer = styled.div`
@@ -174,7 +192,7 @@ const ArrowLinkBack = styled(props => <ArrowBack {...props}/>)`
 `
 
 
-const LegalDocument = ({date, type, mainText, dataPdf}) => {
+const LegalDocument = ({date, type, mainText, dataPdf, additionalInfo}) => {
     return (
         <LegalDocumentSection>
             <Container>
@@ -186,11 +204,7 @@ const LegalDocument = ({date, type, mainText, dataPdf}) => {
                                     PDF<Download/>
                                 </LegalDocumentInfoBlockPDFButton>
                                 <LegalDocumentInfoBlockText>
-                                    Настоящие Правила являются официальным документом
-                                    Гранич Вадима  Владимировича
-                                    ИНН 470320212730<br/>
-                                    ОГРНИП 319784700098871
-                                    Выдан 22.03.2019 г.
+                                    {documentToReactComponents(additionalInfo)}
                                 </LegalDocumentInfoBlockText>
                             </LegalDocumentInfoBlock>
                         </LegalDocumentLeftBlock>

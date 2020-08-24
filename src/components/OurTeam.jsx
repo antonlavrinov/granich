@@ -10,6 +10,8 @@ import TelegramIcon from '../assets/svgs/granich-main-team/telegram.svg';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {CSSTransition} from 'react-transition-group';
 import CopyIcon from '../assets/svgs/copy-icon.svg';
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+
 
 const Copy = styled(props => <CopyIcon {...props}/>)`
     width: 0.8vw;
@@ -266,6 +268,8 @@ const TeacherInfo = styled.div`
     padding-left: 1.4vw;
     margin-left: -0.4vw;
     min-height: 5.8vw;
+    line-height: 1.35;
+
     @media only screen and (max-width: 575px) {
         border-left: 0.5vw solid #D7D7D7;
         padding-left: 4.5vw;
@@ -276,23 +280,28 @@ const TeacherInfo = styled.div`
 const TeacherInfoName = styled.div`
     font-weight: 600;
     font-size: 1.16vw;
+    width: 18.5vw;
 
     @media only screen and (max-width: 575px) {
         font-size: 4.4vw;
         line-height: 1.3;
+        width: 67vw;
     }
 `
 
-const TeacherInfoText = styled.div`
-    margin-top: 0.2vw;
-    color: var(--granich-grey);
+const TeacherDescription = styled.div`
     font-size: 1.16vw;
     font-weight: 500;
-    line-height: 1.2;
+    width: 18.5vw;
+
+    p {
+        color: var(--granich-grey);
+    }
     @media only screen and (max-width: 575px) {
         font-size: 4.3vw;
         line-height: 1.3;
         margin-top: 0;
+        width: 67vw;
     }
 `
 
@@ -369,11 +378,9 @@ const TeacherBlock = ({teacher}) => {
             </TeacherHeader>
             <TeacherInfo>
                     <TeacherInfoName>{teacher.teacherName}</TeacherInfoName>
-                    {teacher.teacherDescription.map((descr, idx) => {
-                        return (
-                            <TeacherInfoText key={idx}>{descr}</TeacherInfoText>
-                        )
-                    })}
+                    <TeacherDescription>
+                        {documentToReactComponents(teacher.teacherDescr.json)}
+                    </TeacherDescription>
             </TeacherInfo>
         </TeacherWrapper>
     )

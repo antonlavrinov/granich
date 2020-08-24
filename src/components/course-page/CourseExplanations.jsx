@@ -121,7 +121,7 @@ const ExplanationsBlock = ({image, title, subtitle, text }) => {
     )
 }
 
-const Explanations = () => {
+const CourseExplanations = () => {
     const data = useStaticQuery(graphql`
         query {
             image1 : file(relativePath: { eq: "course-page-answers-section-01.png" }) {
@@ -179,4 +179,4 @@ const Explanations = () => {
     )
 }
 
-export default Explanations
+export default CourseExplanations

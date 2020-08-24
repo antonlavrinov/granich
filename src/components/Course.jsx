@@ -49,7 +49,7 @@ const CourseWrapper = styled(props => <Link {...props}/>)`
         transform: scale(1.03);
     }
 
-    ${props => props.cardType === 'В разработке...' && `
+    ${props => props.courseType === 'Разрабатываем...' && `
         background: #E8E8E8;
         box-shadow: none;
         :hover {
@@ -91,7 +91,7 @@ const CourseButtonContainer = styled.div`
     display: flex;
     flex-direction: column;
     height: 100%;
-    ${(props) => props.cardType === 'В разработке...' && `
+    ${(props) => props.courseType === 'Разрабатываем...' && `
         padding: 2vw 0.9vw;
     `}
 
@@ -105,6 +105,7 @@ const CourseTagList = styled.div`
     margin-bottom: 0.7vw;
     display: flex;
     align-items: flex-start;
+    width: 15.4vw;
 
     @media only screen and (max-width: 575px) {
         width: 38vw;
@@ -155,6 +156,7 @@ const CourseTag = styled.div`
     display: block;
     letter-spacing: -0.03vw;
     margin-right: 0.4vw;
+    white-space: nowrap;
     :last-child {
         margin-right: 0;
     }
@@ -164,7 +166,7 @@ const CourseTag = styled.div`
         color: black;
 
     `}
-    ${(props) => props.cardType === 'В разработке...' && `
+    ${(props) => props.courseType === 'Разрабатываем...' && `
         border: 1.5px solid #d4d4d4;
         filter: none;
         width: 100%;
@@ -174,10 +176,11 @@ const CourseTag = styled.div`
     @media only screen and (max-width: 575px) {
         border-width: 1px;
         font-size: 2.85vw;
-        padding: 0.8vw 1vw;
+        padding: 0.7vw 0.8vw;
         font-weight: 500;
-        margin-right: 0.8vw;
-        letter-spacing: -0.05em;
+        margin-right: 0.6vw;
+        letter-spacing: -0.06em;
+
 
     }
 `
@@ -189,13 +192,13 @@ const CourseTitle = styled.div`
     line-height: 0.9;
     font-weight: 600;
     letter-spacing: 0;
-    max-width: 15.5vw;
+    width: 15vw;
     @media only screen and (max-width: 575px) {
         font-size: 3.8vw;
         margin-top: 3vw;
         margin-left: 0.25vw;
         line-height: 1;
-        max-width: 100%;
+        width: 37vw;
     }
 `
 
@@ -204,10 +207,9 @@ const CourseImage = styled(props => <BackgroundImage {...props}></BackgroundImag
     width: 100%;
     position: relative;
     @media only screen and (max-width: 575px) {
-        // min-height: 66vw;
-        min-height: 37vw;
-        max-height: 37vw;
-        height: 37vw;
+        min-height: 38vw;
+        max-height: 38vw;
+        height: 38vw;
     }
 `
 
@@ -224,7 +226,7 @@ const CourseButton = styled.div`
         background: black;
     
     `}
-    ${(props) => props.cardType === 'В разработке...' && `
+    ${(props) => props.courseType === 'Разрабатываем...' && `
         background: #dedede;
     `}
     @media only screen and (max-width: 575px) {
@@ -250,7 +252,7 @@ const CourseButtonText = styled.div`
     line-height: 0.95;
     margin-left: 0.3vw;
     margin-top: -0.5vw;
-    ${(props) => props.cardType === 'В разработке...' && `
+    ${(props) => props.courseType === 'Разрабатываем...' && `
         color: #C0C0C0;
     `}
     @media only screen and (max-width: 575px) {
@@ -297,6 +299,7 @@ const CourseDescr = styled.div`
     font-weight: 500;
     line-height: 1;
     margin-top: 0.5vw;
+    width: 15vw;
     ${(props) => !props.active && `
         color: var(--granich-light-grey);
     `}
@@ -307,6 +310,7 @@ const CourseDescr = styled.div`
         font-size: 2.7vw;
         font-size: 3vw;
         margin-top: 1vw;
+        width: 37vw;
     }
 `
 
@@ -367,10 +371,9 @@ const CourseTeachers = styled.div`
     
 `
 const CourseTeacher = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-    background: grey;
-    border-radius: 100px;
+    border-radius: 100vw;
     margin-top: -0.2vw;
-    margin-right: 0vw;
+    margin-right: 0;
     height: 2.35vw;
     width: 2.35vw;
     border: 1px solid var(--granich-black);
@@ -390,8 +393,6 @@ const CourseTeacher = styled(props => <BackgroundImage {...props}></BackgroundIm
         }
     `}
     @media only screen and (max-width: 575px) {
-        // height: 10.2vw;
-        // width: 10.2vw;
         height: 5.8vw;
         width: 5.8vw;
     }
@@ -438,13 +439,13 @@ const CourseDevelopingDescr = styled.div`
 const Course = ({courseData}) => {
     return (
         <>
-            {courseData.node.typeOfCard === 'В разработке...' ? (
-                <CourseDevelopingWrapper cardType={courseData.node.typeOfCard}>
+            {courseData.node.courseType === 'Разрабатываем...' ? (
+                <CourseDevelopingWrapper courseType={courseData.node.courseType}>
                     <CourseContainer>
                         <CourseTagList>
-                            <CourseTag cardType={courseData.node.typeOfCard}></CourseTag>
-                            <CourseTag cardType={courseData.node.typeOfCard}></CourseTag>
-                            <CourseTag cardType={courseData.node.typeOfCard}></CourseTag>
+                            <CourseTag courseType={courseData.node.courseType}></CourseTag>
+                            <CourseTag courseType={courseData.node.courseType}></CourseTag>
+                            <CourseTag courseType={courseData.node.courseType}></CourseTag>
                         </CourseTagList>
                         <CourseDevelopingImage>
                             <Cogwheel/>
@@ -460,22 +461,22 @@ const Course = ({courseData}) => {
                         </CourseDevelopingDescr>
 
                     </CourseContainer>
-                    <CourseButton cardType={courseData.node.typeOfCard}>
-                        <CourseButtonContainer cardType={courseData.node.typeOfCard}>
+                    <CourseButton courseType={courseData.node.courseType}>
+                        <CourseButtonContainer courseType={courseData.node.courseType}>
                             <CourseButtonWrapper >
-                                <CourseButtonText cardType={courseData.node.typeOfCard}>Разрабатываем...</CourseButtonText>
+                                <CourseButtonText courseType={courseData.node.courseType}>{courseData.node.courseType}</CourseButtonText>
                             </CourseButtonWrapper>
                         </CourseButtonContainer>
                     </CourseButton>
                 </CourseDevelopingWrapper>
             ) : (
-                <CourseWrapper to={courseData.node.cardSlug}>
+                <CourseWrapper to={courseData.node.courseSlug}>
                             <CourseContainer>
                                 <CourseTagList>
                                     <>
-                                        {courseData.node.cardTags.map((cardTag, idx) => {
+                                        {courseData.node.courseTags.map((courseTag, idx) => {
                                             return (
-                                                <CourseTag key={idx} active={courseData.node.cardActive}>{cardTag}</CourseTag>
+                                                <CourseTag key={idx} active={courseData.node.courseStatus}>{courseTag}</CourseTag>
                                             )
                                         })}
                                         
@@ -485,19 +486,19 @@ const Course = ({courseData}) => {
                                 </CourseTagList>
 
                                 <CourseImageWrapper>
-                                    <CourseImage fluid={courseData.node.cardImage.fluid}>
+                                    <CourseImage fluid={courseData.node.coursePreviewImage.fluid}>
                                     </CourseImage>
                                     <>
-                                        {courseData.node.typeOfCard === 'Курс' ? (
-                                            <CourseMainTag active={courseData.node.cardActive}>Курс</CourseMainTag>
+                                        {courseData.node.courseType === 'Курс' ? (
+                                            <CourseMainTag active={courseData.node.courseStatus}>Курс</CourseMainTag>
                                         ) : (
-                                            <CourseMainTag active={courseData.node.cardActive}>Мастер-класс</CourseMainTag>
+                                            <CourseMainTag active={courseData.node.courseStatus}>Мастер-класс</CourseMainTag>
                                         )}
                                     </>
                                     <CourseTeachers>
-                                        {courseData.node.cardTeachers.length > 1 ? (
+                                        {courseData.node.courseTeachers.length > 1 ? (
                                             <>
-                                                {courseData.node.cardTeachers.map((teacher, idx) => {
+                                                {courseData.node.courseTeachers.map((teacher, idx) => {
                                                     return (
                                                         <CourseTeacher several={true} key={idx} fluid={teacher.fluid}/>
                                                     )
@@ -505,37 +506,37 @@ const Course = ({courseData}) => {
                                             </>
 
                                         ) : (
-                                            <CourseTeacher  fluid={courseData.node.cardTeachers[0].fluid}/>
+                                            <CourseTeacher  fluid={courseData.node.courseTeachers[0].fluid}/>
                                         )}
                                     </CourseTeachers>
                                 </CourseImageWrapper>
 
 
 
-                                <CourseTitle cardType={courseData.node.typeOfCard === 'Курс' ? true : false} active={courseData.node.cardActive}>{courseData.node.cardTitle}</CourseTitle>
-                                {courseData.node.typeOfCard === 'Курс' ? (
-                                    <CourseInfo active={courseData.node.cardActive}>
-                                        <CourseStart active={courseData.node.cardActive}>
-                                            Стартуем <br/> <span>{courseData.node.cardDate}</span>
+                                <CourseTitle courseType={courseData.node.courseType === 'Курс' ? true : false} active={courseData.node.courseStatus}>{courseData.node.courseTitle}</CourseTitle>
+                                {courseData.node.courseType === 'Курс' ? (
+                                    <CourseInfo active={courseData.node.courseStatus}>
+                                        <CourseStart active={courseData.node.courseStatus}>
+                                            Стартуем <br/> <span>{courseData.node.courseStart}</span>
                                         </CourseStart>
-                                        <CourseDuration active={courseData.node.cardActive}>
-                                            Учимся <br/> <span>{courseData.node.cardDuration}</span>
+                                        <CourseDuration active={courseData.node.courseStatus}>
+                                            Учимся <br/> <span>{courseData.node.courseDuration}</span>
                                         </CourseDuration>
 
                                     </CourseInfo>
                                 ) : (
-                                    <CourseDescr active={courseData.node.cardActive}>
-                                        {courseData.node.cardDescription.cardDescription}
+                                    <CourseDescr active={courseData.node.courseStatus}>
+                                        {courseData.node.courseDescr}
                                     </CourseDescr>
                                 )}
 
                             </CourseContainer>
-                            <CourseButton active={courseData.node.cardActive}>
+                            <CourseButton active={courseData.node.courseStatus}>
                                 <CourseButtonContainer>
                                     <CourseButtonWrapper>
-                                        {courseData.node.cardActive ? (
+                                        {courseData.node.courseStatus ? (
                                             <>  
-                                                {courseData.node.typeOfCard === "Курс" ? (
+                                                {courseData.node.courseType === "Курс" ? (
                                                     <CourseButtonText>
                                                         Участвовать
                                                     </CourseButtonText>
@@ -549,7 +550,7 @@ const Course = ({courseData}) => {
                                             </>
                                         ) : (
                                             <>
-                                                {courseData.node.typeOfCard === "Курс" ? (
+                                                {courseData.node.courseType === "Курс" ? (
                                                     <CourseButtonText>
                                                         Узнать <br/>о наборе
                                                     </CourseButtonText>

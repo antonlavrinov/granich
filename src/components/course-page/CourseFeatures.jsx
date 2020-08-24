@@ -91,7 +91,7 @@ const Feature = ({image, title, text, link}) => {
 }
 
 
-const GraphDesignFeatures = () => {
+const CourseFeatures = () => {
         const data = useStaticQuery(graphql`
         query FeaturesSectionQuery {
             books: file(relativePath: { eq: "graph-design/features/books.png" }) {
@@ -190,4 +190,4 @@ const GraphDesignFeatures = () => {
     )
 }
 
-export default GraphDesignFeatures
+export default CourseFeatures

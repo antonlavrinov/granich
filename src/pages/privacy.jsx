@@ -15,6 +15,9 @@ export const contentfulQuery = graphql`
                     }
                     legalDocDate
                     legalDocType
+                    legalDocAdditionalInfo {
+                        json
+                    }
                     legalDocPDF {
                         file { 
                             url 
@@ -33,10 +36,11 @@ const PrivacyPage = ({data}) => {
     const dataPdf = data.privacy.edges[0].node.legalDocPDF.file.url;
     const date = data.privacy.edges[0].node.legalDocDate;
     const docType = data.privacy.edges[0].node.legalDocType;
+    const additionalInfo = data.privacy.edges[0].node.legalDocAdditionalInfo.json;
     return (
         <Layout>
             <Header type={'dark'}/>
-             <LegalDocument type={docType} mainText={mainText} dataPdf={dataPdf} date={date}/>
+             <LegalDocument additionalInfo={additionalInfo} type={docType} mainText={mainText} dataPdf={dataPdf} date={date}/>
         </Layout>
     )
 }

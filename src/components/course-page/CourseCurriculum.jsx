@@ -7,16 +7,16 @@ import PlusSign from '../../assets/svgs/plus-sign.svg';
 import MinusSign from '../../assets/svgs/minus-sign.svg';
 import * as Icons from './icons'
 import { animated } from 'react-spring';
-
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 const Plus = styled(props => <PlusSign {...props}/>)`
-    width: 4vw;
-    height: 4vw;
+    width: 2.3vw;
+    height: 2.3vw;
     margin-left: auto;
 `
 const Minus = styled(props => <MinusSign {...props}/>)`
-    width: 4vw;
-    height: 4vw;
+    width: 2.3vw;
+    height: 2.3vw;
     margin-left: auto;
 `
 
@@ -30,12 +30,26 @@ const CurriculumItemFrame = styled.div`
     vertical-align: middle;
     color: white;
     fill: white;
-    width: 100%;
+    // width: 100%;
     overflow: hidden;
-    border-bottom: 0.1vw solid #E4E4E4;
-    :first-child {
-        border-top: 0.1vw solid #E4E4E4;
+    border-top: 0.1vw solid #E4E4E4;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+
+    // :first-child {
+    //     border-top: 0.1vw solid #E4E4E4;
+    // }
+    :last-child {
+        border-top: none;
     }
+
+    ${props => !props.type && `
+        background: #F2F2F2;
+        border-radius: 0.5vw;
+        border: none;
+        margin: 0;
+
+    `}
 `
 
 const CurriculumItemTitle = styled('span')`
@@ -43,41 +57,119 @@ const CurriculumItemTitle = styled('span')`
   font-family: EB Garamond;
   font-style: italic;
   font-weight: 500;
-  font-size: 3vw;
+  font-size: 2.3vw;
   user-select: none;
+  margin-top: -0.3vw;
+  margin-right: 1vw;
 
+`
+
+const CurriculumItemImportantDescr = styled.span`
+    font-size: 1.15vw;
+    color: var(--granich-grey);
+`
+
+const CurriculumImportantText = styled.div`
+    padding: 1vw;
+    font-size: 1.15vw;
+    line-height: 1.35;
+
+    b {
+        font-weight: 500;
+        display: block;
+        color: var(--granich-black);
+    }
+
+    p {
+        color: var(--granich-grey);
+        display: block;
+        white-space: normal;
+        margin-bottom: 0.4vw;
+    }
 `
 
 const CurriculumItemContent = styled(animated.div)`
     will-change: transform, opacity, height;
-    margin-left: 6px;
-    padding: 0px 0px 0px 14px;
-    border-left: 1px dashed rgba(255, 255, 255, 0.4);
+    // margin-left: 6px;
+    // padding: 0px 0px 0px 14px;
+    // border-left: 1px dashed rgba(255, 255, 255, 0.4);
     overflow: hidden;
 `
 
 const CurriculumLesson = styled.div`
-    font-size: 1.5vw;
+    font-size: 1.15vw;
     border: 0.1vw solid var(--granich-red);
     color: var(--granich-red);
     border-radius: 100vw;
-    padding: 0.5vw 2vw;
-    margin-right: 2vw;
+    padding: 0.4vw 0;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 5.5vw;
+    text-align: center;
+    user-select: none;
+    ${props => !props.type && `
+        background: var(--granich-red);
+        color: white;
+    `}
+`
+
+const CurriculumLessonColumn = styled.div`
+    width: 6.8vw;
 `
 
 const CurriculumContainer = styled.div`
     display: flex;
-    padding: 2vw 0;
+    padding: 1.7vw 0vw;
     align-items: center;
+    // width: 90%;
     :hover {
         cursor: pointer;
     }
+    ${props => !props.type && `
+        padding: 1.7vw 1.5vw;
+    `}
 `
 
+const CurriculumContentWrapper = styled.div`
+    // height: 10vw;
+    // background: grey;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 5.8vw;
+    padding-top: 0vw;
+    padding-bottom: 1.2vw;
+    ${props => !props.type && `
+        padding-left: 7.3vw;
+    `}
+`
+
+const CurriculumContentColumn = styled.div`
+    // background: blue;
+    width: 14.5vw;
+    min-width: 14.5vw;
+    padding: 1vw;
+    margin-right: 1vw;
+    font-size: 1.15vw;
+    line-height: 1.35;
+
+    b {
+        font-weight: 500;
+        display: block;
+        color: var(--granich-black);
+    }
+
+    p {
+        color: var(--granich-grey);
+        display: block;
+        min-width: 14.5vw;
+        white-space: normal;
+        margin-bottom: 0.7vw;
+    }
+`
+
+
+
 const toggle = {
-    // width: '1em',
-    // height: '1em',
-    // marginRight: 10,
     cursor: 'pointer',
     verticalAlign: 'middle'
 }
@@ -100,7 +192,7 @@ function useMeasure() {
     return [{ ref }, bounds]
   }
 
-const CurriculumItem = memo(({ children, title, lesson, style, defaultOpen = false }) => {
+const CurriculumItem = memo(({ type, children, title, tag, style, descr, defaultOpen = false }) => {
     const [isOpen, setOpen] = useState(defaultOpen)
     const previous = usePrevious(isOpen)
     const [bind, { height: viewHeight }] = useMeasure()
@@ -110,12 +202,17 @@ const CurriculumItem = memo(({ children, title, lesson, style, defaultOpen = fal
     })
     // const Icon = Icons[`${children ? (isOpen ? 'Minus' : 'Plus') : 'Close'}SquareO`]
     return (
-        <CurriculumItemFrame>
+        <CurriculumItemFrame type={type ? 1 : 0}>
 
             {/* <Icon style={{ ...toggle, opacity: children ? 1 : 0.3 }} onClick={() => setOpen(!isOpen)} /> */}
-            <CurriculumContainer onClick={() => setOpen(!isOpen)}>
-                <CurriculumLesson>{lesson}</CurriculumLesson>
-                <CurriculumItemTitle onClick={() => setOpen(!isOpen)} style={style}>{title}</CurriculumItemTitle>
+            <CurriculumContainer type={type ? 1 : 0} onClick={() => setOpen(!isOpen)}>
+                <CurriculumLessonColumn>
+                    <CurriculumLesson type={type ? 1 : 0}>{tag}</CurriculumLesson>
+                </CurriculumLessonColumn>
+
+                <CurriculumItemTitle style={style}>{title}</CurriculumItemTitle>
+                {!type && descr && <CurriculumItemImportantDescr style={style}>{descr}</CurriculumItemImportantDescr>}
+                
                 {!isOpen ? (
                     <Plus style={{ ...toggle, opacity: children ? 1 : 0.3 }} />
                 ) : (
@@ -144,13 +241,14 @@ const CurriculumWrapper = styled.div`
     // display: flex;
     // justify-content: space-between;
     background: white;
-    padding: 5vw 3.3vw;
+    padding: 5vw 1.8vw;
     border-radius: 0.5vw;
 `
 
 const CurriculumHeader = styled.div`
     display: flex;
     margin-bottom: 5.5vw;
+    padding: 0 1.5vw;
 `
 
 const CurriculumHeaderTitle = styled.div`
@@ -161,6 +259,7 @@ const CurriculumHeaderTitle = styled.div`
     line-height: 0.87;
     margin-top: -0.6vw;
     margin-bottom: 6.4vw;
+
     @media only screen and (max-width: 575px) {
         font-size: 11.9vw;
         letter-spacing: -0.7vw;
@@ -171,7 +270,8 @@ const CurriculumHeaderTitle = styled.div`
     
 `
 const CurriculumTitleAndContent = styled.div`
-    margin-right: 10.7vw;
+    margin-right: 0vw;
+    min-width: 35.5vw;
 ` 
 
 const CurriculumBonusBlock = styled.div`
@@ -181,10 +281,14 @@ const CurriculumBonusBlock = styled.div`
 const CurriculumBonus = styled.div`
     background: #f2f2f2;
     border-radius: 0.5vw;
-    padding: 1.6vw;
+    padding: 1.4vw 1.6vw;
     font-size: 1.15vw;
     line-height: 1.3;
     color: var(--granich-light-grey);
+    margin-bottom: 1.3vw;
+    :last-child {
+        margin-bottom: 0;
+    }
     span {
         color: var(--granich-black);
         font-size: inherit;
@@ -225,7 +329,7 @@ const CurriculumAccordeon = styled.div`
 `
 
 
-const GraphDesignCurriculum = () => {
+const CourseCurriculum = ({data}) => {
     return (
         <CurriculumSection>
             <Container>
@@ -243,20 +347,39 @@ const GraphDesignCurriculum = () => {
                                 <span>+ 8 бесплатных презентаций графсистем</span>
                                 Помимо уроков, вы получите дополнительные презентации по графсистемам: Swiss, Техно, VHS, Нео Гео, UI-дизайн, Коллаж, Киберпанк и другие.
                             </CurriculumBonus>
+                            <CurriculumBonus>
+                                <span>+ 8 бесплатных презентаций графсистем</span>
+                                Помимо уроков, вы получите дополнительные презентации по графсистемам: Swiss, Техно, VHS, Нео Гео, UI-дизайн, Коллаж, Киберпанк и другие.
+                            </CurriculumBonus>
                         </CurriculumBonusBlock>
                     </CurriculumHeader>
                     
                     <CurriculumAccordeon>
-                        <CurriculumItem title="Воздух и фреймы" lesson="1 урок">
-                            <div style={{ position: 'relative', width: '100%', height: 200, padding: 10 }}>
-                            <div style={{ width: '100%', height: '100%', background: 'black', borderRadius: 5 }} />
-                            </div>
-                        </CurriculumItem>
-                        <CurriculumItem title="Воздух и фреймы" lesson="1 урок">
-                            <div style={{ position: 'relative', width: '100%', height: 200, padding: 10 }}>
-                            <div style={{ width: '100%', height: '100%', background: 'black', borderRadius: 5 }} />
-                            </div>
-                        </CurriculumItem>
+                        {data.edges.map((tab, idx) => {
+                            return (
+                                <CurriculumItem descr={tab.node.curriculumImportantDescr} type={tab.node.curriculumType} key={idx} title={tab.node.curriculumTitle} tag={tab.node.curriculumTagName}>
+                                    <CurriculumContentWrapper type={tab.node.curriculumType ? 1 : 0}>
+                                        {tab.node.curriculumType ? (
+                                            <>
+                                               {tab.node.curriculumFirstColumn && <CurriculumContentColumn>{documentToReactComponents(tab.node.curriculumFirstColumn.json)}</CurriculumContentColumn>}
+                                                {tab.node.curriculumSecondColumn && <CurriculumContentColumn>{documentToReactComponents(tab.node.curriculumSecondColumn.json)}</CurriculumContentColumn>}
+                                                {tab.node.curriculumThirdColumn && <CurriculumContentColumn>{documentToReactComponents(tab.node.curriculumThirdColumn.json)}</CurriculumContentColumn>}
+                                                {tab.node.curriculumFourthColumn && <CurriculumContentColumn>{documentToReactComponents(tab.node.curriculumFourthColumn.json)}</CurriculumContentColumn>}
+                                            </>
+                                         
+                                        ) : (
+                                            <>
+                                                {tab.node.curriculumImportantText && <CurriculumImportantText>{documentToReactComponents(tab.node.curriculumImportantText.json)}</CurriculumImportantText>}
+                                            </>
+                                        )}
+                                   
+                                    </CurriculumContentWrapper>
+                                    {/* <div style={{ position: 'relative', width: '100%', height: 200, padding: 10 }}>
+                                    <div style={{ width: '100%', height: '100%', background: 'black', borderRadius: 5 }} />
+                                    </div> */}
+                                </CurriculumItem>
+                            )
+                        })}
                     </CurriculumAccordeon>
 
                 </CurriculumWrapper>
@@ -265,4 +388,4 @@ const GraphDesignCurriculum = () => {
     )
 }
 
-export default GraphDesignCurriculum
+export default CourseCurriculum

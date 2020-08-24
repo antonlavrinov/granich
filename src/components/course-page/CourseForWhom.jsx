@@ -8,7 +8,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 
 const ForWhomSection = styled.section`
-    margin-bottom: 10vw;
+    margin-bottom: 5vw;
 `
 
 const ForWhomSectionTitle = styled.div`
@@ -90,7 +90,7 @@ const ForWhomBlock = ({image, title, text }) => {
     )
 }
 
-const ForWhom = () => {
+const CourseForWhom = () => {
     const data = useStaticQuery(graphql`
         query {
             image1 : file(relativePath: { eq: "graph-design/for-whom/for-whom-01.jpg" }) {
@@ -148,4 +148,4 @@ const ForWhom = () => {
     )
 }
 
-export default ForWhom
+export default CourseForWhom

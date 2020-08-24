@@ -1,6 +1,6 @@
 import React, {useRef, useState, useEffect} from 'react'
 import styled from 'styled-components';
-import {Formik} from 'formik';
+import {Formik, Field} from 'formik';
 import * as Yup from 'yup';
 import posed from "react-pose";
 
@@ -20,18 +20,22 @@ const ShakeForm = posed.div({
 });
 
 const FormMainWrapper = styled.div`
-    background: white;
-    // width: 40vw;
-    border-radius: 0.5vw;
+
+    // width: 51%;
+    // min-width: 51%;
+    // margin-right: 2%;
+    // height: 100%;
+
 `
 
 
 const FormWrapper = styled.div`
-
+    // height: 100%;
+    // height: 100%;
 `
 
 const FormContainer = styled.div`
-    padding: 2vw 2.7vw;
+    padding: 2vw 2vw 2vw 2.7vw;
 `
 
 const FormTags = styled.div`
@@ -67,25 +71,38 @@ const FormTitle = styled.div`
     margin-bottom: 1vw;
 `
 const Form = styled.form`
+    height: 100%;
     position: relative;
+    background: white;
+    border-radius: 0.5vw;
+    display: flex;
+    flex-direction: column;
 `
 const FormInput = styled.input`
-    border-radius: 1vw;
+    border-radius: 0.8vw;
     border: none;
     width: 25vw;
     box-shadow: inset 0 0 0.5vw rgba(0,0,0,0.4);
-    padding: 0.7vw 1.6vw;
+    padding: 0.7vw 1.4vw;
     margin-bottom: 1.5vw;
-    margin-right: 0.8vw;
+    margin-right: 1vw;
     margin-left: 0.3vw;
     font-size: 1.35vw;
+    ${props => props.errorStyle && `
+        ::placeholder {
+            color: var(--granich-red);
+        }
+    `}
+
 `   
 
 const FormInputLabel = styled.label`
-    font-size: 0.8vw;
-    color: var(--granich-grey);
+    font-size: 0.9vw;
+    color: var(--granich-light-grey);
     max-width: 7vw;
     display: inline-block;
+    position: relative;
+    top: 0.3vw;
 `
 
 const FormCheckbox = styled.input`
@@ -98,7 +115,7 @@ const FormCheckboxLabel = styled.label`
 
 const FormButtonBlock = styled.div`
     display: flex;
-    margin-bottom: 0.5vw;
+    margin-bottom: 0.2vw;
     align-items: center;
 `
 
@@ -109,6 +126,7 @@ const FormButton = styled.button`
     border-radius: 0.5vw;
     font-size: 1.65vw;
     transition: transform 0.3s ease;
+    box-shadow: 0.2vw 0.2vw 0.4vw rgba(0,0,0,0.4);
     :hover {
         cursor: pointer;
         transform: scale(1.05);
@@ -139,6 +157,7 @@ const FormSubText = styled.div`
 const FormFooterWrapper = styled.div`
     background: var(--granich-red);
     border-radius: 0 0 0.5vw 0.5vw;
+    margin-top: auto;
 
 `
 
@@ -186,10 +205,12 @@ const ParticipationForm = () => {
         firstGetcourseFormScript()
         secondGetcourseFormScript()
     }, [])
+    // isInitialValid={isInitialValid}
     return (
-        <ShakeForm pose={["shake"]} poseKey={shakeTrigger}>
-            <FormMainWrapper>
-                <Formik isInitialValid={isInitialValid}
+        <FormMainWrapper>
+        <ShakeForm style={{height: '100%'}} pose={["shake"]} poseKey={shakeTrigger}>
+
+                <Formik 
                                 initialValues={{politikaCheckbox: false, formParams: {
                                     first_name: '',
                                     last_name: '',
@@ -203,6 +224,7 @@ const ParticipationForm = () => {
                                     politikaCheckbox: Yup.bool().oneOf([true], 'Нажмите на чекбокс!'),
                                     formParams: Yup.object().shape({
                                         first_name: Yup.string().trim('no whitespaces').strict().matches(myNameNewRegExp, 'Must not contain symbols').required('Заполните поле Имя'),
+                                        // first_name: Yup.string().email('Неверный формат электронного адреса').required('Заполните поле Емейл'),
                                         last_name: Yup.string().trim('no whitespaces').strict().matches(myNameNewRegExp, 'Must not contain symbols').required('Заполните поле Фамилия'),
                                         email: Yup.string().email('Неверный формат электронного адреса').required('Заполните поле Емейл'),
                                         phone: Yup.string().matches(myPhoneNewRegExp, 'Phone number is not valid').required('Заполните поле Телефон'),
@@ -215,9 +237,14 @@ const ParticipationForm = () => {
                                         values, 
                                         errors, 
                                         isSubmitting, 
-                                        handleChange, 
+                                        handleChange,
                                         handleSubmit,
-                                        isValid
+                                        isValid,
+                                        touched,
+                                        handleBlur,
+                                        onBlur,
+                                        validateOnBlur,
+                                        validateOnChange
                                     } = props;
                                     return (
                                         <Form ref={formEl} onSubmit={ (e) => {
@@ -227,8 +254,21 @@ const ParticipationForm = () => {
                                             } else {
                                                 handleSubmit(e);
                                                 console.log(isValid)
-                                                setShakeTrigger(shakeTrigger + 1)
-                                                values.formParams.email = '';
+                                                setShakeTrigger(shakeTrigger + 1);
+                                                if (errors.formParams && errors.formParams.first_name) {
+                                                    values.formParams.first_name = '';
+                                                }
+                                                if (errors.formParams && errors.formParams.last_name) {
+                                                    values.formParams.last_name = '';
+                                                }
+                                                if (errors.formParams && errors.formParams.email) {
+                                                    values.formParams.email = '';
+                                                }
+                                                if (errors.formParams && errors.formParams.phone) {
+                                                    values.formParams.phone = '';
+                                                }
+                                                
+                                            
 
                                             }
                                         }}  id="ltForm9605210"  action="https://english-school.getcourse.ru/pl/lite/block-public/process-html?id=728049569" method="post" data-open-new-window="0" >
@@ -247,30 +287,36 @@ const ParticipationForm = () => {
                                             <FormInput 
                                                 type="text" 
                                                 maxLength="60"  
-                                                placeholder="Имя" 
+                                                placeholder={errors.formParams && errors.formParams.first_name && touched.formParams && touched.formParams.first_name ? errors.formParams.first_name : 'Имя'} 
                                                 name="formParams[first_name]"
                                                 value={values.formParams.first_name}
                                                 onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                errorStyle={errors.formParams && errors.formParams.first_name && touched.formParams && touched.formParams.first_name ? 1 : 0}
 
                                             /> <br/>
                                             <FormInput 
                                                 type="text" 
                                                 maxLength="60"  
-                                                placeholder="Фамилия" 
+                                                placeholder={errors.formParams && errors.formParams.last_name && touched.formParams && touched.formParams.last_name ? errors.formParams.last_name : 'Фамилия'} 
                                                 name="formParams[last_name]"
                                                 value={values.formParams.last_name}
                                                 onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                errorStyle={errors.formParams && errors.formParams.first_name && touched.formParams && touched.formParams.last_name ? 1 : 0}
                                             
                                             /> <br/>
 
                                             <FormInput 
                                                 type="text" 
                                                 maxLength="60"  
-                                                placeholder={errors.formParams && errors.formParams.email ? errors.formParams.email : 'Электропочта'} 
+                                                placeholder={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? errors.formParams.email : 'Электропочта'} 
                                                 name="formParams[email]"
                                                 value={values.formParams.email}
                                                 onChange={handleChange}
                                                 id="participation-email"
+                                                onBlur={handleBlur}
+                                                errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
                                             
                                             />
                                             <FormInputLabel htmlFor="participation-email">чтобы выслать код для входа</FormInputLabel>
@@ -279,11 +325,13 @@ const ParticipationForm = () => {
                                             <FormInput 
                                                 type="text" 
                                                 maxLength="60"  
-                                                placeholder="Телефон" 
+                                                placeholder={errors.formParams && errors.formParams.phone && touched.formParams && touched.formParams.phone ? errors.formParams.phone : 'Телефон'} 
                                                 name="formParams[phone]"
                                                 value={values.formParams.phone}
                                                 onChange={handleChange}
+                                                onBlur={handleBlur}
                                                 id="participation-phone"
+                                                errorStyle={errors.formParams && errors.formParams.phone && touched.formParams && touched.formParams.phone ? 1 : 0}
                                             /> 
                                             <FormInputLabel htmlFor="participation-email">для экстренной связи</FormInputLabel>
                                             <br/>
@@ -294,9 +342,12 @@ const ParticipationForm = () => {
                                                 value={values.politikaCheckbox}
                                                 checked={values.politikaCheckbox}
                                                 onChange={handleChange}
+                                                onBlur={handleBlur}
                                                 id="participation-checkbox"
+                                                className="course-form-checkbox"
                                             /> 
-                                            <FormCheckboxLabel htmlFor="participation-checkbox">Принять оферту и политику конфиденциальности</FormCheckboxLabel>
+                                            {/* {error} */}
+                                            <FormCheckboxLabel className="course-form-label" htmlFor="participation-checkbox">Принять оферту и политику конфиденциальности</FormCheckboxLabel>
                                             <br/>
                                         </FormContainer>
 
@@ -344,8 +395,9 @@ const ParticipationForm = () => {
                             </Formik>
                             <span id="gccounterImgContainer"></span>
                             
-            </FormMainWrapper>
+
         </ShakeForm>
+        </FormMainWrapper>
     )
 }
 

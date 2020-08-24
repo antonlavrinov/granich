@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import commitmentGIF from '../../assets/images/graph-design/commitment/commitment-gif.gif';
+import commitmentVideo from '../../assets/images/graph-design/commitment/ezgif.com-gif-to-mp4.mp4';
 
 const CommitmentSection = styled.section`
     margin-bottom: 5vw;
@@ -78,7 +79,7 @@ const CommitmentTitle = styled.div`
 
 
 
-const Commitment = () => {
+const CourseCommitment = () => {
 
 
 
@@ -87,6 +88,9 @@ const Commitment = () => {
             <Container>
                 <CommitmentWrapper>
                     <CommitmentImage src={commitmentGIF}/>
+                    {/* <video loop autoPlay>
+                        <source src={commitmentVideo} type="video/mp4" />
+                    </video> */}
                     <CommitmentInfo>
                         <CommitmentTitle>С правильным настроем можно с нуля!</CommitmentTitle>
                         <CommitmentText>Да, у меня интенсивный курс. Он требует осознанных усилий и времени. Однако, участвовать в нем могут даже те, кто никогда с графическтм дизайном не сталкивался. Но в таком случае лучше возьмите отпуск.</CommitmentText>
@@ -102,4 +106,4 @@ const Commitment = () => {
     )
 }
 
-export default Commitment
+export default CourseCommitment

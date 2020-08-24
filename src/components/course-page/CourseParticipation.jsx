@@ -11,23 +11,26 @@ const ParticipationSection = styled.section`
 
 
 const ParticipationWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    // justify-content: space-between;
+    grid-template-columns: 51% 47%;
+    grid-column-gap: 2%;
+    // grid-row-gap: 1.7vw;
 `
 
 
-const GraphDesignParticipation = () => {
+const CourseParticipation = ({data}) => {
 
     return (
         <ParticipationSection id="participation-section">
             <Container>
                 <ParticipationWrapper>
                     <ParticipationForm/>
-                    <ParticipationPolicy/>
+                    <ParticipationPolicy data={data}/>
                 </ParticipationWrapper>
             </Container>
         </ParticipationSection>
     )
 }
 
-export default GraphDesignParticipation
+export default CourseParticipation

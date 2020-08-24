@@ -5,10 +5,10 @@ import ExampleArrow from '../../assets/svgs/graph-design/graph-design-example-ar
 import { graphql, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 
-const GraphDesignExampleSection = styled.section`
+const CourseExampleSection = styled.section`
     margin-bottom: 5vw;
 `
-const GraphDesignExampleWrapper = styled.div`
+const CourseExampleWrapper = styled.div`
     display: flex;
     flex-direction: column;
     background: white;
@@ -24,16 +24,16 @@ const GraphDesignExampleWrapper = styled.div`
     }
 `
 
-const GraphDesignExampleHeader = styled.div`
+const CourseExampleHeader = styled.div`
     display: flex;
 `
-const GraphDesignExampleAuthor = styled.div`
+const CourseExampleAuthor = styled.div`
     width: 15vw;
     margin-right: 5vw;
     line-height: 1.4;
 `
 
-const GraphDesignExampleAuthorImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
+const CourseExampleAuthorImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     width: 7.1vw;
     height: 7.1vw;
     border-radius: 100vw;
@@ -41,19 +41,19 @@ const GraphDesignExampleAuthorImage = styled(props => <BackgroundImage {...props
     overflow: hidden;
 
 `
-const GraphDesignExampleAuthorName = styled.div`
+const CourseExampleAuthorName = styled.div`
     font-size: 1.15vw;
     margin-left: -0.1vw;
     font-weight: 500;
 `
 
-const GraphDesignExampleAuthorText = styled.div`
+const CourseExampleAuthorText = styled.div`
     font-size: 1.15vw;
     color: var(--granich-grey);
     margin-left: -0.1vw;
 `
 
-const GraphDesignExampleTitle = styled.div`
+const CourseExampleTitle = styled.div`
     font-family: EB Garamond;
     font-style: italic;
     font-weight: 500;
@@ -80,12 +80,12 @@ const GraphDesignExampleTitle = styled.div`
     }
 `
 
-const GraphDesignExampleInfoWrapper = styled.div`
+const CourseExampleInfoWrapper = styled.div`
     display: flex;
     justify-content: space-between;
 
 `
-const GraphDesignExampleImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
+const CourseExampleImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     width: 100%;
     height: 11.25vw;
     margin-bottom: 0;
@@ -93,16 +93,16 @@ const GraphDesignExampleImage = styled(props => <BackgroundImage {...props}></Ba
     background-size: auto 100% ;
 `
 
-const GraphDesignExampleInfoBlock = styled.div`
+const CourseExampleInfoBlock = styled.div`
     width: 50%;
 `
-const GraphDesignExampleInfoText = styled.div`
+const CourseExampleInfoText = styled.div`
     color: var(--granich-grey);
     font-size: 1.15vw;
     line-height: 1.45;
 `
 
-const GraphDesignExampleImageLine = styled.div`
+const CourseExampleImageLine = styled.div`
     width: 1.5px;
     background: #d4d4d4;
     margin: 0 3vw;
@@ -110,7 +110,7 @@ const GraphDesignExampleImageLine = styled.div`
 
 
 
-const GraphDesignExample = () => {
+const CourseExample = () => {
 
     const data = useStaticQuery(graphql`
         query ExampleSectionQuery {
@@ -142,44 +142,44 @@ const GraphDesignExample = () => {
     const imageData = data.author.childImageSharp.fluid
 
     return (
-        <GraphDesignExampleSection>
+        <CourseExampleSection>
             <Container>
-                <GraphDesignExampleWrapper>
-                    <GraphDesignExampleHeader>
-                        <GraphDesignExampleAuthor>
-                            <GraphDesignExampleAuthorImage style={{backgroundSize: 'cover'}} fluid={imageData}/>
-                            <GraphDesignExampleAuthorName>
+                <CourseExampleWrapper>
+                    <CourseExampleHeader>
+                        <CourseExampleAuthor>
+                            <CourseExampleAuthorImage style={{backgroundSize: 'cover'}} fluid={imageData}/>
+                            <CourseExampleAuthorName>
                                 Вадим Гранич
-                            </GraphDesignExampleAuthorName>
-                            <GraphDesignExampleAuthorText>автор курса</GraphDesignExampleAuthorText>
-                        </GraphDesignExampleAuthor>
-                        <GraphDesignExampleTitle>
+                            </CourseExampleAuthorName>
+                            <CourseExampleAuthorText>автор курса</CourseExampleAuthorText>
+                        </CourseExampleAuthor>
+                        <CourseExampleTitle>
                             На курсе мы разложим знания по полочкам
-                        </GraphDesignExampleTitle>
-                    </GraphDesignExampleHeader>
-                    <GraphDesignExampleInfoWrapper>
-                        <GraphDesignExampleInfoBlock>
-                                <GraphDesignExampleImage fluid={data.example1.childImageSharp.fluid}/>
-                                <GraphDesignExampleInfoText>
+                        </CourseExampleTitle>
+                    </CourseExampleHeader>
+                    <CourseExampleInfoWrapper>
+                        <CourseExampleInfoBlock>
+                                <CourseExampleImage fluid={data.example1.childImageSharp.fluid}/>
+                                <CourseExampleInfoText>
                                     Вы кое-что слышали о шрифтах. Знакомы с цветом. Пользовались jpeg. Возможно, даже делали свои макеты. Но упорядочены ли ваши знания? Неважно, начинаете вы с нуля или у вас уже есть какой-то опыт — знания требуют структурности.
-                                </GraphDesignExampleInfoText>
+                                </CourseExampleInfoText>
                                 
-                        </GraphDesignExampleInfoBlock>
-                        <GraphDesignExampleImageLine/>
-                        <GraphDesignExampleInfoBlock>
-                                <GraphDesignExampleImage fluid={data.example2.childImageSharp.fluid}/>
-                                <GraphDesignExampleInfoText>
+                        </CourseExampleInfoBlock>
+                        <CourseExampleImageLine/>
+                        <CourseExampleInfoBlock>
+                                <CourseExampleImage fluid={data.example2.childImageSharp.fluid}/>
+                                <CourseExampleInfoText>
                                     После курса вы сможете уверенно аргументировать свои решения. Будете понимать как работает графический дизайн. Ваши знания станут упорядочены, чтобы быстро достать с нужной полки необходимое.
-                                </GraphDesignExampleInfoText>
+                                </CourseExampleInfoText>
 
-                        </GraphDesignExampleInfoBlock>
-                    </GraphDesignExampleInfoWrapper>
+                        </CourseExampleInfoBlock>
+                    </CourseExampleInfoWrapper>
                     <ExampleArrow/>
                     
-                </GraphDesignExampleWrapper>
+                </CourseExampleWrapper>
             </Container>
-        </GraphDesignExampleSection>
+        </CourseExampleSection>
     )
 }
 
-export default GraphDesignExample
+export default CourseExample

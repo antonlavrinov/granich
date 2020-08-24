@@ -68,6 +68,9 @@ const ContentLinksWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 1.7vw;
     grid-row-gap: 1.5vw;
+    ${props => !props.exists && `
+        display: none;
+    `}
 
 `
 
@@ -120,12 +123,14 @@ const ContentLinks = ({data}) => {
     return (
         <ContentLinksSection>
             <Container>
-                <ContentLinksWrapper>
+                <ContentLinksWrapper exists={data.contentfulContent.contentPDF || data.contentfulContent.contentLinkMedium || data.contentfulContent.contentLinkBehance}>
                     {data.contentfulContent.contentPDF && <ContentLink  type="PDF" text={'Скачайте и читайте урок оффлайн в любое время'} title={'Скачать PDF'} link={data.contentfulContent.contentPDF.file.url}/> }
                     {data.contentfulContent.contentLinkMedium && <ContentLink  type="Medium" text={'Читайте урок в формате статьи на Медиуме '} title={'Читать на Медиуме'} link={data.contentfulContent.contentLinkMedium.contentLinkMedium}/> }
                     {data.contentfulContent.contentLinkBehance && <ContentLink  type="Behance" text={'Смотрите и Добавьте материал себе на Биханс'} title={'Смотреть на Бихансе'} link={data.contentfulContent.contentLinkBehance.contentLinkBehance}/> }
                     
                 </ContentLinksWrapper>
+
+
             </Container>
         </ContentLinksSection>
     )

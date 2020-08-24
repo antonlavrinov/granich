@@ -104,7 +104,7 @@ const ReviewButtonIcons = styled.div`
 `
 
 const ReviewImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-    height: 16vw;
+    height: 16.5vw;
     min-height: 16vw;
     overflow: hidden;
     border-radius: 0.5vw 0.5vw 0 0;
@@ -132,7 +132,7 @@ const ReviewsLinks = styled.div`
     // align-items: center;
     margin-left: auto;
 `
-const ReviewsLinkTelegram = styled.div`
+const ReviewsLinkTelegram = styled.a`
     display: flex;
     align-items: center;
     font-size: 1.25vw;
@@ -144,11 +144,13 @@ const ReviewsLinkTelegram = styled.div`
     transition: transform 0.2s ease;
     box-shadow: .15vw .15vw .4vw rgba(0,0,0,0.25);
     :hover {
+        font-size: 1.25vw;
         transform: scale(1.05);
         cursor: pointer;
+        color: white;
     }
 `
-const ReviewsLinkVk = styled.div`
+const ReviewsLinkVk = styled.a`
     font-size: 1.25vw;
     background: var(--granich-vk-gradient);
     border-radius: 0.3vw;
@@ -164,8 +166,10 @@ const ReviewsLinkVk = styled.div`
         }
     }
     :hover {
+        font-size: 1.25vw;
         transform: scale(1.05);
         cursor: pointer;
+        color: white;
     }
 `
 
@@ -186,10 +190,17 @@ const Review = ({image}) => {
 }
 
 
-const GraphDesignReviews = () => {
+const CourseReviews = () => {
     const data = useStaticQuery(graphql`
     query ReviewsSectionQuery {
-        review1: file(relativePath: { eq: "graph-design/reviews/review1.jpg" }) {
+        review1: file(relativePath: { eq: "graph-design/reviews/review-600x450.jpg" }) {
+            childImageSharp {
+                fluid(maxWidth: 600, quality: 80) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        review2: file(relativePath: { eq: "graph-design/reviews/review-proba.jpg" }) {
             childImageSharp {
                 fluid(maxWidth: 600, quality: 80) {
                     ...GatsbyImageSharpFluid
@@ -199,6 +210,7 @@ const GraphDesignReviews = () => {
     }
     `);
     const review1 = data.review1.childImageSharp.fluid;
+    const review2 = data.review2.childImageSharp.fluid;
     return (
         <ReviewsSection>
             <Container>
@@ -218,8 +230,8 @@ const GraphDesignReviews = () => {
                     <ReviewsFooter>
                         <ReviewsFooterTitle>Все отзывы о курсе:</ReviewsFooterTitle>
                         <ReviewsLinks>
-                            <ReviewsLinkTelegram>Все свежие отзывы → ТГ</ReviewsLinkTelegram>
-                            <ReviewsLinkVk><div>Архив отзывов → ВК</div><div>На стене Вадима Гранича</div></ReviewsLinkVk>
+                            <ReviewsLinkTelegram target="_blank" href={'https://vk.com/vadim_granich'}>Все свежие отзывы → ТГ</ReviewsLinkTelegram>
+                            <ReviewsLinkVk target="_blank" href={'https://vk.com/vadim_granich'}><div>Архив отзывов → ВК</div><div>На стене Вадима Гранича</div></ReviewsLinkVk>
                         </ReviewsLinks>
 
                     </ReviewsFooter>
@@ -229,4 +241,4 @@ const GraphDesignReviews = () => {
     )
 }
 
-export default GraphDesignReviews
+export default CourseReviews
