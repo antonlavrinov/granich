@@ -5,7 +5,7 @@ import CourseOffer from '../components/course-page/CourseOffer';
 import Header from "../components/Header"
 import CourseExplanations from "../components/course-page/CourseExplanations"
 import CoursePortfolio from "../components/course-page/CoursePortfolio"
-import CourseReviews from "../components/Course-page/CourseReviews"
+import CourseReviews from "../components/course-page/CourseReviews"
 import {graphql} from 'gatsby';
 
 
