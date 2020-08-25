@@ -45,9 +45,6 @@ const YoutubeBlock = styled.div`
 
 `
 
-const YoutubeIframe = styled.div`
-    
-`
 const ContentInfo = styled.div`
     background: #1E1E1E;
     padding: 2.5vw 3vw;
@@ -94,7 +91,7 @@ const YoutubeVideo = ({data}) => {
                                 <div></div>
                             </div>
                         </div>
-                        {data.contentfulContent.contentYoutubeVideoLink && <iframe width="100%" height="100%" src={data.contentfulContent.contentYoutubeVideoLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>}
+                        {data.contentfulContent.contentYoutubeVideoLink && <iframe title="youtubeFrame" width="100%" height="100%" src={data.contentfulContent.contentYoutubeVideoLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>}
                     </YoutubeBlock>
                     <ContentInfo>
                         <Youtube/>

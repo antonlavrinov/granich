@@ -42,6 +42,7 @@
     "yup": "^0.29.3"
   },
   "devDependencies": {
+    "@hot-loader/react-dom": "^16.13.0",
     "prettier": "2.0.5"
   },
   "keywords": [

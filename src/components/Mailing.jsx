@@ -154,16 +154,7 @@ const MailingButton = styled.button`
 
 `
 
-const MailingWarning = styled.div`
-    position: absolute;
-    top: -5vw;
-    right: 0;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    padding: 1vw 1.5vw;
-    border-radius: 0.5vw;
 
-`
 
 const Mailing = () => {
     const [shakeTrigger, setShakeTrigger] = useState(3);

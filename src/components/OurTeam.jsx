@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Container } from './style';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image'
@@ -8,7 +8,6 @@ import InstagramIcon from '../assets/svgs/granich-main-team/instagram.svg';
 import VKIcon from '../assets/svgs/granich-main-team/vk.svg';
 import TelegramIcon from '../assets/svgs/granich-main-team/telegram.svg';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import {CSSTransition} from 'react-transition-group';
 import CopyIcon from '../assets/svgs/copy-icon.svg';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
@@ -309,16 +308,7 @@ const SocialLink = styled.a`
 
 `
 
-const TeacherMailCopyMessage = styled.div`
-    position: absolute:
-    background: var(--garnich-red);
-    top: -25vw;
-    left: 0;
-    // display: none;
-`
-const TeacherEmailText = styled.div`
-    position: absolute;
-`
+
 
 
 
@@ -341,9 +331,7 @@ const OurTeam = ({data}) => {
 }
 
 const TeacherBlock = ({teacher}) => {
-    const [mailCopy, setMailCopy] = useState(false)
-    const [mailCopyText, setMailCopyText] = useState('Копировать')
-    const text = <span>dsfdsffds</span>
+
     return (
         <TeacherWrapper>
             <TeacherHeader>

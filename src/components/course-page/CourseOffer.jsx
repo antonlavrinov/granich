@@ -45,17 +45,6 @@ const CourseOfferWrapper = styled(props => <BackgroundImage {...props}></Backgro
     background-position: right;
     overflow: hidden;
 
-    // :before {
-    //     content: '';
-    //     width: 29.4vw;
-    //     height: 29.4vw;
-    //     background: var(--granich-red);
-    //     position: absolute;
-    //     top: 50%;
-    //     right: 3.2vw;
-    //     border-radius: 100vw;
-    //     transform: translateY(-50%);
-    // }
 
 
 `
@@ -180,13 +169,7 @@ const CourseOfferButton = styled.a`
   `}
 `
 
-const CourseOfferImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-  top: 0;
-  right: 0;
-  bottom: 0;
-  min-height: 45vw;
-  width: 100%;
-`
+
 
 
 const CourseOffer = ({data}) => {

@@ -1,10 +1,8 @@
 import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
 import commitmentGIF from '../../assets/images/graph-design/commitment/commitment-gif.gif';
-import commitmentVideo from '../../assets/images/graph-design/commitment/ezgif.com-gif-to-mp4.mp4';
+// import commitmentVideo from '../../assets/images/graph-design/commitment/ezgif.com-gif-to-mp4.mp4';
 
 const CommitmentSection = styled.section`
     margin-bottom: 5vw;

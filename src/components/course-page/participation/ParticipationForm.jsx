@@ -1,6 +1,6 @@
 import React, {useRef, useState, useEffect} from 'react'
 import styled from 'styled-components';
-import {Formik, Field} from 'formik';
+import {Formik} from 'formik';
 import * as Yup from 'yup';
 import posed from "react-pose";
 import { Link } from "gatsby";
@@ -201,13 +201,10 @@ const FormFooterContainer = styled.div`
 
 const ParticipationForm = () => {
     const formEl = useRef(null)
-    // const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)$/;
     const myPhoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{2})\s?-?\s?(\d{2}\)?)$/;
 
     //44 - 44 - 55
     const myPhoneNewRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)?\s?-?\s?(\(?\d{0,3}\)?)\s?-?\s?(\(?\d{2})\s?-?\s?(\d{2}\)?)$/;
-
-    const myNameRegExp = /^([^$#@:"?.\/\\€]|[0-9]*)/;
     const myNameNewRegExp = /([^\d€\\\/.?":@#$])/;
 
     const [shakeTrigger, setShakeTrigger] = useState(3);
@@ -271,9 +268,7 @@ const ParticipationForm = () => {
                                         isValid,
                                         touched,
                                         handleBlur,
-                                        onBlur,
-                                        validateOnBlur,
-                                        validateOnChange
+
                                     } = props;
                                     return (
                                         <Form ref={formEl} onSubmit={ (e) => {

@@ -5,7 +5,6 @@ import { useSpring, a } from 'react-spring';
 import ResizeObserver from 'resize-observer-polyfill'
 import PlusSign from '../../assets/svgs/plus-sign.svg';
 import MinusSign from '../../assets/svgs/minus-sign.svg';
-import * as Icons from './icons'
 import { animated } from 'react-spring';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
@@ -92,9 +91,6 @@ const CurriculumImportantText = styled.div`
 
 const CurriculumItemContent = styled(animated.div)`
     will-change: transform, opacity, height;
-    // margin-left: 6px;
-    // padding: 0px 0px 0px 14px;
-    // border-left: 1px dashed rgba(255, 255, 255, 0.4);
     overflow: hidden;
 `
 
@@ -123,7 +119,6 @@ const CurriculumContainer = styled.div`
     display: flex;
     padding: 1.7vw 0vw;
     align-items: center;
-    // width: 90%;
     :hover {
         cursor: pointer;
     }
@@ -133,8 +128,7 @@ const CurriculumContainer = styled.div`
 `
 
 const CurriculumContentWrapper = styled.div`
-    // height: 10vw;
-    // background: grey;
+
     display: flex;
     align-items: flex-start;
     padding-left: 5.8vw;

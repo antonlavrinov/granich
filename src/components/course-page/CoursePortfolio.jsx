@@ -6,19 +6,11 @@ import SwiperCore, { Navigation, Pagination, Thumbs, Controller } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import Modal from 'react-modal';
-import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 
 SwiperCore.use([Navigation, Pagination, Thumbs, Controller]);
-// import "../../styles/slick.css";
-// import "../../styles/owl.carousel.min.css";
-// import Loadable from '@loadable/component';
-
-// import OwlCarousel from 'react-owl-carousel';
-
-// const OwlCarousel = Loadable(() => import('react-owl-carousel'));
 
 const PortfolioSection = styled.section`
     margin-bottom: 50px;
@@ -189,20 +181,8 @@ const Slide = styled(props => <BackgroundImage {...props}/>)`
 Modal.setAppElement(`#___gatsby`);
 
 const CoursePortfolio = ({posters, multiPages}) => {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    const [slides, setSlides] = useState([{name: 1}, {name: 2}, {name: 3}, {name: 4}])
-    const [firstControlledSwiper, setFirstControlledSwiper] = useState(null);
-    const [secondControlledSwiper, setSecondControlledSwiper] = useState(null);
-    const [modalIsOpen, setIsOpen] = React.useState(true);
-    const [indexOfSlider, setIndexOfSlider] = useState(0);
-    const slidesss = slides.map((slide, idx) => {
-        return (
-            <SwiperSlide key={idx} tag="li"><Slide>{slide}</Slide></SwiperSlide>
-        )
-    })
+    // const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-    console.log(slidesss)
-    console.log('posters', posters)
     console.log('multi', multiPages)
     return (
         <PortfolioSection>

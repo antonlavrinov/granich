@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-image';
-import { Link } from "gatsby"
 import PinterestIcon from '../assets/svgs/pinterest-icon.svg';
 import BehanceIcon from '../assets/svgs/behance-icon.svg';
 import PinterestLinkOut from '../assets/svgs/arrow-white-newpage.svg';
@@ -158,13 +157,7 @@ const ContentTag = styled.div`
         margin-right: 0;
     }
     @media only screen and (max-width: 575px) {
-        // font-size: 2vw;
-        // padding: 0.5vw 0.7vw 0.5vw;
-        // margin-right: 1vw;
-        // border-width: 0.1vw;
-        // :last-child {
-        //     margin-right: 0;
-        // }
+
 
         border-width: 1px;
         font-size: 2.5vw;
@@ -185,7 +178,7 @@ const ContentTitle = styled.div`
     max-width: 14vw;
     margin-left: -0.2vw;
     @media only screen and (max-width: 575px) {
-        // font-size: 3.2vw;
+
         font-size: 3.8vw;
         max-width: 100%;
     }
@@ -205,7 +198,6 @@ const ContentImage = styled(props => <BackgroundImage {...props}></BackgroundIma
 `
 
 const ContentDescr = styled.div`
-    // font-size: 0.8vw;
     font-size: 0.9vw;
     color: white;
     font-weight: 400;
@@ -215,7 +207,6 @@ const ContentDescr = styled.div`
     margin-left: -0.2vw;
     letter-spacing: -0.01vw;
     @media only screen and (max-width: 575px) {
-        // font-size: 2.2vw;
         max-width: 100%;
         margin-top: 1vw;
 
@@ -285,7 +276,6 @@ const ContentButtonText = styled.div`
 
     margin-left: -0.1vw;
     @media only screen and (max-width: 575px) {
-        // font-size: 3.5vw;
         font-size: 4vw;
     }
 

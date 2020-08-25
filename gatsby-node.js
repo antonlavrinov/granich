@@ -35,13 +35,15 @@ exports.createPages = ({graphql, actions}) => {
 }
 
 
-// exports.onCreateWebpackConfig = ({
-//     actions,
-//   }) => {
-//     const { setWebpackConfig } = actions;
-//     setWebpackConfig({
-//       externals: {
-//         jquery: 'jQuery', // important: 'Q' capitalized
-//       }
-//     })
-//   }
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+    if (stage.startsWith("develop")) {
+      actions.setWebpackConfig({
+        resolve: {
+          alias: {
+            "react-dom": "@hot-loader/react-dom",
+          },
+        },
+      })
+    }
+  }
