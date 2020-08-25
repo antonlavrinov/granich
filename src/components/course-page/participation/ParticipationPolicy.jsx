@@ -17,12 +17,15 @@ const PolicyWrapper = styled.div`
 `
 
 const PolicyText = styled.div`
-    line-height: 1.3;
+    line-height: 1.45;
     p {
-        font-size: 1.15vw;
+        font-size: 1.05vw;
         color: var(--granich-grey);
-        margin-bottom: 0.5vw;
-        // margin-bottom: 5vw;
+        margin-bottom: 0.55vw;
+
+        :last-child {
+            margin-bottom: 0;
+        }
     }
 
     b {
@@ -35,12 +38,13 @@ const PolicyText = styled.div`
 const PolicyFooter = styled.div`
     background: #f2f2f2;
     border-radius: 0.5vw;
-    padding: 1vw 0.8vw;
+    padding: 1vw 2vw;
     margin-top: auto;
-    font-size: 1.15vw;
+    font-size: 1.05vw;
     color: var(--granich-grey);
     color: #666666;
     font-weight: 500;
+    // text-align: center;
 
     span {
         position: relative;
@@ -54,7 +58,7 @@ const PolicyFooterEmail = styled.button`
     left: 0.4vw;
     top: 0;
     font-weight: 500;
-    font-size: 1.16vw;
+    font-size: 1.05vw;
     color: #666666;
     display: block;
     border-bottom: 1.5px solid var(--granich-light-grey);
@@ -62,7 +66,7 @@ const PolicyFooterEmail = styled.button`
     user-select: none;
     :hover {
         font-weight: 500;
-        font-size: 1.16vw;
+        font-size: 1.05vw;
         cursor: pointer;
         &:before, &:after {
             display: block;

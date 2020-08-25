@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Formik, Field} from 'formik';
 import * as Yup from 'yup';
 import posed from "react-pose";
-
+import { Link } from "gatsby";
 
 const ShakeForm = posed.div({
     shake: {
@@ -35,7 +35,7 @@ const FormWrapper = styled.div`
 `
 
 const FormContainer = styled.div`
-    padding: 2vw 2vw 2vw 2.7vw;
+    padding: 2vw 2vw 1vw 2.7vw;
 `
 
 const FormTags = styled.div`
@@ -110,8 +110,36 @@ const FormCheckbox = styled.input`
 `
 
 const FormCheckboxLabel = styled.label`
-    font-size: 0.9vw;
+    font-size: 1.2vw;
     user-select: none;
+    letter-spacing: -0.02vw;
+    padding-bottom: 1px;
+    a {
+        color: var(--granich-red);
+        font-weight: 500;
+        display: inline-block;
+        // text-decoration: underline;
+        margin: 0 0.4vw;
+        position: relative;
+       
+        :after {
+            content: '';
+            height: 1px;
+            width: 100%;
+            background: var(--granich-red);
+            position: absolute;
+            bottom: -0.1vw;
+            left: 0;
+
+        }
+        
+        :hover {
+            // border-bottom: none;
+            :after {
+                display: none;
+            }
+        }
+    }
 `
 
 const FormButtonBlock = styled.div`
@@ -211,7 +239,7 @@ const ParticipationForm = () => {
         <FormMainWrapper>
         <ShakeForm style={{height: '100%'}} pose={["shake"]} poseKey={shakeTrigger}>
 
-                <Formik 
+                <Formik isInitialValid={isInitialValid}
                                 initialValues={{politikaCheckbox: false, formParams: {
                                     first_name: '',
                                     last_name: '',
@@ -348,7 +376,7 @@ const ParticipationForm = () => {
                                                 className="course-form-checkbox"
                                             /> 
                                             {/* {error} */}
-                                            <FormCheckboxLabel className="course-form-label" htmlFor="participation-checkbox">Принять оферту и политику конфиденциальности</FormCheckboxLabel>
+                                            <FormCheckboxLabel className="course-form-label" htmlFor="participation-checkbox">Принять <Link to="/public-offer"> оферту </Link> и <Link to="/privacy"> политику конфиденциальности</Link></FormCheckboxLabel>
                                             <br/>
                                         </FormContainer>
 

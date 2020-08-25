@@ -33,7 +33,7 @@ const PortfolioWrapper = styled.div`
 
 const PortfolioHeader = styled.div`
     display: flex;
-    margin-bottom: 5.5vw;
+    margin-bottom: 5vw;
     padding: 0 1.5vw;
 `
 
@@ -44,7 +44,7 @@ const PortfolioHeaderTitle = styled.div`
     font-weight: 700;
     line-height: 0.87;
     margin-top: -0.6vw;
-    margin-bottom: 6.4vw;
+    margin-bottom: 4.5vw;
 
     @media only screen and (max-width: 575px) {
         font-size: 11.9vw;
@@ -85,11 +85,19 @@ const PortfolioBonus = styled.div`
 const PortfolioContent = styled.div`
     display: flex;
     align-items: center;
+    flex-direction: column;
+    margin-right: 2.5vw;
+    // justify-content: center;
 
 `
+const PortfolioContentInfo = styled.div`
+    display: flex;
+    margin-left: -0.4vw;
+`
+
 const PortfolioContentText = styled.div`
     font-size: 1.16vw;
-    width: 9vw;
+    // width: 9vw;
     line-height: 1.55vw;
     font-weight: 500;
 `
@@ -99,21 +107,27 @@ const PortfolioContentCount = styled.div`
     font-style: italic;
     font-size: 5.4vw;
     font-weight: 500;
-    position: relative;
+    // position: relative;
+    align-text: center;
     background: #e2e2e2;
     border-radius: 100vw;
-    min-height: 4.5vw;
-    min-width: 4.5vw;
+    height: 4.7vw;
+    width: 4.7vw;
+    min-height: 4.7vw;
+    min-width: 4.7vw;
     line-height: 0.8;
-    margin-right: 1.65vw;
     letter-spacing: -0.4vw;
-    margin-left: -0.1vw;
+    padding-left: 0.8vw;
+    margin-bottom: 0.6vw;
+
 `
 
 const PortfolioOnePagersWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 0.5vw;
+    grid-column-gap: 1.8vw;
+    grid-row-gap: 1.8vw;
+    padding: 0 1.5vw;
 
 `
 
@@ -131,7 +145,7 @@ const PortfolioOnePager = styled(props => <BackgroundImage {...props}/>)`
 const PortfolioMiltiPagesWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 0.5vw;
+    grid-column-gap: 1.5vw;
 `
 
 const PortfolioMultiPager = styled.div`
@@ -286,18 +300,21 @@ const CoursePortfolio = ({posters, multiPages}) => {
                     <PortfolioHeader>
                         <PortfolioTitleAndContent>
                             <PortfolioHeaderTitle>Вы создадите портфолио</PortfolioHeaderTitle>
-                            <PortfolioContent>
-                                <PortfolioContentCount>12</PortfolioContentCount>
-                                <PortfolioContentText>Тематических видеолекции</PortfolioContentText>
-                            </PortfolioContent>
-                            <PortfolioContent>
-                                <PortfolioContentCount>12</PortfolioContentCount>
-                                <PortfolioContentText>Тематических видеолекции</PortfolioContentText>
-                            </PortfolioContent>
-                            <PortfolioContent>
-                                <PortfolioContentCount>12</PortfolioContentCount>
-                                <PortfolioContentText>Тематических видеолекции</PortfolioContentText>
-                            </PortfolioContent>
+                            <PortfolioContentInfo>
+                                <PortfolioContent>
+                                    <PortfolioContentCount>7</PortfolioContentCount>
+                                    <PortfolioContentText>плакатов</PortfolioContentText>
+                                </PortfolioContent>
+                                <PortfolioContent>
+                                    <PortfolioContentCount>2</PortfolioContentCount>
+                                    <PortfolioContentText>разворота</PortfolioContentText>
+                                </PortfolioContent>
+                                <PortfolioContent>
+                                    <PortfolioContentCount>1</PortfolioContentCount>
+                                    <PortfolioContentText>брошюра</PortfolioContentText>
+                                </PortfolioContent>
+                            </PortfolioContentInfo>
+                            
                         </PortfolioTitleAndContent>
                         <PortfolioBonusBlock>
                             <PortfolioBonus>

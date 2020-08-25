@@ -6,6 +6,7 @@ import Header from "../components/Header"
 import CourseExplanations from "../components/course-page/CourseExplanations"
 import CoursePortfolio from "../components/course-page/CoursePortfolio"
 import CourseReviews from "../components/course-page/CourseReviews"
+import CoursePriceRange from "../components/course-page/CoursePriceRange"
 import {graphql} from 'gatsby';
 
 
@@ -39,6 +40,19 @@ export const contentfulQuery = graphql`
             }
           }
         }
+        VHSPricesRange : allContentfulGranichCoursePricesRange(filter: {pricesAttachmentTo: {eq: "Графсистема VHS"}}, sort: {fields: [pricesOrderNumber], order: ASC}) {
+          edges {
+            node {
+              pricesTitle
+              pricesText {
+                json
+              }
+              pricesSubtext
+              pricesPrice
+              id
+            }
+          }
+        }
     }
 `
 
@@ -52,6 +66,7 @@ const GraphicSystemVhsPage = ({data}) => (
     <CourseExplanations/>
     <CoursePortfolio posters={data.VHSportfolioPosters} multiPages={data.portfolioMultipage}/>
     <CourseReviews/>
+    <CoursePriceRange data={data.VHSPricesRange}/>
 
   </Layout>
 )
