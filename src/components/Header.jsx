@@ -12,6 +12,9 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const WhiteLogo = styled(props => <Logo {...props}/>)`
   width: 4.8vw;
+  svg {
+    fill: white;
+  }
   @media only screen and (max-width: 575px) {
     width: 12.5vw;
 

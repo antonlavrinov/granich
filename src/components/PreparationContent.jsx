@@ -4,7 +4,7 @@ import BackgroundImage from 'gatsby-image';
 import { Link } from "gatsby"
 import PinterestIcon from '../assets/svgs/pinterest-icon.svg';
 import BehanceIcon from '../assets/svgs/behance-icon.svg';
-import PinterestLinkOut from '../assets/svgs/pinterest-link-out.svg';
+import PinterestLinkOut from '../assets/svgs/arrow-white-newpage.svg';
 import BehanceLinkOut from '../assets/svgs/behance-link-out.svg';
 import MediumIcon from '../assets/svgs/medium-icon.svg';
 import YoutubeIcon from '../assets/svgs/youtube-icon.svg';

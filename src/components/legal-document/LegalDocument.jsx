@@ -89,6 +89,9 @@ const LegalDocumentText = styled.div`
     ul {
         li {
             padding-left: 1.5vw;
+            i {
+                left: -21.1vw;
+            }
         }
     }
     p {

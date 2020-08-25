@@ -317,7 +317,7 @@ const Footer = () => {
                         </LogoWrapper>
                         
                         <FooterInfo>
-                        <EmptyText>sdds</EmptyText>
+                        <EmptyText>sometext</EmptyText>
                             <FooterInfoYear>© {new Date().getFullYear()}</FooterInfoYear>
                             <CopyToClipboard text={'hello@granich.design'}>
                                 <FooterInfoMail>hello@granich.design</FooterInfoMail>

@@ -67,12 +67,14 @@ const CurriculumItemTitle = styled('span')`
 const CurriculumItemImportantDescr = styled.span`
     font-size: 1.15vw;
     color: var(--granich-grey);
+    user-select: none;
 `
 
 const CurriculumImportantText = styled.div`
     padding: 1vw;
     font-size: 1.15vw;
     line-height: 1.35;
+
 
     b {
         font-weight: 500;
@@ -328,6 +330,11 @@ const CurriculumAccordeon = styled.div`
 
 `
 
+const EmptyText = styled.div`
+    opacity: 0;
+    font-size: 0;
+`
+
 
 const CourseCurriculum = ({data}) => {
     return (
@@ -361,7 +368,7 @@ const CourseCurriculum = ({data}) => {
                                     <CurriculumContentWrapper type={tab.node.curriculumType ? 1 : 0}>
                                         {tab.node.curriculumType ? (
                                             <>
-                                               {tab.node.curriculumFirstColumn && <CurriculumContentColumn>{documentToReactComponents(tab.node.curriculumFirstColumn.json)}</CurriculumContentColumn>}
+                                               {tab.node.curriculumFirstColumn && <CurriculumContentColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.curriculumFirstColumn.json)}</CurriculumContentColumn>}
                                                 {tab.node.curriculumSecondColumn && <CurriculumContentColumn>{documentToReactComponents(tab.node.curriculumSecondColumn.json)}</CurriculumContentColumn>}
                                                 {tab.node.curriculumThirdColumn && <CurriculumContentColumn>{documentToReactComponents(tab.node.curriculumThirdColumn.json)}</CurriculumContentColumn>}
                                                 {tab.node.curriculumFourthColumn && <CurriculumContentColumn>{documentToReactComponents(tab.node.curriculumFourthColumn.json)}</CurriculumContentColumn>}
@@ -369,7 +376,7 @@ const CourseCurriculum = ({data}) => {
                                          
                                         ) : (
                                             <>
-                                                {tab.node.curriculumImportantText && <CurriculumImportantText>{documentToReactComponents(tab.node.curriculumImportantText.json)}</CurriculumImportantText>}
+                                                {tab.node.curriculumImportantText && <CurriculumImportantText><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.curriculumImportantText.json)}</CurriculumImportantText>}
                                             </>
                                         )}
                                    

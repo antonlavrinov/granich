@@ -44,7 +44,7 @@ const FormTags = styled.div`
     margin-bottom: 1.8vw;
 `
 const FormTag = styled.div`
-    border: 1.5px solid var(--granich-red);
+    border: 1px solid var(--granich-red);
     border-radius: 100vw;
     padding: 0.15vw 0.7vw;
     font-size: 0.9vw;
@@ -110,7 +110,8 @@ const FormCheckbox = styled.input`
 `
 
 const FormCheckboxLabel = styled.label`
-
+    font-size: 0.9vw;
+    user-select: none;
 `
 
 const FormButtonBlock = styled.div`

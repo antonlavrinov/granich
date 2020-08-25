@@ -286,8 +286,8 @@ const Socials = styled.div`
 
 const SideButtons = () => {
     const [chatOpen, setChatOpen] = useState(false);
-    const toggleChatOpen = () => {
-        setChatOpen(!chatOpen)
+    const toggleChatOpen = (boolean) => {
+        setChatOpen(boolean)
         console.log('open')
     }
     return (
@@ -322,7 +322,7 @@ const SideButtons = () => {
                     </Socials>
 
                 </CSSTransition>
-                <Support toggleChatOpen={toggleChatOpen} />
+                <Support toggleChatOpen={toggleChatOpen} chatOpen={chatOpen} />
 
                 <PageTop/>
 
