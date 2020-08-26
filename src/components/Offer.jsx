@@ -113,8 +113,10 @@ const OfferUnderlineIcon = styled(props => <UnderlineLinkIcon {...props}/>)`
 
 const OfferSvgClip = styled(props => <BackgroundClip {...props}/>)`
     position: absolute;
-    bottom: -2.5vw;
+    position: relative;
+    // bottom: -2.5vw;
     left: 0;
+    top: -4vw;
     width: 100%;
     z-index: 0;
     @media only screen and (max-width: 575px) {
@@ -170,7 +172,7 @@ const Offer = ({data}) => {
                         {headerSubtitle_01} <OfferFlagsImg alt="flags" fluid={headerSubtitleImage} /> <br/> {headerSubtitle_02} <span tabIndex={0} role="button" onKeyDown={() => scrollTo('#manifest')} onClick={() => scrollTo('#manifest')}>{headerSubtitle_03} <OfferUnderlineIcon/></span>
                     </OfferDescr>
                 </Container>
-                <OfferSvgClip/>
+
             </OfferSection>
             <OfferMobileSection fluid={headerImageMobile} id="offer" >
                 <OfferShadowMobile></OfferShadowMobile>
@@ -180,8 +182,9 @@ const Offer = ({data}) => {
                         {headerSubtitle_01} <OfferFlagsImg alt="flags" fluid={headerSubtitleImage} /> <br/> {headerSubtitle_02} <span tabIndex={0} role="button" onKeyDown={() => scrollTo('#manifest')} onClick={() => scrollTo('#manifest')}>{headerSubtitle_03} <OfferUnderlineIcon/></span>
                     </OfferDescr>
                 </Container>
-                <OfferSvgClip/>
+                {/* <OfferSvgClip/> */}
             </OfferMobileSection>
+            <OfferSvgClip/>
         </>
 
 

@@ -149,7 +149,7 @@ const CourseTag = styled.div`
     border: 1px solid var(--granich-red);
     color: var(--granich-red);
     border-radius: 100vw;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1;
     font-size: 1vw;
     padding: 0.2vw 0.5vw 0.2vw;
@@ -161,9 +161,9 @@ const CourseTag = styled.div`
         margin-right: 0;
     }
     ${(props) => !props.active && `
-        filter: opacity(40%);
-        border-color: black;
-        color: black;
+        // filter: opacity(40%);
+        border-color: var(--granich-grey);
+        color: var(--granich-grey);
 
     `}
     ${(props) => props.courseType === 'Разрабатываем...' && `
@@ -175,11 +175,11 @@ const CourseTag = styled.div`
     `}
     @media only screen and (max-width: 575px) {
         border-width: 1px;
-        font-size: 2.85vw;
+        font-size: 2.6vw;
         padding: 0.7vw 0.8vw;
-        font-weight: 500;
+        font-weight: 400;
         margin-right: 0.6vw;
-        letter-spacing: -0.06em;
+        letter-spacing: -0.02em;
 
 
     }
@@ -294,7 +294,7 @@ const CourseInfo = styled.div`
 const CourseDescr = styled.div`
     font-size: 1vw;
     margin-left: 0.3vw;
-    color: var(--granich-light-grey);
+    color: var(--granich-grey);
     letter-spacing: -0.01vw;
     font-weight: 500;
     line-height: 1;
@@ -317,7 +317,7 @@ const CourseDescr = styled.div`
 const CourseStart = styled.div`
     font-size: inherit;
     margin-right: 1.1vw;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--granich-light-grey);
     // ${(props) => !props.active && `
     //     color: var(--granich-black);
@@ -338,7 +338,7 @@ const CourseStart = styled.div`
 
 const CourseDuration = styled.div`
     font-size: inherit;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--granich-light-grey);
     // ${(props) => !props.active && `
     //     color: var(--granich-black);

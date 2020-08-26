@@ -82,12 +82,12 @@ const NavLink = styled(props => <Link {...props} />)`
   color: white;
   font-size: 1.15vw;
   text-transform: uppercase;
-  font-weight: 700;
+  // font-weight: 700;
   margin-right: 3.2vw;
   padding-bottom: 0.4vw;
   :hover {
     font-size: 1.15vw;
-    font-weight: 700;
+    // font-weight: 700;
     color: white;
     cursor: pointer;
     border-bottom: solid 0.15vw white;
@@ -97,7 +97,7 @@ const NavLink = styled(props => <Link {...props} />)`
   color: var(--granich-black);
   :hover {
     font-size: 1.15vw;
-    font-weight: 700;
+    // font-weight: 700;
     color: var(--granich-black);
     cursor: pointer;
     border-bottom: solid 0.15vw var(--granich-black);
@@ -125,12 +125,14 @@ const NavLinkExternal = styled.a`
   color: white;
   font-size: 1.2vw;
   text-transform: uppercase;
-  font-weight: 700;
+  // font-weight: 700;
+  font-weight: 400;
   margin-right: 3.2vw;
   padding-bottom: 0.4vw;
   :hover {
     font-size: 1.2vw;
-    font-weight: 700;
+    // font-weight: 700;
+    font-weight: 400;
     color: white;
     cursor: pointer;
     border-bottom: solid 0.15vw white;
