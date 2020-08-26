@@ -36,8 +36,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `inter\:400,500,600,700`,
-          `eb garamond\:500,400,500i` // you can also specify font weights and styles
+          `inter\:400,500,600,700`,// you can also specify font weights and styles
         ],
         display: 'swap'
       }
