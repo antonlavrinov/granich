@@ -204,12 +204,12 @@ const FooterLink = styled(props => <Link {...props}/>)`
     line-height: 1.4;
     color: var(--granich-light-grey);
     font-size: 1.16vw;
-    margin-right: 1.5vw;
+    margin-right: 1.3vw;
     user-select: none;
 
 
     :last-of-type {
-        margin-right: 0vw;
+        margin-right: 1.2vw;
         span {
             letter-spacing: -0.01vw;
         }
@@ -253,6 +253,7 @@ const FooterCredentials = styled.div`
     letter-spacing: -0.01vw;
     color: var(--granich-light-grey);
     margin-right: 1.4vw;
+    white-space: nowrap;
     // user-select: none;
     @media only screen and (max-width: 575px) {
         font-size: 2.5vw;
