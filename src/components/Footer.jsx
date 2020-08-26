@@ -73,7 +73,7 @@ const LogoWrapper = styled(props => <Link to="/" {...props} />)`
 `
 
 const FooterInfo = styled.div`
-    margin-right: 9.5vw;
+    margin-right: 2vw;
     letter-spacing: -0.01vw;
     line-height: 1.4;
     @media only screen and (max-width: 575px) {
@@ -88,22 +88,25 @@ const FooterInfoYear = styled.div`
     // line-height: 1.4;
     color: var(--granich-black);
     user-select: none;
+    white-space: nowrap;
+    width: 100%;
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
     }
 `
 
 
-const FooterInfoMail = styled.button`
-    position: absolute;
+const FooterInfoMail = styled.span`
+    // position: absolute;
     font-weight: 500;
     font-size: 1.16vw;
     color: var(--granich-black);
-    margin-top: 0.2vw;
+    // margin-top: 0.2vw;
     display: block;
     border-bottom: solid 0.07vw var(--granich-light-grey);
     background: none;
     user-select: none;
+
     :hover {
         font-weight: 500;
         font-size: 1.16vw;
