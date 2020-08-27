@@ -31,6 +31,23 @@ export const contentfulQuery = graphql`
             }
           }
         }
+        explanations: allContentfulGranichCourseExplanations(filter: {explanationsAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [explanationsOrderNumber], order: ASC}) {
+          edges {
+            node {
+              id
+              explanationsImage {
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              explanationsTitle
+              explanationsText {
+                json
+              }
+
+            }
+          }
+        }
         VHSportfolioPosters: allContentfulGranichCoursePortfolio(filter: {portfolioAttachmentTo: {eq: "Графсистема VHS"} portfolioType: {eq: "Одностраничный"}}, sort: {fields: [portfolioOrderNumber], order: ASC}) {
           edges {
             node {
@@ -63,9 +80,9 @@ const GraphicSystemVhsPage = ({data}) => (
     <Header type={'dark'}/>
     <SEO title="Графсистема VHS" />
     <CourseOffer data={data.VHSoffer}/>
-    <CourseExplanations/>
+    {/* <CourseExplanations data={data.explanations}/> */}
     <CoursePortfolio posters={data.VHSportfolioPosters} multiPages={data.portfolioMultipage}/>
-    <CourseReviews/>
+    {/* <CourseReviews/> */}
     <CoursePriceRange data={data.VHSPricesRange}/>
 
   </Layout>
