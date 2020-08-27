@@ -88,15 +88,16 @@ export const contentfulQuery = graphql`
               curriculumFirstColumn {
                 json
               }
-              curriculumFourthColumn {
-                json
-              }
+
               curriculumTitle
               curriculumTagName
               curriculumThirdColumn {
                 json
               }
               curriculumSecondColumn {
+                json
+              }
+              curriculumFourthColumn1 {
                 json
               }
               curriculumType

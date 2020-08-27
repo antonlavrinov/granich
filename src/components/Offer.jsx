@@ -2,10 +2,12 @@ import React from 'react'
 import styled from 'styled-components';
 import { Container } from './style';
 import BackgroundClip from '../assets/svgs/background-clip-01.svg';
+// import BackgroundClip from '../assets/images/background-clip-01.png';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import BackgroundImage from 'gatsby-background-image'
 import UnderlineLinkIcon from '../assets/svgs/offer-underline-link.svg';
 import Img from 'gatsby-image';
+// import { graphql, useStaticQuery } from 'gatsby'
 
 
 
@@ -111,14 +113,31 @@ const OfferUnderlineIcon = styled(props => <UnderlineLinkIcon {...props}/>)`
     
 `
 
+// const OfferSvgClip = styled(props => <BackgroundImage {...props}/>)`
+
+//     // padding: 10vw;
+//     left: 0;
+//     display: block;
+//     top: -4vw;
+//     width: 100%;
+//     z-index: 0;
+//     background-size: 'cover';
+//     background-repeat: 'no-repeat';
+//     @media only screen and (max-width: 575px) {
+//         width: 100%;
+//     }
+// `
 const OfferSvgClip = styled(props => <BackgroundClip {...props}/>)`
-    position: absolute;
+
+    // padding: 10vw;
     position: relative;
-    // bottom: -2.5vw;
     left: 0;
+    display: block;
     top: -4vw;
     width: 100%;
     z-index: 0;
+    background-size: 'cover';
+    background-repeat: 'no-repeat';
     @media only screen and (max-width: 575px) {
         width: 100%;
     }
@@ -154,6 +173,23 @@ const OfferShadowMobile = styled.div`
 
 
 const Offer = ({data}) => {
+
+        // const dataImage = useStaticQuery(graphql`
+        //     query backgroundClip {
+        //         clip: file(relativePath: { eq: "background-clip-01.png" }) {
+        //             childImageSharp {
+        //                 fluid(maxWidth: 2729) {
+        //                     ...GatsbyImageSharpFluid
+        //                 }
+        //             }
+        //         }
+
+        //     }
+        // `)
+
+        // const imageData = dataImage.clip.childImageSharp.fluid
+
+
         const headerImage = data.edges[0].node.headerImage.fluid
         const headerImageMobile = data.edges[0].node.headerImageMobile.fluid       
         const headerSubtitleImage = data.edges[0].node.headerSubtitleImage.fluid
@@ -185,6 +221,13 @@ const Offer = ({data}) => {
                 {/* <OfferSvgClip/> */}
             </OfferMobileSection>
             <OfferSvgClip/>
+            {/* <OfferSvgClip style={{position: 'relative', 
+                                background: 'black', 
+                                height: '8vw',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center top'
+                                }}  fluid={imageData}></OfferSvgClip> */}
         </>
 
 

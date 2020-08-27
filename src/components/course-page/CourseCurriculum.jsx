@@ -134,6 +134,7 @@ const CurriculumContentWrapper = styled.div`
     padding-left: 5.8vw;
     padding-top: 0vw;
     padding-bottom: 1.2vw;
+    background: black;
     ${props => !props.type && `
         padding-left: 7.3vw;
     `}
@@ -360,7 +361,7 @@ const CourseCurriculum = ({data}) => {
                             return (
                                 <CurriculumItem descr={tab.node.curriculumImportantDescr} type={tab.node.curriculumType} key={idx} title={tab.node.curriculumTitle} tag={tab.node.curriculumTagName}>
                                     <CurriculumContentWrapper type={tab.node.curriculumType ? 1 : 0}>
-                                        {tab.node.curriculumType ? (
+                                        {/* {tab.node.curriculumType ? (
                                             <>
                                                {tab.node.curriculumFirstColumn && <CurriculumContentColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.curriculumFirstColumn.json)}</CurriculumContentColumn>}
                                                 {tab.node.curriculumSecondColumn && <CurriculumContentColumn>{documentToReactComponents(tab.node.curriculumSecondColumn.json)}</CurriculumContentColumn>}
@@ -372,7 +373,7 @@ const CourseCurriculum = ({data}) => {
                                             <>
                                                 {tab.node.curriculumImportantText && <CurriculumImportantText><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.curriculumImportantText.json)}</CurriculumImportantText>}
                                             </>
-                                        )}
+                                        )} */}
                                    
                                     </CurriculumContentWrapper>
                                     {/* <div style={{ position: 'relative', width: '100%', height: 200, padding: 10 }}>
