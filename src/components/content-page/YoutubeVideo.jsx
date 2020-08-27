@@ -19,7 +19,7 @@ const Youtube = styled(props => <YoutubeIcon {...props}/>)`
 
 const YoutubeSection = styled.section`
     margin-bottom: 1.7vw;
-    padding-top: 10vw;
+
 `
 
 

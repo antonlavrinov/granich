@@ -2,7 +2,6 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
-import { graphql, useStaticQuery } from 'gatsby';
 import TelegramIcon from '../../assets/svgs/telegram-small-link-out.svg';
 import TelegramLinkOut from '../../assets/svgs/telegram-small-icon.svg';
 
@@ -175,11 +174,11 @@ const ReviewsLinkVk = styled.a`
 
 
 
-const Review = ({image}) => {
+const Review = ({image, link}) => {
     return (
         <ReviewWrapper>
             <ReviewImage fluid={image}></ReviewImage>
-            <ReviewButton>
+            <ReviewButton href={link} target="_blank">
                 <span>Показать полностью</span>
                 <ReviewButtonIcons>
                     <Telegram/><TelegramOut/>
@@ -190,42 +189,19 @@ const Review = ({image}) => {
 }
 
 
-const CourseReviews = () => {
-    const data = useStaticQuery(graphql`
-    query ReviewsSectionQuery {
-        review1: file(relativePath: { eq: "graph-design/reviews/review-600x450.jpg" }) {
-            childImageSharp {
-                fluid(maxWidth: 600, quality: 80) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        review2: file(relativePath: { eq: "graph-design/reviews/review-proba.jpg" }) {
-            childImageSharp {
-                fluid(maxWidth: 600, quality: 80) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-    }
-    `);
-    const review1 = data.review1.childImageSharp.fluid;
-    const review2 = data.review2.childImageSharp.fluid;
+const CourseReviews = ({data}) => {
+
     return (
         <ReviewsSection>
             <Container>
                 <ReviewsWrapper>
                     <ReviewsTitle>Свежие отзывы о курсе</ReviewsTitle>
                     <ReviewsList>
-                        <Review image={review1}/>
-                        <Review image={review1}/>
-                        <Review image={review1}/>
-                        <Review image={review1}/>
-                        <Review image={review1}/>
-                        <Review image={review1}/>
-                        <Review image={review1}/>
-                        <Review image={review1}/>
-                        <Review image={review1}/>
+                        {data.edges.map((review) => {
+                            return (
+                                <Review key={review.node.id} image={review.node.reviewsImage.fluid} link={review.node.reviewsLink}/>
+                            )
+                        })}
                     </ReviewsList>
                     <ReviewsFooter>
                         <ReviewsFooterTitle>Все отзывы о курсе:</ReviewsFooterTitle>

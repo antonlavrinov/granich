@@ -298,9 +298,9 @@ const CurriculumContent = styled.div`
 
 `
 const CurriculumContentText = styled.div`
-    font-size: 1.16vw;
+    font-size: 1.15vw;
     width: 9vw;
-    line-height: 1.55vw;
+    line-height: 1.45vw;
     font-weight: 500;
 `
 

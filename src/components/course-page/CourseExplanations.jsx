@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import Img from "gatsby-image";
-import { graphql, useStaticQuery } from 'gatsby'
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 
 
@@ -35,6 +35,7 @@ const ExplanationsBlockTitle = styled.div`
     font-weight: 500;
     width: 14vw;
     margin-bottom: 2.5vw;
+    margin-left: 1.5vw;
 
     :before {
         content: '';
@@ -67,10 +68,17 @@ const ExplanationsBlockTextBlock = styled.div`
 `
 
 const ExplanationsBlockText = styled.div`
-    color: grey;
-    font-size: 1.17vw;
-    letter-spacing: -0.01vw;
-    line-height: 1.55vw;
+    line-height: 1.45;    
+    p {
+        color: var(--granich-grey);
+        font-size: 1.15vw;
+        letter-spacing: -0.01vw;
+        b {
+            color: var(--granich-black);
+            font-weight: 500;
+        }
+
+    }
 `
 
 const ExplanationsBlockTextTitle = styled.div`
@@ -97,7 +105,7 @@ const ExplanationsBlockGreyLine = styled.div`
     width: 0.1vw;
 `
 
-const ExplanationsBlock = ({image, title, subtitle, text }) => {
+const ExplanationsBlock = ({image, title, text }) => {
 
     return (
         <ExplanationsBlockWrapper>
@@ -111,8 +119,7 @@ const ExplanationsBlock = ({image, title, subtitle, text }) => {
                     <ExplanationsBlockGreyLine/>
                 </ExplanationsBlockTextLine>
                 <ExplanationsBlockText>
-                    <ExplanationsBlockTextTitle>{subtitle}</ExplanationsBlockTextTitle>
-                    {text}
+                    {documentToReactComponents(text)}
                 </ExplanationsBlockText>
             </ExplanationsBlockTextBlock>
 
@@ -121,58 +128,20 @@ const ExplanationsBlock = ({image, title, subtitle, text }) => {
     )
 }
 
-const CourseExplanations = () => {
-    const data = useStaticQuery(graphql`
-        query {
-            image1 : file(relativePath: { eq: "course-page-answers-section-01.png" }) {
-                childImageSharp {
-                    fluid(maxWidth: 600) {
-                    ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            image2 : file(relativePath: { eq: "course-page-answers-section-01.png" }) {
-                childImageSharp {
-                    fluid(maxWidth: 600) {
-                    ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            image3 : file(relativePath: { eq: "course-page-answers-section-01.png" }) {
-                childImageSharp {
-                    fluid(maxWidth: 600) {
-                    ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-        }
-        `
-    )
-    const image1 = data.image1.childImageSharp.fluid
-    const image2 = data.image2.childImageSharp.fluid
-    const image3 = data.image3.childImageSharp.fluid
+const CourseExplanations = ({data}) => {
+
     return (
         <ExplanationsSection>
             <Container>
                 <ExplanationsWrapper>
-                    <ExplanationsBlock image={image1}
-                                  title="Что такое графдизайн?"
-                                  subtitle="Графдизайн — это вид визуальной коммуникации"
-                                  text="Главный канал этой коммуникации — печатный или цифровой макет (layout). Через него графдизайнер помогает бизнесу говорить с аудиторией: оповещать, обучать, убеждать"
-                    
-                    />
-                    <ExplanationsBlock image={image2}
-                                  title="Что создают графдизайнеры?"
-                                  subtitle="Информационные, имиджевые и рекламные макеты"
-                                  text="Информационные, чтобы информация быстро и прочно попала в сознание зрителя. Имиджевые транслируют нужный образ компании. Рекламные убеждают что-либо купить"
-                    
-                    />
-                    <ExplanationsBlock image={image3}
-                                  title="Что после графдизайна?"
-                                  subtitle="Печатка, веб,айдентика и медиадизайн"
-                                  text="Часто графические дизайнеры переходят к созданию айдентики. Другие отправляются в веб-дизайн. Ну а третьи штурмуют периодические издания. Причем как печатные так и онлайновые"
-                    
-                    />
+                    {data.edges.map((explanation) => {
+                        return (
+                            <ExplanationsBlock key={explanation.node.id} image={explanation.node.explanationsImage.fluid}
+                                title={explanation.node.explanationsTitle}
+                                text={explanation.node.explanationsText.json}
+                            />
+                        )
+                    })}
                 </ExplanationsWrapper>
             </Container>
         </ExplanationsSection>

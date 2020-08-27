@@ -6,11 +6,12 @@ exports.createPages = ({graphql, actions}) => {
     const contentContent = path.resolve('./src/templates/content-post.jsx');
     return graphql(`
         {
-            allContentfulGranichMainContentCard(filter: {contentType: {in: ["Youtube", "Youtube + Medium + Behance"]}}) {
+            content: allContentfulGranichMainContentCard(filter: {contentType: {in: ["Youtube", "Youtube + Medium + Behance"]}}) {
                 edges {
                     node {
                         contentSlug
                         contentYoutubeVideoLink
+                        contentBanner
                     }
                 }
             }
@@ -20,14 +21,14 @@ exports.createPages = ({graphql, actions}) => {
         if(result.errors) {
             throw result.errors
         }
-        const contents = result.data.allContentfulGranichMainContentCard.edges;
+        const contents = result.data.content.edges;
         contents.forEach((content, index) => {
             createPage({
                 path: content.node.contentSlug,
                 component: contentContent,
                 context: {
                     slug: content.node.contentSlug,
-                    title: content.node.contentTitle
+                    banner: content.node.contentBanner
                 }
             })
         })

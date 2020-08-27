@@ -34,7 +34,7 @@ const CommitmentInfo = styled.div`
 const CommitmentText = styled.div`
     color: var(--granich-grey);
     font-size: 1.15vw;
-    line-height: 1.35;
+    line-height: 1.45;
     margin-bottom: 1.35vw;
 `
 

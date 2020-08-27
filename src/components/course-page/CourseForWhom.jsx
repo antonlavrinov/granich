@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import BackgroundImage from "gatsby-image";
-import { graphql, useStaticQuery } from 'gatsby'
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 
 
@@ -39,7 +39,7 @@ const ForWhomBlockTitle = styled.div`
     font-family: EB Garamond;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.7vw;
+    letter-spacing: 0.6vw;
     margin-top: 3.6vw;
     width: 100%;
     position: relative;
@@ -68,11 +68,13 @@ const ForWhomBlockImage = styled(props => <BackgroundImage {...props}/>)`
     margin-bottom: 2vw;
 `
 const ForWhomBlockTextBlock = styled.div`
-    font-size: 1.2vw;
-    color: var(--granich-grey);
-    letter-spacing: -0.02vw;
-    line-height: 1.3;
+    line-height: 1.45;
     margin-left: -0.1vw;
+    p {
+        font-size: 1.15vw;
+        color: var(--granich-grey);
+        letter-spacing: -0.02vw;
+    }
 `
 
 
@@ -84,42 +86,15 @@ const ForWhomBlock = ({image, title, text }) => {
             <ForWhomBlockTitle>{title}</ForWhomBlockTitle>
             <ForWhomBlockImage fluid={image}/>
             <ForWhomBlockTextBlock>
-                {text}
+                {documentToReactComponents(text)}
             </ForWhomBlockTextBlock>
         </ForWhomBlockWrapper> 
     )
 }
 
-const CourseForWhom = () => {
-    const data = useStaticQuery(graphql`
-        query {
-            image1 : file(relativePath: { eq: "graph-design/for-whom/for-whom-01.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 600) {
-                    ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            image2 : file(relativePath: { eq: "graph-design/for-whom/for-whom-02.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 600) {
-                    ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            image3 : file(relativePath: { eq: "graph-design/for-whom/for-whom-03.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 600) {
-                    ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-        }
-        `
-    )
-    const image1 = data.image1.childImageSharp.fluid
-    const image2 = data.image2.childImageSharp.fluid
-    const image3 = data.image3.childImageSharp.fluid
+const CourseForWhom = ({data}) => {
+
+
     return (
         <ForWhomSection>
             <Container>
@@ -127,21 +102,16 @@ const CourseForWhom = () => {
                     Для кого курс?
                 </ForWhomSectionTitle>
                 <ForWhomWrapper>
-                    <ForWhomBlock image={image1}
-                                  title="Нужен навык"
-                                  text="Знания с курса станут навыком. Вы сможете выполнять заказы на печатную продукцию (визитки, постеры, журналы) и на электронные макеты"
-                    
-                    />
-                    <ForWhomBlock image={image2}
-                                  title="Ищете себя"
-                                  text="Недавно уволились из офиса? Устали от кадастрового кадастра? Хотите понять, интересно ли вам будет строить карьеру в дизайне? У меня, за 2 интенсивных месяца, точно поймете."
-                    
-                    />
-                    <ForWhomBlock image={image3}
-                                  title="Управленец"
-                                  text="Часто ставите задачи дизайнерам? Хотите лучше понимать их мир? Я преподнесу вам язык дизайна. Постановка задач станет проще"
-                    
-                    />
+                    {data.edges.map(forWhom => {
+                        return (
+                            <ForWhomBlock key={forWhom.node.id} image={forWhom.node.forWhomImage.fluid}
+                                title={forWhom.node.forWhomTitle}
+                                text={forWhom.node.forWhomText.json}
+              
+                            />
+                        )
+                    })}
+
                 </ForWhomWrapper>
             </Container>
         </ForWhomSection>

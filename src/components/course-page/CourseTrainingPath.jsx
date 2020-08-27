@@ -68,10 +68,10 @@ const TrainingPathBlockNumber = styled.div`
 
 const TrainingPathBlockText = styled.div`
 
-    line-height: 1.55vw;
+    line-height: 1.45;
     p {
         color: var(--granich-grey);
-        font-size: 1.17vw;
+        font-size: 1.15vw;
         letter-spacing: -0.01vw;
         b {
             display: block;

@@ -189,7 +189,7 @@ const CourseTitle = styled.div`
     font-size: 1.75vw;
     margin-top: 0.4vw;
     margin-left: 0.3vw;
-    line-height: 0.9;
+    line-height: 1.05;
     font-weight: 600;
     letter-spacing: 0;
     width: 15vw;

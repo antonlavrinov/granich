@@ -6,12 +6,13 @@ import {graphql} from 'gatsby'
 import YoutubeVideo from '../components/content-page/YoutubeVideo'
 import Mailing from '../components/Mailing';
 import ContentLinks from '../components/content-page/ContentLinks'
+import Banner from '../components/Banner'
 
 
 
 
 export const pageQuery = graphql`
-    query ContentfulContentBySlug($slug: String!) {
+    query ContentfulContentBySlug($slug: String!, $banner: String) {
         contentfulContent: contentfulGranichMainContentCard( contentSlug: { eq: $slug }) {
             contentSlug
             contentTitle
@@ -30,7 +31,23 @@ export const pageQuery = graphql`
             contentDescription {
                 contentDescription
             }
+            contentBannerSwitch
 
+        }
+        courseBanner: contentfulGranichCourse(courseTitle: {eq: $banner}) {
+            courseTitle
+            courseStart
+            courseDuration
+            courseStatus
+            courseType
+            courseBannerImage {
+                fluid(maxWidth: 120) {
+                    ...GatsbyContentfulFluid
+                  }
+            }
+            courseBannerSubtext
+            courseSlug
+            courseBannerSubtext
         }
     }
 `
@@ -39,6 +56,8 @@ const ContentPage = ({data}) => {
     return (
         <Layout>
             <Header type="dark"/>
+            <div style={{height: '10vw'}}></div>
+            {data.contentfulContent.contentBannerSwitch && data.courseBanner && <Banner data={data.courseBanner}/>}
             <YoutubeVideo data={data}/>
             <ContentLinks data={data}/>
             <Mailing/>

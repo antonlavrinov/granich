@@ -43,17 +43,37 @@ export const contentfulQuery = graphql`
             }
           }
         }
-        answers: allContentfulGranichCourseAnswers(filter: {AnswersAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [AnswersOrderNumber], order: ASC}) {
+        explanations: allContentfulGranichCourseExplanations(filter: {explanationsAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [explanationsOrderNumber], order: ASC}) {
           edges {
             node {
-              AnswersTagName
-              AnswersTagType
-              childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode {
+              id
+              explanationsImage {
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              explanationsTitle
+              explanationsText {
                 json
               }
-              childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode {
+
+            }
+          }
+        }
+        forWhom: allContentfulGranichCourseForWhom(filter: {forWhomAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [forWhomOrderNumber], order: ASC}) {
+          edges {
+            node {
+              id
+              forWhomImage {
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              forWhomTitle
+              forWhomText {
                 json
               }
+
             }
           }
         }
@@ -81,6 +101,22 @@ export const contentfulQuery = graphql`
               }
               curriculumType
               curriculumImportantDescr
+            }
+          }
+        }
+        features: allContentfulGranichCourseFeatures(filter: {featuresAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [featuresOrderNumber], order: ASC}) {
+          edges {
+            node {
+              id
+              featuresImage {
+                fluid(maxWidth: 120) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              featuresText
+              featuresTitle
+              featuresLink
+
             }
           }
         }
@@ -123,6 +159,34 @@ export const contentfulQuery = graphql`
             }
           }
         }
+        reviews: allContentfulGranichCourseReviews(filter: {reviewsAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [reviewsOrderNumber], order: ASC}) {
+          edges {
+            node {
+              id
+              reviewsImage {
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              reviewsLink
+            }
+          }
+        }
+        answers: allContentfulGranichCourseAnswers(filter: {AnswersAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [AnswersOrderNumber], order: ASC}) {
+          edges {
+            node {
+              AnswersTagName
+              AnswersTagType
+              childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode {
+                json
+              }
+              childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode {
+                json
+              }
+            }
+          }
+        }
+
       }
       `
 
@@ -133,15 +197,15 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <Header type={'dark'}/>
     <SEO title="Осознанный графдизайн" />
     <CourseOffer data={data.offer}/>
-    <CourseExplanations/>
+    <CourseExplanations data={data.explanations}/>
     <CourseExample/>
     <CourseCommitment/>
-    <CourseForWhom/>
+    <CourseForWhom data={data.forWhom}/>
     <CoursePortfolio posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
     <CourseTrainingPath data={data.trainingPath}/>
     <CourseCurriculum data={data.curriculum}/>
-    <CourseFeatures/>
-    <CourseReviews/>
+    <CourseFeatures data={data.features}/>
+    <CourseReviews data={data.reviews}/>
     <CourseParticipation data={data.offer}/>
     <CourseAnswers data={data.answers}/>
 
