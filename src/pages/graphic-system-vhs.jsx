@@ -13,9 +13,8 @@ import {graphql} from 'gatsby';
 
 export const contentfulQuery = graphql`
     query graphicSystemVHSQuery {
-        VHSoffer:   allContentfulGranichCourse(filter: {courseTitle: {eq: "Графсистема VHS"}}) {
-          edges {
-            node {
+        VHSoffer:   contentfulGranichCourse(courseTitle: {eq: "Графсистема VHS"}) {
+
                 courseTags
                 courseMainTitle {
                     json
@@ -28,8 +27,7 @@ export const contentfulQuery = graphql`
                     ...GatsbyContentfulFluid
                     }
                 }
-            }
-          }
+
         }
         explanations: allContentfulGranichCourseExplanations(filter: {explanationsAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [explanationsOrderNumber], order: ASC}) {
           edges {

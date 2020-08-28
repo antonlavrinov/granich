@@ -32,6 +32,7 @@ export const pageQuery = graphql`
                 contentDescription
             }
             contentBannerSwitch
+            contentTags
 
         }
         courseBanner: contentfulGranichCourse(courseTitle: {eq: $banner}) {

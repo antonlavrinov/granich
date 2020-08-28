@@ -149,7 +149,7 @@ const PolicyFooterEmail = styled.button`
 const ParticipationPolicy = ({data}) => {
     return (
         <PolicyWrapper>
-            {data.edges[0].node.coursePolicy && <PolicyText>{documentToReactComponents(data.edges[0].node.coursePolicy.json)}</PolicyText>}
+            {data.coursePolicy && <PolicyText>{documentToReactComponents(data.coursePolicy.json)}</PolicyText>}
             <PolicyFooter>
                 Вопросы по обучению пишите: <span><CopyToClipboard text={'hello@granich.design'}><PolicyFooterEmail>hello@granich.design</PolicyFooterEmail></CopyToClipboard></span>
             </PolicyFooter>

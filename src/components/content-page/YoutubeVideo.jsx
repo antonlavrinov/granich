@@ -147,7 +147,7 @@ const YoutubeVideo = ({data}) => {
 
                     <YoutubeBlock>
                         <ContentInfoTagsMobile>
-                            {data.courseBanner.courseTags.map((tag, idx) => {
+                            {data.contentfulContent.contentTags.map((tag, idx) => {
                                 return (
                                     <ContentInfoTag key={idx}>{tag}</ContentInfoTag>
                                 )
@@ -166,7 +166,7 @@ const YoutubeVideo = ({data}) => {
                         <Youtube/>
                         <ContentInfoTitle>{data.contentfulContent.contentTitle}</ContentInfoTitle>
                         <ContentInfoTags>
-                            {data.courseBanner.courseTags.map((tag, idx) => {
+                            {data.contentfulContent.contentTags.map((tag, idx) => {
                                 return (
                                     <ContentInfoTag key={idx}>{tag}</ContentInfoTag>
                                 )

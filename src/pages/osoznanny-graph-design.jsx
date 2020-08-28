@@ -19,28 +19,25 @@ import CourseAnswers from "../components/course-page/CourseAnswers";
 
 
 export const contentfulQuery = graphql`
+
     query graphDesignQuery {
-        offer:   allContentfulGranichCourse(filter: {courseTitle: {eq: "Осознанный графдизайн"}}) {
-          edges {
-            node {
-              courseMainImage {
-                fluid(maxWidth: 850, quality: 100) {
-                  ...GatsbyContentfulFluid
-                }
-              }
-              courseMainTitle {
-                json
-              }
-              courseDescr
-              courseStart
-              courseDuration
-              courseStream
-              courseStatus
-              courseType
-              coursePolicy {
-                json
-              }
+        offer:   contentfulGranichCourse(courseTitle: {eq: "Осознанный графдизайн"}) {
+          courseMainImage {
+            fluid(maxWidth: 850, quality: 100) {
+              ...GatsbyContentfulFluid
             }
+          }
+          courseMainTitle {
+            json
+          }
+          courseDescr
+          courseStart
+          courseDuration
+          courseStream
+          courseStatus
+          courseType
+          coursePolicy {
+            json
           }
         }
         explanations: allContentfulGranichCourseExplanations(filter: {explanationsAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [explanationsOrderNumber], order: ASC}) {

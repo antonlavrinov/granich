@@ -177,18 +177,18 @@ const CourseOffer = ({data}) => {
     return (
         <CourseOfferSection>
             <Container>
-                <CourseOfferWrapper fluid={data.edges[0].node.courseMainImage.fluid}>
-                    {/* {/* <CourseOfferImage style={{position: 'absolute'}} fluid={data.edges[0].node.courseMainImage.fluid}/> */}
+                <CourseOfferWrapper fluid={data.courseMainImage.fluid}>
+                    {/* {/* <CourseOfferImage style={{position: 'absolute'}} fluid={data.courseMainImage.fluid}/> */}
                     <CourseOfferTags>
-                        {data.edges[0].node.courseType === 'Курс' ? (
+                        {data.courseType === 'Курс' ? (
                             <>
-                                {data.edges[0].node.courseStream && <CourseOfferMainTag><Potok/>{data.edges[0].node.courseStream} поток</CourseOfferMainTag>}
-                                {data.edges[0].node.courseStart && <CourseOfferTag><Date/>Старт {data.edges[0].node.courseStart}</CourseOfferTag>}
-                                {data.edges[0].node.courseDuration && <CourseOfferTag><Duration/>{data.edges[0].node.courseDuration} интенсива</CourseOfferTag>}
+                                {data.courseStream && <CourseOfferMainTag><Potok/>{data.courseStream} поток</CourseOfferMainTag>}
+                                {data.courseStart && <CourseOfferTag><Date/>Старт {data.courseStart}</CourseOfferTag>}
+                                {data.courseDuration && <CourseOfferTag><Duration/>{data.courseDuration} интенсива</CourseOfferTag>}
                             </>
                         ) : (
                             <>
-                                {data.edges[0].node.courseTags.map((tag, idx) => {
+                                {data.courseTags.map((tag, idx) => {
                                     return (
                                         <CourseOfferTag key={idx}>{tag}</CourseOfferTag>
                                     )
@@ -196,16 +196,16 @@ const CourseOffer = ({data}) => {
                             </>
                         )}
                     </CourseOfferTags>
-                    <CourseOfferTitle type={data.edges[0].node.courseType}>
-                        {documentToReactComponents(data.edges[0].node.courseMainTitle.json)}
+                    <CourseOfferTitle type={data.courseType}>
+                        {documentToReactComponents(data.courseMainTitle.json)}
                     </CourseOfferTitle>
-                    <CourseOfferDescr type={data.edges[0].node.courseType}>
-                        {data.edges[0].node.courseDescr}
+                    <CourseOfferDescr type={data.courseType}>
+                        {data.courseDescr}
                     </CourseOfferDescr>
-                    {data.edges[0].node.courseType === 'Курс' ? (
+                    {data.courseType === 'Курс' ? (
                         <CourseOfferButton onClick={() => scrollTo('#participation-section')}><CourseArrowDown/>Участвовать</CourseOfferButton>
                     ) : (
-                        <CourseOfferButton type={data.edges[0].node.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
+                        <CourseOfferButton type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
                     )}
 
                     
