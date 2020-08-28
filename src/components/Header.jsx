@@ -12,11 +12,14 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const WhiteLogo = styled(props => <Logo {...props}/>)`
   width: 4.8vw;
+  min-width: 4.8vw;
+  height: 3vw;
   svg {
     fill: white;
   }
   @media only screen and (max-width: 575px) {
     width: 12.5vw;
+    height: 11vw;
 
   }
 `
@@ -35,6 +38,7 @@ const LogoWrapper = styled(props => <Link {...props} />)`
   align-items: center;
   fill: white;
   height: auto;
+  margin-right: 3.15vw;
   ${(props) => props.propstyle && `
     fill: var(--granich-black);
     
@@ -58,7 +62,6 @@ const HeaderWrapper = styled.div`
 
 const NavLinks = styled.nav`
   color: white;
-  margin-left: 3.15vw;
   // margin-top: -1vw;
   ul {
     display: flex;
@@ -78,6 +81,7 @@ const NavLinks = styled.nav`
 `
 
 const NavLink = styled(props => <Link {...props} />)`
+  display: block;
   position: relative;
   color: white;
   font-size: 1.15vw;
@@ -96,31 +100,29 @@ const NavLink = styled(props => <Link {...props} />)`
   ${(props) => props.propstyle && `
   color: var(--granich-black);
   :hover {
-    font-size: 1.15vw;
-    font-weight: 700;
     color: var(--granich-black);
     cursor: pointer;
     border-bottom: solid 0.15vw var(--granich-black);
   }
   `}
   @media only screen and (max-width: 575px) {
-    font-size: 4vw;
-    margin-right: 3.2vw;
+    font-size: 3.8vw;
+    margin-right: 0;
     padding-bottom: 0.4vw;
     :hover {
-      font-size: 1.15vw;
-      border-bottom: solid 0.15vw white;
+      font-size: 3.8vw;
+      border-bottom: solid 0.5vw white;
     }
     ${(props) => props.propstyle && `
     :hover {
-      font-size: 1.2vw;
-      border-bottom: solid 0.15vw var(--granich-black);
+      border-bottom: solid 0.5vw var(--granich-black);
     }
     `}
   }
 
 `
 const NavLinkExternal = styled.a`
+  display: block;
   position: relative;
   color: white;
   font-size: 1.2vw;
@@ -172,11 +174,15 @@ const ArrowLinkDown = styled(props => <ArrowDown {...props}/>)`
   right: -1.4vw;
   width: 1vw;
   height: 1vw;
+  min-width: 1vw;
+  min-height: 1vw;
   @media only screen and (max-width: 575px) {
     top: -1.6vw;
     right: -3.7vw;
     width: 3.1vw;
     height: 3.1vw;
+    min-width: 3.1vw;
+    min-height: 3.1vw;
   }
 
 
@@ -264,8 +270,9 @@ const LogoAndLoginButtonWrapper = styled.div`
   @media only screen and (max-width: 575px) {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    margin-bottom: 10vw;
+    margin-bottom: 6vw;
   }
 `
 
@@ -277,7 +284,7 @@ const LoginMobileButton = styled.a`
       align-items: center;
       color: white;
       background: var(--granich-red-gradient);
-      padding: 0.5vw 4.8vw 0.5vw 3.8vw;
+      padding: 2vw 4.8vw 2vw 3.8vw;
       letter-spacing: 0.05vw;
       border-radius: 1.5vw;
       font-size: 3.5vw;

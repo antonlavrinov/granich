@@ -40,6 +40,7 @@ const PublicOfferPage = ({data}) => {
     return (
         <Layout>
             <Header type={'dark'}/>
+            <div className="section-top-block"></div>
             <LegalDocument additionalInfo={additionalInfo} type={docType} mainText={mainText} dataPdf={dataPdf} date={date}/>
         </Layout>
     )

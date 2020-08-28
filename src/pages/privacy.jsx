@@ -40,7 +40,8 @@ const PrivacyPage = ({data}) => {
     return (
         <Layout>
             <Header type={'dark'}/>
-             <LegalDocument additionalInfo={additionalInfo} type={docType} mainText={mainText} dataPdf={dataPdf} date={date}/>
+            <div className="section-top-block"></div>
+            <LegalDocument additionalInfo={additionalInfo} type={docType} mainText={mainText} dataPdf={dataPdf} date={date}/>
         </Layout>
     )
 }

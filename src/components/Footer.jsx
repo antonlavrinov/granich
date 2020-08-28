@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Container } from './style';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
@@ -7,18 +7,38 @@ import VisaIcon from '../assets/svgs/Visa.svg';
 import MastercardIcon from '../assets/svgs/Mastercard.svg';
 import RobokassaIcon from '../assets/svgs/Robokassa.svg';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import ReactTooltip from 'react-tooltip';
+import 'react-tippy/dist/tippy.css'
+import {Tooltip} from 'react-tippy';
 
 
 const BlackLogo = styled(props => <Logo {...props}/>)`
     width: 4.8vw;
     height: 3vw;
+    min-width: 4.8vw;
+    min-height: 3vw;
     @media only screen and (max-width: 575px) {
         width: 16vw;
-        height: auto;
         height: 11vw;
+        min-width: 16vw;
+        min-height: 11vw;
 
 
     }
+`
+
+const StyledTooltip = styled(props => <Tooltip {...props}></Tooltip>)`
+    // span {
+    //     color: white;
+    // }
+    // div {
+    //     div {
+    //         :last-child {
+    //             background: red;
+    //         }
+    //     }
+    // }
+    
 `
 
 const Visa = styled(props => <VisaIcon {...props}/>)`
@@ -50,12 +70,13 @@ const FooterSection = styled.footer`
     margin-top: auto;   
     padding: 2.9vw 0 3.6vw;
     @media only screen and (max-width: 575px) {
-        padding: 17.3vw 0 12vw;
+        padding: 12vw 0 12vw;
     }
 `
 
 const FooterWrapper = styled.div`
     display: flex;
+    align-items: flex-start;
     @media only screen and (max-width: 575px) {
         flex-direction: column;
 
@@ -63,7 +84,7 @@ const FooterWrapper = styled.div`
 `
 
 const LogoWrapper = styled(props => <Link to="/" {...props} />)`
-  height: auto;
+//   height: auto;
   fill: var(--granich-black);
   margin-right: 0.7vw;
   @media only screen and (max-width: 575px) {
@@ -96,16 +117,16 @@ const FooterInfoYear = styled.div`
 `
 
 
-const FooterInfoMail = styled.span`
-    // position: absolute;
+const FooterInfoMail = styled.div`
+    position: relative;
     font-weight: 500;
     font-size: 1.16vw;
     color: var(--granich-black);
-    // margin-top: 0.2vw;
     display: block;
     border-bottom: solid 0.07vw var(--granich-light-grey);
     background: none;
     user-select: none;
+    margin-top: -0.15vw;
 
     :hover {
         font-weight: 500;
@@ -125,25 +146,17 @@ const FooterInfoMail = styled.span`
         transform: translateX(-50%);
         width: 0;
         height: 0;
-
-        
-        // border-left: 5px solid transparent;
-        // border-right: 5px solid transparent;
-        // border-bottom: 5px solid rgba(0,0,0,.72);
-
         //bottom
         border-right: 0.55vw solid transparent;
         border-left: 0.55vw solid transparent;
         border-top: 0.55vw solid var(--granich-black);
-
-        //right
-        // border-bottom: 5px solid transparent;
-        // border-top: 5px solid transparent;
-        // border-left: 5px solid rgba(0,0,0,.72);
+        ${props => props.content === 'Скопировано :)' && `
+            border-top: 0.55vw solid var(--granich-red);
+        `}
     }
 
     &:after {
-        content: 'Скопировать';
+        content: '${props => props.content}';
         display: none;
         position: absolute;
         z-index: 9999;
@@ -156,48 +169,42 @@ const FooterInfoMail = styled.span`
         padding: 0.7vw 1vw;
         min-width: 5vw; 
         text-align: center;
-        background: rgba(0,0,0,.95);
-        background: var(--granich-black);
         border-radius: 3px;
-    }
-
-
-
-    &:active, :focus {
-        outline: none;
-        
-        &:after {
-            content: 'Скопировано :)';
-            width: 6.5vw; 
+        white-space: nowrap;
+        background: var(--granich-black);
+        ${props => props.content === 'Скопировано :)' && `
             background: var(--granich-red);
-        }
-        &:before {
-            border-top-color: var(--granich-red);
-        }
+        `}
+        
+
     }
+
     @media only screen and (max-width: 575px) {
         font-size: 3.8vw;
         padding-bottom: 0;
         :hover {
             font-size: 3.8vw;
             border-bottom: solid 0.2vw var(--granich-black);
+
         }
         &:after {
             font-size: 4.5vw;
             padding: 3vw;
             top: -13vw;
+            ${props => props.content === 'Скопировано :)' && `
+                background: var(--granich-red);
+            `}
         }
         &:before {
             top: -3.2vw;
             border-right: 2vw solid transparent;
             border-left: 2vw solid transparent;
             border-top: 2vw solid var(--granich-black);
+            ${props => props.content === 'Скопировано :)' && `
+                border-top: 2vw solid var(--granich-red);
+            `}
         }
-        &:active, :focus {        
-            &:after {
-                width: 35vw; 
-            }
-        }
+
     }
 `
 const FooterLink = styled(props => <Link {...props}/>)`
@@ -258,7 +265,7 @@ const FooterCredentials = styled.div`
     @media only screen and (max-width: 575px) {
         font-size: 2.5vw;
         line-height: 1.3;
-        margin-right: 0;
+        margin-right: 3vw;
     }
 
 `
@@ -283,6 +290,7 @@ const FooterPayment = styled.div`
 
 const FooterLogoAndInfo = styled.div`
     display: flex;
+    align-items: flex-start;
     @media only screen and (max-width: 575px) {
         margin-bottom: 5.5vw;
     }
@@ -311,6 +319,7 @@ const EmptyText = styled.div`
 
 
 const Footer = () => {
+    const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
     return (
         <FooterSection>
             <Container>
@@ -323,9 +332,19 @@ const Footer = () => {
                         <FooterInfo>
                         <EmptyText>sometext</EmptyText>
                             <FooterInfoYear>© {new Date().getFullYear()}</FooterInfoYear>
+                            {/* <CopyToClipboard text={'hello@granich.design'}>
+                                <StyledTooltip unmountHTMLWhenHide={true} theme="red" open={tooltipEmail === 'Скопировано :)' ? 1 : 0} duration={0} animateFill={false} animation="none" trigger={'mouseenter'} title={tooltipEmail} hideOnClick="false"
+                                position="top-center"  interactive >
+                                    <FooterInfoMail onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')} >hello@granich.design</FooterInfoMail>
+                                </StyledTooltip>
+                                
+                            </CopyToClipboard> */}
                             <CopyToClipboard text={'hello@granich.design'}>
-                                <FooterInfoMail>hello@granich.design</FooterInfoMail>
+
+                                    <FooterInfoMail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')} >hello@granich.design</FooterInfoMail>
+                                
                             </CopyToClipboard>
+
 
                         </FooterInfo>
                     </FooterLogoAndInfo>

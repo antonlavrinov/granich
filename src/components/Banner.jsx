@@ -6,6 +6,9 @@ import CourseArrowOut from '../assets/svgs/course-arrow-out.svg';
 
 const BannerSection = styled.div`
     margin-bottom: 1.7vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 4vw;
+    }
 `
 
 const BannerWrapper = styled.div`
@@ -15,17 +18,43 @@ const BannerWrapper = styled.div`
     position: relative;
     display: flex;
     box-shadow: .25vw .25vw .5vw rgba(0,0,0,0.15);
+    @media only screen and (max-width: 575px) {
+        padding: 6vw 6.6vw 6.6vw;
+        border-radius: 1.5vw;
+        box-shadow: .6vw .6vw 1.8vw rgba(0,0,0,0.23);
+    }
 `
 
 const BannerContentWrapper = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
+    @media only screen and (max-width: 575px) {
+        display: none;
+    }
 `
+
+const BannerContentWrapperMobile = styled.div`
+    display: none;
+    @media only screen and (max-width: 575px) {
+        display: flex;
+        // align-items: center;
+        flex-direction: column;
+        // width: 100%;
+    }
+
+
+`
+
+
 const BannerImage = styled(props => <Img {...props} />)`
     width: 9vw;
     bottom: 0;
     left: 3.1vw;
+    @media only screen and (max-width: 575px) {
+        display: none;
+    }
+
 `
 
 const BannerSubtext = styled.div`
@@ -34,12 +63,22 @@ const BannerSubtext = styled.div`
     font-weight: 500;
     line-height: 1.4;
     margin-right: 2vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.5vw;
+        letter-spacing: -0.05vw;
+        width: 100%;
+        margin-bottom: 1vw;
+    }
 
 `
 const BannerMainInfo = styled.div`
     font-size: 1.15vw;
     margin-top: -0.5vw;
     margin-right: 1.5vw;
+    @media only screen and (max-width: 575px) {
+        display: flex;
+        align-items: center;
+    }
 
 `
 const BannerTitle = styled.div`
@@ -48,6 +87,13 @@ const BannerTitle = styled.div`
     font-style: italic;
     font-weight: 500;
     margin-bottom: 0.8vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 7vw;
+        margin-left: -0.8vw;
+        letter-spacing: -0.05vw;
+        margin-bottom: 3.5vw;
+    }
+    
 `
 const BannerInfoItems = styled.div`
     display: flex;
@@ -68,10 +114,17 @@ const BannerCourseStart = styled.div`
     margin-right: 0.8vw;
     letter-spacing: -0.01vw;
     font-weight: 500;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+        line-height: 1.4;
+    }
 `
 const BannerCourseDuration = styled.div`
     font-weight: 500;
     letter-spacing: -0.01vw;
+    @media only screen and (max-width: 575px) {
+        display: none;
+    }
 `
 const BannerCourseButton = styled.a`
     display: inline-flex;
@@ -102,6 +155,23 @@ const BannerCourseButton = styled.a`
         font-weight: 400;
         letter-spacing: 0.05vw;
     }
+    @media only screen and (max-width: 575px) {
+        margin-left: 0;
+        font-size: 4.3vw;
+        padding: 3vw 5vw;
+        border-radius: 1.5vw;
+        margin-right: 4.5vw;
+        box-shadow: 0.7vw 0.7vw 1.5vw rgba(0,0,0,0.3);
+        :hover {
+            font-size: 4.3vw;
+        }
+        svg {
+            width: 3vw;
+            height: 3vw;
+            margin-left: 1.2vw;
+            margin-top: 0.8vw;
+        }
+    }
 `
 
 
@@ -127,11 +197,28 @@ const Banner = ({data}) => {
                             </BannerInfoItems>                            
                         </BannerMainInfo>
                         {data.courseType === 'Курс' ? (
-                            <BannerCourseButton>Участвовать <CourseArrowOut/></BannerCourseButton>
+                            <BannerCourseButton target="_blank" href={data.courseSlug}>Участвовать <CourseArrowOut/></BannerCourseButton>
                         ) : (
-                            <BannerCourseButton>Купить <CourseArrowOut/></BannerCourseButton>
+                            <BannerCourseButton target="_blank" href={data.courseSlug}>Купить <CourseArrowOut/></BannerCourseButton>
                         )}
                     </BannerContentWrapper>
+                    <BannerContentWrapperMobile>
+                        <BannerSubtext>
+                            {data.courseBannerSubtext}
+                        </BannerSubtext>
+                        <BannerTitle>
+                            {data.courseTitle}
+                        </BannerTitle>
+                        <BannerMainInfo>
+                            {data.courseType === 'Курс' ? (
+                                <BannerCourseButton target="_blank" href={data.courseSlug}>Участвовать <CourseArrowOut/></BannerCourseButton>
+                            ) : (
+                                <BannerCourseButton target="_blank" href={data.courseSlug}>Купить <CourseArrowOut/></BannerCourseButton>
+                            )}
+                            <BannerCourseStart>Стартуем <br/>{data.courseStart}</BannerCourseStart>                          
+                        </BannerMainInfo>
+
+                    </BannerContentWrapperMobile>
                 </BannerWrapper>
             </Container>
         </BannerSection>

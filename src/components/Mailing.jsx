@@ -29,7 +29,7 @@ const ArrowRightButton = styled(props => <BlackArrowRight {...props}/>)`
 `
 
 const MailingSection = styled.section`
-    margin-bottom: 4vw;
+
 `
 
 const MailingWrapper = styled.div`

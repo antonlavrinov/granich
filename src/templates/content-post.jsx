@@ -48,6 +48,7 @@ export const pageQuery = graphql`
             courseBannerSubtext
             courseSlug
             courseBannerSubtext
+            courseTags
         }
     }
 `
@@ -56,7 +57,7 @@ const ContentPage = ({data}) => {
     return (
         <Layout>
             <Header type="dark"/>
-            <div style={{height: '10vw'}}></div>
+            <div className="section-top-block"></div>
             {data.contentfulContent.contentBannerSwitch && data.courseBanner && <Banner data={data.courseBanner}/>}
             <YoutubeVideo data={data}/>
             <ContentLinks data={data}/>

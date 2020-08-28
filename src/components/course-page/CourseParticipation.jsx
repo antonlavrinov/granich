@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import ParticipationForm from './participation/ParticipationForm';
@@ -19,6 +19,7 @@ const ParticipationWrapper = styled.div`
 `
 
 
+
 const CourseParticipation = ({data}) => {
 
     return (
@@ -28,6 +29,7 @@ const CourseParticipation = ({data}) => {
                     <ParticipationForm/>
                     <ParticipationPolicy data={data}/>
                 </ParticipationWrapper>
+
             </Container>
         </ParticipationSection>
     )

@@ -308,13 +308,13 @@ const SideButtons = () => {
                             </CopyToClipboard>
                         </IconLink>
 
-                        <IconLink target="_blank" href="https://t.me/granichannel">
+                        <IconLink target="_blank" href="https://t.me/granich_school">
                             <Telegram />
                         </IconLink>
-                        <IconLink target="_blank" href="https://t.me/granichannel">
+                        <IconLink target="_blank" href="https://wa.me/79046434682">
                             <Whatsup/>
                         </IconLink>
-                        <IconLink target="_blank" href="https://t.me/granichannel">
+                        <IconLink target="_blank" href="https://vk.com/write-164662407">
                             <VK/>
                         </IconLink>
 

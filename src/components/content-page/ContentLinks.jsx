@@ -26,19 +26,46 @@ const ArrowLinkDown = styled(props => <ArrowDown {...props}/>)`
 const Medium = styled(props => <MediumIcon {...props}/>)`
     min-width: 5.8vw;
     min-height: 5.8vw;
+    width: 5.8vw;
+    height: 5.8vw;
     margin-right: 0.5vw;
+    @media only screen and (max-width: 575px) {
+        min-width: 18vw;
+        min-height: 18vw;
+        width: 18vw;
+        height: 18vw;
+        margin-right: 2vw;
+    }
 `
 
 const Behance = styled(props => <BehanceIcon {...props}/>)`
     min-width: 5.8vw;
     min-height: 5.8vw;
+    width: 5.8vw;
+    height: 5.8vw;
     margin-right: 0.5vw;
+    @media only screen and (max-width: 575px) {
+        min-width: 18vw;
+        min-height: 18vw;
+        width: 18vw;
+        height: 18vw;
+        margin-right: 2vw;
+    }
 `
 
 const PDF = styled(props => <PDFIcon {...props}/>)`
     min-width: 5.8vw;
     min-height: 5.8vw;
+    width: 5.8vw;
+    height: 5.8vw;
     margin-right: 0.5vw;
+    @media only screen and (max-width: 575px) {
+        min-width: 18vw;
+        min-height: 18vw;
+        width: 18vw;
+        height: 18vw;
+        margin-right: 2vw;
+    }
 `
 
 const ArrowLinkOut = styled(props => <ArrowOut {...props}/>)`
@@ -60,6 +87,9 @@ const ArrowLinkOut = styled(props => <ArrowOut {...props}/>)`
 
 const ContentLinksSection = styled.section`
     margin-bottom: 2.5vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 4vw;
+    }
 `
 
 
@@ -71,6 +101,10 @@ const ContentLinksWrapper = styled.div`
     ${props => !props.exists && `
         display: none;
     `}
+    @media only screen and (max-width: 575px) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 4vw;
+    }
 
 `
 
@@ -84,6 +118,11 @@ const LinkBlock = styled.a`
     transition: transform 0.3s ease;
     :hover {
         transform: scale(1.05);
+    }
+    @media only screen and (max-width: 575px) {
+        padding: 4vw 5.4vw;
+        border-radius: 1.5vw;
+
     }
 
 `
@@ -100,6 +139,11 @@ const LinkText = styled.div`
         font-weight: 600;
         position: relative;
 
+    }
+    @media only screen and (max-width: 575px) {
+        font-size: 3.6vw;
+        margin-top: 1.2vw;
+        padding-right: 10vw;
     }
 `
 

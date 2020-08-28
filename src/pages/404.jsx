@@ -8,7 +8,7 @@ import Header from "../components/Header";
 import { Link } from "gatsby";
 
 const NotFoundSection = styled.section`
-  padding-top: 8.4vw;
+  // padding-top: 8.4vw;
   // margin-bottom: 5vw;
 `
 
@@ -19,6 +19,12 @@ const NotFoundWrapper = styled.div`
   position: relative;
   min-height: 36.5vw;
   height: 36.5vw;
+  @media only screen and (max-width: 575px) {
+    border-radius: 1.5vw;
+    padding: 7vw 6vw 38vw;
+    height: auto;
+    min-height: auto;
+  }
 `
 
 const NotFoundTitle = styled.div`
@@ -28,6 +34,12 @@ const NotFoundTitle = styled.div`
   line-height: 0.87;
   color: var(--granich-black);
   margin-bottom: 3.1vw;
+  @media only screen and (max-width: 575px) {
+    font-size: 8.4vw;
+    letter-spacing: -0.5vw;
+    line-height: 1.1;
+    margin-bottom: 7vw;
+  }
 
 `
 
@@ -40,13 +52,27 @@ const NotFoundText = styled.div`
   font-weight: 500;
   margin-bottom: 1.6vw;
   margin-left: -0.2vw;
+  @media only screen and (max-width: 575px) {
+    font-size: 5.2vw;
+    letter-spacing: -0.01vw;
+    line-height: 1.5;
+    margin-bottom: 8vw;
+  }
 `
 
 const NotFoundLinksWrapper = styled.div`
-
+  position: relative;
+  z-index: 2;
   ul {
     li {
       margin-bottom: 0.5vw;
+    }
+  }
+  @media only screen and (max-width: 575px) {
+    ul {
+      li {
+        margin-bottom: 1.8vw;
+      }
     }
   }
 
@@ -62,6 +88,11 @@ const NotFoundLink = styled(props => <Link {...props}/>)`
     font-weight: 500;
     color: var(--granich-red);
     font-size: 1.15vw;
+  }
+  @media only screen and (max-width: 575px) {
+    font-size: 3.8vw;
+    :hover {
+      font-size: 3.8vw;
   }
 
 
@@ -79,12 +110,18 @@ const NotFoundSymbol = styled.div`
   letter-spacing: -0.2vw;
   line-height: 0.7;
   user-select: none;
+  @media only screen and (max-width: 575px) {
+    font-size: 55vw;
+    bottom: -2vw;
+    right: 5vw;
+  }
 `
 
 const NotFoundPage = () => (
   <Layout>
     <SEO title="Страница не найдена" />
     <Header type={'dark'}/>
+    <div className="section-top-block"></div>
     <NotFoundSection>
       <Container>
         <NotFoundWrapper>
@@ -101,7 +138,7 @@ const NotFoundPage = () => (
               <NotFoundLink to="/osoznanny-graph-design">Осознанный графдизайн</NotFoundLink>
               </li>
               <li>
-              <NotFoundLink to="/osoznanny-graph-design">Графсистема VHS</NotFoundLink>
+              <NotFoundLink to="/graphic-system-vhs">Графсистема VHS</NotFoundLink>
               </li>
             </ul>
             

@@ -6,6 +6,7 @@ import TagCross from '../assets/svgs/tag-cross-icon-01.svg';
 
 
 const PreparationSection = styled.section`
+    margin-top: 4vw;
     margin-bottom: 4vw;
     @media only screen and (max-width: 575px) {
         margin-bottom: 10vw;
