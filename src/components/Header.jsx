@@ -62,9 +62,10 @@ const HeaderWrapper = styled.div`
 
 const NavLinks = styled.nav`
   color: white;
-  // margin-top: -1vw;
+  margin-top: 0.4vw;
   ul {
     display: flex;
+    align-items: center;
   }
   @media only screen and (max-width: 575px) {
     margin-left: 0vw;
@@ -89,6 +90,7 @@ const NavLink = styled(props => <Link {...props} />)`
   font-weight: 700;
   margin-right: 3.2vw;
   padding-bottom: 0.4vw;
+  border-bottom: solid 0.15vw rgba(0,0,0,0);
   :hover {
     font-size: 1.15vw;
     font-weight: 700;
@@ -108,7 +110,7 @@ const NavLink = styled(props => <Link {...props} />)`
   @media only screen and (max-width: 575px) {
     font-size: 3.8vw;
     margin-right: 0;
-    padding-bottom: 0.4vw;
+    padding-bottom: 1vw;
     :hover {
       font-size: 3.8vw;
       border-bottom: solid 0.5vw white;
@@ -131,12 +133,14 @@ const NavLinkExternal = styled.a`
   // font-weight: 400;
   margin-right: 3.2vw;
   padding-bottom: 0.4vw;
+  border-bottom: solid 0.15vw rgba(0,0,0,0);
   :hover {
     font-size: 1.2vw;
     font-weight: 700;
     // font-weight: 400;
     color: white;
     cursor: pointer;
+
     border-bottom: solid 0.15vw white;
 
   }
@@ -153,7 +157,7 @@ const NavLinkExternal = styled.a`
   @media only screen and (max-width: 575px) {
     font-size: 3.8vw;
     margin-right: 0vw;
-    padding-bottom: 0vw;
+    padding-bottom: 1vw;
     :hover {
       font-size: 3.8vw;
       border-bottom: solid 0.5vw white;

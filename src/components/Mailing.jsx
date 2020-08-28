@@ -5,7 +5,7 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import { Container } from './style';
 import posed from "react-pose";
-
+import Modal from 'react-modal';
 
 const ShakeForm = posed.div({
     shake: {
@@ -160,6 +160,7 @@ const Mailing = () => {
     const [shakeTrigger, setShakeTrigger] = useState(3);
 
     const formEl = useRef(null)
+    const [popup, setPopup] = useState(false);
 
     //initial Validation
     function isInitialValid(props) {
@@ -169,6 +170,27 @@ const Mailing = () => {
     return (
         <MailingSection>
             <Container>
+
+                <Modal isOpen={popup}
+                        style={{
+                            overlay: {
+                                backgroundColor: "rgba(0, 0, 0, 0.58)",
+                                zIndex: 1000
+                              },
+                            content: {
+                            position: "fixed",
+                            top: "0",
+                            left: "0",
+                            right: "0",
+                            bottom: "0",
+                            margin: "10vw 10vw",
+                            padding: "5vw",
+                            border: 0,
+                            zIndex: 1000
+                            },
+                }}>                <div onClick={() => formEl.current.submit()}>popup
+
+                </div></Modal>
                 <ShakeForm pose={["shake"]} poseKey={shakeTrigger}>
                     <MailingWrapper>
                         <MailingContainer>
@@ -182,7 +204,8 @@ const Mailing = () => {
                                 }}}
                                 
                                 onSubmit={(values, {setSubmitting}, e) => {
-                                    formEl.current.submit();
+                                    setPopup(true)
+                                    // formEl.current.submit();
                                 }}
                                 validationSchema={Yup.object().shape({
                                     formParams: Yup.object().shape({
