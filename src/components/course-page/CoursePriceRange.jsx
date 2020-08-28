@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 const PriceRangeSection = styled.section`
-    margin-bottom: 5vw;
+    margin-bottom: 2vw;
 `
 
 
@@ -72,7 +72,7 @@ const PriceCategoryList = styled.div`
         :hover {
             cursor: pointer;
             transform: scale(1.05);
-            box-shadow: 0 0.1vw 0.5vw rgba(0,0,0,0.25);
+            box-shadow: 0 0.1vw 0.5vw rgba(0,0,0,0.15);
             z-index: 3;
             i {
                 display: block;
@@ -100,6 +100,9 @@ const PriceCategoryList = styled.div`
 
         
     }
+    p:empty { 
+        display: none; 
+    }
     p {
         padding: 0.85vw 1vw 0.85vw 1.3vw;
         border-bottom: 1px solid #dedede;
@@ -108,6 +111,7 @@ const PriceCategoryList = styled.div`
         font-weight: 400;
         letter-spacing: -0.01vw;
         color: var(--granich-light-grey);
+        color: #d8d8d8;
         // padding-bottom: 0.3vw;
         // border-bottom: 1.5px dashed #dedede;
         display: block;
@@ -133,7 +137,7 @@ const PriceCategoryList = styled.div`
             z-index: 9999;
             // transform: translateY(-50%);
             box-shadow: 0 0.3vw 0.5vw rgba(0,0,0,0.2);
-            border-radius: 0.5vw;
+            border-radius: 0.2vw;
             font-size: 0.9vw;
             line-height: 1.2;
             font-style: normal;
@@ -176,8 +180,8 @@ const PriceCategoryList = styled.div`
             :before {
                 content: '';
                 position: absolute;
-                // width: 0.15vw;
-                border-left: 0.15vw solid red;
+                width: 0.15vw;
+                // border-left: 0.15vw solid red;
                 height: 100%;
                 background: red;
 
@@ -240,7 +244,7 @@ const PriceCategoryPackage = styled.div`
 
 const CoursePriceRange = ({data}) => {
     return (
-        <PriceRangeSection>
+        <PriceRangeSection id="prices-range-section">
             <Container>
                 <PriceRangeWrapper>
                     {data.edges.map((price, idx) => {

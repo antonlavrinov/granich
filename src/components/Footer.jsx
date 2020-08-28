@@ -169,7 +169,7 @@ const FooterInfoMail = styled.div`
         padding: 0.7vw 1vw;
         min-width: 5vw; 
         text-align: center;
-        border-radius: 3px;
+        border-radius: 0.2vw;
         white-space: nowrap;
         background: var(--granich-black);
         ${props => props.content === 'Скопировано :)' && `

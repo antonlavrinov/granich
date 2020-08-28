@@ -34,15 +34,7 @@ const VK = styled(props => <VKIcon {...props}/>)`
         height: 11vw;
         // margin-bottom: 1.5vw;
     }
-    // ${props => !props.chatOpen && `
-    //     opacity: 0;
-    //     transform: translateY(30%);
-    //     :hover {
-    //         cursor: default;
-    //         transform: translateY(10vw) scale(1.1)
-    
-    //     }
-    // `}
+
 `
 
 const Telegram = styled(props => <TelegramIcon {...props}/>)`
@@ -59,24 +51,14 @@ const Telegram = styled(props => <TelegramIcon {...props}/>)`
     @media only screen and (max-width: 575px) {
         width: 11vw;
         height: 11vw;
-        // margin-bottom: 1.5vw;
     }
-    // ${props => !props.chatOpen && `
-    //     opacity: 0;
-    //     transform: translateY(30%);
-    //     :hover {
-    //         cursor: default;
-    //         transform: translateY(10vw) scale(1.1)
-    
-    //     }
-    // `}
+
 `
 const Whatsup = styled(props => <WhatsupIcon {...props}/>)`
     width: 3.6vw;
     height: 3.6vw;
     transition: all 0.3s ease;
     transform: translateY(0);
-    // margin-bottom: 0.5vw;
     :hover {
         cursor: pointer;
         transform: translateY(0) scale(1.1)
@@ -85,17 +67,8 @@ const Whatsup = styled(props => <WhatsupIcon {...props}/>)`
     @media only screen and (max-width: 575px) {
         width: 11vw;
         height: 11vw;
-        // margin-bottom: 1.5vw;
     }
-    // ${props => !props.chatOpen && `
-    //     opacity: 0;
-    //     transform: translateY(30%);
-    //     :hover {
-    //         cursor: default;
-    //         transform: translateY(10vw) scale(1.1)
-    
-    //     }
-    // `}
+
 `
 
 const EmailWrapper = styled.div`
@@ -105,33 +78,96 @@ const EmailWrapper = styled.div`
     opacity: 1;
     transition: all 0.3s ease;
     transform: translateY(0);
-    // margin-bottom: 0.5vw;
+
     :hover {
-        cursor: pointer;
         transform: translateY(0)
+        font-weight: 500;
+        font-size: 1.15vw;
+        cursor: pointer;
+        border-bottom: none;
+        &:before, &:after {
+            display: block;
+        }
+    }
+    &:before {
+        content: '';
+        display: none;
+        position: absolute;
+        z-index: 9998;
+        top: 40%;
+        right: 4.1vw;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        //bottom
+        border-bottom: 0.55vw solid transparent;
+        border-top: 0.55vw solid transparent;
+        border-left: 0.55vw solid var(--granich-black);
+        ${props => props.content === 'Скопировано :) hello@granich.design' && `
+            border-left: 0.55vw solid var(--granich-red);
+        `}
+    }
+
+    &:after {
+        content: '${props => props.content}';
+        display: none;
+        position: absolute;
+        z-index: 9999;
+        top: 40%;
+        right: 4.5vw;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 0.8vw;
+        line-height: 1.5;
+        padding: 0.7vw 1vw;
+        // min-width: 5vw; 
+        text-align: center;
+        border-radius: 0.2vw;
+        white-space: normal;;
+        background: var(--granich-black);
+        ${props => props.content === 'Скопировано :) hello@granich.design' && `
+            background: var(--granich-red);
+        `}
+        
 
     }
+
     @media only screen and (max-width: 575px) {
+        font-size: 3.8vw;
+        padding-bottom: 0;
         width: 11vw;
         height: 11vw;
         margin-bottom: 1.5vw;
-    }
-    // ${props => !props.chatOpen && `
-    //     opacity: 0;
-    //     transform: translateY(30%);
-    //     :hover {
-    //         cursor: default;
-    //         transform: translateY(10vw)
-    
-    //     }
+        :hover {
+            font-size: 3.8vw;
+            // border-bottom: solid 0.2vw var(--granich-black);
 
-    // `}
+        }
+        &:after {
+            font-size: 4.5vw;
+            padding: 3vw;
+            right: 15vw;
+            ${props => props.content === 'Скопировано :) hello@granich.design' && `
+                background: var(--granich-red);
+            `}
+        }
+        &:before {
+            left: -4.5vw;
+            border-bottom: 2vw solid transparent;
+            border-top: 2vw solid transparent;
+            border-left: 2vw solid var(--granich-black);
+            ${props => props.content === 'Скопировано :) hello@granich.design' && `
+                border-top: 2vw solid var(--granich-red);
+            `}
+        }
+
 `
 
 
-const Email = styled.button`
+const Email = styled.div`
     background: none;
     position: absolute;
+    display: block;
     
     svg {
         width: 3.6vw;
@@ -148,97 +184,8 @@ const Email = styled.button`
             width: 11vw;
             height: 11vw;
         }
-
-    }
-    :hover {
-
-        &:before, &:after {
-            display: block;
-        }
-    }
-    &:before {
-        content: '';
-        display: none;
-        position: absolute;
-        z-index: 9998;
-        top: 40%;
-        right: 4.1vw;
-        transform: translateY(-50%);
-        width: 0;
-        height: 0;
-        border-bottom: 0.55vw solid transparent;
-        border-top: 0.55vw solid transparent;
-        border-left: 0.55vw solid var(--granich-black);
     }
 
-    &:after {
-        content: 'Скопировать';
-        display: none;
-        position: absolute;
-        z-index: 9999;
-        top: 40%;
-        right: 4.5vw;
-        transform: translateY(-50%);
-        color: white;
-        font-size: 0.8vw;
-        line-height: 1;
-        padding: 0.7vw 1vw;
-        background: rgba(0,0,0,.95);
-        background: var(--granich-black);
-        border-radius: 3px;
-        white-space: nowrap;
-
-    }
-    
-
-    
-    &:active, :focus {
-        outline: none;
-        
-        &:after {
-            content: 'Скопировано :) hello@granich.design';
-            text-align: center;
-            background: var(--granich-red);
-            white-space: normal;
-            line-height: 1.5;
-        }
-        &:before {
-            border-left-color: var(--granich-red);
-        }
-    }
-    @media only screen and (max-width: 575px) {
-        font-size: 3.8vw;
-        padding-bottom: 0;
-        :hover {
-            font-size: 3.8vw;
-            // border-bottom: solid 0.2vw var(--granich-black);
-        }
-        &:after {
-            font-size: 4.5vw;
-            padding: 3vw;
-            // top: -13vw;
-            right: 15vw;
-        }
-        &:before {
-            // top: -3.2vw;
-            left: -4.5vw;
-            border-bottom: 2vw solid transparent;
-            border-top: 2vw solid transparent;
-            border-left: 2vw solid var(--granich-black);
-        }
-
-    }
-    // ${props => !props.chatOpen && `
-    //     svg {
-    //         opacity: 0;
-    //         // transform: translateY(30%);
-    //         :hover {
-    //             cursor: default;
-    //             // transform: translateY(10vw)
-        
-    //         }
-    //     }
-    // `}
 
 `
 
@@ -286,6 +233,7 @@ const Socials = styled.div`
 
 const SideButtons = () => {
     const [chatOpen, setChatOpen] = useState(false);
+    const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
     const toggleChatOpen = (boolean) => {
         setChatOpen(boolean)
         console.log('open')
@@ -300,7 +248,7 @@ const SideButtons = () => {
                     <Socials>
                         <IconLink>
                             <CopyToClipboard text={'hello@granich.design'}>
-                                <EmailWrapper>
+                                <EmailWrapper content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :) hello@granich.design')}>
                                     <Email>
                                         <EmailIcon />
                                     </Email>

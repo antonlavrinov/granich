@@ -8,6 +8,7 @@ import CoursePortfolio from "../components/course-page/CoursePortfolio"
 import CourseReviews from "../components/course-page/CourseReviews"
 import CoursePriceRange from "../components/course-page/CoursePriceRange"
 import {graphql} from 'gatsby';
+import EducationQuestions from "../components/EducationQuestions";
 
 
 
@@ -29,7 +30,7 @@ export const contentfulQuery = graphql`
                 }
 
         }
-        explanations: allContentfulGranichCourseExplanations(filter: {explanationsAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [explanationsOrderNumber], order: ASC}) {
+        VHSexplanations: allContentfulGranichCourseExplanations(filter: {explanationsAttachmentTo: {eq: "Графсистема VHS"}}, sort: {fields: [explanationsOrderNumber], order: ASC}) {
           edges {
             node {
               id
@@ -49,9 +50,25 @@ export const contentfulQuery = graphql`
         VHSportfolioPosters: allContentfulGranichCoursePortfolio(filter: {portfolioAttachmentTo: {eq: "Графсистема VHS"} portfolioType: {eq: "Одностраничный"}}, sort: {fields: [portfolioOrderNumber], order: ASC}) {
           edges {
             node {
+              id
               portfolioMedia {
-                id
+                fluid(maxWidth: 800) {
+                  ...GatsbyContentfulFluid
+                }
               }
+            }
+          }
+        }
+        VHSreviews: allContentfulGranichCourseReviews(filter: {reviewsAttachmentTo: {eq: "Графсистема VHS"}}, sort: {fields: [reviewsOrderNumber], order: ASC}) {
+          edges {
+            node {
+              id
+              reviewsImage {
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              reviewsLink
             }
           }
         }
@@ -78,10 +95,11 @@ const GraphicSystemVhsPage = ({data}) => (
     <Header type={'dark'}/>
     <SEO title="Графсистема VHS" />
     <CourseOffer data={data.VHSoffer}/>
-    {/* <CourseExplanations data={data.explanations}/> */}
-    <CoursePortfolio posters={data.VHSportfolioPosters} multiPages={data.portfolioMultipage}/>
-    {/* <CourseReviews/> */}
+    <CourseExplanations data={data.VHSexplanations}/>
+    <CoursePortfolio posters={data.VHSportfolioPosters}/>
+    <CourseReviews data={data.VHSreviews}/>
     <CoursePriceRange data={data.VHSPricesRange}/>
+    <EducationQuestions/>
 
   </Layout>
 )

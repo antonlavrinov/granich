@@ -1,77 +1,39 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
-import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import {Container} from './style';
 
-const PolicyWrapper = styled.div`
-    // width: 47%;
-    // min-width: 47%;
-    height: 100%;
-    // min-height: 100%;
-    // max-height: 100%;
-    background: white;
-    border-radius: 0.5vw;
-    padding: 2vw;
-    display: flex;
-    flex-direction: column;
-`
 
-const PolicyText = styled.div`
-    line-height: 1.45;
-    p {
-        font-size: 1.05vw;
-        color: var(--granich-grey);
-        margin-bottom: 0.55vw;
-
-        :last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    b {
-        display: block;
-        color: var(--granich-black);
-        font-weight: 500;
-    }
+const EducationQuestionsSection = styled.section`
 
 `
-const PolicyFooter = styled.div`
-    background: #f2f2f2;
+
+const EducationQuestionsWrapper = styled.div`
+    background: #e8e8e8;
     border-radius: 0.5vw;
-    padding: 1vw 2vw;
-    margin-top: auto;
-    font-size: 1.05vw;
+    padding: 1.8vw 2vw;
+    font-size: 1.15vw;
     color: var(--granich-grey);
     color: #666666;
     font-weight: 500;
-    // text-align: center;
+    text-align: center;
 
-    span {
-        position: relative;
-
-
-    }
 `
 
-const PolicyFooterEmail = styled.span`
-
+const EducationQuestionsEmail = styled.span`
+    position: relative;
     font-weight: 500;
-    font-size: 1.05vw;
-    color: #666666;
-    display: inline-block;
-    border-bottom: 1.5px solid var(--granich-light-grey);
-    background: none;
-    user-select: none;
+    color: var(--granich-black);
+    border-bottom: 1px solid var(--granich-light-grey);
     :hover {
         font-weight: 500;
-        font-size: 1.05vw;
+        font-size: 1.15vw;
         cursor: pointer;
+        border-bottom: none;
         &:before, &:after {
             display: block;
         }
-
     }
-
     &:before {
         content: '';
         display: none;
@@ -140,20 +102,27 @@ const PolicyFooterEmail = styled.span`
                 border-top: 2vw solid var(--granich-red);
             `}
         }
-    }
 
 `
 
-const ParticipationPolicy = ({data}) => {
+
+const EducationQuestions = () => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
+    console.log(tooltipEmail)
     return (
-        <PolicyWrapper>
-            {data.coursePolicy && <PolicyText>{documentToReactComponents(data.coursePolicy.json)}</PolicyText>}
-            <PolicyFooter>
-                Вопросы по обучению пишите: <CopyToClipboard text={'hello@granich.design'}><PolicyFooterEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PolicyFooterEmail></CopyToClipboard>
-            </PolicyFooter>
-        </PolicyWrapper>
+        <EducationQuestionsSection>
+            <Container>
+                <EducationQuestionsWrapper>
+                    Вопросы по обучению пишите: <CopyToClipboard text={'hello@granich.design'}>
+                                                    <EducationQuestionsEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
+                                                        hello@granich.design
+                                                    </EducationQuestionsEmail>
+                                                </CopyToClipboard>
+                </EducationQuestionsWrapper>
+            </Container>
+        </EducationQuestionsSection>
+
     )
 }
 
-export default ParticipationPolicy
+export default EducationQuestions

@@ -97,24 +97,18 @@ const CourseOfferTitle = styled.h1`
         }
     }
     ${props => props.type === 'Мастер-класс' && `
-        margin-bottom: 3vw;
-        margin-top: 4.5vw;
-        margin-left: 0.5vw;
+        margin-bottom: 1.5vw;
+        margin-left: 0vw;
+        margin-top: -0.5vw;
+        line-height: 1.15;
         p {
-            font-size: 4.7vw;
-            letter-spacing: -0.28vw;
-            font-family: Inter;
-            style: normal;
-            font-weight: 700;
+            font-size: 6vw;
+            font-weight: 600;
+            letter-spacing: 0.8vw;
             i { 
                 margin-top: 2vw;
+                font-weight: 500;
                 display: block;
-                letter-spacing: -0.5vw;
-                line-height: inherit;
-                font-style: normal;
-                font-size: 6.5vw;
-                font-weight: inherit;
-                font-family: Inter;
             }
         }
     `}
@@ -129,7 +123,7 @@ const CourseOfferDescr = styled.div`
     letter-spacing: -0.01vw;
     ${props => props.type === 'Мастер-класс' && `
         width: 26vw;
-        margin-bottom: 3vw;
+        margin-bottom: 2vw;
     `}
 `
 
@@ -149,8 +143,8 @@ const CourseOfferButton = styled.a`
   box-shadow: .25vw .25vw .4vw rgba(0,0,0,0.25);
   letter-spacing: 0.05vw;
   svg {
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 1.4vw;
+    height: 1.4vw;
     margin-right: 0.5vw;
   }
   :hover {
@@ -162,9 +156,9 @@ const CourseOfferButton = styled.a`
     letter-spacing: 0.06vw;
   }
   ${props => props.type === 'Мастер-класс' && `
-    padding: 1vw 3vw 1.2vw 3.5vw;
+    padding: 1vw 3vw 1.2vw 4.2vw;
     svg {
-        margin-left: 0.5vw;
+        margin-left: 0.4vw;
     }
   `}
 `
@@ -205,7 +199,7 @@ const CourseOffer = ({data}) => {
                     {data.courseType === 'Курс' ? (
                         <CourseOfferButton onClick={() => scrollTo('#participation-section')}><CourseArrowDown/>Участвовать</CourseOfferButton>
                     ) : (
-                        <CourseOfferButton type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
+                        <CourseOfferButton onClick={() => scrollTo('#prices-range-section')}  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
                     )}
 
                     

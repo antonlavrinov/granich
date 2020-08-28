@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Container } from './style';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image'
@@ -152,9 +152,10 @@ const TeacherSocialIcons = styled.div`
     }
 
 `
-const TeacherEmail = styled.button`
+const TeacherEmail = styled.span`
     font-size: 0.75vw;
     font-weight: 500;
+    display: block;
     color: var(--granich-grey);
     padding-bottom: 0.2vw;
     position: absolute;
@@ -165,8 +166,8 @@ const TeacherEmail = styled.button`
     background: none;
     border-bottom: 0.1vw dotted var(--granich-light-grey);
     :hover {
-        font-size: 0.75vw;
         font-weight: 500;
+        font-size: 0.75vw;
         color: var(--granich-grey);
         cursor: pointer;
         &:before, &:after {
@@ -183,25 +184,17 @@ const TeacherEmail = styled.button`
         transform: translateX(-50%);
         width: 0;
         height: 0;
-
-        
-        // border-left: 5px solid transparent;
-        // border-right: 5px solid transparent;
-        // border-bottom: 5px solid rgba(0,0,0,.72);
-
         //bottom
         border-right: 0.55vw solid transparent;
         border-left: 0.55vw solid transparent;
         border-top: 0.55vw solid var(--granich-black);
-
-        //right
-        // border-bottom: 5px solid transparent;
-        // border-top: 5px solid transparent;
-        // border-left: 5px solid rgba(0,0,0,.72);
+        ${props => props.content === 'Скопировано :)' && `
+            border-top: 0.55vw solid var(--granich-red);
+        `}
     }
 
     &:after {
-        content: 'Скопировать';
+        content: '${props => props.content}';
         display: none;
         position: absolute;
         z-index: 9999;
@@ -214,52 +207,42 @@ const TeacherEmail = styled.button`
         padding: 0.7vw 1vw;
         min-width: 5vw; 
         text-align: center;
-        background: rgba(0,0,0,.95);
+        border-radius: 0.2vw;
+        white-space: nowrap;
         background: var(--granich-black);
-        border-radius: 3px;
-    }
-    
-
-    
-    &:active, :focus {
-        outline: none;
-        
-        &:after {
-            content: 'Скопировано :)';
-            width: 6.5vw; 
+        ${props => props.content === 'Скопировано :)' && `
             background: var(--granich-red);
-        }
-        &:before {
-            border-top-color: var(--granich-red);
-        }
+        `}
+        
+
     }
 
     @media only screen and (max-width: 575px) {
-        font-size: 2.6vw;
-        margin-right: 1vw;
-        padding-bottom: 0.2vw;
-        border-bottom: 0.3vw dotted var(--granich-light-grey);
-        top: 11vw;
+        font-size: 3.8vw;
+        padding-bottom: 0;
         :hover {
-            font-size: 2.6vw;
+            font-size: 3.8vw;
+            border-bottom: solid 0.2vw var(--granich-black);
+
         }
         &:after {
             font-size: 4.5vw;
             padding: 3vw;
             top: -13vw;
+            ${props => props.content === 'Скопировано :)' && `
+                background: var(--granich-red);
+            `}
         }
         &:before {
             top: -3.2vw;
             border-right: 2vw solid transparent;
             border-left: 2vw solid transparent;
             border-top: 2vw solid var(--granich-black);
+            ${props => props.content === 'Скопировано :)' && `
+                border-top: 2vw solid var(--granich-red);
+            `}
         }
-        &:active, :focus {        
-            &:after {
-                width: 35vw; 
-            }
-        }
-    }
+
 `
 const TeacherInfo = styled.div`
 
@@ -331,6 +314,7 @@ const OurTeam = ({data}) => {
 }
 
 const TeacherBlock = ({teacher}) => {
+    const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
 
     return (
         <TeacherWrapper>
@@ -357,7 +341,7 @@ const TeacherBlock = ({teacher}) => {
                         })}
                     </TeacherSocialIcons>
                     <CopyToClipboard text={teacher.teacherEmail}> 
-                        <TeacherEmail>
+                        <TeacherEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
                             <Copy/>{teacher.teacherEmail}
                         </TeacherEmail>
                     </CopyToClipboard>
