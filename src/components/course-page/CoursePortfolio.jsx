@@ -5,7 +5,6 @@ import SwiperCore, { Navigation, Pagination, Thumbs, Controller } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import Modal from 'react-modal';
 import BackgroundImage from 'gatsby-background-image';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
@@ -21,12 +20,18 @@ const PortfolioWrapper = styled.div`
     background: white;
     padding: 5vw 1.8vw;
     border-radius: 0.5vw;
+    ${props => props.masterClass && `
+        padding-bottom: 2vw;
+    `}
 `
 
 const PortfolioHeader = styled.div`
     display: flex;
     margin-bottom: 5vw;
     padding: 0 1.5vw;
+    ${props => props.masterClass && `
+        margin-bottom: 4vw;
+    `}
 `
 
 const PortfolioHeaderTitle = styled.div`
@@ -45,11 +50,15 @@ const PortfolioHeaderTitle = styled.div`
         margin-right: 0;
         margin-bottom: 4vw;
     }
+    ${props => props.masterClass && `
+        margin-bottom: 0;
+    `}
     
 `
 
 const PortfolioTitleAndContent = styled.div`
     min-width: 35.5vw;
+
 ` 
 
 const PortfolioBonusBlock = styled.div`
@@ -120,12 +129,12 @@ const PortfolioOnePagersWrapper = styled.div`
     grid-column-gap: 1.8vw;
     grid-row-gap: 1.8vw;
     padding: 0 1.5vw;
+    margin-bottom: 1.5vw;
 
 `
 
 const PortfolioOnePager = styled(props => <BackgroundImage {...props}/>)`
-    height: 24.5vw;
-    min-height: 24.5vw;
+    height: 23vw;
     width: 100%;
     transition: transform 0.2s ease;
     :hover {
@@ -138,176 +147,116 @@ const PortfolioMiltiPagesWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 1.5vw;
+    grid-row-gap: 1.5vw;
+    padding: 0 1.5vw;
 `
 
 const PortfolioMultiPager = styled.div`
-    width: 10vw;
-    height: 10vw;
-    background: grey;
+    width: 100%;
+    min-width: 100%;
+
+    height: 15vw;
+    background: lightgrey;
 `
 
 const PortfolioMultiPagerWrapper = styled.div`
+
+
+    position: relative;
     position: fixed;
+    // top: 50%;
+    // transform: translateY(-50%);
     top: 0;
     left: 0;
+    height: 15vw;
+    width: 25vw;
+    // height: 100vh;
+    width: 25vw;
+    width: 100vh;
     width: 100%;
     height: 100%;
-    // min-width: 50vw;
+    // padding: 20vw;
+    background: black;
+    display: flex;
+    justify-content: center;
 
 `
 
 const PortfolioMultiPagerSlide = styled(props => <BackgroundImage {...props}/>)`
-        // min-height: 10vw;
+
+        // height: 15vw;
+        width: 150vh;
+        // width: 80vw;
         height: 100%;
-        width: 100%;
-        // min-width: 10vw;
-`
-
-const CarouselSlide = styled.div`
-    width: 10vw;
-    height: 10vw;
-    background: lightgrey;
+        margin: 0 auto;
+        // padding-top: 70%;
 
 `
 
-const Slide = styled(props => <BackgroundImage {...props}/>)`
-    height: 10vw;
-    background: lightgrey;
-    :hover {
-        cursor: pointer;
-    }
-`
 
-Modal.setAppElement(`#___gatsby`);
 
-const CoursePortfolio = ({posters, multiPages}) => {
+
+
+
+const CoursePortfolio = ({posters, multiPages, masterClass}) => {
     // const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     console.log('multi', multiPages)
     return (
         <PortfolioSection>
             <Container>
-                {/* <Modal isOpen={modalIsOpen}
-                        style={{
-                            overlay: {
-                                backgroundColor: "rgba(0, 0, 0, 0.58)",
-                                zIndex: 1000
-                              },
-                            content: {
-                            position: "fixed",
-                            top: "0",
-                            left: "0",
-                            right: "0",
-                            bottom: "0",
-                            margin: "10vw 10vw",
-                            padding: "5vw",
-                            border: 0,
-                            zIndex: 1000
-                            },
-                        }}>
-                    dfsdfsdfs
-                    <button onClick={() => setIsOpen(false)}>close</button>
-                    <PortfolioMiltiPagesWrapper>
+               
+                <PortfolioWrapper masterClass>
+                        
+                            {!masterClass ? (
+                                <PortfolioHeader>
+                                    <PortfolioTitleAndContent>
+                                        <PortfolioHeaderTitle>Вы создадите портфолио</PortfolioHeaderTitle>
+                                        <PortfolioContentInfo>
+                                            <PortfolioContent>
+                                                <PortfolioContentCount>7</PortfolioContentCount>
+                                                <PortfolioContentText>плакатов</PortfolioContentText>
+                                            </PortfolioContent>
+                                            <PortfolioContent>
+                                                <PortfolioContentCount>2</PortfolioContentCount>
+                                                <PortfolioContentText>разворота</PortfolioContentText>
+                                            </PortfolioContent>
+                                            <PortfolioContent>
+                                                <PortfolioContentCount>1</PortfolioContentCount>
+                                                <PortfolioContentText>брошюра</PortfolioContentText>
+                                            </PortfolioContent>
+                                        </PortfolioContentInfo>
+                                    </PortfolioTitleAndContent>
 
-                    
-                    <PortfolioMultiPager>
-                        <PortfolioMultiPagerWrapper>
-                            <Swiper 
-                                id="course-slider-main"
-                                // thumbs={{swiper: thumbsSwiper}}
-                                controller={{control: firstControlledSwiper}}
-                                tag="div"
-                                style={{width: '20vw', height: '20vw'}}
-                                wrapperTag="ul"
-                                slidesPerView={1}
-                                navigation
-                                // onSwiper={setSecondControlledSwiper}
-                                onSlideChange={() => console.log('slide change')}
-                                
-                                >
-                                    {multiPages.edges[indexOfSlider].node.portfolioMedia.map((page, idxx) => {
-                                        console.log(page)
-                                        return (
-                                            <SwiperSlide key={idxx}>
-                                                <PortfolioMultiPagerSlide fluid={page.fluid}></PortfolioMultiPagerSlide>
-                                            </SwiperSlide>
-                                        )
-                                    })}
-                            </Swiper>
-                        </PortfolioMultiPagerWrapper>
 
+                                    <PortfolioBonusBlock>
+                                    <PortfolioBonus>
+                                        <span>9 творческих работ</span>
+                                        Это практический курс. Не просто послушали теорию и разошлись. По ходу курса вы сделаете 9 творческих работ и 1 многостраничный экзамен.
+                                    </PortfolioBonus>
+                                    <PortfolioBonus>
+                                        <span>1 экзаменационный проект</span>
+                                        Мы изучим с нуля Adobe InDesign. Поэтому на экзамене вы будете делать многостраничную публикацию. Разумеется, с уймой обратной связи.
+                                    </PortfolioBonus>
+                                    </PortfolioBonusBlock>
+                                    </PortfolioHeader>
+                            ) : (
+                                <PortfolioHeader masterClass>
+                                    <PortfolioTitleAndContent >
+
+                                        <PortfolioHeaderTitle masterClass>Вы сможете создать макет</PortfolioHeaderTitle>
+                                    </PortfolioTitleAndContent>
                                     
-
-                    </PortfolioMultiPager>
-                    </PortfolioMiltiPagesWrapper>
-                </Modal> */}
-                {/* <Swiper
-                    id="course-slider-main"
-                    thumbs={{swiper: thumbsSwiper}}
-                    controller={{control: secondControlledSwiper}}
-                    tag="div"
-                    wrapperTag="ul"
-                    slidesPerView={1}
-                    navigation
-                    onSwiper={setFirstControlledSwiper}
-                    onSlideChange={() => console.log('slide change')}
-                    >
-                        {slides.map((i, el) => {
-                            return <SwiperSlide key={el}>Slide {i.name}</SwiperSlide>;
-                        })}
-
-
-
-                </Swiper>
-                <Swiper id="course-slider-thumbs" tag="div" wrapperTag="ul" slidesPerView={3} navigation onSwiper={setThumbsSwiper}>
-                    {slides.map((i, el) => {
-                        return <SwiperSlide key={el}>Slide {i.name}</SwiperSlide>;
-                    })}
-
-                </Swiper>
-                <Swiper id="controller" 
-                        onSwiper={setSecondControlledSwiper}
-                        tag="div"
-                        controller={{control: firstControlledSwiper}}
-                        wrapperTag="ul"
-                        navigation
-                        >
-                    {slides.map((i, el) => {
-                        return <SwiperSlide key={el}>Slide {i.name}</SwiperSlide>;
-                    })}
-                </Swiper> */}
-                <PortfolioWrapper>
-                    <PortfolioHeader>
-                        <PortfolioTitleAndContent>
-                            <PortfolioHeaderTitle>Вы создадите портфолио</PortfolioHeaderTitle>
-                            <PortfolioContentInfo>
-                                <PortfolioContent>
-                                    <PortfolioContentCount>7</PortfolioContentCount>
-                                    <PortfolioContentText>плакатов</PortfolioContentText>
-                                </PortfolioContent>
-                                <PortfolioContent>
-                                    <PortfolioContentCount>2</PortfolioContentCount>
-                                    <PortfolioContentText>разворота</PortfolioContentText>
-                                </PortfolioContent>
-                                <PortfolioContent>
-                                    <PortfolioContentCount>1</PortfolioContentCount>
-                                    <PortfolioContentText>брошюра</PortfolioContentText>
-                                </PortfolioContent>
-                            </PortfolioContentInfo>
-                            
-                        </PortfolioTitleAndContent>
-                        <PortfolioBonusBlock>
-                            <PortfolioBonus>
-                                <span>9 творческих работ</span>
-                                Это практический курс. Не просто послушали теорию и разошлись. По ходу курса вы сделаете 9 творческих работ и 1 многостраничный экзамен.
-                            </PortfolioBonus>
-                            <PortfolioBonus>
-                                <span>1 экзаменационный проект</span>
-                                Мы изучим с нуля Adobe InDesign. Поэтому на экзамене вы будете делать многостраничную публикацию. Разумеется, с уймой обратной связи.
-                            </PortfolioBonus>
-                        </PortfolioBonusBlock>
-                    </PortfolioHeader>
-                    <PortfolioOnePagersWrapper>
+                                    <PortfolioBonusBlock>
+                                        <PortfolioBonus>
+                                            <span>Пакет: Макет с нуля</span>
+                                            Если вы купите пакет «Макет с нуля» — вы создание макет с нуля по графсистеме VHS под руководством куратора
+                                        </PortfolioBonus>
+                                    </PortfolioBonusBlock>
+                                    </PortfolioHeader>
+                            )}
+                    
+                    <PortfolioOnePagersWrapper >
                         {posters.edges.map((poster, idx) => {
                             return (
                                 <Zoom key={idx}>
@@ -318,39 +267,38 @@ const CoursePortfolio = ({posters, multiPages}) => {
                         })}
 
                     </PortfolioOnePagersWrapper>
-                    {/* <PortfolioMiltiPagesWrapper>
-                        {multiPages.edges.map((multi, idx) => {
-                            return (
-                                <PortfolioMultiPager key={idx} onClick={() => {setIndexOfSlider(idx);console.log(idx); setIsOpen(true)}}>
-                                    <PortfolioMultiPagerWrapper>
-                                    <Swiper
-                                        id="course-slider-main"
-                                        thumbs={{swiper: thumbsSwiper}}
-                                        // controller={{control: secondControlledSwiper}}
-                                        tag="div"
-                                        style={{width: '20vw', height: '20vw'}}
-                                        wrapperTag="ul"
-                                        slidesPerView={1}
-                                        navigation
-                                        onSwiper={setFirstControlledSwiper}
-                                        onSlideChange={() => console.log('slide change')}
-                                        
-                                        >
-                                            {multi.node.portfolioMedia.map((page, idxx) => {
-                                                console.log(page)
-                                                return (
-                                                    <SwiperSlide key={idxx}>
-                                                        <PortfolioMultiPagerSlide fluid={page.fluid}></PortfolioMultiPagerSlide>
-                                                    </SwiperSlide>
-                                                )
-                                            })}
-                                    </Swiper>
-                                    </PortfolioMultiPagerWrapper>
-                                </PortfolioMultiPager>
+                    {/* {multiPages && (
+                        <PortfolioMiltiPagesWrapper>
+                            {multiPages.edges.map((multi, idx) => {
+                                return (
+                                    <PortfolioMultiPager key={idx}>
+                                        <PortfolioMultiPagerWrapper >
+                                            <Swiper
+                                                id="course-slider-main"
+                                                
+                                                style={{width: '100%', height: '100%'}}
+                                                wrapperTag="ul"
+                                                slidesPerView={1}
+                                                navigation
+                                                onSlideChange={() => console.log('slide change')}
+                                                >
+                                                    {multi.node.portfolioMedia.map((page, idxx) => {
+                                                        
+                                                        return (
+                                                            <SwiperSlide  key={idxx}>
+                                                                <PortfolioMultiPagerSlide fluid={page.fluid}></PortfolioMultiPagerSlide>
+                                                            </SwiperSlide>
+                                                        )
+                                                    })}
+                                            </Swiper>
+                                        </PortfolioMultiPagerWrapper>
+                                    </PortfolioMultiPager>
 
-                            )
-                        })}
-                    </PortfolioMiltiPagesWrapper> */}
+                                )
+                            })}
+                        </PortfolioMiltiPagesWrapper>
+                    )} */}
+                    
                 </PortfolioWrapper>
             </Container>
         </PortfolioSection>
@@ -358,6 +306,9 @@ const CoursePortfolio = ({posters, multiPages}) => {
 }
 
 export default CoursePortfolio
+
+
+
 
 
                 {/* <Carousel style={{height: '20vw'}} wrapAround={true}

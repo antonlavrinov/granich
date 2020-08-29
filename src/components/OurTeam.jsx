@@ -313,7 +313,7 @@ const OurTeam = ({data}) => {
     )
 }
 
-const TeacherBlock = ({teacher}) => {
+export const TeacherBlock = ({teacher}) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
 
     return (

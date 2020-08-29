@@ -9,6 +9,8 @@ import CourseReviews from "../components/course-page/CourseReviews"
 import CoursePriceRange from "../components/course-page/CoursePriceRange"
 import {graphql} from 'gatsby';
 import EducationQuestions from "../components/EducationQuestions";
+import CourseAuthors from "../components/course-page/CourseAuthors";
+import MasterClassExample from '../components/course-page/MasterClassExample';
 
 
 
@@ -28,6 +30,7 @@ export const contentfulQuery = graphql`
                     ...GatsbyContentfulFluid
                     }
                 }
+                
 
         }
         VHSexplanations: allContentfulGranichCourseExplanations(filter: {explanationsAttachmentTo: {eq: "Графсистема VHS"}}, sort: {fields: [explanationsOrderNumber], order: ASC}) {
@@ -46,6 +49,30 @@ export const contentfulQuery = graphql`
 
             }
           }
+        }
+        VHSteam: allContentfulGranichMainTeachers(filter: {teacherName: {in: ["Вадим Гранич", "Елизавета Черникова"]}}, sort: {fields: [teacherOrderNumber], order: ASC}) {
+          edges {
+            node {
+              id
+              teacherDescr {
+                json
+              }
+              teacherEmail
+              teacherImage {
+                fluid(maxWidth: 250) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              teacherName
+              teacherSocialInstagram
+              teacherSocialPinterest
+              teacherSocialTelegram
+              teacherSocialVK
+              teacherSocialsOrder
+              
+            }
+
+            }
         }
         VHSportfolioPosters: allContentfulGranichCoursePortfolio(filter: {portfolioAttachmentTo: {eq: "Графсистема VHS"} portfolioType: {eq: "Одностраничный"}}, sort: {fields: [portfolioOrderNumber], order: ASC}) {
           edges {
@@ -96,7 +123,9 @@ const GraphicSystemVhsPage = ({data}) => (
     <SEO title="Графсистема VHS" />
     <CourseOffer data={data.VHSoffer}/>
     <CourseExplanations data={data.VHSexplanations}/>
-    <CoursePortfolio posters={data.VHSportfolioPosters}/>
+    <CourseAuthors data={data.VHSteam}/>
+    <MasterClassExample/>
+    <CoursePortfolio masterClass posters={data.VHSportfolioPosters}/>
     <CourseReviews data={data.VHSreviews}/>
     <CoursePriceRange data={data.VHSPricesRange}/>
     <EducationQuestions/>
