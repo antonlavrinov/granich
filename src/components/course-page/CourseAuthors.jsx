@@ -4,7 +4,7 @@ import { Container } from '../style';
 import styled from 'styled-components';
 
 const AuthorsSection = styled.section`
-    margin-bottom: 5vw;
+    margin-bottom: 4vw;
 `
 
 const AuthorsWrapper = styled.section`

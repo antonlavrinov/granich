@@ -28,7 +28,7 @@ const Date = styled(props => <DateIcon {...props}/>)`
 
 const CourseOfferSection = styled.section`
     padding-top: 8.4vw;
-    margin-bottom: 5vw;
+    margin-bottom: 4vw;
 
 
 `

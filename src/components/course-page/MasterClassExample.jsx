@@ -6,7 +6,7 @@ import BackgroundImage from 'gatsby-background-image';
 
 
 const ExampleSection = styled.section`
-    margin-bottom: 5vw;
+    margin-bottom: 4vw;
 `
 const ExampleWrapper = styled.div`
     display: flex;

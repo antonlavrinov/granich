@@ -456,8 +456,8 @@ ul, li {
 .course-form-label:before {
     content: '';
     display: block;
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 1.3vw;
+    height: 1.3vw;
     margin-left: -1vw;
     margin-right: 0.5vw;
     // background: black;
@@ -475,16 +475,17 @@ ul, li {
 .course-form-checkbox:checked + label::before {
     color: var(--granich-red);
     content: '✓';
+    letter-spacing: -0.05vw;
     text-align: center;
-    line-height: 0.5;
+    line-height: 0.4;
     background: white;
     font-family: 'EB Garamond';
     // padding-left: 0.1vw;
     font-family: 'Inter';
     font-weight: 600;
-    font-size: 2.1vw;
-    width: 1.5vw;
-    height: 1.5vw;
+    font-size: 2vw;
+    width: 1.3vw;
+    height: 1.3vw;
 }
 
 .section-top-block {

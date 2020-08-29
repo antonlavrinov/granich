@@ -1,14 +1,14 @@
 import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
-import Img from "gatsby-image";
+import BackgroundImage from "gatsby-background-image";
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 
 
 
 const ExplanationsSection = styled.section`
-    margin-bottom: 5vw;
+    margin-bottom: 4vw;
 `
 
 
@@ -34,7 +34,7 @@ const ExplanationsBlockTitle = styled.div`
     font-style: italic;
     font-weight: 500;
     width: 14vw;
-    margin-bottom: 2.5vw;
+    margin-bottom: 1.5vw;
     margin-left: 1.5vw;
 
     :before {
@@ -51,16 +51,12 @@ const ExplanationsBlockTitle = styled.div`
 
     }
 `
-const ExplanationsBlockImage = styled.div`
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 17vw;
-    margin-bottom: 2.2vw;
 
-`
-const ExplanationsImage = styled(props => <Img {...props}/>)`
-    width: 88%;
+const ExplanationsImage = styled(props => <BackgroundImage {...props}/>)`
+    width: 100%;
+    height: 19vw;
+    margin-bottom: 1.5vw;
+    
 `
 
 const ExplanationsBlockTextBlock = styled.div`
@@ -110,9 +106,7 @@ const ExplanationsBlock = ({image, title, text }) => {
     return (
         <ExplanationsBlockWrapper>
             <ExplanationsBlockTitle>{title}</ExplanationsBlockTitle>
-            <ExplanationsBlockImage>
-                <ExplanationsImage fluid={image}/>
-            </ExplanationsBlockImage>
+                <ExplanationsImage style={{backgroundSize: 'auto 100%'}} fluid={image}></ExplanationsImage>
             <ExplanationsBlockTextBlock>
                 <ExplanationsBlockTextLine>
                     <ExplanationsBlockRedLine/>

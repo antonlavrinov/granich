@@ -12,7 +12,7 @@ import 'react-medium-image-zoom/dist/styles.css'
 SwiperCore.use([Navigation, Pagination, Thumbs, Controller]);
 
 const PortfolioSection = styled.section`
-    margin-bottom: 50px;
+    margin-bottom: 4vw;
 `
 
 

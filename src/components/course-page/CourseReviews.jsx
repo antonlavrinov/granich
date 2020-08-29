@@ -21,7 +21,7 @@ const TelegramOut = styled(props => <TelegramLinkOut {...props}/>)`
 `
 
 const ReviewsSection = styled.section`
-    margin-bottom: 50px;
+    margin-bottom: 4vw;
 `
 
 
@@ -58,7 +58,7 @@ const ReviewWrapper = styled.div`
     border-radius: 0.5vw;
     background: white;
     border-radius: 0.5vw;
-    box-shadow: 0 0 0.6vw rgba(0,0,0,0.25);
+    box-shadow: 0.1vw 0 0.5vw rgba(0,0,0,0.15);
 `
 
 const ReviewButton = styled.a`
@@ -148,6 +148,10 @@ const ReviewsLinkTelegram = styled.a`
         cursor: pointer;
         color: white;
     }
+    ${props => props.masterClass && `
+        padding: 1vw 1vw;
+        margin: 0 auto;
+    `}
 `
 const ReviewsLinkVk = styled.a`
     font-size: 1.25vw;
@@ -189,13 +193,18 @@ const Review = ({image, link}) => {
 }
 
 
-const CourseReviews = ({data}) => {
+const CourseReviews = ({data, masterClass}) => {
 
     return (
         <ReviewsSection>
             <Container>
                 <ReviewsWrapper>
-                    <ReviewsTitle>Свежие отзывы о курсе</ReviewsTitle>
+                    {!masterClass ? (
+                        <ReviewsTitle>Свежие отзывы о курсе</ReviewsTitle>
+                    ) : (
+                        <ReviewsTitle>Отзывы о мастер-классе</ReviewsTitle>
+                    )}
+                    
                     <ReviewsList>
                         {data.edges.map((review) => {
                             return (
@@ -204,11 +213,20 @@ const CourseReviews = ({data}) => {
                         })}
                     </ReviewsList>
                     <ReviewsFooter>
-                        <ReviewsFooterTitle>Все отзывы о курсе:</ReviewsFooterTitle>
-                        <ReviewsLinks>
-                            <ReviewsLinkTelegram target="_blank" href={'https://vk.com/vadim_granich'}>Все свежие отзывы → ТГ</ReviewsLinkTelegram>
-                            <ReviewsLinkVk target="_blank" href={'https://vk.com/vadim_granich'}><div>Архив отзывов → ВК</div><div>На стене Вадима Гранича</div></ReviewsLinkVk>
-                        </ReviewsLinks>
+                        {!masterClass ? (
+                            <>
+                                <ReviewsFooterTitle>Все отзывы о курсе:</ReviewsFooterTitle>
+                                <ReviewsLinks>
+                                    <ReviewsLinkTelegram target="_blank" href={'https://vk.com/vadim_granich'}>Все свежие отзывы → ТГ</ReviewsLinkTelegram>
+                                    <ReviewsLinkVk target="_blank" href={'https://vk.com/vadim_granich'}><div>Архив отзывов → ВК</div><div>На стене Вадима Гранича</div></ReviewsLinkVk>
+                                </ReviewsLinks>
+                            </>
+                          
+                        ) : (
+
+                            <ReviewsLinkTelegram masterClass target="_blank" href={'https://vk.com/vadim_granich'}>Все свежие отзывы → ТГ</ReviewsLinkTelegram>
+                        )}
+
 
                     </ReviewsFooter>
                 </ReviewsWrapper>
