@@ -23,6 +23,10 @@ const PortfolioWrapper = styled.div`
     ${props => props.masterClass && `
         padding-bottom: 2vw;
     `}
+    @media only screen and (max-width: 575px) {
+        border-radius: 3vw;
+        padding: 6vw;
+    }
 `
 
 const PortfolioHeader = styled.div`
@@ -32,6 +36,12 @@ const PortfolioHeader = styled.div`
     ${props => props.masterClass && `
         margin-bottom: 4vw;
     `}
+    @media only screen and (max-width: 575px) {
+        border-radius: 3vw;
+        padding: 0;
+        flex-direction: column;
+        margin-bottom: 6.5vw;
+    }
 `
 
 const PortfolioHeaderTitle = styled.div`
@@ -43,21 +53,25 @@ const PortfolioHeaderTitle = styled.div`
     margin-top: -0.6vw;
     margin-bottom: 4.5vw;
 
-    @media only screen and (max-width: 575px) {
-        font-size: 11.9vw;
-        letter-spacing: -0.7vw;
-        line-height: 1;
-        margin-right: 0;
-        margin-bottom: 4vw;
-    }
+
     ${props => props.masterClass && `
         margin-bottom: 0;
+        @media only screen and (max-width: 575px) {
+            font-size: 11vw;
+            letter-spacing: -0.7vw;
+            line-height: 1;
+            margin-right: 0;
+            margin-bottom: 6vw;
+        }
     `}
     
 `
 
 const PortfolioTitleAndContent = styled.div`
     min-width: 35.5vw;
+    @media only screen and (max-width: 575px) {
+        min-width: auto;
+    }
 
 ` 
 
@@ -81,6 +95,11 @@ const PortfolioBonus = styled.div`
         font-size: inherit;
         font-weight: 500;
         display: block;
+    }
+    @media only screen and (max-width: 575px) {
+        border-radius: 1.5vw;
+        padding: 3vw 3.3vw;
+        font-size: 3.7vw;
     }
 `
 const PortfolioContent = styled.div`
@@ -130,6 +149,13 @@ const PortfolioOnePagersWrapper = styled.div`
     grid-row-gap: 1.8vw;
     padding: 0 1.5vw;
     margin-bottom: 1.5vw;
+    @media only screen and (max-width: 575px) {
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+        grid-column-gap: 3vw;
+        grid-row-gap: 3vw;
+        margin-bottom: 0;
+    }
 
 `
 
@@ -139,7 +165,9 @@ const PortfolioOnePager = styled(props => <BackgroundImage {...props}/>)`
     transition: transform 0.2s ease;
     :hover {
         transform: scale(1.05);
-        cursor: pointer;
+    }
+    @media only screen and (max-width: 575px) {
+        height: 53vw;
     }
 `
 

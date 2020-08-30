@@ -9,19 +9,22 @@ import TelegramLinkOut from '../../assets/svgs/telegram-small-icon.svg';
 const Telegram = styled(props => <TelegramIcon {...props}/>)`
     width: 2.3vw;
     @media only screen and (max-width: 575px) {
-        width: 6.5vw;
+        width: 7.5vw;
     }
 `
 
 const TelegramOut = styled(props => <TelegramLinkOut {...props}/>)`
     width: 2.3vw;
     @media only screen and (max-width: 575px) {
-        width: 6.5vw;
+        width: 7.5vw;
     }
 `
 
 const ReviewsSection = styled.section`
     margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 `
 
 
@@ -29,6 +32,10 @@ const ReviewsWrapper = styled.div`
     background: #E8E8E8;
     padding: 4.6vw 3vw 3vw;
     border-radius: 0.6vw;
+    @media only screen and (max-width: 575px) {
+        border-radius: 3vw;
+        padding: 5vw 6vw 6vw;
+    }
 `
 
 const ReviewsTitle = styled.div`
@@ -39,10 +46,10 @@ const ReviewsTitle = styled.div`
     line-height: 1;
     margin-bottom: 3vw;
     @media only screen and (max-width: 575px) {
-        font-size: 11.9vw;
+        font-size: 11vw;
         letter-spacing: -0.7vw;
         line-height: 1;
-        margin-bottom: 4vw;
+        margin-bottom: 7vw;
     }
 `
 
@@ -52,13 +59,23 @@ const ReviewsList = styled.div`
     grid-column-gap: 1.65vw;
     grid-row-gap: 1.65vw;
     margin-bottom: 3vw;
+    @media only screen and (max-width: 575px) {
+        grid-template-columns: 1fr;
+        grid-column-gap: 5vw;
+        grid-row-gap: 5vw;
+        margin-bottom: 5vw;
+    }
 `
 
 const ReviewWrapper = styled.div`
-    border-radius: 0.5vw;
     background: white;
     border-radius: 0.5vw;
     box-shadow: 0.1vw 0 0.5vw rgba(0,0,0,0.15);
+    @media only screen and (max-width: 575px) {
+        border-radius: 1.5vw;
+        box-shadow: 0.4vw 0.4vw 1.5vw rgba(0,0,0,0.15);
+    }
+
 `
 
 const ReviewButton = styled.a`
@@ -77,14 +94,18 @@ const ReviewButton = styled.a`
         padding-bottom: 0.1vw;
         font-size: 1.05vw;
     }
-    svg {
-
-    }
     :hover {
         cursor: pointer;
         span{
-            // color: var(--granich-grey);
             border-bottom: 1.5px dotted #f2f2f2;
+        }
+    }
+    @media only screen and (max-width: 575px) {
+        padding: 2.5vw 8.8vw 3.5vw;
+        border-radius: 0 0 1.5vw 1.5vw;
+        span {
+            padding-bottom: 0.1vw;
+            font-size: 3.7vw;
         }
     }
 `
@@ -100,6 +121,16 @@ const ReviewButtonIcons = styled.div`
             margin-right: -0.4vw;
         }
     }
+    @media only screen and (max-width: 575px) {
+        svg {
+            :first-child {
+                margin-right: -1.3vw;
+            }
+        }
+    }
+    @media only screen and (max-width: 575px) {
+        margin-top: 1vw;
+    }
 `
 
 const ReviewImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
@@ -107,6 +138,11 @@ const ReviewImage = styled(props => <BackgroundImage {...props}></BackgroundImag
     min-height: 16vw;
     overflow: hidden;
     border-radius: 0.5vw 0.5vw 0 0;
+    @media only screen and (max-width: 575px) {
+        height: 58.5vw;
+        min-height: 58.5vw;
+        border-radius: 1.5vw 1.5vw 0 0;
+    }
 `
 
 const ReviewsFooter = styled.div`
@@ -115,6 +151,10 @@ const ReviewsFooter = styled.div`
     background: #dedede;
     border-radius: 0.5vw;
     padding: 1vw 3vw;
+    @media only screen and (max-width: 575px) {
+        border-radius: 1.5vw;
+        padding: 3.5vw 3vw;
+    }
 `
 
 const ReviewsFooterTitle = styled.div`
@@ -151,7 +191,17 @@ const ReviewsLinkTelegram = styled.a`
     ${props => props.masterClass && `
         padding: 1vw 1vw;
         margin: 0 auto;
+        @media only screen and (max-width: 575px) {
+            font-size: 3.9vw;
+            border-radius: 1.3vw;
+            padding: 3.2vw 3vw;
+            box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
+            :hover {
+                font-size: 3.9vw;
+            }
+        }
     `}
+
 `
 const ReviewsLinkVk = styled.a`
     font-size: 1.25vw;

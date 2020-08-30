@@ -5,7 +5,10 @@ import commitmentGIF from '../../assets/images/graph-design/commitment/commitmen
 // import commitmentVideo from '../../assets/images/graph-design/commitment/ezgif.com-gif-to-mp4.mp4';
 
 const CommitmentSection = styled.section`
-    margin-bottom: 5vw;
+    margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 `
 const CommitmentWrapper = styled.div`
     display: flex;

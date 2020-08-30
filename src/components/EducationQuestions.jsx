@@ -17,6 +17,13 @@ const EducationQuestionsWrapper = styled.div`
     color: #666666;
     font-weight: 500;
     text-align: center;
+    margin-bottom: 2vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.8vw;
+        border-radius: 3vw;
+        padding: 4vw 0;
+        line-height: 1.25;
+    }
 
 `
 
@@ -80,6 +87,8 @@ const EducationQuestionsEmail = styled.span`
     @media only screen and (max-width: 575px) {
         font-size: 3.8vw;
         padding-bottom: 0;
+        display: inline-block;
+        border-bottom: solid 0.2vw var(--granich-light-grey);
         :hover {
             font-size: 3.8vw;
             border-bottom: solid 0.2vw var(--granich-black);

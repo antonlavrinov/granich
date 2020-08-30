@@ -22,16 +22,34 @@ const ExampleWrapper = styled.div`
         margin: 0 auto;
         margin-top: 2vw;
     }
+    @media only screen and (max-width: 575px) {
+        border-radius: 3vw;
+        padding: 6vw 6vw 7.5vw;
+    }
 `
 
 const ExampleHeader = styled.div`
     display: flex;
     margin-bottom: 5vw;
+    @media only screen and (max-width: 575px) {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10vw;
+    }
 `
 const ExampleAuthor = styled.div`
     min-width: 8vw;
     margin-right: 3vw;
     line-height: 1.4;
+    @media only screen and (max-width: 575px) {
+        margin-right: 0;
+        min-width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3.5vw;
+    }
     
 `
 
@@ -41,6 +59,12 @@ const ExampleAuthorImage = styled(props => <BackgroundImage {...props}></Backgro
     border-radius: 100vw;
     // margin-bottom: 2vw;
     overflow: hidden;
+    @media only screen and (max-width: 575px) {
+        width: 15vw;
+        height: 15vw;
+        width: 23vw;
+        height: 23vw;
+    }
 
 `
 const ExampleAuthorName = styled.div`
@@ -48,6 +72,12 @@ const ExampleAuthorName = styled.div`
     margin-left: -0.2vw;
     font-weight: 500;
     margin-top: 0.9vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 5vw;
+        margin-left: 0;
+        font-size: 3.7vw;
+        margin-top: 1.5vw;
+    }
 `
 
 
@@ -56,7 +86,6 @@ const ExampleTitle = styled.div`
     font-style: italic;
     font-weight: 500;
     font-size: 5.2vw;
-    // width: 600px;
     line-height: 1.04;
     position: relative;
     margin-top: -0.8vw;
@@ -76,20 +105,47 @@ const ExampleTitle = styled.div`
         top: 0.2vw;
         left: -3.5vw;
     }
+    @media only screen and (max-width: 575px) {
+        font-size: 7.4vw;
+        margin-top: 0;
+        margin-left:0;
+        letter-spacing: -0.15vw;
+        text-align: center;
+        :after {
+            margin-left: 0.2vw;
+            margin-top: 0.1vw;
+            font-size: 7.4vw;
+    
+        }
+        :before {
+            font-size: 5vw;
+            top: 0.2vw;
+            left: -2.5vw;
+            font-size: 7.4vw;
+        }
+    }
 `
 
 const ExampleInfoWrapper = styled.div`
     display: flex;
     justify-content: space-between;
+    @media only screen and (max-width: 575px) {
+        flex-direction: column;
+    }
 
 `
 const ExampleImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     min-width: 38vw;
     height: 14vw;
-    margin-bottom: 0;
     background-size: cover;
     margin-right: 2.5vw;
     margin-left: -0.5vw;
+    @media only screen and (max-width: 575px) {
+        margin-right:0;
+        margin-left: 0;
+        height: 29vw;
+        margin-bottom: 3.5vw;
+    }
 `
 const ExampleInfoText = styled.div`
     color: var(--granich-grey);
@@ -99,6 +155,9 @@ const ExampleInfoText = styled.div`
         display: block;
         font-weight: 500;
         margin-bottom: 0.5vw;
+    }
+    @media only screen and (max-width: 575px) {
+        font-size: 3.8vw;
     }
 `
 

@@ -17,6 +17,10 @@ const ExplanationsWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 1.5vw;
     grid-row-gap: 1.5vw;
+    @media only screen and (max-width: 575px) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 5vw;
+    }
 `
 
 const ExplanationsBlockWrapper = styled.div`
@@ -24,6 +28,10 @@ const ExplanationsBlockWrapper = styled.div`
     border-radius: 0.5vw;
     padding: 2.3vw 1.7vw 2.3vw;
     position: relative;
+    @media only screen and (max-width: 575px) {
+        padding: 6.2vw;
+        border-radius: 3vw;
+    }
     
 
 `
@@ -47,8 +55,19 @@ const ExplanationsBlockTitle = styled.div`
         height: 0.68vw;
         border-radius: 100vw;
         transform: translateX(-50%);
-        font-size: 1vw;
 
+    }
+    @media only screen and (max-width: 575px) {
+        font-size: 7.5vw;
+        width: 80%;
+        margin-bottom: 4vw;
+        :before {
+            top: 8vw;
+            right: 6vw;
+            width: 2vw;
+            height: 2vw;
+    
+        }
     }
 `
 
@@ -56,6 +75,10 @@ const ExplanationsImage = styled(props => <BackgroundImage {...props}/>)`
     width: 100%;
     height: 19vw;
     margin-bottom: 1.5vw;
+    @media only screen and (max-width: 575px) {
+        height: 60vw;
+        margin-bottom: 6vw;
+    }
     
 `
 
@@ -69,36 +92,59 @@ const ExplanationsBlockText = styled.div`
         color: var(--granich-grey);
         font-size: 1.15vw;
         letter-spacing: -0.01vw;
+        position: relative;
         b {
             color: var(--granich-black);
             font-weight: 500;
+            display: block;
+            :before {
+                content: '';
+                width: 0.15vw;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: -1vw;  
+                background: var(--granich-red);
+            }
         }
 
     }
+    @media only screen and (max-width: 575px) {
+        p {
+            font-size: 3.7vw;  
+            padding-left: 3vw; 
+            margin-left: -1.5vw;
+            b {
+                margin-bottom: 1vw;
+                :before {
+                    width: 0.4vw;
+                    left: -1.4vw; 
+                }
+                
+            }
+        }
+    }
 `
 
-const ExplanationsBlockTextTitle = styled.div`
-    letter-spacing: inherit;
-    font-weight: 500;
-    font-size: inherit;
-`
 
 const ExplanationsBlockTextLine = styled.div`
-    // width: 25%;
     margin-right: 0.9vw;
     margin-left: 0.5vw;
+    @media only screen and (max-width: 575px) {
+        margin-right: 2.5vw;
+        margin-left: -1.2vw;
+    }
+
+
 `
 
-const ExplanationsBlockRedLine = styled.div`
-    height: 23%;
-    background: var(--granich-red);
-    width: 0.1vw;
-
-`
 const ExplanationsBlockGreyLine = styled.div`
-    height: 77%;
+    height: 100%;
     background: #E2E2E2;
     width: 0.1vw;
+    @media only screen and (max-width: 575px) {
+        width: 0.4vw;
+    }
 `
 
 const ExplanationsBlock = ({image, title, text }) => {
@@ -109,7 +155,6 @@ const ExplanationsBlock = ({image, title, text }) => {
                 <ExplanationsImage style={{backgroundSize: 'auto 100%'}} fluid={image}></ExplanationsImage>
             <ExplanationsBlockTextBlock>
                 <ExplanationsBlockTextLine>
-                    <ExplanationsBlockRedLine/>
                     <ExplanationsBlockGreyLine/>
                 </ExplanationsBlockTextLine>
                 <ExplanationsBlockText>

@@ -7,7 +7,10 @@ import Zoom from 'react-medium-image-zoom'
 
 
 const TrainingPathSection = styled.section`
-    margin-bottom: 50px;
+    margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 `
 
 
@@ -17,6 +20,9 @@ const TrainingPathWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 1.5vw;
     grid-row-gap: 1.5vw;
+        @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 `
 
 const TrainingPathBlockWrapper = styled.div`

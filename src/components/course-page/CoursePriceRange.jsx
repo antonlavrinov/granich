@@ -5,6 +5,9 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 const PriceRangeSection = styled.section`
     margin-bottom: 2vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 4vw;
+    }
 `
 
 
@@ -13,6 +16,11 @@ const PriceRangeWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 1.5vw;
     grid-row-gap: 1.5vw;
+    @media only screen and (max-width: 575px) {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 3vw;
+        grid-row-gap: 3vw;
+    }
 `
 
 const PriceCategory = styled.div`
@@ -46,10 +54,17 @@ const PriceCategory = styled.div`
         }
         
     }
+    @media only screen and (max-width: 575px) {
+        border-radius: 3vw;
+        box-shadow: 0.5vw 0.5vw 1.5vw rgba(0,0,0,0.15);
+    }
 `
 
 const PriceCategoryHeader = styled.div`
     padding: 1.4vw 0 1.8vw;
+    @media only screen and (max-width: 575px) {
+        padding: 4vw 0;
+    }
 `
 
 const PriceCategoryTitle = styled.div`
@@ -58,6 +73,9 @@ const PriceCategoryTitle = styled.div`
     font-style: italic;
     font-weight: 500;
     text-align: center;
+    @media only screen and (max-width: 575px) {
+        font-size: 5.5vw;
+    }
 `
 
 const PriceCategoryList = styled.div`
@@ -112,18 +130,10 @@ const PriceCategoryList = styled.div`
         letter-spacing: -0.01vw;
         color: var(--granich-light-grey);
         color: #d8d8d8;
-        // padding-bottom: 0.3vw;
-        // border-bottom: 1.5px dashed #dedede;
         display: block;
 
-
-
-
-
         i {
-            color: white;
             color: var(--granich-light-grey);
-            // color: var(--granich-grey);
             display: none;
             letter-spacing: 0;
             position: absolute;
@@ -131,17 +141,14 @@ const PriceCategoryList = styled.div`
             bottom: 3.5vw;
             right: -26%;
             background: var(--granich-black);
-            // background: white;
             padding: 1vw;
             border-left: none;
             z-index: 9999;
-            // transform: translateY(-50%);
             box-shadow: 0 0.3vw 0.5vw rgba(0,0,0,0.2);
             border-radius: 0.2vw;
             font-size: 0.9vw;
             line-height: 1.2;
             font-style: normal;
-            // letter-spacing: -0.01vw;
             :before {
                 content: '';
                 position: absolute;
@@ -151,7 +158,6 @@ const PriceCategoryList = styled.div`
                 transform: translateX(-50%);
                 width: 0;
                 height: 0;
-                // box-shadow: 0 0 1vw rgba(0,0,0,0.25);
                 //bottom
                 border-right: 0.55vw solid transparent;
                 border-left: 0.55vw solid transparent;
@@ -172,23 +178,71 @@ const PriceCategoryList = styled.div`
         }
 
         b {
-
             font-weight: 500;
             display: block;
             letter-spacing: 0;
-            
             :before {
                 content: '';
                 position: absolute;
                 width: 0.15vw;
-                // border-left: 0.15vw solid red;
                 height: 100%;
                 background: red;
-
                 top: 0;
                 left: 0;
             }
 
+        }
+    }
+    @media only screen and (max-width: 575px) {
+        li {
+            :first-child {
+                border-top: 1px solid #dedede;
+            }
+            :hover {
+                box-shadow: 0 0.1vw 0.5vw rgba(0,0,0,0.15);
+            }
+            :after {
+                top: 22%;
+                right: 3.5%;
+                width: 3.5vw;
+                height: 3.5vw;
+                font-size: 3vw;      
+            } 
+        }
+        p {
+            padding: 2vw 1vw 2vw 3vw;
+            border-bottom: 1px solid #dedede;
+            font-size: 2.6vw;
+            letter-spacing: -0.08vw;
+            i {
+                width: 65%;
+                bottom: 10vw;
+                right: 0%;
+                padding: 3vw;
+                box-shadow: 0 0.3vw 0.5vw rgba(0,0,0,0.2);
+                border-radius: 0.2vw;
+                font-size: 2.7vw;
+                :before {
+                    bottom: -1.4vw;
+                    left: auto;
+                    right: 0;
+                    transform: translateX(-50%);
+                    //bottom
+                    border-right: 1.5vw solid transparent;
+                    border-left: 1.5vw solid transparent;
+                    border-top: 1.5vw solid var(--granich-black);
+                }
+    
+            }
+    
+            b {
+                letter-spacing: -0.08vw;
+                :before {
+                    width: 1.5px;
+                    height: 100%;
+                }
+    
+            }
         }
     }
 `
@@ -196,11 +250,15 @@ const PriceCategoryList = styled.div`
 
 const PriceCategoryFooter = styled.footer`
     background: #dedede;
-    // background: #f2f2f2;
     padding: 1vw 1.4vw;
     display: flex;
     flex-direction: column;
     border-radius: 0 0 0.5vw 0.5vw;
+    @media only screen and (max-width: 575px) {
+        padding: 2.5vw 3vw;
+        border-radius: 0 0 3vw 3vw;
+        
+    }
 `
 const PriceCategoryButton = styled.a`
     display: block;
@@ -224,12 +282,26 @@ const PriceCategoryButton = styled.a`
         font-weight: 400;
         transform: scale(1.05);
     }
+    @media only screen and (max-width: 575px) {
+        border-radius: 1vw;
+        font-size: 7vw;
+        padding: 1vw 0 1.3vw;
+        box-shadow: 0.7vw 0.7vw 1.5vw rgba(0,0,0,0.3);
+        margin-bottom: 1.5vw;
+        :hover {
+            font-size: 7vw;
+            
+        }
+    }
 `
 const PriceCategorySubtext = styled.div`
     text-align: center;
     font-size: 0.8vw;
     font-weight: 500;
     letter-spacing: 0;
+    @media only screen and (max-width: 575px) {
+        font-size: 2vw;
+    }
 `
 
 const PriceCategoryPackage = styled.div`
@@ -240,6 +312,11 @@ const PriceCategoryPackage = styled.div`
     font-weight: 600;
     font-family: Inter;
     margin-bottom: 0.6vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 2vw;
+        letter-spacing: 1vw;
+        margin-bottom: 1vw;
+    }
 `
 
 const CoursePriceRange = ({data}) => {

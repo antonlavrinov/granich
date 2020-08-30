@@ -194,6 +194,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
   <Layout>
     <Header type={'dark'}/>
     <SEO title="Осознанный графдизайн" />
+    <div className="section-top-block"></div>
     <CourseOffer data={data.offer}/>
     <CourseExplanations data={data.explanations}/>
     <CourseExample/>

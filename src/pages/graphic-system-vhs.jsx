@@ -120,6 +120,7 @@ export const contentfulQuery = graphql`
 const GraphicSystemVhsPage = ({data}) => (
   <Layout>
     <Header type={'dark'}/>
+    <div className="section-top-block"></div>
     <SEO title="Графсистема VHS" />
     <CourseOffer data={data.VHSoffer}/>
     <CourseExplanations data={data.VHSexplanations}/>

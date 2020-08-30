@@ -6,6 +6,7 @@ import PotokIcon from '../../assets/svgs/graph-design/graph-design-potok-icon.sv
 import DurationIcon from '../../assets/svgs/graph-design/graph-design-duration-icon.svg';
 import DateIcon from '../../assets/svgs/graph-design/graph-design-date-icon.svg';
 import BackgroundImage from 'gatsby-background-image';
+import Img from 'gatsby-image';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
@@ -27,7 +28,6 @@ const Date = styled(props => <DateIcon {...props}/>)`
 `
 
 const CourseOfferSection = styled.section`
-    padding-top: 8.4vw;
     margin-bottom: 4vw;
 
 
@@ -44,14 +44,37 @@ const CourseOfferWrapper = styled(props => <BackgroundImage {...props}></Backgro
     background-size: auto 100%;
     background-position: right;
     overflow: hidden;
+    @media only screen and (max-width: 575px) {
+        display: none;
+    }
 
 
 
 `
 
+const CourseOfferWrapperMobile = styled.section`
+    display: none;
+    @media only screen and (max-width: 575px) {
+        display: block;
+        background: white;
+        border-radius: 3vw;
+        padding: 9vw 1vw 6vw;
+        box-shadow: 0.25vw 0.15vw 0.4vw rgba(0,0,0,0.1);
+    }
+`
+
+const CourseOfferMainImage = styled(props => <Img {...props} />)`
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
+`
+
 const CourseOfferTags = styled.div`
     display: flex;
     margin-bottom: 2.1vw; 
+    @media only screen and (max-width: 575px) {
+        padding: 0 3.5vw;
+    }
 `
 const CourseOfferTag = styled.div`
     font-size: 1.2vw;
@@ -62,6 +85,11 @@ const CourseOfferTag = styled.div`
     border-radius: 100vw;
     margin-right: 1vw;
     font-weight: 500;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+        padding: 1.6vw 2.5vw;
+        margin-right: 3vw;
+    }
 `
 const CourseOfferMainTag = styled.div`
     font-size: 1.2vw;
@@ -111,6 +139,22 @@ const CourseOfferTitle = styled.h1`
                 display: block;
             }
         }
+        @media only screen and (max-width: 575px) {
+            margin-bottom: 0;
+            margin-left: 0vw;
+            margin-top: -1vw;
+            line-height: 1.15;
+            padding: 0 5vw;
+            p {
+                font-size: 11vw;
+                letter-spacing: 0.8vw;
+                i { 
+                    letter-spacing: -0.2vw;
+                    font-size: 14vw;
+                    margin-top: 2vw;
+                }
+            }
+        }
     `}
 `
 const CourseOfferDescr = styled.div`
@@ -124,7 +168,15 @@ const CourseOfferDescr = styled.div`
     ${props => props.type === 'Мастер-класс' && `
         width: 26vw;
         margin-bottom: 2vw;
+        @media only screen and (max-width: 575px) {
+            font-size: 4.4vw;
+            padding: 0 5vw;
+            width: 100%;
+            margin-bottom: 4vw;
+            margin-left: 0;
+        }
     `}
+
 `
 
 const CourseOfferButton = styled.a`
@@ -159,8 +211,26 @@ const CourseOfferButton = styled.a`
     padding: 1vw 3vw 1.2vw 4.2vw;
     svg {
         margin-left: 0.4vw;
+        
+    }
+    @media only screen and (max-width: 575px) {
+        font-size: 5.5vw;
+        margin: 0 5vw;
+        padding: 3vw 11vw 4vw 14vw;
+        border-radius: 1.5vw;
+        box-shadow: 0.7vw 0.7vw 1.5vw rgba(0,0,0,0.3);
+        :hover {
+            font-size: 5.5vw;
+          }
+        svg {
+            width: 5vw;
+            height: 5vw;
+            margin-left: 1vw;
+        }
+
     }
   `}
+
 `
 
 
@@ -204,6 +274,37 @@ const CourseOffer = ({data}) => {
 
                     
                 </CourseOfferWrapper>
+                <CourseOfferWrapperMobile>
+                    <CourseOfferTags>
+                        {data.courseType === 'Курс' ? (
+                            <>
+                                {data.courseStream && <CourseOfferMainTag><Potok/>{data.courseStream} поток</CourseOfferMainTag>}
+                                {data.courseStart && <CourseOfferTag><Date/>Старт {data.courseStart}</CourseOfferTag>}
+                                {data.courseDuration && <CourseOfferTag><Duration/>{data.courseDuration} интенсива</CourseOfferTag>}
+                            </>
+                        ) : (
+                            <>
+                                {data.courseTags.map((tag, idx) => {
+                                    return (
+                                        <CourseOfferTag key={idx}>{tag}</CourseOfferTag>
+                                    )
+                                })}
+                            </>
+                        )}
+                    </CourseOfferTags>
+                    <CourseOfferTitle type={data.courseType}>
+                        {documentToReactComponents(data.courseMainTitle.json)}
+                    </CourseOfferTitle>
+                    <CourseOfferMainImage fluid={data.courseMainImage.fluid}/>
+                    <CourseOfferDescr type={data.courseType}>
+                        {data.courseDescr}
+                    </CourseOfferDescr>
+                    {data.courseType === 'Курс' ? (
+                        <CourseOfferButton onClick={() => scrollTo('#participation-section')}><CourseArrowDown/>Участвовать</CourseOfferButton>
+                    ) : (
+                        <CourseOfferButton onClick={() => scrollTo('#prices-range-section')}  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
+                    )}
+                </CourseOfferWrapperMobile>
             </Container>
 
         </CourseOfferSection>

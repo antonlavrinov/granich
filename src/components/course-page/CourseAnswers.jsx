@@ -23,8 +23,11 @@ const ArrowLinkTop = styled(props => <ArrowTop {...props}/>)`
 `
 
 const AnswersSection = styled.section`
-    margin-bottom: 5vw;
     border-radius: 0.6vw;
+    margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 ` 
 
 const AnswersMainWrapper = styled.div`

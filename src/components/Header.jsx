@@ -111,6 +111,7 @@ const NavLink = styled(props => <Link {...props} />)`
     font-size: 3.8vw;
     margin-right: 0;
     padding-bottom: 1vw;
+    border-bottom: solid 0.5vw rgba(0,0,0,0);
     :hover {
       font-size: 3.8vw;
       border-bottom: solid 0.5vw white;
@@ -158,6 +159,7 @@ const NavLinkExternal = styled.a`
     font-size: 3.8vw;
     margin-right: 0vw;
     padding-bottom: 1vw;
+    border-bottom: solid 0.5vw rgba(0,0,0,0);
     :hover {
       font-size: 3.8vw;
       border-bottom: solid 0.5vw white;

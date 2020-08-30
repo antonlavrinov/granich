@@ -26,6 +26,12 @@ const Copy = styled(props => <CopyIcon {...props}/>)`
     @media only screen and (max-width: 575px) {
         width: 3vw;
         left: -3.8vw;
+        top: 1vw;
+        ${props => props.masterClass && `
+            width: 2.8vw;
+            left: -3.5vw;
+            top: 0.3vw;
+        `}
     }
 `
 
@@ -101,6 +107,10 @@ const TeacherWrapper = styled.div`
     @media only screen and (max-width: 575px) {
         border-radius: 3vw;
         padding: 6.5vw 8vw 8vw 10vw; 
+        ${props => props.masterClass && `
+            padding: 5.5vw 7.5vw 6vw 7.5vw; 
+            margin: 4.5vw 0;
+        `}
     }
 `
 
@@ -120,6 +130,10 @@ const TeacherImage = styled(props => <BackgroundImage {...props}></BackgroundIma
     @media only screen and (max-width: 575px) {
         width: 19.5vw;
         height: 19.5vw;
+        ${props => props.masterClass && `
+            width: 16.5vw;
+            height: 16.5vw;
+        `}
     }
 `
 const TeacherSocials = styled.div`
@@ -158,9 +172,9 @@ const TeacherEmail = styled.span`
     display: block;
     color: var(--granich-grey);
     padding-bottom: 0.2vw;
-    position: absolute;
-    top: 3.3vw;
-    right: -0.15vw;
+    position: relative;
+    // top: 3.3vw;
+    // right: -0.15vw;
     // transform: translateY(-50%);
     margin-right: 0.4vw;
     background: none;
@@ -242,6 +256,14 @@ const TeacherEmail = styled.span`
                 border-top: 2vw solid var(--granich-red);
             `}
         }
+        ${props => props.masterClass && `
+            font-size: 2.8vw;
+            :hover {
+                font-size: 2.8vw;
+    
+            }
+        `}
+        
 
 `
 const TeacherInfo = styled.div`
@@ -268,6 +290,9 @@ const TeacherInfoName = styled.div`
         font-size: 4.4vw;
         line-height: 1.3;
         width: 67vw;
+        ${props => props.masterClass && `
+            font-size: 3.8vw;
+        `}
     }
 `
 
@@ -284,6 +309,9 @@ const TeacherDescription = styled.div`
         line-height: 1.3;
         margin-top: 0;
         width: 67vw;
+        ${props => props.masterClass && `
+            font-size: 3.8vw;
+        `}
     }
 `
 
@@ -313,13 +341,13 @@ const OurTeam = ({data}) => {
     )
 }
 
-export const TeacherBlock = ({teacher}) => {
+export const TeacherBlock = ({teacher, masterClass}) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
 
     return (
-        <TeacherWrapper>
+        <TeacherWrapper masterClass={masterClass}>
             <TeacherHeader>
-                <TeacherImage fluid={teacher.teacherImage.fluid}></TeacherImage>
+                <TeacherImage masterClass={masterClass} fluid={teacher.teacherImage.fluid}></TeacherImage>
                 <TeacherSocials>
                     <TeacherSocialIcons>
                         {teacher.teacherSocialsOrder.map((social, idx) => {
@@ -341,16 +369,16 @@ export const TeacherBlock = ({teacher}) => {
                         })}
                     </TeacherSocialIcons>
                     <CopyToClipboard text={teacher.teacherEmail}> 
-                        <TeacherEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
-                            <Copy/>{teacher.teacherEmail}
+                        <TeacherEmail masterClass={masterClass} content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
+                            <Copy masterClass={masterClass}/>{teacher.teacherEmail}
                         </TeacherEmail>
                     </CopyToClipboard>
                 </TeacherSocials>
 
             </TeacherHeader>
-            <TeacherInfo>
-                    <TeacherInfoName>{teacher.teacherName}</TeacherInfoName>
-                    <TeacherDescription>
+            <TeacherInfo masterClass={masterClass}>
+                    <TeacherInfoName masterClass={masterClass}>{teacher.teacherName}</TeacherInfoName>
+                    <TeacherDescription masterClass={masterClass}>
                         {documentToReactComponents(teacher.teacherDescr.json)}
                     </TeacherDescription>
             </TeacherInfo>
