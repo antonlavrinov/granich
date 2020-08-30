@@ -227,7 +227,7 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
 
 
 const CurriculumSection = styled.section`
-    margin-bottom: 50px;
+    margin-bottom: 4vw;
 
 
 `

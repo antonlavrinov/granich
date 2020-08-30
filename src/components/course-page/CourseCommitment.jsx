@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import commitmentGIF from '../../assets/images/graph-design/commitment/commitment-gif.gif';
-// import commitmentVideo from '../../assets/images/graph-design/commitment/ezgif.com-gif-to-mp4.mp4';
+import commitmentVideo from '../../assets/images/graph-design/commitment/ezgif.com-gif-to-mp4.mp4';
 
 const CommitmentSection = styled.section`
     margin-bottom: 4vw;
@@ -21,6 +21,12 @@ const CommitmentWrapper = styled.div`
         height: 2.2vw;
         margin: 0 auto;
         margin-top: 2vw;
+    }
+    video {
+        min-width: 35.25vw;
+        width: 35.25vw;
+        margin-right: 3vw;
+        height: 19vw;
     }
 `
 
@@ -88,10 +94,10 @@ const CourseCommitment = () => {
         <CommitmentSection>
             <Container>
                 <CommitmentWrapper>
-                    <CommitmentImage src={commitmentGIF}/>
-                    {/* <video loop autoPlay>
+                    {/* <CommitmentImage src={commitmentGIF}/> */}
+                    <video loop autoPlay>
                         <source src={commitmentVideo} type="video/mp4" />
-                    </video> */}
+                    </video>
                     <CommitmentInfo>
                         <CommitmentTitle>С правильным настроем можно с нуля!</CommitmentTitle>
                         <CommitmentText>Да, у меня интенсивный курс. Он требует осознанных усилий и времени. Однако, участвовать в нем могут даже те, кто никогда с графическтм дизайном не сталкивался. Но в таком случае лучше возьмите отпуск.</CommitmentText>
