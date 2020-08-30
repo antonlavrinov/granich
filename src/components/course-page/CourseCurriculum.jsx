@@ -202,7 +202,7 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
 
             {/* <Icon style={{ ...toggle, opacity: children ? 1 : 0.3 }} onClick={() => setOpen(!isOpen)} /> */}
             <CurriculumContainer type={type ? 1 : 0} onClick={() => setOpen(!isOpen)}>
-                <CurriculumLessonColumn>
+                {/* <CurriculumLessonColumn>
                     <CurriculumLesson type={type ? 1 : 0}>{tag}</CurriculumLesson>
                 </CurriculumLessonColumn>
 
@@ -213,11 +213,12 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
                     <Plus style={{ ...toggle, opacity: children ? 1 : 0.3 }} />
                 ) : (
                     <Minus style={{ ...toggle, opacity: children ? 1 : 0.3 }}/>
-                )}
+                )} */}
             </CurriculumContainer>
 
             <CurriculumItemContent style={{ opacity, height: isOpen && previous === isOpen ? 'auto' : height }}>
                 <a.div style={{ transform }} {...bind} children={children} />
+                
             </CurriculumItemContent>
 
         </CurriculumItemFrame>
