@@ -25,6 +25,13 @@ const FeaturesSection = styled.section`
     margin-bottom: 50px;
 `
 
+const FeaturesSectionTitle = styled.div`
+    font-size: 4.55vw;
+    font-weight: 700;
+    letter-spacing: -0.2vw;
+    margin-bottom: 2.4vw;
+`
+
 
 const FeaturesWrapper = styled.div`
     display: grid;
@@ -95,6 +102,9 @@ const CourseFeatures = ({data}) => {
     return (
         <FeaturesSection>
             <Container>
+                <FeaturesSectionTitle>
+                    Особенности курса
+                </FeaturesSectionTitle>
                 <FeaturesWrapper>
                     {data.edges.map(feature => {
                         return (

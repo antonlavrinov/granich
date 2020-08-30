@@ -22,6 +22,7 @@ const BannerWrapper = styled.div`
         padding: 6vw 6.6vw 6.6vw;
         border-radius: 1.5vw;
         box-shadow: .6vw .6vw 1.8vw rgba(0,0,0,0.23);
+        box-shadow: 0 0 1.8vw rgba(0,0,0,0.15);
     }
 `
 

@@ -12,19 +12,37 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 const Potok = styled(props => <PotokIcon {...props}/>)`
     width: 1.3vw;
+    height: 1.3vw;
     margin-right: 0.3vw;
     fill: white;
+    @media only screen and (max-width: 575px) {
+        width: 4.3vw;
+        height: 4.3vw;
+        margin-right: 1vw;
+    }
 `
 
 const Duration = styled(props => <DurationIcon {...props}/>)`
     width: 1.3vw;
+    height: 1.3vw;
     fill: var(--granich-red);
     margin-right: 0.3vw;
+    @media only screen and (max-width: 575px) {
+        width: 4.3vw;
+        height: 4.3vw;
+        margin-right: 1vw;
+    }
 `
 const Date = styled(props => <DateIcon {...props}/>)`
     width: 1.3vw;
+    height: 1.3vw;
     fill: var(--granich-red);
     margin-right: 0.3vw;
+    @media only screen and (max-width: 575px) {
+        width: 4.3vw;
+        height: 4.3vw;
+        margin-right: 1vw;
+    }
 `
 
 const CourseOfferSection = styled.section`
@@ -58,8 +76,8 @@ const CourseOfferWrapperMobile = styled.section`
         display: block;
         background: white;
         border-radius: 3vw;
-        padding: 9vw 1vw 6vw;
-        box-shadow: 0.25vw 0.15vw 0.4vw rgba(0,0,0,0.1);
+        padding: 7vw 1vw 6vw;
+        box-shadow: 0 0 1.8vw rgba(0,0,0,0.15);
     }
 `
 
@@ -72,6 +90,8 @@ const CourseOfferMainImage = styled(props => <Img {...props} />)`
 const CourseOfferTags = styled.div`
     display: flex;
     margin-bottom: 2.1vw; 
+    align-items: flex-start;
+    flex-wrap: wrap;
     @media only screen and (max-width: 575px) {
         padding: 0 3.5vw;
     }
@@ -89,6 +109,8 @@ const CourseOfferTag = styled.div`
         font-size: 3.7vw;
         padding: 1.6vw 2.5vw;
         margin-right: 3vw;
+        white-space: nowrap;
+        margin-bottom: 3vw;
     }
 `
 const CourseOfferMainTag = styled.div`
@@ -101,6 +123,13 @@ const CourseOfferMainTag = styled.div`
     border-radius: 100vw;
     margin-right: 1vw;
     font-weight: 500;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+        padding: 1.6vw 2.5vw;
+        margin-right: 3vw;
+        white-space: nowrap;
+        margin-bottom: 3vw;
+    }
 `
 
 const CourseOfferTitle = styled.h1`
@@ -124,6 +153,7 @@ const CourseOfferTitle = styled.h1`
             font-family: EB Garamond;
         }
     }
+    
     ${props => props.type === 'Мастер-класс' && `
         margin-bottom: 1.5vw;
         margin-left: 0vw;
@@ -140,9 +170,6 @@ const CourseOfferTitle = styled.h1`
             }
         }
         @media only screen and (max-width: 575px) {
-            margin-bottom: 0;
-            margin-left: 0vw;
-            margin-top: -1vw;
             line-height: 1.15;
             padding: 0 5vw;
             p {
@@ -156,6 +183,22 @@ const CourseOfferTitle = styled.h1`
             }
         }
     `}
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+        margin-left: 0vw;
+        margin-top: -1vw;
+        line-height: 0.8;
+        padding: 0 5vw;
+        p {
+            font-size: 15vw;
+            letter-spacing: 0.5vw;
+            i { 
+                letter-spacing: -0.2vw;
+                font-size: 14vw;
+                margin-top: 2vw;
+            }
+        }
+    }
 `
 const CourseOfferDescr = styled.div`
     width: 33vw;
@@ -170,12 +213,17 @@ const CourseOfferDescr = styled.div`
         margin-bottom: 2vw;
         @media only screen and (max-width: 575px) {
             font-size: 4.4vw;
-            padding: 0 5vw;
-            width: 100%;
             margin-bottom: 4vw;
-            margin-left: 0;
+            
         }
     `}
+    @media only screen and (max-width: 575px) {
+        width: 95%;
+        font-size: 5vw;
+        padding: 0 5vw;
+        margin-bottom: 5vw;
+        margin-left: 0;
+    }
 
 `
 
@@ -214,22 +262,33 @@ const CourseOfferButton = styled.a`
         
     }
     @media only screen and (max-width: 575px) {
-        font-size: 5.5vw;
-        margin: 0 5vw;
         padding: 3vw 11vw 4vw 14vw;
-        border-radius: 1.5vw;
-        box-shadow: 0.7vw 0.7vw 1.5vw rgba(0,0,0,0.3);
         :hover {
             font-size: 5.5vw;
           }
         svg {
-            width: 5vw;
-            height: 5vw;
             margin-left: 1vw;
+            margin-right: 0;
         }
 
     }
   `}
+  @media only screen and (max-width: 575px) {
+    font-size: 5.5vw;
+    margin: 0 5vw;
+    padding: 3vw 5vw 4vw 5vw;
+    border-radius: 1.5vw;
+    box-shadow: 0.7vw 0.7vw 1.5vw rgba(0,0,0,0.3);
+    :hover {
+        font-size: 5.5vw;
+    }
+    svg {
+        width: 5vw;
+        height: 5vw;
+        margin-left: 0;
+        margin-right: 1vw;
+    }
+  }
 
 `
 

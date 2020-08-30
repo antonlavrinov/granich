@@ -144,7 +144,7 @@ const PriceCategoryList = styled.div`
             padding: 1vw;
             border-left: none;
             z-index: 9999;
-            box-shadow: 0 0.3vw 0.5vw rgba(0,0,0,0.2);
+            // box-shadow: 0 0.3vw 0.5vw rgba(0,0,0,0.2);
             border-radius: 0.2vw;
             font-size: 0.9vw;
             line-height: 1.2;

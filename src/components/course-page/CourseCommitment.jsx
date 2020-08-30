@@ -15,26 +15,33 @@ const CommitmentWrapper = styled.div`
     background: white;
     padding: 3.3vw 3.3vw;
     border-radius: 0.5vw;
-    
-    svg {
-        width: 13vw;
-        height: 2.2vw;
-        margin: 0 auto;
-        margin-top: 2vw;
-    }
     video {
-        min-width: 35.25vw;
-        width: 35.25vw;
+        min-width: 36.3vw;
+        width: 36.3vw;
         margin-right: 3vw;
         height: 19vw;
+        border-radius: 0.5vw;
+    }
+    @media only screen and (max-width: 575px) {
+        flex-direction: column;
+        padding: 6vw 6vw 7vw;
+        border-radius: 3vw;
+        video {
+            min-width: 100%;
+            width: 100%;
+            margin-right: 3vw;
+            height: 40.8vw;
+            border-radius: 3vw;
+            margin-bottom: 5vw;
+        }
     }
 `
 
-const CommitmentImage = styled.img`
-    margin-right: 3vw;
-    min-width: 35.25vw;
-    width: 35.25vw;
-`
+// const CommitmentImage = styled.img`
+//     margin-right: 3vw;
+//     min-width: 35.25vw;
+//     width: 35.25vw;
+// `
 
 const CommitmentInfo = styled.div`
 
@@ -45,6 +52,10 @@ const CommitmentText = styled.div`
     font-size: 1.15vw;
     line-height: 1.45;
     margin-bottom: 1.35vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+        margin-bottom: 3vw;
+    }
 `
 
 const CommitmentNote = styled.div`
@@ -53,8 +64,13 @@ const CommitmentNote = styled.div`
     line-height: 1.25;
     padding-left: 1.7vw;
     border-left: 2px solid var(--granich-red);
-    // width: 24vw;
     letter-spacing: -0.01vw;
+    @media only screen and (max-width: 575px) {
+        border-left: 2px solid var(--granich-red);
+        padding-left: 4vw;
+        font-size: 2.7vw;
+        line-height: 1.45;
+    }
 `
 
 
@@ -77,8 +93,18 @@ const CommitmentTitle = styled.div`
         height: 0.68vw;
         border-radius: 100vw;
         transform: translateX(-50%);
-        font-size: 1vw;
 
+    }
+    @media only screen and (max-width: 575px) {
+        font-size: 7.4vw;
+        margin-bottom: 3.5vw;
+        width: 100%;
+        :after {
+            top: 1vw;
+            right: -2.5vw;
+            width: 1.5vw;
+            height: 1.5vw;   
+        }
     }
 
 `
@@ -95,12 +121,12 @@ const CourseCommitment = () => {
             <Container>
                 <CommitmentWrapper>
                     {/* <CommitmentImage src={commitmentGIF}/> */}
-                    <video loop autoPlay>
+                    <video muted loop autoPlay>
                         <source src={commitmentVideo} type="video/mp4" />
                     </video>
                     <CommitmentInfo>
                         <CommitmentTitle>С правильным настроем можно с нуля!</CommitmentTitle>
-                        <CommitmentText>Да, у меня интенсивный курс. Он требует осознанных усилий и времени. Однако, участвовать в нем могут даже те, кто никогда с графическтм дизайном не сталкивался. Но в таком случае лучше возьмите отпуск.</CommitmentText>
+                        <CommitmentText>Да, у меня интенсивный курс. Он требует осознанных усилий и времени. Однако, участвовать в нем могут даже те, кто никогда с графическим дизайном не сталкивался. Но в таком случае лучше возьмите отпуск.</CommitmentText>
                         <CommitmentNote>
                             Примерно с таким настроем нужно будет делать ДЗ. <br/>
                             Это интенсивно-суровый курс.<br/>

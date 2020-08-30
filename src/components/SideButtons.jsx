@@ -10,12 +10,86 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { CSSTransition } from 'react-transition-group';
 
 
+
+
 const IconLink = styled.a`
     height: 3.6vw;
     margin-bottom: 0.5vw;
+    display: block;
+    position: relative;
+    :hover {
+        cursor: pointer;
+        &:before, &:after {
+            display: block;
+        }
+        ${props => !props.content && `
+            &:before, &:after {
+                display: none;
+            }
+        `}
+
+    }
+    &:before {
+        content: '';
+        display: none;
+        position: absolute;
+        z-index: 9998;
+        top: 40%;
+        right: 4.1vw;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        //bottom
+        border-bottom: 0.55vw solid transparent;
+        border-top: 0.55vw solid transparent;
+        border-left: 0.55vw solid var(--granich-black);
+        ${props => props.content === 'Вконтакте' && `
+            border-left: 0.55vw solid #0071BC;
+        `}
+        ${props => props.content === 'WhatsApp' && `
+            border-left: 0.55vw solid #39B54A;
+        `}
+        ${props => props.content === 'Телеграм' && `
+            border-left: 0.55vw solid #2098CA;
+        `}
+    }
+
+    &:after {
+        content: '${props => props.content}';
+        display: none;
+        position: absolute;
+        z-index: 9999;
+        top: 40%;
+        right: 4.5vw;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 0.8vw;
+        line-height: 1.5;
+        padding: 0.7vw 1vw;
+        // min-width: 5vw; 
+        text-align: center;
+        border-radius: 0.2vw;
+        white-space: normal;;
+        background: var(--granich-black);
+        ${props => props.content === 'Вконтакте' && `
+            background: #0071BC;
+        `}
+        ${props => props.content === 'WhatsApp' && `
+            background: #39B54A;
+        `}
+        ${props => props.content === 'Телеграм' && `
+            background: #2098CA;
+        `}
+    }    
+
     @media only screen and (max-width: 575px) {
         height: 11vw;
         margin-bottom: 1.5vw;
+        :hover {
+            &:before, &:after {
+                display: none;
+            }
+        }
     }
 `
 const VK = styled(props => <VKIcon {...props}/>)`
@@ -33,6 +107,7 @@ const VK = styled(props => <VKIcon {...props}/>)`
         width: 11vw;
         height: 11vw;
         // margin-bottom: 1.5vw;
+
     }
 
 `
@@ -157,7 +232,7 @@ const EmailWrapper = styled.div`
             border-top: 2vw solid transparent;
             border-left: 2vw solid var(--granich-black);
             ${props => props.content === 'Скопировано :) hello@granich.design' && `
-                border-top: 2vw solid var(--granich-red);
+                border-left: 2vw solid var(--granich-red);
             `}
         }
 
@@ -256,14 +331,20 @@ const SideButtons = () => {
                             </CopyToClipboard>
                         </IconLink>
 
-                        <IconLink target="_blank" href="https://t.me/granich_school">
-                            <Telegram />
+                        <IconLink content="Телеграм" target="_blank" href="https://t.me/granich_school">
+
+                                <Telegram />
+
                         </IconLink>
-                        <IconLink target="_blank" href="https://wa.me/79046434682">
-                            <Whatsup/>
+                        <IconLink content="WhatsApp" target="_blank" href="https://wa.me/79046434682">
+
+                                <Whatsup/>
+
                         </IconLink>
-                        <IconLink target="_blank" href="https://vk.com/write-164662407">
-                            <VK/>
+                        <IconLink content="Вконтакте" target="_blank" href="https://vk.com/write-164662407">
+
+                                <VK/>
+
                         </IconLink>
 
 

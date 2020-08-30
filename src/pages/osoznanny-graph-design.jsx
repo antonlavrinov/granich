@@ -198,8 +198,8 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <CourseOffer data={data.offer}/>
     <CourseExplanations data={data.explanations}/>
     <CourseExample/>
-    <CourseCommitment/>
     <CourseForWhom data={data.forWhom}/>
+    <CourseCommitment/>
     <CoursePortfolio posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
     <CourseTrainingPath data={data.trainingPath}/>
     <CourseCurriculum data={data.curriculum}/>

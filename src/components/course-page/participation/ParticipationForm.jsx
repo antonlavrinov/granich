@@ -278,13 +278,13 @@ const ParticipationForm = () => {
                                     formEl.current.submit();
                                 }}
                                 validationSchema={Yup.object().shape({
-                                    politikaCheckbox: Yup.bool().oneOf([true], 'Нажмите на чекбокс!'),
+                                    politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных :)'),
                                     formParams: Yup.object().shape({
-                                        first_name: Yup.string().trim('no whitespaces').strict().matches(myNameNewRegExp, 'Must not contain symbols').required('Заполните поле Имя'),
+                                        first_name: Yup.string().trim('Уберите пробелы в начале и в конце строки :)').strict().matches(myNameNewRegExp, 'Неверные символы в Имени >_<').required('Сперва впишите Имя :)'),
                                         // first_name: Yup.string().email('Неверный формат электронного адреса').required('Заполните поле Емейл'),
-                                        last_name: Yup.string().trim('no whitespaces').strict().matches(myNameNewRegExp, 'Must not contain symbols').required('Заполните поле Фамилия'),
-                                        email: Yup.string().email('Неверный формат электронного адреса').required('Заполните поле Емейл'),
-                                        phone: Yup.string().matches(myPhoneNewRegExp, 'Phone number is not valid').required('Заполните поле Телефон'),
+                                        last_name: Yup.string().trim('Уберите пробелы в начале и в конце строки :)').strict().matches(myNameNewRegExp, 'Неверные символы в Фамилии >_<').required('Сперва впишите Фамилию :)'),
+                                        email: Yup.string().email('Это не Электропочта >_<').required('Сперва впишите Электропочту :)'),
+                                        phone: Yup.string().matches(myPhoneNewRegExp, 'Это не Телефон >_<').required('Сперва впишите Телефон :)'),
 
                                     })
                                 })}

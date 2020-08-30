@@ -25,7 +25,7 @@ const PortfolioWrapper = styled.div`
     `}
     @media only screen and (max-width: 575px) {
         border-radius: 3vw;
-        padding: 6vw;
+        padding: 8vw 6vw;
     }
 `
 
@@ -56,14 +56,15 @@ const PortfolioHeaderTitle = styled.div`
 
     ${props => props.masterClass && `
         margin-bottom: 0;
-        @media only screen and (max-width: 575px) {
-            font-size: 11vw;
-            letter-spacing: -0.7vw;
-            line-height: 1;
-            margin-right: 0;
-            margin-bottom: 6vw;
-        }
+
     `}
+    @media only screen and (max-width: 575px) {
+        font-size: 11vw;
+        letter-spacing: -0.7vw;
+        line-height: 1;
+        margin-right: 0;
+        margin-bottom: 10vw;
+    }
     
 `
 
@@ -100,6 +101,9 @@ const PortfolioBonus = styled.div`
         border-radius: 1.5vw;
         padding: 3vw 3.3vw;
         font-size: 3.7vw;
+        :first-child {
+            margin-bottom: 4vw;
+        }
     }
 `
 const PortfolioContent = styled.div`
@@ -107,19 +111,31 @@ const PortfolioContent = styled.div`
     align-items: center;
     flex-direction: column;
     margin-right: 2.5vw;
-    // justify-content: center;
+    @media only screen and (max-width: 575px) {
+        margin-right: 0;
+    }
+
 
 `
 const PortfolioContentInfo = styled.div`
     display: flex;
     margin-left: -0.4vw;
+    @media only screen and (max-width: 575px) {
+        margin-right: 0;
+        justify-content: space-between;
+        margin-left: 0;
+        margin-bottom: 8vw;
+        padding: 0 4.5vw;
+    }
 `
 
 const PortfolioContentText = styled.div`
     font-size: 1.16vw;
-    // width: 9vw;
     line-height: 1.55vw;
     font-weight: 500;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+    }
 `
 
 const PortfolioContentCount = styled.div`
@@ -127,7 +143,6 @@ const PortfolioContentCount = styled.div`
     font-style: italic;
     font-size: 5.4vw;
     font-weight: 500;
-    // position: relative;
     align-text: center;
     background: #e2e2e2;
     border-radius: 100vw;
@@ -139,6 +154,16 @@ const PortfolioContentCount = styled.div`
     letter-spacing: -0.4vw;
     padding-left: 0.8vw;
     margin-bottom: 0.6vw;
+    @media only screen and (max-width: 575px) {
+        height: 14.5vw;
+        width: 14.5vw;
+        min-height: 14.5vw;
+        min-width: 14.5vw;
+        font-size: 17vw;
+        line-height: 0.8;
+        padding-left: 3.2vw;
+        margin-bottom: 3.3vw;
+    }
 
 `
 
@@ -160,7 +185,7 @@ const PortfolioOnePagersWrapper = styled.div`
 `
 
 const PortfolioOnePager = styled(props => <BackgroundImage {...props}/>)`
-    height: 23vw;
+    height: 22.7vw;
     width: 100%;
     transition: transform 0.2s ease;
     :hover {

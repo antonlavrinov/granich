@@ -85,7 +85,6 @@ const MailingText = styled.div`
 
 
 const MailingForm = styled.form`
-    // width: 100%;
     display: flex;
     align-items: center;
     position: relative;
@@ -112,11 +111,11 @@ const MailingInput = styled.input`
 
     @media only screen and (max-width: 575px) {
         border-radius: 3vw;
-        width: 65vw;
+        width: 64vw;
         height: 10.5vw;
         padding: 0 4vw;
         font-size: 4.1vw;
-        margin-right: 4vw;
+        margin-right: 2.5vw;
         margin-left: 0.5vw;
         box-shadow: 0 0 1.5vw rgba(0,0,0,0.5) inset;
         ::placeholder {
@@ -130,7 +129,7 @@ const MailingInput = styled.input`
 const MailingButton = styled.button`
     height: 3.4vw;
     border: none;
-    // width: 22%;
+
     background: none;
     display: flex;
     align-items: center;
@@ -146,7 +145,9 @@ const MailingButton = styled.button`
         }
     }
     @media only screen and (max-width: 575px) {
-        height: 100%;
+        min-width: 14vw;
+        min-height: 14vw;
+
         svg {
             margin-left: -1vw; 
         }

@@ -8,15 +8,19 @@ import TelegramLinkOut from '../../assets/svgs/telegram-small-icon.svg';
 
 const Telegram = styled(props => <TelegramIcon {...props}/>)`
     width: 2.3vw;
+    height: 2.3vw;
     @media only screen and (max-width: 575px) {
         width: 7.5vw;
+        height: 7.5vw;
     }
 `
 
 const TelegramOut = styled(props => <TelegramLinkOut {...props}/>)`
     width: 2.3vw;
+    height: 2.3vw;
     @media only screen and (max-width: 575px) {
         width: 7.5vw;
+        height: 7.5vw;
     }
 `
 
@@ -250,9 +254,9 @@ const CourseReviews = ({data, masterClass}) => {
             <Container>
                 <ReviewsWrapper>
                     {!masterClass ? (
-                        <ReviewsTitle>Свежие отзывы о курсе</ReviewsTitle>
+                        <ReviewsTitle>Отзывы <br/>о курсе</ReviewsTitle>
                     ) : (
-                        <ReviewsTitle>Отзывы о мастер-классе</ReviewsTitle>
+                        <ReviewsTitle>Отзывы <br/>о мастер-классе</ReviewsTitle>
                     )}
                     
                     <ReviewsList>

@@ -8,7 +8,10 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 
 const ForWhomSection = styled.section`
-    margin-bottom: 5vw;
+    margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 `
 
 const ForWhomSectionTitle = styled.div`
@@ -16,6 +19,10 @@ const ForWhomSectionTitle = styled.div`
     font-weight: 700;
     letter-spacing: -0.2vw;
     margin-bottom: 2.4vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 11vw;
+        margin-bottom: 4vw;
+    }
 `
 
 const ForWhomWrapper = styled.div`
@@ -23,6 +30,10 @@ const ForWhomWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 1.5vw;
     grid-row-gap: 1.5vw;
+    @media only screen and (max-width: 575px) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 5vw;
+    }
 
 `
 
@@ -30,6 +41,10 @@ const ForWhomBlockWrapper = styled.div`
     background: white;
     padding: 1.8vw;
     border-radius: 0.5vw;
+    @media only screen and (max-width: 575px) {
+        border-radius: 3vw;
+        padding: 14vw 4vw 7vw;
+    }
 
 `
 const ForWhomBlockTitle = styled.div`
@@ -58,14 +73,30 @@ const ForWhomBlockTitle = styled.div`
         // line-height: 0.5;
 
     }
+    @media only screen and (max-width: 575px) {
+        font-size: 5.1vw;
+        letter-spacing: 1.9vw;
+        margin-bottom: 6.5vw;
+        :before {
+            top: -8.6vw;
+            left: 50%;
+            width: 2.3vw;
+            height: 2.3vw;
+        }
+    }
 `
 const ForWhomBlockImage = styled(props => <BackgroundImage {...props}/>)`
     background: url(${props => props.image}) center center no-repeat;
-    background-size: 90%;
+    // background-size: 90%;
     width: 100%;
     height: 19.4vw;
     border-radius: 0.2vw;
     margin-bottom: 2vw;
+    @media only screen and (max-width: 575px) {
+        height: 75.4vw;
+        border-radius: 1.5vw;
+        margin-bottom: 5vw;
+    }
 `
 const ForWhomBlockTextBlock = styled.div`
     line-height: 1.45;
@@ -74,6 +105,12 @@ const ForWhomBlockTextBlock = styled.div`
         font-size: 1.15vw;
         color: var(--granich-grey);
         letter-spacing: -0.02vw;
+    }
+    @media only screen and (max-width: 575px) {
+        margin-left: 0;
+        p {
+            font-size: 3.7vw;
+        }
     }
 `
 

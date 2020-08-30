@@ -4,6 +4,21 @@ import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import Zoom from 'react-medium-image-zoom'
+import ArrowIcon from '../../assets/svgs/graph-design/graph-design-training-path-arrow.svg';
+import CheckIcon from '../../assets/svgs/graph-design/graph-design-training-path-check.svg';
+
+
+const Arrow = styled(props => <ArrowIcon {...props}/>)`
+    width: 3vw;
+    margin-left: 1.5vw;
+    fill: var(--granich-red);
+`
+
+const Check = styled(props => <CheckIcon {...props}/>)`
+    width: 3vw;
+    margin-left: 1.5vw;
+    fill: var(--granich-red);
+`
 
 
 const TrainingPathSection = styled.section`
@@ -20,8 +35,11 @@ const TrainingPathWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 1.5vw;
     grid-row-gap: 1.5vw;
-        @media only screen and (max-width: 575px) {
+    @media only screen and (max-width: 575px) {
         margin-bottom: 5vw;
+        grid-template-columns: 1fr;
+        grid-column-gap: 5vw;
+        grid-row-gap: 5vw;
     }
 `
 
@@ -31,10 +49,16 @@ const TrainingPathBlockWrapper = styled.div`
     flex-direction: column;
 
     border-radius: 0.5vw;
+    @media only screen and (max-width: 575px) {
+        border-radius: 3vw;
+    }
 
 `
 const TrainingPathBlockContainer = styled.div`
-    padding: 0.8vw 1.5vw 3vw;
+    padding: 0.8vw 1.5vw 1.5vw;
+    @media only screen and (max-width: 575px) {
+
+    }
 `
 
 const TrainingPathImageContainer = styled.div`
@@ -42,6 +66,9 @@ const TrainingPathImageContainer = styled.div`
     background: var(--granich-red);
     border-radius: 0.5vw;
     margin-top: auto;
+    @media only screen and (max-width: 575px) {
+
+    }
 `
 
 const TrainingPathBlockNumber = styled.div`
@@ -63,12 +90,9 @@ const TrainingPathBlockNumber = styled.div`
         left: 0.5vw;
         font-family: Inter;
         color: var(--granich-red);
-        // :last-of-type {
-        //     font-size: 2vw;
-        // }
-        // ${props => props.lastOne && `
-        //     font-size: 3vw;
-        // `}
+    }
+    @media only screen and (max-width: 575px) {
+
     }
 `
 
@@ -85,6 +109,9 @@ const TrainingPathBlockText = styled.div`
             color: var(--granich-black);
         }
     }
+    @media only screen and (max-width: 575px) {
+
+    }
 
 
 `
@@ -98,16 +125,20 @@ const TrainingPathBlockImage = styled.div`
     }
     :hover {
         transform: scale(1.05);
-        // width: 16vw;
+
+    }
+    @media only screen and (max-width: 575px) {
 
     }
 `
 
 const TrainingPathImage = styled(props => <BackgroundImage {...props}/>)`
     width: 100%;
-    height: 7.8vw;
+    height: 8.8vw;
     background-size: 110%;
+    @media only screen and (max-width: 575px) {
 
+    }
 
 `
 
@@ -119,7 +150,7 @@ const TrainingPathSectionTitle = styled.div`
     line-height: 0.87;
     margin-bottom: 2.5vw;
     @media only screen and (max-width: 575px) {
-        font-size: 11.9vw;
+        font-size: 11vw;
         letter-spacing: -0.7vw;
         line-height: 1;
         margin-bottom: 4vw;
@@ -141,13 +172,13 @@ const CourseTrainingPath = ({data}) => {
                         return (
                             <TrainingPathBlockWrapper key={block.node.id}>
                                 <TrainingPathBlockContainer>
-                                    <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <CheckMark > ✓⃝  </CheckMark> : <span>→</span>}</TrainingPathBlockNumber>
+                                    <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber>
                                     <TrainingPathBlockText>{documentToReactComponents(block.node.trainingPathText.json)}</TrainingPathBlockText>
                                 </TrainingPathBlockContainer>
                                 <TrainingPathImageContainer>
                                     <TrainingPathBlockImage>
                                         <Zoom>
-                                            <TrainingPathImage fluid={block.node.trainingPathImage.fluid}>✓</TrainingPathImage>
+                                            <TrainingPathImage fluid={block.node.trainingPathImage.fluid}></TrainingPathImage>
                                         </Zoom>
                                     </TrainingPathBlockImage>
 
