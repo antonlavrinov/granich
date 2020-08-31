@@ -20,7 +20,7 @@ const ParticipationWrapper = styled.div`
     @media only screen and (max-width: 575px) {
         grid-template-columns: 100%;
         grid-column-gap: 0;
-        grid-row-gap: 3vw;
+        grid-row-gap: 5vw;
     }
     
 `

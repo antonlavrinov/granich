@@ -163,6 +163,7 @@ const PortfolioContentCount = styled.div`
         line-height: 0.8;
         padding-left: 3.2vw;
         margin-bottom: 3.3vw;
+        background: #f2f2f2;
     }
 
 `

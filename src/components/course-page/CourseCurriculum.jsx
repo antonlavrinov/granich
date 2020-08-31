@@ -91,23 +91,28 @@ const CurriculumItemImportantDescr = styled.span`
     user-select: none;
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
-        background: #dedede;
+        background: #f2f2f2;
         border-radius: 2vw;
         display: block;
-        padding: 3vw;
+        padding: 3vw 4vw;
+        margin-bottom: 2vw;
+        line-height: 1.35;
     }
 `
 
 const CurriculumImportantText = styled.div`
     padding: 1vw;
     font-size: 1.15vw;
-    line-height: 1.35;
+    line-height: 2;
+    width: 75%;
+    
 
 
     b {
         font-weight: 500;
         display: block;
         color: var(--granich-black);
+        line-height: 1.5;
     }
 
     p {
@@ -115,6 +120,20 @@ const CurriculumImportantText = styled.div`
         display: block;
         white-space: normal;
         margin-bottom: 0.4vw;
+    }
+    @media only screen and (max-width: 575px) {
+        margin-bottom: -5vw;
+        width: 100%;
+        
+        p {
+            color: var(--granich-grey);
+            display: block;
+            white-space: normal;
+            margin-bottom: 0;
+        }
+        b {
+            line-height: 1.45;
+        }
     }
 `
 
@@ -468,7 +487,7 @@ const CurriculumAccordionButton = styled(props => <AccordionItemButton {...props
 const CurriculumTitleAndButton = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 1.5vw;
+    margin-top: 1vw;
 `
 
 
@@ -511,8 +530,9 @@ const CourseCurriculum = ({data}) => {
                         const tag = tab.node.curriculumTagName;
                         const descr = tab.node.curriculumImportantDescr;
                         const title = tab.node.curriculumTitle;
+                        console.log('FOURTH COLUMN ', tab)
                         return (
-                            <CurriculumAccordionItem>
+                            <CurriculumAccordionItem key={tab.node.id}>
                                 <CurriculumAccordionHeading>
                                     <AccordionItemButton className="accordion-curriculum-button">
                                         <CurriculumLessonAndLineWrapper>

@@ -77,6 +77,7 @@ export const contentfulQuery = graphql`
         curriculum: allContentfulGranichCourseCurriculum(filter: {curriculumAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [curriculumOrderNumber], order: ASC}) {
           edges {
             node {
+              id
               curriculumAttachmentTo
               curriculumImportantDescr
               curriculumImportantText {
@@ -94,7 +95,7 @@ export const contentfulQuery = graphql`
               curriculumSecondColumn {
                 json
               }
-              curriculumFourthColumn1 {
+              curriculumFourthColumn {
                 json
               }
               curriculumType

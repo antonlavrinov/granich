@@ -109,6 +109,7 @@ const FormInput = styled.input`
     margin-left: 0.3vw;
     font-size: 1.35vw;
     border: 1px solid #dedede;
+    background: #fafafa;
     @media only screen and (max-width: 575px) {
         width: 100%;
         box-shadow: inset 0 0 1.2vw rgba(0,0,0,0.2);
@@ -138,6 +139,25 @@ const FormInputLabel = styled.label`
     display: inline-block;
     position: relative;
     top: 0.3vw;
+
+    @media only screen and (max-width: 575px) {
+        font-size: 3vw;
+        max-width: 100%;
+        top: 0vw;
+        margin-left: 0.4vw;
+        display: none;
+
+    }
+`
+
+const FormInputLabelMobile = styled.label`
+    font-size: 0.9vw;
+    color: var(--granich-light-grey);
+    max-width: 7vw;
+    display: inline-block;
+    position: relative;
+    top: 0.3vw;
+    display: none;
     @media only screen and (max-width: 575px) {
         display: block;
         font-size: 3vw;
@@ -212,6 +232,7 @@ const FormButtonBlock = styled.div`
     align-items: center;
     @media only screen and (max-width: 575px) {
         margin-bottom: 1vw;
+        
     }
 `
 
@@ -228,9 +249,10 @@ const FormButton = styled.button`
         transform: scale(1.05);
     }
     @media only screen and (max-width: 575px) {
-        font-size: 4vw;
-        padding: 1vw 3vw;
+        font-size: 4.4vw;
+        padding: 3vw 8vw;
         border-radius: 1.5vw;
+        box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
     }
 `
 
@@ -248,7 +270,12 @@ const FormPrice = styled.div`
         margin-left: 0.5vw;
     }
     @media only screen and (max-width: 575px) {
-        font-size: 8vw;
+        font-size: 12.5vw;
+        padding-right: 1vw;
+        margin-top: -1vw;
+        i {
+            display: none;
+        }
     }
 
 `
@@ -257,7 +284,7 @@ const FormSubText = styled.div`
     color: white;
     font-size: 1.17vw;
     @media only screen and (max-width: 575px) {
-        font-size: 3vw;
+        font-size: 2.89vw;
     }
 `
 
@@ -278,7 +305,7 @@ const FormFooterContainer = styled.div`
     display: flex;
     flex-direction: column;
     @media only screen and (max-width: 575px) {
-        padding: 5vw;
+        padding: 4.5vw 5vw 7vw;
     }
 `
 
@@ -426,12 +453,13 @@ const ParticipationForm = () => {
                                                 errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
                                             
                                             />
-                                            
+                                            <FormInputLabel htmlFor="formParams[email]">чтобы выслать код для входа</FormInputLabel>
                                             <br/>
+                                            
                                             {errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email && (
                                                 <ErrorMessage>{errors.formParams.email}</ErrorMessage>
                                             )}
-                                            <FormInputLabel htmlFor="formParams[email]">чтобы выслать код для входа</FormInputLabel>
+                                            <FormInputLabelMobile htmlFor="formParams[email]">чтобы выслать код для входа</FormInputLabelMobile>
                                             <FormInput 
                                                 type="text" 
                                                 maxLength="60"  
@@ -443,12 +471,13 @@ const ParticipationForm = () => {
                                                 id="formParams[phone]"
                                                 errorStyle={errors.formParams && errors.formParams.phone && touched.formParams && touched.formParams.phone ? 1 : 0}
                                             /> 
-                                            
+                                            <FormInputLabel htmlFor="formParams[phone]">для экстренной связи</FormInputLabel>
                                             <br/>
+                                            
                                             {errors.formParams && errors.formParams.phone && touched.formParams && touched.formParams.phone && (
                                                 <ErrorMessage>{errors.formParams.phone}</ErrorMessage>
                                             )}
-                                            <FormInputLabel htmlFor="formParams[phone]">для экстренной связи</FormInputLabel>
+                                            <FormInputLabelMobile htmlFor="formParams[phone]">для экстренной связи</FormInputLabelMobile>
                                             <FormCheckbox 
                                                 type="checkbox"
                                                 name="politikaCheckbox"
@@ -500,7 +529,7 @@ const ParticipationForm = () => {
                                                             window['btnprs5ed6bdb399786']=false},6000);
                                                             return true;}}
                                                     >Оплатить</FormButton>
-                                                        <FormPrice>→ 27000<span>₽</span></FormPrice>
+                                                        <FormPrice><i>→ </i>27000<span>₽</span></FormPrice>
 
                                             </FormButtonBlock>
 

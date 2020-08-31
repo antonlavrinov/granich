@@ -23,6 +23,7 @@ const PolicyText = styled.div`
         color: var(--granich-grey);
         margin-bottom: 0.55vw;
 
+
         :last-child {
             margin-bottom: 0;
         }
@@ -37,6 +38,7 @@ const PolicyText = styled.div`
         p {
             font-size: 3.7vw;
             margin-bottom: 2vw;
+            letter-spacing: -0.08vw;
         }
     }
 
@@ -55,9 +57,12 @@ const PolicyFooter = styled.div`
     }
     @media only screen and (max-width: 575px) {
         border-radius: 1.5vw;
-        padding: 2.5vw 2vw;
+        padding: 3vw 3vw;
         font-size: 3.7vw;
-        align-text: center;
+        text-align: center;
+        margin-top: 4vw;
+        margin-bottom: 1vw;
+        line-height: 1.5;
     }
 `
 
@@ -128,7 +133,7 @@ const PolicyFooterEmail = styled.span`
         padding-bottom: 0;
         :hover {
             font-size: 3.8vw;
-            border-bottom: solid 0.2vw var(--granich-black);
+            border-bottom: solid 1.5px var(--granich-black);
 
         }
         &:after {
