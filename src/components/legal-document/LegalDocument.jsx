@@ -221,6 +221,7 @@ const LegalDocumentText = styled.div`
             margin: 1.5vw 0;
             display: block;
             color: var(--granich-black);
+            color: var(--granich-red);
         }
         blockquote {
             p {

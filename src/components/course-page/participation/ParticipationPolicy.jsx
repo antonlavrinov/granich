@@ -4,16 +4,16 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const PolicyWrapper = styled.div`
-    // width: 47%;
-    // min-width: 47%;
     height: 100%;
-    // min-height: 100%;
-    // max-height: 100%;
     background: white;
     border-radius: 0.5vw;
     padding: 2vw;
     display: flex;
     flex-direction: column;
+    @media only screen and (max-width: 575px) {
+        border-radius: 2vw;
+        padding: 5vw;
+    }
 `
 
 const PolicyText = styled.div`
@@ -33,6 +33,12 @@ const PolicyText = styled.div`
         color: var(--granich-black);
         font-weight: 500;
     }
+    @media only screen and (max-width: 575px) {
+        p {
+            font-size: 3.7vw;
+            margin-bottom: 2vw;
+        }
+    }
 
 `
 const PolicyFooter = styled.div`
@@ -44,12 +50,14 @@ const PolicyFooter = styled.div`
     color: var(--granich-grey);
     color: #666666;
     font-weight: 500;
-    // text-align: center;
-
     span {
         position: relative;
-
-
+    }
+    @media only screen and (max-width: 575px) {
+        border-radius: 1.5vw;
+        padding: 2.5vw 2vw;
+        font-size: 3.7vw;
+        align-text: center;
     }
 `
 

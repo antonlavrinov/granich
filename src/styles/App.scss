@@ -504,6 +504,59 @@ ul, li {
     font-size: 0.9vw;
 }
 
+div[data-accordion-component="AccordionItemHeading"] {
+    :focus {
+        outline: none;
+        border: none;
+    }
+    :active {
+        outline: none;
+        border: none;
+    }
+    padding: 0 1.5vw;
+}
+
+.accordion-curriculum-button {
+    padding: 3vw 1vw;
+    user-select: none;
+    position: relative;
+    border-radius: 3vw;
+    :hover {
+        cursor: pointer;
+    }
+
+
+
+}
+
+.accordion__panel {
+    padding: 0 2.5vw !important;
+    p {
+        font-size: 3.7vw;
+        line-height: 1.45;
+    }
+}
+
+
+.accordion-curriculum-button::before {
+    content: '+';
+    position: absolute;
+    top: 56.5%;
+    right: 3.1%;
+    font-family: 'Inter';
+    font-size: 5vw;
+    color: white;
+    cursor: pointer;
+}
+
+
+.accordion-curriculum-button[aria-expanded='true']::before {
+    content: '-';
+    right: 3.7%;
+    top: 57.5%;
+    font-weight: 500;
+}
+
 // .
 
 //import blocks

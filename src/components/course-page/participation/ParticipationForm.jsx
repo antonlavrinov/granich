@@ -21,27 +21,29 @@ const ShakeForm = posed.div({
 
 const FormMainWrapper = styled.div`
 
-    // width: 51%;
-    // min-width: 51%;
-    // margin-right: 2%;
-    // height: 100%;
+
 
 `
 
 
 const FormWrapper = styled.div`
-    // height: 100%;
-    // height: 100%;
+
 `
 
 const FormContainer = styled.div`
     padding: 2vw 2vw 1vw 2.7vw;
+    @media only screen and (max-width: 575px) {
+        padding: 5vw;
+    }
 `
 
 const FormTags = styled.div`
     display: flex;
     align-items: flex-start;
     margin-bottom: 1.8vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 4vw;
+    }
 `
 const FormTag = styled.div`
     border: 1px solid var(--granich-red);
@@ -59,6 +61,13 @@ const FormTag = styled.div`
         color: white;
         background: var(--granich-red);
     `}
+    @media only screen and (max-width: 575px) {
+        padding: 0.8vw 2.2vw;
+        font-size: 2.8vw;
+        white-space: nowrap;
+        margin-right: 1vw;
+        letter-spacing: -0.05vw;
+    }
 `
 
 
@@ -68,6 +77,11 @@ const FormTitle = styled.div`
     font-weight: 600;
     letter-spacing: -0.25vw;
     line-height: 0.85;
+    @media only screen and (max-width: 575px) {
+        font-size: 11vw;
+        width: 90%;
+        margin-bottom: 5vw;
+    }
 `
 const Form = styled.form`
     height: 100%;
@@ -76,6 +90,12 @@ const Form = styled.form`
     border-radius: 0.5vw;
     display: flex;
     flex-direction: column;
+    @media only screen and (max-width: 575px) {
+        border-radius: 2vw;
+        br {
+            display: none;
+        }
+    }
 `
 const FormInput = styled.input`
     border-radius: 0.8vw;
@@ -88,16 +108,26 @@ const FormInput = styled.input`
     margin-right: 1vw;
     margin-left: 0.3vw;
     font-size: 1.35vw;
-    // display: block;
     border: 1px solid #dedede;
+    @media only screen and (max-width: 575px) {
+        width: 100%;
+        box-shadow: inset 0 0 1.2vw rgba(0,0,0,0.2);
+        padding: 2vw 4vw;
+        font-size: 4vw;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 1vw;
+        margin-top: 3vw;
+        border-radius: 2vw;
+    }
     ${props => props.errorStyle && `
-    border: 1px solid var(--granich-red);
-    box-shadow: inset 0 0 0.5vw rgba(228, 5, 33, 0.4);
-
-        ::placeholder {
-            // color: var(--granich-red);
+        border: 1px solid var(--granich-red);
+        box-shadow: inset 0 0 0.5vw rgba(228, 5, 33, 0.4);
+        @media only screen and (max-width: 575px) {
+            box-shadow: inset 0 0 1.2vw rgba(228, 5, 33, 0.4);
         }
     `}
+
 
 `   
 
@@ -108,10 +138,21 @@ const FormInputLabel = styled.label`
     display: inline-block;
     position: relative;
     top: 0.3vw;
+    @media only screen and (max-width: 575px) {
+        display: block;
+        font-size: 3vw;
+        max-width: 100%;
+        top: 0vw;
+        margin-left: 0.4vw;
+
+    }
 `
 
 const FormCheckbox = styled.input`
     margin-left: 0.3vw;
+    @media only screen and (max-width: 575px) {
+        
+    }
 
 
 `
@@ -120,7 +161,6 @@ const FormCheckboxLabel = styled.label`
     font-size: 1.2vw;
     user-select: none;
     letter-spacing: -0.02vw;
-    // padding-bottom: 1px;
     margin-top: 1.5vw;
     margin-left: 0.4vw;
     margin-bottom: 0.7vw;
@@ -128,7 +168,6 @@ const FormCheckboxLabel = styled.label`
         color: var(--granich-red);
         font-weight: 500;
         display: inline-block;
-        // text-decoration: underline;
         margin: 0 0.4vw;
         position: relative;
        
@@ -150,6 +189,10 @@ const FormCheckboxLabel = styled.label`
             }
         }
     }
+    @media only screen and (max-width: 575px) {
+        font-size: 3vw;
+        margin-top: 5vw;
+    }
 `
 
 const ErrorMessage = styled.div`
@@ -157,12 +200,19 @@ const ErrorMessage = styled.div`
     color: var(--granich-red);
     margin-left: 0.4vw;
     margin-bottom: 0.5vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 3vw;
+        margin-bottom: 0.5vw;
+    }
 `
 
 const FormButtonBlock = styled.div`
     display: flex;
     margin-bottom: 0.2vw;
     align-items: center;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 1vw;
+    }
 `
 
 const FormButton = styled.button`
@@ -176,6 +226,11 @@ const FormButton = styled.button`
     :hover {
         cursor: pointer;
         transform: scale(1.05);
+    }
+    @media only screen and (max-width: 575px) {
+        font-size: 4vw;
+        padding: 1vw 3vw;
+        border-radius: 1.5vw;
     }
 `
 
@@ -192,18 +247,27 @@ const FormPrice = styled.div`
         display: inline-block;
         margin-left: 0.5vw;
     }
+    @media only screen and (max-width: 575px) {
+        font-size: 8vw;
+    }
 
 `
 
 const FormSubText = styled.div`
     color: white;
     font-size: 1.17vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 3vw;
+    }
 `
 
 const FormFooterWrapper = styled.div`
     background: var(--granich-red);
     border-radius: 0 0 0.5vw 0.5vw;
     margin-top: auto;
+    @media only screen and (max-width: 575px) {
+        border-radius: 0 0 2vw 2vw;
+    }
 
 `
 
@@ -213,20 +277,12 @@ const FormFooterContainer = styled.div`
     padding: 1.3vw 3vw 2vw;
     display: flex;
     flex-direction: column;
+    @media only screen and (max-width: 575px) {
+        padding: 5vw;
+    }
 `
 
-// const Input = ({ label, ...props }) => {
-//     const [field, meta] = useField(props);
-//     return (
-//         <>
-//             <FormInput {...field} {...props}/>
-//             {meta.touched && meta.error ? (
-//                 <div className="error">{meta.error}</div>
-//             ) : null}
-//         </>
 
-//     )
-// }
 
 
 const ParticipationForm = () => {
@@ -268,7 +324,7 @@ const ParticipationForm = () => {
         <ShakeForm style={{height: '100%'}} pose={["shake"]} poseKey={shakeTrigger}>
 
                 <Formik isInitialValid={isInitialValid} 
-                                initialValues={{politikaCheckbox: false, formParams: {
+                                initialValues={{politikaCheckbox: true, formParams: {
                                     first_name: '',
                                     last_name: '',
                                     email: '',
@@ -352,7 +408,7 @@ const ParticipationForm = () => {
                                                 value={values.formParams.last_name}
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
-                                                errorStyle={errors.formParams && errors.formParams.first_name && touched.formParams && touched.formParams.last_name ? 1 : 0}
+                                                errorStyle={errors.formParams && errors.formParams.last_name && touched.formParams && touched.formParams.last_name ? 1 : 0}
                                             
                                             /> <br/>
                                             {errors.formParams && errors.formParams.last_name && touched.formParams && touched.formParams.last_name && (
@@ -370,11 +426,12 @@ const ParticipationForm = () => {
                                                 errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
                                             
                                             />
-                                            <FormInputLabel htmlFor="formParams[email]">чтобы выслать код для входа</FormInputLabel>
+                                            
                                             <br/>
                                             {errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email && (
                                                 <ErrorMessage>{errors.formParams.email}</ErrorMessage>
                                             )}
+                                            <FormInputLabel htmlFor="formParams[email]">чтобы выслать код для входа</FormInputLabel>
                                             <FormInput 
                                                 type="text" 
                                                 maxLength="60"  
@@ -386,11 +443,12 @@ const ParticipationForm = () => {
                                                 id="formParams[phone]"
                                                 errorStyle={errors.formParams && errors.formParams.phone && touched.formParams && touched.formParams.phone ? 1 : 0}
                                             /> 
-                                            <FormInputLabel htmlFor="formParams[phone]">для экстренной связи</FormInputLabel>
+                                            
                                             <br/>
                                             {errors.formParams && errors.formParams.phone && touched.formParams && touched.formParams.phone && (
                                                 <ErrorMessage>{errors.formParams.phone}</ErrorMessage>
                                             )}
+                                            <FormInputLabel htmlFor="formParams[phone]">для экстренной связи</FormInputLabel>
                                             <FormCheckbox 
                                                 type="checkbox"
                                                 name="politikaCheckbox"

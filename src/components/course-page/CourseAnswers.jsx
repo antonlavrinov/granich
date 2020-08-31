@@ -27,6 +27,7 @@ const AnswersSection = styled.section`
     margin-bottom: 4vw;
     @media only screen and (max-width: 575px) {
         margin-bottom: 5vw;
+        border-radius: 2vw;
     }
 ` 
 
@@ -38,6 +39,9 @@ const AnswersWrapper = styled.div`
 
     padding: 5.4vw 3vw 0.5vw;
     border-bottom: 0.25vw dotted white;
+    @media only screen and (max-width: 575px) {
+        padding: 5.4vw 5vw 0.5vw;
+    }
 
 `
 
@@ -46,6 +50,9 @@ const AnswersHeader = styled.div`
     padding-bottom: 8.2vw;
     border-bottom: 1.5px solid var(--granich-black);
     width: 100%;
+    @media only screen and (max-width: 575px) {
+        flex-direction: column;
+    }
 `
 
 const AnswersSectionTitle = styled.div`
@@ -59,11 +66,12 @@ const AnswersSectionTitle = styled.div`
     width: 40vw;
     min-width: 40vw;
     @media only screen and (max-width: 575px) {
-        font-size: 11.9vw;
+        font-size: 11vw;
         letter-spacing: -0.7vw;
         line-height: 1;
         margin-right: 0;
         margin-bottom: 4vw;
+        width: 100%;
     }
 
 `

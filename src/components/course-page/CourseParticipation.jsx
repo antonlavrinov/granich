@@ -6,16 +6,23 @@ import ParticipationPolicy from './participation/ParticipationPolicy';
 
 
 const ParticipationSection = styled.section`
-    margin-bottom: 50px;
+    margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 `
 
 
 const ParticipationWrapper = styled.div`
     display: grid;
-    // justify-content: space-between;
     grid-template-columns: 51% 47%;
     grid-column-gap: 2%;
-    // grid-row-gap: 1.7vw;
+    @media only screen and (max-width: 575px) {
+        grid-template-columns: 100%;
+        grid-column-gap: 0;
+        grid-row-gap: 3vw;
+    }
+    
 `
 
 

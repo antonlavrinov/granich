@@ -22,7 +22,10 @@ const ArrowLinkOut = styled(props => <ArrowOut {...props}/>)`
 `
 
 const FeaturesSection = styled.section`
-    margin-bottom: 50px;
+    margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 `
 
 const FeaturesSectionTitle = styled.div`
@@ -30,6 +33,12 @@ const FeaturesSectionTitle = styled.div`
     font-weight: 700;
     letter-spacing: -0.2vw;
     margin-bottom: 2.4vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 11vw;
+        margin-bottom: 4vw;
+        letter-spacing: -0.7vw;
+        line-height: 1;
+    }
 `
 
 
@@ -39,6 +48,12 @@ const FeaturesWrapper = styled.div`
     grid-template-rows: 1fr 1fr 1fr;
     grid-column-gap: 1.5vw;
     grid-row-gap: 1.5vw;
+    @media only screen and (max-width: 575px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-column-gap: 3vw;
+        grid-row-gap: 3vw;
+    }
 `
 
 const FeatureWrapper = styled.div`
@@ -46,17 +61,22 @@ const FeatureWrapper = styled.div`
     background: white;
     border-radius: 0.5vw;
     display: flex;
+    @media only screen and (max-width: 575px) {
+        padding: 4vw 5vw;
+        border-radius: 2vw;
+    }
 `
 
 const FeatureText = styled.div`
-    // font-size: 1vw;
-    font-size: 1.15vw;
     font-size: 1.06vw;
     line-height: 1.3;
     color: var(--granich-grey);
     span {
         font-weight: 500;
         color: var(--granich-black);
+    }
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
     }
 `
 
@@ -77,6 +97,12 @@ const FeatureImage = styled(props => <Img {...props}/>)`
     min-width: 5.4vw;
     height: 5.4vw;
     margin-right: 1vw;
+    @media only screen and (max-width: 575px) {
+        width: 20vw;
+        min-width: 20vw;
+        height: 20vw;
+        margin-right: 5vw;
+    }
 `
 
 const Feature = ({image, title, text, link}) => {

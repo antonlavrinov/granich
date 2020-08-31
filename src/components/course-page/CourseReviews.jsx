@@ -157,7 +157,8 @@ const ReviewsFooter = styled.div`
     padding: 1vw 3vw;
     @media only screen and (max-width: 575px) {
         border-radius: 1.5vw;
-        padding: 3.5vw 3vw;
+        padding: 5vw 3vw 10vw;
+        flex-direction: column;
     }
 `
 
@@ -168,12 +169,21 @@ const ReviewsFooterTitle = styled.div`
     font-weight: 500;
     line-height: 1;
     margin-top: -0.5vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 8vw;
+        margin-top: 0;
+        margin-bottom: 4vw;
+    }
 `
 
 const ReviewsLinks = styled.div`
     display: flex;
-    // align-items: center;
     margin-left: auto;
+    @media only screen and (max-width: 575px) {
+        margin-left: 0;
+        flex-direction: column;
+        align-items: center;
+    }
 `
 const ReviewsLinkTelegram = styled.a`
     display: flex;
@@ -195,16 +205,20 @@ const ReviewsLinkTelegram = styled.a`
     ${props => props.masterClass && `
         padding: 1vw 1vw;
         margin: 0 auto;
-        @media only screen and (max-width: 575px) {
-            font-size: 3.9vw;
-            border-radius: 1.3vw;
-            padding: 3.2vw 3vw;
-            box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
-            :hover {
-                font-size: 3.9vw;
-            }
-        }
+        width: auto;
     `}
+    @media only screen and (max-width: 575px) {
+        font-size: 3.9vw;
+        border-radius: 1.3vw;
+        padding: 3.6vw 3vw;
+        box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
+        :hover {
+            font-size: 3.9vw;
+        }
+        margin-bottom: 4vw;
+        width: 100%;
+        margin-right: 0;
+    }
 
 `
 const ReviewsLinkVk = styled.a`
@@ -227,6 +241,24 @@ const ReviewsLinkVk = styled.a`
         transform: scale(1.05);
         cursor: pointer;
         color: white;
+    }
+    @media only screen and (max-width: 575px) {
+        font-size: 3.9vw;
+        border-radius: 1.3vw;
+        padding: 1.7vw 7.5vw 2vw;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
+        :hover {
+            font-size: 3.9vw;
+        }
+        div {
+            :last-child {
+                font-size: 2.5vw;
+                text-align: left;
+                margin-top: 0.3vw;
+            }
+        }
     }
 `
 

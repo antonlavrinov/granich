@@ -12,12 +12,21 @@ const Arrow = styled(props => <ArrowIcon {...props}/>)`
     width: 3vw;
     margin-left: 1.5vw;
     fill: var(--granich-red);
+    @media only screen and (max-width: 575px) {
+        transform: rotate(90deg);
+        width: 10vw;
+        margin-left: 3vw;
+    }
 `
 
 const Check = styled(props => <CheckIcon {...props}/>)`
     width: 3vw;
     margin-left: 1.5vw;
     fill: var(--granich-red);
+    @media only screen and (max-width: 575px) {
+        width: 10vw;
+        margin-left: 3vw;
+    }
 `
 
 
@@ -50,14 +59,14 @@ const TrainingPathBlockWrapper = styled.div`
 
     border-radius: 0.5vw;
     @media only screen and (max-width: 575px) {
-        border-radius: 3vw;
+        border-radius: 2vw;
     }
 
 `
 const TrainingPathBlockContainer = styled.div`
     padding: 0.8vw 1.5vw 1.5vw;
     @media only screen and (max-width: 575px) {
-
+        padding: 5vw 5vw 5vw;
     }
 `
 
@@ -67,7 +76,8 @@ const TrainingPathImageContainer = styled.div`
     border-radius: 0.5vw;
     margin-top: auto;
     @media only screen and (max-width: 575px) {
-
+        border-radius: 2vw;
+        padding: 7.5vw;
     }
 `
 
@@ -81,18 +91,10 @@ const TrainingPathBlockNumber = styled.div`
     line-height: 1;
     margin-left: -0.1vw;
     margin-bottom: 1vw;
-    span {
-        font-style: normal;
-        font-size: 3vw;
-        position: relative;
-        font-weight: 600;
-        top: -0.8vw;
-        left: 0.5vw;
-        font-family: Inter;
-        color: var(--granich-red);
-    }
     @media only screen and (max-width: 575px) {
-
+        font-size: 16.5vw;
+        margin-bottom: 4vw;
+        margin-left: 0;
     }
 `
 
@@ -110,7 +112,9 @@ const TrainingPathBlockText = styled.div`
         }
     }
     @media only screen and (max-width: 575px) {
-
+        p {
+            font-size: 3.7vw;
+        }
     }
 
 
@@ -128,7 +132,7 @@ const TrainingPathBlockImage = styled.div`
 
     }
     @media only screen and (max-width: 575px) {
-
+        width: 100%;
     }
 `
 
@@ -137,7 +141,7 @@ const TrainingPathImage = styled(props => <BackgroundImage {...props}/>)`
     height: 8.8vw;
     background-size: 110%;
     @media only screen and (max-width: 575px) {
-
+        height: 43.8vw;
     }
 
 `
@@ -157,10 +161,7 @@ const TrainingPathSectionTitle = styled.div`
     }
 `
 
-const CheckMark = styled.span`
-    font-size: 2.5vw !important;
-    color: black;
-`
+
 
 const CourseTrainingPath = ({data}) => {
     return (

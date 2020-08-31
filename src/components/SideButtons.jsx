@@ -43,13 +43,13 @@ const IconLink = styled.a`
         border-bottom: 0.55vw solid transparent;
         border-top: 0.55vw solid transparent;
         border-left: 0.55vw solid var(--granich-black);
-        ${props => props.content === 'Вконтакте' && `
+        ${props => props.content === 'Написать в ВК' && `
             border-left: 0.55vw solid #0071BC;
         `}
-        ${props => props.content === 'WhatsApp' && `
+        ${props => props.content === 'Написать в WhatsApp' && `
             border-left: 0.55vw solid #39B54A;
         `}
-        ${props => props.content === 'Телеграм' && `
+        ${props => props.content === 'Написать в Телеграме' && `
             border-left: 0.55vw solid #2098CA;
         `}
     }
@@ -69,15 +69,15 @@ const IconLink = styled.a`
         // min-width: 5vw; 
         text-align: center;
         border-radius: 0.2vw;
-        white-space: normal;;
+        white-space: nowrap;
         background: var(--granich-black);
-        ${props => props.content === 'Вконтакте' && `
+        ${props => props.content === 'Написать в ВК' && `
             background: #0071BC;
         `}
-        ${props => props.content === 'WhatsApp' && `
+        ${props => props.content === 'Написать в WhatsApp' && `
             background: #39B54A;
         `}
-        ${props => props.content === 'Телеграм' && `
+        ${props => props.content === 'Написать в Телеграме' && `
             background: #2098CA;
         `}
     }    
@@ -331,17 +331,17 @@ const SideButtons = () => {
                             </CopyToClipboard>
                         </IconLink>
 
-                        <IconLink content="Телеграм" target="_blank" href="https://t.me/granich_school">
+                        <IconLink content="Написать в Телеграме" target="_blank" href="https://t.me/granich_school">
 
                                 <Telegram />
 
                         </IconLink>
-                        <IconLink content="WhatsApp" target="_blank" href="https://wa.me/79046434682">
+                        <IconLink content="Написать в WhatsApp" target="_blank" href="https://wa.me/79046434682">
 
                                 <Whatsup/>
 
                         </IconLink>
-                        <IconLink content="Вконтакте" target="_blank" href="https://vk.com/write-164662407">
+                        <IconLink content="Написать в ВК" target="_blank" href="https://vk.com/write-164662407">
 
                                 <VK/>
 
