@@ -14,7 +14,7 @@ const ExampleWrapper = styled.div`
     background: white;
     justify-content: space-between;
     padding: 5.5vw 4.7vw 4vw;
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
     
     svg {
         width: 13vw;

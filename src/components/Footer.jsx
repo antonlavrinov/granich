@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Container } from './style';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
@@ -7,9 +7,7 @@ import VisaIcon from '../assets/svgs/Visa.svg';
 import MastercardIcon from '../assets/svgs/Mastercard.svg';
 import RobokassaIcon from '../assets/svgs/Robokassa.svg';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import ReactTooltip from 'react-tooltip';
 import 'react-tippy/dist/tippy.css'
-import {Tooltip} from 'react-tippy';
 
 
 const BlackLogo = styled(props => <Logo {...props}/>)`
@@ -27,19 +25,6 @@ const BlackLogo = styled(props => <Logo {...props}/>)`
     }
 `
 
-const StyledTooltip = styled(props => <Tooltip {...props}></Tooltip>)`
-    // span {
-    //     color: white;
-    // }
-    // div {
-    //     div {
-    //         :last-child {
-    //             background: red;
-    //         }
-    //     }
-    // }
-    
-`
 
 const Visa = styled(props => <VisaIcon {...props}/>)`
     width: 5.5vw;

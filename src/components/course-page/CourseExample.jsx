@@ -15,7 +15,7 @@ const CourseExampleWrapper = styled.div`
     background: white;
     justify-content: space-between;
     padding: 4vw 4.7vw;
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
     
     @media only screen and (max-width: 575px) {
         border-radius: 3vw;

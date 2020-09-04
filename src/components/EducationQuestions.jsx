@@ -10,7 +10,7 @@ const EducationQuestionsSection = styled.section`
 
 const EducationQuestionsWrapper = styled.div`
     background: #e8e8e8;
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
     padding: 1.8vw 2vw;
     font-size: 1.15vw;
     color: var(--granich-grey);

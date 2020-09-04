@@ -69,6 +69,13 @@
         width: 3.5vw;
         height: 3.5vw;
     }
+    .course-form-checkbox_black:checked + label::before {
+        background: white;
+        background: #fafafa;
+        font-size: 5vw;
+        width: 3.5vw;
+        height: 3.5vw;
+    }
 }
 
  

@@ -54,6 +54,10 @@ const ReviewsTitle = styled.div`
         letter-spacing: -0.7vw;
         line-height: 1;
         margin-bottom: 7vw;
+        width: 60%;
+        ${props => props.masterClass && `
+            width: 100%;
+        `}
     }
 `
 
@@ -159,6 +163,9 @@ const ReviewsFooter = styled.div`
         border-radius: 1.5vw;
         padding: 5vw 3vw 10vw;
         flex-direction: column;
+        ${props => props.masterClass && `
+            padding: 5vw;
+        `}
     }
 `
 
@@ -173,6 +180,8 @@ const ReviewsFooterTitle = styled.div`
         font-size: 8vw;
         margin-top: 0;
         margin-bottom: 4vw;
+
+
     }
 `
 
@@ -202,11 +211,7 @@ const ReviewsLinkTelegram = styled.a`
         cursor: pointer;
         color: white;
     }
-    ${props => props.masterClass && `
-        padding: 1vw 1vw;
-        margin: 0 auto;
-        width: auto;
-    `}
+
     @media only screen and (max-width: 575px) {
         font-size: 3.9vw;
         border-radius: 1.3vw;
@@ -219,6 +224,21 @@ const ReviewsLinkTelegram = styled.a`
         width: 100%;
         margin-right: 0;
     }
+    ${props => props.masterClass && `
+        padding: 1vw 1vw;
+        margin: 0 auto;
+        width: auto;
+        @media only screen and (max-width: 575px) {
+            font-size: 3.9vw;
+            border-radius: 1.3vw;
+            padding: 3.6vw 3vw;
+            margin-bottom: 0;
+            text-align: center;
+            display: inline-flex;
+            width: auto;
+            margin: 0 auto;
+        }
+    `}
 
 `
 const ReviewsLinkVk = styled.a`
@@ -286,9 +306,9 @@ const CourseReviews = ({data, masterClass}) => {
             <Container>
                 <ReviewsWrapper>
                     {!masterClass ? (
-                        <ReviewsTitle>Отзывы <br/>о курсе</ReviewsTitle>
+                        <ReviewsTitle>Отзывы о курсе</ReviewsTitle>
                     ) : (
-                        <ReviewsTitle>Отзывы <br/>о мастер-классе</ReviewsTitle>
+                        <ReviewsTitle masterClass>Отзывы о мастер-классе</ReviewsTitle>
                     )}
                     
                     <ReviewsList>
@@ -298,7 +318,7 @@ const CourseReviews = ({data, masterClass}) => {
                             )
                         })}
                     </ReviewsList>
-                    <ReviewsFooter>
+                    <ReviewsFooter masterClass={masterClass}>
                         {!masterClass ? (
                             <>
                                 <ReviewsFooterTitle>Все отзывы о курсе:</ReviewsFooterTitle>

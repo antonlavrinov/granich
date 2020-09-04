@@ -2,6 +2,8 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+import img from '../../assets/images/graph-design/price-range/price-range-plus.png';
+
 
 const PriceRangeSection = styled.section`
     margin-bottom: 2vw;
@@ -27,7 +29,7 @@ const PriceCategory = styled.div`
     display: flex;
     flex-direction: column;
     background: white;
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
     transition: transform 0.2s ease;
     box-shadow: 0.1vw 0 0.5vw rgba(0,0,0,0.15);
     :last-child {
@@ -77,7 +79,8 @@ const PriceCategoryTitle = styled.div`
         font-size: 5.5vw;
     }
 `
-
+            // background: #f2f2f2;
+            // background: url(${img});
 const PriceCategoryList = styled.div`
     li {
 
@@ -96,25 +99,7 @@ const PriceCategoryList = styled.div`
                 display: block;
             }
         }
-        :after {
-            content: '+';
-            position: absolute;
-            top: 33%;
-            right: 3.5%;
-            width: 1.1vw;
-            height: 1.1vw;
-            border-radius: 100vw;
-            background: #f2f2f2;
-            color: var(--granich-light-grey);
-            text-align: center;
-            font-size: 1.1vw;
-            
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 0;
-            
-        }
+
 
         
     }
@@ -253,7 +238,7 @@ const PriceCategoryFooter = styled.footer`
     padding: 1vw 1.4vw;
     display: flex;
     flex-direction: column;
-    border-radius: 0 0 0.5vw 0.5vw;
+    border-radius: 0 0 0.6vw 0.6vw;
     @media only screen and (max-width: 575px) {
         padding: 2.5vw 3vw;
         border-radius: 0 0 3vw 3vw;
@@ -332,7 +317,7 @@ const CoursePriceRange = ({data}) => {
                                     <PriceCategoryTitle>{price.node.pricesTitle}</PriceCategoryTitle>
                                 </PriceCategoryHeader>
 
-                                <PriceCategoryList>
+                                <PriceCategoryList className="price-category-list">
                                     {documentToReactComponents(price.node.pricesText.json)}
                                 </PriceCategoryList>
                                 <PriceCategoryFooter>

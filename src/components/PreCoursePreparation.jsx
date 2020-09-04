@@ -248,9 +248,11 @@ const PreparationButtonMore = styled.div`
         transition: all 0.2s ease;
         :hover {
             cursor: pointer;
-            background: #cfcfcf;
+            // background: #cfcfcf;
+            
             div {
-                color: var(--granich-grey);
+                // color: var(--granich-grey);
+                border-color: rgba(0,0,0,0);
                 
             }
         }

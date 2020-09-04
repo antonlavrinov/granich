@@ -15,7 +15,7 @@ import CourseParticipation from "../components/course-page/CourseParticipation"
 import CourseCommitment from "../components/course-page/CourseCommitment"
 import {graphql} from 'gatsby';
 import CourseAnswers from "../components/course-page/CourseAnswers";
-
+import Mailing from '../components/Mailing';
 
 
 export const contentfulQuery = graphql`
@@ -151,10 +151,15 @@ export const contentfulQuery = graphql`
           edges {
             node {
               portfolioMedia {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 1200 ) {
                   ...GatsbyContentfulFluid
+                  src
+                }
+                resize(width: 150) {
+                  src
                 }
               }
+              
             }
           }
         }
@@ -174,12 +179,13 @@ export const contentfulQuery = graphql`
         answers: allContentfulGranichCourseAnswers(filter: {AnswersAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [AnswersOrderNumber], order: ASC}) {
           edges {
             node {
+              id
               AnswersTagName
               AnswersTagType
-              childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode {
+              AnswersFirstColumn {
                 json
               }
-              childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode {
+              AnswersSecondColumn {
                 json
               }
             }
@@ -206,7 +212,12 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <CourseCurriculum data={data.curriculum}/>
     <CourseFeatures data={data.features}/>
     <CourseReviews data={data.reviews}/>
-    <CourseParticipation data={data.offer}/>
+    <div id="participation-section"></div>
+    {data.offer.courseStatus ? (
+      <CourseParticipation data={data.offer}/>
+    ) : (
+      <Mailing/>
+    )}
     <CourseAnswers data={data.answers}/>
 
   </Layout>

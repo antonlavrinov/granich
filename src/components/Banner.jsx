@@ -13,14 +13,14 @@ const BannerSection = styled.div`
 
 const BannerWrapper = styled.div`
     background: white;
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
     padding: 1.5vw 2vw 1.5vw 15.8vw;
     position: relative;
     display: flex;
     box-shadow: .25vw .25vw .5vw rgba(0,0,0,0.15);
     @media only screen and (max-width: 575px) {
         padding: 6vw 6.6vw 6.6vw;
-        border-radius: 1.5vw;
+        border-radius: 2.5vw;
         box-shadow: .6vw .6vw 1.8vw rgba(0,0,0,0.23);
         box-shadow: 0 0 1.8vw rgba(0,0,0,0.15);
     }

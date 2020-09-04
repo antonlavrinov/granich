@@ -32,11 +32,11 @@ const YoutubeSection = styled.section`
 
 
 const YoutubeWrapper = styled.div`
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
     background: #2A2A2A;
     @media only screen and (max-width: 575px) {
 
-        border-radius: 1.5vw;
+        border-radius: 2.5vw;
     }
 
 `
@@ -77,9 +77,9 @@ const ContentInfo = styled.div`
     padding: 2.5vw 3vw;
     display: flex;
     align-items: flex-start;
-    border-radius: 0 0 0.5vw 0.5vw;
+    border-radius: 0 0 0.6vw 0.6vw;
     @media only screen and (max-width: 575px) {
-        border-radius: 0 0 1.5vw 1.5vw;
+        border-radius: 0 0 2.5vw 2.5vw;
         padding: 4vw 6.6vw;
         align-items: center;
     }

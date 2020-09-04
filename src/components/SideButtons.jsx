@@ -266,7 +266,7 @@ const Email = styled.div`
 
 const SideButtonsSection = styled.div`
     position: fixed;
-    bottom: 4.5vw;
+    bottom: 3.95vw;
     right: 3.5vw;
     display: flex;
     flex-direction: column;

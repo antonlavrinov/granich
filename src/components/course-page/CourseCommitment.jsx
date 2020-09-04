@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
-import commitmentGIF from '../../assets/images/graph-design/commitment/commitment-gif.gif';
 import commitmentVideo from '../../assets/images/graph-design/commitment/ezgif.com-gif-to-mp4.mp4';
 
 const CommitmentSection = styled.section`
@@ -14,7 +13,7 @@ const CommitmentWrapper = styled.div`
     display: flex;
     background: white;
     padding: 3.3vw 3.3vw;
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
     video {
         min-width: 36.3vw;
         width: 36.3vw;

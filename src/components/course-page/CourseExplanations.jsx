@@ -25,7 +25,7 @@ const ExplanationsWrapper = styled.div`
 
 const ExplanationsBlockWrapper = styled.div`
     background: white;
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
     padding: 2.3vw 1.7vw 2.3vw;
     position: relative;
     @media only screen and (max-width: 575px) {

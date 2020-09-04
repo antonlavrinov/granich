@@ -57,7 +57,19 @@ const TrainingPathBlockWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
+    position: relative;
+    :before {
+        content: '';
+        width: 10.5vw;
+        height: 10.5vw;
+        background: var(--granich-red);
+        position: absolute;
+        bottom: 1.2vw;;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 100vw;
+    }
     @media only screen and (max-width: 575px) {
         border-radius: 2vw;
     }
@@ -65,21 +77,23 @@ const TrainingPathBlockWrapper = styled.div`
 `
 const TrainingPathBlockContainer = styled.div`
     padding: 0.8vw 1.5vw 1.5vw;
+
+
     @media only screen and (max-width: 575px) {
         padding: 5vw 5vw 5vw;
     }
 `
 
-const TrainingPathImageContainer = styled.div`
-    padding: 1.5vw;
-    background: var(--granich-red);
-    border-radius: 0.5vw;
-    margin-top: auto;
-    @media only screen and (max-width: 575px) {
-        border-radius: 2vw;
-        padding: 7.5vw;
-    }
-`
+// const TrainingPathImageContainer = styled.div`
+//     padding: 1.5vw;
+//     background: var(--granich-red);
+//     border-radius: 0.6vw;
+//     margin-top: auto;
+//     @media only screen and (max-width: 575px) {
+//         border-radius: 2vw;
+//         padding: 7.5vw;
+//     }
+// `
 
 const TrainingPathBlockNumber = styled.div`
     font-family: EB Garamond;
@@ -124,17 +138,29 @@ const TrainingPathBlockImage = styled.div`
     width: 14.7vw;
     height: auto;
     transition: transform 0.3s ease;
+    margin-top: auto;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: 1.75vw;
+
     div {
         width: 100%;
     }
     :hover {
-        transform: scale(1.05);
+        // transform: scale(1.05);
 
     }
+
     @media only screen and (max-width: 575px) {
         width: 100%;
+        :hover {
+            transform: none;
+    
+        }
     }
 `
+
+
 
 const TrainingPathImage = styled(props => <BackgroundImage {...props}/>)`
     width: 100%;
@@ -176,14 +202,14 @@ const CourseTrainingPath = ({data}) => {
                                     <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber>
                                     <TrainingPathBlockText>{documentToReactComponents(block.node.trainingPathText.json)}</TrainingPathBlockText>
                                 </TrainingPathBlockContainer>
-                                <TrainingPathImageContainer>
+                                {/* <TrainingPathImageContainer> */}
                                     <TrainingPathBlockImage>
                                         <Zoom>
                                             <TrainingPathImage fluid={block.node.trainingPathImage.fluid}></TrainingPathImage>
                                         </Zoom>
                                     </TrainingPathBlockImage>
-
-                                </TrainingPathImageContainer>
+{/* 
+                                </TrainingPathImageContainer> */}
                             </TrainingPathBlockWrapper>
                         )
                     })}

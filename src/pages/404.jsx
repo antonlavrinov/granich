@@ -14,7 +14,7 @@ const NotFoundSection = styled.section`
 
 const NotFoundWrapper = styled.div`
   background: white;
-  border-radius: 0.5vw;
+  border-radius: 0.6vw;
   padding: 4.2vw 3.3vw;
   position: relative;
   min-height: 36.5vw;

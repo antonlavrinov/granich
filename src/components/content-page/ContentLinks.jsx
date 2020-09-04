@@ -111,7 +111,7 @@ const ContentLinksWrapper = styled.div`
 
 
 const LinkBlock = styled.a`
-    border-radius: 0.4vw;
+    border-radius: 0.6vw;
     background: #2A2A2A;
     padding: 1vw;
     display: flex;
@@ -121,7 +121,7 @@ const LinkBlock = styled.a`
     }
     @media only screen and (max-width: 575px) {
         padding: 4vw 5.4vw;
-        border-radius: 1.5vw;
+        border-radius: 2.5vw;
 
     }
 

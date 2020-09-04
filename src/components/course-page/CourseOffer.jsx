@@ -17,8 +17,9 @@ const Potok = styled(props => <PotokIcon {...props}/>)`
     fill: white;
     @media only screen and (max-width: 575px) {
         width: 4.3vw;
-        height: 4.3vw;
+        height: 4vw;
         margin-right: 1vw;
+        margin-top: -0.3vw;
     }
 `
 
@@ -29,8 +30,9 @@ const Duration = styled(props => <DurationIcon {...props}/>)`
     margin-right: 0.3vw;
     @media only screen and (max-width: 575px) {
         width: 4.3vw;
-        height: 4.3vw;
+        height: 4vw;
         margin-right: 1vw;
+        margin-top: -0.8vw;
     }
 `
 const Date = styled(props => <DateIcon {...props}/>)`
@@ -40,8 +42,9 @@ const Date = styled(props => <DateIcon {...props}/>)`
     margin-right: 0.3vw;
     @media only screen and (max-width: 575px) {
         width: 4.3vw;
-        height: 4.3vw;
+        height: 4vw;
         margin-right: 1vw;
+        margin-top: -0.8vw;
     }
 `
 
@@ -53,7 +56,7 @@ const CourseOfferSection = styled.section`
 
 const CourseOfferWrapper = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     background: white;
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
     padding: 3.4vw 2.7vw 4.4vw;
     position: relative;
     box-shadow: 0.25vw 0.15vw 0.4vw rgba(0,0,0,0.1);
@@ -105,12 +108,14 @@ const CourseOfferTag = styled.div`
     border-radius: 100vw;
     margin-right: 1vw;
     font-weight: 500;
+    align-items: center;
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
-        padding: 1.6vw 2.5vw;
+        padding: 1.8vw 2.5vw 1.6vw;
         margin-right: 3vw;
         white-space: nowrap;
         margin-bottom: 3vw;
+        line-height: 1;
     }
 `
 const CourseOfferMainTag = styled.div`
@@ -154,6 +159,23 @@ const CourseOfferTitle = styled.h1`
         }
     }
     
+
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+        margin-left: 0vw;
+        margin-top: -1vw;
+        line-height: 0.8;
+        padding: 0 5vw;
+        p {
+            font-size: 15vw;
+            letter-spacing: 0.5vw;
+            i { 
+                letter-spacing: -0.2vw;
+                font-size: 14vw;
+                margin-top: 2vw;
+            }
+        }
+    }
     ${props => props.type === 'Мастер-класс' && `
         margin-bottom: 1.5vw;
         margin-left: 0vw;
@@ -161,7 +183,7 @@ const CourseOfferTitle = styled.h1`
         line-height: 1.15;
         p {
             font-size: 6vw;
-            font-weight: 600;
+            font-weight: 500;
             letter-spacing: 0.8vw;
             i { 
                 margin-top: 2vw;
@@ -183,22 +205,6 @@ const CourseOfferTitle = styled.h1`
             }
         }
     `}
-    @media only screen and (max-width: 575px) {
-        margin-bottom: 5vw;
-        margin-left: 0vw;
-        margin-top: -1vw;
-        line-height: 0.8;
-        padding: 0 5vw;
-        p {
-            font-size: 15vw;
-            letter-spacing: 0.5vw;
-            i { 
-                letter-spacing: -0.2vw;
-                font-size: 14vw;
-                margin-top: 2vw;
-            }
-        }
-    }
 `
 const CourseOfferDescr = styled.div`
     width: 33vw;

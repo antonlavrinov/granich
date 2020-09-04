@@ -12,7 +12,7 @@ const AuthorsSection = styled.section`
 
 const AuthorsWrapper = styled.section`
  padding: 4.7vw 7vw 4.7vw 4.7vw;
- border-radius: 0.5vw;
+ border-radius: 0.6vw;
  background: white;
  @media only screen and (max-width: 575px) {
     padding: 6vw;

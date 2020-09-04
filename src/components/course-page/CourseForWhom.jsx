@@ -40,7 +40,7 @@ const ForWhomWrapper = styled.div`
 const ForWhomBlockWrapper = styled.div`
     background: white;
     padding: 1.8vw;
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
         border-radius: 3vw;
         padding: 14vw 4vw 7vw;

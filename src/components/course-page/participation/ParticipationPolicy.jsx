@@ -11,7 +11,7 @@ const PolicyWrapper = styled.div`
     display: flex;
     flex-direction: column;
     @media only screen and (max-width: 575px) {
-        border-radius: 2vw;
+        border-radius: 2.5vw;
         padding: 5vw;
     }
 `

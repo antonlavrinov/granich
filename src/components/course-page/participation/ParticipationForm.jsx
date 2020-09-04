@@ -87,11 +87,11 @@ const Form = styled.form`
     height: 100%;
     position: relative;
     background: white;
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
     display: flex;
     flex-direction: column;
     @media only screen and (max-width: 575px) {
-        border-radius: 2vw;
+        border-radius: 2.5vw;
         br {
             display: none;
         }
@@ -101,7 +101,7 @@ const FormInput = styled.input`
     border-radius: 0.8vw;
     border: none;
     width: 25vw;
-    box-shadow: inset 0 0 0.5vw rgba(0,0,0,0.4);
+    box-shadow: inset 0 0 0.5vw rgba(0,0,0,0.2);
     padding: 0.7vw 1.4vw;
     margin-top: 0.7vw;
     margin-bottom: 0.7vw;
@@ -269,6 +269,13 @@ const FormPrice = styled.div`
         display: inline-block;
         margin-left: 0.5vw;
     }
+    i {
+        color: inherit;
+        position: relative;
+        top: -0.3vw;
+        right: 0.8vw;
+        display: inline-block;
+    }
     @media only screen and (max-width: 575px) {
         font-size: 12.5vw;
         padding-right: 1vw;
@@ -290,10 +297,10 @@ const FormSubText = styled.div`
 
 const FormFooterWrapper = styled.div`
     background: var(--granich-red);
-    border-radius: 0 0 0.5vw 0.5vw;
+    border-radius: 0 0 0.6vw 0.6vw;
     margin-top: auto;
     @media only screen and (max-width: 575px) {
-        border-radius: 0 0 2vw 2vw;
+        border-radius: 0 0 2.5vw 2.5vw;
     }
 
 `
@@ -318,7 +325,8 @@ const ParticipationForm = () => {
 
     //44 - 44 - 55
     const myPhoneNewRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)?\s?-?\s?(\(?\d{0,3}\)?)\s?-?\s?(\(?\d{2})\s?-?\s?(\d{2}\)?)$/;
-    const myNameNewRegExp = /([^\d€\\\/.?":@#$])/;
+    // const myNameNewRegExp = /([^\d€\\\/.?":@#$])/;
+    const myNameNewRegExp = /([^\d€\/\\.?":@#$])/;
 
     const [shakeTrigger, setShakeTrigger] = useState(3);
     function isInitialValid(props) {
@@ -401,7 +409,7 @@ const ParticipationForm = () => {
                                             }
                                         }}  id="ltForm9605210"  action="https://english-school.getcourse.ru/pl/lite/block-public/process-html?id=728049569" method="post" data-open-new-window="0" >
                                     <FormWrapper>
-                                        {console.log('TOUCHED', touched)}
+                                       
                                         <FormContainer>
 
                                         <FormTags>
@@ -410,9 +418,7 @@ const ParticipationForm = () => {
                                             <FormTag>2 месяца интенсива</FormTag>
                                         </FormTags>
                                         <FormTitle>Участвовать <br/>в курсе</FormTitle>
-                                        <input type="hidden" name="formParams[setted_offer_id]" /><br/>
-                                            {console.log(values)}
-                                            {console.log('errors',errors)}
+                                        <input  type="hidden" name="formParams[setted_offer_id]" /><br/>
                                             <FormInput 
                                                 type="text" 
                                                 maxLength="60"  
@@ -483,21 +489,10 @@ const ParticipationForm = () => {
                                                 name="politikaCheckbox"
                                                 value={values.politikaCheckbox}
                                                 checked={values.politikaCheckbox}
-                                                // {...restProps}
-                                                // onChange={async (e) => {
-                                                //     handleChange(e);
-                                                //     setFieldTouched("politikaCheckbox", true);
-                                                // }}
-                                                onChange={handleChange}
-                                                // {...restProps}
                                                 onChange={v => {
-                                                // handleChange(v);
-                                                setFieldTouched("politikaCheckbox", true)
-                                                setFieldValue("politikaCheckbox", v.target.checked)
-                                                
-                                                // // restProps.onChange && restProps.onChange(v)
-                                                        }}
-                                                onBlur={() => console.log('blur')}
+                                                    setFieldTouched("politikaCheckbox", true)
+                                                    setFieldValue("politikaCheckbox", v.target.checked)
+                                                }}
                                                 id="politikaCheckbox"
                                                 className={`course-form-checkbox`}
                                                 
@@ -540,11 +535,15 @@ const ParticipationForm = () => {
 
 
 
-
+                                        
                                             <input type="hidden" id="2096375ed6bdb394609" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value=""/>
+                                         
                                             <input type="hidden" id="2096375ed6bdb394609ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value=""/>
+                                            
                                             <input type="hidden" name="requestTime" value="1591131571"/>
+                                           
                                             <input type="hidden" name="requestSimpleSign" value="d5bf9d9f1e29eaded1dcc696282a0cb7"/>
+                                           
                                             <input type="hidden" name="isHtmlWidget" value="1"/>
 
                                         </Form>

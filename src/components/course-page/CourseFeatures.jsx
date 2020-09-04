@@ -59,7 +59,7 @@ const FeaturesWrapper = styled.div`
 const FeatureWrapper = styled.div`
     padding: 1vw;
     background: white;
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
     display: flex;
     @media only screen and (max-width: 575px) {
         padding: 4vw 5vw;

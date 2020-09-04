@@ -21,14 +21,12 @@ const Download = styled(props => <DownloadIcon {...props}/>)`
 `
 
 const LegalDocumentSection = styled.section`
-    // padding-top: 8.4vw;
 `
 
 
 const LegalDocumentWrapper = styled.div`
     background: white;
-    border-radius: 0.5vw;
-    // padding: 4.2vw 4.8vw 6vw ;
+    border-radius: 0.6vw;
 `
 const LegalDocumentLeftBlock = styled.div`
     width: 29%;
@@ -215,10 +213,9 @@ const LegalDocumentText = styled.div`
             position: relative;
             left: 0;
             width: 100%;
-            background: #f2f2f2;
-            padding: 3vw 4vw;
+            padding: 2vw 3vw;
             border-radius: 1.5vw;
-            margin: 1.5vw 0;
+            margin: 1vw 0;
             display: block;
             color: var(--granich-black);
             color: var(--granich-red);
@@ -250,7 +247,7 @@ const LegalDocumentFooterContainer = styled.div`
 
 const LegalDocumentFooterWrapper = styled.div`
     background: #F2F2F2;
-    border-radius: 0.4vw;
+    border-radius: 0.5vw;
     font-family: EB Garamond;
     font-style: italic;
     font-size: 2.37vw;

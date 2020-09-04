@@ -1,15 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
-import SwiperCore, { Navigation, Pagination, Thumbs, Controller } from 'swiper';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import BackgroundImage from 'gatsby-background-image';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
+import PortfolioImageGallery from './portfolio/PortfolioImageGallery';
 
-SwiperCore.use([Navigation, Pagination, Thumbs, Controller]);
 
 const PortfolioSection = styled.section`
     margin-bottom: 4vw;
@@ -19,7 +16,7 @@ const PortfolioSection = styled.section`
 const PortfolioWrapper = styled.div`
     background: white;
     padding: 5vw 1.8vw;
-    border-radius: 0.5vw;
+    border-radius: 0.6vw;
     ${props => props.masterClass && `
         padding-bottom: 2vw;
     `}
@@ -174,13 +171,13 @@ const PortfolioOnePagersWrapper = styled.div`
     grid-column-gap: 1.8vw;
     grid-row-gap: 1.8vw;
     padding: 0 1.5vw;
-    margin-bottom: 1.5vw;
+    margin-bottom: 1.8vw;
     @media only screen and (max-width: 575px) {
         grid-template-columns: 1fr 1fr;
         padding: 0;
         grid-column-gap: 3vw;
         grid-row-gap: 3vw;
-        margin-bottom: 0;
+        margin-bottom: 3vw;
     }
 
 `
@@ -200,62 +197,45 @@ const PortfolioOnePager = styled(props => <BackgroundImage {...props}/>)`
 const PortfolioMiltiPagesWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 1.5vw;
-    grid-row-gap: 1.5vw;
-    padding: 0 1.5vw;
+    grid-column-gap: 1.8vw;
+    grid-row-gap: 1.8vw;
+    padding: 0 1.5vw 1.5vw;
+    @media only screen and (max-width: 575px) {
+        grid-template-columns: 1fr;
+        padding: 0;
+        grid-row-gap: 3vw;
+        margin-bottom: 0;
+    }
 `
-
-const PortfolioMultiPager = styled.div`
-    width: 100%;
-    min-width: 100%;
-
-    height: 15vw;
-    background: lightgrey;
-`
-
-const PortfolioMultiPagerWrapper = styled.div`
-
-
-    position: relative;
-    position: fixed;
-    // top: 50%;
-    // transform: translateY(-50%);
-    top: 0;
-    left: 0;
-    height: 15vw;
-    width: 25vw;
-    // height: 100vh;
-    width: 25vw;
-    width: 100vh;
-    width: 100%;
-    height: 100%;
-    // padding: 20vw;
-    background: black;
-    display: flex;
-    justify-content: center;
-
-`
-
-const PortfolioMultiPagerSlide = styled(props => <BackgroundImage {...props}/>)`
-
-        // height: 15vw;
-        width: 150vh;
-        // width: 80vw;
-        height: 100%;
-        margin: 0 auto;
-        // padding-top: 70%;
-
-`
-
-
-
 
 
 
 const CoursePortfolio = ({posters, multiPages, masterClass}) => {
-    // const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [imageGallery, setImageGallery] = useState([]);
 
-    console.log('multi', multiPages)
+    useEffect(() => {
+        if(multiPages) {
+            const galleriesArray = [];
+            multiPages.edges.forEach((gallery) => {
+                const slidesArray = [];
+                gallery.node.portfolioMedia.forEach((slide) => {
+                    const schema = {
+                        original: slide.resize.src,
+                        thumbnail: slide.resize.src,
+                        thumbnailClass: 'customThumbnail',
+                        originalClass: 'customSlider',
+                        fluid: slide.fluid
+                    }
+                    slidesArray.push(schema)
+                })
+                galleriesArray.push(slidesArray)
+            })
+
+            setImageGallery(galleriesArray)
+        }
+        return;
+
+    }, [multiPages])
     return (
         <PortfolioSection>
             <Container>
@@ -321,37 +301,16 @@ const CoursePortfolio = ({posters, multiPages, masterClass}) => {
                         })}
 
                     </PortfolioOnePagersWrapper>
-                    {/* {multiPages && (
+                    {imageGallery.length > 0 && (
                         <PortfolioMiltiPagesWrapper>
-                            {multiPages.edges.map((multi, idx) => {
+                            {imageGallery.map((multi, idx) => {
                                 return (
-                                    <PortfolioMultiPager key={idx}>
-                                        <PortfolioMultiPagerWrapper >
-                                            <Swiper
-                                                id="course-slider-main"
-                                                
-                                                style={{width: '100%', height: '100%'}}
-                                                wrapperTag="ul"
-                                                slidesPerView={1}
-                                                navigation
-                                                onSlideChange={() => console.log('slide change')}
-                                                >
-                                                    {multi.node.portfolioMedia.map((page, idxx) => {
-                                                        
-                                                        return (
-                                                            <SwiperSlide  key={idxx}>
-                                                                <PortfolioMultiPagerSlide fluid={page.fluid}></PortfolioMultiPagerSlide>
-                                                            </SwiperSlide>
-                                                        )
-                                                    })}
-                                            </Swiper>
-                                        </PortfolioMultiPagerWrapper>
-                                    </PortfolioMultiPager>
-
+                                    <PortfolioImageGallery key={idx} images={multi}/>
                                 )
                             })}
                         </PortfolioMiltiPagesWrapper>
-                    )} */}
+                    )}
+                    
                     
                 </PortfolioWrapper>
             </Container>
@@ -360,23 +319,3 @@ const CoursePortfolio = ({posters, multiPages, masterClass}) => {
 }
 
 export default CoursePortfolio
-
-
-
-
-
-                {/* <Carousel style={{height: '20vw'}} wrapAround={true}
-                        transitionMode="scroll"
-                        speed={1500}
-                        slidesToShow={1}
-                        slideIndex={slideIndex}
-                        afterSlide={slideIndex => setSlideIndex(slideIndex)}
-                        renderCenterLeftControls={({ previousSlide }) => (
-                    <button onClick={previousSlide}>Previous</button>
-                )}
-                            renderCenterRightControls={({ nextSlide }) => (
-                                <button onClick={nextSlide}>Next</button>
-                            )}
-                >
-
-                </Carousel> */}
