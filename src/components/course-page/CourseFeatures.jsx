@@ -68,7 +68,7 @@ const FeatureWrapper = styled.div`
 `
 
 const FeatureText = styled.div`
-    font-size: 1.06vw;
+    font-size: 1vw;
     line-height: 1.3;
     color: var(--granich-grey);
     span {

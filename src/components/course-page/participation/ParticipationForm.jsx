@@ -293,9 +293,10 @@ const FormPrice = styled.div`
 const FormSubText = styled.div`
     color: white;
     font-size: 1.17vw;
+    white-space: nowrap;
     @media only screen and (max-width: 575px) {
         font-size: 2.85vw;
-        white-space: nowrap;
+
     }
 `
 

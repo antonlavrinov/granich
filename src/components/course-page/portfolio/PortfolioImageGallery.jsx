@@ -152,7 +152,7 @@ const PortfolioImageGallery = ({images}) => {
                         renderRightNav={renderRightNav}
                         showThumbnails={fullscreen}  
                         onScreenChange={(boolean) => setFullscreen(boolean)} 
-                        // useBrowserFullscreen={false} 
+                        useBrowserFullscreen={false} 
                         items={images} 
                         renderFullscreenButton={renderFullscreenButton}
                         
