@@ -17,8 +17,6 @@ import {
     CurriculumItemImportantDescr,
     CurriculumImportantText,
     CurriculumItemContent,
-    CurriculumLessonAndLineWrapper,
-    CurriculumItemLineMobile,
     CurriculumLessonColumn,
     CurriculumLesson,
     CurriculumContainer,
@@ -39,7 +37,6 @@ import {
     CurriculumAccordionMobile,
     CurriculumAccordionItem,
     CurriculumAccordionHeading,
-    CurriculumTitleAndButton,
 } from '../curriculum/styles';
 
 
@@ -145,22 +142,15 @@ const CourseCurriculum = ({data}) => {
                         const tag = tab.node.curriculumTagName;
                         const descr = tab.node.curriculumImportantDescr;
                         const title = tab.node.curriculumTitle;
-                        console.log('FOURTH COLUMN ', tab)
                         return (
                             <CurriculumAccordionItem key={tab.node.id}>
                                 <CurriculumAccordionHeading>
                                     <AccordionItemButton className="accordion-curriculum-button">
-                                        {/* <CurriculumLessonAndLineWrapper> */}
                                             <CurriculumLessonColumn>
-                                            <CurriculumLesson type={type ? 1 : 0}>{tag}</CurriculumLesson>
+                                                <CurriculumLesson type={type ? 1 : 0}>{tag}</CurriculumLesson>
                                             </CurriculumLessonColumn>
-                                            {/* <CurriculumItemLineMobile/> */}
-                                        {/* </CurriculumLessonAndLineWrapper> */}
-
-                                        {/* <CurriculumTitleAndButton>     */}
                                             <CurriculumItemTitle >{title}</CurriculumItemTitle>
-                                            
-                                        {/* </CurriculumTitleAndButton> */}
+
 
                                         
                                         

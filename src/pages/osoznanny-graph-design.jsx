@@ -206,10 +206,10 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <CourseExplanations data={data.explanations}/>
     <CourseExample/>
     <CourseForWhom data={data.forWhom}/>
-    <CourseCommitment/>
+    {/* <CourseCommitment/> */}
     <CoursePortfolio posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
     <CourseTrainingPath data={data.trainingPath}/>
-    <CourseCurriculum data={data.curriculum}/>
+    {/* <CourseCurriculum data={data.curriculum}/> */}
     <CourseFeatures data={data.features}/>
     <CourseReviews data={data.reviews}/>
     <div id="participation-section"></div>
@@ -218,7 +218,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     ) : (
       <Mailing/>
     )}
-    <CourseAnswers data={data.answers}/>
+    {/* <CourseAnswers data={data.answers}/> */}
 
   </Layout>
 )
