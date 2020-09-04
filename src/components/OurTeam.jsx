@@ -173,12 +173,9 @@ const TeacherEmail = styled.span`
     color: var(--granich-grey);
     padding-bottom: 0.2vw;
     position: relative;
-    // top: 3.3vw;
-    // right: -0.15vw;
-    // transform: translateY(-50%);
     margin-right: 0.4vw;
     background: none;
-    border-bottom: 0.1vw dotted var(--granich-light-grey);
+    border-bottom: 1px dotted var(--granich-light-grey);
     :hover {
         font-weight: 500;
         font-size: 0.75vw;
@@ -268,7 +265,7 @@ const TeacherEmail = styled.span`
 `
 const TeacherInfo = styled.div`
 
-    border-left: 0.1vw solid #D7D7D7;
+    border-left: 1.5px solid #D7D7D7;
     padding-left: 1.4vw;
     margin-left: -0.4vw;
     min-height: 5.8vw;

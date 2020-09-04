@@ -76,33 +76,20 @@ const SliderRight = styled(props => <SliderRightIcon {...props}/>)`
 `
 
 const Slider = styled(props => <BackgroundImage {...props}/>)`
-    height: 15.5vw;
-    :focus {
-        border: none;
-        outline: none;
-    }
-    :active {
-        border: none;
-        outline: none;
-    }
-    @media only screen and (max-width: 575px) {
-        height: 62vw;
 
-    }
+` 
+    // :focus {
+    //     border: none;
+    //     outline: none;
+    // }
+    // :active {
+    //     border: none;
+    //     outline: none;
+    // }
+    // @media only screen and (max-width: 575px) {
+    //     height: 62vw;
 
-    ${props => props.fullscreen && `
-        height: calc(100vh - 88px);
-
-
-    `}
-
-
-    
-`
-// @media only screen and (max-width: 575px) {
-//     height: calc(100vh - 88px);
-
-// }
+    // }
     
 
 
@@ -148,9 +135,9 @@ const renderFullscreenButton = (onClick, isFullscreen) => {
 const PortfolioImageGallery = ({images}) => {
     const [fullscreen, setFullscreen] = useState(false)
 
-    const _renderItem = (item) => {
+    const _renderItem = (item, isFullscreen) => {
         return (
-          <Slider fullscreen={fullscreen} style={{width: '100%', backgroundSize: `${fullscreen ? 'contain' : "100%"}`}} fluid={item.fluid}></Slider>
+          <Slider className="gallery-custom-slider" style={{width: '100%', backgroundSize: `${fullscreen ? 'contain' : "100%"}`}} fluid={item.fluid}></Slider>
         )
         }
     
@@ -277,6 +264,9 @@ const PortfolioImageGallery = ({images}) => {
                 .image-gallery.fullscreen-modal {
                     z-index: 9999;
                 }
+                .gallery-custom-slider {
+                    height: 15.5vw;
+                }
 
                 @media only screen and (max-width: 575px) {
                     .image-gallery-fullscreen-button {
@@ -284,6 +274,7 @@ const PortfolioImageGallery = ({images}) => {
                         height: 12vw;
                         top: 3vw;
                         right: 3vw;
+                        opacity: 1;
     
                     }
                     .image-gallery-custom-right-nav {
@@ -302,9 +293,26 @@ const PortfolioImageGallery = ({images}) => {
                         top: 3vw;
                         right: 3vw;
                     }
+                    .gallery-custom-slider {
+                        height: 60vw;
+                    }
+                    .image-gallery-thumbnail-image {
+                        object-fit: cover;
+                        height: 45px;
+                    }
+                    .customThumbnail {
+                        width: 68px;
+                    }
+                    
+                    
                     
                 }
+
                 ${fullscreen && `
+                    .gallery-custom-slider {
+                        height: calc(100vh - 88px) !important;
+    
+                    }
 
                     .image-gallery-slide {
                         height: auto !important;
@@ -343,6 +351,10 @@ const PortfolioImageGallery = ({images}) => {
                         .image-gallery-custom-right-nav svg{
                             width: 5vw;
                             height: 5vw;
+                        }
+                        .gallery-custom-slider {
+                            height: calc(100vh - 55px) !important;
+
                         }
                     }
                 `}

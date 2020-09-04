@@ -80,7 +80,7 @@ const PreparationText = styled.div`
 
 const PreparationFilters = styled.div`
     display: flex;
-    border-bottom: 0.1vw solid #d4d4d4;
+    border-bottom: 1px solid #d4d4d4;
     margin-bottom: 1vw;
     margin-left: 0.3vw;
     @media only screen and (max-width: 575px) {
@@ -105,7 +105,7 @@ const PreparationFilter = styled.div`
     font-weight: 500;
     color: var(--granich-black);
     border-color: var(--granich-red);
-    border-bottom: 0.15vw solid var(--granich-red);
+    border-bottom: 1.5px solid var(--granich-red);
     @media only screen and (max-width: 575px) {
         border-bottom: 0.4vw solid var(--granich-red);
     }
@@ -268,7 +268,7 @@ const PreparationButtonMoreText = styled.div`
     font-weight: 400;
     color: #8e8e8e;
     padding-bottom: 0.15vw;
-    border-bottom: 0.1vw dotted var(--granich-light-grey);
+    border-bottom: 1px dotted var(--granich-light-grey);
     transition: all 0.2s ease;
     @media only screen and (max-width: 575px) {
         padding-bottom: 0.3vw;

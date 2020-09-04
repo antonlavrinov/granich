@@ -3,6 +3,8 @@ import { Container } from '../style';
 import styled from 'styled-components';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import ArrowTop from '../../assets/svgs/header-arrow-top.svg';
+import ArrowTopMobile from '../../assets/svgs/header-arrow-top_mobile.svg';
+
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import { useSpring, a } from 'react-spring';
 import ResizeObserver from 'resize-observer-polyfill'
@@ -170,7 +172,7 @@ const AnswersTag = styled.div`
     @media only screen and (max-width: 575px) {
 
         padding: 1vw 0;
-        min-width: 23vw;
+        min-width: 25vw;
         font-size: 3.3vw;
         border: 1px solid var(--granich-red);
 
@@ -210,6 +212,17 @@ const ArrowLinkTop = styled(props => <ArrowTop {...props}/>)`
 
 
 `
+const ArrowLinkTopMobile = styled(props => <ArrowTopMobile {...props}/>)`
+  position: absolute;
+  @media only screen and (max-width: 575px) {
+    top: -1.6vw;
+    right: -3.7vw;
+    width: 3.1vw;
+    height: 3.1vw;
+  }
+
+
+`
 
 const AnswersSection = styled.section`
 
@@ -236,6 +249,7 @@ const AnswersWrapper = styled.div`
     border-bottom: 0.25vw dotted white;
     @media only screen and (max-width: 575px) {
         padding: 5.4vw 5vw 5.4vw;
+        border-bottom: 0.8vw dotted white;
     }
 
 `
@@ -344,12 +358,27 @@ const AnswersFooterWrapper = styled.div`
     padding: 1.4vw;
     letter-spacing: -0.02vw;
     line-height: 1;
+    display: block;
+    @media only screen and (max-width: 575px) {
+        display: none;
+    }
+`
+
+const AnswersFooterWrapperMobile = styled.div`
+    background: #dedede;
+    font-family: EB Garamond;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.02vw;
+    line-height: 1;
+    display: none;
     @media only screen and (max-width: 575px) {
         font-size: 6.6vw;
-        padding: 4vw 6vw 6vw 7.5vw;
+        padding: 4vw 6vw 6vw;
         line-height: 1.1;
         border-radius: 1.5vw;
-        text-align: left;
+        text-align: center;
+        display: block;
     }
 `
 const AnswersFooterLink = styled.a`
@@ -367,7 +396,7 @@ const AnswersFooterLink = styled.a`
         left: 0;
         bottom: -0.5vw;
         width: 100%;
-        height: 1px;
+        height: 1.5px;
         background: #C0C0C0;
     }
     :hover {
@@ -440,7 +469,7 @@ export const AnswersLessonAndLineWrapper = styled.div`
 `
 
 export const AnswersItemLineMobile = styled.div`
-    width: 57%;
+    width: 54.5%;
     height: 1px;
     background: var(--granich-light-grey);
     margin-left: auto;
@@ -506,8 +535,11 @@ const CourseAnswers = ({data}) => {
                     </AnswersWrapper>
                     <AnswersFooterContainer>
                         <AnswersFooterWrapper>
-                            Вернуться к оплате <AnswersFooterLink onClick={() => scrollTo('#participation-section')}>Курса!<ArrowLinkTop/></AnswersFooterLink>
+                            <AnswersFooterLink onClick={() => scrollTo('#participation-section')}>Вернуться к оплате Курса!<ArrowLinkTop/></AnswersFooterLink>
                         </AnswersFooterWrapper>
+                        <AnswersFooterWrapperMobile>
+                            Вернуться <br/>к оплате <AnswersFooterLink onClick={() => scrollTo('#participation-section')}>Курса!<ArrowLinkTopMobile/></AnswersFooterLink>
+                        </AnswersFooterWrapperMobile>
                     </AnswersFooterContainer>
 
 

@@ -81,7 +81,7 @@ const LegalDocumentInfoBlockPDFButton = styled.a`
     font-weight: 500;
     color: var(--granich-red);
     border-radius: 100vw;
-    border: 0.1vw solid var(--granich-red);
+    border: 1px solid var(--granich-red);
     display: inline-block;
     margin-bottom: 0.9vw;
     margin-left: -0.2vw;

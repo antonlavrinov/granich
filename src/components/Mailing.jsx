@@ -87,6 +87,7 @@ const MailingForm = styled.form`
     display: flex;
     align-items: flex-start;
     position: relative;
+    flex-direction: column;
 
 `
 
@@ -115,7 +116,6 @@ const MailingInput = styled.input`
         padding: 0 4vw;
         font-size: 4.1vw;
         margin-right: 2.5vw;
-        margin-left: 0.5vw;
         box-shadow: 0 0 1.5vw rgba(0,0,0,0.5) inset;
         ::placeholder {
             font-size: 4.1vw;
@@ -302,7 +302,7 @@ const MailingWrapperMobile = styled.div`
 `
 
 const MailingWrapperInputAndButton = styled.div`
-    // display: flex;
+    display: flex;
     align-items: center;
 `
 
@@ -379,7 +379,7 @@ const Mailing = () => {
                                                     }
 
                                             }>
-                                                <MailingWrapperMobile>
+
                                                     <MailingWrapperInputAndButton>
                                                         <MailingInput 
                                                                 type="text" 
@@ -390,7 +390,11 @@ const Mailing = () => {
                                                                 onChange={handleChange}
                                                                 errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
                                                             />
-                                                            <FormCheckbox 
+                                                             <MailingButton type="submit" disabled={isSubmitting}><ArrowRightButton/></MailingButton>
+                                                            
+                                                        
+                                                    </MailingWrapperInputAndButton>
+                                                    <FormCheckbox 
                                                             type="checkbox"
                                                             name="politikaCheckbox"
                                                             value={values.politikaCheckbox}
@@ -408,49 +412,9 @@ const Mailing = () => {
                                                                     Принять<Link to="/privacy"> политику конфиденциальности</Link>
                                                                 </FormCheckboxLabelText>
                                                             </FormCheckboxLabel> 
-                                                        
-                                                    </MailingWrapperInputAndButton>
 
-                                                    <MailingButton type="submit" disabled={isSubmitting}><ArrowRightButton/></MailingButton>
-                                                    
-
-                                                    
-
-                                                </MailingWrapperMobile>
-                                                <MailingWrapperDesktop>
-                                                    <MailingInputsWrapper>
-                                                        <MailingInput 
-                                                            type="text" 
-                                                            maxLength="60"  
-                                                            placeholder={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? errors.formParams.email : 'Электропочта'} 
-                                                            name="formParams[email]"
-                                                            value={values.formParams.email}
-                                                            onChange={handleChange}
-                                                            errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
-                                                        />
-                                                        <FormCheckbox 
-                                                            type="checkbox"
-                                                            name="politikaCheckbox"
-                                                            value={values.politikaCheckbox}
-                                                            checked={values.politikaCheckbox}
-                                                            onChange={v => {
-                                                                setFieldTouched("politikaCheckbox", true)
-                                                                setFieldValue("politikaCheckbox", v.target.checked)
-                                                            }}
-                                                            id="politikaCheckbox"
-                                                            className={`course-form-checkbox_black`}
-                                                        /> 
-
-                                                        <FormCheckboxLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">
-                                                            <FormCheckboxLabelText errorMessage={errors.politikaCheckbox && touched.politikaCheckbox ? errors.politikaCheckbox : 0}>
-                                                                Принять<Link to="/privacy"> политику конфиденциальности</Link>
-                                                            </FormCheckboxLabelText>
-                                                        </FormCheckboxLabel>                 
-                                                        </MailingInputsWrapper>
-                                                    <MailingButton type="submit" disabled={isSubmitting}><ArrowRightButton/></MailingButton>
-                                                </MailingWrapperDesktop>
-                                            
-                                            
+                                                   
+    
                                         </MailingForm>
                                     )}}
 

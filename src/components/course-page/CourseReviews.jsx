@@ -4,6 +4,18 @@ import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
 import TelegramIcon from '../../assets/svgs/telegram-small-link-out.svg';
 import TelegramLinkOut from '../../assets/svgs/telegram-small-icon.svg';
+import ArrowIcon from '../../assets/svgs/white-arrow-inter.svg';
+
+const Arrow = styled(props => <ArrowIcon {...props}/>)`
+    width: 1vw;
+    height: 1vw;
+    margin: 0 0.4vw;
+    @media only screen and (max-width: 575px) {
+        width: 3vw;
+        height: 3vw;
+        margin: 0 1.5vw;
+    }
+`
 
 
 const Telegram = styled(props => <TelegramIcon {...props}/>)`
@@ -323,14 +335,14 @@ const CourseReviews = ({data, masterClass}) => {
                             <>
                                 <ReviewsFooterTitle>Все отзывы о курсе:</ReviewsFooterTitle>
                                 <ReviewsLinks>
-                                    <ReviewsLinkTelegram target="_blank" href={'https://vk.com/vadim_granich'}>Все свежие отзывы → ТГ</ReviewsLinkTelegram>
-                                    <ReviewsLinkVk target="_blank" href={'https://vk.com/vadim_granich'}><div>Архив отзывов → ВК</div><div>На стене Вадима Гранича</div></ReviewsLinkVk>
+                                    <ReviewsLinkTelegram target="_blank" href={'https://vk.com/vadim_granich'}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
+                                    <ReviewsLinkVk target="_blank" href={'https://vk.com/vadim_granich'}><div>Архив отзывов<Arrow/>ВК</div><div>На стене Вадима Гранича</div></ReviewsLinkVk>
                                 </ReviewsLinks>
                             </>
                           
                         ) : (
 
-                            <ReviewsLinkTelegram masterClass target="_blank" href={'https://vk.com/vadim_granich'}>Все свежие отзывы → ТГ</ReviewsLinkTelegram>
+                            <ReviewsLinkTelegram masterClass target="_blank" href={'https://vk.com/vadim_granich'}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
                         )}
 
 

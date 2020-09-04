@@ -8,8 +8,7 @@ import Header from "../components/Header";
 import { Link } from "gatsby";
 
 const NotFoundSection = styled.section`
-  // padding-top: 8.4vw;
-  // margin-bottom: 5vw;
+
 `
 
 const NotFoundWrapper = styled.div`
@@ -81,7 +80,7 @@ const NotFoundLinksWrapper = styled.div`
 const NotFoundLink = styled(props => <Link {...props}/>)`
   color: var(--granich-red);
   font-weight: 500;
-  border-bottom: 1.5px solid var(--granich-red);
+  border-bottom: 1px solid var(--granich-red);
   font-size: 1.15vw;
   :hover {
     border-bottom: none;

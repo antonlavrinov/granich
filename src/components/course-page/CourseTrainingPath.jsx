@@ -14,8 +14,9 @@ const Arrow = styled(props => <ArrowIcon {...props}/>)`
     fill: var(--granich-red);
     @media only screen and (max-width: 575px) {
         transform: rotate(90deg);
-        width: 10vw;
-        margin-left: 3vw;
+        width: 7vw;
+        margin-left: 0;
+        margin-top: 1vw;
     }
 `
 
@@ -24,8 +25,9 @@ const Check = styled(props => <CheckIcon {...props}/>)`
     margin-left: 1.5vw;
     fill: var(--granich-red);
     @media only screen and (max-width: 575px) {
-        width: 10vw;
-        margin-left: 3vw;
+        width: 7vw;
+        margin-left: 0.5vw;
+        margin-top: 1.5vw;
     }
 `
 
@@ -61,39 +63,44 @@ const TrainingPathBlockWrapper = styled.div`
     position: relative;
     :before {
         content: '';
-        width: 10.5vw;
-        height: 10.5vw;
+        width: 10.8vw;
+        height: 10.8vw;
         background: var(--granich-red);
         position: absolute;
-        bottom: 1.2vw;;
+        bottom: 1.25vw;;
         left: 50%;
         transform: translateX(-50%);
         border-radius: 100vw;
     }
     @media only screen and (max-width: 575px) {
         border-radius: 2vw;
+        :before {
+            content: '';
+            width: 52vw;
+            height: 52vw;
+            background: var(--granich-red);
+            position: absolute;
+            bottom: 4vw;;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 100vw;
+        }
     }
 
 `
 const TrainingPathBlockContainer = styled.div`
     padding: 0.8vw 1.5vw 1.5vw;
+    margin-bottom: 1vw;
 
 
     @media only screen and (max-width: 575px) {
         padding: 5vw 5vw 5vw;
+        display: flex;
+        margin-bottom: 2vw;
     }
 `
 
-// const TrainingPathImageContainer = styled.div`
-//     padding: 1.5vw;
-//     background: var(--granich-red);
-//     border-radius: 0.6vw;
-//     margin-top: auto;
-//     @media only screen and (max-width: 575px) {
-//         border-radius: 2vw;
-//         padding: 7.5vw;
-//     }
-// `
+
 
 const TrainingPathBlockNumber = styled.div`
     font-family: EB Garamond;
@@ -106,15 +113,19 @@ const TrainingPathBlockNumber = styled.div`
     margin-left: -0.1vw;
     margin-bottom: 1vw;
     @media only screen and (max-width: 575px) {
-        font-size: 16.5vw;
+        font-size: 13vw;
         margin-bottom: 4vw;
         margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        margin-right: 6vw;
+        margin-top: -0.5vw;
     }
 `
 
 const TrainingPathBlockText = styled.div`
 
-    line-height: 1.45;
+    line-height: 1.35;
     p {
         color: var(--granich-grey);
         font-size: 1.15vw;
@@ -129,6 +140,7 @@ const TrainingPathBlockText = styled.div`
         p {
             font-size: 3.7vw;
         }
+        margin-top: 2vw;
     }
 
 
@@ -141,18 +153,16 @@ const TrainingPathBlockImage = styled.div`
     margin-top: auto;
     margin: 0 auto;
     margin-top: auto;
-    margin-bottom: 1.75vw;
+    margin-bottom: 2vw;
 
     div {
         width: 100%;
     }
-    :hover {
-        // transform: scale(1.05);
 
-    }
 
     @media only screen and (max-width: 575px) {
-        width: 100%;
+        width: 82%;
+        margin-bottom: 7vw;
         :hover {
             transform: none;
     

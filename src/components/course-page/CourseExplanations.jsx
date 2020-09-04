@@ -117,7 +117,7 @@ const ExplanationsBlockText = styled.div`
             b {
                 margin-bottom: 1vw;
                 :before {
-                    width: 0.4vw;
+                    width: 1.5px;
                     left: -1.4vw; 
                 }
                 
@@ -141,7 +141,7 @@ const ExplanationsBlockTextLine = styled.div`
 const ExplanationsBlockGreyLine = styled.div`
     height: 100%;
     background: #E2E2E2;
-    width: 0.1vw;
+    width: 1px;
     @media only screen and (max-width: 575px) {
         width: 0.4vw;
     }

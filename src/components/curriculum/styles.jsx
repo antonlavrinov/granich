@@ -216,17 +216,93 @@ export const CurriculumItemFrame = styled.div`
     position: relative;
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow-x: hidden;
     vertical-align: middle;
     color: white;
     fill: white;
-    overflow: hidden;
     border-top: 0.1vw solid #E4E4E4;
     margin-left: 1.5vw;
     margin-right: 1.5vw;
     :last-child {
         border-top: none;
+        :after {
+            display: none;
+        }
     }
+    :after {
+        content: '';
+        height: 2px;
+        border-top: 2px solid black;
+        position: absolute;
+        width: 100%;
+        top: -2px;
+        left: 0;    
+    }
+    :nth-child(1) {
+        :after {
+            width: 8.3%;  
+        }
+    }
+    :nth-child(2) {
+        :after {
+            width: 16.6%;  
+        }
+    }
+    :nth-child(3) {
+        :after {
+            width: 24.9%;  
+        }
+    }
+    :nth-child(4) {
+        :after {
+            width: 33.2%;  
+        }
+    }
+    :nth-child(5) {
+        :after {
+            width: 41.5%;  
+        }
+    }
+    :nth-child(6) {
+        :after {
+            width: 49.8%;  
+        }
+    }
+    :nth-child(7) {
+        :after {
+            width: 58.1%;  
+        }
+    }
+    :nth-child(8) {
+        :after {
+            width: 66.4%;  
+        }
+    }
+    :nth-child(9) {
+        :after {
+            width: 74.7%;  
+        }
+    }
+    :nth-child(10) {
+        :after {
+            width: 83%;  
+        }
+    }
+    :nth-child(11) {
+        :after {
+            width: 91.3%;  
+        }
+    }
+    :nth-child(12) {
+        :after {
+            width: 100%;  
+        }
+    }
+    @media only screen and (max-width: 575px) {
+        :after {
+            display: none;
+        }
+    }
+
 
     ${props => !props.type && `
         background: #F2F2F2;

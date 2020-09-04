@@ -116,7 +116,7 @@ const CourseTagList = styled.div`
 `
 
 const CourseMainTag = styled.div`
-    border: 0.1vw solid var(--granich-red);
+    border: 1px solid var(--granich-red);
     color: white;
     border-radius: 100vw;
     background: var(--granich-red);
@@ -401,7 +401,7 @@ const CourseTeacher = styled(props => <BackgroundImage {...props}></BackgroundIm
 
 const CourseDevelopingImage = styled.div`
     min-height: 15.5vw;
-    border: 0.1vw solid #D4D4D4;
+    border: 1.5px solid #D4D4D4;
     margin-bottom: 0.7vw;
     position: relative;
 `
