@@ -65,7 +65,7 @@ const BannerSubtext = styled.div`
     line-height: 1.4;
     margin-right: 2vw;
     @media only screen and (max-width: 575px) {
-        font-size: 3.5vw;
+        font-size: 3.35vw;
         letter-spacing: -0.05vw;
         width: 100%;
         margin-bottom: 1vw;

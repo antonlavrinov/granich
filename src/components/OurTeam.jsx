@@ -168,16 +168,15 @@ const TeacherSocialIcons = styled.div`
 `
 const TeacherEmail = styled.span`
     font-size: 0.75vw;
-    font-weight: 500;
+    font-weight: 400;
     display: block;
     color: var(--granich-grey);
     padding-bottom: 0.2vw;
     position: relative;
     margin-right: 0.4vw;
     background: none;
-    border-bottom: 1px dotted var(--granich-light-grey);
+    border-bottom: 1.5px dotted var(--granich-light-grey);
     :hover {
-        font-weight: 500;
         font-size: 0.75vw;
         color: var(--granich-grey);
         cursor: pointer;

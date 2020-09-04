@@ -220,9 +220,12 @@ const ErrorMessage = styled.div`
     color: var(--granich-red);
     margin-left: 0.4vw;
     margin-bottom: 0.5vw;
+    white-space: nowrap;
     @media only screen and (max-width: 575px) {
         font-size: 3vw;
+        white-space: normal;
         margin-bottom: 0.5vw;
+
     }
 `
 
@@ -291,7 +294,8 @@ const FormSubText = styled.div`
     color: white;
     font-size: 1.17vw;
     @media only screen and (max-width: 575px) {
-        font-size: 2.89vw;
+        font-size: 2.85vw;
+        white-space: nowrap;
     }
 `
 
