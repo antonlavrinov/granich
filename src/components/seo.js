@@ -13,7 +13,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 
 
-const SEO = ({ description, lang, meta, title }) => {
+const SEO = ({ description, lang, meta, title, keywords }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -22,6 +22,7 @@ const SEO = ({ description, lang, meta, title }) => {
             title
             description
             author
+            keywords
           }
         }
       }
@@ -29,6 +30,7 @@ const SEO = ({ description, lang, meta, title }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaKeywords = keywords || site.siteMetadata.keywords
 
   return (
     <Helmet
@@ -71,9 +73,12 @@ const SEO = ({ description, lang, meta, title }) => {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `keywords`,
+          content: metaKeywords
+        }
       ].concat(meta)}
     >
-
     </Helmet>
   )
 }

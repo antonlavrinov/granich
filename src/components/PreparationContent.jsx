@@ -7,7 +7,7 @@ import PinterestLinkOut from '../assets/svgs/arrow-white-newpage.svg';
 import BehanceLinkOut from '../assets/svgs/behance-link-out.svg';
 import MediumIcon from '../assets/svgs/medium-icon.svg';
 import YoutubeIcon from '../assets/svgs/youtube-icon.svg';
-
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 const Behance = styled(props => <BehanceIcon {...props}/>)`
     width: 2.3vw;
@@ -198,19 +198,23 @@ const ContentImage = styled(props => <BackgroundImage {...props}></BackgroundIma
 `
 
 const ContentDescr = styled.div`
-    font-size: 0.9vw;
-    color: white;
-    font-weight: 400;
     margin-top: 0.3vw;
     max-width: 14vw;
-    line-height: 1.15;
     margin-left: -0.2vw;
-    letter-spacing: -0.01vw;
+    p {    
+        font-size: 0.9vw;
+        color: white;
+        font-weight: 400;
+        letter-spacing: -0.01vw;
+        line-height: 1.15;
+    }
     @media only screen and (max-width: 575px) {
         max-width: 100%;
         margin-top: 1vw;
+        p { 
+            font-size: 2.8vw;
+        } 
 
-        font-size: 2.8vw;
     }
 `
 
@@ -390,8 +394,7 @@ const PreparationContent = ({content}) => {
     const pinterest = 'Pinterest';
     const mixed = 'Youtube + Medium + Behance';
     const contentExternalLink = content.contentType === pinterest ? (
-        content.contentLinkPinterest ? content.contentLinkPinterest.contentLinkPinterest : '/' 
-    ) : content.contentType === behance ? (content.contentLinkBehance ? content.contentLinkBehance.contentLinkBehance : '/') : '/';
+        content.contentLinkPinterest) : content.contentType === behance ? (content.contentLinkBehance) : '/';
 
 
     return (
@@ -419,7 +422,7 @@ const PreparationContent = ({content}) => {
                                     <>
                                         <ContentButtonYoutubeTextWrapper>
                                             <ContentButtonYoutubeText>Посмотреть</ContentButtonYoutubeText>
-                                            <ContentButtonYoutubeTiming>33:05</ContentButtonYoutubeTiming>
+                                            {content.contentYoutubeTiming && <ContentButtonYoutubeTiming>{content.contentYoutubeTiming}</ContentButtonYoutubeTiming>}  
                                         </ContentButtonYoutubeTextWrapper>
                                         <Youtube/>
                                         
@@ -433,7 +436,7 @@ const PreparationContent = ({content}) => {
                                             <ContentButtonBlockTitle>Посмотреть</ContentButtonBlockTitle>
                                             <ContentButtonWatchBlock>
                                                 <YoutubeMixed/>
-                                                <ContentButtonMixedTiming>8:43</ContentButtonMixedTiming>
+                                                {content.contentYoutubeTiming && <ContentButtonMixedTiming>{content.contentYoutubeTiming}</ContentButtonMixedTiming>}  
                                             </ContentButtonWatchBlock>
                                         </ContentButtonWatchBlockWrapper>
                                         <ContentButtonReadBlockWrapper>
@@ -463,12 +466,7 @@ const PreparationContent = ({content}) => {
                         </ContentTagList>
                         <ContentImage fluid={content.contentImage.fluid}></ContentImage>
                         <ContentTitle>{content.contentTitle}</ContentTitle>
-                        {content.contentDescription ? (
-                            <ContentDescr>{content.contentDescription.contentDescription}</ContentDescr>
-                        ) : (
-                            <div></div>
-                        )}
-                        
+                        <ContentDescr>{documentToReactComponents(content.contentDescription.json)}</ContentDescr>
                     </ContentContainer>
                     <ContentButton type={content.contentType}>
                         <ContentButtonContainer>

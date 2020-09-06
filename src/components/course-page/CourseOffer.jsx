@@ -57,7 +57,7 @@ const CourseOfferSection = styled.section`
 const CourseOfferWrapper = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     background: white;
     border-radius: 0.6vw;
-    padding: 3.4vw 2.7vw 4.4vw;
+    padding: 2.5vw 2.7vw 4.4vw;
     position: relative;
     box-shadow: 0.25vw 0.15vw 0.4vw rgba(0,0,0,0.1);
     background-size: auto auto;
@@ -179,7 +179,7 @@ const CourseOfferTitle = styled.h1`
     ${props => props.type === 'Мастер-класс' && `
         margin-bottom: 1.5vw;
         margin-left: 0vw;
-        margin-top: -0.5vw;
+        margin-top: -1vw;
         line-height: 1.15;
         p {
             font-size: 6vw;
@@ -302,12 +302,10 @@ const CourseOfferButton = styled.a`
 
 
 const CourseOffer = ({data}) => {
-    console.log(data)
     return (
         <CourseOfferSection>
             <Container>
                 <CourseOfferWrapper fluid={data.courseMainImage.fluid}>
-                    {/* {/* <CourseOfferImage style={{position: 'absolute'}} fluid={data.courseMainImage.fluid}/> */}
                     <CourseOfferTags>
                         {data.courseType === 'Курс' ? (
                             <>

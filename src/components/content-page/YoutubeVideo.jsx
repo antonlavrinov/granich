@@ -152,8 +152,6 @@ const YoutubeVideo = ({data}) => {
                                     <ContentInfoTag key={idx}>{tag}</ContentInfoTag>
                                 )
                             })}
-                            
-                            {/* <ContentInfoTag>Композиция</ContentInfoTag> */}
                         </ContentInfoTagsMobile>
                         <div className="loadingio-spinner-rolling-ta5f1nqy5p">
                             <div className="ldio-6b142d04hhl">

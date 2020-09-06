@@ -70,7 +70,7 @@ export const contentfulQuery = graphql`
           edges {
             node {
               contentDescription {
-                contentDescription
+                json
               }
               contentTags
               contentTitle
@@ -87,18 +87,10 @@ export const contentfulQuery = graphql`
                 }
               }
               contentYoutubeVideoLink
-              contentLinkPinterest {
-                contentLinkPinterest
-              }
-              contentLinkBehance {
-                contentLinkBehance
-              }
-              contentLinkYoutube {
-                contentLinkYoutube
-              }
-              contentLinkMedium {
-                contentLinkMedium
-              }
+              contentLinkPinterest
+              contentLinkBehance
+              contentLinkYoutube
+              contentLinkMedium
             }
           }
         },
@@ -106,7 +98,7 @@ export const contentfulQuery = graphql`
           edges {
             node {
               contentDescription {
-                contentDescription
+                json
               }
               contentTags
               contentTitle
@@ -123,18 +115,10 @@ export const contentfulQuery = graphql`
                   url 
                 }
               }
-              contentLinkPinterest {
-                contentLinkPinterest
-              }
-              contentLinkBehance {
-                contentLinkBehance
-              }
-              contentLinkYoutube {
-                contentLinkYoutube
-              }
-              contentLinkMedium {
-                contentLinkMedium
-              }
+              contentLinkPinterest
+              contentLinkBehance
+              contentLinkYoutube
+              contentLinkMedium
             }
           }
         },

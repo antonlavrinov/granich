@@ -5,8 +5,9 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `Онлайн-школа Granich`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Осознанный курс по графическому дизайну от Вадима Гранича (Granich). За 2 месяца вы получите упорядоченные знания о графическом дизайне и создадите свое портфолио. А еще изучите Adobe InDesign`,
+    author: `Вадим Гранич`,
+    keywords: `курс, осознанный, индизайн, indesign, графический, дизайн, granich, гранич, графдизайн`
   },
   plugins: [
     `gatsby-plugin-sass`,

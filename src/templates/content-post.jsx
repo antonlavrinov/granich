@@ -17,20 +17,13 @@ export const pageQuery = graphql`
             contentSlug
             contentTitle
             contentYoutubeVideoLink
-            contentLinkBehance {
-                contentLinkBehance
-            }
-            contentLinkMedium {
-                contentLinkMedium
-            }
+            contentLinkBehance
+            contentLinkMedium
             contentPDF {
                 file { 
                   url 
                 }
               }
-            contentDescription {
-                contentDescription
-            }
             contentBannerSwitch
             contentTags
 
@@ -48,7 +41,6 @@ export const pageQuery = graphql`
             }
             courseBannerSubtext
             courseSlug
-            courseBannerSubtext
             courseTags
         }
     }

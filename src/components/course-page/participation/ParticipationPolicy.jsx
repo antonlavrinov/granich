@@ -161,7 +161,8 @@ const ParticipationPolicy = ({data}) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
     return (
         <PolicyWrapper>
-            {data.coursePolicy && <PolicyText>{documentToReactComponents(data.coursePolicy.json)}</PolicyText>}
+            {console.log('POLICY', data.coursePolicy)}
+            {data.childContentfulGranichCourseCoursePolicyRichTextNode && <PolicyText>{documentToReactComponents(data.childContentfulGranichCourseCoursePolicyRichTextNode.json)}</PolicyText>}
             <PolicyFooter>
                 Вопросы по обучению пишите: <CopyToClipboard text={'hello@granich.design'}><PolicyFooterEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PolicyFooterEmail></CopyToClipboard>
             </PolicyFooter>

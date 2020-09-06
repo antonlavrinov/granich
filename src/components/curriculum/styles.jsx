@@ -219,7 +219,7 @@ export const CurriculumItemFrame = styled.div`
     vertical-align: middle;
     color: white;
     fill: white;
-    border-top: 0.1vw solid #E4E4E4;
+    border-top: 1.5px solid #E4E4E4;
     margin-left: 1.5vw;
     margin-right: 1.5vw;
     :last-child {
@@ -231,7 +231,7 @@ export const CurriculumItemFrame = styled.div`
     :after {
         content: '';
         height: 2px;
-        border-top: 2px solid black;
+        border-top: 2px solid var(--granich-grey);
         position: absolute;
         width: 100%;
         top: -2px;

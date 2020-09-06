@@ -324,7 +324,7 @@ const FormFooterContainer = styled.div`
 
 
 
-const ParticipationForm = () => {
+const ParticipationForm = ({data}) => {
     const formEl = useRef(null)
     // const myPhoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{2})\s?-?\s?(\d{2}\)?)$/;
 
@@ -374,13 +374,13 @@ const ParticipationForm = () => {
                                     formEl.current.submit();
                                 }}
                                 validationSchema={Yup.object().shape({
-                                    politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных :)'),
+                                    politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
                                     formParams: Yup.object().shape({
-                                        first_name: Yup.string().trim('Уберите пробелы в начале и в конце строки :)').strict().matches(myNameNewRegExp, 'Неверные символы в Имени >_<').required('Сперва впишите Имя :)'),
+                                        first_name: Yup.string().trim('Уберите пробелы в начале и в конце строки').strict().matches(myNameNewRegExp, 'Неверные символы в Имени').required('Сперва впишите Имя'),
                                         // first_name: Yup.string().email('Неверный формат электронного адреса').required('Заполните поле Емейл'),
-                                        last_name: Yup.string().trim('Уберите пробелы в начале и в конце строки :)').strict().matches(myNameNewRegExp, 'Неверные символы в Фамилии >_<').required('Сперва впишите Фамилию :)'),
-                                        email: Yup.string().email('Это не Электропочта >_<').required('Сперва впишите Электропочту :)'),
-                                        phone: Yup.string().matches(myPhoneNewRegExp, 'Это не Телефон >_<').required('Сперва впишите Телефон :)'),
+                                        last_name: Yup.string().trim('Уберите пробелы в начале и в конце строки').strict().matches(myNameNewRegExp, 'Неверные символы в Фамилии').required('Сперва впишите Фамилию'),
+                                        email: Yup.string().email('Это не Электропочта').required('Сперва впишите Электропочту'),
+                                        phone: Yup.string().matches(myPhoneNewRegExp, 'Это не Телефон').required('Сперва впишите Телефон'),
 
                                     })
                                 })}
@@ -418,9 +418,9 @@ const ParticipationForm = () => {
                                         <FormContainer>
 
                                         <FormTags>
-                                            <FormTag important>17 поток</FormTag>
-                                            <FormTag>Старт 1 сентября</FormTag>
-                                            <FormTag>2 месяца интенсива</FormTag>
+                                            {data.courseStream && <FormTag important>{data.courseStream} поток</FormTag>}
+                                            {data.courseStart && <FormTag>Старт {data.courseStart}</FormTag>}
+                                            {data.courseDuration && <FormTag>{data.courseDuration} интенсива</FormTag>}  
                                         </FormTags>
                                         <FormTitle>Участвовать <br/>в курсе</FormTitle>
                                         <input  type="hidden" name="formParams[setted_offer_id]" /><br/>
@@ -529,7 +529,10 @@ const ParticipationForm = () => {
                                                             window['btnprs5ed6bdb399786']=false},6000);
                                                             return true;}}
                                                     >Оплатить</FormButton>
-                                                        <FormPrice><i>→ </i>27000<span>₽</span></FormPrice>
+                                                        {data.coursePrice && (
+                                                            <FormPrice><i>→ </i>{data.coursePrice}<span>₽</span></FormPrice>
+                                                        )}
+
 
                                             </FormButtonBlock>
 

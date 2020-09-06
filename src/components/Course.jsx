@@ -516,12 +516,17 @@ const Course = ({courseData}) => {
                                 <CourseTitle courseType={courseData.node.courseType === 'Курс' ? true : false} active={courseData.node.courseStatus}>{courseData.node.courseTitle}</CourseTitle>
                                 {courseData.node.courseType === 'Курс' ? (
                                     <CourseInfo active={courseData.node.courseStatus}>
-                                        <CourseStart active={courseData.node.courseStatus}>
-                                            Стартуем <br/> <span>{courseData.node.courseStart}</span>
-                                        </CourseStart>
-                                        <CourseDuration active={courseData.node.courseStatus}>
-                                            Учимся <br/> <span>{courseData.node.courseDuration}</span>
-                                        </CourseDuration>
+                                        {courseData.node.courseStart && (
+                                            <CourseStart active={courseData.node.courseStatus}>
+                                                Стартуем <br/> <span>{courseData.node.courseStart}</span>
+                                            </CourseStart>
+                                        )}
+                                        {courseData.node.courseDuration && (
+                                            <CourseDuration active={courseData.node.courseStatus}>
+                                                Учимся <br/> <span>{courseData.node.courseDuration}</span>
+                                            </CourseDuration>
+                                        )}
+
 
                                     </CourseInfo>
                                 ) : (

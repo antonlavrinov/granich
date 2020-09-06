@@ -33,7 +33,7 @@ const CourseParticipation = ({data}) => {
         <ParticipationSection>
             <Container>
                 <ParticipationWrapper>
-                    <ParticipationForm/>
+                    <ParticipationForm data={data}/>
                     <ParticipationPolicy data={data}/>
                 </ParticipationWrapper>
 

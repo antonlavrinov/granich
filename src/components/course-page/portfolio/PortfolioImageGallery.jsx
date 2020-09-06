@@ -303,6 +303,12 @@ const PortfolioImageGallery = ({images}) => {
                     .customThumbnail {
                         width: 68px;
                     }
+                    .image-gallery-thumbnail:hover {
+                        border-color: rgba(0,0,0,0);                       
+                    }
+                    .image-gallery-thumbnail.active:hover {
+                        border-color: var(--granich-red);  
+                    }
                     
                     
                     

@@ -27,7 +27,7 @@ const Copy = styled(props => <CopyIcon {...props}/>)`
         width: 3vw;
         left: -3.8vw;
         top: 1vw;
-        ${props => props.masterClass && `
+        ${props => props.masterclass && `
             width: 2.8vw;
             left: -3.5vw;
             top: 0.3vw;
@@ -107,7 +107,7 @@ const TeacherWrapper = styled.div`
     @media only screen and (max-width: 575px) {
         border-radius: 3vw;
         padding: 6.5vw 8vw 8vw 10vw; 
-        ${props => props.masterClass && `
+        ${props => props.masterclass && `
             padding: 5.5vw 7.5vw 6vw 7.5vw; 
             margin: 4.5vw 0;
         `}
@@ -130,7 +130,7 @@ const TeacherImage = styled(props => <BackgroundImage {...props}></BackgroundIma
     @media only screen and (max-width: 575px) {
         width: 19.5vw;
         height: 19.5vw;
-        ${props => props.masterClass && `
+        ${props => props.masterclass && `
             width: 16.5vw;
             height: 16.5vw;
         `}
@@ -232,7 +232,7 @@ const TeacherEmail = styled.span`
         padding-bottom: 0;
         :hover {
             font-size: 3.8vw;
-            border-bottom: solid 0.2vw var(--granich-black);
+            border-bottom: dotted 1.5px rgba(0,0,0,0);
 
         }
         &:after {
@@ -252,7 +252,7 @@ const TeacherEmail = styled.span`
                 border-top: 2vw solid var(--granich-red);
             `}
         }
-        ${props => props.masterClass && `
+        ${props => props.masterclass && `
             font-size: 2.8vw;
             :hover {
                 font-size: 2.8vw;
@@ -286,7 +286,7 @@ const TeacherInfoName = styled.div`
         font-size: 4.4vw;
         line-height: 1.3;
         width: 67vw;
-        ${props => props.masterClass && `
+        ${props => props.masterclass && `
             font-size: 3.8vw;
         `}
     }
@@ -305,7 +305,7 @@ const TeacherDescription = styled.div`
         line-height: 1.3;
         margin-top: 0;
         width: 67vw;
-        ${props => props.masterClass && `
+        ${props => props.masterclass && `
             font-size: 3.8vw;
         `}
     }
@@ -341,9 +341,9 @@ export const TeacherBlock = ({teacher, masterClass}) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
 
     return (
-        <TeacherWrapper masterClass={masterClass}>
+        <TeacherWrapper masterclass={masterClass}>
             <TeacherHeader>
-                <TeacherImage masterClass={masterClass} fluid={teacher.teacherImage.fluid}></TeacherImage>
+                <TeacherImage masterclass={masterClass} fluid={teacher.teacherImage.fluid}></TeacherImage>
                 <TeacherSocials>
                     <TeacherSocialIcons>
                         {teacher.teacherSocialsOrder.map((social, idx) => {
@@ -365,16 +365,16 @@ export const TeacherBlock = ({teacher, masterClass}) => {
                         })}
                     </TeacherSocialIcons>
                     <CopyToClipboard text={teacher.teacherEmail}> 
-                        <TeacherEmail masterClass={masterClass} content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
-                            <Copy masterClass={masterClass}/>{teacher.teacherEmail}
+                        <TeacherEmail masterclass={masterClass} content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
+                            <Copy masterclass={masterClass}/>{teacher.teacherEmail}
                         </TeacherEmail>
                     </CopyToClipboard>
                 </TeacherSocials>
 
             </TeacherHeader>
-            <TeacherInfo masterClass={masterClass}>
-                    <TeacherInfoName masterClass={masterClass}>{teacher.teacherName}</TeacherInfoName>
-                    <TeacherDescription masterClass={masterClass}>
+            <TeacherInfo masterclass={masterClass}>
+                    <TeacherInfoName masterclass={masterClass}>{teacher.teacherName}</TeacherInfoName>
+                    <TeacherDescription masterclass={masterClass}>
                         {documentToReactComponents(teacher.teacherDescr.json)}
                     </TeacherDescription>
             </TeacherInfo>

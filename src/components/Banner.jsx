@@ -193,8 +193,8 @@ const Banner = ({data}) => {
                             </BannerTitle>
                             <BannerInfoItems>
                                 <BannerTag>{data.courseType}</BannerTag>
-                                <BannerCourseStart>Стартуем {data.courseStart}</BannerCourseStart>
-                                <BannerCourseDuration>Учимся {data.courseDuration}</BannerCourseDuration>
+                                {data.courseStart && <BannerCourseStart>Стартуем {data.courseStart}</BannerCourseStart>}
+                                {data.courseDuration && <BannerCourseDuration>Учимся {data.courseDuration}</BannerCourseDuration>}
                             </BannerInfoItems>                            
                         </BannerMainInfo>
                         {data.courseType === 'Курс' ? (
@@ -204,9 +204,7 @@ const Banner = ({data}) => {
                         )}
                     </BannerContentWrapper>
                     <BannerContentWrapperMobile>
-                        <BannerSubtext>
-                            {data.courseBannerSubtext}
-                        </BannerSubtext>
+                        {data.courseBannerSubtext && <BannerSubtext>{data.courseBannerSubtext}</BannerSubtext>}
                         <BannerTitle>
                             {data.courseTitle}
                         </BannerTitle>

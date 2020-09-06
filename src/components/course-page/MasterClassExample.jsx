@@ -41,6 +41,7 @@ const ExampleAuthor = styled.div`
     min-width: 8vw;
     margin-right: 3vw;
     line-height: 1.4;
+    margin-top: -1vw;
     @media only screen and (max-width: 575px) {
         margin-right: 0;
         min-width: 100%;
@@ -77,6 +78,17 @@ const ExampleAuthorName = styled.div`
         margin-left: 0;
         font-size: 3.7vw;
         margin-top: 1.5vw;
+    }
+`
+
+const ExampleAuthorText = styled.div`
+    font-size: 1.15vw;
+    color: var(--granich-grey);
+    margin-left: -0.1vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 5vw;
+        margin-left: 0;
+        font-size: 3.7vw;
     }
 `
 
@@ -191,6 +203,7 @@ const imageExample = data.exampleMasterClass.childImageSharp.fluid
                         <ExampleAuthor>
                             <ExampleAuthorImage  fluid={imageAuthor}></ExampleAuthorImage>
                             <ExampleAuthorName>Вадим Гранич</ExampleAuthorName>
+                            <ExampleAuthorText>автор дизайн-системы</ExampleAuthorText>
                         </ExampleAuthor>
                         <ExampleTitle> 
                             Исследование базируется на дизайн-системе Курса

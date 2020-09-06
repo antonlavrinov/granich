@@ -492,11 +492,11 @@ const CourseAnswers = ({data}) => {
                         <AnswersAccordeon>
                             {data.edges.map((tab, idx) => {
                                 return (
-                                    <AnswersItem open={idx} key={tab.node.id} tag={tab.node.AnswersTagName} type={tab.node.AnswersTagType ? 1 : 0}>
+                                    <AnswersItem open={idx} key={tab.node.id} tag={tab.node.answersTagName} type={tab.node.answersTagType ? 1 : 0}>
                                         <AnswersContentWrapper>
                                         <AnswersTextWrapper>
-                                            {tab.node.AnswersFirstColumn && <AnswerCategoryColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.AnswersFirstColumn.json)}</AnswerCategoryColumn>}
-                                            {tab.node.AnswersSecondColumn && <AnswerCategoryColumn>{documentToReactComponents(tab.node.AnswersSecondColumn.json)}</AnswerCategoryColumn>} 
+                                            {tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode && <AnswerCategoryColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode.json)}</AnswerCategoryColumn>}
+                                            {tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode && <AnswerCategoryColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode.json)}</AnswerCategoryColumn>} 
                                         </AnswersTextWrapper>
 
                                     
@@ -507,8 +507,8 @@ const CourseAnswers = ({data}) => {
                         </AnswersAccordeon>
                         <AnswersAccordionMobile preExpanded={[0]} allowMultipleExpanded allowZeroExpanded>
                         {data.edges.map((tab, idx) => {
-                            const type = tab.node.AnswersTagType;
-                            const tag = tab.node.AnswersTagName;
+                            const type = tab.node.answersTagType;
+                            const tag = tab.node.answersTagName;
                             return (
                                 <AnswersAccordionItem uuid={idx} key={tab.node.id}>
                                     <AnswersAccordionHeading>
@@ -522,8 +522,8 @@ const CourseAnswers = ({data}) => {
                                         </AccordionItemButton>
                                     </AnswersAccordionHeading>
                                     <AccordionItemPanel className="accordion__panel accordion__panel_answers">
-                                            {tab.node.AnswersFirstColumn && <AnswerCategoryColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.AnswersFirstColumn.json)}</AnswerCategoryColumn>}
-                                            {tab.node.AnswersSecondColumn && <AnswerCategoryColumn>{documentToReactComponents(tab.node.AnswersSecondColumn.json)}</AnswerCategoryColumn>} 
+                                            {tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode && <AnswerCategoryColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode.json)}</AnswerCategoryColumn>}
+                                            {tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode && <AnswerCategoryColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode.json)}</AnswerCategoryColumn>} 
                                     </AccordionItemPanel>
                                 </AnswersAccordionItem>
                             )

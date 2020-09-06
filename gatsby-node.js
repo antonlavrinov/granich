@@ -48,3 +48,128 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
       })
     }
   }
+
+exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions
+    const typeDefs = `
+
+
+      type ContentfulGranichMainTeachers implements Node {
+        teacherSocialVK: String
+        teacherSocialBehance: String
+        teacherSocialPinterest: String
+        teacherSocialInstagram: String
+        teacherSocialTelegram: String
+      }
+
+      type ContentfulGranichMainContentCard implements Node {
+        contentLinkPinterest: String
+        contentLinkBehance: String
+        contentLinkYoutube: String
+        contentLinkMedium: String
+        contentYoutubeTiming: String
+        contentYoutubeVideoLink: String
+        contentBannerSwitch: Boolean
+        contentBanner: String
+      }
+
+
+
+      type ContentfulGranichCourse implements Node {
+        courseStart: String
+        courseDuration: String
+        courseStream: String
+        coursePrice: String
+        courseBannerSubtext: String   
+        childContentfulGranichCourseCoursePolicyRichTextNode: ContentfulCoursePolicy      
+      }
+      type ContentfulCoursePolicy {
+        json: JSON
+      }
+
+
+
+
+
+
+
+      type ContentfulGranichCourseCurriculum implements Node {
+        curriculumImportantText: ContentfulCurriculumImportantText
+        childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode: ContentfulCurriculumFirstColumn
+        childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode: ContentfulCurriculumSecondColumn
+        childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode: ContentfulCurriculumThirdColumn
+        childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode: ContentfulCurriculumFourthColumn
+        childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode: ContentfulCurriculumImportantText
+      }
+      type ContentfulCurriculumImportantText {
+        json: JSON
+      }
+      type ContentfulCurriculumFirstColumn {
+        json: JSON
+      }
+      type ContentfulCurriculumSecondColumn {
+        json: JSON
+      }
+      type ContentfulCurriculumThirdColumn {
+        json: JSON
+      }
+      type ContentfulCurriculumFourthColumn {
+        json: JSON
+      }
+
+
+      type ContentfulGranichCourseFeatures implements Node {
+        featuresLink: String
+      }
+
+
+
+      type ContentfulGranichCourseAnswers implements Node {
+        childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode: ContentfulAnswersFirstColumn
+        childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode: ContentfulAnswersSecondColumn
+      }
+      type ContentfulAnswersFirstColumn {
+        json: JSON
+      }
+      type ContentfulAnswersSecondColumn {
+        json: JSON
+      }
+    
+        
+
+
+    `
+    createTypes(typeDefs)
+  }
+
+
+  // type contentfulGranichCourseCoursePolicyRichTextNode implements Node {
+  //   json: JSON
+  // }
+
+  // contentPDF: ContentfulContentPDF
+
+  // type ContentfulContentPDF {
+  //   file: ContentfulContentPDFFile
+  // }
+  // type ContentfulContentPDFFile {
+  //   url: String
+  // }
+
+
+        // type ContentfulCoursePolicy {
+      //   json: File
+      // }
+
+
+              // coursePolicy: ContentfulCoursePolicy
+
+
+            //   contentPDF: ContentfulContentPDF
+            // }
+            // type ContentfulContentPDF {
+            //   file: ContentfulContentPDFFile
+            // }
+            // type ContentfulContentPDFFile {
+            //   url: String
+            // }

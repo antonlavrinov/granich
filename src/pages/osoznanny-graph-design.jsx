@@ -36,7 +36,8 @@ export const contentfulQuery = graphql`
           courseStream
           courseStatus
           courseType
-          coursePolicy {
+          coursePrice
+          childContentfulGranichCourseCoursePolicyRichTextNode {
             json
           }
         }
@@ -80,26 +81,25 @@ export const contentfulQuery = graphql`
               id
               curriculumAttachmentTo
               curriculumImportantDescr
-              curriculumImportantText {
-                json
-              }
-              curriculumFirstColumn {
-                json
-              }
-
               curriculumTitle
               curriculumTagName
-              curriculumThirdColumn {
-                json
-              }
-              curriculumSecondColumn {
-                json
-              }
-              curriculumFourthColumn {
-                json
-              }
               curriculumType
               curriculumImportantDescr
+              childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode {
+                json
+              }
+              childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode {
+                json
+              }
+              childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode {
+                json
+              }
+              childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode {
+                json
+              }
+              childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode {
+                json
+              }
             }
           }
         }
@@ -176,16 +176,16 @@ export const contentfulQuery = graphql`
             }
           }
         }
-        answers: allContentfulGranichCourseAnswers(filter: {AnswersAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [AnswersOrderNumber], order: ASC}) {
+        answers: allContentfulGranichCourseAnswers(filter: {answersAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [answersOrderNumber], order: ASC}) {
           edges {
             node {
               id
-              AnswersTagName
-              AnswersTagType
-              AnswersFirstColumn {
+              answersTagName
+              answersTagType
+              childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode {
                 json
               }
-              AnswersSecondColumn {
+              childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode {
                 json
               }
             }

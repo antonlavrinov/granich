@@ -338,7 +338,7 @@ const Mailing = () => {
                                     formEl.current.submit();
                                 }}
                                 validationSchema={Yup.object().shape({
-                                    politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных :)'),
+                                    politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
                                     formParams: Yup.object().shape({
                                         email: Yup.string().email('Это не электропочта  >__<').required('Сперва впишите почту :)'),
                                     })
