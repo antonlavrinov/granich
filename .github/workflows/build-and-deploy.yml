@@ -1,0 +1,42 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ master ]
+    
+  repository_dispatch:
+    types: [publish-event]
+
+
+jobs:
+  update:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set Node.js
+        uses: actions/setup-node@master
+        with: 
+          node-version: 10.x
+            
+      - name: Install dependencies
+        run: npm install 
+        
+      - name: Build
+        run: npm run build
+          
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          BRANCH: gatsby-build # The branch the action should deploy to.
+          FOLDER: public # The folder the action should deploy.
+          CLEAN: true  
+        
+      - name: Push to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.IP_ADDRESS }}
+          username: ${{ secrets.LOGIN }}
+          password: ${{ secrets.PASSWORD }}
+          script: cd www/anton-dev.ru && git pull https://github.com/antonlavrinov/granich.git gatsby-build
+     
