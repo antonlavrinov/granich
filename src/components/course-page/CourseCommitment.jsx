@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
-import commitmentVideo from '../../assets/images/graph-design/commitment/ezgif.com-gif-to-mp4.mp4';
+// import commitmentVideo from '../../assets/images/graph-design/commitment/ezgif.com-gif-to-mp4.mp4';
 
 const CommitmentSection = styled.section`
     margin-bottom: 4vw;
@@ -120,9 +120,9 @@ const CourseCommitment = () => {
             <Container>
                 <CommitmentWrapper>
                     {/* <CommitmentImage src={commitmentGIF}/> */}
-                    <video muted loop autoPlay>
+                    {/* <video muted loop autoPlay>
                         <source src={commitmentVideo} type="video/mp4" />
-                    </video>
+                    </video> */}
                     <CommitmentInfo>
                         <CommitmentTitle>С правильным настроем можно с нуля!</CommitmentTitle>
                         <CommitmentText>Да, у меня интенсивный курс. Он требует осознанных усилий и времени. Однако, участвовать в нем могут даже те, кто никогда с графическим дизайном не сталкивался. Но в таком случае лучше возьмите отпуск.</CommitmentText>
