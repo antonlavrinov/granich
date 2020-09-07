@@ -38,5 +38,5 @@ jobs:
           host: ${{ secrets.IP_ADDRESS }}
           username: ${{ secrets.LOGIN }}
           password: ${{ secrets.PASSWORD }}
-          script: cd www/anton-dev.ru && git pull https://github.com/antonlavrinov/granich.git gatsby-build
+          script: cd www/anton-dev.ru && git pull https://github.com/antonlavrinov/granich.git gatsby-build && antonlavrinov && Anton76139088gaga
      
