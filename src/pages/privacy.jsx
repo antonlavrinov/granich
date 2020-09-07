@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import {graphql} from 'gatsby';
 import LegalDocument from '../components/legal-document/LegalDocument';
-
+import SEO from "../components/seo"
 
 export const contentfulQuery = graphql`
     query contentfulQueryPrivacy {
@@ -39,6 +39,7 @@ const PrivacyPage = ({data}) => {
     const additionalInfo = data.privacy.edges[0].node.legalDocAdditionalInfo.json;
     return (
         <Layout>
+            <SEO title="Политика конфиденциальности" />
             <Header type={'dark'}/>
             <div className="section-top-block"></div>
             <LegalDocument additionalInfo={additionalInfo} type={docType} mainText={mainText} dataPdf={dataPdf} date={date}/>

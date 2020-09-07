@@ -1,34 +1,3 @@
-// @media screen and (max-width: 1200px)
-
-
-
-//IPAD PRO 1024px
-   
-// @media screen and (max-width: 991px) {
-//     .container {
-//         width: 750px;
-//     }
-        
-// }
-
-
-
-
-// IPAD
-@media (max-width: 768px) {
-    .footer {
-        &__block {
-            width: 100%;
-            flex-direction: column;
-            padding: 40px 0 40px;
-            height: 300px;
-            // background: white;
-        }
-    }
-
-
-}
-
 
 
 @media only screen and (max-width: 575px) {
@@ -78,27 +47,3 @@
     }
 }
 
- 
-
-// IPHONE_X IPHONE_6/7/8 PLUS  
-// @media only screen and (max-width: 480px) {
-//     .style__Container-gHBZbG {
-//         width: 100% !important;
-//         max-width: 100% !important;
-//     }
-//     .eYbcwl {
-//         width: 100% !important;
-//         max-width: 100% !important;
-//     }
-//     .Manifest__ManifestSection-jAWClb {
-//         display: none;
-//     }
-//     .Footer__FooterSection-jKdDqT {
-//         display: none;
-//     }
-// }
-
-
-        
-//IPHONE_5S/SE   GALAXY_S5
-// @media only screen and (max-width: 362px)

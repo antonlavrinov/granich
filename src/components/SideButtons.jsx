@@ -311,7 +311,6 @@ const SideButtons = () => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
     const toggleChatOpen = (boolean) => {
         setChatOpen(boolean)
-        console.log('open')
     }
     return (
         <SideButtonsSection>

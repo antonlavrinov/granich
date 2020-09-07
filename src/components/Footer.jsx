@@ -107,7 +107,7 @@ const FooterInfoMail = styled.div`
     font-size: 1.16vw;
     color: var(--granich-black);
     display: block;
-    border-bottom: solid 0.07vw var(--granich-light-grey);
+    border-bottom: solid 1px var(--granich-black);
     background: none;
     user-select: none;
     margin-top: -0.15vw;
@@ -168,7 +168,6 @@ const FooterInfoMail = styled.div`
         padding-bottom: 0;
         :hover {
             font-size: 3.8vw;
-            border-bottom: solid 0.2vw var(--granich-black);
 
         }
         &:after {
@@ -209,11 +208,11 @@ const FooterLink = styled(props => <Link {...props}/>)`
 
         color: inherit;
         font-size: inherit;
-        border-bottom: 0.05vw solid var(--granich-light-grey);
+        border-bottom: 1px solid var(--granich-light-grey);
 
         :hover {
             border-bottom: none;
-            border-bottom: 0.05vw solid var(--granich-light-grey);
+            border-bottom: 1px solid var(--granich-light-grey);
         }
     }
     :hover {
@@ -228,7 +227,7 @@ const FooterLink = styled(props => <Link {...props}/>)`
         }
         span {
             :hover {
-                border-bottom: 0.2vw solid var(--granich-light-grey);
+                border-bottom: 1px solid var(--granich-light-grey);
             }
         }
         :hover {

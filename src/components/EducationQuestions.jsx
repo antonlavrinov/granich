@@ -117,7 +117,6 @@ const EducationQuestionsEmail = styled.span`
 
 const EducationQuestions = () => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
-    console.log(tooltipEmail)
     return (
         <EducationQuestionsSection>
             <Container>

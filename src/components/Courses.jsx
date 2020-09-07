@@ -37,8 +37,6 @@ const CoursesWrapper = styled.div`
 
 const Courses = ({data}) => {
 
-    console.log('courses', data)
-
     return (
         <CoursesSection id="courses">
             <Container>

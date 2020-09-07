@@ -365,10 +365,8 @@ const Mailing = () => {
                                                     onSubmit={ (e) => {
                                                         if(isValid) {
                                                             handleSubmit(e);
-                                                            console.log(isValid)
                                                         } else {
                                                             handleSubmit(e);
-                                                            console.log(isValid)
                                                             setShakeTrigger(shakeTrigger + 1)
                                                             if (errors.formParams && errors.formParams.email) {
                                                                 values.formParams.email = '';

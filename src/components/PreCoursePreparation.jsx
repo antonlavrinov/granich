@@ -335,7 +335,6 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
     useEffect(() => {
         const content = document.querySelectorAll('.content');
         setContentShown(content.length);
-        console.log('CONTENT', content)
     }, [contentPagination])
 
     const multiPropsFilter = (products, filters) => {
@@ -359,7 +358,6 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
 
     const triggerFiltering = (tag) => {
         const tagToRemove = filters.contentTags.find((tagg) => tagg === tag.name) 
-        // console.log('tag to remove', tagToRemove)
         toggleTagColor(tag)
         if(tagToRemove) {
             //delete the tag
@@ -368,13 +366,10 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
             const after = filters.contentTags.slice(idx +1)
             const newArray = [...before, ...after]
             setFilters({contentTags: newArray})
-            // console.log('tag remove')
 
         } else {
             //add new tag
             setFilters({contentTags: [...filters.contentTags, tag.name]})
-
-            console.log('tag choose', filters)
         }
     }
 
@@ -400,7 +395,6 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
         topFilters.forEach((filter) => {
             resetFilters.push({...filter, active: false})
         })
-        // console.log('activeee', topFilter)
         const idx = resetFilters.findIndex((filter) => filter.name === topFilter.name)
         const oldItem = resetFilters[idx];
         const newItem = {
@@ -412,7 +406,6 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
             newItem,
             ...resetFilters.slice(idx + 1)
         ]
-        console.log('NEW ARR', idx)
 
         setTopFilters(newArray)
 
