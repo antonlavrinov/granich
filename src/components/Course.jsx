@@ -470,7 +470,7 @@ const Course = ({courseData}) => {
                     </CourseButton>
                 </CourseDevelopingWrapper>
             ) : (
-                <CourseWrapper to={courseData.node.courseSlug}>
+                <CourseWrapper href={courseData.node.courseSlug}>
                             <CourseContainer>
                                 <CourseTagList>
                                     <>
