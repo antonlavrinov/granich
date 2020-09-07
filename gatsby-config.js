@@ -34,6 +34,7 @@ module.exports = {
     //     ],
     //   },
     // },
+    `gatsby-plugin-htaccess`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

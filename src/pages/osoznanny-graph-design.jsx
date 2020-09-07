@@ -220,6 +220,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
       <Mailing/>
     )}
     <CourseAnswers data={data.answers}/>
+    
 
 
   </Layout>
