@@ -8,7 +8,8 @@ module.exports = {
     description: `Осознанный курс по графическому дизайну от Вадима Гранича (Granich). За 2 месяца вы получите упорядоченные знания о графическом дизайне и создадите свое портфолио. А еще изучите Adobe InDesign`,
     author: `Вадим Гранич`,
     keywords: `курс, осознанный, индизайн, indesign, графический, дизайн, granich, гранич, графдизайн`,
-    siteUrl: `https://www.anton-dev.ru`
+    // siteUrl: `https://www.anton-dev.ru`,
+    siteUrl: `https://elated-kalam-d4b493.netlify.app/`
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -147,7 +148,7 @@ module.exports = {
             "type": "image/png"
           }
         ], 
-        cache_busting_mode: 'none' // This path is relative to the root of the site.
+        // cache_busting_mode: 'none' // This path is relative to the root of the site.
       },
     },
     // {
