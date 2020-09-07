@@ -2,6 +2,8 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import commitmentVideo from '../../assets/images/graph-design/commitment/ezgif.com-gif-to-mp4.mp4';
+import CommitmentGif from '../../assets/images/graph-design/commitment/commitment.gif';
+
 
 const CommitmentSection = styled.section`
     margin-bottom: 4vw;
@@ -36,11 +38,21 @@ const CommitmentWrapper = styled.div`
     }
 `
 
-// const CommitmentImage = styled.img`
-//     margin-right: 3vw;
-//     min-width: 35.25vw;
-//     width: 35.25vw;
-// `
+const CommitmentImage = styled.img`
+    min-width: 36.3vw;
+    width: 36.3vw;
+    margin-right: 3vw;
+    border-radius: 0.5vw;
+    @media only screen and (max-width: 575px) {
+        min-width: 100%;
+        width: 100%;
+        margin-right: 3vw;
+        // height: 40.8vw;
+        border-radius: 2vw;
+        margin-bottom: 5vw;
+
+    }
+`
 
 const CommitmentInfo = styled.div`
 
@@ -119,10 +131,10 @@ const CourseCommitment = () => {
         <CommitmentSection>
             <Container>
                 <CommitmentWrapper>
-                    {/* <CommitmentImage src={commitmentGIF}/> */}
-                    <video muted loop autoPlay>
+                    <CommitmentImage src={CommitmentGif}/>
+                    {/* <video muted loop autoPlay>
                         <source src={commitmentVideo} type="video/mp4" />
-                    </video>
+                    </video> */}
                     <CommitmentInfo>
                         <CommitmentTitle>С правильным настроем можно с нуля!</CommitmentTitle>
                         <CommitmentText>Да, у меня интенсивный курс. Он требует осознанных усилий и времени. Однако, участвовать в нем могут даже те, кто никогда с графическим дизайном не сталкивался. Но в таком случае лучше возьмите отпуск.</CommitmentText>
