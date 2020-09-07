@@ -150,18 +150,19 @@ export const contentfulQuery = graphql`
 `
 
 
-
+//header or offer seems to be a problem
 
 const IndexPage = ({data}) => (
   <Layout>
-    {/* <Header/> */}
+    
+    <Header/>
     <SEO title="Онлайн-школа Granich" />
-    {/* <Offer data={data.header}/> */}
-    {/* <Courses data={data.courseCards}  /> */}
+    <Offer data={data.header}/>
+    <Courses data={data.courseCards}  />
 
     <Manifest/>
     <Mailing/>
-    {/* <PreCoursePreparation dataRecommended={data.contentCardsRecommended} dataNew={data.contentCardsNew}/> */}
+    <PreCoursePreparation dataRecommended={data.contentCardsRecommended} dataNew={data.contentCardsNew}/>
     <OurTeam data={data.team}/> 
 
   </Layout>

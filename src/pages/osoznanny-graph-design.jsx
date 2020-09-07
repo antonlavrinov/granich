@@ -199,27 +199,27 @@ export const contentfulQuery = graphql`
 
 const OsoznannyGraphDesignPage = ({data}) => (
   <Layout>
-    {/* <Header type={'dark'}/> */}
+    <Header type={'dark'}/>
     <SEO title="Осознанный графдизайн" />
     <div className="section-top-block"></div>
-    {/* <CourseOffer data={data.offer}/> */}
-    {/* <CourseExplanations data={data.explanations}/>
+    <CourseOffer data={data.offer}/>
+    <CourseExplanations data={data.explanations}/>
     <CourseExample/>
     <CourseForWhom data={data.forWhom}/>
-    <CourseCommitment/> */}
-    {/* <CoursePortfolio posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/> */}
+    <CourseCommitment/>
+    <CoursePortfolio posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
 
-    {/* <CourseTrainingPath data={data.trainingPath}/> */}
-    {/* <CourseCurriculum data={data.curriculum}/> */}
-    {/* <CourseFeatures data={data.features}/>
-    <CourseReviews data={data.reviews}/> */}
+    <CourseTrainingPath data={data.trainingPath}/>
+    <CourseCurriculum data={data.curriculum}/>
+    <CourseFeatures data={data.features}/>
+    <CourseReviews data={data.reviews}/>
     <div id="participation-section"></div>
-    {/* {data.offer.courseStatus ? (
+    {data.offer.courseStatus ? (
       <CourseParticipation data={data.offer}/>
     ) : (
       <Mailing/>
-    )} */}
-    {/* <CourseAnswers data={data.answers}/> */}
+    )}
+    <CourseAnswers data={data.answers}/>
 
 
   </Layout>

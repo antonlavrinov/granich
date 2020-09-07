@@ -39,9 +39,9 @@ const PublicOfferPage = ({data}) => {
     const additionalInfo = data.publicOffer.edges[0].node.legalDocAdditionalInfo.json;
     return (
         <Layout>
-            {/* <Header type={'dark'}/> */}
+            <Header type={'dark'}/>
             <div className="section-top-block"></div>
-            {/* <LegalDocument additionalInfo={additionalInfo} type={docType} mainText={mainText} dataPdf={dataPdf} date={date}/> */}
+            <LegalDocument additionalInfo={additionalInfo} type={docType} mainText={mainText} dataPdf={dataPdf} date={date}/>
         </Layout>
     )
 }

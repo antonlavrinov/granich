@@ -119,7 +119,7 @@ const NotFoundSymbol = styled.div`
 const NotFoundPage = () => (
   <Layout>
     <SEO title="Страница не найдена" />
-    {/* <Header type={'dark'}/> */}
+    <Header type={'dark'}/>
     <div className="section-top-block"></div>
     <NotFoundSection>
       <Container>

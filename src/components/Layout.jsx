@@ -22,8 +22,8 @@ const Layout = ({ children }) => {
     <>
         <GlobalStyle/>
             <main>{children}</main>
-        {/* <SideButtons/>
-        <Footer/> */}
+        <SideButtons/>
+        <Footer/>
     </>
   )
 }

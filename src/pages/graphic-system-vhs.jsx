@@ -119,17 +119,17 @@ export const contentfulQuery = graphql`
 
 const GraphicSystemVhsPage = ({data}) => (
   <Layout>
-    {/* <Header type={'dark'}/> */}
+    <Header type={'dark'}/>
     <div className="section-top-block"></div>
     <SEO title="Графсистема VHS" />
-    {/* <CourseOffer data={data.VHSoffer}/>
+    <CourseOffer data={data.VHSoffer}/>
     <CourseExplanations data={data.VHSexplanations}/>
     <CourseAuthors data={data.VHSteam}/>
     <MasterClassExample/>
     <CoursePortfolio masterClass posters={data.VHSportfolioPosters}/>
     <CourseReviews data={data.VHSreviews} masterClass/>
-    <CoursePriceRange data={data.VHSPricesRange}/> */}
-    {/* <EducationQuestions/> */}
+    <CoursePriceRange data={data.VHSPricesRange}/>
+    <EducationQuestions/>
 
   </Layout>
 )
