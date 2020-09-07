@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import WhiteArrowNewPage from '../assets/svgs/arrow-white-newpage.svg';
 import BlackArrowNewPage from '../assets/svgs/arrow-black-newpage.svg';
 import BackgroundImage from 'gatsby-image';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 import CogwheelIcon from '../assets/svgs/cogwheels.svg';
 
 
@@ -36,7 +36,7 @@ const BlackArrow = styled(props => <BlackArrowNewPage {...props}/>)`
     }
 `
 
-const CourseWrapper = styled(props => <Link {...props}/>)`
+const CourseWrapper = styled(props => <a {...props}/>)`
     background: white;
     border-radius: 0.6vw;
     box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
@@ -167,7 +167,7 @@ const CourseTag = styled.div`
 
     `}
     ${(props) => props.courseType === 'Разрабатываем...' && `
-        border: 1.5px solid #d4d4d4;
+        border: 2px solid #d4d4d4;
         filter: none;
         width: 100%;
         height: 1.45vw;
@@ -401,7 +401,7 @@ const CourseTeacher = styled(props => <BackgroundImage {...props}></BackgroundIm
 
 const CourseDevelopingImage = styled.div`
     min-height: 15.5vw;
-    border: 1.5px solid #D4D4D4;
+    border: 2px solid #D4D4D4;
     margin-bottom: 0.7vw;
     position: relative;
 `

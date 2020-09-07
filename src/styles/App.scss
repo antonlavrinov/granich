@@ -374,14 +374,16 @@ ul, li {
 
 .course-form-checkbox_black:checked + label::before {
     color: var(--granich-black);
-    color: #830404;
+    // color: #830404;
     content: '✓';
+
     // letter-spacing: -0.05vw;
     display: flex;
     justify-content: center;
     text-align: center;
     line-height: 0.4;
     background: white;
+    // border: 0.3vw solid white;
     font-family: 'EB Garamond';
     // padding-left: 0.1vw;
     font-family: 'Inter';

@@ -388,7 +388,7 @@ const Mailing = () => {
                                                                 onChange={handleChange}
                                                                 errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
                                                             />
-                                                             <MailingButton type="submit" disabled={isSubmitting}><ArrowRightButton/></MailingButton>
+                                                             <MailingButton aria-label="Submit" type="submit" disabled={isSubmitting}><ArrowRightButton/></MailingButton>
                                                             
                                                         
                                                     </MailingWrapperInputAndButton>
