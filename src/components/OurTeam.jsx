@@ -341,9 +341,9 @@ export const TeacherBlock = ({teacher, masterClass}) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
 
     return (
-        <TeacherWrapper masterclass={masterClass}>
+        <TeacherWrapper masterclass={masterClass ? 1 : 0}>
             <TeacherHeader>
-                <TeacherImage masterclass={masterClass} fluid={teacher.teacherImage.fluid}></TeacherImage>
+                <TeacherImage masterclass={masterClass ? 1 : 0} fluid={teacher.teacherImage.fluid}></TeacherImage>
                 <TeacherSocials>
                     <TeacherSocialIcons>
                         {teacher.teacherSocialsOrder.map((social, idx) => {
@@ -365,16 +365,16 @@ export const TeacherBlock = ({teacher, masterClass}) => {
                         })}
                     </TeacherSocialIcons>
                     <CopyToClipboard text={teacher.teacherEmail}> 
-                        <TeacherEmail masterclass={masterClass} content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
-                            <Copy masterclass={masterClass}/>{teacher.teacherEmail}
+                        <TeacherEmail masterclass={masterClass ? 1 : 0} content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
+                            <Copy masterclass={masterClass ? 1 : 0}/>{teacher.teacherEmail}
                         </TeacherEmail>
                     </CopyToClipboard>
                 </TeacherSocials>
 
             </TeacherHeader>
-            <TeacherInfo masterclass={masterClass}>
-                    <TeacherInfoName masterclass={masterClass}>{teacher.teacherName}</TeacherInfoName>
-                    <TeacherDescription masterclass={masterClass}>
+            <TeacherInfo masterclass={masterClass ? 1 : 0}>
+                    <TeacherInfoName masterclass={masterClass ? 1 : 0}>{teacher.teacherName}</TeacherInfoName>
+                    <TeacherDescription masterclass={masterClass ? 1 : 0}>
                         {documentToReactComponents(teacher.teacherDescr.json)}
                     </TeacherDescription>
             </TeacherInfo>

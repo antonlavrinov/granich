@@ -207,7 +207,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <CourseExample/>
     <CourseForWhom data={data.forWhom}/>
     <CourseCommitment/>
-    <CoursePortfolio posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
+    {/* <CoursePortfolio posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/> */}
     <CourseTrainingPath data={data.trainingPath}/>
     <CourseCurriculum data={data.curriculum}/>
     <CourseFeatures data={data.features}/>

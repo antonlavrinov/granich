@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
-import 'swiper/swiper-bundle.css';
 import BackgroundImage from 'gatsby-background-image';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'

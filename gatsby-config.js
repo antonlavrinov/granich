@@ -33,24 +33,26 @@ module.exports = {
     //     ],
     //   },
     // },
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       `inter\:400,500,600,700`,
-    //       `eb garamond\:400,500,600`// you can also specify font weights and styles
-    //     ],
-    //     display: 'swap'
-    //   }
-    // },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        google: {
-          families: ['Inter:400,500,600,700', 'EB Garamond:400,500i,500']
-        }
+        fonts: [
+          `inter\:400,500,600,700`,
+          `EB Garamond\:400,500i,500`// you can also specify font weights and styles
+        ],
+        display: 'swap'
       }
     },
+    // {
+    //   resolve: 'gatsby-plugin-web-font-loader',
+    //   options: {
+    //     google: {
+    //       // families: ['Inter:400,500,600,700', 'EB Garamond:400,500i,500'],
+    //       families: ['Inter:400,500,600,700', 'EB Garamond:400,500i,500']
+          
+    //     }
+    //   }
+    // },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

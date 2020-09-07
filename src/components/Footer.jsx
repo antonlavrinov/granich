@@ -7,7 +7,6 @@ import VisaIcon from '../assets/svgs/Visa.svg';
 import MastercardIcon from '../assets/svgs/Mastercard.svg';
 import RobokassaIcon from '../assets/svgs/Robokassa.svg';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import 'react-tippy/dist/tippy.css'
 
 
 const BlackLogo = styled(props => <Logo {...props}/>)`

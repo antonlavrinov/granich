@@ -15,7 +15,6 @@
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.4.11",
     "gatsby-plugin-offline": "^3.2.9",
-    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.3.4",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.3.10",
@@ -40,12 +39,10 @@
     "react-modal": "^3.11.2",
     "react-pose": "^4.0.10",
     "react-spring": "^8.0.27",
-    "react-tippy": "^1.4.0",
     "react-tooltip": "^4.2.9",
     "react-transition-group": "^4.4.1",
     "resize-observer-polyfill": "^1.5.1",
     "styled-components": "^5.1.1",
-    "swiper": "^6.1.2",
     "yup": "^0.29.3"
   },
   "devDependencies": {
