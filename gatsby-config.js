@@ -7,7 +7,8 @@ module.exports = {
     title: `Онлайн-школа Granich`,
     description: `Осознанный курс по графическому дизайну от Вадима Гранича (Granich). За 2 месяца вы получите упорядоченные знания о графическом дизайне и создадите свое портфолио. А еще изучите Adobe InDesign`,
     author: `Вадим Гранич`,
-    keywords: `курс, осознанный, индизайн, indesign, графический, дизайн, granich, гранич, графдизайн`
+    keywords: `курс, осознанный, индизайн, indesign, графический, дизайн, granich, гранич, графдизайн`,
+    siteUrl: `https://www.anton-dev.ru`
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -53,6 +54,12 @@ module.exports = {
     //     }
     //   }
     // },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/privacy`, `/public-offer`]
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
