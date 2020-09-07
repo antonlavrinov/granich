@@ -142,34 +142,3 @@ exports.createSchemaCustomization = ({ actions }) => {
     createTypes(typeDefs)
   }
 
-
-  // type contentfulGranichCourseCoursePolicyRichTextNode implements Node {
-  //   json: JSON
-  // }
-
-  // contentPDF: ContentfulContentPDF
-
-  // type ContentfulContentPDF {
-  //   file: ContentfulContentPDFFile
-  // }
-  // type ContentfulContentPDFFile {
-  //   url: String
-  // }
-
-
-        // type ContentfulCoursePolicy {
-      //   json: File
-      // }
-
-
-              // coursePolicy: ContentfulCoursePolicy
-
-
-            //   contentPDF: ContentfulContentPDF
-            // }
-            // type ContentfulContentPDF {
-            //   file: ContentfulContentPDFFile
-            // }
-            // type ContentfulContentPDFFile {
-            //   url: String
-            // }
