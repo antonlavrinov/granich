@@ -32,7 +32,7 @@ const BlackArrow = styled(props => <BlackArrowNewPage {...props}/>)`
         // width: 14vw; 
         // margin-right: -1vw;
         width: 7.5vw; 
-        margin-right: -0.5vw; 
+        margin-right: -0.5vw;  
     }
 `
 
