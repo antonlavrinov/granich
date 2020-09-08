@@ -237,7 +237,7 @@ const LoginButton = styled.a`
   border-radius: 0.5vw;
   font-size: 1.15vw;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   transition: all 0.2s ease;
   user-select: none;
   box-shadow: .25vw .25vw .4vw rgba(0,0,0,0.25);
@@ -250,7 +250,8 @@ const LoginButton = styled.a`
     cursor: pointer;
     color: white;
     font-size: 1.15vw;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 0.05vw;
   }
   @media only screen and (max-width: 575px) {
     display: none;

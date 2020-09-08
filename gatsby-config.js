@@ -8,6 +8,7 @@ module.exports = {
     description: `Осознанный курс по графическому дизайну от Вадима Гранича (Granich). За 2 месяца вы получите упорядоченные знания о графическом дизайне и создадите свое портфолио. А еще изучите Adobe InDesign`,
     author: `Вадим Гранич`,
     keywords: `курс, осознанный, индизайн, indesign, графический, дизайн, granich, гранич, графдизайн`,
+    ogImage: `${__dirname}/src/assets/images/author.jpg`,
     // siteUrl: `https://www.anton-dev.ru`,
     siteUrl: `https://elated-kalam-d4b493.netlify.app/`
   },

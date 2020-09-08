@@ -103,7 +103,7 @@ const BannerInfoItems = styled.div`
 `
 const BannerTag = styled.div`
     color: white;
-    padding: 0.18vw 1vw 0.18vw;
+    padding: 0.18vw 1vw 0.3vw;
     background: var(--granich-red);
     border-radius: 100vw;
     font-size: 0.8vw;

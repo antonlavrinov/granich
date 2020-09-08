@@ -155,6 +155,7 @@ const TrainingPathBlockImage = styled.div`
     margin-top: auto;
     margin-bottom: 2vw;
 
+
     div {
         width: 100%;
     }
@@ -176,8 +177,10 @@ const TrainingPathImage = styled(props => <BackgroundImage {...props}/>)`
     width: 100%;
     height: 8.8vw;
     background-size: 110%;
+    box-shadow: 0 0 0.4vw rgba(0,0,0,0.4);
     @media only screen and (max-width: 575px) {
-        height: 43.8vw;
+        height: 43.8vw;    
+        box-shadow: 0 0 1.8vw rgba(0,0,0,0.4);
     }
 
 `

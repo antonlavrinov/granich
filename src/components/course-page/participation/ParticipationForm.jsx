@@ -46,13 +46,13 @@ const FormTags = styled.div`
     }
 `
 const FormTag = styled.div`
-    border: 1px solid var(--granich-red);
+    border: 1.5px solid var(--granich-red);
     border-radius: 100vw;
     padding: 0.15vw 0.7vw;
     font-size: 0.9vw;
     margin-right: 1vw;
     color: var(--granich-red);
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0;
     :last-child {
         margin-right: 0;
@@ -195,7 +195,7 @@ const FormCheckboxLabel = styled.label`
             content: '';
             height: 1px;
             width: 100%;
-            background: var(--granich-red);
+            background: rgba(228,5,33, 0.2);
             position: absolute;
             bottom: -0.1vw;
             left: 0;
@@ -205,7 +205,7 @@ const FormCheckboxLabel = styled.label`
         :hover {
             // border-bottom: none;
             :after {
-                display: none;
+                background: var(--granich-red);
             }
         }
     }

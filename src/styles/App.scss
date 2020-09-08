@@ -362,10 +362,10 @@ ul, li {
     text-align: center;
     line-height: 0.4;
     background: white;
-    font-family: 'EB Garamond';
+    font-family: 'sans-serif';
     // padding-left: 0.1vw;
-    font-family: 'Inter';
-    font-weight: 600;
+    // font-family: 'Inter';
+    font-weight: 400;
     font-size: 2vw;
     width: 1.3vw;
     height: 1.3vw;
@@ -384,10 +384,10 @@ ul, li {
     line-height: 0.4;
     background: white;
     // border: 0.3vw solid white;
-    font-family: 'EB Garamond';
+    font-family: 'sans-serif';
     // padding-left: 0.1vw;
-    font-family: 'Inter';
-    font-weight: 600;
+    // font-family: 'Inter';
+    font-weight: 400;
     font-size: 2vw;
     width: 1.3vw;
     height: 1.3vw;
@@ -519,7 +519,15 @@ div[data-accordion-component="AccordionItemHeading"] {
             align-items: center;
             justify-content: center;
             z-index: 0;
+            display: none;
         }
+}
+
+
+#participation-section {
+    padding-bottom: 2vw;
+    width: 100%;
+    display: block;
 }
 
 

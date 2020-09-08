@@ -162,7 +162,7 @@ const PreparationTags = styled.div`
 const PreparationTagsTitle = styled.div`
     font-size: 1vw;
     margin-right: 1vw;
-    margin-top: 0.15vw;
+    margin-top: 0.25vw;
     margin-left: 0.2vw;
     color: var(--granich-grey);
     // padding-left: 0.6vw;
@@ -178,7 +178,7 @@ const PreparationTag = styled.div`
     border-radius: 100vw;
     transition: all 0.2s ease;
     font-size: 1.1vw;
-    padding: 0.15vw 0.5vw 0.15vw;
+    padding: 0.15vw 0.7vw 0.15vw;
     margin-right: 0.5vw;
     margin-bottom: 0.5vw;
     color: var(--granich-light-grey);

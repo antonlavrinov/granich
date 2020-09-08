@@ -231,10 +231,10 @@ export const CurriculumItemFrame = styled.div`
     :after {
         content: '';
         height: 2px;
-        border-top: 2px solid var(--granich-grey);
+        border-top: 1px solid var(--granich-grey);
         position: absolute;
         width: 100%;
-        top: -2px;
+        top: -1px;
         left: 0;    
     }
     :nth-child(1) {
@@ -385,7 +385,7 @@ export const CurriculumItemContent = styled(animated.div)`
  
 export const CurriculumLesson = styled.div`
     font-size: 1.15vw;
-    border: 1px solid var(--granich-red);
+    border: 1.5px solid var(--granich-red);
     color: var(--granich-red);
     border-radius: 100vw;
     padding: 0.4vw 0;

@@ -45,5 +45,14 @@
         width: 3.5vw;
         height: 3.5vw;
     }
+    #participation-section {
+        padding-bottom: 5vw;
+    }
+    .price-category-list {
+        li:after {
+
+                display: block;
+            }
+    }
 }
 

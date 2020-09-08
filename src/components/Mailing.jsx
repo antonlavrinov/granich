@@ -28,6 +28,10 @@ const ArrowRightButton = styled(props => <BlackArrowRight {...props}/>)`
     }
 `
 
+const PrivacyLink = styled(props => <Link {...props}/>)`
+
+`
+
 const MailingSection = styled.section`
 
 `
@@ -188,7 +192,7 @@ const FormCheckboxLabel = styled.label`
             content: '';
             height: 1px;
             width: 100%;
-            background: white;
+            background: rgba(256,256,256,0.5);
             position: absolute;
             bottom: -0.2vw;
             left: 0;
@@ -196,9 +200,8 @@ const FormCheckboxLabel = styled.label`
         }
         
         :hover {
-            // border-bottom: none;
             :after {
-                display: none;
+                background: white;
             }
         }
     }
@@ -407,7 +410,7 @@ const Mailing = () => {
 
                                                             <FormCheckboxLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">
                                                                 <FormCheckboxLabelText errorMessage={errors.politikaCheckbox && touched.politikaCheckbox ? errors.politikaCheckbox : 0}>
-                                                                    Принять<Link to="/privacy"> политику конфиденциальности</Link>
+                                                                    Принять<PrivacyLink to="/privacy"> политику конфиденциальности</PrivacyLink>
                                                                 </FormCheckboxLabelText>
                                                             </FormCheckboxLabel> 
 

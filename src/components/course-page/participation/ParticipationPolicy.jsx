@@ -55,6 +55,7 @@ const PolicyFooter = styled.div`
     span {
         position: relative;
     }
+    white-space: nowrap;
     @media only screen and (max-width: 575px) {
         border-radius: 1.5vw;
         padding: 3vw 3vw;
@@ -72,13 +73,14 @@ const PolicyFooterEmail = styled.span`
     font-size: 1.05vw;
     color: #666666;
     display: inline-block;
-    border-bottom: 1.5px solid var(--granich-light-grey);
+    border-bottom: 1.5px solid #dedede;
     background: none;
     user-select: none;
     :hover {
         font-weight: 500;
         font-size: 1.05vw;
         cursor: pointer;
+        border-bottom: 1.5px solid var(--granich-light-grey);
         &:before, &:after {
             display: block;
         }

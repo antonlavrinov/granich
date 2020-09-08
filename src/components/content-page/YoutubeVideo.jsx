@@ -9,13 +9,6 @@ const Youtube = styled(props => <YoutubeIcon {...props}/>)`
     margin-left: -0.9vw;
     margin-top: -0.2vw;
     margin-right: 1.8vw;
-    transition: transform 0.3s ease;
-    :hover {
-        transform: scale(1.1);
-        cursor: pointer;
-
-
-    }
     @media only screen and (max-width: 575px) {
         width: 23vw;
         margin-top: 0;

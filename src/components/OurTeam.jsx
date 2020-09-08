@@ -12,28 +12,28 @@ import CopyIcon from '../assets/svgs/copy-icon.svg';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 
-const Copy = styled(props => <CopyIcon {...props}/>)`
-    width: 0.8vw;
-    width: 1.1vw;
-    color: var(--granich-light-grey);
-    display: inline-block;
-    position: absolute;
-    left: -1vw;
-    left: -1.4vw;
-    top: 0;
-    fill: var(--granich-light-grey);
-    opacity: 0.6;
-    @media only screen and (max-width: 575px) {
-        width: 3vw;
-        left: -3.8vw;
-        top: 1vw;
-        ${props => props.masterclass && `
-            width: 2.8vw;
-            left: -3.5vw;
-            top: 0.3vw;
-        `}
-    }
-`
+// const Copy = styled(props => <CopyIcon {...props}/>)`
+//     width: 0.8vw;
+//     width: 1.1vw;
+//     color: var(--granich-light-grey);
+//     display: inline-block;
+//     position: absolute;
+//     left: -1vw;
+//     left: -1.4vw;
+//     top: 0;
+//     fill: var(--granich-light-grey);
+//     opacity: 0.6;
+//     @media only screen and (max-width: 575px) {
+//         width: 3vw;
+//         left: -3.8vw;
+//         top: 1vw;
+//         ${props => props.masterclass && `
+//             width: 2.8vw;
+//             left: -3.5vw;
+//             top: 0.3vw;
+//         `}
+//     }
+// `
 
 const VK = styled(props => <VKIcon {...props}/>)`
     width: 2.1vw;
@@ -167,7 +167,7 @@ const TeacherSocialIcons = styled.div`
 
 `
 const TeacherEmail = styled.span`
-    font-size: 0.75vw;
+    font-size: 0.8vw;
     font-weight: 400;
     display: block;
     color: var(--granich-grey);
@@ -177,8 +177,9 @@ const TeacherEmail = styled.span`
     background: none;
     border-bottom: 1.5px dotted var(--granich-light-grey);
     :hover {
-        font-size: 0.75vw;
+        font-size: 0.8vw;
         color: var(--granich-grey);
+        border-bottom: 1.5px dotted rgba(0,0,0,0);
         cursor: pointer;
         &:before, &:after {
             display: block;
@@ -366,7 +367,7 @@ export const TeacherBlock = ({teacher, masterClass}) => {
                     </TeacherSocialIcons>
                     <CopyToClipboard text={teacher.teacherEmail}> 
                         <TeacherEmail masterclass={masterClass ? 1 : 0} content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
-                            <Copy masterclass={masterClass ? 1 : 0}/>{teacher.teacherEmail}
+                            {teacher.teacherEmail}
                         </TeacherEmail>
                     </CopyToClipboard>
                 </TeacherSocials>

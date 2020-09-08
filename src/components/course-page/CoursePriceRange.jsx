@@ -122,18 +122,19 @@ const PriceCategoryList = styled.div`
             display: none;
             letter-spacing: 0;
             position: absolute;
-            width: 65%;
+            width: 75%;
             bottom: 3.5vw;
-            right: -26%;
-            background: var(--granich-black);
+            right: -31.5%;
             padding: 1vw;
             border-left: none;
             z-index: 9999;
-            // box-shadow: 0 0.3vw 0.5vw rgba(0,0,0,0.2);
             border-radius: 0.2vw;
             font-size: 0.9vw;
             line-height: 1.2;
             font-style: normal;
+            color: var(--granich-grey);
+            background: white;
+            box-shadow: 0 0.2vw 0.5vw rgba(0,0,0,0.2);
             :before {
                 content: '';
                 position: absolute;
@@ -147,9 +148,8 @@ const PriceCategoryList = styled.div`
                 border-right: 0.55vw solid transparent;
                 border-left: 0.55vw solid transparent;
                 border-top: 0.55vw solid white;
-                border-top: 0.55vw solid var(--granich-black);
             }
-            b{
+            b {
                 color: var(--granich-light-grey);
                 font-weight: 400;
                 :before {
@@ -166,6 +166,14 @@ const PriceCategoryList = styled.div`
             font-weight: 500;
             display: block;
             letter-spacing: 0;
+            i {
+                color: var(--granich-grey);
+                box-shadow: 0 0.2vw 0.5vw rgba(0,0,0,0.2);
+                background: var(--granich-black);
+                :before {
+                    border-top: 0.55vw solid var(--granich-black);
+                }
+            }
             :before {
                 content: '';
                 position: absolute;
@@ -200,22 +208,23 @@ const PriceCategoryList = styled.div`
             font-size: 2.6vw;
             letter-spacing: -0.08vw;
             i {
-                width: 65%;
-                bottom: 10vw;
+                width: 80%;
+                bottom: 9vw;
                 right: 0%;
-                padding: 3vw;
-                box-shadow: 0 0.3vw 0.5vw rgba(0,0,0,0.2);
+                padding: 2.5vw;
+                box-shadow: 0 2vw 2vw rgba(0,0,0,0.2);
                 border-radius: 0.2vw;
-                font-size: 2.7vw;
+                font-size: 2.5vw;
+                letter-spacing: -0.01vw;
                 :before {
-                    bottom: -1.4vw;
+                    bottom: -1.2vw;
                     left: auto;
                     right: 0;
                     transform: translateX(-50%);
                     //bottom
                     border-right: 1.5vw solid transparent;
                     border-left: 1.5vw solid transparent;
-                    border-top: 1.5vw solid var(--granich-black);
+                    border-top: 1.5vw solid white;
                 }
     
             }
@@ -225,6 +234,12 @@ const PriceCategoryList = styled.div`
                 :before {
                     width: 1.5px;
                     height: 100%;
+                }
+                i {
+                    box-shadow: 0 2vw 2vw rgba(0,0,0,0.2);
+                    :before {
+                        border-top: 1.5vw solid var(--granich-black);
+                    }
                 }
     
             }

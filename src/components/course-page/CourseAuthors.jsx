@@ -91,7 +91,7 @@ const AuthorsQuote = styled.div`
     font-size: 1.55vw;
     color: var(--granich-black);
     padding-left: 1.5vw;
-    border-left: 1.5px solid var(--granich-red);
+    border-left: 2.5px solid var(--granich-red);
     margin-right: 1vw;
     font-weight: 500;
     min-width: 28vw;

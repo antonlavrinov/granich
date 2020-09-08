@@ -37,9 +37,9 @@ const TelegramOut = styled(props => <TelegramLinkOut {...props}/>)`
 `
 
 const ReviewsSection = styled.section`
-    margin-bottom: 4vw;
+    // margin-bottom: 4vw;
     @media only screen and (max-width: 575px) {
-        margin-bottom: 5vw;
+        // margin-bottom: 3vw;
     }
 `
 

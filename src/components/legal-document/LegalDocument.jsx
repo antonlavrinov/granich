@@ -85,11 +85,16 @@ const LegalDocumentInfoBlockPDFButton = styled.a`
     display: inline-block;
     margin-bottom: 0.9vw;
     margin-left: -0.2vw;
+    // transition: all 0.2s ease;
     :hover {
         font-size: 1.15vw;
         font-weight: 500;
-        color: var(--granich-red);
+        background: var(--granich-red);
+        color: white;
         cursor: pointer;
+        svg {
+            fill: white;
+        }
     }
 
 `

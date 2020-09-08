@@ -103,7 +103,7 @@ const CourseOfferTag = styled.div`
     font-size: 1.2vw;
     display: flex;
     color: var(--granich-red);
-    border: 1px solid var(--granich-red);
+    border: 1.5px solid var(--granich-red);
     padding: 0.3vw 0.8vw;
     border-radius: 100vw;
     margin-right: 1vw;
@@ -123,7 +123,7 @@ const CourseOfferMainTag = styled.div`
     display: flex;
     color: white;
     background: var(--granich-red);
-    border: 1px solid var(--granich-red);
+    border: 1.5px solid var(--granich-red);
     padding: 0.3vw 0.8vw;
     border-radius: 100vw;
     margin-right: 1vw;

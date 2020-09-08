@@ -111,10 +111,7 @@ const CommitmentTitle = styled.div`
         margin-bottom: 3.5vw;
         width: 100%;
         :after {
-            top: 1vw;
-            right: -2.5vw;
-            width: 1.5vw;
-            height: 1.5vw;   
+            display: none;
         }
     }
 
@@ -131,7 +128,7 @@ const CourseCommitment = () => {
         <CommitmentSection>
             <Container>
                 <CommitmentWrapper>
-                    <CommitmentImage src={CommitmentGif}/>
+                    <CommitmentImage src={CommitmentGif} alt="commitment"/>
                     {/* <video muted loop autoPlay>
                         <source src={commitmentVideo} type="video/mp4" />
                     </video> */}

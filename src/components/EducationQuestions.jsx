@@ -36,7 +36,7 @@ const EducationQuestionsEmail = styled.span`
         font-weight: 500;
         font-size: 1.15vw;
         cursor: pointer;
-        border-bottom: none;
+        border-bottom: 1px solid var(--granich-black);
         &:before, &:after {
             display: block;
         }

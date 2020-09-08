@@ -13,7 +13,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 
 
-const SEO = ({ description, lang, meta, title, keywords }) => {
+const SEO = ({ description, lang, meta, title, keywords, ogImage, ogDescription }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -23,6 +23,7 @@ const SEO = ({ description, lang, meta, title, keywords }) => {
             description
             author
             keywords
+            ogImage
           }
         }
       }
@@ -31,13 +32,16 @@ const SEO = ({ description, lang, meta, title, keywords }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const metaKeywords = keywords || site.siteMetadata.keywords
+  const metaOgImage = ogImage || site.siteMetadata.OgImage
+  const metaOgDescription = ogDescription || site.siteMetadata.description
+  const metaTitle = title ||  site.siteMetadata.title
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={metaTitle}
       // link={faviconLinks}
       // titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
@@ -47,12 +51,24 @@ const SEO = ({ description, lang, meta, title, keywords }) => {
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: ogDescription,
         },
+        {
+          property: `og:image`,
+          content: ogImage
+        },
+        {
+          property: `og:image:width`,
+          content: '1200'
+        },        
+        {
+          property: `og:image:height`,
+          content: '630'
+        },   
         {
           property: `og:type`,
           content: `website`,
@@ -67,7 +83,7 @@ const SEO = ({ description, lang, meta, title, keywords }) => {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,

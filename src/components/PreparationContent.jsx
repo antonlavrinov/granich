@@ -149,7 +149,7 @@ const ContentTag = styled.div`
     border-radius: 100vw;
     font-weight: 400;
     font-size: 0.9vw;
-    padding: 0.3vw 0.4vw 0.3vw;
+    padding: 0.3vw 0.5vw 0.3vw;
     display: inline-block;
     letter-spacing: -0.03vw;
     margin-right: 0.3vw;
