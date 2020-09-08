@@ -162,6 +162,10 @@ const PortfolioImageGallery = ({images}) => {
                 {`.customThumbnail {
                     // width: 12vh;
                 }
+                .image-gallery.fullscreen-modal {
+                    width: 100vw;
+                    height: 100vh;
+                }
                 .image-gallery-thumbnails {
                     // padding: 1.5vh;
                 }
