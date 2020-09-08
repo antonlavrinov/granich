@@ -152,7 +152,7 @@ const PortfolioImageGallery = ({images}) => {
                         renderRightNav={renderRightNav}
                         showThumbnails={fullscreen}  
                         onScreenChange={(boolean) => setFullscreen(boolean)} 
-                        useBrowserFullscreen={false} 
+                        useBrowserFullscreen={isMobileSafari || isSafari ? true : false} 
                         items={images} 
                         renderFullscreenButton={renderFullscreenButton}
                         
@@ -267,7 +267,7 @@ const PortfolioImageGallery = ({images}) => {
                 .gallery-custom-slider {
                     height: 15.5vw;
                 }
-                ${isSafari || isMobileSafari `
+                ${isSafari || isMobileSafari && `
                     .image-gallery.fullscreen-modal {
                         width: 100vw;
                         height: 100vh;
