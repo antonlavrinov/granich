@@ -268,15 +268,7 @@ const PortfolioImageGallery = ({images}) => {
                 .gallery-custom-slider {
                     height: 15.5vw;
                 }
-                ${isSafari || isMobileSafari || isChrome && `
-                    .image-gallery.fullscreen-modal {
-                        width: 100vw;
-                        height: 100vh;
-                    }
-                    .gallery-custom-slider {
-                        height: 100vh;
-                    }
-                `}
+
 
 
                 @media only screen and (max-width: 575px) {
@@ -374,6 +366,15 @@ const PortfolioImageGallery = ({images}) => {
 
                         }
                     }
+                    ${isSafari || isMobileSafari || isChrome && `
+                        .image-gallery.fullscreen-modal {
+                            width: 100vw !important;
+                            height: 100vh !important;
+                        }
+                        .gallery-custom-slider {
+                            height: 100vh;
+                        }
+                    `}
                 `}
                 
                 `
