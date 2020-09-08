@@ -167,6 +167,7 @@ const PortfolioContentCount = styled.div`
 const PortfolioOnePagersWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+
     grid-column-gap: 1.8vw;
     grid-row-gap: 1.8vw;
     padding: 0 1.5vw;
@@ -194,16 +195,17 @@ const PortfolioOnePager = styled(props => <BackgroundImage {...props}/>)`
 `
 
 const PortfolioMiltiPagesWrapper = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 1.8vw;
-    grid-row-gap: 1.8vw;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-column-gap: 1.8vw;
+    // grid-row-gap: 1.8vw;
+    display: flex;
     padding: 0 1.5vw 1.5vw;
     @media only screen and (max-width: 575px) {
-        grid-template-columns: 1fr;
-        padding: 0;
-        grid-row-gap: 3vw;
-        margin-bottom: 0;
+        // grid-template-columns: 1fr;
+        // padding: 0;
+        // grid-row-gap: 3vw;
+        // margin-bottom: 0;
     }
 `
 

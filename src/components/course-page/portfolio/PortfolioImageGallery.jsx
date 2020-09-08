@@ -153,7 +153,7 @@ const PortfolioImageGallery = ({images}) => {
                         showThumbnails={fullscreen}  
                         onScreenChange={(boolean) => setFullscreen(boolean)} 
                         // useBrowserFullscreen={isMobileSafari || isSafari ? true : false} 
-                        useBrowserFullscreen={true} 
+                        useBrowserFullscreen={false} 
                         items={images} 
                         renderFullscreenButton={renderFullscreenButton}
                         
@@ -162,9 +162,12 @@ const PortfolioImageGallery = ({images}) => {
                 {`.customThumbnail {
                     // width: 12vh;
                 }
+                .image-gallery {
+                    width: 10vw;
+                }
                 .image-gallery.fullscreen-modal {
-                    width: 100vw;
-                    height: 100vh;
+                    width: 100%;
+                    height: 100%;
                 }
                 .image-gallery-thumbnails {
                     // padding: 1.5vh;
