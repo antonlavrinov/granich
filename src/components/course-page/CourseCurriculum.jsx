@@ -38,6 +38,8 @@ import {
     CurriculumAccordionItem,
     CurriculumAccordionHeading,
 } from '../curriculum/styles';
+import PlusImage from '../../assets/images/plus.png';
+import MinusImage from '../../assets/images/minus.png';
 
 
 
@@ -88,9 +90,11 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
                 {!type && descr && <CurriculumItemImportantDescr style={style}>{descr}</CurriculumItemImportantDescr>}
                 
                 {!isOpen ? (
-                    <Plus style={{ ...toggle, opacity: children ? 1 : 0.3 }} />
+                    // <Plus style={{ ...toggle, opacity: children ? 1 : 0.3 }} />
+                    <img style={{ ...toggle, opacity: children ? 1 : 0.3 }} src={PlusImage} alt="plus"/>
                 ) : (
-                    <Minus style={{ ...toggle, opacity: children ? 1 : 0.3 }}/>
+                    <img style={{ ...toggle, opacity: children ? 1 : 0.3 }} src={MinusImage} alt="minus"/>
+                    // <Minus style={{ ...toggle, opacity: children ? 1 : 0.3 }}/>
                 )}
             </CurriculumContainer>
 

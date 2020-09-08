@@ -19,7 +19,8 @@ import {
     AccordionItemPanel,
 } from 'react-accessible-accordion';
 import 'react-accessible-accordion/dist/fancy-example.css';
-
+import PlusImage from '../../assets/images/plus.png';
+import MinusImage from '../../assets/images/minus.png';
 
 const toggle = {
     cursor: 'pointer',
@@ -60,9 +61,11 @@ const AnswersItem = memo(({ type, children, tag, style, open, defaultOpen = fals
                 </AnswersTagColumn>
                 <AnswersLine type={type ? 1 : 0}/>
                 {!isOpen ? (
-                    <Plus style={{ ...toggle, opacity: children ? 1 : 0.3 }} />
+                    // <Plus style={{ ...toggle, opacity: children ? 1 : 0.3 }} />
+                    <img style={{ ...toggle, opacity: children ? 1 : 0.3 }} src={PlusImage} alt="plus"/>
                 ) : (
-                    <Minus style={{ ...toggle, opacity: children ? 1 : 0.3 }}/>
+                    // <Minus style={{ ...toggle, opacity: children ? 1 : 0.3 }}/>
+                    <img style={{ ...toggle, opacity: children ? 1 : 0.3 }} src={MinusImage} alt="minus"/>
                 )}
             </AnswersContainer>
 
@@ -146,6 +149,12 @@ const AnswersContainer = styled.div`
     display: flex;
     padding: 1.7vw 0vw;
     align-items: center;
+    img {
+        width: 2.3vw;
+        height: 2.3vw;
+        user-select: none;
+        margin-left: auto;
+    }
     :hover {
         cursor: pointer;
     }

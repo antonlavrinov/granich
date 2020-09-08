@@ -46,13 +46,12 @@ const FormTags = styled.div`
     }
 `
 const FormTag = styled.div`
-    border: 1.5px solid var(--granich-red);
+    border: 1px solid var(--granich-red);
     border-radius: 100vw;
     padding: 0.15vw 0.7vw;
     font-size: 0.9vw;
     margin-right: 1vw;
     color: var(--granich-red);
-    font-weight: 500;
     letter-spacing: 0;
     :last-child {
         margin-right: 0;
@@ -186,7 +185,7 @@ const FormCheckboxLabel = styled.label`
     margin-bottom: 0.7vw;
     a {
         color: var(--granich-red);
-        font-weight: 500;
+        font-weight: 400;
         display: inline-block;
         margin: 0 0.4vw;
         position: relative;

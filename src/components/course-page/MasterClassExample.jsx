@@ -30,7 +30,7 @@ const ExampleWrapper = styled.div`
 
 const ExampleHeader = styled.div`
     display: flex;
-    margin-bottom: 5vw;
+    margin-bottom: 4vw;
     @media only screen and (max-width: 575px) {
         flex-direction: column;
         align-items: center;
@@ -38,8 +38,8 @@ const ExampleHeader = styled.div`
     }
 `
 const ExampleAuthor = styled.div`
-    min-width: 8vw;
-    margin-right: 3vw;
+    min-width: 9vw;
+    margin-right: 2vw;
     line-height: 1.4;
     margin-top: -1vw;
     @media only screen and (max-width: 575px) {
@@ -84,7 +84,7 @@ const ExampleAuthorName = styled.div`
 const ExampleAuthorText = styled.div`
     font-size: 1.15vw;
     color: var(--granich-grey);
-    margin-left: -0.1vw;
+    margin-left: -0.2vw;
     @media only screen and (max-width: 575px) {
         font-size: 5vw;
         margin-left: 0;

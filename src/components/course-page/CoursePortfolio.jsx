@@ -195,18 +195,11 @@ const PortfolioOnePager = styled(props => <BackgroundImage {...props}/>)`
 `
 
 const PortfolioMiltiPagesWrapper = styled.div`
-    // display: grid;
-    // grid-template-columns: 1fr 1fr 1fr;
-    // grid-column-gap: 1.8vw;
-    // grid-row-gap: 1.8vw;
     display: flex;
     flex-wrap: wrap;
     padding: 0 0.6vw 1.5vw;
     @media only screen and (max-width: 575px) {
-        // grid-template-columns: 1fr;
-        // padding: 0;
-        // grid-row-gap: 3vw;
-        // margin-bottom: 0;
+        margin-bottom: 0;
     }
 `
 

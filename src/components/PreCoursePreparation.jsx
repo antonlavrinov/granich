@@ -204,7 +204,7 @@ const PreparationTag = styled.div`
     @media only screen and (max-width: 575px) {
         font-size: 3.8vw;
         border: 0.3vw solid var(--granich-light-grey);
-        padding: 0.5vw 1.5vw;
+        padding: 0.5vw 2.3vw;
         margin-right: 2vw;
         margin-bottom: 2vw;
         color: var(--granich-light-grey);

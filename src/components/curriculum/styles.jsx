@@ -423,6 +423,12 @@ export const CurriculumContainer = styled.div`
     :hover {
         cursor: pointer;
     }
+    img {
+        width: 2.3vw;
+        height: 2.3vw;
+        user-select: none;
+        margin-left: auto;
+    }
     ${props => !props.type && `
         padding: 1.7vw 1.5vw;
     `}
