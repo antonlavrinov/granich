@@ -7,7 +7,7 @@ import FullscreenInIcon from '../../../assets/svgs/graph-design/graph-design-ful
 import SliderLeftIcon from '../../../assets/svgs/graph-design/graph-design-slider-left.svg';
 import SliderRightIcon from '../../../assets/svgs/graph-design/graph-design-slider-right.svg';
 import styled from 'styled-components';
-
+import {isSafari, isMobileSafari} from "react-device-detect";
 
 const FullscreenOut = styled(props => <FullscreenOutIcon {...props}/>)`
     width: 1.8vw;
@@ -267,6 +267,13 @@ const PortfolioImageGallery = ({images}) => {
                 .gallery-custom-slider {
                     height: 15.5vw;
                 }
+                ${isSafari || isMobileSafari `
+                    .image-gallery.fullscreen-modal {
+                        width: 100vw;
+                        height: 100vh;
+                    }
+                `}
+
 
                 @media only screen and (max-width: 575px) {
                     .image-gallery-fullscreen-button {
