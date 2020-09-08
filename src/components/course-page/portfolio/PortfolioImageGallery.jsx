@@ -153,7 +153,7 @@ const PortfolioImageGallery = ({images}) => {
                         showThumbnails={fullscreen}  
                         onScreenChange={(boolean) => setFullscreen(boolean)} 
                         // useBrowserFullscreen={isMobileSafari || isSafari ? true : false} 
-                        useBrowserFullscreen={false} 
+                        useBrowserFullscreen={true} 
                         items={images} 
                         renderFullscreenButton={renderFullscreenButton}
                         
