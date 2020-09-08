@@ -159,19 +159,20 @@ const PortfolioImageGallery = ({images}) => {
                         
             />
             <style>
-                {`.customThumbnail {
-                    // width: 12vh;
-                }
+                {`
+
+
                 .image-gallery {
-                    width: 10vw;
+                    width: calc(100%/3);
+                    padding: 0.9vw;
+
                 }
-                .image-gallery.fullscreen-modal {
-                    width: 100%;
-                    height: 100%;
+                .image-gallery.fullscreen-modal .image-gallery-content {
+                    top: 0;
+                    transform: none;
                 }
-                .image-gallery-thumbnails {
-                    // padding: 1.5vh;
-                }
+
+
                 .image-gallery-thumbnail {
                     transition: none;
                     // border: 0.2vw solid rgba(0,0,0,0);
@@ -319,6 +320,12 @@ const PortfolioImageGallery = ({images}) => {
                     .image-gallery-thumbnail.active:hover {
                         border-color: var(--granich-red);  
                     }
+                    .image-gallery {
+                        width: 100%;
+                        padding: 0;
+                        margin-bottom: 3vw;
+    
+                    }
                     
                     
                     
@@ -359,6 +366,11 @@ const PortfolioImageGallery = ({images}) => {
                         width: 1.5vw;
                         height: 1.5vw;
                     }
+                    .image-gallery {
+                        padding: 0 !important;
+    
+                    }
+
                     @media only screen and (max-width: 575px) {
                         .image-gallery-custom-left-nav svg{
                             width: 5vw;
@@ -373,15 +385,7 @@ const PortfolioImageGallery = ({images}) => {
 
                         }
                     }
-                    ${isSafari || isMobileSafari || isChrome && `
-                        .image-gallery.fullscreen-modal {
-                            width: 100vw !important;
-                            height: 100vh !important;
-                        }
-                        .gallery-custom-slider {
-                            height: 100vh;
-                        }
-                    `}
+
                 `}
                 
                 `

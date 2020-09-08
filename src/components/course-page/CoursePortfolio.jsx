@@ -171,7 +171,7 @@ const PortfolioOnePagersWrapper = styled.div`
     grid-column-gap: 1.8vw;
     grid-row-gap: 1.8vw;
     padding: 0 1.5vw;
-    margin-bottom: 1.8vw;
+    margin-bottom: 0.9vw;
     @media only screen and (max-width: 575px) {
         grid-template-columns: 1fr 1fr;
         padding: 0;
@@ -200,7 +200,8 @@ const PortfolioMiltiPagesWrapper = styled.div`
     // grid-column-gap: 1.8vw;
     // grid-row-gap: 1.8vw;
     display: flex;
-    padding: 0 1.5vw 1.5vw;
+    flex-wrap: wrap;
+    padding: 0 0.6vw 1.5vw;
     @media only screen and (max-width: 575px) {
         // grid-template-columns: 1fr;
         // padding: 0;
