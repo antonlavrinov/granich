@@ -75,7 +75,10 @@ const OfferDescr = styled.div`
     font-style: italic;
     position: relative;
     font-weight: 500;
-
+    svg {
+        transition: opacity 0.2s ease;
+        opacity: 1;
+    }
     span {
         font-weight: inherit;
         font-size: inherit;
@@ -85,6 +88,9 @@ const OfferDescr = styled.div`
         position: relative;
         :hover {
             cursor: pointer;
+            svg {
+                    opacity: 0;
+            }
         }
         :focus {
             outline: none;

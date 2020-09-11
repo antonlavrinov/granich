@@ -8,61 +8,85 @@ import BehanceLinkOut from '../assets/svgs/behance-link-out.svg';
 import MediumIcon from '../assets/svgs/medium-icon.svg';
 import YoutubeIcon from '../assets/svgs/youtube-icon.svg';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+import BehancePng from '../assets/images/behance-icon.png';
+import YoutubePng from '../assets/images/youtube-icon.png';
+import PinterestPng from '../assets/images/pinterest-icon.png';
+import PinterestLinkPng from '../assets/images/pinterest-link-icon.png';
+import BehanceLinkPng from '../assets/images/behance-link-icon.png';
+import Img from 'gatsby-image';
+import { graphql, useStaticQuery } from 'gatsby'
 
-const Behance = styled(props => <BehanceIcon {...props}/>)`
+const Behance = styled(props => <Img {...props}/>)`
     width: 2.3vw;
+    display: block;
+    margin-right: -0.4vw;
     @media only screen and (max-width: 575px) {
         width: 6.5vw;
+        margin-right: -1.4vw;
     }
 `
 
-const BehanceMixed = styled(props => <BehanceIcon {...props}/>)`
+const BehanceMixed = styled(props => <Img {...props}/>)`
     width: 2.7vw;
+    display: block;
+
     @media only screen and (max-width: 575px) {
         width: 7vw;
     }
 `
 
-const Youtube = styled(props => <YoutubeIcon {...props}/>)`
-    height: 2.6vw;
+const Youtube = styled(props => <Img {...props}/>)`
+    height: auto;
+    width: 4vw;
     margin-right: -0.5vw;
+    display: block;
     @media only screen and (max-width: 575px) {
-        height: 7vw;
+        height: auto;
+        width: 10vw;
         margin-right: -1.3vw;
     }
 `
 
-const YoutubeMixed = styled(props => <YoutubeIcon {...props}/>)`
-    height: 2.9vw;
+const YoutubeMixed = styled(props => <Img {...props}/>)`
+    height: auto;
+    width: 4.5vw;
     margin-left: -0.1vw;
+    display: block;
     @media only screen and (max-width: 575px) {
-        height: 7.4vw;
+        height: auto;
+        width: 10.8vw;
         margin-left: -1vw;
     }
 `
-const Medium = styled(props => <MediumIcon {...props}/>)`
+const Medium = styled(props => <Img {...props}/>)`
     width: 2.7vw;
     margin-right: 0.4vw;
+    display: block;
     @media only screen and (max-width: 575px) {
         width: 7vw;
     }
 `
-const Pinterest = styled(props => <PinterestIcon {...props}/>)`
+const Pinterest = styled(props => <Img {...props}/>)`
     width: 2.1vw;
+    display: block;
+    margin-right: -0.4vw;
+    @media only screen and (max-width: 575px) {
+        width: 6.5vw;
+        margin-right: -1.4vw;
+    }
+
+`
+const PinterestOut = styled(props => <Img {...props}/>)`
+    width: 2.2vw;
+    display: block;
     @media only screen and (max-width: 575px) {
         width: 6.5vw;
     }
 
 `
-const PinterestOut = styled(props => <PinterestLinkOut {...props}/>)`
+const BehanceOut = styled(props => <Img {...props}/>)`
     width: 2.2vw;
-    @media only screen and (max-width: 575px) {
-        width: 6.5vw;
-    }
-
-`
-const BehanceOut = styled(props => <BehanceLinkOut {...props}/>)`
-    width: 2.2vw;
+    display: block;
     @media only screen and (max-width: 575px) {
         width: 6.5vw;
     }
@@ -290,18 +314,10 @@ const ContentIconsWrapper = styled.div`
     margin-right: -0.4vw;
     align-items: center;
     margin-top: 0.1vw;
-    svg {
-        :first-child {
-            margin-right: -0.4vw;
-        }
-    }
+
     @media only screen and (max-width: 575px) {
         margin-right: -1vw;
-        svg {
-            :first-child {
-                margin-right: -1.4vw;
-            }
-        }
+
     }
 `
 
@@ -365,10 +381,12 @@ const ContentButtonBlockTitle = styled.div`
 
 const ContentButtonReadBlockWrapper = styled.div`
     margin-bottom: -0.6vw;
+
 `
 
 const ContentButtonReadBlock = styled.div`
     margin-right: -0.3vw;
+    display: flex;
     @media only screen and (max-width: 575px) {
         margin-right: -1vw;
     }
@@ -395,6 +413,62 @@ const PreparationContent = ({content}) => {
     const mixed = 'Youtube + Medium + Behance';
     const contentExternalLink = content.contentType === pinterest ? (
         content.contentLinkPinterest) : content.contentType === behance ? (content.contentLinkBehance) : '/';
+
+
+    const data = useStaticQuery(graphql`
+        query contentIcons {
+            pinterestContentIcon: file(relativePath: { eq: "pinterest-icon.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 60, quality: 80) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            behanceContentIcon: file(relativePath: { eq: "behance-icon.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 60, quality: 80) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            pinterestLinkContentIcon: file(relativePath: { eq: "pinterest-link-icon.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 60, quality: 80) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            behanceLinkContentIcon: file(relativePath: { eq: "behance-link-icon.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 60, quality: 80) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            contentMediumPng: file(relativePath: { eq: "medium-icon.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 60, quality: 80) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            contentYoutubePng: file(relativePath: { eq: "youtube-icon.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 60, quality: 80) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+        }
+    `)
+    console.log(data)
+    const behanceIcon = data.behanceContentIcon.childImageSharp.fluid;
+    const pinterestIcon = data.pinterestContentIcon.childImageSharp.fluid;
+    const pinterestLinkIcon = data.pinterestLinkContentIcon.childImageSharp.fluid;
+    const behanceLinkIcon = data.behanceLinkContentIcon.childImageSharp.fluid;
+    const mediumIcon = data.contentMediumPng.childImageSharp.fluid;
+    const youtubePng = data.contentYoutubePng.childImageSharp.fluid;
 
 
     return (
@@ -424,7 +498,7 @@ const PreparationContent = ({content}) => {
                                             <ContentButtonYoutubeText>Посмотреть</ContentButtonYoutubeText>
                                             {content.contentYoutubeTiming && <ContentButtonYoutubeTiming>{content.contentYoutubeTiming}</ContentButtonYoutubeTiming>}  
                                         </ContentButtonYoutubeTextWrapper>
-                                        <Youtube/>
+                                        <Youtube fluid={youtubePng}/>
                                         
                                     </>
 
@@ -435,15 +509,15 @@ const PreparationContent = ({content}) => {
                                         <ContentButtonWatchBlockWrapper>
                                             <ContentButtonBlockTitle>Посмотреть</ContentButtonBlockTitle>
                                             <ContentButtonWatchBlock>
-                                                <YoutubeMixed/>
+                                                <YoutubeMixed fluid={youtubePng}/>
                                                 {content.contentYoutubeTiming && <ContentButtonMixedTiming>{content.contentYoutubeTiming}</ContentButtonMixedTiming>}  
                                             </ContentButtonWatchBlock>
                                         </ContentButtonWatchBlockWrapper>
                                         <ContentButtonReadBlockWrapper>
                                             <ContentButtonBlockTitle>Почитать</ContentButtonBlockTitle>
                                             <ContentButtonReadBlock>
-                                                <Medium/>
-                                                <BehanceMixed/>
+                                                <Medium fluid={mediumIcon}/>
+                                                <BehanceMixed fluid={behanceIcon}/>
                                             </ContentButtonReadBlock>
                                         </ContentButtonReadBlockWrapper>
                                     </>
@@ -474,13 +548,13 @@ const PreparationContent = ({content}) => {
                                 <ContentButtonText>Изучить</ContentButtonText>
                                     {content.contentType === pinterest ? (
                                         <ContentIconsWrapper>
-                                            <Pinterest/>
-                                            <PinterestOut/>
+                                            <Pinterest fluid={pinterestIcon}/>
+                                            <PinterestOut fluid={pinterestLinkIcon}/>
                                         </ContentIconsWrapper>
                                     ) : (
                                         <ContentIconsWrapper>
-                                            <Behance/>
-                                            <BehanceOut/>
+                                            <Behance fluid={behanceIcon}/>
+                                            <BehanceOut fluid={behanceLinkIcon}/>
                                         </ContentIconsWrapper>
                                     )}
 

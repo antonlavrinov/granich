@@ -165,6 +165,24 @@ const ReviewImage = styled(props => <BackgroundImage {...props}></BackgroundImag
     }
 `
 
+const ReviewPreview = styled.div`
+    height: 16.5vw;
+    min-height: 16vw;
+    overflow: hidden;
+    border-radius: 0.5vw 0.5vw 0 0;
+    @media only screen and (max-width: 575px) {
+        height: 58.5vw;
+        min-height: 58.5vw;
+        border-radius: 1.5vw 1.5vw 0 0;
+    }
+`
+
+const ReviewPreviewText = styled.div`
+    font-size: 1.15vw;
+    padding: 1vw 2.5vw;
+    user-select: none;
+`
+
 const ReviewsFooter = styled.div`
     display: flex;
     align-items: center;
@@ -299,7 +317,14 @@ const ReviewsLinkVk = styled.a`
 const Review = ({image, link}) => {
     return (
         <ReviewWrapper>
-            <ReviewImage fluid={image}></ReviewImage>
+            {/* <ReviewImage fluid={image}></ReviewImage> */}
+            <ReviewPreview>
+                <ReviewPreviewText>
+                Два месяца назад я начал проходить замечательный курс от не менее замечательного Вадима Гранича 🇯🇵
+                Хочется выразить огромную благодарность этому человеку и всей его команде за их титанический труд, знания, умения и навыки, которые я приобрёл за эти два месяца продуктивной работы 🏋🏻‍♂️
+
+                </ReviewPreviewText>
+            </ReviewPreview>
             <ReviewButton href={link} target="_blank">
                 <span>Показать полностью</span>
                 <ReviewButtonIcons>
