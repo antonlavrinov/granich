@@ -100,23 +100,17 @@ const PreparationFilter = styled.div`
     
     :hover {
         cursor: pointer;
+        color: var(--granich-black);
     }
     ${props => props.active && `
     font-weight: 500;
     color: var(--granich-black);
     border-color: var(--granich-red);
-    border-bottom: 1.5px solid var(--granich-red);
+    border-bottom: 2px solid var(--granich-red);
     @media only screen and (max-width: 575px) {
         border-bottom: 0.4vw solid var(--granich-red);
     }
-    :hover {
-        color: var(--granich-black);
-        border-color: var(--granich-red);
-        @media only screen and (max-width: 575px) {
-            color: var(--granich-black);
-            border-color: var(--granich-red);
-        }
-    }
+
     `}
     @media only screen and (max-width: 575px) {
         font-size: 3.8vw;
@@ -242,16 +236,13 @@ const PreparationButtonMore = styled.div`
         width: 100%;
         text-align: center;
         background: #DEDEDE;
-        padding: 1vw 0 1.4vw;
+        padding: 1.2vw 0 1.2vw;
         border-radius: 0.5vw;
         margin-top: 1.65vw;
         transition: all 0.2s ease;
         :hover {
             cursor: pointer;
-            // background: #cfcfcf;
-            
             div {
-                // color: var(--granich-grey);
                 border-color: rgba(0,0,0,0);
                 
             }
@@ -278,32 +269,30 @@ const PreparationButtonMoreText = styled.div`
 `
 
 
-const PreCoursePreparation = ({dataRecommended, dataNew}) => {
-    const [contentContents, setContentContents] = useState([])
+const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
+    //initial data contents(recommended)
+    const [data, setData] = useState(dataRecommended);
+
+
+    // const [dataCopy, setDataCopy] = useState([])
     const [contentTags, setContentTags] = useState([])
+
+    //ФИЛЬТР ПО ТЕГАМ
     const [filters, setFilters] = useState({
         contentTags: []
     })
-    const [contentPagination, setContentPagination] = useState(12);
+
+
+
+    // TOP FILTERS ('Рекомендуемое, Новое')
     const [filterData, setFilterData] = useState('Рекомендуемое');
-    const [data, setData] = useState(dataRecommended);
-    const [topFilters, setTopFilters] = useState([
-        {
-            name: 'Рекомендуемое',
-            active: true
-        },
-        {
-            name: 'Новое',
-            active: false
-        },]);
-    const [contentShown, setContentShown] = useState(4);
+    const [topFilters, setTopFilters] = useState([{name: 'Рекомендуемое', active: true},{name: 'Новое', active: false},]);
+
     useEffect(() => {
         const contentTagsArray = [];
-        const contentContentsArray = [];
-        const contents = data.edges;
-        contents.map(content => {
-            contentContentsArray.push(content.node)
-            content.node.contentTags.forEach((contentTag) => {
+        data.map(content => {
+            // contentContentsArray.push(content.node)
+            content.contentTags.forEach((contentTag) => {
                 contentTagsArray.push(contentTag)
             })
             return content;
@@ -326,16 +315,21 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
         })
 
         setContentTags(tags)
-        setContentContents(contentContentsArray)
+        // setDataCopy(dataCopyArray)
 
 
     }, [data])
 
 
+    //BUTTON SHOW MORE
+    const [contentPagination, setContentPagination] = useState(12);
+    const [contentShown, setContentShown] = useState(12);
     useEffect(() => {
         const content = document.querySelectorAll('.content');
         setContentShown(content.length);
-    }, [contentPagination])
+    }, [contentPagination, filters])
+
+
 
     const multiPropsFilter = (products, filters) => {
         const filterKeys = Object.keys(filters);
@@ -418,20 +412,22 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
         setFilterData(filter.name);
         if (filter.name === 'Рекомендуемое') {
             setData(dataRecommended)
+
         } else {
+
             setData(dataNew)
         }
         const emptyFilters = {
             contentTags: []
         }
         setFilters(emptyFilters)
-
-         
-        // if (data === )
-        // setFilters({...filters, contentTags: []})
     }
 
-    const filteredContents = multiPropsFilter(contentContents, filters);
+    // const filteredContents = multiPropsFilter(contentContents, filters);
+
+    const filteredContents = multiPropsFilter(data, filters);
+    console.log('CONTENTSHOWN', contentShown)
+    console.log('LENGTH', filteredContents.length)
 
     return (
         <PreparationSection id="preparation">
@@ -473,17 +469,14 @@ const PreCoursePreparation = ({dataRecommended, dataNew}) => {
                         })}
                     </PreparationContents>
 
-                        {filteredContents.length > 12 ? (
+                        {filteredContents.length > 12 && (
                             <>
-                                {contentShown < filteredContents.length ? (
+                                {contentShown < filteredContents.length && (
                                     <PreparationButtonMore onClick={() => setContentPagination(contentPagination + 12)}><PreparationButtonMoreText>Показать еще</PreparationButtonMoreText></PreparationButtonMore>
-                                ) : null}
+                                )}
                             </>
                             
-                        ) : (null)}
-
-
-                    
+                        )}
                 </PreparationWrapper>
             </Container>
 

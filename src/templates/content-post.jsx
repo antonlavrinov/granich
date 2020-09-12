@@ -49,13 +49,13 @@ export const pageQuery = graphql`
 const ContentPage = ({data}) => {
     return (
         <Layout>
-            <Header type="dark"/>
+            {/* <Header type="dark"/>
             <div className="section-top-block"></div>
             {data.contentfulContent.contentBannerSwitch && data.courseBanner && <Banner data={data.courseBanner}/>}
             <YoutubeVideo data={data}/>
             <ContentLinks data={data}/>
             <Mailing/>
-            <SEO title="Онлайн-школа Granich" />
+            <SEO title="Онлайн-школа Granich" /> */}
         </Layout>
     )
 }

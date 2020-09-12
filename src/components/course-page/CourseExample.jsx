@@ -214,21 +214,21 @@ const CourseExample = () => {
         query ExampleSectionQuery {
             author: file(relativePath: { eq: "author.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 500, quality: 100) {
+                    fluid(maxWidth: 300) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             example1: file(relativePath: { eq: "graph-design/example/example-01.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 600, quality: 100) {
+                    fluid(maxWidth: 500) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             example2: file(relativePath: { eq: "graph-design/example/example-02.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 600, quality: 100) {
+                    fluid(maxWidth: 500) {
                         ...GatsbyImageSharpFluid
                     }
                 }

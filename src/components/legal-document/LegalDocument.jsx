@@ -152,7 +152,7 @@ const LegalDocumentText = styled.div`
         margin: 1vw 0;
     }
     a {
-        border-bottom: 0.05vw solid var(--granich-light-grey);
+        border-bottom: 1px solid var(--granich-light-grey);
         :hover {
             border-bottom: none;
         }

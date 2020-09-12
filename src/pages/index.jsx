@@ -20,17 +20,17 @@ export const contentfulQuery = graphql`
           edges {
             node {
               headerImage {
-                fluid(maxWidth: 2729, quality: 100) {
+                fluid(maxWidth: 2729) {
                   ...GatsbyContentfulFluid
                 }
               }
               headerImageMobile {
-                fluid(maxWidth: 575, quality: 100) {
+                fluid(maxWidth: 575) {
                   ...GatsbyContentfulFluid
                 }
               }
               headerSubtitleImage {
-                fluid(maxWidth: 50, quality: 100) {
+                fluid(maxWidth: 50) {
                   ...GatsbyContentfulFluid
                 }
               }
@@ -49,7 +49,7 @@ export const contentfulQuery = graphql`
               courseDescr
               courseDuration
               coursePreviewImage {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 450) {
                   ...GatsbyContentfulFluid
                 }
               }
@@ -67,15 +67,14 @@ export const contentfulQuery = graphql`
           }
         },
         contentCardsNew: allContentfulGranichMainContentCard(sort: {fields: [createdAt], order: DESC}) {
-          edges {
-            node {
+            nodes {
               contentDescription {
                 json
               }
               contentTags
               contentTitle
               contentImage {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 350) {
                   ...GatsbyContentfulFluid
                 }
               }
@@ -92,18 +91,17 @@ export const contentfulQuery = graphql`
               contentLinkYoutube
               contentLinkMedium
             }
-          }
         },
+        
         contentCardsRecommended: allContentfulGranichMainContentCard(sort: {fields: [contentOrderNumber], order: DESC}) {
-          edges {
-            node {
+            nodes {
               contentDescription {
                 json
               }
               contentTags
               contentTitle
               contentImage {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 350) {
                   ...GatsbyContentfulFluid
                 }
               }
@@ -120,7 +118,6 @@ export const contentfulQuery = graphql`
               contentLinkYoutube
               contentLinkMedium
             }
-          }
         },
         team: allContentfulGranichMainTeachers(sort: {fields: [teacherOrderNumber], order: ASC}) {
           edges {
@@ -143,9 +140,8 @@ export const contentfulQuery = graphql`
               
             }
           }
+
         }
-      
-        
     }
 `
 
@@ -162,7 +158,7 @@ const IndexPage = ({data}) => (
 
     <Manifest/>
     <Mailing/>
-    <PreCoursePreparation dataRecommended={data.contentCardsRecommended} dataNew={data.contentCardsNew}/>
+    {/* <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/> */}
     <OurTeam data={data.team}/> 
 
   </Layout>

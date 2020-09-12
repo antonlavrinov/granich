@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
-import commitmentVideo from '../../assets/images/graph-design/commitment/ezgif.com-gif-to-mp4.mp4';
+// import commitmentVideo from '../../assets/images/graph-design/commitment/ezgif.com-gif-to-mp4.mp4';
 import CommitmentGif from '../../assets/images/graph-design/commitment/commitment.gif';
 
 

@@ -178,14 +178,14 @@ const MasterClassExample = () => {
     query MasterClassExampleSectionQuery {
         authorMasterClass: file(relativePath: { eq: "author.jpg" }) {
             childImageSharp {
-                fluid(maxWidth: 500, quality: 100) {
+                fluid(maxWidth: 300) {
                     ...GatsbyImageSharpFluid
                 }
             }
         }
         exampleMasterClass: file(relativePath: { eq: "graph-design/example/example-02.jpg" }) {
             childImageSharp {
-                fluid(maxWidth: 500, quality: 100) {
+                fluid(maxWidth: 500) {
                     ...GatsbyImageSharpFluid
                 }
             }

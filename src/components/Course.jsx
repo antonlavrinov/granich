@@ -378,6 +378,7 @@ const CourseTeacher = styled(props => <BackgroundImage {...props}></BackgroundIm
     width: 2.35vw;
     border: 1px solid var(--granich-black);
     box-shadow: 0.15vw 0.12vw 0.2vw rgba(0,0,0,0.25);
+    background: var(--granich-grey);
     ${props => props.several && `
         // transform: translateX(17%);
         margin-right: -0.2vw;

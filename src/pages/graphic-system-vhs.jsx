@@ -26,7 +26,7 @@ export const contentfulQuery = graphql`
                 courseStatus
                 courseType
                 courseMainImage {
-                    fluid(maxWidth: 850, quality: 100) {
+                    fluid(maxWidth: 850) {
                     ...GatsbyContentfulFluid
                     }
                 }
@@ -38,7 +38,7 @@ export const contentfulQuery = graphql`
             node {
               id
               explanationsImage {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 450) {
                   ...GatsbyContentfulFluid
                 }
               }

@@ -204,7 +204,7 @@ const Manifest = () => {
         query authorImage {
             placeholderImage: file(relativePath: { eq: "author.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 700, quality: 100) {
+                    fluid(maxWidth: 350) {
                         ...GatsbyImageSharpFluid
                     }
                 }

@@ -23,7 +23,7 @@ export const contentfulQuery = graphql`
     query graphDesignQuery {
         offer:   contentfulGranichCourse(courseTitle: {eq: "Осознанный графдизайн"}) {
           courseMainImage {
-            fluid(maxWidth: 850, quality: 100) {
+            fluid(maxWidth: 850) {
               ...GatsbyContentfulFluid
             }
           }
@@ -46,7 +46,7 @@ export const contentfulQuery = graphql`
             node {
               id
               explanationsImage {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 450) {
                   ...GatsbyContentfulFluid
                 }
               }
@@ -63,7 +63,7 @@ export const contentfulQuery = graphql`
             node {
               id
               forWhomImage {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 450) {
                   ...GatsbyContentfulFluid
                 }
               }
@@ -155,7 +155,7 @@ export const contentfulQuery = graphql`
                   ...GatsbyContentfulFluid
                   src
                 }
-                resize(width: 150) {
+                resize(width: 100) {
                   src
                 }
               }
@@ -168,7 +168,7 @@ export const contentfulQuery = graphql`
             node {
               id
               reviewsImage {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 450) {
                   ...GatsbyContentfulFluid
                 }
               }
@@ -199,7 +199,7 @@ export const contentfulQuery = graphql`
 
 const OsoznannyGraphDesignPage = ({data}) => (
   <Layout>
-    <Header type={'dark'}/>
+    {/* <Header type={'dark'}/>
     <SEO title="Осознанный графдизайн" />
     <div className="section-top-block"></div>
     <CourseOffer data={data.offer}/>
@@ -218,7 +218,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     ) : (
       <Mailing/>
     )}
-    <CourseAnswers data={data.answers}/>
+    <CourseAnswers data={data.answers}/> */}
     
 
 

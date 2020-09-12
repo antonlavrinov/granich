@@ -127,6 +127,8 @@ const TeacherImage = styled(props => <BackgroundImage {...props}></BackgroundIma
     height: 5.1vw;
     border-radius: 100vw;
     overflow: hidden;
+    border: 1.5px solid var(--granich-black);
+    background-color: var(--granich-grey);
     @media only screen and (max-width: 575px) {
         width: 19.5vw;
         height: 19.5vw;
