@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Container } from './style';
-import parse from 'html-react-parser';
 import BackgroundImage from 'gatsby-background-image'
 import { graphql, useStaticQuery } from 'gatsby'
 
@@ -265,7 +264,7 @@ const ManifestRule = ({title, text, number}) => {
     return (
         <ManifestInfoRule>
             <ManifestRuleTitle>{title}</ManifestRuleTitle>
-                {parse(text)}
+                {text}
                 <ManifestRuleNumber>{number}</ManifestRuleNumber>
         </ManifestInfoRule>
     )

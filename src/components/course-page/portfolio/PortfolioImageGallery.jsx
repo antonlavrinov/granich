@@ -7,7 +7,6 @@ import FullscreenInIcon from '../../../assets/svgs/graph-design/graph-design-ful
 import SliderLeftIcon from '../../../assets/svgs/graph-design/graph-design-slider-left.svg';
 import SliderRightIcon from '../../../assets/svgs/graph-design/graph-design-slider-right.svg';
 import styled from 'styled-components';
-import {isSafari, isMobileSafari, isChrome} from "react-device-detect";
 
 const FullscreenOut = styled(props => <FullscreenOutIcon {...props}/>)`
     width: 1.8vw;
