@@ -153,12 +153,12 @@ const IndexPage = ({data}) => (
     
     <Header/>
     <SEO title="Онлайн-школа Granich" />
-    <Offer data={data.header}/>
+    {/* <Offer data={data.header}/> */}
     <Courses data={data.courseCards}  />
 
     <Manifest/>
     <Mailing/>
-    {/* <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/> */}
+    <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/>
     <OurTeam data={data.team}/> 
 
   </Layout>
