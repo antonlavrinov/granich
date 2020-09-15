@@ -2,12 +2,11 @@ import React from 'react'
 import styled from 'styled-components';
 import { Container } from './style';
 import BackgroundClip from '../assets/svgs/background-clip-01.svg';
-// import BackgroundClip from '../assets/images/background-clip-01.png';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import BackgroundImage from 'gatsby-background-image'
 import UnderlineLinkIcon from '../assets/svgs/offer-underline-link.svg';
 import Img from 'gatsby-image';
-// import { graphql, useStaticQuery } from 'gatsby'
+
 
 
 
@@ -65,7 +64,7 @@ const OfferTitle = styled.h1`
         
     }
 `
-const OfferDescr = styled.div`
+const OfferDescr = styled.h2`
     margin-left: -.3vw;
     color: white;
     letter-spacing: .01vw;
@@ -119,20 +118,6 @@ const OfferUnderlineIcon = styled(props => <UnderlineLinkIcon {...props}/>)`
     
 `
 
-// const OfferSvgClip = styled(props => <BackgroundImage {...props}/>)`
-
-//     // padding: 10vw;
-//     left: 0;
-//     display: block;
-//     top: -4vw;
-//     width: 100%;
-//     z-index: 0;
-//     background-size: 'cover';
-//     background-repeat: 'no-repeat';
-//     @media only screen and (max-width: 575px) {
-//         width: 100%;
-//     }
-// `
 const OfferSvgClip = styled(props => <BackgroundClip {...props}/>)`
 
     // padding: 10vw;
@@ -160,19 +145,6 @@ const OfferFlagsImg = styled(props => <Img {...props} />)`
     }
 ` 
 
-const OfferShadowMobile = styled.div`
-
-    // @media only screen and (max-width: 575px) {
-    //     background: linear-gradient(180deg, rgba(0,0,0,0.6) 50%, rgba(45,45,45,0) 100%);
-    //     position: absolute;
-    //     width: 100%;
-    //     height: 35vw;
-    //     top: 0;
-    //     left: 0;
-    //     // z-index: 1000;
-    // }
-
-`
 
 
 
@@ -180,20 +152,6 @@ const OfferShadowMobile = styled.div`
 
 const Offer = ({data}) => {
 
-        // const dataImage = useStaticQuery(graphql`
-        //     query backgroundClip {
-        //         clip: file(relativePath: { eq: "background-clip-01.png" }) {
-        //             childImageSharp {
-        //                 fluid(maxWidth: 2729) {
-        //                     ...GatsbyImageSharpFluid
-        //                 }
-        //             }
-        //         }
-
-        //     }
-        // `)
-
-        // const imageData = dataImage.clip.childImageSharp.fluid
 
 
         const headerImage = data.edges[0].node.headerImage.fluid
@@ -217,23 +175,15 @@ const Offer = ({data}) => {
 
             </OfferSection>
             <OfferMobileSection fluid={headerImageMobile} id="offer" >
-                <OfferShadowMobile></OfferShadowMobile>
                 <Container>
                     <OfferTitle>{headerTitle}</OfferTitle>
                     <OfferDescr>
                         {headerSubtitle_01} <OfferFlagsImg alt="flags" fluid={headerSubtitleImage} /> <br/> {headerSubtitle_02} <span tabIndex={0} role="button" onKeyDown={() => scrollTo('#manifest')} onClick={() => scrollTo('#manifest')}>{headerSubtitle_03} <OfferUnderlineIcon/></span>
                     </OfferDescr>
                 </Container>
-                {/* <OfferSvgClip/> */}
             </OfferMobileSection>
             <OfferSvgClip/>
-            {/* <OfferSvgClip style={{position: 'relative', 
-                                background: 'black', 
-                                height: '8vw',
-                                backgroundRepeat: 'no-repeat',
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center top'
-                                }}  fluid={imageData}></OfferSvgClip> */}
+
         </>
 
 

@@ -204,7 +204,7 @@ const PortfolioImageGallery = ({images}) => {
                     height: 70px;
                 }
                 .image-gallery-slide {
-                    height: 15vw;
+                    height: 16vw;
                     height: 100%;
                 }
                 .image-gallery-image {
@@ -273,7 +273,7 @@ const PortfolioImageGallery = ({images}) => {
                     z-index: 9999;
                 }
                 .gallery-custom-slider {
-                    height: 15.5vw;
+                    height: 16vw;
                 }
 
 

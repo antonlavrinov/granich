@@ -185,7 +185,7 @@ const CourseTag = styled.div`
     }
 `
 
-const CourseTitle = styled.div`
+const CourseTitle = styled.h3`
     font-size: 1.75vw;
     margin-top: 0.4vw;
     margin-left: 0.3vw;

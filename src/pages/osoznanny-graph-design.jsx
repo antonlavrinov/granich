@@ -16,7 +16,7 @@ import CourseCommitment from "../components/course-page/CourseCommitment"
 import {graphql} from 'gatsby';
 import CourseAnswers from "../components/course-page/CourseAnswers";
 import Mailing from '../components/Mailing';
-
+import ogImage from '../assets/images/seo/osoznanny-graph-design.jpg';
 
 export const contentfulQuery = graphql`
 
@@ -124,7 +124,7 @@ export const contentfulQuery = graphql`
             node {
               id
               trainingPathImage {
-                fluid(maxWidth: 1200) {
+                fluid(maxWidth: 1200, quality: 70) {
                   ...GatsbyContentfulFluid
                 }
               }
@@ -200,7 +200,11 @@ export const contentfulQuery = graphql`
 const OsoznannyGraphDesignPage = ({data}) => (
   <Layout>
     <Header type={'dark'}/>
-    <SEO title="Осознанный графдизайн" />
+    <SEO title="Осознанный графдизайн"
+         description="Осознанный курс по графическому дизайну от Вадима Гранича (Granich). За 2 месяца вы получите упорядоченные знания о графическом дизайне и создадите свое портфолио. А еще изучите Adobe InDesign"
+         keywords={['vhs', 'графсистема']}
+         ogImage={ogImage}
+         url="https://anton-dev.ru/osoznanny-graph-design" />
     <div className="section-top-block"></div>
     <CourseOffer data={data.offer}/>
     <CourseExplanations data={data.explanations}/>
@@ -218,7 +222,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     ) : (
       <Mailing/>
     )}
-    <CourseAnswers data={data.answers}/> 
+    <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/> 
     
 
 

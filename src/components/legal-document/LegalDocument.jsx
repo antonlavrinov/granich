@@ -27,6 +27,9 @@ const LegalDocumentSection = styled.section`
 const LegalDocumentWrapper = styled.div`
     background: white;
     border-radius: 0.6vw;
+    @media only screen and (max-width: 575px) {
+        border-radius: 2.5vw;
+    }
 `
 const LegalDocumentLeftBlock = styled.div`
     width: 29%;
@@ -129,7 +132,7 @@ const LegalDocumentInfoBlockPDFButtonMobile = styled.a`
 
 `
 
-const LegalDocumentTitle = styled.div`
+const LegalDocumentTitle = styled.h1`
     font-size: 5.6vw;
     font-family: EB Garamond;
     font-style: italic;

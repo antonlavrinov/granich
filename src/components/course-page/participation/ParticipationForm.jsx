@@ -71,7 +71,7 @@ const FormTag = styled.div`
 
 
 
-const FormTitle = styled.div`
+const FormTitle = styled.h2`
     font-size: 4vw;
     font-weight: 600;
     letter-spacing: -0.25vw;
@@ -118,7 +118,7 @@ const FormInput = styled.input`
         margin-left: 0;
         margin-bottom: 1vw;
         margin-top: 3vw;
-        border-radius: 2vw;
+        border-radius: 2.5vw;
     }
     ${props => props.errorStyle && `
         border: 1px solid var(--granich-red);

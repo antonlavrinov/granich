@@ -18,7 +18,7 @@ const Youtube = styled(props => <YoutubeIcon {...props}/>)`
 const YoutubeSection = styled.section`
     margin-bottom: 1.7vw;
     @media only screen and (max-width: 575px) {
-        margin-bottom: 4vw;
+        margin-bottom: 5vw;
     }
 
 `
@@ -77,7 +77,7 @@ const ContentInfo = styled.div`
         align-items: center;
     }
 `
-const ContentInfoTitle = styled.div`
+const ContentInfoTitle = styled.h1`
     font-size: 2vw;
     font-weight: 500;
     color: white;

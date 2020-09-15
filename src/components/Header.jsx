@@ -360,7 +360,7 @@ const Header = ({ siteTitle, type }) => (
 
               </li>  
               <li>
-                <NavLinkExternal href="https://granich.ru/cms/system/login" target="_blank" propstyle={type}>
+                <NavLinkExternal href="/blog" target="_blank" propstyle={type}>
                   Блог
                   <ArrowLinkOut/>
                 </NavLinkExternal>

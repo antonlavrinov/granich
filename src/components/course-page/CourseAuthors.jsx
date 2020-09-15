@@ -16,11 +16,11 @@ const AuthorsWrapper = styled.section`
  background: white;
  @media only screen and (max-width: 575px) {
     padding: 6vw;
-    border-radius: 3vw;
+    border-radius: 2.5vw;
  }
 `
 
-const AuthorsTitle = styled.div`
+const AuthorsTitle = styled.h2`
     color: var(--granich-black);
     font-size: 4.55vw;
     letter-spacing: -0.2vw;

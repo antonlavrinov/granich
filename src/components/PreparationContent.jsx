@@ -108,7 +108,7 @@ const ContentWrapperLink = styled.a`
     @media only screen and (max-width: 575px) {
         // height: 56vw;
         // height: auto;
-        border-radius: 1.3vw;
+        border-radius: 1.5vw;
         min-height: 56vw;
     }
 
@@ -138,7 +138,7 @@ const ContentWrapperExternalLink = styled.a`
         // height: 56vw;
         min-height: 56vw;
 
-        border-radius: 1.3vw;
+        border-radius: 1.5vw;
     } 
 `
 
@@ -193,7 +193,7 @@ const ContentTag = styled.div`
     }
 `
 
-const ContentTitle = styled.div`
+const ContentTitle = styled.h4`
     font-size: 1.25vw;
     line-height: 1;
     font-weight: 500;
@@ -280,7 +280,7 @@ const ContentButton = styled.div`
     ` }
 
     @media only screen and (max-width: 575px) {
-        border-radius: 0 0 1.3vw 1.3vw;
+        border-radius: 0 0 1.5vw 1.5vw;
     }
 `
 

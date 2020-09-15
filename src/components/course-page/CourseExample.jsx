@@ -7,7 +7,10 @@ import BackgroundImage from 'gatsby-background-image';
 import LongArrowMobileIcon from '../../assets/svgs/graph-design/graph-design-long-arrow-mobile.svg';
 
 const CourseExampleSection = styled.section`
-    margin-bottom: 5vw;
+    margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 `
 const CourseExampleWrapper = styled.div`
     display: flex;
@@ -18,7 +21,7 @@ const CourseExampleWrapper = styled.div`
     border-radius: 0.6vw;
     
     @media only screen and (max-width: 575px) {
-        border-radius: 3vw;
+        border-radius: 2.5vw;
         padding: 6vw 6vw 6vw;
 
     }
@@ -105,7 +108,7 @@ const CourseExampleAuthorText = styled.div`
     }
 `
 
-const CourseExampleTitle = styled.div`
+const CourseExampleTitle = styled.h2`
     font-family: EB Garamond;
     font-style: italic;
     font-weight: 500;

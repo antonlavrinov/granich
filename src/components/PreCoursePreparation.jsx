@@ -10,6 +10,7 @@ const PreparationSection = styled.section`
     margin-bottom: 4vw;
     @media only screen and (max-width: 575px) {
         margin-bottom: 10vw;
+        margin-top: 5vw;
     }
 
 `
@@ -41,12 +42,12 @@ const PreparationMobileWrapper = styled.div`
     @media only screen and (max-width: 575px) {
         background: #E8E8E8;
         padding: 9vw 6vw 4vw;
-        border-radius: 3vw;
+        border-radius: 2.5vw;
         margin-bottom: 4vw;
     }
 `
 
-const PreparationTitle = styled.div`
+const PreparationTitle = styled.h2`
     color: var(--granich-black);
     font-size: 4.55vw;
     letter-spacing: -0.2vw;
@@ -101,12 +102,16 @@ const PreparationFilter = styled.div`
     :hover {
         cursor: pointer;
         color: var(--granich-black);
+        border-bottom: 2px solid rgba(228,5,33, 0.2);
     }
     ${props => props.active && `
     font-weight: 500;
     color: var(--granich-black);
     border-color: var(--granich-red);
     border-bottom: 2px solid var(--granich-red);
+    :hover {
+        border-bottom: 2px solid var(--granich-red);
+    }
     @media only screen and (max-width: 575px) {
         border-bottom: 0.4vw solid var(--granich-red);
     }
@@ -249,7 +254,7 @@ const PreparationButtonMore = styled.div`
         }
         @media only screen and (max-width: 575px) {
             padding: 3vw 0 3.5vw;
-            border-radius: 1.3vw;
+            border-radius: 1.5vw;
             margin-top: 4vw;
         }
 `

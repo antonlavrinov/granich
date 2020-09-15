@@ -9,6 +9,9 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 const ExplanationsSection = styled.section`
     margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 `
 
 
@@ -19,7 +22,7 @@ const ExplanationsWrapper = styled.div`
     grid-row-gap: 1.5vw;
     @media only screen and (max-width: 575px) {
         grid-template-columns: 1fr;
-        grid-row-gap: 5vw;
+        grid-row-gap: 4vw;
     }
 `
 
@@ -30,12 +33,12 @@ const ExplanationsBlockWrapper = styled.div`
     position: relative;
     @media only screen and (max-width: 575px) {
         padding: 6.2vw;
-        border-radius: 3vw;
+        border-radius: 2.5vw;
     }
     
 
 `
-const ExplanationsBlockTitle = styled.div`
+const ExplanationsBlockTitle = styled.h3`
     font-size: 2.3vw;
     line-height: 1;
     font-family: EB Garamond;

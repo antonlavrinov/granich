@@ -13,7 +13,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 
 
-const SEO = ({ description, lang, meta, title, keywords, ogImage, ogDescription }) => {
+const SEO = ({ description, lang, meta, title, keywords, ogImage, url }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -24,6 +24,7 @@ const SEO = ({ description, lang, meta, title, keywords, ogImage, ogDescription 
             author
             keywords
             ogImage
+            siteUrl
           }
         }
       }
@@ -33,8 +34,8 @@ const SEO = ({ description, lang, meta, title, keywords, ogImage, ogDescription 
   const metaDescription = description || site.siteMetadata.description
   const metaKeywords = keywords || site.siteMetadata.keywords
   const metaOgImage = ogImage || site.siteMetadata.OgImage
-  const metaOgDescription = ogDescription || site.siteMetadata.description
   const metaTitle = title ||  site.siteMetadata.title
+  const metaOgUrl = url || site.siteMetadata.siteUrl
 
   return (
     <Helmet
@@ -55,11 +56,11 @@ const SEO = ({ description, lang, meta, title, keywords, ogImage, ogDescription 
         },
         {
           property: `og:description`,
-          content: ogDescription,
+          content: metaDescription,
         },
         {
           property: `og:image`,
-          content: ogImage
+          content: metaOgImage
         },
         {
           property: `og:image:width`,
@@ -74,27 +75,29 @@ const SEO = ({ description, lang, meta, title, keywords, ogImage, ogDescription 
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          property: `og:url`,
+          content: metaOgUrl,
         },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: metaTitle,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
+        // {
+        //   name: `twitter:title`,
+        //   content: metaTitle,
+        // },
+        // {
+        //   name: `twitter:image`,
+        //   content: metaOgImage,
+        // },
+        // {
+        //   name: `twitter:description`,
+        //   content: metaDescription,
+        // },
         {
           name: `keywords`,
           content: metaKeywords
         }
       ].concat(meta)}
     >
+      {url && <link rel="canonical" href={metaOgUrl}/>}
+
     </Helmet>
   )
 }

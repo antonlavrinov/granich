@@ -7,6 +7,9 @@ import BackgroundImage from 'gatsby-background-image';
 
 const ExampleSection = styled.section`
     margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 `
 const ExampleWrapper = styled.div`
     display: flex;
@@ -23,7 +26,7 @@ const ExampleWrapper = styled.div`
         margin-top: 2vw;
     }
     @media only screen and (max-width: 575px) {
-        border-radius: 3vw;
+        border-radius: 2.5vw;
         padding: 6vw 6vw 7.5vw;
     }
 `
@@ -93,7 +96,7 @@ const ExampleAuthorText = styled.div`
 `
 
 
-const ExampleTitle = styled.div`
+const ExampleTitle = styled.h2`
     font-family: EB Garamond;
     font-style: italic;
     font-weight: 500;

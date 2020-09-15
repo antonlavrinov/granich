@@ -105,7 +105,7 @@ const TeacherWrapper = styled.div`
     display: flex;
     flex-direction: column;
     @media only screen and (max-width: 575px) {
-        border-radius: 3vw;
+        border-radius: 2.5vw;
         padding: 6.5vw 8vw 8vw 10vw; 
         ${props => props.masterclass && `
             padding: 5.5vw 7.5vw 6vw 7.5vw; 

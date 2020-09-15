@@ -49,12 +49,12 @@ const ReviewsWrapper = styled.div`
     padding: 4.6vw 3vw 3vw;
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
-        border-radius: 3vw;
+        border-radius: 2.5vw;
         padding: 5vw 6vw 6vw;
     }
 `
 
-const ReviewsTitle = styled.div`
+const ReviewsTitle = styled.h2`
     color: var(--granich-black);
     font-size: 4.55vw;
     letter-spacing: -0.2vw;
@@ -165,23 +165,7 @@ const ReviewImage = styled(props => <BackgroundImage {...props}></BackgroundImag
     }
 `
 
-const ReviewPreview = styled.div`
-    height: 16.5vw;
-    min-height: 16vw;
-    overflow: hidden;
-    border-radius: 0.5vw 0.5vw 0 0;
-    @media only screen and (max-width: 575px) {
-        height: 58.5vw;
-        min-height: 58.5vw;
-        border-radius: 1.5vw 1.5vw 0 0;
-    }
-`
 
-const ReviewPreviewText = styled.div`
-    font-size: 1.15vw;
-    padding: 1vw 2.5vw;
-    user-select: none;
-`
 
 const ReviewsFooter = styled.div`
     display: flex;
@@ -317,14 +301,7 @@ const ReviewsLinkVk = styled.a`
 const Review = ({image, link}) => {
     return (
         <ReviewWrapper>
-            {/* <ReviewImage fluid={image}></ReviewImage> */}
-            <ReviewPreview>
-                <ReviewPreviewText>
-                Два месяца назад я начал проходить замечательный курс от не менее замечательного Вадима Гранича 🇯🇵
-                Хочется выразить огромную благодарность этому человеку и всей его команде за их титанический труд, знания, умения и навыки, которые я приобрёл за эти два месяца продуктивной работы 🏋🏻‍♂️
-
-                </ReviewPreviewText>
-            </ReviewPreview>
+            <ReviewImage fluid={image}></ReviewImage>
             <ReviewButton href={link} target="_blank">
                 <span>Показать полностью</span>
                 <ReviewButtonIcons>
@@ -360,14 +337,14 @@ const CourseReviews = ({data, masterClass}) => {
                             <>
                                 <ReviewsFooterTitle>Все отзывы о курсе:</ReviewsFooterTitle>
                                 <ReviewsLinks>
-                                    <ReviewsLinkTelegram target="_blank" href={'https://vk.com/vadim_granich'}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
+                                    <ReviewsLinkTelegram target="_blank" href={'https://t.me/granich_reviews'}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
                                     <ReviewsLinkVk target="_blank" href={'https://vk.com/vadim_granich'}><div>Архив отзывов<Arrow/>ВК</div><div>На стене Вадима Гранича</div></ReviewsLinkVk>
                                 </ReviewsLinks>
                             </>
                           
                         ) : (
 
-                            <ReviewsLinkTelegram masterClass target="_blank" href={'https://vk.com/vadim_granich'}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
+                            <ReviewsLinkTelegram masterClass target="_blank" href={'https://t.me/granich_reviews'}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
                         )}
 
 

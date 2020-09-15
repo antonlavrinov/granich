@@ -25,17 +25,6 @@ module.exports = {
         }
       }
     },
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Oswald`,
-    //         variants: [`400`,`700`]
-    //       },
-    //     ],
-    //   },
-    // },
     `gatsby-plugin-htaccess`,
     {
       resolve: `gatsby-plugin-google-fonts`,
@@ -47,16 +36,6 @@ module.exports = {
         display: 'swap'
       }
     },
-    // {
-    //   resolve: 'gatsby-plugin-web-font-loader',
-    //   options: {
-    //     google: {
-    //       // families: ['Inter:400,500,600,700', 'EB Garamond:400,500i,500'],
-    //       families: ['Inter:400,500,600,700', 'EB Garamond:400,500i,500']
-          
-    //     }
-    //   }
-    // },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {

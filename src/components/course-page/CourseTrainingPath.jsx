@@ -49,8 +49,7 @@ const TrainingPathWrapper = styled.div`
     @media only screen and (max-width: 575px) {
         margin-bottom: 5vw;
         grid-template-columns: 1fr;
-        grid-column-gap: 5vw;
-        grid-row-gap: 5vw;
+        grid-row-gap: 4vw;
     }
 `
 
@@ -73,7 +72,7 @@ const TrainingPathBlockWrapper = styled.div`
         border-radius: 100vw;
     }
     @media only screen and (max-width: 575px) {
-        border-radius: 2vw;
+        border-radius: 2.5vw;
         :before {
             content: '';
             width: 52vw;
@@ -175,17 +174,17 @@ const TrainingPathBlockImage = styled.div`
 
 const TrainingPathImage = styled(props => <BackgroundImage {...props}/>)`
     width: 100%;
-    height: 8.8vw;
-    background-size: 110%;
+    height: 8.9vw;
+    background-size: cover;
     box-shadow: 0 0 0.4vw rgba(0,0,0,0.4);
     @media only screen and (max-width: 575px) {
-        height: 43.8vw;    
+        height: 44vw;    
         box-shadow: 0 0 1.8vw rgba(0,0,0,0.4);
     }
 
 `
 
-const TrainingPathSectionTitle = styled.div`
+const TrainingPathSectionTitle = styled.h2`
     color: var(--granich-black);
     font-size: 4.55vw;
     letter-spacing: -0.2vw;

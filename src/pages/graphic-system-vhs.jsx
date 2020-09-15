@@ -11,7 +11,8 @@ import {graphql} from 'gatsby';
 import EducationQuestions from "../components/EducationQuestions";
 import CourseAuthors from "../components/course-page/CourseAuthors";
 import MasterClassExample from '../components/course-page/MasterClassExample';
-
+import Mailing from '../components/Mailing';
+import ogImage from '../assets/images/seo/graphic-system-vhs.jpg';
 
 
 export const contentfulQuery = graphql`
@@ -121,14 +122,23 @@ const GraphicSystemVhsPage = ({data}) => (
   <Layout>
     <Header type={'dark'}/>
     <div className="section-top-block"></div>
-    <SEO title="Графсистема VHS" />
+    <SEO title="Графсистема VHS"
+         description="Мастер-класс по графической системе VHS"
+         keywords={['vhs', 'графсистема']}
+         ogImage={ogImage}
+         url="https://anton-dev.ru/graphic-system-vhs" />
     <CourseOffer data={data.VHSoffer}/>
     <CourseExplanations data={data.VHSexplanations}/>
     <CourseAuthors data={data.VHSteam}/>
     <MasterClassExample/>
     <CoursePortfolio masterClass posters={data.VHSportfolioPosters}/>
     <CourseReviews data={data.VHSreviews} masterClass/>
-    <CoursePriceRange data={data.VHSPricesRange}/>
+    <div id="prices-range-section"></div>
+    {data.VHSoffer.courseStatus ? (
+      <CoursePriceRange data={data.VHSPricesRange}/>
+    ) : (
+      <Mailing/>
+    )}
     <EducationQuestions/>
 
   </Layout>

@@ -125,11 +125,11 @@ const NotFoundPage = () => (
       <Container>
         <NotFoundWrapper>
           <NotFoundTitle>
-          К сожалению, <br/>Такой страницы нет
+            Блог в разработке...
           </NotFoundTitle>
           <NotFoundText>
-            Зато у нас много других интересных страниц.<br/>
-            Выберете самую интересную:
+            Оповестим о запуске на других площадках блога школы. <br/>
+            Вот несколько других интересных материалов:
           </NotFoundText>
           <NotFoundLinksWrapper>
             <ul>
@@ -143,7 +143,6 @@ const NotFoundPage = () => (
             
 
           </NotFoundLinksWrapper>
-          <NotFoundSymbol>404</NotFoundSymbol>
         </NotFoundWrapper>
       </Container>
 

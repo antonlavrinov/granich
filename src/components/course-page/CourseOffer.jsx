@@ -50,6 +50,9 @@ const Date = styled(props => <DateIcon {...props}/>)`
 
 const CourseOfferSection = styled.section`
     margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 
 
 `
@@ -78,7 +81,7 @@ const CourseOfferWrapperMobile = styled.section`
     @media only screen and (max-width: 575px) {
         display: block;
         background: white;
-        border-radius: 3vw;
+        border-radius: 2.5vw;
         padding: 7vw 1vw 6vw;
         box-shadow: 0 0 1.8vw rgba(0,0,0,0.15);
     }

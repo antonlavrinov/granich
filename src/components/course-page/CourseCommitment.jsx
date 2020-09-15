@@ -26,7 +26,7 @@ const CommitmentWrapper = styled.div`
     @media only screen and (max-width: 575px) {
         flex-direction: column;
         padding: 6vw 6vw 7vw;
-        border-radius: 3vw;
+        border-radius: 2.5vw;
         video {
             min-width: 100%;
             width: 100%;
@@ -85,7 +85,7 @@ const CommitmentNote = styled.div`
 `
 
 
-const CommitmentTitle = styled.div`
+const CommitmentTitle = styled.h3`
     font-size: 2.3vw;
     line-height: 1;
     font-family: EB Garamond;

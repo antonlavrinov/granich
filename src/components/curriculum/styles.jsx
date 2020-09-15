@@ -25,7 +25,7 @@ export const CurriculumWrapper = styled.div`
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
         padding: 5vw 3.5vw;
-        border-radius: 2vw;
+        border-radius: 2.5vw;
     }
 `
 export const CurriculumHeader = styled.div`
@@ -46,7 +46,7 @@ export const CurriculumTitleAndContent = styled.div`
         min-width: 100%;
     }
 ` 
-export const CurriculumHeaderTitle = styled.div`
+export const CurriculumHeaderTitle = styled.h2`
     color: var(--granich-black);
     font-size: 4.55vw;
     letter-spacing: -0.2vw;
@@ -313,7 +313,7 @@ export const CurriculumItemFrame = styled.div`
     `}
 `
 
-export const CurriculumItemTitle = styled('span')`
+export const CurriculumItemTitle = styled('h3')`
   vertical-align: middle;
   font-family: EB Garamond;
   font-style: italic;
@@ -337,7 +337,7 @@ export const CurriculumItemImportantDescr = styled.span`
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
         background: #f2f2f2;
-        border-radius: 2vw;
+        border-radius: 2.5vw;
         display: block;
         padding: 3vw 4vw;
         margin-bottom: 2vw;

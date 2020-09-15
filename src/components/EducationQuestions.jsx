@@ -20,7 +20,7 @@ const EducationQuestionsWrapper = styled.div`
     margin-bottom: 2vw;
     @media only screen and (max-width: 575px) {
         font-size: 3.8vw;
-        border-radius: 3vw;
+        border-radius: 2.5vw;
         padding: 4vw 0;
         line-height: 1.25;
     }

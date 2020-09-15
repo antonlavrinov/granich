@@ -234,11 +234,9 @@ const ArrowLinkTopMobile = styled(props => <ArrowTopMobile {...props}/>)`
 `
 
 const AnswersSection = styled.section`
-
-    margin-bottom: 4vw;
     margin-top: 4vw;
     @media only screen and (max-width: 575px) {
-        margin-bottom: 5vw;
+        margin-bottom: 2vw;
         margin-top: 5vw;
 
     }
@@ -248,7 +246,7 @@ const AnswersMainWrapper = styled.div`
     background: #E8E8E8;
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
-        border-radius: 2vw;
+        border-radius: 2.5vw;
     }
 `
 
@@ -273,7 +271,7 @@ const AnswersHeader = styled.div`
     }
 `
 
-const AnswersSectionTitle = styled.div`
+const AnswersSectionTitle = styled.h2`
     color: var(--granich-black);
     font-size: 4.55vw;
     letter-spacing: -0.2vw;
@@ -421,6 +419,14 @@ const AnswersFooterLink = styled.a`
 
         }
     }
+    ${props => props.disabled && `
+        @media only screen and (max-width: 575px) {
+            font-size: 5.6vw;
+            :hover {
+                font-size: 5.6vw;
+            }
+        }
+    `}
 `
 
 
@@ -488,7 +494,7 @@ export const AnswersItemLineMobile = styled.div`
 
 
 
-const CourseAnswers = ({data}) => {
+const CourseAnswers = ({data, courseStatus}) => {
     return (
         <AnswersSection>
             <Container>
@@ -543,12 +549,27 @@ const CourseAnswers = ({data}) => {
 
                     </AnswersWrapper>
                     <AnswersFooterContainer>
-                        <AnswersFooterWrapper>
-                            <AnswersFooterLink onClick={() => scrollTo('#participation-section')}>Вернуться к оплате Курса!<ArrowLinkTop/></AnswersFooterLink>
-                        </AnswersFooterWrapper>
-                        <AnswersFooterWrapperMobile>
-                            Вернуться <br/>к оплате <AnswersFooterLink onClick={() => scrollTo('#participation-section')}>Курса!<ArrowLinkTopMobile/></AnswersFooterLink>
-                        </AnswersFooterWrapperMobile>
+                        {courseStatus ? (
+                            <>
+                                <AnswersFooterWrapper>
+                                    <AnswersFooterLink onClick={() => scrollTo('#participation-section')}>Вернуться к оплате Курса!<ArrowLinkTop/></AnswersFooterLink>
+                                </AnswersFooterWrapper>
+                                <AnswersFooterWrapperMobile>
+                                    Вернуться <br/>к оплате <AnswersFooterLink onClick={() => scrollTo('#participation-section')}>Курса!<ArrowLinkTopMobile/></AnswersFooterLink>
+                                </AnswersFooterWrapperMobile>            
+                            </>
+
+                        ) : (
+                            <>
+                                <AnswersFooterWrapper>
+                                    <AnswersFooterLink  onClick={() => scrollTo('#participation-section')}>Узнать о следующем наборе<ArrowLinkTop/></AnswersFooterLink>
+                                </AnswersFooterWrapper>
+                                <AnswersFooterWrapperMobile>
+                                    <AnswersFooterLink disabled onClick={() => scrollTo('#participation-section')}>Узнать о следующем наборе<ArrowLinkTopMobile/></AnswersFooterLink>
+                                </AnswersFooterWrapperMobile>            
+                            </>
+                        )}
+
                     </AnswersFooterContainer>
 
 

@@ -7,14 +7,14 @@ import CourseArrowOut from '../assets/svgs/course-arrow-out.svg';
 const BannerSection = styled.div`
     margin-bottom: 1.7vw;
     @media only screen and (max-width: 575px) {
-        margin-bottom: 4vw;
+        margin-bottom: 5vw;
     }
 `
 
 const BannerWrapper = styled.div`
     background: white;
     border-radius: 0.6vw;
-    padding: 1.5vw 2vw 1.5vw 15.8vw;
+    padding: 1.5vw 2.5vw 1.5vw 15.8vw;
     position: relative;
     display: flex;
     box-shadow: .25vw .25vw .5vw rgba(0,0,0,0.15);
@@ -101,7 +101,8 @@ const BannerInfoItems = styled.div`
     align-items: center;
 
 `
-const BannerTag = styled.div`
+
+const BannerMainTag = styled.div`
     color: white;
     padding: 0.18vw 1vw 0.3vw;
     background: var(--granich-red);
@@ -109,6 +110,21 @@ const BannerTag = styled.div`
     font-size: 0.8vw;
     margin-right: 0.6vw;
     font-weight: 500;
+    border: 1px solid var(--granich-red);
+
+`
+const BannerTag = styled.div`
+    color: var(--granich-red);
+    padding: 0.18vw 1vw 0.3vw;
+    border-radius: 100vw;
+    font-size: 0.8vw;
+    margin-right: 0.6vw;
+    font-weight: 500;
+    border: 1px solid var(--granich-red);
+
+`
+const BannerTagList = styled.div`
+    display: flex;
 
 `
 const BannerCourseStart = styled.div`
@@ -128,6 +144,7 @@ const BannerCourseDuration = styled.div`
     }
 `
 const BannerCourseButton = styled.a`
+
     display: inline-flex;
     align-items: center;
     color: white;
@@ -142,6 +159,8 @@ const BannerCourseButton = styled.a`
     user-select: none;
     box-shadow: .25vw .25vw .4vw rgba(0,0,0,0.25);
     letter-spacing: 0.05vw;
+
+
     svg {
         width: 0.9vw;
         height: 0.9vw;
@@ -156,6 +175,10 @@ const BannerCourseButton = styled.a`
         font-weight: 400;
         letter-spacing: 0.05vw;
     }
+
+    
+
+
     @media only screen and (max-width: 575px) {
         margin-left: 0;
         font-size: 4.3vw;
@@ -173,6 +196,14 @@ const BannerCourseButton = styled.a`
             margin-top: 0.8vw;
         }
     }
+    ${props => props.type === 'Мастер-класс' && `
+        padding: 0.8vw 3vw 1vw;
+        @media only screen and (max-width: 575px) {
+            padding: 3vw 10vw;
+        }
+    `}
+
+
 `
 
 
@@ -192,15 +223,30 @@ const Banner = ({data}) => {
                                 {data.courseTitle}
                             </BannerTitle>
                             <BannerInfoItems>
-                                <BannerTag>{data.courseType}</BannerTag>
-                                {data.courseStart && <BannerCourseStart>Стартуем {data.courseStart}</BannerCourseStart>}
-                                {data.courseDuration && <BannerCourseDuration>Учимся {data.courseDuration}</BannerCourseDuration>}
+                                <BannerMainTag>{data.courseType}</BannerMainTag>
+                                {data.courseType === 'Курс' ? (
+                                    <>
+                                        {data.courseStart && <BannerCourseStart>Стартуем {data.courseStart}</BannerCourseStart>}
+                                        {data.courseDuration && <BannerCourseDuration>Учимся {data.courseDuration}</BannerCourseDuration>}
+                                    </>
+                                ) : (
+                                    <>
+                                        <BannerTagList>
+                                            {data.courseTags.map((tag, idx) => {
+                                                return (
+                                                    <BannerTag key={idx}>{tag}</BannerTag>
+                                                )
+                                            })}
+                                        </BannerTagList>
+                                    </>
+                                )}
+                                
                             </BannerInfoItems>                            
                         </BannerMainInfo>
                         {data.courseType === 'Курс' ? (
                             <BannerCourseButton target="_blank" href={data.courseSlug}>Участвовать <CourseArrowOut/></BannerCourseButton>
                         ) : (
-                            <BannerCourseButton target="_blank" href={data.courseSlug}>Купить <CourseArrowOut/></BannerCourseButton>
+                            <BannerCourseButton target="_blank" href={data.courseSlug} type={data.courseType}>Купить <CourseArrowOut/></BannerCourseButton>
                         )}
                     </BannerContentWrapper>
                     <BannerContentWrapperMobile>
@@ -210,11 +256,12 @@ const Banner = ({data}) => {
                         </BannerTitle>
                         <BannerMainInfo>
                             {data.courseType === 'Курс' ? (
-                                <BannerCourseButton target="_blank" href={data.courseSlug}>Участвовать <CourseArrowOut/></BannerCourseButton>
+                                <BannerCourseButton target="_blank" href={`/${data.courseSlug}`}>Участвовать <CourseArrowOut/></BannerCourseButton>
                             ) : (
-                                <BannerCourseButton target="_blank" href={data.courseSlug}>Купить <CourseArrowOut/></BannerCourseButton>
+                                <BannerCourseButton target="_blank" href={`/${data.courseSlug}`} type={data.courseType}>Купить <CourseArrowOut/></BannerCourseButton>
                             )}
-                            <BannerCourseStart>Стартуем <br/>{data.courseStart}</BannerCourseStart>                          
+                            {data.courseType === 'Курс' && data.courseStart && <BannerCourseStart>Стартуем <br/>{data.courseStart}</BannerCourseStart>}
+                            
                         </BannerMainInfo>
 
                     </BannerContentWrapperMobile>

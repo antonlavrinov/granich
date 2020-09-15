@@ -39,7 +39,8 @@ const PublicOfferPage = ({data}) => {
     const additionalInfo = data.publicOffer.edges[0].node.legalDocAdditionalInfo.json;
     return (
         <Layout>
-            <SEO title="Пользовательское соглашение" />
+            <SEO title="Пользовательское соглашение"
+                 url="https://anton-dev.ru/public-offer" />
             <Header type={'dark'}/>
             <div className="section-top-block"></div>
             <LegalDocument additionalInfo={additionalInfo} type={docType} mainText={mainText} dataPdf={dataPdf} date={date}/>

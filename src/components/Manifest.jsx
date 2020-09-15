@@ -7,6 +7,11 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 const ManifestSection = styled.section`
     margin-bottom: 4vw;
+    padding-top: 3vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+        padding-top: 5vw;
+    }
 
 `
 const ManifestWrapper = styled.div`
@@ -16,7 +21,7 @@ const ManifestWrapper = styled.div`
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
         padding: 11vw 5vw 11vw 9.3vw;
-        border-radius: 3vw;
+        border-radius: 2.5vw;
     }
 `
 const ManifestSecondaryWrapper = styled.div`

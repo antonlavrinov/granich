@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState, createRef, useEffect} from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
-import img from '../../assets/images/graph-design/price-range/price-range-plus.png';
+import PriceRangeModal from './PriceRangeModal';
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
 
 
 const PriceRangeSection = styled.section`
@@ -57,7 +59,7 @@ const PriceCategory = styled.div`
         
     }
     @media only screen and (max-width: 575px) {
-        border-radius: 3vw;
+        border-radius: 1.5vw;
         box-shadow: 0.5vw 0.5vw 1.5vw rgba(0,0,0,0.15);
     }
 `
@@ -69,7 +71,7 @@ const PriceCategoryHeader = styled.div`
     }
 `
 
-const PriceCategoryTitle = styled.div`
+const PriceCategoryTitle = styled.h3`
     font-size: 2.3vw;
     font-family: EB Garamond;
     font-style: italic;
@@ -79,8 +81,7 @@ const PriceCategoryTitle = styled.div`
         font-size: 5.5vw;
     }
 `
-            // background: #f2f2f2;
-            // background: url(${img});
+
 const PriceCategoryList = styled.div`
     li {
 
@@ -256,7 +257,7 @@ const PriceCategoryFooter = styled.footer`
     border-radius: 0 0 0.6vw 0.6vw;
     @media only screen and (max-width: 575px) {
         padding: 2.5vw 3vw;
-        border-radius: 0 0 3vw 3vw;
+        border-radius: 0 0 1.5vw 1.5vw;
         
     }
 `
@@ -319,10 +320,58 @@ const PriceCategoryPackage = styled.div`
     }
 `
 
+
+
+
+
 const CoursePriceRange = ({data}) => {
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [chosenPrice, setChosenPrice] = React.useState('');
+    // targetRef = React.createRef();
+    // targetElement = null;
+    // let target = null;
+    // useEffect(() => {
+    //     target = document.querySelector('#modall');
+    // }, [])
+
+    const openModal = () => {
+        setIsOpen(true);
+        // document.body.style.overflow = 'hidden';
+        // document.body.style.height = 'auto';
+        // const modal = document.querySelector('#modall');
+        // disableBodyScroll(targetElement)
+        // disableBodyScroll(target);
+        // document.querySelector('#___gatsby').style.height = "100%";
+    }
+
+    const closeModal = () => {
+        setIsOpen(false);
+        // const modal = document.querySelector('#modall');
+        // disableBodyScroll(targetElement)
+        // enableBodyScroll(target);
+        // enableBodyScroll(document.body)
+        // const modal = document.querySelector('.modal-lock');
+        // enableBodyScroll(targetElement)
+        // document.querySelector('#___gatsby').style.height = "100vh";
+        // document.body.style.overflow = 'unset';
+        // gatsbyOverflow.style.height = 'auto';
+    }
     return (
-        <PriceRangeSection id="prices-range-section">
+        <PriceRangeSection>
             <Container>
+                
+                    <Modal  center 
+                            closeIcon={<div></div>}
+                            open={modalIsOpen} 
+                            onClose={closeModal}
+                            focusTrapped={false}
+                            classNames={{
+                                overlay: 'customOverlay',
+                                modal: 'customModal',
+                            }}>
+                        <PriceRangeModal  chosenPrice={chosenPrice} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpen}/>
+                      </Modal>
+                
                 <PriceRangeWrapper>
                     {data.edges.map((price, idx) => {
                         return (
@@ -336,7 +385,7 @@ const CoursePriceRange = ({data}) => {
                                     {documentToReactComponents(price.node.pricesText.json)}
                                 </PriceCategoryList>
                                 <PriceCategoryFooter>
-                                    <PriceCategoryButton>{price.node.pricesPrice} ₽</PriceCategoryButton>
+                                    <PriceCategoryButton onClick={() => {openModal(); setChosenPrice(price.node.pricesPrice)}}>{price.node.pricesPrice} ₽</PriceCategoryButton>
                                     <PriceCategorySubtext id="price-category-subtext">
                                         {price.node.pricesSubtext}
                                     </PriceCategorySubtext>

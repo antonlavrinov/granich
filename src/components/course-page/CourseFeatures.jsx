@@ -28,7 +28,7 @@ const FeaturesSection = styled.section`
     }
 `
 
-const FeaturesSectionTitle = styled.div`
+const FeaturesSectionTitle = styled.h2`
     font-size: 4.55vw;
     font-weight: 700;
     letter-spacing: -0.2vw;
@@ -51,8 +51,8 @@ const FeaturesWrapper = styled.div`
     @media only screen and (max-width: 575px) {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-column-gap: 3vw;
-        grid-row-gap: 3vw;
+        grid-column-gap: 4vw;
+        grid-row-gap: 4vw;
     }
 `
 
@@ -76,7 +76,7 @@ const FeatureWrapper = styled.div`
     }
     @media only screen and (max-width: 575px) {
         padding: 4vw 5vw;
-        border-radius: 2vw;
+        border-radius: 2.5vw;
         :after {
             left: 4.3vw;
             width: 21vw;

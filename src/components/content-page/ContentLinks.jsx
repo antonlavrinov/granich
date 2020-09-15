@@ -86,9 +86,9 @@ const ArrowLinkOut = styled(props => <ArrowOut {...props}/>)`
 
 
 const ContentLinksSection = styled.section`
-    margin-bottom: 2.5vw;
+    margin-bottom: 1.7vw;
     @media only screen and (max-width: 575px) {
-        margin-bottom: 4vw;
+        margin-bottom: 5vw;
     }
 `
 

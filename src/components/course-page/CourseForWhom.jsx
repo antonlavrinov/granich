@@ -14,7 +14,7 @@ const ForWhomSection = styled.section`
     }
 `
 
-const ForWhomSectionTitle = styled.div`
+const ForWhomSectionTitle = styled.h2`
     font-size: 4.55vw;
     font-weight: 700;
     letter-spacing: -0.2vw;
@@ -32,7 +32,7 @@ const ForWhomWrapper = styled.div`
     grid-row-gap: 1.5vw;
     @media only screen and (max-width: 575px) {
         grid-template-columns: 1fr;
-        grid-row-gap: 5vw;
+        grid-row-gap: 4vw;
     }
 
 `
@@ -42,12 +42,12 @@ const ForWhomBlockWrapper = styled.div`
     padding: 1.8vw;
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
-        border-radius: 3vw;
+        border-radius: 2.5vw;
         padding: 14vw 4vw 7vw;
     }
 
 `
-const ForWhomBlockTitle = styled.div`
+const ForWhomBlockTitle = styled.h3`
     font-size: 1.5vw;
     line-height: 0.8;
     text-align: center;

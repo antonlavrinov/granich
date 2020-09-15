@@ -9,6 +9,9 @@ import PortfolioImageGallery from './portfolio/PortfolioImageGallery';
 
 const PortfolioSection = styled.section`
     margin-bottom: 4vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 `
 
 
@@ -20,7 +23,7 @@ const PortfolioWrapper = styled.div`
         padding-bottom: 2vw;
     `}
     @media only screen and (max-width: 575px) {
-        border-radius: 3vw;
+        border-radius: 2.5vw;
         padding: 8vw 6vw;
     }
 `
@@ -40,7 +43,7 @@ const PortfolioHeader = styled.div`
     }
 `
 
-const PortfolioHeaderTitle = styled.div`
+const PortfolioHeaderTitle = styled.h2`
     color: var(--granich-black);
     font-size: 4.55vw;
     letter-spacing: -0.2vw;
