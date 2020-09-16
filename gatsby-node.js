@@ -4,6 +4,7 @@ const {createFilePath} = require('gatsby-source-filesystem');
 exports.createPages = ({graphql, actions}) => {
     const {createPage} = actions;
     const contentContent = path.resolve('./src/templates/content-post.jsx');
+    const osoznannayaPodborkaPage = path.resolve('./src/templates/podborka.jsx');
     return graphql(`
         {
             content: allContentfulGranichMainContentCard(filter: {contentType: {in: ["Youtube", "Youtube + Medium + Behance"]}}) {
@@ -15,6 +16,14 @@ exports.createPages = ({graphql, actions}) => {
                     }
                 }
             }
+            podborkaPage: allContentfulGranichMainContentCard(filter: {contentType: {in: ["Осознанная подборка"]}}) {
+              edges {
+                  node {
+                      contentSlug
+                      contentBanner
+                  }
+              }
+          }
         }
 
     `).then(result => {
@@ -22,7 +31,8 @@ exports.createPages = ({graphql, actions}) => {
             throw result.errors
         }
         const contents = result.data.content.edges;
-        contents.forEach((content, index) => {
+        const podborkas = result.data.podborkaPage.edges;
+        contents.forEach((content) => {
             createPage({
                 path: content.node.contentSlug,
                 component: contentContent,
@@ -32,6 +42,16 @@ exports.createPages = ({graphql, actions}) => {
                 }
             })
         })
+        podborkas.forEach((podborka) => {
+          createPage({
+              path: podborka.node.contentSlug,
+              component: osoznannayaPodborkaPage,
+              context: {
+                  slug: podborka.node.contentSlug,
+                  banner: podborka.node.contentBanner
+              }
+          })
+      })
     })
 }
 

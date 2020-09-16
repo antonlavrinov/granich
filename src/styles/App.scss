@@ -587,4 +587,46 @@ div[data-accordion-component="AccordionItemHeading"] {
     box-shadow: none !important;
 }
 
+
+.my-masonry-grid {
+    display: -webkit-box; /* Not needed if autoprefixing */
+    display: -ms-flexbox; /* Not needed if autoprefixing */
+    display: flex;
+    margin-left: -1.3vw; /* gutter size offset */
+    width: auto;
+  }
+  .my-masonry-grid_column {
+    padding-left: 1.3vw; /* gutter size */
+    background-clip: padding-box;
+  }
+   
+  /* Style your items */
+  .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+    margin-bottom: 1.3vw;
+  }
+
+
+.collection_link {
+    p {
+        position: relative;
+    }
+    p:after {
+        content: '';
+        background: url(../assets/images/plus.png);
+        width: 0.8vw;
+        height: 0.8vw;
+        background-size: cover;
+        border-radius: 100vw;
+        position: absolute;
+        top: 0.5vw;
+        right: -0.1vw;
+    }
+    a {
+        position: relative;
+    }
+    a:after {
+
+    }
+}
+
 @import './base/_media';

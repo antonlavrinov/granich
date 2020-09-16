@@ -7,6 +7,9 @@ import YoutubeVideo from '../components/content-page/YoutubeVideo'
 import Mailing from '../components/Mailing';
 import ContentLinks from '../components/content-page/ContentLinks'
 import Banner from '../components/Banner'
+import Books from '../components/content-page/Books'
+import Tools from '../components/content-page/Tools'
+import Video from '../components/content-page/Video'
 
 
 
@@ -26,6 +29,7 @@ export const pageQuery = graphql`
               }
             contentBannerSwitch
             contentTags
+            contentType
 
         }
         courseBanner: contentfulGranichCourse(courseTitle: {eq: $banner}) {
@@ -54,9 +58,20 @@ const ContentPage = ({data}) => {
                  url={`https://anton-dev.ru/${data.contentfulContent.contentSlug}`} />
             <div className="section-top-block"></div>
             {data.contentfulContent.contentBannerSwitch && data.courseBanner && <Banner data={data.courseBanner}/>}
-            <YoutubeVideo data={data}/>
-            <ContentLinks data={data}/>
+            {(data.contentfulContent.contentType === "Youtube" || data.contentfulContent.contentType === "Youtube + Medium + Behance") && (
+                <>
+                    <YoutubeVideo data={data}/>
+                    <ContentLinks data={data}/>
+                </>
+            )}
             <Mailing/>
+            {data.contentfulContent.contentType === "Осознанная подборка" && (
+                <>
+                    <Video data={data}/>
+                    <Books data={data}/>
+                    <Tools data={data}/>
+                </>
+            )}
 
         </Layout>
     )
