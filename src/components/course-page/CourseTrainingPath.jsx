@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
-import BackgroundImage from 'gatsby-background-image';
+import Img from 'gatsby-image';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import Zoom from 'react-medium-image-zoom'
 import ArrowIcon from '../../assets/svgs/graph-design/graph-design-training-path-arrow.svg';
@@ -172,7 +172,7 @@ const TrainingPathBlockImage = styled.div`
 
 
 
-const TrainingPathImage = styled(props => <BackgroundImage {...props}/>)`
+const TrainingPathImage = styled(props => <Img {...props}/>)`
     width: 100%;
     height: 8.9vw;
     background-size: cover;

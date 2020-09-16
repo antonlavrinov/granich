@@ -3,8 +3,8 @@ import { Container } from '../style';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
-import BackgroundImage from 'gatsby-background-image';
-
+import Img from 'gatsby-image';
+import Zoom from 'react-medium-image-zoom';
 
 
 
@@ -100,11 +100,17 @@ const BooksItemWrapper = styled.div`
     padding: 1.8vw 1.8vw 2.3vw;
     border-radius: 0.6vw;
     background: #f2f2f2;
+    div[data-rmiz-wrap="visible"] {
+        width: 100%;
+    }
+    div[data-rmiz-wrap="hidden"] {
+        width: 100%;
+    }
 `
 
-const BooksItemImage = styled(props => <BackgroundImage {...props}/>)`
+const BooksItemImage = styled(props => <Img {...props}/>)`
     height: 17vw;
-    margin-bottom: 1vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,6 +119,7 @@ const BooksItemImage = styled(props => <BackgroundImage {...props}/>)`
 const BooksItemInfo = styled.div`
     color: white;
     display: flex;
+    margin-top: 1vw;
 `
 
 const BooksItemInfoDetails = styled.div`
@@ -185,7 +192,9 @@ const BooksItemInfoLinks = styled.div`
 const BooksItem = ({text, number, image, links}) => {
     return (
         <BooksItemWrapper>
-            <BooksItemImage fluid={image}></BooksItemImage>
+            <Zoom>
+                <BooksItemImage fluid={image}></BooksItemImage>
+            </Zoom>
             <BooksItemInfo>
                 <BooksItemInfoDetails>
                     <BooksItemNumber>{`№${number}`}</BooksItemNumber>

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
+import Img from 'gatsby-image';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import PortfolioImageGallery from './portfolio/PortfolioImageGallery';
@@ -185,7 +186,7 @@ const PortfolioOnePagersWrapper = styled.div`
 
 `
 
-const PortfolioOnePager = styled(props => <BackgroundImage {...props}/>)`
+const PortfolioOnePager = styled(props => <Img {...props}/>)`
     height: 22.7vw;
     width: 100%;
     transition: transform 0.2s ease;

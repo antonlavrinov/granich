@@ -131,13 +131,13 @@ module.exports = {
         cache_busting_mode: 'none' // This path is relative to the root of the site.
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-offline`,
-    //   options: {
-    //     workboxConfig: {
-    //       globPatterns: ['**/*']
-    //     }
-    //   }
-    // }
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        workboxConfig: {
+          globPatterns: ['**/*']
+        }
+      }
+    }
   ],
 }

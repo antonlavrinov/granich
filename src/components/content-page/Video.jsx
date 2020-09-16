@@ -1,11 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import BackgroundImage from 'gatsby-background-image';
 import YoutubeIcon from '../../assets/svgs/youtube-icon.svg';
-
+import { Modal } from "react-responsive-modal";
 
 const Youtube = styled(props => <YoutubeIcon {...props}/>)`
     width: 5vw;
@@ -196,10 +196,10 @@ const VideoItemInfoLinks = styled.div`
 
 
 
-const VideoItem = ({text, number, image, links, timing}) => {
+const VideoItem = ({text, number, image, links, timing, setIsOpen}) => {
     return (
         <VideoItemWrapper>
-            <VideoItemImage fluid={image}><Youtube/></VideoItemImage>
+            <VideoItemImage fluid={image} onClick={setIsOpen}><Youtube/></VideoItemImage>
             <VideoItemInfo>
                 <VideoItemInfoDetails>
                     <VideoItemNumber>{`№${number}`}</VideoItemNumber>
@@ -215,9 +215,31 @@ const VideoItem = ({text, number, image, links, timing}) => {
 }
 
 const Video = ({data}) => {
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [videoLink, setvideoLink] = React.useState('');
+
+
+    const openModal = () => {
+        setIsOpen(true);
+    }
+
+    const closeModal = () => {
+        setIsOpen(false);
+    }
     return (
         <VideoSection>
             <Container>
+                <Modal  center 
+                        closeIcon={<div></div>}
+                        open={modalIsOpen} 
+                        onClose={closeModal}
+                        focusTrapped={false}
+                        classNames={{
+                            overlay: 'customOverlay',
+                            modal: 'customModal',
+                        }}>
+                    <div>modal open!</div>
+                </Modal>
                 <VideoWrapper>
                     <VideoHeader>
                         <VideoSectionTitle>Ценные видеолекции</VideoSectionTitle>
@@ -230,9 +252,9 @@ const Video = ({data}) => {
                                 columnClassName="my-masonry-grid_column">
                                     {data.map((videoItem, idx) => {
                                         return (
-                                            <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === 'Самые важные' && <VideoItem timing={videoItem.node.videoTiming} 
+                                            <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === 'Самые важные' && <VideoItem  timing={videoItem.node.videoTiming} 
                                                                                                              image={videoItem.node.videoImagePreview.fluid} 
-                                                                                                           
+                                                                                                             setIsOpen={setIsOpen}
                                                                                                              number={videoItem.node.videoOrderNumber} 
                                                                                                              links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
                                                                                                              text={videoItem.node.videoText.json}/>}</React.Fragment> 
@@ -252,7 +274,7 @@ const Video = ({data}) => {
                                         return (
                                             <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === 'Лекции, не имеющие отношения к курсу, но полезны' && <VideoItem timing={videoItem.node.videoTiming} 
                                                                                                                                                  image={videoItem.node.videoImagePreview.fluid} 
-                                                                                                                                                
+                                                                                                                                                 setIsOpen={setIsOpen}
                                                                                                                                                  number={videoItem.node.videoOrderNumber} 
                                                                                                                                                  links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
                                                                                                                                                  text={videoItem.node.videoText.json}/>}</React.Fragment> 
@@ -272,7 +294,7 @@ const Video = ({data}) => {
                                         return (
                                             <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === 'Ценные лекции, если решили работать на себя' && <VideoItem timing={videoItem.node.videoTiming} 
                                                                                                                                             image={videoItem.node.videoImagePreview.fluid} 
-                                                                                                                                 
+                                                                                                                                            setIsOpen={setIsOpen}
                                                                                                                                             number={videoItem.node.videoOrderNumber} 
                                                                                                                                             links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
                                                                                                                                             text={videoItem.node.videoText.json}/>}</React.Fragment> 

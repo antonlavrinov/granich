@@ -154,6 +154,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       type ContentfulAnswersSecondColumn {
         json: JSON
       }
+
+
     
         
 
