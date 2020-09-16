@@ -92,8 +92,8 @@ const PreparationContent = ({content}) => {
             {content.contentType === mixed && <YoutubeMixedContent content={content} behanceIcon={behanceIcon} youtubePng={youtubePng} mediumIcon={mediumIcon}/>}
             {content.contentType === youtube && <YoutubeContent content={content} youtubePng={youtubePng}/>}
             {content.contentType === behance && <BehanceContent contentExternalLink={contentExternalLink} behanceLinkIcon={behanceLinkIcon} content={content} behanceIcon={behanceIcon}/>}
-            {content.contentType === pinterest && <PinterestContent contentExternalLink={contentExternalLink} pinterestLinkIcon={pinterestLinkIcon} content={content} pinterestIcon={pinterestIcon}/>}
-            {content.contentType === podborka && <PodborkaContent podborkaLinkIcon={podborkaLinkIcon} content={content}/>}
+            {content.contentType === pinterest && <PinterestContent  contentExternalLink={contentExternalLink} pinterestLinkIcon={pinterestLinkIcon} content={content} pinterestIcon={pinterestIcon}/>}
+            {content.contentType === podborka && <PodborkaContent  podborkaLinkIcon={podborkaLinkIcon} content={content}/>}
         </>
 
     )

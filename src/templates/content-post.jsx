@@ -40,7 +40,7 @@ export const pageQuery = graphql`
             courseType
             courseBannerImage {
                 fluid(maxWidth: 120) {
-                    ...GatsbyContentfulFluid
+                    ...GatsbyContentfulFluid_withWebp
                   }
             }
             courseBannerSubtext

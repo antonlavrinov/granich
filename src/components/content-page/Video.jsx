@@ -80,7 +80,10 @@ const VideoSectionText = styled.div`
 `
 
 const VideoList = styled.div`
-    margin-bottom: 8vw;
+    margin-bottom: 7vw;
+    :last-child {
+        margin-bottom: 0;
+    }
 `
 
 const VideoListDescr = styled.div`
@@ -90,6 +93,7 @@ const VideoListDescr = styled.div`
     line-height: 1.55;
     font-weight: 500;
     width: 45vw;
+    margin-bottom: 3vw;
     @media only screen and (max-width: 575px) {
         font-size: 3.9vw;
         letter-spacing: -0.08vw;

@@ -19,7 +19,7 @@ import {ContentWrapperLink,
 
 const YoutubeContent = ({content, youtubePng}) => {
     return (
-        <ContentWrapperLink href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
+        <ContentWrapperLink className="content" href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
             <ContentContainer>
                 <ContentTagList>
                     {content.contentTags.map((contentTag, idx) => {

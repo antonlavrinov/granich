@@ -27,8 +27,8 @@ export const contentfulQuery = graphql`
                 courseStatus
                 courseType
                 courseMainImage {
-                    fluid(maxWidth: 850) {
-                    ...GatsbyContentfulFluid
+                    fluid(maxWidth: 850, quality: 90) {
+                      ...GatsbyContentfulFluid_withWebp
                     }
                 }
                 
@@ -40,7 +40,7 @@ export const contentfulQuery = graphql`
               id
               explanationsImage {
                 fluid(maxWidth: 450) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               explanationsTitle
@@ -61,7 +61,7 @@ export const contentfulQuery = graphql`
               teacherEmail
               teacherImage {
                 fluid(maxWidth: 250) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               teacherName
@@ -81,7 +81,7 @@ export const contentfulQuery = graphql`
               id
               portfolioMedia {
                 fluid(maxWidth: 800) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
             }
@@ -93,7 +93,7 @@ export const contentfulQuery = graphql`
               id
               reviewsImage {
                 fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               reviewsLink

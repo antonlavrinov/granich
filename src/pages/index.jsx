@@ -21,17 +21,17 @@ export const contentfulQuery = graphql`
             node {
               headerImage {
                 fluid(maxWidth: 2729) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               headerImageMobile {
                 fluid(maxWidth: 575) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               headerSubtitleImage {
                 fluid(maxWidth: 50) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               headerSubtitle_01
@@ -50,14 +50,14 @@ export const contentfulQuery = graphql`
               courseDuration
               coursePreviewImage {
                 fluid(maxWidth: 450) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               courseTags
               courseTeachers {
                 id
                 fluid(maxWidth: 100) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               courseTitle
@@ -75,7 +75,7 @@ export const contentfulQuery = graphql`
               contentTitle
               contentImage {
                 fluid(maxWidth: 350) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               contentType
@@ -102,7 +102,7 @@ export const contentfulQuery = graphql`
               contentTitle
               contentImage {
                 fluid(maxWidth: 350) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               contentType
@@ -128,7 +128,7 @@ export const contentfulQuery = graphql`
               teacherEmail
               teacherImage {
                 fluid(maxWidth: 250) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               teacherName

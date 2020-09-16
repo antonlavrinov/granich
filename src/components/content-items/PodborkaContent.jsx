@@ -21,7 +21,7 @@ import {ContentWrapperLink,
 
 const PodborkaContent = ({content, podborkaLinkIcon}) => {
     return (
-        <ContentWrapperLink podborka href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
+        <ContentWrapperLink className="content" podborka href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
             <ContentContainer>
                 <ContentTagList>
                     {content.contentTags.map((contentTag, idx) => {

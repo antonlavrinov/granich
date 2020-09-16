@@ -43,7 +43,7 @@ const LongArrowMobile = styled(props => <LongArrowMobileIcon {...props}/>)`
         display: block;
         height: 140vw !important;
         fill: var(--granich-black);
-        margin-bottom: 9vw;
+        margin-bottom: 3vw;
     }
 `
 
@@ -170,6 +170,7 @@ const CourseExampleImage = styled(props => <BackgroundImage {...props}></Backgro
     background-size: auto 100% ;
     @media only screen and (max-width: 575px) {
         height: 29.5vw;
+        margin-top: 8vw;
     }
 `
 
@@ -182,7 +183,6 @@ const CourseExampleInfoBlock = styled.div`
         position: relative;
         :first-child {
             flex-direction: column-reverse;
-            // margin-bottom: 50vw;
 
         }
     }
@@ -193,10 +193,6 @@ const CourseExampleInfoText = styled.div`
     line-height: 1.45;
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
-        :first-child {
-            margin-bottom: 12vw;
-        }
-
     }
 `
 

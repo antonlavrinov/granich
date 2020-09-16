@@ -42,9 +42,10 @@ const BooksSectionTitle = styled.h2`
     letter-spacing: -0.2vw;
     font-weight: 700;
     line-height: 0.85;
-    margin-right: 2vw;
-    width: 33vw;
-    min-width: 33vw;
+    margin-right: 7vw;
+    width: 25vw;
+    min-width: 25vw;
+
     @media only screen and (max-width: 575px) {
         font-size: 11vw;
         letter-spacing: -0.7vw;
@@ -59,7 +60,7 @@ const BooksSectionTitle = styled.h2`
 const BooksSectionText = styled.div`
     color: var(--granich-black);
     font-size: 1.5vw;
-    margin-top: -1.2vw;
+    margin-top: 1vw;
     line-height: 1.55;
     letter-spacing: 0.025vw;
     font-weight: 500;
@@ -73,7 +74,10 @@ const BooksSectionText = styled.div`
 `
 
 const BooksList = styled.div`
-    margin-bottom: 8vw;
+    margin-bottom: 7vw;
+    :last-child {
+        margin-bottom: 0;
+    }
 `
 
 const BooksListDescr = styled.div`
@@ -83,6 +87,7 @@ const BooksListDescr = styled.div`
     line-height: 1.55;
     font-weight: 500;
     width: 45vw;
+    margin-bottom: 3vw;
     @media only screen and (max-width: 575px) {
         font-size: 3.9vw;
         letter-spacing: -0.08vw;
@@ -200,8 +205,9 @@ const Books = ({data}) => {
             <Container>
                 <BooksWrapper>
                     <BooksHeader>
-                        <BooksSectionTitle>Ценные видеолекции</BooksSectionTitle>
-                        <BooksSectionText>Осознанный Графдизайн — интенсивный. Чтобы успеть на курсе как можно больше, вы можете уже сейчас подготовиться, посмотрев эти видео.</BooksSectionText>
+                        <BooksSectionTitle>Ценные книги</BooksSectionTitle>
+                        <BooksSectionText>Книги я расставил в порядке приоритета
+<br/>по практической направленности</BooksSectionText>
                     </BooksHeader>
                         <BooksList>
                             <Masonry
@@ -221,7 +227,7 @@ const Books = ({data}) => {
                             </Masonry>
                         </BooksList>
                         <BooksList>
-                            <BooksListDescr>dfsdfsfd</BooksListDescr>
+                            <BooksListDescr>Далее книги более общие. Уже не столь практичные. <br/>Но толково расширяют кругозор в дизайне ↓</BooksListDescr>
                             <Masonry
                                 breakpointCols={2}
                                 className="my-masonry-grid"
@@ -239,7 +245,7 @@ const Books = ({data}) => {
                             </Masonry>
                         </BooksList>
                         <BooksList>
-                            <BooksListDescr>dfsdfsfd</BooksListDescr>
+                            <BooksListDescr>А тут уже книги для крутых дизайнеров, <br/>когда одной эстетики уже мало ↓</BooksListDescr>
                             <Masonry
                                 breakpointCols={2}
                                 className="my-masonry-grid"

@@ -23,8 +23,8 @@ export const contentfulQuery = graphql`
     query graphDesignQuery {
         offer:   contentfulGranichCourse(courseTitle: {eq: "Осознанный графдизайн"}) {
           courseMainImage {
-            fluid(maxWidth: 850) {
-              ...GatsbyContentfulFluid
+            fluid(maxWidth: 850, quality: 90) {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
           courseMainTitle {
@@ -46,8 +46,8 @@ export const contentfulQuery = graphql`
             node {
               id
               explanationsImage {
-                fluid(maxWidth: 450) {
-                  ...GatsbyContentfulFluid
+                fluid(maxWidth: 450, quality: 100) {
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               explanationsTitle
@@ -64,7 +64,7 @@ export const contentfulQuery = graphql`
               id
               forWhomImage {
                 fluid(maxWidth: 450) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               forWhomTitle
@@ -109,7 +109,7 @@ export const contentfulQuery = graphql`
               id
               featuresImage {
                 fluid(maxWidth: 120) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               featuresText
@@ -125,7 +125,7 @@ export const contentfulQuery = graphql`
               id
               trainingPathImage {
                 fluid(maxWidth: 1200, quality: 70) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               trainingPathTitle
@@ -141,7 +141,7 @@ export const contentfulQuery = graphql`
             node {
               portfolioMedia {
                 fluid(maxWidth: 800) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
             }
@@ -152,7 +152,7 @@ export const contentfulQuery = graphql`
             node {
               portfolioMedia {
                 fluid(maxWidth: 1200 ) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                   src
                 }
                 resize(width: 100) {
@@ -169,7 +169,7 @@ export const contentfulQuery = graphql`
               id
               reviewsImage {
                 fluid(maxWidth: 450) {
-                  ...GatsbyContentfulFluid
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               reviewsLink

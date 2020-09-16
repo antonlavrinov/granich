@@ -20,7 +20,7 @@ const ManifestWrapper = styled.div`
     padding: 4.9vw 5.6vw 5vw;
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
-        padding: 11vw 5vw 11vw 9.3vw;
+        padding: 11vw 5vw 11vw 8vw;
         border-radius: 2.5vw;
     }
 `
@@ -92,11 +92,12 @@ const ManifestInfoTitle = styled.h2`
     font-family: EB Garamond;
     font-style: italic;
     font-weight: 500;
-    font-size: 5.5vw;
+    font-size: 5.4vw;
     line-height: 0.75;
     position: relative;
     margin-bottom: 2.9vw;
-    margin-left: 1.4vw;
+    margin-left: 0.5vw;
+    white-space: nowrap;
     letter-spacing: -0.115vw;
     :after {
         content: '»';
@@ -112,7 +113,8 @@ const ManifestInfoTitle = styled.h2`
         left: -3.2vw;
     }
     @media only screen and (max-width: 575px) {
-        font-size: 10.9vw;
+        white-space: normal;
+        font-size: 10.4vw;
         margin-left: 0;
         letter-spacing: -0.4vw;
         margin-bottom: 6.8vw;
@@ -223,7 +225,7 @@ const Manifest = () => {
             <Container>
                 <ManifestWrapper>
                     <ManifestInfoTitle>
-                        Делай из любви, а не страха
+                        Делаем из любви, а не страха
                     </ManifestInfoTitle>
                     <ManifestSecondaryWrapper>
                         <ManifestAuthor>
@@ -237,7 +239,7 @@ const Manifest = () => {
                         <ManifestInfo>
 
                             <ManifestInfoText>
-                                Сюда приходят, чтобы с любовью развивать в себе твердые навыки, а не из страха срочно понахвататься каких-то знаний. Поэтому, создавая курсы, я придерживаясь трех принципов:
+                                Сюда приходят, чтобы с любовью развивать в себе твердые навыки, а не из страха срочно понахвататься каких-то знаний. Поэтому, создавая курсы, я придерживаюсь трех принципов:
                             </ManifestInfoText>
                             <ManifestInfoRules>
                                 <ManifestRule title={`Выточенно —`}

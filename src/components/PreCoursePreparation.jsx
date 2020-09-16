@@ -444,7 +444,7 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
                                 Подготовка <br/>к курсам
                             </PreparationTitle>
                             <PreparationText>
-                                Сомневаетесь записаться ли на курс? <br/>Изучите бесплатные материалы школы <br/>и познакомьтесь с нашим подходом
+                                Сомневаетесь записаться ли на курс? <br/>Изучите бесплатные материалы школы <br/>и ознакомьтесь с нашим подходом
                             </PreparationText>
                         </PreparationHeader>
                         <PreparationFilters>

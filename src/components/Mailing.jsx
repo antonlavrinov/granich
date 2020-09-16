@@ -161,14 +161,6 @@ const MailingButton = styled.button`
 const FormCheckbox = styled.input`
     margin-left: 0.3vw;
 
-
-
-    @media only screen and (max-width: 575px) {
-        
-    }
-
-
-
 `
 
 const FormCheckboxLabel = styled.label`
@@ -208,6 +200,7 @@ const FormCheckboxLabel = styled.label`
     @media only screen and (max-width: 575px) {
         font-size: 3.6vw;
         margin-top: 2vw;
+        white-space: nowrap;
         a {
             margin: 0;
             margin-left: 1.5vw;
@@ -275,34 +268,6 @@ const FormCheckboxLabelText = styled.span`
     `}
 `   
 
-const ErrorMessage = styled.div`
-    font-size: 1vw;
-    color: white;
-    margin-left: 0.4vw;
-    margin-bottom: 0.5vw;
-    @media only screen and (max-width: 575px) {
-        font-size: 3vw;
-        margin-bottom: 0.5vw;
-    }
-`
-
-const MailingInputsWrapper = styled.div`
-
-`
-
-const MailingWrapperDesktop = styled.div`
-    display: block;
-    @media only screen and (max-width: 575px) {
-        display: none;
-    }
-`
-
-const MailingWrapperMobile = styled.div`
-    display: none;
-    @media only screen and (max-width: 575px) {
-        display: flex;
-    }
-`
 
 const MailingWrapperInputAndButton = styled.div`
     display: flex;

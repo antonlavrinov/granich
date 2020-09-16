@@ -9,7 +9,7 @@ import Books from '../components/content-page/Books'
 import Tools from '../components/content-page/Tools'
 import Video from '../components/content-page/Video'
 import Wishes from '../components/content-page/Wishes'
-import CourseOffer from '../components/course-page/CourseOffer';
+import PodborkaOffer from '../components/content-page/PodborkaOffer';
 
 
 
@@ -39,7 +39,7 @@ export const podborkaPageQuery = graphql`
             courseType
             courseBannerImage {
                 fluid(maxWidth: 120) {
-                    ...GatsbyContentfulFluid
+                    ...GatsbyContentfulFluid_withWebp
                   }
             }
             courseBannerSubtext
@@ -53,7 +53,7 @@ export const podborkaPageQuery = graphql`
                     videoLink
                     videoImagePreview {
                         fluid(maxWidth: 800, quality: 70) {
-                            ...GatsbyContentfulFluid
+                            ...GatsbyContentfulFluid_withWebp
                         }
                     }
                     videoTiming
@@ -75,7 +75,7 @@ export const podborkaPageQuery = graphql`
                     id
                     booksImage {
                         fluid(maxWidth: 800, quality: 70) {
-                            ...GatsbyContentfulFluid
+                            ...GatsbyContentfulFluid_withWebp
                         }
                     }
                     booksText {
@@ -96,7 +96,7 @@ export const podborkaPageQuery = graphql`
                     id
                     toolsImage {
                         fluid(maxWidth: 190, quality: 70) {
-                            ...GatsbyContentfulFluid
+                            ...GatsbyContentfulFluid_withWebp
                         }
                     }
                     toolsText {
@@ -109,6 +109,18 @@ export const podborkaPageQuery = graphql`
                 }
             }
         }
+        offerPodborkaGraphDesign: contentfulGranichCollectionOffer(collectionOfferAttachmentTo: {eq: "Осознанный графдизайн"}) {
+            collectionOfferTitle {
+                json
+            }
+            collectionOfferDescr
+            collectionOfferMainImage {
+                fluid(maxWidth: 850) {
+                    ...GatsbyContentfulFluid_withWebp
+                }
+            }
+        }
+
     }
 `
 
@@ -120,7 +132,7 @@ const PodborkaPage = ({data}) => {
                  url={`https://anton-dev.ru/${data.contentfulPodborka.contentSlug}`} />
             <div className="section-top-block"></div>
             {data.contentfulPodborka.contentBannerSwitch && data.coursePodborkaBanner && <Banner data={data.coursePodborkaBanner}/>}
-            {/* <CourseOffer/> */}
+            <PodborkaOffer tags={data.contentfulPodborka.contentTags} dataContentPodborka={data.offerPodborkaGraphDesign}/>
             <Mailing/>
             <Video data={data.videoPodborkaGraphDesign.edges}/>
             <Books data={data.booksPodborkaGraphDesign.edges}/>
