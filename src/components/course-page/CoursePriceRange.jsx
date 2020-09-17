@@ -327,34 +327,16 @@ const PriceCategoryPackage = styled.div`
 const CoursePriceRange = ({data}) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [chosenPrice, setChosenPrice] = React.useState('');
-    // targetRef = React.createRef();
-    // targetElement = null;
-    // let target = null;
-    // useEffect(() => {
-    //     target = document.querySelector('#modall');
-    // }, [])
+
 
     const openModal = () => {
         setIsOpen(true);
-        // document.body.style.overflow = 'hidden';
-        // document.body.style.height = 'auto';
-        // const modal = document.querySelector('#modall');
-        // disableBodyScroll(targetElement)
-        // disableBodyScroll(target);
-        // document.querySelector('#___gatsby').style.height = "100%";
+
     }
 
     const closeModal = () => {
         setIsOpen(false);
-        // const modal = document.querySelector('#modall');
-        // disableBodyScroll(targetElement)
-        // enableBodyScroll(target);
-        // enableBodyScroll(document.body)
-        // const modal = document.querySelector('.modal-lock');
-        // enableBodyScroll(targetElement)
-        // document.querySelector('#___gatsby').style.height = "100vh";
-        // document.body.style.overflow = 'unset';
-        // gatsbyOverflow.style.height = 'auto';
+
     }
     return (
         <PriceRangeSection>

@@ -5,12 +5,16 @@ import Masonry from 'react-masonry-css';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import Img from 'gatsby-image';
 import Zoom from 'react-medium-image-zoom';
-
+import { INLINES } from '@contentful/rich-text-types'
 
 
 const BooksSection = styled.section`
     margin-top: 1.7vw;
     margin-bottom: 1.7vw;
+    @media only screen and (max-width: 575px) {
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+    }
 `
 
 const BooksWrapper = styled.div`
@@ -20,7 +24,6 @@ const BooksWrapper = styled.div`
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
         padding: 5.4vw 5vw 5.4vw;
-        border-bottom: 0.8vw dotted white;
         border-radius: 2.5vw;
     }
 
@@ -29,7 +32,6 @@ const BooksWrapper = styled.div`
 const BooksHeader = styled.div`
     display: flex;
     padding-bottom: 5.7vw;
-    // border-bottom: 1.5px solid var(--granich-black);
     width: 100%;
     @media only screen and (max-width: 575px) {
         flex-direction: column;
@@ -64,7 +66,6 @@ const BooksSectionText = styled.div`
     line-height: 1.55;
     letter-spacing: 0.025vw;
     font-weight: 500;
-    // width: 45vw;
     @media only screen and (max-width: 575px) {
         font-size: 3.9vw;
         letter-spacing: -0.08vw;
@@ -91,6 +92,7 @@ const BooksListDescr = styled.div`
     @media only screen and (max-width: 575px) {
         font-size: 3.9vw;
         letter-spacing: -0.08vw;
+        width: 100% !important;
     }
 `
 
@@ -106,6 +108,10 @@ const BooksItemWrapper = styled.div`
     div[data-rmiz-wrap="hidden"] {
         width: 100%;
     }
+    @media only screen and (max-width: 575px) {
+        padding: 4vw 4vw 7vw;
+        border-radius: 1.7vw;
+    }
 `
 
 const BooksItemImage = styled(props => <Img {...props}/>)`
@@ -114,6 +120,9 @@ const BooksItemImage = styled(props => <Img {...props}/>)`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media only screen and (max-width: 575px) {
+        height: 40vw;
+    }
 `
 
 const BooksItemInfo = styled.div`
@@ -129,6 +138,9 @@ const BooksItemInfoDetails = styled.div`
     flex-direction: column;
     justify-content: space-between; 
     align-items: flex-start;
+    @media only screen and (max-width: 575px) {
+        min-width: 17vw;
+    }
 `
 
 const BooksItemInfoText = styled.div`
@@ -151,6 +163,22 @@ const BooksItemInfoText = styled.div`
         margin-bottom: 0.7vw;
         font-weight: 500;
     }
+    a {
+        text-decoration: underline;
+    }
+    @media only screen and (max-width: 575px) {
+        p { 
+            font-size: 3.5vw;
+        } 
+        i {
+            font-size: 2.6vw;
+            margin-bottom: 0.5vw;
+        }
+        h3 {
+            font-size: 3.5vw;
+            margin-bottom: 2vw;
+        }
+    }
 `
 
 const BooksItemNumber = styled.div`
@@ -158,16 +186,21 @@ const BooksItemNumber = styled.div`
     font-family: EB Garamond;
     font-style: italic;
     font-size: 2.3vw;  
+    @media only screen and (max-width: 575px) {
+        font-size: 6.5vw;  
+    }
 `
 
 
 
 const BooksItemInfoLinks = styled.div`
-    width: 3vw;
-    margin-bottom: 0.5vw;
+    width: 4vw;
+
     p {
-        margin-top: 0.2vw;
-        line-height: 0.8;
+        margin-top: 0.6vw;
+        line-height: 1.3;
+
+
 
     }
     p:empty { 
@@ -177,15 +210,35 @@ const BooksItemInfoLinks = styled.div`
     a {
         color: var(--granich-red); 
         font-size: 0.8vw;
-
-
-        border-bottom: 1px solid var(--granich-red);
-
-        :hover {
-            border-bottom: 1px solid var(--granich-red);
-        } 
+        position: relative;
+        display: inline-block;
+        text-decoration: underline;
     } 
+    @media only screen and (max-width: 575px) {
+        width: 10vw;
+        margin-bottom: 0.5vw;
+        p {
+            margin-top: 1vw;
+        }
+        a { 
+            font-size: 2.5vw;
+        } 
+    }
 `
+
+
+const options = {
+    renderNode: {
+        [INLINES.HYPERLINK]: (node) => {
+        return <a href={node.data.uri} target='_blank' >{node.content[0].value}</a>;
+        }
+    },   
+}
+
+const breakpointColumnsObj = {
+    default: 2,
+    575: 1,
+};
 
 
 
@@ -198,10 +251,10 @@ const BooksItem = ({text, number, image, links}) => {
             <BooksItemInfo>
                 <BooksItemInfoDetails>
                     <BooksItemNumber>{`№${number}`}</BooksItemNumber>
-                    <BooksItemInfoLinks>{documentToReactComponents(links.json)}</BooksItemInfoLinks>
+                    <BooksItemInfoLinks className="collection_link">{documentToReactComponents(links.json, options)}</BooksItemInfoLinks>
                 </BooksItemInfoDetails>
                 <BooksItemInfoText>
-                 {documentToReactComponents(text)}
+                 {documentToReactComponents(text, options)}
                 </BooksItemInfoText>
             </BooksItemInfo>
         </BooksItemWrapper>
@@ -220,7 +273,7 @@ const Books = ({data}) => {
                     </BooksHeader>
                         <BooksList>
                             <Masonry
-                                breakpointCols={2}
+                                breakpointCols={breakpointColumnsObj}
                                 className="my-masonry-grid"
                                 columnClassName="my-masonry-grid_column">
                                     {data.map((booksItem, idx) => {
@@ -236,9 +289,9 @@ const Books = ({data}) => {
                             </Masonry>
                         </BooksList>
                         <BooksList>
-                            <BooksListDescr>Далее книги более общие. Уже не столь практичные. <br/>Но толково расширяют кругозор в дизайне ↓</BooksListDescr>
+                            <BooksListDescr style={{width: '42vw'}}>Далее книги более общие. Уже не столь практичные. Но толково расширяют кругозор в дизайне ↓</BooksListDescr>
                             <Masonry
-                                breakpointCols={2}
+                                breakpointCols={breakpointColumnsObj}
                                 className="my-masonry-grid"
                                 columnClassName="my-masonry-grid_column">
                                     {data.map((booksItem, idx) => {
@@ -254,9 +307,9 @@ const Books = ({data}) => {
                             </Masonry>
                         </BooksList>
                         <BooksList>
-                            <BooksListDescr>А тут уже книги для крутых дизайнеров, <br/>когда одной эстетики уже мало ↓</BooksListDescr>
+                            <BooksListDescr style={{width: '33vw'}}>А тут уже книги для крутых дизайнеров, когда одной эстетики уже мало ↓</BooksListDescr>
                             <Masonry
-                                breakpointCols={2}
+                                breakpointCols={breakpointColumnsObj}
                                 className="my-masonry-grid"
                                 columnClassName="my-masonry-grid_column">
                                     {data.map((booksItem, idx) => {

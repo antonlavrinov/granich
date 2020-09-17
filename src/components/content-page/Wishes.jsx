@@ -35,17 +35,16 @@ const WishesWrapper = styled.div`
     font-size: 2.37vw;
     font-weight: 500;
     text-align: center;
-    padding: 1.4vw;
+    padding: 1.4vw ;
     letter-spacing: -0.02vw;
     line-height: 1;
     width: 100%;
     margin-bottom: 2vw;
     @media only screen and (max-width: 575px) {
         font-size: 6.6vw;
-        padding: 4vw 6vw 6vw 7.5vw;
+        padding: 4vw 11vw 6vw;
         line-height: 1.1;
         border-radius: 1.5vw;
-        text-align: left;
     }
 `
 

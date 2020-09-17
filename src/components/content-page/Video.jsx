@@ -6,11 +6,18 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import BackgroundImage from 'gatsby-background-image';
 import YoutubeIcon from '../../assets/svgs/youtube-icon.svg';
 import { Modal } from "react-responsive-modal";
+import { INLINES } from '@contentful/rich-text-types'
+import Cross from '../../assets/svgs/cross.svg';
+
 
 const Youtube = styled(props => <YoutubeIcon {...props}/>)`
     width: 5vw;
     height: 3.5vw;
     transition: transform 0.2s ease;
+    @media only screen and (max-width: 575px) {
+        width: 15vw;
+        height: 11.5vw;
+    }
 
 
 `
@@ -18,6 +25,10 @@ const Youtube = styled(props => <YoutubeIcon {...props}/>)`
 const VideoSection = styled.section`
     margin-top: 1.7vw;
     margin-bottom: 1.7vw;
+    @media only screen and (max-width: 575px) {
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+    }
 `
 
 const VideoWrapper = styled.div`
@@ -27,7 +38,6 @@ const VideoWrapper = styled.div`
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
         padding: 5.4vw 5vw 5.4vw;
-        border-bottom: 0.8vw dotted white;
         border-radius: 2.5vw;
     }
 
@@ -36,7 +46,6 @@ const VideoWrapper = styled.div`
 const VideoHeader = styled.div`
     display: flex;
     padding-bottom: 5.7vw;
-    // border-bottom: 1.5px solid var(--granich-black);
     width: 100%;
     @media only screen and (max-width: 575px) {
         flex-direction: column;
@@ -70,7 +79,6 @@ const VideoSectionText = styled.div`
     line-height: 1.55;
     letter-spacing: 0.025vw;
     font-weight: 500;
-    // width: 45vw;
     @media only screen and (max-width: 575px) {
         font-size: 3.9vw;
         letter-spacing: -0.08vw;
@@ -97,6 +105,7 @@ const VideoListDescr = styled.div`
     @media only screen and (max-width: 575px) {
         font-size: 3.9vw;
         letter-spacing: -0.08vw;
+        width: 100% !important;
     }
 `
 
@@ -106,6 +115,10 @@ const VideoItemWrapper = styled.div`
     padding: 1.8vw 1.8vw 2.3vw;
     border-radius: 0.6vw;
     background: #2A2A2A;
+    @media only screen and (max-width: 575px) {
+        padding: 4vw 4vw 7vw;
+        border-radius: 1.7vw;
+    }
 `
 
 const VideoItemImage = styled(props => <BackgroundImage {...props}/>)`
@@ -121,6 +134,10 @@ const VideoItemImage = styled(props => <BackgroundImage {...props}/>)`
         }
 
     }
+    @media only screen and (max-width: 575px) {
+        height: 40vw;
+        margin-bottom: 5vw;
+    }
 `
 
 const VideoItemInfo = styled.div`
@@ -135,6 +152,9 @@ const VideoItemInfoDetails = styled.div`
     flex-direction: column;
     justify-content: space-between; 
     align-items: flex-start;
+    @media only screen and (max-width: 575px) {
+        min-width: 17vw;
+    }
 `
 
 const VideoItemInfoText = styled.div`
@@ -156,6 +176,23 @@ const VideoItemInfoText = styled.div`
         font-size: 1.17vw;
         margin-bottom: 0.7vw;
         font-weight: 500;
+        line-height: 1.35;
+    }
+    a {
+        text-decoration: underline;
+    }
+    @media only screen and (max-width: 575px) {
+        p { 
+            font-size: 3.5vw;
+        } 
+        i {
+            font-size: 2.6vw;
+            margin-bottom: 0.5vw;
+        }
+        h3 {
+            font-size: 3.5vw;
+            margin-bottom: 2vw;
+        }
     }
 `
 
@@ -164,6 +201,9 @@ const VideoItemNumber = styled.div`
     font-family: EB Garamond;
     font-style: italic;
     font-size: 2.3vw;  
+    @media only screen and (max-width: 575px) {
+        font-size: 6.5vw;  
+    }
 `
 
 const VideoItemInfoTiming = styled.div`
@@ -182,32 +222,130 @@ const VideoItemInfoTiming = styled.div`
         left: 0;
         border-radius: 100vw;
     }
+    @media only screen and (max-width: 575px) {
+        font-size: 2.5vw;
+        border-bottom: 2px solid var(--granich-red);
+        padding: 0 0.8vw 1vw 2.2vw;
+        margin-bottom: 0.8vw;
+        :before {
+            width: 1vw;
+            height: 1vw;
+            top: 20%;
+            left: 0;
+        }
+    }
 `
 
 const VideoItemInfoLinks = styled.div`
-    color: inherit; 
+    width: 4vw;
+    margin-bottom: 0.5vw;
     p {
-        color: inherit;  
+        margin-top: 0.2vw;
+        line-height: 1.3;
+
+
+    }
+    p:empty { 
+        display: none; 
+
     }
     a {
-        color: inherit;  
+        color: white; 
+        font-size: 0.8vw;
+        position: relative;
+        display: inline-block;
+        text-decoration: underline;
     } 
+    @media only screen and (max-width: 575px) {
+        width: 10vw;
+        margin-bottom: 2vw;
+        p {
+            margin-top: 1vw;
+        }
+        a { 
+            font-size: 2.5vw;
+        } 
+    }
 `
 
+const VideoModal = styled.div`
+    display: block;
+    padding: 2vw;
+    background: #2b2b2b;
+    border-radius: 0.6vw;
+    @media only screen and (max-width: 575px) {
+        padding: 4vw;
+        background: #2b2b2b;
+        border-radius: 1.7vw;
+    }
+`
+
+const VideoModalWrapper = styled.div`
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+`
+
+const VideoCross = styled.div`
+      position: absolute;
+      top: -0.8vw;
+      right: -4vw;
+      svg {
+          fill: rgba(0,0,0,0.5);
+          width: 4vw;
+          height: 4vw;
+      }
+      :hover {
+          cursor: pointer;
+          svg {
+            fill: var(--granich-red);
+          }
+
+      }
+      @media only screen and (max-width: 575px) {
+        top: -12vw;
+        right: -2.3vw;
+        svg {
+            width: 12vw;
+            height: 12vw;
+        }
+      }
+`
+
+const breakpointColumnsObj = {
+    default: 2,
+    575: 1,
+};
+
+const options = {
+    renderNode: {
+        [INLINES.HYPERLINK]: (node) => {
+        return <a href={node.data.uri} target='_blank' >{node.content[0].value}</a>;
+        }
+    },   
+}
 
 
-const VideoItem = ({text, number, image, links, timing, setIsOpen}) => {
+const VideoItem = ({text, number, image, links, timing, setIsOpen,  videoLink}) => {
     return (
         <VideoItemWrapper>
-            <VideoItemImage fluid={image} onClick={setIsOpen}><Youtube/></VideoItemImage>
+            <VideoItemImage fluid={image} onClick={() => setIsOpen(videoLink)}><Youtube/></VideoItemImage>
             <VideoItemInfo>
                 <VideoItemInfoDetails>
                     <VideoItemNumber>{`№${number}`}</VideoItemNumber>
-                    {links && <VideoItemInfoLinks>{documentToReactComponents(links.json)}</VideoItemInfoLinks>}
+                    {links && <VideoItemInfoLinks className="collection_link">{documentToReactComponents(links.json, options)}</VideoItemInfoLinks>}
                     <VideoItemInfoTiming>{timing}</VideoItemInfoTiming>
                 </VideoItemInfoDetails>
                 <VideoItemInfoText>
-                 {documentToReactComponents(text)}
+                 {documentToReactComponents(text, options)}
                 </VideoItemInfoText>
             </VideoItemInfo>
         </VideoItemWrapper>
@@ -217,10 +355,14 @@ const VideoItem = ({text, number, image, links, timing, setIsOpen}) => {
 const Video = ({data}) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [videoLink, setvideoLink] = React.useState('');
+    
 
 
-    const openModal = () => {
+
+    const openModal = (link) => {
         setIsOpen(true);
+        setvideoLink(link)
+        
     }
 
     const closeModal = () => {
@@ -236,9 +378,15 @@ const Video = ({data}) => {
                         focusTrapped={false}
                         classNames={{
                             overlay: 'customOverlay',
-                            modal: 'customModal',
+                            modal: 'customVideoModal',
                         }}>
-                    <div>modal open!</div>
+                    <VideoModal>
+                        <VideoCross onClick={closeModal}><Cross/></VideoCross>
+                        <VideoModalWrapper>
+                            <iframe title="youtubeFrame"  src={videoLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        </VideoModalWrapper>
+                       
+                    </VideoModal>
                 </Modal>
                 <VideoWrapper>
                     <VideoHeader>
@@ -247,14 +395,16 @@ const Video = ({data}) => {
                     </VideoHeader>
                         <VideoList>
                             <Masonry
-                                breakpointCols={2}
+                                breakpointCols={breakpointColumnsObj}
                                 className="my-masonry-grid"
                                 columnClassName="my-masonry-grid_column">
                                     {data.map((videoItem, idx) => {
                                         return (
                                             <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === 'Самые важные' && <VideoItem  timing={videoItem.node.videoTiming} 
                                                                                                              image={videoItem.node.videoImagePreview.fluid} 
-                                                                                                             setIsOpen={setIsOpen}
+                                                                                                             setIsOpen={openModal}
+                                                                                                             
+                                                                                                             videoLink={videoItem.node.videoLink}
                                                                                                              number={videoItem.node.videoOrderNumber} 
                                                                                                              links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
                                                                                                              text={videoItem.node.videoText.json}/>}</React.Fragment> 
@@ -267,14 +417,16 @@ const Video = ({data}) => {
                                 Далее, лекции, которые не имеют прямого отношения к курсу. Но если у вас есть время, то для большего охвата материала полезны ↓
                             </VideoListDescr>
                             <Masonry
-                                breakpointCols={2}
+                                breakpointCols={breakpointColumnsObj}
                                 className="my-masonry-grid"
                                 columnClassName="my-masonry-grid_column">
                                     {data.map((videoItem, idx) => {
                                         return (
                                             <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === 'Лекции, не имеющие отношения к курсу, но полезны' && <VideoItem timing={videoItem.node.videoTiming} 
                                                                                                                                                  image={videoItem.node.videoImagePreview.fluid} 
-                                                                                                                                                 setIsOpen={setIsOpen}
+                                                                                                                                                 setIsOpen={openModal}
+                                                                                                                                                 videoLink={videoItem.node.videoLink}
+                                                                                                                                                
                                                                                                                                                  number={videoItem.node.videoOrderNumber} 
                                                                                                                                                  links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
                                                                                                                                                  text={videoItem.node.videoText.json}/>}</React.Fragment> 
@@ -283,18 +435,20 @@ const Video = ({data}) => {
                             </Masonry>
                         </VideoList>
                         <VideoList>
-                            <VideoListDescr>
-                            Дальше, ценные лекции, если вы <br/>решили работать на себя ↓
+                            <VideoListDescr style={{width: '28vw'}}>
+                            Дальше, ценные лекции, если вы решили работать на себя ↓
                             </VideoListDescr>
                             <Masonry
-                                breakpointCols={2}
+                                breakpointCols={breakpointColumnsObj}
                                 className="my-masonry-grid"
                                 columnClassName="my-masonry-grid_column">
                                     {data.map((videoItem, idx) => {
                                         return (
                                             <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === 'Ценные лекции, если решили работать на себя' && <VideoItem timing={videoItem.node.videoTiming} 
                                                                                                                                             image={videoItem.node.videoImagePreview.fluid} 
-                                                                                                                                            setIsOpen={setIsOpen}
+                                                                                                                                            setIsOpen={openModal}
+                                                                                                                                            videoLink={videoItem.node.videoLink}
+                                                                                                                                           
                                                                                                                                             number={videoItem.node.videoOrderNumber} 
                                                                                                                                             links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
                                                                                                                                             text={videoItem.node.videoText.json}/>}</React.Fragment> 

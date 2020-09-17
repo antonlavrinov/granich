@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import Img from 'gatsby-image';
+import { INLINES } from '@contentful/rich-text-types'
+
 
 
 
@@ -14,6 +16,10 @@ import Img from 'gatsby-image';
 const ToolsSection = styled.section`
     margin-top: 1.7vw;
     margin-bottom: 1.7vw;
+    @media only screen and (max-width: 575px) {
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+    }
 `
 
 
@@ -46,6 +52,10 @@ const ToolsItemWrapper = styled.div`
     padding: 1.6vw 1.6vw 2.3vw;
     border-radius: 0.6vw;
     background: white;
+    @media only screen and (max-width: 575px) {
+        padding: 4vw 4vw 7vw;
+        border-radius: 1.7vw;
+    }
 `
 
 const ToolsItemImage = styled(props => <Img {...props}/>)`
@@ -62,6 +72,9 @@ const ToolsItemImage = styled(props => <Img {...props}/>)`
         }
 
     }
+    @media only screen and (max-width: 575px) {
+        width: 15vw;
+    }
 `
 
 const ToolsItemInfo = styled.div`
@@ -76,6 +89,9 @@ const ToolsItemInfoDetails = styled.div`
     flex-direction: column;
     justify-content: space-between; 
     align-items: flex-start;
+    @media only screen and (max-width: 575px) {
+        min-width: 17vw;
+    }
 `
 
 const ToolsItemInfoText = styled.div`
@@ -100,15 +116,32 @@ const ToolsItemInfoText = styled.div`
         margin-bottom: 0.7vw;
         font-weight: 500;
     }
+    a {
+        text-decoration: underline;
+    }
+    @media only screen and (max-width: 575px) {
+        p { 
+            font-size: 3.5vw;
+        } 
+        i {
+            font-size: 2.6vw;
+            margin-bottom: 0.5vw;
+        }
+        h3 {
+            font-size: 3.5vw;
+            margin-bottom: 2vw;
+        }
+    }
 `
 
 
 const ToolsItemInfoLinks = styled.div`
-    width: 3vw;
+    width: 4vw;
     margin-bottom: 0.5vw;
     p {
         margin-top: 0.2vw;
-        line-height: 0.8;
+        line-height: 1.3;
+
 
     }
     p:empty { 
@@ -118,16 +151,36 @@ const ToolsItemInfoLinks = styled.div`
     a {
         color: var(--granich-red); 
         font-size: 0.8vw;
-
-
-        border-bottom: 1px solid var(--granich-red);
-
-        :hover {
-            border-bottom: 1px solid var(--granich-red);
-        } 
+        position: relative;
+        display: inline-block;
+        text-decoration: underline;
     } 
+    @media only screen and (max-width: 575px) {
+        width: 10vw;
+        margin-bottom: 0.5vw;
+        p {
+            margin-top: 1vw;
+        }
+        a { 
+            font-size: 2.5vw;
+        } 
+    }
 `
 
+
+
+const options = {
+    renderNode: {
+      [INLINES.HYPERLINK]: (node) => {
+        return <a href={node.data.uri} target='_blank' >{node.content[0].value}</a>;
+      }
+    },   
+  }
+
+  const breakpointColumnsObj = {
+    default: 2,
+    575: 1,
+};
 
 
 
@@ -139,10 +192,11 @@ const ToolsItem = ({text, image, links}) => {
             <ToolsItemInfo>
                 <ToolsItemInfoDetails>
                     <ToolsItemImage fluid={image}/>
-                    <ToolsItemInfoLinks className="collection_link">{documentToReactComponents(links.json)}</ToolsItemInfoLinks>
+                    <ToolsItemInfoLinks className="collection_link">{documentToReactComponents(links.json, options)}</ToolsItemInfoLinks>
+                    {console.log(links.json)}
                 </ToolsItemInfoDetails>
                 <ToolsItemInfoText>
-                 {documentToReactComponents(text)}
+                 {documentToReactComponents(text, options)}
                 </ToolsItemInfoText>
             </ToolsItemInfo>
         </ToolsItemWrapper>
@@ -157,7 +211,7 @@ const Tools = ({data}) => {
                 <ToolsWrapper>
                         <ToolsList>
                             <Masonry
-                                breakpointCols={2}
+                                breakpointCols={breakpointColumnsObj}
                                 className="my-masonry-grid"
                                 columnClassName="my-masonry-grid_column">
                                     {data.map(toolsItem => {

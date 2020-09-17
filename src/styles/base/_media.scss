@@ -53,5 +53,38 @@
                 display: block;
             }
     }
+    .customVideoModal {
+        width: 90vw !important;
+        max-width: 90vw !important;
+        padding: 0 !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+    .my-masonry-grid {
+        display: -webkit-box; /* Not needed if autoprefixing */
+        display: -ms-flexbox; /* Not needed if autoprefixing */
+        display: flex;
+        margin-left: -4vw; /* gutter size offset */
+        width: auto;
+      }
+    .my-masonry-grid_column {
+        padding-left: 4vw; /* gutter size */
+        background-clip: padding-box;
+    }
+    
+    /* Style your items */
+    .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+        margin-bottom: 4vw;
+    }
+        
+    .collection_link {
+
+        a:after {
+            width: 2vw;
+            height: 2vw;
+            margin-left: 0.8vw;
+            margin-top: 0.8vw;
+        }
+    }
 }
 
