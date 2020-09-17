@@ -16,14 +16,15 @@ import {ContentWrapperLink,
         ContentButtonReadBlockWrapper,
         ContentButtonReadBlock,
         Medium,
-        BehanceMixed
+        BehanceMixed,
+        PinterestOut
 
 
 
     } from './styles';
 
 
-const YoutubeMixedContent = ({content, youtubePng, mediumIcon, behanceIcon}) => {
+const YoutubeMixedContent = ({content, youtubePng, mediumIcon, behanceIcon, pinterestLinkIcon}) => {
     return (
         <ContentWrapperLink className="content" href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
             <ContentContainer>
@@ -45,6 +46,7 @@ const YoutubeMixedContent = ({content, youtubePng, mediumIcon, behanceIcon}) => 
                         <ContentButtonBlockTitle>Посмотреть</ContentButtonBlockTitle>
                             <ContentButtonWatchBlock>
                                 <YoutubeMixed fluid={youtubePng}/>
+                                <PinterestOut mixed fluid={pinterestLinkIcon}/>
                                 {content.contentYoutubeTiming && <ContentButtonMixedTiming>{content.contentYoutubeTiming}</ContentButtonMixedTiming>}  
                             </ContentButtonWatchBlock>
                         </ContentButtonWatchBlockWrapper>

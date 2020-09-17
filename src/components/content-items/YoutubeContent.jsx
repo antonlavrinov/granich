@@ -11,13 +11,15 @@ import {ContentWrapperLink,
         ContentButtonYoutubeTextWrapper,
         ContentButtonYoutubeText,
         ContentButtonYoutubeTiming,
-        Youtube
+        Youtube,
+        YoutubeIconsWrapper,
+        PinterestOut
 
 
     } from './styles';
 
 
-const YoutubeContent = ({content, youtubePng}) => {
+const YoutubeContent = ({content, youtubePng, pinterestLinkIcon}) => {
     return (
         <ContentWrapperLink className="content" href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
             <ContentContainer>
@@ -39,7 +41,11 @@ const YoutubeContent = ({content, youtubePng}) => {
                             <ContentButtonYoutubeText>Посмотреть</ContentButtonYoutubeText>
                             {content.contentYoutubeTiming && <ContentButtonYoutubeTiming>{content.contentYoutubeTiming}</ContentButtonYoutubeTiming>}  
                         </ContentButtonYoutubeTextWrapper>
-                        <Youtube fluid={youtubePng}/>
+                        <YoutubeIconsWrapper>
+                            <Youtube fluid={youtubePng}/>
+                            <PinterestOut fluid={pinterestLinkIcon}/>
+                        </YoutubeIconsWrapper>
+
                     </ContentButtonWrapper>
                 </ContentButtonContainer>
             </ContentButton>

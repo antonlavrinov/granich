@@ -100,6 +100,7 @@ const ExplanationsBlockText = styled.div`
             color: var(--granich-black);
             font-weight: 500;
             display: block;
+            margin-bottom: 0.4vw;
             :before {
                 content: '';
                 width: 0.15vw;
@@ -108,6 +109,7 @@ const ExplanationsBlockText = styled.div`
                 top: 0;
                 left: -1vw;  
                 background: var(--granich-red);
+
             }
         }
 

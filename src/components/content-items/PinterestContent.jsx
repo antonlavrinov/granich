@@ -43,6 +43,7 @@ const PinterestContent = ({content, pinterestIcon, pinterestLinkIcon, contentExt
                     </ContentButtonWrapper>
                 </ContentButtonContainer>
             </ContentButton>
+            
         </ContentWrapperExternalLink>
     )
 }

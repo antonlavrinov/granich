@@ -25,6 +25,8 @@ export const  Behance = styled(props => <Img {...props}/>)`
 export const  BehanceMixed = styled(props => <Img {...props}/>)`
     width: 2.7vw;
     display: block;
+    width: 2.2vw;
+    height: 2.2vw;
 
     @media only screen and (max-width: 575px) {
         width: 7vw;
@@ -33,9 +35,10 @@ export const  BehanceMixed = styled(props => <Img {...props}/>)`
 
 export const  Youtube = styled(props => <Img {...props}/>)`
     height: auto;
-    width: 4vw;
-    margin-right: -0.5vw;
+    width: 3.3vw;
+    margin-right: -0.7vw;
     display: block;
+    margin-top: 0.05vw;
     @media only screen and (max-width: 575px) {
         height: auto;
         width: 10vw;
@@ -46,6 +49,7 @@ export const  Youtube = styled(props => <Img {...props}/>)`
 export const  YoutubeMixed = styled(props => <Img {...props}/>)`
     height: auto;
     width: 4.5vw;
+    width: 3.3vw;
     margin-left: -0.1vw;
     display: block;
     @media only screen and (max-width: 575px) {
@@ -56,6 +60,8 @@ export const  YoutubeMixed = styled(props => <Img {...props}/>)`
 `
 export const  Medium = styled(props => <Img {...props}/>)`
     width: 2.7vw;
+    width: 2.2vw;
+    height: 2.2vw;
     margin-right: 0.4vw;
     display: block;
     @media only screen and (max-width: 575px) {
@@ -71,6 +77,7 @@ export const  Pinterest = styled(props => <Img {...props}/>)`
         margin-right: -1.4vw;
     }
 
+
 `
 export const  PinterestOut = styled(props => <Img {...props}/>)`
     width: 2.2vw;
@@ -78,6 +85,11 @@ export const  PinterestOut = styled(props => <Img {...props}/>)`
     @media only screen and (max-width: 575px) {
         width: 6.5vw;
     }
+    ${props => props.mixed && `
+        width: 2.2vw;
+        margin-left: -0.7vw;
+        margin-right: 0.2vw;
+    `}
 
 `
 export const  BehanceOut = styled(props => <Img {...props}/>)`
@@ -323,7 +335,14 @@ export const  ContentIconsWrapper = styled.div`
 
     }
 `
-
+export const  YoutubeIconsWrapper = styled.div`
+    display: flex;
+    margin-right: -0.4vw;
+    align-items: center;
+    @media only screen and (max-width: 575px) {
+        margin-right: -1vw;
+    }
+`
 
 
 // YOUTUBE

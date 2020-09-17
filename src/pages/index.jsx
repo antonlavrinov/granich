@@ -86,6 +86,7 @@ export const contentfulQuery = graphql`
                 }
               }
               contentYoutubeVideoLink
+              contentYoutubeTiming
               contentLinkPinterest
               contentLinkBehance
               contentLinkYoutube
@@ -117,6 +118,7 @@ export const contentfulQuery = graphql`
               contentLinkBehance
               contentLinkYoutube
               contentLinkMedium
+              contentYoutubeTiming
             }
         },
         team: allContentfulGranichMainTeachers(sort: {fields: [teacherOrderNumber], order: ASC}) {

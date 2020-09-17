@@ -37,7 +37,7 @@ const PodborkaContent = ({content, podborkaLinkIcon}) => {
             </ContentContainer>
             <ContentButton podborka>
                 <ContentButtonContainer>
-                    <ContentButtonWrapper podborka>
+                    <ContentButtonWrapper>
                         <ContentButtonText>Изучить</ContentButtonText>
                         <ContentIconsWrapper>
                             <PodborkaOut fluid={podborkaLinkIcon}/>
