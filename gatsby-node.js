@@ -156,7 +156,37 @@ exports.createSchemaCustomization = ({ actions }) => {
       }
 
 
-    
+
+      type ContentfulGranichCollectionVideo implements Node {
+        childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode: ContentfulVideoAdditionalLinks
+      }
+      type ContentfulVideoAdditionalLinks {
+        json: JSON
+      }
+
+
+      type ContentfulGranichCourseReviewsHeader implements Node {
+        reviewsHeaderLinkVk: String
+      }
+
+
+
+      type ContentfulGranichCourseCurriculumHeader implements Node {
+        childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode: ContentfulCurriculumHeaderSummary
+      }
+      type ContentfulCurriculumHeaderSummary {
+        json: JSON
+      }
+
+      type ContentfulGranichCoursePortfolioHeader implements Node {
+        childContentfulGranichCoursePortfolioHeaderPortfolioHeaderSummaryRichTextNode: ContentfulPortfolioHeaderSummary
+      }
+      type ContentfulPortfolioHeaderSummary {
+        json: JSON
+      }
+
+
+      
         
 
 

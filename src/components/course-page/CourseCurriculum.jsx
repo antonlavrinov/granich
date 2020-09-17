@@ -10,8 +10,6 @@ import {
 } from 'react-accessible-accordion';
 import 'react-accessible-accordion/dist/fancy-example.css';
 import {
-    Plus,
-    Minus,
     CurriculumItemFrame,
     CurriculumItemTitle,
     CurriculumItemImportantDescr,
@@ -28,10 +26,7 @@ import {
     CurriculumHeaderTitle,
     CurriculumTitleAndContent,
     CurriculumBonusBlock,
-    CurriculumBonus,
     CurriculumContent,
-    CurriculumContentText,
-    CurriculumContentCount,
     CurriculumAccordeon,
     EmptyText,
     CurriculumAccordionMobile,
@@ -116,28 +111,23 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
 
 
 
-const CourseCurriculum = ({data}) => {
+const CourseCurriculum = ({data, dataHeader}) => {
     return (
         <CurriculumSection>
             <Container>
                 <CurriculumWrapper>
                     <CurriculumHeader>
                         <CurriculumTitleAndContent>
-                            <CurriculumHeaderTitle>Программа курса</CurriculumHeaderTitle>
-                            <CurriculumContent>
-                                <CurriculumContentCount>12</CurriculumContentCount>
-                                <CurriculumContentText>Тематических видеолекции</CurriculumContentText>
-                            </CurriculumContent>
+                            <CurriculumHeaderTitle>{dataHeader.curriculumHeaderTitle}</CurriculumHeaderTitle>
+                            {dataHeader.childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode && (
+                                <CurriculumContent>
+                                    {documentToReactComponents(dataHeader.childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode.json)}
+                                </CurriculumContent>
+                            )}
+
                         </CurriculumTitleAndContent>
                         <CurriculumBonusBlock>
-                            <CurriculumBonus>
-                                <span>+ 8 бесплатных презентаций графсистем</span>
-                                Помимо уроков, вы получите дополнительные презентации по графсистемам: Swiss, Техно, VHS, Нео Гео, UI-дизайн, Коллаж, Киберпанк и другие.
-                            </CurriculumBonus>
-                            <CurriculumBonus>
-                                <span>+ 8 бесплатных презентаций графсистем</span>
-                                Помимо уроков, вы получите дополнительные презентации по графсистемам: Swiss, Техно, VHS, Нео Гео, UI-дизайн, Коллаж, Киберпанк и другие.
-                            </CurriculumBonus>
+                            {documentToReactComponents(dataHeader.curriculumHeaderInfo.json)}
                         </CurriculumBonusBlock>
                     </CurriculumHeader>
                     <CurriculumAccordionMobile allowMultipleExpanded allowZeroExpanded>

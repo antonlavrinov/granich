@@ -6,6 +6,7 @@ import Img from 'gatsby-image';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import PortfolioImageGallery from './portfolio/PortfolioImageGallery';
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 
 const PortfolioSection = styled.section`
@@ -77,96 +78,105 @@ const PortfolioTitleAndContent = styled.div`
 ` 
 
 const PortfolioBonusBlock = styled.div`
-
-`
-
-const PortfolioBonus = styled.div`
-    background: #f2f2f2;
-    border-radius: 0.5vw;
-    padding: 1.4vw 1.6vw;
-    font-size: 1.15vw;
-    line-height: 1.3;
-    color: var(--granich-light-grey);
-    margin-bottom: 1.3vw;
-    :last-child {
-        margin-bottom: 0;
-    }
-    span {
-        color: var(--granich-black);
-        font-size: inherit;
-        font-weight: 500;
-        display: block;
-    }
-    @media only screen and (max-width: 575px) {
-        border-radius: 1.5vw;
-        padding: 3vw 3.3vw;
-        font-size: 3.7vw;
-        :first-child {
-            margin-bottom: 4vw;
+    p {
+        background: #f2f2f2;
+        border-radius: 0.5vw;
+        padding: 1.4vw 1.6vw;
+        font-size: 1.15vw;
+        line-height: 1.3;
+        color: var(--granich-light-grey);
+        margin-bottom: 1.3vw;
+        :last-child {
+            margin-bottom: 0;
+        }
+        b {
+            color: var(--granich-black);
+            font-size: inherit;
+            font-weight: 500;
+            display: block;
         }
     }
-`
-const PortfolioContent = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-right: 2.5vw;
     @media only screen and (max-width: 575px) {
-        margin-right: 0;
+        P {
+            border-radius: 1.5vw;
+            padding: 3vw 3.3vw;
+            font-size: 3.7vw;
+            :first-child {
+                margin-bottom: 4vw;
+            }
+        }
+
     }
-
-
 `
+
+
+
 const PortfolioContentInfo = styled.div`
     display: flex;
     margin-left: -0.4vw;
+    p {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 2.5vw;
+        font-size: 1.16vw;
+        line-height: 1.55vw;
+        font-weight: 500;
+
+    }
+    i {
+        font-family: EB Garamond;
+        font-style: italic;
+        font-size: 5.4vw;
+        font-weight: 500;
+        align-text: center;
+        background: #e2e2e2;
+        border-radius: 100vw;
+        height: 4.7vw;
+        width: 4.7vw;
+        min-height: 4.7vw;
+        min-width: 4.7vw;
+        line-height: 0.8;
+        letter-spacing: -0.4vw;
+        padding-left: 0.8vw;
+        margin-bottom: 0.6vw;
+    }
+    b {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        line-height: 1.55vw;
+        font-weight: 500;
+        i {
+            color: var(--granich-red);
+            background: rgba(228,5,33,0.15);
+        }
+    }
+
     @media only screen and (max-width: 575px) {
         margin-right: 0;
         justify-content: space-between;
         margin-left: 0;
         margin-bottom: 8vw;
         padding: 0 4.5vw;
+        p {
+            margin-right: 0;
+            font-size: 3.7vw;
+        }
+        i {
+            height: 14.5vw;
+            width: 14.5vw;
+            min-height: 14.5vw;
+            min-width: 14.5vw;
+            font-size: 17vw;
+            line-height: 0.8;
+            padding-left: 3.2vw;
+            margin-bottom: 3.3vw;
+            background: #f2f2f2;
+        }
     }
 `
 
-const PortfolioContentText = styled.div`
-    font-size: 1.16vw;
-    line-height: 1.55vw;
-    font-weight: 500;
-    @media only screen and (max-width: 575px) {
-        font-size: 3.7vw;
-    }
-`
-
-const PortfolioContentCount = styled.div`
-    font-family: EB Garamond;
-    font-style: italic;
-    font-size: 5.4vw;
-    font-weight: 500;
-    align-text: center;
-    background: #e2e2e2;
-    border-radius: 100vw;
-    height: 4.7vw;
-    width: 4.7vw;
-    min-height: 4.7vw;
-    min-width: 4.7vw;
-    line-height: 0.8;
-    letter-spacing: -0.4vw;
-    padding-left: 0.8vw;
-    margin-bottom: 0.6vw;
-    @media only screen and (max-width: 575px) {
-        height: 14.5vw;
-        width: 14.5vw;
-        min-height: 14.5vw;
-        min-width: 14.5vw;
-        font-size: 17vw;
-        line-height: 0.8;
-        padding-left: 3.2vw;
-        margin-bottom: 3.3vw;
-        background: #f2f2f2;
-    }
-
-`
 
 const PortfolioOnePagersWrapper = styled.div`
     display: grid;
@@ -209,7 +219,7 @@ const PortfolioMiltiPagesWrapper = styled.div`
 
 
 
-const CoursePortfolio = ({posters, multiPages, masterClass}) => {
+const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
     const [imageGallery, setImageGallery] = useState([]);
 
     useEffect(() => {
@@ -244,47 +254,29 @@ const CoursePortfolio = ({posters, multiPages, masterClass}) => {
                             {!masterClass ? (
                                 <PortfolioHeader>
                                     <PortfolioTitleAndContent>
-                                        <PortfolioHeaderTitle>Вы создадите портфолио</PortfolioHeaderTitle>
-                                        <PortfolioContentInfo>
-                                            <PortfolioContent>
-                                                <PortfolioContentCount>7</PortfolioContentCount>
-                                                <PortfolioContentText>плакатов</PortfolioContentText>
-                                            </PortfolioContent>
-                                            <PortfolioContent>
-                                                <PortfolioContentCount>2</PortfolioContentCount>
-                                                <PortfolioContentText>разворота</PortfolioContentText>
-                                            </PortfolioContent>
-                                            <PortfolioContent>
-                                                <PortfolioContentCount>1</PortfolioContentCount>
-                                                <PortfolioContentText>брошюра</PortfolioContentText>
-                                            </PortfolioContent>
-                                        </PortfolioContentInfo>
+                                        <PortfolioHeaderTitle>{dataHeader.portfolioHeaderTitle}</PortfolioHeaderTitle>
+                                        {dataHeader.childContentfulGranichCoursePortfolioHeaderPortfolioHeaderSummaryRichTextNode && (
+                                            <PortfolioContentInfo>
+                                                {documentToReactComponents(dataHeader.childContentfulGranichCoursePortfolioHeaderPortfolioHeaderSummaryRichTextNode.json)}
+                                            </PortfolioContentInfo>
+                                        )}
+
                                     </PortfolioTitleAndContent>
 
 
                                     <PortfolioBonusBlock>
-                                    <PortfolioBonus>
-                                        <span>9 творческих работ</span>
-                                        Это практический курс. Не просто послушали теорию и разошлись. По ходу курса вы сделаете 9 творческих работ и 1 многостраничный экзамен.
-                                    </PortfolioBonus>
-                                    <PortfolioBonus>
-                                        <span>1 экзаменационный проект</span>
-                                        Мы изучим с нуля Adobe InDesign. Поэтому на экзамене вы будете делать многостраничную публикацию. Разумеется, с уймой обратной связи.
-                                    </PortfolioBonus>
+                                        {documentToReactComponents(dataHeader.portfolioHeaderInfo.json)}
                                     </PortfolioBonusBlock>
                                     </PortfolioHeader>
                             ) : (
                                 <PortfolioHeader masterClass>
                                     <PortfolioTitleAndContent >
 
-                                        <PortfolioHeaderTitle masterClass>Вы сможете создать макет</PortfolioHeaderTitle>
+                                        <PortfolioHeaderTitle masterClass>{dataHeader.portfolioHeaderTitle}</PortfolioHeaderTitle>
                                     </PortfolioTitleAndContent>
                                     
                                     <PortfolioBonusBlock>
-                                        <PortfolioBonus>
-                                            <span>Пакет: Макет с нуля</span>
-                                            Если вы купите пакет «Макет с нуля» — вы создание макет с нуля по графсистеме VHS под руководством куратора
-                                        </PortfolioBonus>
+                                        {documentToReactComponents(dataHeader.portfolioHeaderInfo.json)}
                                     </PortfolioBonusBlock>
                                     </PortfolioHeader>
                             )}

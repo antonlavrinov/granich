@@ -69,83 +69,89 @@ export const CurriculumHeaderTitle = styled.h2`
 export const CurriculumContent = styled.div`
     display: flex;
     align-items: center;
+    p {
+        font-size: 1.15vw;
+        width: 9vw;
+        line-height: 1.45vw;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+
+    }
+    i {
+        font-family: EB Garamond;
+        font-style: italic;
+        font-size: 5.4vw;
+        font-weight: 500;
+        position: relative;
+        background: #e2e2e2;
+        border-radius: 100vw;
+        min-height: 4.5vw;
+        min-width: 4.5vw;
+        line-height: 0.8;
+        margin-right: 1.65vw;
+        letter-spacing: -0.4vw;
+        margin-left: -0.1vw;
+
+    }
     @media only screen and (max-width: 575px) {
         margin-right: 0;
         margin-left: 0;
         margin-bottom: 8vw;
         padding: 0 3vw;
+        i {
+            height: 14.5vw;
+            width: 14.5vw;
+            min-height: 14.5vw;
+            min-width: 14.5vw;
+            font-size: 16.5vw;
+            padding-left: 0;
+            letter-spacing: -1vw;
+            margin-right: 5vw;
+        }
+        p {
+            font-size: 3.7vw;
+            line-height: 1.45;
+        }
     }
 
 `
 
-export const CurriculumContentCount = styled.div`
-    font-family: EB Garamond;
-    font-style: italic;
-    font-size: 5.4vw;
-    font-weight: 500;
-    position: relative;
-    background: #e2e2e2;
-    border-radius: 100vw;
-    min-height: 4.5vw;
-    min-width: 4.5vw;
-    line-height: 0.8;
-    margin-right: 1.65vw;
-    letter-spacing: -0.4vw;
-    margin-left: -0.1vw;
-    @media only screen and (max-width: 575px) {
-        height: 14.5vw;
-        width: 14.5vw;
-        min-height: 14.5vw;
-        min-width: 14.5vw;
-        font-size: 16.5vw;
-        padding-left: 0;
-        // padding-bottom: 3vw;
-        letter-spacing: -1vw;
-        margin-right: 5vw;
-    }
-`
 
-export const CurriculumContentText = styled.div`
-    font-size: 1.15vw;
-    width: 9vw;
-    line-height: 1.45vw;
-    font-weight: 500;
-    @media only screen and (max-width: 575px) {
-        font-size: 3.7vw;
-        line-height: 1.45;
-    }
-`
 
 export const CurriculumBonusBlock = styled.div`
+    p {
+        background: #f2f2f2;
+        border-radius: 0.5vw;
+        padding: 1.4vw 1.6vw;
+        font-size: 1.15vw;
+        line-height: 1.3;
+        color: var(--granich-light-grey);
+        margin-bottom: 1.3vw;
+        :last-child {
+            margin-bottom: 0;
+        }
+        b {
+            color: var(--granich-black);
+            font-size: inherit;
+            font-weight: 500;
+            display: block;
+        }
 
-`
-
-export const CurriculumBonus = styled.div`
-    background: #f2f2f2;
-    border-radius: 0.5vw;
-    padding: 1.4vw 1.6vw;
-    font-size: 1.15vw;
-    line-height: 1.3;
-    color: var(--granich-light-grey);
-    margin-bottom: 1.3vw;
-    :last-child {
-        margin-bottom: 0;
-    }
-    span {
-        color: var(--granich-black);
-        font-size: inherit;
-        font-weight: 500;
-        display: block;
     }
     @media only screen and (max-width: 575px) {
-        border-radius: 1.5vw;
-        padding: 4vw 4vw;
-        font-size: 3.7vw;
-        :first-child {
-            margin-bottom: 4vw;
+        p {
+            border-radius: 1.5vw;
+            padding: 4vw 4vw;
+            font-size: 3.7vw;
+            :first-child {
+                margin-bottom: 4vw;
+            }
         }
     }
 `
+
+
 
 
 

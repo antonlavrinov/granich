@@ -313,16 +313,16 @@ const Review = ({image, link}) => {
 }
 
 
-const CourseReviews = ({data, masterClass}) => {
+const CourseReviews = ({data, dataHeader, masterClass}) => {
 
     return (
         <ReviewsSection>
             <Container>
                 <ReviewsWrapper>
                     {!masterClass ? (
-                        <ReviewsTitle>Отзывы о курсе</ReviewsTitle>
+                        <ReviewsTitle>{dataHeader.reviewsHeaderTitle}</ReviewsTitle>
                     ) : (
-                        <ReviewsTitle masterClass>Отзывы о мастер-классе</ReviewsTitle>
+                        <ReviewsTitle masterClass>{dataHeader.reviewsHeaderTitle}</ReviewsTitle>
                     )}
                     
                     <ReviewsList>
@@ -337,14 +337,14 @@ const CourseReviews = ({data, masterClass}) => {
                             <>
                                 <ReviewsFooterTitle>Все отзывы о курсе:</ReviewsFooterTitle>
                                 <ReviewsLinks>
-                                    <ReviewsLinkTelegram target="_blank" href={'https://t.me/granich_reviews'}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
-                                    <ReviewsLinkVk target="_blank" href={'https://vk.com/vadim_granich'}><div>Архив отзывов<Arrow/>ВК</div><div>На стене Вадима Гранича</div></ReviewsLinkVk>
+                                    <ReviewsLinkTelegram target="_blank" href={dataHeader.reviewsHeaderLinkTelegram}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
+                                    {dataHeader.reviewsHeaderLinkVk && <ReviewsLinkVk target="_blank" href={dataHeader.reviewsHeaderLinkVk}><div>Архив отзывов<Arrow/>ВК</div><div>На стене Вадима Гранича</div></ReviewsLinkVk>}
                                 </ReviewsLinks>
                             </>
                           
                         ) : (
 
-                            <ReviewsLinkTelegram masterClass target="_blank" href={'https://t.me/granich_reviews'}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
+                            <ReviewsLinkTelegram masterClass target="_blank" href={dataHeader.reviewsHeaderLinkTelegram}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
                         )}
 
 

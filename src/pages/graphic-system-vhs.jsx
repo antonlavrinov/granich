@@ -75,6 +75,15 @@ export const contentfulQuery = graphql`
 
             }
         }
+        VHSportfolioHeader: contentfulGranichCoursePortfolioHeader(portfolioHeaderAttachmentTo: {eq: "Графсистема VHS"}) {
+          portfolioHeaderTitle
+          childContentfulGranichCoursePortfolioHeaderPortfolioHeaderSummaryRichTextNode {
+            json
+          }
+          portfolioHeaderInfo {
+            json
+          }
+        }
         VHSportfolioPosters: allContentfulGranichCoursePortfolio(filter: {portfolioAttachmentTo: {eq: "Графсистема VHS"} portfolioType: {eq: "Одностраничный"}}, sort: {fields: [portfolioOrderNumber], order: ASC}) {
           edges {
             node {
@@ -86,6 +95,11 @@ export const contentfulQuery = graphql`
               }
             }
           }
+        }
+        VHSreviewsHeader: contentfulGranichCourseReviewsHeader(reviewsHeaderAttachmentTo: {eq: "Графсистема VHS"}) {
+          reviewsHeaderTitle
+          reviewsHeaderLinkTelegram
+          reviewsHeaderLinkVk
         }
         VHSreviews: allContentfulGranichCourseReviews(filter: {reviewsAttachmentTo: {eq: "Графсистема VHS"}}, sort: {fields: [reviewsOrderNumber], order: ASC}) {
           edges {
@@ -131,8 +145,8 @@ const GraphicSystemVhsPage = ({data}) => (
     <CourseExplanations data={data.VHSexplanations}/>
     <CourseAuthors data={data.VHSteam}/>
     <MasterClassExample/>
-    <CoursePortfolio masterClass posters={data.VHSportfolioPosters}/>
-    <CourseReviews data={data.VHSreviews} masterClass/>
+    <CoursePortfolio dataHeader={data.VHSportfolioHeader} masterClass posters={data.VHSportfolioPosters}/>
+    <CourseReviews dataHeader={data.VHSreviewsHeader} data={data.VHSreviews} masterClass/>
     <div id="prices-range-section"></div>
     {data.VHSoffer.courseStatus ? (
       <CoursePriceRange data={data.VHSPricesRange}/>

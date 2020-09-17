@@ -131,13 +131,17 @@ const TrainingPathBlockText = styled.div`
         letter-spacing: -0.01vw;
         b {
             display: block;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--granich-black);
+            margin-bottom: 0.35vw;
         }
     }
     @media only screen and (max-width: 575px) {
         p {
             font-size: 3.7vw;
+            b {
+                margin-bottom: 1vw;
+            }
         }
         margin-top: 2vw;
     }

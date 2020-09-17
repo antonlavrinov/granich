@@ -75,6 +75,15 @@ export const contentfulQuery = graphql`
             }
           }
         }
+        curriculumHeader: contentfulGranichCourseCurriculumHeader(curriculumHeaderAttachmentTo: {eq: "Осознанный графдизайн"}) {
+          curriculumHeaderTitle
+          childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode {
+            json
+          }
+          curriculumHeaderInfo {
+            json
+          }
+        }
         curriculum: allContentfulGranichCourseCurriculum(filter: {curriculumAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [curriculumOrderNumber], order: ASC}) {
           edges {
             node {
@@ -136,6 +145,15 @@ export const contentfulQuery = graphql`
             }
           }
         }
+        portfolioHeader: contentfulGranichCoursePortfolioHeader(portfolioHeaderAttachmentTo: {eq: "Осознанный графдизайн"}) {
+          portfolioHeaderTitle
+          childContentfulGranichCoursePortfolioHeaderPortfolioHeaderSummaryRichTextNode {
+            json
+          }
+          portfolioHeaderInfo {
+            json
+          }
+        }
         portfolioPosters: allContentfulGranichCoursePortfolio(filter: {portfolioAttachmentTo: {eq: "Осознанный графдизайн"} portfolioType: {eq: "Одностраничный"}}, sort: {fields: [portfolioOrderNumber], order: ASC}) {
           edges {
             node {
@@ -162,6 +180,11 @@ export const contentfulQuery = graphql`
               
             }
           }
+        }
+        reviewsHeader: contentfulGranichCourseReviewsHeader(reviewsHeaderAttachmentTo: {eq: "Осознанный графдизайн"}) {
+          reviewsHeaderTitle
+          reviewsHeaderLinkTelegram
+          reviewsHeaderLinkVk
         }
         reviews: allContentfulGranichCourseReviews(filter: {reviewsAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [reviewsOrderNumber], order: ASC}) {
           edges {
@@ -211,11 +234,11 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <CourseExample/>
     <CourseForWhom data={data.forWhom}/>
     <CourseCommitment/>
-    <CoursePortfolio posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
+    <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
     <CourseTrainingPath data={data.trainingPath}/>
-    <CourseCurriculum data={data.curriculum}/>
+    <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
     <CourseFeatures data={data.features}/>
-    <CourseReviews data={data.reviews}/>
+    <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
     <div id="participation-section"></div>
     {data.offer.courseStatus ? (
       <CourseParticipation data={data.offer}/>
