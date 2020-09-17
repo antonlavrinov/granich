@@ -27,6 +27,8 @@ export const  BehanceMixed = styled(props => <Img {...props}/>)`
     display: block;
     width: 2.2vw;
     height: 2.2vw;
+    width: 2.5vw;
+    height: 2.5vw;
 
     @media only screen and (max-width: 575px) {
         width: 7vw;
@@ -50,6 +52,7 @@ export const  YoutubeMixed = styled(props => <Img {...props}/>)`
     height: auto;
     width: 4.5vw;
     width: 3.3vw;
+    width: 3.8vw;
     margin-left: -0.1vw;
     display: block;
     @media only screen and (max-width: 575px) {
@@ -62,6 +65,8 @@ export const  Medium = styled(props => <Img {...props}/>)`
     width: 2.7vw;
     width: 2.2vw;
     height: 2.2vw;
+    width: 2.5vw;
+    height: 2.5vw;
     margin-right: 0.4vw;
     display: block;
     @media only screen and (max-width: 575px) {
@@ -87,6 +92,7 @@ export const  PinterestOut = styled(props => <Img {...props}/>)`
     }
     ${props => props.mixed && `
         width: 2.2vw;
+        width: 2.5vw;
         margin-left: -0.7vw;
         margin-right: 0.2vw;
     `}
