@@ -582,13 +582,13 @@ div[data-accordion-component="AccordionItemHeading"] {
     a:after {
         content: '';
         background: url(../assets/images/arrow_out.png);
-        width: 0.7vw;
-        height: 0.7vw;
+        width: 0.6vw;
+        height: 0.6vw;
         background-size: cover;
         border-radius: 100vw;
         position: absolute;
         margin-left: 0.2vw;
-        margin-top: 0.2vw;
+        margin-top: 0.25vw;
     }
 }
 

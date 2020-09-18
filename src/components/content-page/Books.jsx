@@ -164,7 +164,10 @@ const BooksItemInfoText = styled.div`
         font-weight: 500;
     }
     a {
-        text-decoration: underline;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        :hover {
+            border-bottom: 1px solid var(--granich-grey);
+        }
     }
     @media only screen and (max-width: 575px) {
         p { 
@@ -195,11 +198,10 @@ const BooksItemNumber = styled.div`
 
 const BooksItemInfoLinks = styled.div`
     width: 4vw;
-
     p {
-        margin-top: 0.6vw;
+        margin-top: 0.5vw;
+        font-size: 0.8vw;
         line-height: 1.3;
-
 
 
     }
@@ -211,14 +213,17 @@ const BooksItemInfoLinks = styled.div`
         color: var(--granich-red); 
         font-size: 0.8vw;
         position: relative;
-        display: inline-block;
-        text-decoration: underline;
+        display: inline;
+        border-bottom: 1px solid rgba(228, 5, 33, 0.2);
+        :hover {
+            border-bottom: 1px solid var(--granich-red);
+        }
     } 
     @media only screen and (max-width: 575px) {
-        width: 10vw;
+        width: 14vw;
         margin-bottom: 0.5vw;
         p {
-            margin-top: 1vw;
+            margin-top: 3vw;
         }
         a { 
             font-size: 2.5vw;

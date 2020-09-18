@@ -320,6 +320,44 @@ const FormFooterContainer = styled.div`
     }
 `
 
+{/* <form id="ltForm8828045"  action="https://granich.ru/pl/lite/block-public/process-html?id=855573236" method="post" data-open-new-window="0"><input type="hidden" name="formParams[setted_offer_id]" ><br>
+<input id="input-formPosition9608177" name='formParams[need_offer]' type='hidden' value="" /><br>
+<input
+								
+				data-price-value=""
+				data-old-price-value=""
+				data-price-currency="руб."
+				data-qty-value=""
+								id="input-formPosition9608177"
+				name='formParams[offer_id][]'
+				type='radio' checked value="" 			><br>
+<input type="text" maxlength="60"  placeholder="Имя" name="formParams[first_name]" value=""><br>
+<input type="text" maxlength="60"  placeholder="Фамилия" name="formParams[last_name]" value=""><br>
+<input type="text" maxlength="60"  placeholder="Электропочта" name="formParams[email]" value="" ><br>
+<input type="text" maxlength="60"  placeholder="Телефон" name="formParams[phone]" value=""><br>
+<button type="submit"
+		id="button970916"
+		
+		style="color: ; background-color: ; " onclick="if(window['btnprs5f64b8d772769']){return false;}window['btnprs5f64b8d772769']=true;setTimeout(function(){window['btnprs5f64b8d772769']=false},6000);return true;">
+	Оплатить</button><br>
+<input type="hidden" id="2588385f64b8d766d50" name="__gc__internal__form__helper" class="__gc__internal__form__helper" value="">
+<input type="hidden" id="2588385f64b8d766d50ref" name="__gc__internal__form__helper_ref" class="__gc__internal__form__helper_ref" value="">
+<input type="hidden" name="requestTime" value="1600436439">
+<input type="hidden" name="requestSimpleSign" value="49b52db9d0d0c2186e4a47c281ae23ca">
+<input type="hidden" name="isHtmlWidget" value="1"/></form><span id="gccounterImgContainer"></span><script>
+	window.onload = function(){
+		let loc = document.getElementById("2588385f64b8d766d50");
+		loc.value = window.location.href;
+		let ref = document.getElementById("2588385f64b8d766d50ref");
+		ref.value = document.referrer;
+		
+		let statUrl = "https://granich.ru/stat/counter?ref=" + encodeURIComponent(document.referrer)
+			+ "&loc=" + encodeURIComponent(document.location.href);
+		document.getElementById('gccounterImgContainer').innerHTML
+			= "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
+	}
+</script> */}
+
 
 
 

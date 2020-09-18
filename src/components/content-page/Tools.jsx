@@ -117,7 +117,10 @@ const ToolsItemInfoText = styled.div`
         font-weight: 500;
     }
     a {
-        text-decoration: underline;
+        border-bottom: 1px solid #dedede;
+        :hover {
+            border-bottom: 1px solid var(--granich-grey);
+        }
     }
     @media only screen and (max-width: 575px) {
         p { 
@@ -141,7 +144,7 @@ const ToolsItemInfoLinks = styled.div`
     p {
         margin-top: 0.5vw;
         font-size: 0.8vw;
-        line-height: 1.5;
+        line-height: 1.3;
 
 
     }
@@ -154,15 +157,13 @@ const ToolsItemInfoLinks = styled.div`
         font-size: 0.8vw;
         position: relative;
         display: inline;
-        border-bottom: 1px solid var(--granich-red);
-
-        line-height: 1;
+        border-bottom: 1px solid rgba(228, 5, 33, 0.2);
         :hover {
             border-bottom: 1px solid var(--granich-red);
         }
     } 
     @media only screen and (max-width: 575px) {
-        width: 16vw;
+        width: 13vw;
         margin-bottom: 0.5vw;
         p {
             margin-top: 1vw;
