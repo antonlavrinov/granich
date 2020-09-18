@@ -41,7 +41,7 @@ export const contentfulQuery = graphql`
             json
           }
         }
-        explanations: allContentfulGranichCourseExplanations(filter: {explanationsAttachmentTo: {eq: "Осознанный Графдизайн"}}, sort: {fields: [explanationsOrderNumber], order: ASC}) {
+        explanations: allContentfulGranichCourseExplanations(filter: {explanationsAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [explanationsOrderNumber], order: ASC}) {
           edges {
             node {
               id
@@ -58,7 +58,7 @@ export const contentfulQuery = graphql`
             }
           }
         }
-        forWhom: allContentfulGranichCourseForWhom(filter: {forWhomAttachmentTo: {eq: "Осознанный Графдизайн"}}, sort: {fields: [forWhomOrderNumber], order: ASC}) {
+        forWhom: allContentfulGranichCourseForWhom(filter: {forWhomAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [forWhomOrderNumber], order: ASC}) {
           edges {
             node {
               id
@@ -75,7 +75,7 @@ export const contentfulQuery = graphql`
             }
           }
         }
-        curriculumHeader: contentfulGranichCourseCurriculumHeader(curriculumHeaderAttachmentTo: {eq: "Осознанный Графдизайн"}) {
+        curriculumHeader: contentfulGranichCourseCurriculumHeader(curriculumHeaderAttachmentTo: {eq: "Осознанный графдизайн"}) {
           curriculumHeaderTitle
           childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode {
             json
@@ -84,7 +84,7 @@ export const contentfulQuery = graphql`
             json
           }
         }
-        curriculum: allContentfulGranichCourseCurriculum(filter: {curriculumAttachmentTo: {eq: "Осознанный Графдизайн"}}, sort: {fields: [curriculumOrderNumber], order: ASC}) {
+        curriculum: allContentfulGranichCourseCurriculum(filter: {curriculumAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [curriculumOrderNumber], order: ASC}) {
           edges {
             node {
               id
@@ -112,7 +112,7 @@ export const contentfulQuery = graphql`
             }
           }
         }
-        features: allContentfulGranichCourseFeatures(filter: {featuresAttachmentTo: {eq: "Осознанный Графдизайн"}}, sort: {fields: [featuresOrderNumber], order: ASC}) {
+        features: allContentfulGranichCourseFeatures(filter: {featuresAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [featuresOrderNumber], order: ASC}) {
           edges {
             node {
               id
@@ -128,7 +128,7 @@ export const contentfulQuery = graphql`
             }
           }
         }
-        trainingPath: allContentfulGranichMainTrainingPath(filter: {trainingPathAttachmentTo: {eq: "Осознанный Графдизайн"}}, sort: {fields: [trainingPathOrderNumber], order: ASC}) {
+        trainingPath: allContentfulGranichMainTrainingPath(filter: {trainingPathAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [trainingPathOrderNumber], order: ASC}) {
           edges {
             node {
               id
@@ -145,7 +145,7 @@ export const contentfulQuery = graphql`
             }
           }
         }
-        portfolioHeader: contentfulGranichCoursePortfolioHeader(portfolioHeaderAttachmentTo: {eq: "Осознанный Графдизайн"}) {
+        portfolioHeader: contentfulGranichCoursePortfolioHeader(portfolioHeaderAttachmentTo: {eq: "Осознанный графдизайн"}) {
           portfolioHeaderTitle
           childContentfulGranichCoursePortfolioHeaderPortfolioHeaderSummaryRichTextNode {
             json
@@ -154,7 +154,7 @@ export const contentfulQuery = graphql`
             json
           }
         }
-        portfolioPosters: allContentfulGranichCoursePortfolio(filter: {portfolioAttachmentTo: {eq: "Осознанный Графдизайн"} portfolioType: {eq: "Одностраничный"}}, sort: {fields: [portfolioOrderNumber], order: ASC}) {
+        portfolioPosters: allContentfulGranichCoursePortfolio(filter: {portfolioAttachmentTo: {eq: "Осознанный графдизайн"} portfolioType: {eq: "Одностраничный"}}, sort: {fields: [portfolioOrderNumber], order: ASC}) {
           edges {
             node {
               portfolioMedia {
@@ -165,7 +165,7 @@ export const contentfulQuery = graphql`
             }
           }
         }
-        portfolioMultipage: allContentfulGranichCoursePortfolio(filter: {portfolioAttachmentTo: {eq: "Осознанный Графдизайн"} portfolioType: {eq: "Многостраничный"}}, sort: {fields: [portfolioOrderNumber], order: ASC}) {
+        portfolioMultipage: allContentfulGranichCoursePortfolio(filter: {portfolioAttachmentTo: {eq: "Осознанный графдизайн"} portfolioType: {eq: "Многостраничный"}}, sort: {fields: [portfolioOrderNumber], order: ASC}) {
           edges {
             node {
               portfolioMedia {
@@ -181,12 +181,12 @@ export const contentfulQuery = graphql`
             }
           }
         }
-        reviewsHeader: contentfulGranichCourseReviewsHeader(reviewsHeaderAttachmentTo: {eq: "Осознанный Графдизайн"}) {
+        reviewsHeader: contentfulGranichCourseReviewsHeader(reviewsHeaderAttachmentTo: {eq: "Осознанный графдизайн"}) {
           reviewsHeaderTitle
           reviewsHeaderLinkTelegram
           reviewsHeaderLinkVk
         }
-        reviews: allContentfulGranichCourseReviews(filter: {reviewsAttachmentTo: {eq: "Осознанный Графдизайн"}}, sort: {fields: [reviewsOrderNumber], order: ASC}) {
+        reviews: allContentfulGranichCourseReviews(filter: {reviewsAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [reviewsOrderNumber], order: ASC}) {
           edges {
             node {
               id
@@ -199,7 +199,7 @@ export const contentfulQuery = graphql`
             }
           }
         }
-        answers: allContentfulGranichCourseAnswers(filter: {answersAttachmentTo: {eq: "Осознанный Графдизайн"}}, sort: {fields: [answersOrderNumber], order: ASC}) {
+        answers: allContentfulGranichCourseAnswers(filter: {answersAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [answersOrderNumber], order: ASC}) {
           edges {
             node {
               id
@@ -223,7 +223,7 @@ export const contentfulQuery = graphql`
 const OsoznannyGraphDesignPage = ({data}) => (
   <Layout>
     <Header type={'dark'}/>
-    <SEO title="Осознанный Графдизайн"
+    <SEO title="Осознанный графдизайн"
          description="Осознанный курс по графическому дизайну от Вадима Гранича (Granich). За 2 месяца вы получите упорядоченные знания о графическом дизайне и создадите свое портфолио. А еще изучите Adobe InDesign"
          keywords={['vhs', 'графсистема']}
          ogImage={ogImage}
