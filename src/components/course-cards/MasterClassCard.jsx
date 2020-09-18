@@ -66,24 +66,39 @@ const MasterCard = ({courseData, empty}) => {
                 </CourseDescr>
 
             </CourseContainer>
-            <CourseButton active={courseData.node.courseStatus}>
+            <CourseButton empty={empty ? 1 : 0} active={courseData.node.courseStatus}>
                 <CourseButtonContainer>
-                    <CourseButtonWrapper>
-                        {courseData.node.courseStatus ? (
-                            <>  
-                                <CourseButtonText>
-                                    Купить
+                    <CourseButtonWrapper >
+                        {empty ? (
+                            <>
+                                <CourseButtonText empty>
+                                    Узнать <br/>о дате старта
                                 </CourseButtonText>
-                                {empty ? <Calendar/> : <RedArrow/>}
+                                <Calendar/>
                             </>
                         ) : (
+
                             <>
-                                <CourseButtonText>
-                                    Предзаказ
-                                </CourseButtonText>
-                                {empty ? <Calendar/> : <BlackArrow/>}
+                                {courseData.node.courseStatus ? (
+                                    <>  
+                                        <CourseButtonText>
+                                            Купить
+                                        </CourseButtonText>
+                                        <RedArrow/>
+                                    </>
+                                ) : (
+                                    <>
+                                        <CourseButtonText>
+                                            Предзаказ
+                                        </CourseButtonText>
+                                        <BlackArrow/>
+                                    </>
+                                )}                            
+                            
                             </>
+
                         )}
+                        
 
                     </CourseButtonWrapper>
 

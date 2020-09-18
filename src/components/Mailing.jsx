@@ -229,6 +229,7 @@ const FormCheckboxLabelText = styled.span`
             cursor: default;
             font-size: 1vw;
             line-height: 1.45;
+            white-space: normal;
 
         }
         :before {

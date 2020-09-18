@@ -75,25 +75,38 @@ const CourseCard = ({courseData, empty}) => {
                 </CourseInfo>
 
             </CourseContainer>
-            <CourseButton active={courseData.node.courseStatus}>
+            <CourseButton empty={empty ? 1 : 0} active={courseData.node.courseStatus}>
                 <CourseButtonContainer>
                     <CourseButtonWrapper>
-                        {courseData.node.courseStatus ? (
-                            <>  
-                                <CourseButtonText>
-                                    Участвовать
+                        {empty ? (
+                            <>
+                                <CourseButtonText empty>
+                                    Узнать <br/>о дате старта
                                 </CourseButtonText>
-                                {empty ? <Calendar/> : <RedArrow/>}
-                                
+                                <Calendar/>
                             </>
                         ) : (
                             <>
-                                <CourseButtonText>
-                                    Узнать <br/>о наборе
-                                </CourseButtonText>
-                                {empty ? <Calendar/> : <BlackArrow/>}
+                                {courseData.node.courseStatus ? (
+                                    <>  
+                                        
+                                        <CourseButtonText>
+                                            Участвовать
+                                        </CourseButtonText>
+                                        <RedArrow/>
+                                        
+                                    </>
+                                ) : (
+                                    <>
+                                        <CourseButtonText>
+                                            Узнать <br/>о наборе
+                                        </CourseButtonText>
+                                        <BlackArrow/>
+                                    </>
+                                )}                            
                             </>
                         )}
+                        
 
                     </CourseButtonWrapper>
 

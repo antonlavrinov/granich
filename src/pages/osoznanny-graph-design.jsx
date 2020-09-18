@@ -223,7 +223,7 @@ export const contentfulQuery = graphql`
 const OsoznannyGraphDesignPage = ({data}) => (
   <Layout>
     <Header type={'dark'}/>
-    <SEO title="Осознанный графдизайн"
+    <SEO title="Осознанный Графдизайн"
          description="Осознанный курс по графическому дизайну от Вадима Гранича (Granich). За 2 месяца вы получите упорядоченные знания о графическом дизайне и создадите свое портфолио. А еще изучите Adobe InDesign"
          keywords={['vhs', 'графсистема']}
          ogImage={ogImage}

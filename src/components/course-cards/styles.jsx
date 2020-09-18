@@ -230,8 +230,10 @@ export const CourseButton = styled.div`
     ${(props) => props.development && `
         background: #dedede;
     `}
+    ${props => props.empty && `
+        background: black;
+    `}
     @media only screen and (max-width: 575px) {
-        // border-radius: 0 0 3vw 3vw;
         border-radius: 0 0 1.5vw 1.5vw;
     }
     
@@ -255,6 +257,9 @@ export const CourseButtonText = styled.div`
     margin-top: -0.5vw;
     ${(props) => props.development && `
         color: #C0C0C0;
+    `}
+    ${(props) => props.empty && `
+        line-height: 1;
     `}
     @media only screen and (max-width: 575px) {
         font-size: 3.5vw;

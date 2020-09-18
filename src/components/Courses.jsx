@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components';
 import {Container} from './style';
 import Course from './Course';
-
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
+import Mailing from './Mailing';
 
 
 
@@ -35,15 +37,42 @@ const CoursesWrapper = styled.div`
 `
 
 
+
+
 const Courses = ({data}) => {
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+
+
+
+    const openModal = () => {
+        setIsOpen(true);
+
+    }
+
+    const closeModal = () => {
+        setIsOpen(false);
+
+    }
 
     return (
         <CoursesSection id="courses">
+            <Modal  center 
+                    closeIcon={<div></div>}
+                    open={modalIsOpen} 
+                    onClose={closeModal}
+                    focusTrapped={false}
+                    classNames={{
+                        overlay: 'mailingOverlay',
+                        modal: 'mailingModal',
+                    }}>
+                <Mailing/>
+
+            </Modal>
             <Container>
                 <CoursesWrapper >
                     {data.edges.map((course, idx) => {
                         return (
-                            <Course key={course.node.id} courseData={course}/>
+                            <Course openModal={openModal} key={course.node.id} courseData={course}/>
                         )
                     })}
                 </CoursesWrapper>

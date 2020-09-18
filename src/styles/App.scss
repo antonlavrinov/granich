@@ -555,6 +555,21 @@ div[data-accordion-component="AccordionItemHeading"] {
     box-shadow: none !important;
 }
 
+.mailingOverlay {
+    background: rgba(256,256,256,0.9) !important;
+    padding: 0 !important;
+    // width: calc(100% - 15px) !important;
+    padding-right: 15px !important;
+}
+
+.mailingModal {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+}
+
 
 .my-masonry-grid {
     display: -webkit-box; /* Not needed if autoprefixing */

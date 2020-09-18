@@ -15,10 +15,18 @@ const CourseLinkWrapper = styled.a`
     }
 `
 
+const CourseLinkModal = styled.div`
+    transition: all 0.2s ease;
+    :hover {
+        cursor: pointer;
+        transform: scale(1.03);
+    }
+`
 
 
 
-const Course = ({courseData}) => {
+
+const Course = ({courseData, openModal}) => {
     return (
         <>
             {courseData.node.courseTypeDevelopment ? (
@@ -26,13 +34,13 @@ const Course = ({courseData}) => {
             ) : (
                 <>
                     {courseData.node.courseTypeEmpty ? (
-                        <>
+                        <CourseLinkModal onClick={openModal} >
                             {courseData.node.courseType === 'Курс' ? (
                                 <CourseCard empty courseData={courseData} />
                             ) : (
                                 <MasterClassCard empty courseData={courseData}/>
                             )}
-                        </>
+                        </CourseLinkModal>
                     ) : (
                         <CourseLinkWrapper href={`/${courseData.node.courseSlug}`}>
                             <>
