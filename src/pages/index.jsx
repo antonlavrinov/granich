@@ -63,6 +63,8 @@ export const contentfulQuery = graphql`
               courseTitle
               courseType
               courseSlug
+              courseTypeDevelopment
+              courseTypeEmpty
             }
           }
         },

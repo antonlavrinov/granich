@@ -89,7 +89,7 @@ const PreparationContent = ({content}) => {
 
     return (
         <>
-            {content.contentType === mixed && <YoutubeMixedContent pinterestLinkIcon={pinterestLinkIcon} content={content} behanceIcon={behanceIcon} youtubePng={youtubePng} mediumIcon={mediumIcon}/>}
+            {content.contentType === mixed && <YoutubeMixedContent content={content} behanceIcon={behanceIcon} youtubePng={youtubePng} mediumIcon={mediumIcon}/>}
             {content.contentType === youtube && <YoutubeContent pinterestLinkIcon={pinterestLinkIcon} content={content} youtubePng={youtubePng}/>}
             {content.contentType === behance && <BehanceContent contentExternalLink={contentExternalLink} behanceLinkIcon={behanceLinkIcon} content={content} behanceIcon={behanceIcon}/>}
             {content.contentType === pinterest && <PinterestContent  contentExternalLink={contentExternalLink} pinterestLinkIcon={pinterestLinkIcon} content={content} pinterestIcon={pinterestIcon}/>}

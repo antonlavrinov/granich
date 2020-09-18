@@ -24,12 +24,6 @@ export const  Behance = styled(props => <Img {...props}/>)`
 
 export const  BehanceMixed = styled(props => <Img {...props}/>)`
     width: 2.7vw;
-    display: block;
-    width: 2.2vw;
-    height: 2.2vw;
-    width: 2.5vw;
-    height: 2.5vw;
-
     @media only screen and (max-width: 575px) {
         width: 7vw;
     }
@@ -43,16 +37,14 @@ export const  Youtube = styled(props => <Img {...props}/>)`
     margin-top: 0.05vw;
     @media only screen and (max-width: 575px) {
         height: auto;
-        width: 10vw;
-        margin-right: -1.3vw;
+        width: 9.5vw;
+        margin-right: -2vw;
     }
 `
 
 export const  YoutubeMixed = styled(props => <Img {...props}/>)`
     height: auto;
     width: 4.5vw;
-    width: 3.3vw;
-    width: 3.8vw;
     margin-left: -0.1vw;
     display: block;
     @media only screen and (max-width: 575px) {
@@ -63,10 +55,6 @@ export const  YoutubeMixed = styled(props => <Img {...props}/>)`
 `
 export const  Medium = styled(props => <Img {...props}/>)`
     width: 2.7vw;
-    width: 2.2vw;
-    height: 2.2vw;
-    width: 2.5vw;
-    height: 2.5vw;
     margin-right: 0.4vw;
     display: block;
     @media only screen and (max-width: 575px) {
@@ -368,7 +356,7 @@ export const  ContentButtonYoutubeText = styled.div`
 
     margin-left: -0.1vw;
     @media only screen and (max-width: 575px) {
-        font-size: 4vw;
+        font-size: 3.6vw;
     }
 `
 
