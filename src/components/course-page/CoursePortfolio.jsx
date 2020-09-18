@@ -148,7 +148,7 @@ const PortfolioContentInfo = styled.div`
         line-height: 1.55vw;
         font-weight: 500;
         i {
-            color: var(--granich-red);
+            color: var(--granich-black);
             background: rgba(228,5,33,0.15);
         }
     }
