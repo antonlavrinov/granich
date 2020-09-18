@@ -139,8 +139,9 @@ const ToolsItemInfoLinks = styled.div`
     width: 4vw;
     margin-bottom: 0.5vw;
     p {
-        margin-top: 0.2vw;
-        line-height: 1.3;
+        margin-top: 0.5vw;
+        font-size: 0.8vw;
+        line-height: 1.5;
 
 
     }
@@ -152,11 +153,16 @@ const ToolsItemInfoLinks = styled.div`
         color: var(--granich-red); 
         font-size: 0.8vw;
         position: relative;
-        display: inline-block;
-        text-decoration: underline;
+        display: inline;
+        border-bottom: 1px solid var(--granich-red);
+
+        line-height: 1;
+        :hover {
+            border-bottom: 1px solid var(--granich-red);
+        }
     } 
     @media only screen and (max-width: 575px) {
-        width: 10vw;
+        width: 16vw;
         margin-bottom: 0.5vw;
         p {
             margin-top: 1vw;

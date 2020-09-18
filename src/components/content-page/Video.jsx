@@ -241,7 +241,8 @@ const VideoItemInfoLinks = styled.div`
     margin-bottom: 0.5vw;
     p {
         margin-top: 0.2vw;
-        line-height: 1.3;
+
+        font-size: 0.8vw;
 
 
     }
@@ -253,11 +254,16 @@ const VideoItemInfoLinks = styled.div`
         color: white; 
         font-size: 0.8vw;
         position: relative;
-        display: inline-block;
-        text-decoration: underline;
+        display: inline;
+        border-bottom: 1px solid var(--granich-grey);
+        margin: 0;
+        height: 1vw;
+        :hover {
+            border-bottom: 1px solid white;
+        }
     } 
     @media only screen and (max-width: 575px) {
-        width: 10vw;
+        width: 16vw;
         margin-bottom: 2vw;
         p {
             margin-top: 1vw;
