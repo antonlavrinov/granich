@@ -48,7 +48,7 @@ export const CourseWrapper = styled(props => <a {...props}/>)`
     box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100%; 
 
 
     ${props => props.development && `
