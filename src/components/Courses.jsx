@@ -43,7 +43,7 @@ const Courses = ({data}) => {
                 <CoursesWrapper >
                     {data.edges.map((course, idx) => {
                         return (
-                            <Course key={idx} courseData={course}/>
+                            <Course key={course.node.id} courseData={course}/>
                         )
                     })}
                 </CoursesWrapper>

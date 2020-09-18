@@ -42,7 +42,7 @@ export const Calendar = styled(props => <CalendarIcon {...props}/>)`
 
 
 
-export const CourseWrapper = styled(props => <a {...props}/>)`
+export const CourseWrapper = styled.div`
     background: white;
     border-radius: 0.6vw;
     box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
@@ -271,16 +271,10 @@ export const CourseInfo = styled.div`
     line-height: 1.1;
     margin-bottom: 0.45vw;
     margin-top: 0.9vw;
-    // height: 100%;
-    // align-items: center;
     ${(props) => !props.active && `
         color: var(--granich-black);
     `}
     @media only screen and (max-width: 575px) {
-        // font-size: 4.3vw;
-        // margin-top: 4vw;
-        // margin-bottom: 0vw;
-        // margin-left: -0.5vw;
         font-size: 2.7vw;
         font-size: 3vw;
         margin-top: 2.5vw;
@@ -302,8 +296,6 @@ export const CourseDescr = styled.div`
         color: var(--granich-light-grey);
     `}
     @media only screen and (max-width: 575px) {
-        // font-size: 4.3vw;
-        // margin-top: 2vw;
         margin-left: 0.1vw;
         font-size: 2.7vw;
         font-size: 3vw;
@@ -317,17 +309,12 @@ export const CourseStart = styled.div`
     margin-right: 1.1vw;
     font-weight: 500;
     color: var(--granich-light-grey);
-    // ${(props) => !props.active && `
-    //     color: var(--granich-black);
-    // `}
     span {
         font-weight: inherit;
         font-size: inherit;
         color: black;
-
     }
     @media only screen and (max-width: 575px) {
-        // margin-right: 4vw;
         margin-right: 3vw;
     }
 
@@ -338,9 +325,6 @@ export const CourseDuration = styled.div`
     font-size: inherit;
     font-weight: 500;
     color: var(--granich-light-grey);
-    // ${(props) => !props.active && `
-    //     color: var(--granich-black);
-    // `}
     span {
         font-weight: inherit;
         font-size: inherit;
@@ -363,7 +347,6 @@ export const CourseTeachers = styled.div`
     background: linear-gradient(360deg, rgba(0,0,0,0.2) 0%, rgba(45,45,45,0) 80%);
     z-index: 100;
     @media only screen and (max-width: 575px) {
-        // padding: 2.2vw 3vw 2.2vw;
         padding: 1vw;
     }
     
@@ -378,7 +361,6 @@ export const CourseTeacher = styled(props => <BackgroundImage {...props}></Backg
     box-shadow: 0.15vw 0.12vw 0.2vw rgba(0,0,0,0.25);
     background: var(--granich-grey);
     ${props => props.several && `
-        // transform: translateX(17%);
         margin-right: -0.2vw;
         :last-child {
             margin-right: 0;

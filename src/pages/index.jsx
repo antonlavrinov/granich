@@ -44,6 +44,7 @@ export const contentfulQuery = graphql`
         courseCards: allContentfulGranichCourse(sort: {fields: [courseOrderNumber], order: ASC}) {
           edges {
             node {
+              id
               courseStatus
               courseStart
               courseDescr
