@@ -104,10 +104,6 @@ const TeacherWrapper = styled.div`
     padding: 1.7vw 1.5vw 2vw 2.8vw; 
     display: flex;
     flex-direction: column;
-    ${props => props.masterclass && `
-        min-height: 16.1vw;
-    `}
-
     @media only screen and (max-width: 575px) {
         border-radius: 2.5vw;
         padding: 6.5vw 8vw 8vw 10vw; 
@@ -117,6 +113,9 @@ const TeacherWrapper = styled.div`
             min-height: auto;
         `}
     }
+    ${props => props.masterclass && `
+        min-height: 16.1vw;
+    `}
 `
 
 const TeacherHeader = styled.div`
