@@ -75,7 +75,9 @@ const SliderRight = styled(props => <SliderRightIcon {...props}/>)`
 `
 
 const Slider = styled(props => <BackgroundImage {...props}/>)`
-
+    // :before {
+    //     background-size: cover !important;
+    // }
 ` 
     // :focus {
     //     border: none;
@@ -136,7 +138,7 @@ const PortfolioImageGallery = ({images}) => {
 
     const _renderItem = (item, isFullscreen) => {
         return (
-          <Slider className="gallery-custom-slider" style={{width: '100%', backgroundSize: `${fullscreen ? 'contain' : "100%"}`}} fluid={item.fluid}></Slider>
+          <Slider className="gallery-custom-slider" style={{width: '100%', backgroundSize: `${fullscreen ? 'contain' : "cover"}`}} fluid={item.fluid}></Slider>
         )
         }
     
@@ -278,6 +280,7 @@ const PortfolioImageGallery = ({images}) => {
 
 
 
+
                 @media only screen and (max-width: 575px) {
                     .image-gallery-fullscreen-button {
                         width: 12vw;
@@ -306,6 +309,7 @@ const PortfolioImageGallery = ({images}) => {
                     .gallery-custom-slider {
                         height: 60vw;
                     }
+
                     .image-gallery-thumbnail-image {
                         object-fit: cover;
                         height: 45px;
@@ -335,6 +339,7 @@ const PortfolioImageGallery = ({images}) => {
                         height: calc(100vh - 88px) !important;
     
                     }
+
 
                     .image-gallery-slide {
                         height: auto !important;
