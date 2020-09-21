@@ -17,10 +17,13 @@ jobs:
         uses: actions/setup-node@master
         with: 
           node-version: 10.x
-            
+      - name: Clear cache
+        run: npm cache clean --force
+              
       - name: Install dependencies
         run: npm install 
-        
+      - name: delete node modules and package.json
+        run: rm -rf node_modules package-lock.json
       - name: Build
         run: npm run build
           
