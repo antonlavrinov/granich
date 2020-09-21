@@ -236,18 +236,18 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "eb919d45697b43f2aac11cdaf4122ab0"
+    "revision": "906a7a34d80ff12107a1555b3ec45e58"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "8432af2bfe698ad63b3849a61a30b1e0"
+    "revision": "a05be59eda98876d0e81886ede3a622d"
   },
   {
     "url": "kak-oformit-abzac/index.html",
-    "revision": "7f6353486a83a26dd6eb7b7c1c49857d"
+    "revision": "23b9ca1eb2fe82bc1a887f351eac0892"
   },
   {
     "url": "kldfgj/index.html",
@@ -263,11 +263,11 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "3ea5f0fa34859e28060cdd5af42ccc40"
+    "revision": "4e23fe930bcba9b62eaac45aec281b06"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "b40e990bf1627be9fe35b79de2fa3793"
+    "revision": "5ffe3c658f8b35b4179f35a968bdd202"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -295,11 +295,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "943df4237854699aa2c8e71caecd0dff"
+    "revision": "ac16c869db668ac9046e9bcc363f6189"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
-    "revision": "c4393b586e14ba036b0035abbb4d5bdd"
+    "revision": "8364ccce47315fb3c304482a8eb4a7a6"
   },
   {
     "url": "page-data/kldfgj/page-data.json",
@@ -311,7 +311,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznannaya-podborka-graphdesign/page-data.json",
-    "revision": "58ac9eedee4b3f6d5a1eba4107fc14d1"
+    "revision": "34854afbba82065d970c66e990e94c53"
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
@@ -351,7 +351,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/xcxc/page-data.json",
-    "revision": "c898f726bc26fa720dd78a3311b2870b"
+    "revision": "fc2f54f3ce06a429a2dc814845b7181f"
   },
   {
     "url": "page-data/xczasdd/page-data.json",
@@ -390,7 +390,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "950ed052a3220119619f3a95ac2b3383"
+    "revision": "c68e00bb4fe1e7cfef7e8ab42d631340"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
@@ -610,7 +610,7 @@ self.__precacheManifest = [
   },
   {
     "url": "xcxc/index.html",
-    "revision": "0c65821297b4671e65bdb02df28e8944"
+    "revision": "b8a360951cd21d4b035fbecb4a12d651"
   },
   {
     "url": "xczasdd/index.html",
