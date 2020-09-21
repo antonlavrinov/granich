@@ -122,6 +122,9 @@ const LinkBlock = styled.a`
     @media only screen and (max-width: 575px) {
         padding: 4vw 5.4vw;
         border-radius: 2.5vw;
+        :hover {
+            transform: none;
+        }
 
     }
 

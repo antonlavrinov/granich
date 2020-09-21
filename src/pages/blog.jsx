@@ -6,6 +6,12 @@ import styled from 'styled-components';
 import { Container } from '../components/style';
 import Header from "../components/Header";
 import { Link } from "gatsby";
+import VKIcon from '../assets/svgs/granich-main-team/vk.svg';
+import InstagramIcon from '../assets/svgs/granich-main-team/instagram.svg';
+import TelegramIcon from '../assets/svgs/granich-main-team/telegram.svg';
+
+
+
 
 const NotFoundSection = styled.section`
 
@@ -14,10 +20,10 @@ const NotFoundSection = styled.section`
 const NotFoundWrapper = styled.div`
   background: white;
   border-radius: 0.6vw;
-  padding: 4.2vw 3.3vw;
+  padding: 4.2vw 3.3vw ;
   position: relative;
   min-height: 36.5vw;
-  height: 36.5vw;
+  // height: 36.5vw;
   @media only screen and (max-width: 575px) {
     border-radius: 2.5vw;
     padding: 7vw 6vw 38vw;
@@ -27,7 +33,7 @@ const NotFoundWrapper = styled.div`
 `
 
 const NotFoundTitle = styled.div`
-  font-size: 4.55vw;
+  font-size: 5vw;
   letter-spacing: -0.2vw;
   font-weight: 700;
   line-height: 0.87;
@@ -37,25 +43,25 @@ const NotFoundTitle = styled.div`
     font-size: 8.4vw;
     letter-spacing: -0.5vw;
     line-height: 1.1;
-    margin-bottom: 7vw;
+    margin-bottom: 3vw;
   }
 
 `
 
 const NotFoundText = styled.div`
   color: var(--granich-black);
-  font-size: 1.6vw;
+  font-size: 2vw;
   margin-top: 0.2vw;
   line-height: 1.55;
   letter-spacing: 0.01vw;
   font-weight: 500;
-  margin-bottom: 1.6vw;
+  margin-bottom: 3vw;
   margin-left: -0.2vw;
   @media only screen and (max-width: 575px) {
     font-size: 5.2vw;
     letter-spacing: -0.01vw;
     line-height: 1.5;
-    margin-bottom: 8vw;
+    margin-bottom: 5vw;
   }
 `
 
@@ -96,25 +102,47 @@ const NotFoundLink = styled(props => <Link {...props}/>)`
 
 
 `
+const NotFoundSocials = styled.div`
+  display: flex;
+  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+`
 
-const NotFoundSymbol = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 2.5vw;
-  font-size: 24vw;
-  font-family: EB Garamond;
-  font-style: italic;
-  font-weight: 500;
-  color: #F2F2F2;
-  letter-spacing: -0.2vw;
-  line-height: 0.7;
-  user-select: none;
+const NotFoundSocial = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 4vw;
+  margin-bottom: 2vw;
+  :last-child {
+    margin-bottom: 0;
+  }
+  svg {
+    margin-right: 1vw;
+    width: 3.5vw;
+    height: 3.5vw;
+  }
+  a {
+    font-size: 1.8vw;
+    border-bottom: 1px solid var(--granich-light-grey);
+    :hover {
+      border-bottom: 1px solid var(--granich-black);
+    }
+  }
   @media only screen and (max-width: 575px) {
-    font-size: 55vw;
-    bottom: -2vw;
-    right: 5vw;
+    margin-bottom: 5vw;
+    a {
+      font-size: 4.5vw;
+    }
+    svg {
+      margin-right: 2.5vw;
+      width: 10vw;
+      height: 10vw;
+    }
   }
 `
+
+
 
 const NotFoundPage = () => (
   <Layout>
@@ -128,10 +156,22 @@ const NotFoundPage = () => (
             Блог в разработке...
           </NotFoundTitle>
           <NotFoundText>
-            Оповестим о запуске на других площадках блога школы. <br/> 
-            Вот несколько других интересных материалов:
+            Когда мы его запустим на сайте мы оповестим на других площадках, где ведем блог школы:
+            {/* Оповестим о запуске на других площадках блога школы. <br/> 
+            Вот несколько других интересных материалов: */}
           </NotFoundText>
-          <NotFoundLinksWrapper>
+          <NotFoundSocials>
+            <NotFoundSocial>
+              <VKIcon/> <a href="https://vk.com/granichvk" target="_blank">vk.com/granichvk</a>
+            </NotFoundSocial>
+            <NotFoundSocial>
+              <TelegramIcon/> <a href="https://t.me/granichannel" target="_blank">t.me/granichannel</a>
+            </NotFoundSocial>
+            <NotFoundSocial>
+              <InstagramIcon/> <a href="https://www.instagram.com/granichgram" target="_blank">@granichgram</a>
+            </NotFoundSocial>
+          </NotFoundSocials>
+          {/* <NotFoundLinksWrapper>
             <ul>
               <li>
               <NotFoundLink to="/osoznanny-graph-design">Осознанный графдизайн</NotFoundLink>
@@ -142,7 +182,7 @@ const NotFoundPage = () => (
             </ul>
             
 
-          </NotFoundLinksWrapper>
+          </NotFoundLinksWrapper> */}
         </NotFoundWrapper>
       </Container>
 

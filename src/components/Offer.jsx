@@ -36,7 +36,16 @@ const OfferMobileSection = styled(props => <BackgroundImage {...props}></Backgro
         background-size: 'cover';
         background-position: top center;
         background-repeat: 'no-repeat';
-        padding: 28vw 10vw 0;    
+        padding: 28vw 0;    
+    }
+`
+
+const OfferMobileWrapper = styled.div`
+    display: none;
+    position: relative;
+    @media only screen and (max-width: 575px) {
+        display: block;
+        padding: 0 6vw;    
     }
 `
 
@@ -176,10 +185,13 @@ const Offer = ({data}) => {
             </OfferSection>
             <OfferMobileSection fluid={headerImageMobile} id="offer" >
                 <Container>
-                    <OfferTitle>{headerTitle}</OfferTitle>
-                    <OfferDescr>
-                        {headerSubtitle_01} <OfferFlagsImg alt="flags" fluid={headerSubtitleImage} /> <br/> {headerSubtitle_02} <span tabIndex={0} role="button" onKeyDown={() => scrollTo('#manifest')} onClick={() => scrollTo('#manifest')}>{headerSubtitle_03} <OfferUnderlineIcon/></span>
-                    </OfferDescr>
+                    <OfferMobileWrapper>
+                        <OfferTitle>{headerTitle}</OfferTitle>
+                        <OfferDescr>
+                            {headerSubtitle_01} <OfferFlagsImg alt="flags" fluid={headerSubtitleImage} /> <br/> {headerSubtitle_02} <span tabIndex={0} role="button" onKeyDown={() => scrollTo('#manifest')} onClick={() => scrollTo('#manifest')}>{headerSubtitle_03} <OfferUnderlineIcon/></span>
+                        </OfferDescr>
+                    </OfferMobileWrapper>
+
                 </Container>
             </OfferMobileSection>
             <OfferSvgClip/>

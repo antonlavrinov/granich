@@ -385,6 +385,11 @@ const Video = ({data}) => {
                             modal: 'customVideoModal',
                         }}>
                     <VideoModal>
+                        <div className="loadingio-spinner-rolling-ta5f1nqy5p">
+                            <div className="ldio-6b142d04hhl">
+                                <div></div>
+                            </div>
+                        </div>
                         <VideoCross onClick={closeModal}><Cross/></VideoCross>
                         <VideoModalWrapper>
                             <iframe title="youtubeFrame"  src={videoLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>

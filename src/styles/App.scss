@@ -568,6 +568,8 @@ div[data-accordion-component="AccordionItemHeading"] {
     padding: 0 !important;
     background: none !important;
     box-shadow: none !important;
+    display: flex;
+    justify-content: center;
 }
 
 

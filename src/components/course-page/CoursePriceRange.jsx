@@ -291,6 +291,7 @@ const PriceCategoryButton = styled.a`
         margin-bottom: 1.5vw;
         :hover {
             font-size: 7vw;
+            transform: none;
             
         }
     }
@@ -351,7 +352,7 @@ const CoursePriceRange = ({data}) => {
                                 overlay: 'customOverlay',
                                 modal: 'customModal',
                             }}>
-                        <PriceRangeModal  chosenPrice={chosenPrice} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpen}/>
+                        <PriceRangeModal data={data} chosenPrice={chosenPrice} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpen}/>
                       </Modal>
                 
                 <PriceRangeWrapper>

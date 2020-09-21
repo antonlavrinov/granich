@@ -223,6 +223,9 @@ export const CourseButton = styled.div`
     border-radius: 0 0 0.6vw 0.6vw;
     color: white;
     margin-top: auto;
+    @media only screen and (max-width: 575px) {
+        border-radius: 0 0 1.5vw 1.5vw;
+    }
     ${(props) => !props.active && `
         background: black;
     
@@ -233,9 +236,7 @@ export const CourseButton = styled.div`
     ${props => props.empty && `
         background: black;
     `}
-    @media only screen and (max-width: 575px) {
-        border-radius: 0 0 1.5vw 1.5vw;
-    }
+
     
 `
 

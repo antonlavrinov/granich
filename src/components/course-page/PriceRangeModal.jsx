@@ -257,6 +257,9 @@ const FormLabelText = styled.div`
           padding: 3vw 8vw;
           border-radius: 1.5vw;
           box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
+          :hover {
+            transform: none;
+        }
       }
   `
   
@@ -452,7 +455,7 @@ const FormSubTextEmail = styled.span`
 </script> */}
 
 
-const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice}) => {
+const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
     const formEl = useRef(null)
 
@@ -546,26 +549,24 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice}) => {
                                                 type="radio"
                                                 name="formParams[picked]"
                                                 value={values.formParams.picked}
-                                                checked={values.formParams.picked === '700'}
+                                                checked={values.formParams.picked === `${data.edges[0].node.pricesPrice}`}
                                                 onChange={() => {
-                                                    setFieldValue("formParams[picked]", "700");
+                                                    setFieldValue("formParams[picked]", `${data.edges[0].node.pricesPrice}`);
                                                     // setFieldTouched("formParams[picked]", true)
                                                 }}
-                                                id="700"
+                                                id={`${data.edges[0].node.pricesPrice}`}
                                                 className={`course-form-checkbox`}
                                                 errorStyle={errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked ? 1 : 0}
                                                 
                                             /> 
-                                            {console.log(values.formParams.picked)}
-                                           
                                             <FormCheckboxLabel line 
                                                                className={`course-form-label ${errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked && 'course-form-label_error'}`} 
-                                                               htmlFor="700">
+                                                               htmlFor={`${data.edges[0].node.pricesPrice}`}>
                                                         <FormLabelText>
                                                             пакет Презентация
                                                         </FormLabelText>
                                                         <FormLabelPrice>
-                                                            700 ₽
+                                                            {`${data.edges[0].node.pricesPrice}`} ₽
                                                         </FormLabelPrice>
                                             </FormCheckboxLabel>
                                             
@@ -573,62 +574,61 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice}) => {
                                                 type="radio"
                                                 name="formParams[picked]"
                                                 value={values.formParams.picked}
-                                                checked={values.formParams.picked === '1500'}
+                                                checked={values.formParams.picked === `${data.edges[1].node.pricesPrice}`}
                                                 onChange={() => {
-                                                    setFieldValue("formParams[picked]", "1500");
+                                                    setFieldValue("formParams[picked]", `${data.edges[1].node.pricesPrice}`);
                                                     // setFieldTouched("formParams[picked]", true)
                                                 }}
-                                                id="1500"
+                                                id={`${data.edges[1].node.pricesPrice}`}
                                                 className={`course-form-checkbox`}
                                                 errorStyle={errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked ? 1 : 0}
                                                 
                                             /> 
-                                            {console.log(values.formParams.picked)}
                                            
                                             <FormCheckboxLabel line 
                                                                className={`course-form-label ${errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked && 'course-form-label_error'}`} 
-                                                               htmlFor="1500">
+                                                               htmlFor={`${data.edges[1].node.pricesPrice}`}>
                                                                 <FormLabelText>
                                                                     пакет Видеоформат
                                                                 </FormLabelText>
                                                                 <FormLabelPrice>
-                                                                    1500 ₽
+                                                                    {`${data.edges[1].node.pricesPrice}`} ₽
                                                                 </FormLabelPrice>
                                                             </FormCheckboxLabel>
                                             <FormCheckbox 
                                                 type="radio"
                                                 name="formParams[picked]"
                                                 value={values.formParams.picked}
-                                                checked={values.formParams.picked === '2500'}
+                                                checked={values.formParams.picked === `${data.edges[2].node.pricesPrice}`}
                                                 onChange={() => {
-                                                    setFieldValue("formParams[picked]", "2500");
+                                                    setFieldValue("formParams[picked]", `${data.edges[2].node.pricesPrice}`);
                                                     // setFieldTouched("formParams[picked]", true)
                                                 }}
-                                                id="2500"
+                                                id={`${data.edges[2].node.pricesPrice}`}
                                                 className={`course-form-checkbox`}
                                                 errorStyle={errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked ? 1 : 0}
                                                 
                                             /> 
                                             {console.log(values.formParams.picked)}
                                            
-                                            <FormCheckboxLabel line className={`course-form-label ${errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked && 'course-form-label_error'}`} htmlFor="2500">
+                                            <FormCheckboxLabel line className={`course-form-label ${errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked && 'course-form-label_error'}`} htmlFor={`${data.edges[2].node.pricesPrice}`}>
                                                   <FormLabelText>
                                                     пакет Домашнее Задание
                                                   </FormLabelText>
                                                   <FormLabelPrice>
-                                                      2500 ₽
+                                                      {`${data.edges[2].node.pricesPrice}`} ₽
                                                   </FormLabelPrice>
                                             </FormCheckboxLabel>
                                             <FormCheckbox 
                                                 type="radio"
                                                 name="formParams[picked]"
                                                 value={values.formParams.picked}
-                                                checked={values.formParams.picked === '3500'}
+                                                checked={values.formParams.picked === `${data.edges[3].node.pricesPrice}`}
                                                 onChange={() => {
-                                                    setFieldValue("formParams[picked]", "3500");
+                                                    setFieldValue("formParams[picked]", `${data.edges[3].node.pricesPrice}`);
                                                     // setFieldTouched("formParams[picked]", true)
                                                 }}
-                                                id="3500"
+                                                id={`${data.edges[3].node.pricesPrice}`}
                                                 className={`course-form-checkbox`}
                                                 errorStyle={errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked ? 1 : 0}
                                                 
@@ -637,12 +637,12 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice}) => {
                                            
                                             <FormCheckboxLabel  
                                                                className={`course-form-label ${errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked && 'course-form-label_error'}`} 
-                                                               htmlFor="3500">
+                                                               htmlFor={`${data.edges[3].node.pricesPrice}`}>
                                                   <FormLabelText>
                                                     пакет Макет с нуля
                                                   </FormLabelText>
                                                   <FormLabelPrice>
-                                                      3500 ₽
+                                                      {`${data.edges[3].node.pricesPrice}`} ₽
                                                   </FormLabelPrice>
 
                                             </FormCheckboxLabel>

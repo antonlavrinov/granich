@@ -255,6 +255,9 @@ const FormButton = styled.button`
         padding: 3vw 8vw;
         border-radius: 1.5vw;
         box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
+        :hover {
+            transform: none;
+        }
     }
 `
 
@@ -320,43 +323,6 @@ const FormFooterContainer = styled.div`
     }
 `
 
-{/* <form id="ltForm8828045"  action="https://granich.ru/pl/lite/block-public/process-html?id=855573236" method="post" data-open-new-window="0"><input type="hidden" name="formParams[setted_offer_id]" ><br>
-<input id="input-formPosition9608177" name='formParams[need_offer]' type='hidden' value="" /><br>
-<input
-								
-				data-price-value=""
-				data-old-price-value=""
-				data-price-currency="руб."
-				data-qty-value=""
-								id="input-formPosition9608177"
-				name='formParams[offer_id][]'
-				type='radio' checked value="" 			><br>
-<input type="text" maxlength="60"  placeholder="Имя" name="formParams[first_name]" value=""><br>
-<input type="text" maxlength="60"  placeholder="Фамилия" name="formParams[last_name]" value=""><br>
-<input type="text" maxlength="60"  placeholder="Электропочта" name="formParams[email]" value="" ><br>
-<input type="text" maxlength="60"  placeholder="Телефон" name="formParams[phone]" value=""><br>
-<button type="submit"
-		id="button970916"
-		
-		style="color: ; background-color: ; " onclick="if(window['btnprs5f64b8d772769']){return false;}window['btnprs5f64b8d772769']=true;setTimeout(function(){window['btnprs5f64b8d772769']=false},6000);return true;">
-	Оплатить</button><br>
-<input type="hidden" id="2588385f64b8d766d50" name="__gc__internal__form__helper" class="__gc__internal__form__helper" value="">
-<input type="hidden" id="2588385f64b8d766d50ref" name="__gc__internal__form__helper_ref" class="__gc__internal__form__helper_ref" value="">
-<input type="hidden" name="requestTime" value="1600436439">
-<input type="hidden" name="requestSimpleSign" value="49b52db9d0d0c2186e4a47c281ae23ca">
-<input type="hidden" name="isHtmlWidget" value="1"/></form><span id="gccounterImgContainer"></span><script>
-	window.onload = function(){
-		let loc = document.getElementById("2588385f64b8d766d50");
-		loc.value = window.location.href;
-		let ref = document.getElementById("2588385f64b8d766d50ref");
-		ref.value = document.referrer;
-		
-		let statUrl = "https://granich.ru/stat/counter?ref=" + encodeURIComponent(document.referrer)
-			+ "&loc=" + encodeURIComponent(document.location.href);
-		document.getElementById('gccounterImgContainer').innerHTML
-			= "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
-	}
-</script> */}
 
 
 
@@ -380,14 +346,14 @@ const ParticipationForm = ({data}) => {
     //Кодировка формы для Геткурса
         const firstGetcourseFormScript = () => {
             //этот код тупо добавляет url нашего сайта в value прозрачных инпутов
-            let loc = document.getElementById("2096375ed6bdb394609");
+            let loc = document.getElementById("2588385f64b8d766d50");
             loc.value = window.location.href;
-            let ref = document.getElementById("2096375ed6bdb394609ref");
+            let ref = document.getElementById("2588385f64b8d766d50ref");
             ref.value = document.referrer;
         }
         //Кодировка формы для Геткурса
         const secondGetcourseFormScript = () => {
-            let statUrl = "https://english-school.getcourse.ru/stat/counter?ref=" + encodeURIComponent(document.referrer) + "&loc=" + encodeURIComponent(document.location.href);
+            let statUrl = "https://granich.ru/stat/counter?ref=" + encodeURIComponent(document.referrer) + "&loc=" + encodeURIComponent(document.location.href);
             document.getElementById('gccounterImgContainer').innerHTML = "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
         }
 
@@ -449,7 +415,7 @@ const ParticipationForm = ({data}) => {
                                                 setShakeTrigger(shakeTrigger + 1);
                                                 
                                             }
-                                        }}  id="ltForm9605210"  action="https://english-school.getcourse.ru/pl/lite/block-public/process-html?id=728049569" method="post" data-open-new-window="0" >
+                                        }}  id="ltForm8828045"  action="https://granich.ru/pl/lite/block-public/process-html?id=855573236" method="post" data-open-new-window="0" >
                                     <FormWrapper>
                                        
                                         <FormContainer>
@@ -557,13 +523,13 @@ const ParticipationForm = ({data}) => {
                                                 <FormButton 
                                                         disabled={isSubmitting} 
                                                         type="submit"
-                                                        id="button2119696"
-                                                        onClick={() => {if(window['btnprs5ed6bdb399786']){
+                                                        id="button970916"
+                                                        onClick={() => {if(window['btnprs5f64b8d772769']){
                                                             return false;
                                                         }
-                                                        window['btnprs5ed6bdb399786']=true;
+                                                        window['btnprs5f64b8d772769']=true;
                                                         setTimeout(function(){
-                                                            window['btnprs5ed6bdb399786']=false},6000);
+                                                            window['btnprs5f64b8d772769']=false},6000);
                                                             return true;}}
                                                     >Оплатить</FormButton>
                                                         {data.coursePrice && (
@@ -581,13 +547,13 @@ const ParticipationForm = ({data}) => {
 
 
                                         
-                                            <input type="hidden" id="2096375ed6bdb394609" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value=""/>
+                                            <input type="hidden" id="2588385f64b8d766d50" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value=""/>
                                          
-                                            <input type="hidden" id="2096375ed6bdb394609ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value=""/>
+                                            <input type="hidden" id="2588385f64b8d766d50ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value=""/>
                                             
-                                            <input type="hidden" name="requestTime" value="1591131571"/>
+                                            <input type="hidden" name="requestTime" value="1600436439"/>
                                            
-                                            <input type="hidden" name="requestSimpleSign" value="d5bf9d9f1e29eaded1dcc696282a0cb7"/>
+                                            <input type="hidden" name="requestSimpleSign" value="49b52db9d0d0c2186e4a47c281ae23ca"/>
                                            
                                             <input type="hidden" name="isHtmlWidget" value="1"/>
 

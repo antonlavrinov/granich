@@ -9,7 +9,7 @@ const PreparationSection = styled.section`
     margin-top: 4vw;
     margin-bottom: 4vw;
     @media only screen and (max-width: 575px) {
-        margin-bottom: 10vw;
+        margin-bottom: 5vw;
         margin-top: 5vw;
     }
 

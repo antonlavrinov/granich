@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
@@ -153,25 +153,33 @@ export const contentfulQuery = graphql`
 
 //header or offer seems to be a problem
 
-const IndexPage = ({data}) => (
-  <Layout>
-    
-    <Header/>
-    <SEO title="Онлайн-школа Granich"
-         description="Онлайн-школа Granich"
-         keywords={['vhs', 'графсистема']}
-         ogImage={ogImage}
-         url="https://anton-dev.ru/" />
-    <Offer data={data.header}/>
-    <Courses data={data.courseCards}  />
+const IndexPage = ({data}) => {
+  const [mailingActive, setMailingActive] = useState(true)
 
-    <Manifest/>
-    <Mailing/>
-    <div className="content"></div>
-    <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/>
-    <OurTeam data={data.team}/> 
+  const toggleMailingActive = (boolean) => {
+    setMailingActive(boolean)
+  }
+  return (
+    <Layout>
+      
+      <Header/>
+      <SEO title="Онлайн-школа Granich"
+          description="Онлайн-школа Granich"
+          keywords={['vhs', 'графсистема']}
+          ogImage={ogImage}
+          url="https://anton-dev.ru/" />
+      <Offer data={data.header}/>
+      <Courses data={data.courseCards} toggleMailingActive={toggleMailingActive} />
 
-  </Layout>
-)
+      <Manifest/>
+      {mailingActive && <Mailing/>}
+      <div className="content"></div>
+      <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/>
+      <OurTeam data={data.team}/> 
+
+    </Layout>
+  )
+}
+
 
 export default IndexPage

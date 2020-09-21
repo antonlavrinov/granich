@@ -109,6 +109,9 @@ export const  ContentWrapperLink = styled.a`
     @media only screen and (max-width: 575px) {
         border-radius: 1.5vw;
         min-height: 56vw;
+        :hover {
+            transform: none;
+        }
     }
     ${props => props.podborka && `
         background: #CBA181;
@@ -140,6 +143,9 @@ export const  ContentWrapperExternalLink = styled.a`
         min-height: 56vw;
 
         border-radius: 1.5vw;
+        :hover {
+            transform: none;
+        }
     } 
 `
 

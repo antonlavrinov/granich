@@ -5,8 +5,34 @@ import Course from './Course';
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import Mailing from './Mailing';
+import Cross from '../assets/svgs/cross.svg';
 
 
+const PopupCross = styled.div`
+      position: absolute;
+      top: -4.5vw;
+      right: -0.8vw;
+      svg {
+          fill: rgba(0,0,0,0.5);
+          width: 4vw;
+          height: 4vw;
+      }
+      :hover {
+          cursor: pointer;
+          svg {
+            fill: var(--granich-red);
+          }
+
+      }
+      @media only screen and (max-width: 575px) {
+        top: -12vw;
+        right: -2.3vw;
+        svg {
+            width: 12vw;
+            height: 12vw;
+        }
+      }
+`
 
 const CoursesSection = styled.section`
     position: relative;
@@ -39,18 +65,20 @@ const CoursesWrapper = styled.div`
 
 
 
-const Courses = ({data}) => {
+const Courses = ({data, toggleMailingActive}) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
 
 
     const openModal = () => {
         setIsOpen(true);
+        toggleMailingActive(false)
 
     }
 
     const closeModal = () => {
         setIsOpen(false);
+        toggleMailingActive(true)
 
     }
 
@@ -60,12 +88,17 @@ const Courses = ({data}) => {
                     closeIcon={<div></div>}
                     open={modalIsOpen} 
                     onClose={closeModal}
-                    focusTrapped={false}
+                    focusTrapped={true}
                     classNames={{
                         overlay: 'mailingOverlay',
                         modal: 'mailingModal',
                     }}>
-                <Mailing/>
+                        <div style={{position: 'relative', display: 'inline-block'}}>
+                            <PopupCross onClick={closeModal}><Cross/></PopupCross>
+                            <Mailing popup/>
+                        </div>
+
+
 
             </Modal>
             <Container>

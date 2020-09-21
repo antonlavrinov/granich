@@ -304,11 +304,12 @@ const LoginMobileButton = styled.a`
         margin-right: 1vw;
       }
       :hover {
-        transform: scale(1.1);
         cursor: pointer;
         color: white;
         font-size: 3.5vw;
+        letter-spacing: 0.05vw;
         font-weight: 600;
+        transform: none;
       }
     }
 `

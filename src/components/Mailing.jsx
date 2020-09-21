@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef, useState, useEffect} from 'react'
 import styled from 'styled-components';
 import BlackArrowRight from '../assets/svgs/arrow-black-right.svg';
 import {Formik} from 'formik';
@@ -29,6 +29,10 @@ const ArrowRightButton = styled(props => <BlackArrowRight {...props}/>)`
 `
 
 const PrivacyLink = styled(props => <Link {...props}/>)`
+
+`
+
+const PrivacyPopupLink = styled.a`
 
 `
 
@@ -277,10 +281,29 @@ const MailingWrapperInputAndButton = styled.div`
 
 
 
-const Mailing = () => {
+const Mailing = ({popup}) => {
     const [shakeTrigger, setShakeTrigger] = useState(3);
 
     const formEl = useRef(null)
+
+    useEffect(() => {
+        //Кодировка формы для Геткурса
+        const firstGetcourseFormScript = () => {
+            //этот код тупо добавляет url нашего сайта в value прозрачных инпутов
+            let loc = document.getElementById("2588475f67e38dc85f8");
+            loc.value = window.location.href;
+            let ref = document.getElementById("2588475f67e38dc85f8ref");
+            ref.value = document.referrer;
+        }
+        //Кодировка формы для Геткурса
+        const secondGetcourseFormScript = () => {
+            let statUrl = "https://granich.ru/stat/counter?ref=" + encodeURIComponent(document.referrer) + "&loc=" + encodeURIComponent(document.location.href);
+            document.getElementById('gccounterImgContainer').innerHTML = "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
+        }
+
+        firstGetcourseFormScript()
+        secondGetcourseFormScript()
+    }, [])
 
     //initial Validation
     function isInitialValid(props) {
@@ -328,8 +351,9 @@ const Mailing = () => {
                                         setFieldValue
                                     } = props;
                                     return (
-                                        <MailingForm className="main-page-form" action="https://english-school.getcourse.ru/pl/lite/block-public/process-html?id=728049569" 
+                                        <MailingForm className="main-page-form" action="https://granich.ru/pl/lite/block-public/process-html?id=855578433" 
                                                     method="post" 
+                                                    data-open-new-window="0"
                                                     ref={formEl} 
                                                     onSubmit={ (e) => {
                                                         if(isValid) {
@@ -346,7 +370,7 @@ const Mailing = () => {
                                                     }
 
                                             }>
-
+                                                    <input type="hidden" name="formParams[setted_offer_id]"/>
                                                     <MailingWrapperInputAndButton>
                                                         <MailingInput 
                                                                 type="text" 
@@ -357,7 +381,18 @@ const Mailing = () => {
                                                                 onChange={handleChange}
                                                                 errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
                                                             />
-                                                             <MailingButton aria-label="Submit" type="submit" disabled={isSubmitting}><ArrowRightButton/></MailingButton>
+                                                             <MailingButton aria-label="Submit" 
+                                                                            type="submit"
+                                                                            id="button7568304"
+                                                                            onClick={() => {if(window['btnprs5f67e38dd2018']){
+                                                                                return false;
+                                                                            }
+                                                                                window['btnprs5f67e38dd2018']=true;
+                                                                                setTimeout(function(){
+                                                                                    window['btnprs5f67e38dd2018']=false},6000);
+                                                                                    return true;
+                                                                            }}
+                                                                            disabled={isSubmitting}><ArrowRightButton/></MailingButton>
                                                             
                                                         
                                                     </MailingWrapperInputAndButton>
@@ -376,16 +411,33 @@ const Mailing = () => {
 
                                                             <FormCheckboxLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">
                                                                 <FormCheckboxLabelText errorMessage={errors.politikaCheckbox && touched.politikaCheckbox ? errors.politikaCheckbox : 0}>
-                                                                    Принять<PrivacyLink to="/privacy"> политику конфиденциальности</PrivacyLink>
+                                                                    {popup ? (
+                                                                        <>
+                                                                            Принять<PrivacyPopupLink href="/privacy"> политику конфиденциальности</PrivacyPopupLink>
+                                                                        </>
+                                                                    ) : (
+                                                                        <>
+                                                                            Принять<PrivacyLink to="/privacy"> политику конфиденциальности</PrivacyLink>
+                                                                        </>
+                                                                        
+                                                                    )}
+                                                                    
                                                                 </FormCheckboxLabelText>
                                                             </FormCheckboxLabel> 
+                                                            <input type="hidden" id="2588475f67e38dc85f8" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value=""/>
+                                                            <input type="hidden" id="2588475f67e38dc85f8ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value=""/>
+                                                            <input type="hidden" name="requestTime" value="1600643981"/>
+                                                            <input type="hidden" name="requestSimpleSign" value="b034133ec813412fc5a260bab9fab587"/>
+                                                            <input type="hidden" name="isHtmlWidget" value="1"/>
 
                                                    
     
                                         </MailingForm>
+                                        
                                     )}}
 
                                 </Formik>
+                                <span id="gccounterImgContainer"></span>
 
                             
 

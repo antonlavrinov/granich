@@ -188,6 +188,7 @@ const BannerCourseButton = styled.a`
         box-shadow: 0.7vw 0.7vw 1.5vw rgba(0,0,0,0.3);
         :hover {
             font-size: 4.3vw;
+            transform: none;
         }
         svg {
             width: 3vw;

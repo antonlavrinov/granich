@@ -181,11 +181,11 @@ const TeacherEmail = styled.span`
     position: relative;
     margin-right: 0.4vw;
     background: none;
-    border-bottom: 1.5px dotted var(--granich-light-grey);
+    border-bottom: 2px dotted rgba(0,0,0,0.2);
     :hover {
         font-size: 0.8vw;
         color: var(--granich-grey);
-        border-bottom: 1.5px dotted rgba(0,0,0,0);
+        border-bottom: 2px dotted var(--granich-grey);
         cursor: pointer;
         &:before, &:after {
             display: block;
