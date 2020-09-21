@@ -17,8 +17,6 @@ jobs:
         uses: actions/setup-node@master
         with: 
           node-version: 12.x
-      - name: Clear cache
-        run: npm cache clean --force
               
       - name: Install dependencies
         run: npm install 
@@ -28,7 +26,7 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GRANICH_GIT_TOKEN }}
           BRANCH: gatsby-build # The branch the action should deploy to.
           FOLDER: public # The folder the action should deploy.
           CLEAN: true  
@@ -36,8 +34,8 @@ jobs:
       - name: Push to server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.IP_ADDRESS }}
-          username: ${{ secrets.LOGIN }}
-          password: ${{ secrets.PASSWORD }}
-          script: cd ${{secrets.PATH}} && git pull https://antonlavrinov:${{ secrets.TOKEN }}@github.com/antonlavrinov/granich.git gatsby-build
+          host: ${{ secrets.GRANICH_SITE_IP }}
+          username: ${{ secrets.GRANICH_SITE_LOGIN }}
+          password: ${{ secrets.GRANICH_SITE_PASSWORD }}
+          script: cd ${{secrets.GRANICH_SITE_PATH}} && git pull https://antonlavrinov:${{ secrets.GRANICH_GIT_TOKEN }}@github.com/antonlavrinov/granich.git gatsby-build
      
