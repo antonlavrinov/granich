@@ -1,8 +1,8 @@
 name: Build and Deploy
  
 on:
-#   push:
-#     branches: [ master ]
+  push:
+    branches: [ master ]
     
   repository_dispatch:
     types: [publish-event]
@@ -22,8 +22,6 @@ jobs:
               
       - name: Install dependencies
         run: npm install 
-      - name: delete node modules and package.json
-        run: rm -rf node_modules package-lock.json
       - name: Build
         run: npm run build
           
