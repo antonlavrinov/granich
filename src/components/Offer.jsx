@@ -23,7 +23,7 @@ const OfferSection = styled(props => <BackgroundImage {...props}></BackgroundIma
     @media only screen and (max-width: 575px) {
         display: none;
     }
-`
+`  
 const OfferMobileSection = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
     display: none;
     position: relative;
