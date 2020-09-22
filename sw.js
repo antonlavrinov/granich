@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "26c5029f28b407bc2f27d4047107cc6f"
+    "revision": "5d4f2ee37676a0f60663243a4867f072"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "2d2f7a36a8ce8e7df68fea7041adadc8"
+    "revision": "5753134417c9ea282ae8b05e29c1e66c"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -259,11 +259,11 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "29127b53d6dd679100c4db586b964fb0"
+    "revision": "52e4ef81e0273a94130b8a76fa32d090"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "10f89c8b887f4d6a328629956858e2e3"
+    "revision": "96786188d8d521751bc2066810ac5e2c"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -307,7 +307,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
-    "revision": "5cd5e9fd730e34175eea5c41cebbf509"
+    "revision": "45ea94c5e8c17e31ede5ed02e01c6057"
   },
   {
     "url": "page-data/privacy/page-data.json",
