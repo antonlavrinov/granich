@@ -236,14 +236,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "893152457bc030e29848547a019b014b"
+    "revision": "f63ecb812db4bf72917ceccc5ecb2eb7"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "7e6849f76f5cf9f51d36f4efd4c64f68"
+    "revision": "31277e97a1b86de306672e1ddbbeca0d"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -263,11 +263,11 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "179570b3956bdfbe96d00ff7770a4436"
+    "revision": "10be7175ba62f85bdcd78e76e3dd9d6a"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "22276692df428467e58061ebdc9e2051"
+    "revision": "451a0edf983bf75218072cd0a8bcfed4"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -295,7 +295,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "bc92ea67bc5030659a9d13cea81a8401"
+    "revision": "50fef053a3daa3fb4b5cb586debcac29"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -358,10 +358,6 @@ self.__precacheManifest = [
     "revision": "44e1aa87cbec742c5d353f0b98462ffd"
   },
   {
-    "url": "page-data/xczczx/page-data.json",
-    "revision": "5ac7284eaf7d18de583c1d0c9dfdcbc0"
-  },
-  {
     "url": "page-data/xzcsd/page-data.json",
     "revision": "4dd99901beb96039102eac066c8111ca"
   },
@@ -390,7 +386,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "c68e00bb4fe1e7cfef7e8ab42d631340"
+    "revision": "6e8451224d6dbf8bee5c1fe0b987bad7"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
@@ -615,10 +611,6 @@ self.__precacheManifest = [
   {
     "url": "xczasdd/index.html",
     "revision": "db7b72532993371ea52120fe72cbba89"
-  },
-  {
-    "url": "xczczx/index.html",
-    "revision": "ac55e0c21f3f10155170944e4fc235bd"
   },
   {
     "url": "xzcsd/index.html",
