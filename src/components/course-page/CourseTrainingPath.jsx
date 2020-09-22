@@ -215,7 +215,7 @@ const CourseTrainingPath = ({data}) => {
                 <TrainingPathSectionTitle>Как проходит обучение</TrainingPathSectionTitle>
                 <TrainingPathWrapper>
                     {data.edges.map((block, idx) => {
-                        return (
+                        return ( 
                             <TrainingPathBlockWrapper key={block.node.id}>
                                 <TrainingPathBlockContainer>
                                     <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber>
