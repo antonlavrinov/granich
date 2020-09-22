@@ -34,9 +34,12 @@ const Check = styled(props => <CheckIcon {...props}/>)`
 
 const TrainingPathSection = styled.section`
     margin-bottom: 4vw;
+    margin-top: 4vw;
     @media only screen and (max-width: 575px) {
         margin-bottom: 5vw;
+        margin-top: 5vw;
     }
+    
 `
 
 
@@ -220,9 +223,9 @@ const CourseTrainingPath = ({data}) => {
                                 </TrainingPathBlockContainer>
                                 {/* <TrainingPathImageContainer> */}
                                     <TrainingPathBlockImage>
-                                        <Zoom>
+                                        {/* <Zoom> */}
                                             <TrainingPathImage fluid={block.node.trainingPathImage.fluid}></TrainingPathImage>
-                                        </Zoom>
+                                        {/* </Zoom> */}
                                     </TrainingPathBlockImage>
 {/* 
                                 </TrainingPathImageContainer> */}

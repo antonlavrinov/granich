@@ -146,7 +146,7 @@ const GraphicSystemVhsPage = ({data}) => (
     <CourseAuthors data={data.VHSteam}/>
     <MasterClassExample/>
     <CoursePortfolio dataHeader={data.VHSportfolioHeader} masterClass posters={data.VHSportfolioPosters}/>
-    <CourseReviews dataHeader={data.VHSreviewsHeader} data={data.VHSreviews} masterClass/>
+    {/* <CourseReviews dataHeader={data.VHSreviewsHeader} data={data.VHSreviews} masterClass/> */}
     <div id="prices-range-section"></div>
     {data.VHSoffer.courseStatus ? (
       <CoursePriceRange data={data.VHSPricesRange}/>
