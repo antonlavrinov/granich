@@ -142,6 +142,7 @@ export const contentfulQuery = graphql`
               teacherSocialTelegram
               teacherSocialVK
               teacherSocialsOrder
+              teacherCategory
               
             }
           }

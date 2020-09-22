@@ -469,16 +469,16 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
             // Кодировка формы для Геткурса
             const firstGetcourseFormScript = () => {
                 //этот код тупо добавляет url нашего сайта в value прозрачных инпутов
-                let loc = document.getElementById("2096375ed6bdb394609");
+                let loc = document.getElementById("2588285f64b2eccc844");
                 loc.value = window.location.href;
-                let ref = document.getElementById("2096375ed6bdb394609ref");
+                let ref = document.getElementById("2588285f64b2eccc844ref");
                 ref.value = document.referrer;
 
 
             }
             //Кодировка формы для Геткурса
             const secondGetcourseFormScript = () => {
-                let statUrl = "https://english-school.getcourse.ru/stat/counter?ref=" + encodeURIComponent(document.referrer) + "&loc=" + encodeURIComponent(document.location.href);
+                let statUrl = "https://granich.ru/stat/counter?ref=" + encodeURIComponent(document.referrer) + "&loc=" + encodeURIComponent(document.location.href);
                 document.getElementById('gccounterImgContainer').innerHTML = "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
             }
             firstGetcourseFormScript()
@@ -494,7 +494,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                 <ShakeForm  pose={["shake"]} poseKey={shakeTrigger}>
                     <Formik isInitialValid={isInitialValid} 
                                 initialValues={{politikaCheckbox: true,offerCheckbox: true, formParams: {
-                                    picked: `${chosenPrice}`,
+                                    offer_id: `${chosenPrice}`,
                                     email: '',
                                     
                                 }}}
@@ -505,7 +505,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                     politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
                                     offerCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
                                     formParams: Yup.object().shape({
-                                        picked: Yup.string().required('Выберите один из пакетов'),
+                                        offer_id: Yup.string().required('Выберите один из пакетов'),
                                         email: Yup.string().email('Это не Электропочта').required('Сперва впишите Электропочту'),
 
                                     })
@@ -538,29 +538,36 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                 setShakeTrigger(shakeTrigger + 1);
                                                 
                                             }
-                                        }}  id="ltForm9605210"  action="https://english-school.getcourse.ru/pl/lite/block-public/process-html?id=728049569" method="post" data-open-new-window="0" >
+                                        }}  id="ltForm862509"  action="https://granich.ru/pl/lite/block-public/process-html?id=855570200" method="post" data-open-new-window="0" >
                                     <FormWrapper>
                                         <FormCross onClick={closeModal}><Cross/></FormCross>
                                        
                                     <FormContainer>
                                         <FormTitle>Выберите <br/>нужный пакет</FormTitle>
-                                        <input  type="hidden" name="formParams[setted_offer_id]" /><br/>
+                                        <input  type="hidden" name="formParams[setted_offer_id]" />
+                                        <input id="input-formPosition9651352" name='formParams[need_offer]' type='hidden' value="" />
+                                        <br/>
+                                        <input id={`${data.edges[0].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" />
                                         <FormCheckbox 
+                                                data-price-value={`${data.edges[0].node.pricesPrice}`}
+                                                data-old-price-value={`${data.edges[0].node.pricesPrice}`}
+                                                data-price-currency="руб."
+                                                data-qty-value="1"
                                                 type="radio"
-                                                name="formParams[picked]"
-                                                value={values.formParams.picked}
-                                                checked={values.formParams.picked === `${data.edges[0].node.pricesPrice}`}
+                                                name="formParams[offer_id]"
+                                                value="1164222"
+                                                checked={values.formParams.offer_id === `${data.edges[0].node.pricesPrice}`}
                                                 onChange={() => {
-                                                    setFieldValue("formParams[picked]", `${data.edges[0].node.pricesPrice}`);
-                                                    // setFieldTouched("formParams[picked]", true)
+                                                    setFieldValue("formParams[offer_id]", `${data.edges[0].node.pricesPrice}`);
+                                                    // setFieldTouched("formParams[offer_id]", true)
                                                 }}
                                                 id={`${data.edges[0].node.pricesPrice}`}
                                                 className={`course-form-checkbox`}
-                                                errorStyle={errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked ? 1 : 0}
+                                                errorStyle={errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id ? 1 : 0}
                                                 
                                             /> 
                                             <FormCheckboxLabel line 
-                                                               className={`course-form-label ${errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked && 'course-form-label_error'}`} 
+                                                               className={`course-form-label ${errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && 'course-form-label_error'}`} 
                                                                htmlFor={`${data.edges[0].node.pricesPrice}`}>
                                                         <FormLabelText>
                                                             пакет Презентация
@@ -569,24 +576,28 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                             {`${data.edges[0].node.pricesPrice}`} ₽
                                                         </FormLabelPrice>
                                             </FormCheckboxLabel>
-                                            
+                                            <input id={`${data.edges[1].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" />
                                             <FormCheckbox 
+                                                data-price-value={`${data.edges[1].node.pricesPrice}`}
+                                                data-old-price-value={`${data.edges[1].node.pricesPrice}`}
+                                                data-price-currency="руб."
+                                                data-qty-value="1"
                                                 type="radio"
-                                                name="formParams[picked]"
-                                                value={values.formParams.picked}
-                                                checked={values.formParams.picked === `${data.edges[1].node.pricesPrice}`}
+                                                name="formParams[offer_id]"
+                                                value="1164224"
+                                                checked={values.formParams.offer_id === `${data.edges[1].node.pricesPrice}`}
                                                 onChange={() => {
-                                                    setFieldValue("formParams[picked]", `${data.edges[1].node.pricesPrice}`);
-                                                    // setFieldTouched("formParams[picked]", true)
+                                                    setFieldValue("formParams[offer_id]", `${data.edges[1].node.pricesPrice}`);
+                                                    // setFieldTouched("formParams[offer_id]", true)
                                                 }}
                                                 id={`${data.edges[1].node.pricesPrice}`}
                                                 className={`course-form-checkbox`}
-                                                errorStyle={errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked ? 1 : 0}
+                                                errorStyle={errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id ? 1 : 0}
                                                 
                                             /> 
                                            
                                             <FormCheckboxLabel line 
-                                                               className={`course-form-label ${errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked && 'course-form-label_error'}`} 
+                                                               className={`course-form-label ${errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && 'course-form-label_error'}`} 
                                                                htmlFor={`${data.edges[1].node.pricesPrice}`}>
                                                                 <FormLabelText>
                                                                     пакет Видеоформат
@@ -595,23 +606,28 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                                     {`${data.edges[1].node.pricesPrice}`} ₽
                                                                 </FormLabelPrice>
                                                             </FormCheckboxLabel>
+                                            <input id={`${data.edges[2].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" />                
                                             <FormCheckbox 
+                                                data-price-value={`${data.edges[2].node.pricesPrice}`}
+                                                data-old-price-value={`${data.edges[2].node.pricesPrice}`}
+                                                data-price-currency="руб."
+                                                data-qty-value="1"
                                                 type="radio"
-                                                name="formParams[picked]"
-                                                value={values.formParams.picked}
-                                                checked={values.formParams.picked === `${data.edges[2].node.pricesPrice}`}
+                                                name="formParams[offer_id]"
+                                                value="1164226"
+                                                checked={values.formParams.offer_id === `${data.edges[2].node.pricesPrice}`}
                                                 onChange={() => {
-                                                    setFieldValue("formParams[picked]", `${data.edges[2].node.pricesPrice}`);
-                                                    // setFieldTouched("formParams[picked]", true)
+                                                    setFieldValue("formParams[offer_id]", `${data.edges[2].node.pricesPrice}`);
+                                                    // setFieldTouched("formParams[offer_id]", true)
                                                 }}
                                                 id={`${data.edges[2].node.pricesPrice}`}
                                                 className={`course-form-checkbox`}
-                                                errorStyle={errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked ? 1 : 0}
+                                                errorStyle={errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id ? 1 : 0}
                                                 
                                             /> 
-                                            {console.log(values.formParams.picked)}
+                                            {console.log(values.formParams.offer_id)}
                                            
-                                            <FormCheckboxLabel line className={`course-form-label ${errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked && 'course-form-label_error'}`} htmlFor={`${data.edges[2].node.pricesPrice}`}>
+                                            <FormCheckboxLabel line className={`course-form-label ${errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && 'course-form-label_error'}`} htmlFor={`${data.edges[2].node.pricesPrice}`}>
                                                   <FormLabelText>
                                                     пакет Домашнее Задание
                                                   </FormLabelText>
@@ -619,24 +635,29 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                       {`${data.edges[2].node.pricesPrice}`} ₽
                                                   </FormLabelPrice>
                                             </FormCheckboxLabel>
+                                            <input id={`${data.edges[3].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" />
                                             <FormCheckbox 
+                                                data-price-value={`${data.edges[3].node.pricesPrice}`}
+                                                data-old-price-value={`${data.edges[3].node.pricesPrice}`}
+                                                data-price-currency="руб."
+                                                data-qty-value="1"
                                                 type="radio"
-                                                name="formParams[picked]"
-                                                value={values.formParams.picked}
-                                                checked={values.formParams.picked === `${data.edges[3].node.pricesPrice}`}
+                                                name="formParams[offer_id]"
+                                                value="1164228"
+                                                checked={values.formParams.offer_id === `${data.edges[3].node.pricesPrice}`}
                                                 onChange={() => {
-                                                    setFieldValue("formParams[picked]", `${data.edges[3].node.pricesPrice}`);
-                                                    // setFieldTouched("formParams[picked]", true)
+                                                    setFieldValue("formParams[offer_id]", `${data.edges[3].node.pricesPrice}`);
+                                                    // setFieldTouched("formParams[offer_id]", true)
                                                 }}
                                                 id={`${data.edges[3].node.pricesPrice}`}
                                                 className={`course-form-checkbox`}
-                                                errorStyle={errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked ? 1 : 0}
+                                                errorStyle={errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id ? 1 : 0}
                                                 
                                             /> 
 
                                            
                                             <FormCheckboxLabel  
-                                                               className={`course-form-label ${errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked && 'course-form-label_error'}`} 
+                                                               className={`course-form-label ${errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && 'course-form-label_error'}`} 
                                                                htmlFor={`${data.edges[3].node.pricesPrice}`}>
                                                   <FormLabelText>
                                                     пакет Макет с нуля
@@ -646,8 +667,8 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                   </FormLabelPrice>
 
                                             </FormCheckboxLabel>
-                                            {errors.formParams && errors.formParams.picked && touched.formParams && touched.formParams.picked && (
-                                                <ErrorMessage>{errors.formParams.picked}</ErrorMessage>
+                                            {errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && (
+                                                <ErrorMessage>{errors.formParams.offer_id}</ErrorMessage>
                                             )}
 
                                             <FormInput 
@@ -722,13 +743,13 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                 <FormButton 
                                                         disabled={isSubmitting} 
                                                         type="submit"
-                                                        id="button2119696"
-                                                        onClick={() => {if(window['btnprs5ed6bdb399786']){
+                                                        id="button1106661"
+                                                        onClick={() => {if(window['btnprs5f64b2ecda34e']){
                                                             return false;
                                                         }
-                                                        window['btnprs5ed6bdb399786']=true;
+                                                        window['btnprs5f64b2ecda34e']=true;
                                                         setTimeout(function(){
-                                                            window['btnprs5ed6bdb399786']=false},6000);
+                                                            window['btnprs5f64b2ecda34e']=false},6000);
                                                             return true;}}
                                                     >Купить</FormButton>
 
@@ -750,13 +771,13 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
 
 
                                         
-                                    <input type="hidden" id="2096375ed6bdb394609" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value=""/>
+                                    <input type="hidden" id="2588285f64b2eccc844" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value=""/>
                                     
-                                    <input type="hidden" id="2096375ed6bdb394609ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value=""/>
+                                    <input type="hidden" id="2588285f64b2eccc844ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value=""/>
                                     
-                                    <input type="hidden" name="requestTime" value="1591131571"/>
+                                    <input type="hidden" name="requestTime" value="15916004349241131571"/>
                                     
-                                    <input type="hidden" name="requestSimpleSign" value="d5bf9d9f1e29eaded1dcc696282a0cb7"/>
+                                    <input type="hidden" name="requestSimpleSign" value="4f4c23141b98ff45a0730993668fc117"/>
                                     
                                     <input type="hidden" name="isHtmlWidget" value="1"/>
 

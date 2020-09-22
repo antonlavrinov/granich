@@ -437,12 +437,13 @@ const Mailing = ({popup}) => {
                                     )}}
 
                                 </Formik>
-                                <span id="gccounterImgContainer"></span>
+                                
 
                             
 
 
                         </MailingContainer>
+                        <span id="gccounterImgContainer"></span>
 
                         
                     </MailingWrapper>

@@ -90,7 +90,9 @@ const OurTeamWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 1.6vw;
+    grid-row-gap: 1.6vw;
     justify-content: space-between;
+    margin-bottom: 2vw;
     @media only screen and (max-width: 575px) {
         grid-template-columns: 1fr;
         grid-row-gap: 4vw;
@@ -104,6 +106,7 @@ const TeacherWrapper = styled.div`
     padding: 1.7vw 1.5vw 2vw 2.8vw; 
     display: flex;
     flex-direction: column;
+
     @media only screen and (max-width: 575px) {
         border-radius: 2.5vw;
         padding: 6.5vw 8vw 8vw 10vw; 
@@ -322,6 +325,16 @@ const SocialLink = styled.a`
 
 `
 
+const OurTeamCategoryTitle = styled.div`
+    font-size: 2vw;
+    letter-spacing: -0.1vw;
+    font-weight: 700;
+    margin-bottom: 1vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 11vw;
+    }
+`
+
 
 
 
@@ -331,11 +344,41 @@ const OurTeam = ({data}) => {
     return (
         <OurTeamSection>
             <Container>
+                <OurTeamCategoryTitle>Авторы</OurTeamCategoryTitle>
                 <OurTeamWrapper>
                     {data.edges.map((teacher, idx) => {
                         return (
-                            <TeacherBlock key={idx} teacher={teacher.node}/>
+                            <>
+                                {teacher.node.teacherCategory === 'Авторы' && (
+                                    <TeacherBlock key={idx} teacher={teacher.node}/>
+                                )}
+                            </>
                             
+                            
+                        )
+                    })}
+                </OurTeamWrapper>
+                <OurTeamCategoryTitle>Кураторы</OurTeamCategoryTitle>
+                <OurTeamWrapper>
+                    {data.edges.map((teacher, idx) => {
+                        return (
+                            <>
+                                {teacher.node.teacherCategory === 'Кураторы' && (
+                                    <TeacherBlock key={idx} teacher={teacher.node}/>
+                                )}
+                            </>
+                        )
+                    })}
+                </OurTeamWrapper>
+                <OurTeamCategoryTitle>Координаторы</OurTeamCategoryTitle>
+                <OurTeamWrapper>
+                    {data.edges.map((teacher, idx) => {
+                        return (
+                            <>
+                                {teacher.node.teacherCategory === 'Координаторы' && (
+                                    <TeacherBlock key={idx} teacher={teacher.node}/>
+                                )}
+                            </>
                         )
                     })}
                 </OurTeamWrapper>
