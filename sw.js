@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "5c9b8988401ff20bcde508d486a788c6"
+    "revision": "77bd826149876cf0c33d0365deacbca7"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "b12fe82989086a27b1e7a3d1255fd10d"
+    "revision": "f1ac5f16d16aab2e4b95f7bb23660316"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -259,11 +259,11 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "dcdd626b1f1f88f88abe65aabcfc9a0e"
+    "revision": "62a7460128d8249f09b660af02abe2a2"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "cb5d3ff1d3b1f54e014b937397b473fe"
+    "revision": "34e208212b7cac76124ba5b15f43750e"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -287,7 +287,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "2b587f903bcbc9256737db82febd13b7"
+    "revision": "ceb79b6ace467c688b356a8c712262ab"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -350,10 +350,6 @@ self.__precacheManifest = [
     "revision": "5ac7284eaf7d18de583c1d0c9dfdcbc0"
   },
   {
-    "url": "page-data/xzcsd/page-data.json",
-    "revision": "4dd99901beb96039102eac066c8111ca"
-  },
-  {
     "url": "page-data/zxcsd/page-data.json",
     "revision": "41dc7054d4b9d32e73363d1220924abb"
   },
@@ -374,7 +370,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "253390dd95d29f4d400ba8d9e4543f1f"
+    "revision": "5ffd7d8f99b4328614e308753634543f"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
@@ -603,10 +599,6 @@ self.__precacheManifest = [
   {
     "url": "xczczx/index.html",
     "revision": "ac55e0c21f3f10155170944e4fc235bd"
-  },
-  {
-    "url": "xzcsd/index.html",
-    "revision": "319e2864744867b3d687752addf0a677"
   },
   {
     "url": "zxcsd/index.html",
