@@ -209,10 +209,6 @@ self.__precacheManifest = [
     "revision": "ca44ce1ab1706bb6d18ea1f95bfa5d8f"
   },
   {
-    "url": "DsSa/index.html",
-    "revision": "dace04e34be7ae41d0ea8ec35ce97f03"
-  },
-  {
     "url": "f7d5a900547e88214faaba8307947e149ba9a7c9-eeec9b6acdf5ea87e4b9.js"
   },
   {
@@ -236,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "f63ecb812db4bf72917ceccc5ecb2eb7"
+    "revision": "6e38ae96647cb250cab4c868dfb6a979"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "31277e97a1b86de306672e1ddbbeca0d"
+    "revision": "b2a7f13a951ae8813ab5da0f557d27c8"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -263,11 +259,11 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "10be7175ba62f85bdcd78e76e3dd9d6a"
+    "revision": "48032c2dfecca0b33d8a5faf45ab3a94"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "451a0edf983bf75218072cd0a8bcfed4"
+    "revision": "b15d2e26e85caec1f5ef716b05be4899"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -286,16 +282,12 @@ self.__precacheManifest = [
     "revision": "5173b8491ac5e913ffe3fcc31fd33985"
   },
   {
-    "url": "page-data/DsSa/page-data.json",
-    "revision": "7cbe8a3c6aa18cb4b3fc352436d2dd7e"
-  },
-  {
     "url": "page-data/graphic-system-vhs/page-data.json",
     "revision": "592ec8ef26debcdf0dbd344c720bffa2"
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "50fef053a3daa3fb4b5cb586debcac29"
+    "revision": "529872381b0bc9edb0d3a7414fc283b7"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -326,10 +318,6 @@ self.__precacheManifest = [
     "revision": "4380ab7687afab1c9206ddeff6b35b60"
   },
   {
-    "url": "page-data/sdsa/page-data.json",
-    "revision": "51d473e72bddae6e407421950cbad043"
-  },
-  {
     "url": "page-data/sq/d/1579113659.json",
     "revision": "3392ac14a9b1263cfc5770f1480a07cd"
   },
@@ -358,6 +346,10 @@ self.__precacheManifest = [
     "revision": "44e1aa87cbec742c5d353f0b98462ffd"
   },
   {
+    "url": "page-data/xczczx/page-data.json",
+    "revision": "5ac7284eaf7d18de583c1d0c9dfdcbc0"
+  },
+  {
     "url": "page-data/xzcsd/page-data.json",
     "revision": "4dd99901beb96039102eac066c8111ca"
   },
@@ -381,12 +373,8 @@ self.__precacheManifest = [
     "revision": "2390af6d41d3e71f5a65ef35a1a0356a"
   },
   {
-    "url": "sdsa/index.html",
-    "revision": "44560654e44d84e95da292f907c1a556"
-  },
-  {
     "url": "sitemap.xml",
-    "revision": "6e8451224d6dbf8bee5c1fe0b987bad7"
+    "revision": "253390dd95d29f4d400ba8d9e4543f1f"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
@@ -611,6 +599,10 @@ self.__precacheManifest = [
   {
     "url": "xczasdd/index.html",
     "revision": "db7b72532993371ea52120fe72cbba89"
+  },
+  {
+    "url": "xczczx/index.html",
+    "revision": "ac55e0c21f3f10155170944e4fc235bd"
   },
   {
     "url": "xzcsd/index.html",
