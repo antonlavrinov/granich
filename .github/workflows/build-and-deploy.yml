@@ -40,6 +40,7 @@ jobs:
           password: ${{ secrets.GRANICH_SITE_PASSWORD }}
           script: |
                   cd ${{secrets.GRANICH_SITE_PATH}} && git rm -r *
-                  git clone https://github.com/antonlavrinov/granich.git gatsby-build
+                  
+# git clone https://github.com/antonlavrinov/granich.git gatsby-build
 #           script: cd ${{secrets.GRANICH_SITE_PATH}} && git pull https://antonlavrinov:${{ secrets.GRANICH_GIT_TOKEN }}@github.com/antonlavrinov/granich.git gatsby-build
      
