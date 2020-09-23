@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "f35eca190b2deb9c053f220a53ee9240"
+    "revision": "6b75288469e9ff7b4fd58f722465e88f"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "24d81aaeaf0d3c5575c50eda0c49e887"
+    "revision": "f0ebd922884fbffe85207e2754ac6189"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -254,6 +254,10 @@ self.__precacheManifest = [
     "revision": "6855b3b5ddeb66ab520f746af65c05ef"
   },
   {
+    "url": "modulnaya-setka-1/index.html",
+    "revision": "57e376350642fd6592670f53d0165681"
+  },
+  {
     "url": "offline-plugin-app-shell-fallback/index.html",
     "revision": "4749b34384c535b60c9585983268c15a"
   },
@@ -263,11 +267,11 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "66b63a36d1cd9ae647a57d9d5b7f82f7"
+    "revision": "37a03245c39378f12ae8c76d3effea7c"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "05182d7a781ae7efa94d6d6089882d89"
+    "revision": "5ff242fa39c2b5670e2649e3afa43750"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -291,7 +295,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "2f588bdbcc089f2d8efe966f6532855c"
+    "revision": "e713e35173a1f6166df576360f96e2c7"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -300,6 +304,10 @@ self.__precacheManifest = [
   {
     "url": "page-data/kldfgj/page-data.json",
     "revision": "7d83b8416d3fda5f884bdb2c79819639"
+  },
+  {
+    "url": "page-data/modulnaya-setka-1/page-data.json",
+    "revision": "e91b13b2dabeedda5ac79734108cb00e"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -362,10 +370,6 @@ self.__precacheManifest = [
     "revision": "5ac7284eaf7d18de583c1d0c9dfdcbc0"
   },
   {
-    "url": "page-data/zxcsd/page-data.json",
-    "revision": "41dc7054d4b9d32e73363d1220924abb"
-  },
-  {
     "url": "plakat-za-5-minut/index.html",
     "revision": "3f42d47b1e1e48b03254e197085aa957"
   },
@@ -390,7 +394,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "51edfae6dc345a1d983430512fff6541"
+    "revision": "ecae4db2e36c8ffe96d5816e05c0588d"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
@@ -615,10 +619,6 @@ self.__precacheManifest = [
   {
     "url": "xczczx/index.html",
     "revision": "a95cb970daee6c4fd982267956aeaad2"
-  },
-  {
-    "url": "zxcsd/index.html",
-    "revision": "59db5913d6566628f2b9f12f2c3d9e1d"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
