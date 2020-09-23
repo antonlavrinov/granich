@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "0d8352d38d5fd0b5ccee0c12d8332e99"
+    "revision": "b9501925de2ea3107dea83a00a74eaba"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "42bbc866f0cf012529d1b997b9c814f1"
+    "revision": "a74899392664eb82d1809bc6af31b5b1"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -248,6 +248,10 @@ self.__precacheManifest = [
   {
     "url": "kldfgj/index.html",
     "revision": "39fc38506ef9a77011b42a78af036e5c"
+  },
+  {
+    "url": "maket-techno/index.html",
+    "revision": "64c49327c76b4d3ee22bad3e03fde490"
   },
   {
     "url": "manifest.webmanifest",
@@ -267,11 +271,11 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "814ad3130546d9903475d4f9fc151a7c"
+    "revision": "a9b7ffd2a4fce6e22d1c72cba82c2c91"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "cf4d1755ff00920e586733c6ca4d7f6f"
+    "revision": "8b4fbe76e986a433e19fbab7136dad6e"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -295,7 +299,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "43730c57b8deedd526d25049b4250e4c"
+    "revision": "4bf9b657f8a221551b42a1c6a8663877"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -304,6 +308,10 @@ self.__precacheManifest = [
   {
     "url": "page-data/kldfgj/page-data.json",
     "revision": "7d83b8416d3fda5f884bdb2c79819639"
+  },
+  {
+    "url": "page-data/maket-techno/page-data.json",
+    "revision": "73d2f009c720680d29a85b882bf3c8e1"
   },
   {
     "url": "page-data/modulnaya-setka-1/page-data.json",
@@ -366,10 +374,6 @@ self.__precacheManifest = [
     "revision": "61f177499aee0b5b84dba0ce6556cf6f"
   },
   {
-    "url": "page-data/xczczx/page-data.json",
-    "revision": "5ac7284eaf7d18de583c1d0c9dfdcbc0"
-  },
-  {
     "url": "plakat-za-5-minut/index.html",
     "revision": "3f42d47b1e1e48b03254e197085aa957"
   },
@@ -394,7 +398,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "ecae4db2e36c8ffe96d5816e05c0588d"
+    "revision": "f798d84c4570debd4ffacf2e4ada6027"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
@@ -615,10 +619,6 @@ self.__precacheManifest = [
   {
     "url": "webpack.stats.json",
     "revision": "ce857cf5e257aefce96908aedddbc338"
-  },
-  {
-    "url": "xczczx/index.html",
-    "revision": "a95cb970daee6c4fd982267956aeaad2"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
