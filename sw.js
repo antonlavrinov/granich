@@ -232,22 +232,18 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "b7aaeada385d7667d0e8d85da964fb63"
+    "revision": "7bf1efe0b2f9c6d5eb7e2716c2e6760c"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "f743e729359e00762900d21f42443d60"
+    "revision": "f68acc7f99cf31c32f53b4cdfe9a6397"
   },
   {
     "url": "kak-oformit-abzac/index.html",
     "revision": "260cf92012e4e3b8b40efc26a498f533"
-  },
-  {
-    "url": "kldfgj/index.html",
-    "revision": "39fc38506ef9a77011b42a78af036e5c"
   },
   {
     "url": "maket-neo-geo/index.html",
@@ -271,15 +267,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "dfb4b970f89b1e324f6e3367aa281046"
+    "revision": "28b4c626b3825989f1fff4e1a29bae06"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "148d61dcca9f25c1797bab5470fe2eac"
+    "revision": "d159bac501324279ab26fc3d18e93f80"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "5ee3a0bf23babe20d1edb7c325c87f3b"
+    "revision": "ea557b09d069a0f0e9a5e2e21e27839e"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -303,15 +299,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "af80ad642d173b08977cd94f17b8b9b9"
+    "revision": "971133583cdb4f9bebe273b80a7eee45"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
     "revision": "8364ccce47315fb3c304482a8eb4a7a6"
-  },
-  {
-    "url": "page-data/kldfgj/page-data.json",
-    "revision": "7d83b8416d3fda5f884bdb2c79819639"
   },
   {
     "url": "page-data/maket-neo-geo/page-data.json",
@@ -378,6 +370,10 @@ self.__precacheManifest = [
     "revision": "980ab7ea38741b2f7b844365ef964c54"
   },
   {
+    "url": "page-data/strim-swiss/page-data.json",
+    "revision": "4a451d63ffca1d5f9036e8977401e479"
+  },
+  {
     "url": "page-data/vidy-garnitur/page-data.json",
     "revision": "61f177499aee0b5b84dba0ce6556cf6f"
   },
@@ -406,7 +402,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "45aa6734ab07a4ee71de73010196a98b"
+    "revision": "0c7c412a59ac83c2ac4e2e94fbcbfe82"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
@@ -602,6 +598,10 @@ self.__precacheManifest = [
   },
   {
     "url": "static/plus-13d6065328f960136044e7baebb87f87.png"
+  },
+  {
+    "url": "strim-swiss/index.html",
+    "revision": "5db7dd8b8ee6f06b9647aca6212f3e62"
   },
   {
     "url": "styles-c2fe8482057191dca484.js"
