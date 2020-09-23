@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "c0f575bae727bc478594780487519738"
+    "revision": "f35eca190b2deb9c053f220a53ee9240"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "3d205111fa3ffe59a512e2d026eb8b36"
+    "revision": "24d81aaeaf0d3c5575c50eda0c49e887"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -263,11 +263,11 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "1e80dd06fc490b31322864094f9672aa"
+    "revision": "66b63a36d1cd9ae647a57d9d5b7f82f7"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "d416bd57763a398019b216bf7b8423ae"
+    "revision": "05182d7a781ae7efa94d6d6089882d89"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -291,7 +291,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "7d0e1e0fea69986abf18ca19a489eda0"
+    "revision": "2f588bdbcc089f2d8efe966f6532855c"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -354,8 +354,8 @@ self.__precacheManifest = [
     "revision": "980ab7ea38741b2f7b844365ef964c54"
   },
   {
-    "url": "page-data/xcxc/page-data.json",
-    "revision": "fc2f54f3ce06a429a2dc814845b7181f"
+    "url": "page-data/vidy-garnitur/page-data.json",
+    "revision": "61f177499aee0b5b84dba0ce6556cf6f"
   },
   {
     "url": "page-data/xczczx/page-data.json",
@@ -390,7 +390,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "055b683992cffef495f618ff980cb8cb"
+    "revision": "51edfae6dc345a1d983430512fff6541"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
@@ -598,6 +598,10 @@ self.__precacheManifest = [
     "url": "styles.5a7617267346240388c2.css"
   },
   {
+    "url": "vidy-garnitur/index.html",
+    "revision": "14d28583ee4cac84554d9fb107a31d81"
+  },
+  {
     "url": "webpack-runtime-94287c409fe647eedf70.js"
   },
   {
@@ -607,10 +611,6 @@ self.__precacheManifest = [
   {
     "url": "webpack.stats.json",
     "revision": "ce857cf5e257aefce96908aedddbc338"
-  },
-  {
-    "url": "xcxc/index.html",
-    "revision": "8b6537cca0c6a7e0d6685b955bbf657e"
   },
   {
     "url": "xczczx/index.html",
