@@ -239,14 +239,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "bd8bef9df5d6073351009b4530bc6dc2"
+    "revision": "b5577c74163abd575da0ff66fa3e21f2"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "fa96b6961c0fef0ad1a71ad2c59c5880"
+    "revision": "03c4630be941aaf0fba5c29c71675891"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -278,15 +278,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "604f461871d96ec5c6879aa5b2348b30"
+    "revision": "653e65b0e2241bd78d4501991781e272"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "c4c6ffee0c06d606f391eb30cf8803e8"
+    "revision": "f840c326e41fdfeafaf2d7c1fbd6d610"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "507a59e6d3f64201878d3ecd6ed9aead"
+    "revision": "4c7174792b60b025a4db0b9fec71e5a8"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -310,11 +310,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "94a72751ba50b61f2786925f3f5ab451"
+    "revision": "c41e012bd08c03bec288bd5ac7217d70"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
-    "revision": "3bf58f88cb89139023f4efd9b1fbe0ab"
+    "revision": "33642cb9438f3320efded6b653f44148"
   },
   {
     "url": "page-data/maket-neo-geo/page-data.json",
@@ -326,7 +326,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/modulnaya-setka-1/page-data.json",
-    "revision": "abbc1fc23b98421cf874e48e183c4ee4"
+    "revision": "1b40ae19aab95b043d1ebca6b2174c84"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -350,7 +350,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/plakat-za-5-minut/page-data.json",
-    "revision": "0788a986138f2e9b08f86c8255fbdd45"
+    "revision": "250ba8c987f0153b2462bf96eba19cf2"
   },
   {
     "url": "page-data/privacy/page-data.json",
@@ -425,7 +425,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "819d6e2818ee66ec765df683d9d4c696"
+    "revision": "8e85a6ac28eb7548c32a2104250c40b2"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
