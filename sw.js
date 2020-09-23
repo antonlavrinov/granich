@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "5cd8f722968cc9085190ac5ed7b309b6"
+    "revision": "d984574a57c4c38657601cac75979075"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "fe71a7e10417ded71d2efc27570ecdfd"
+    "revision": "a39d8ea8fa5baedf4b30a0199ce2e805"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -247,11 +247,11 @@ self.__precacheManifest = [
   },
   {
     "url": "maket-neo-geo/index.html",
-    "revision": "1fd9d1fcccdd18411c4882963b37f807"
+    "revision": "b3a86e457e1dfdfe0025d2c0459748fb"
   },
   {
     "url": "maket-techno/index.html",
-    "revision": "a1a79b38b9d60d580d6b02c0678b7790"
+    "revision": "579cbad9ddb3bfc86c92fe437f425549"
   },
   {
     "url": "manifest.webmanifest",
@@ -271,15 +271,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "8796ca825d75aec1601f91042a257fa8"
+    "revision": "b9f1fec9cfe509ce90e424d5eeaa2bac"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "807892430467475d515bf47a2335c76a"
+    "revision": "bf5bd8e2dbc1044ce4a449e5a5fee80b"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "63ed8706d0c0808197b59bb1ba9b7db8"
+    "revision": "7a4b67dee6deadfe5dc9410326b3d6bf"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -299,11 +299,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/graphic-system-vhs/page-data.json",
-    "revision": "2ba35d6ad87e68992c175002bf5a65a9"
+    "revision": "6998336e60e34590b9962f0de5e2559c"
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "6534fcb2e60f253eaacf84b09ea33cc4"
+    "revision": "42a808a8ce5a8055880885290898a0ab"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -311,11 +311,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/maket-neo-geo/page-data.json",
-    "revision": "dc1868b7be1415f68fcebdf63ac68a20"
+    "revision": "e63629d11e64ff06397259b20a6ce064"
   },
   {
     "url": "page-data/maket-techno/page-data.json",
-    "revision": "a9a9d5db765ca49654427dbb81a7a69c"
+    "revision": "7b3ffedfeeafa514f6a7ee086cfc7fd4"
   },
   {
     "url": "page-data/modulnaya-setka-1/page-data.json",
@@ -339,7 +339,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
-    "revision": "02a67bee48d7cfdeda01d9b2c77f562a"
+    "revision": "6a5378e5fb0a4f088eee85ff8ebe1106"
   },
   {
     "url": "page-data/plakat-za-5-minut/page-data.json",
@@ -418,7 +418,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "186b121a0dfa02720ff7eacc9ed0e4dd"
+    "revision": "d3b7c2f744a3c2947d7bfe8ca0f63eb8"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
