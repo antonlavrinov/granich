@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "16cef3afa181d466a0587c19d51eca3f"
+    "revision": "c0f575bae727bc478594780487519738"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "c4dcf33d64250d1b7d8dd6274270d3cc"
+    "revision": "3d205111fa3ffe59a512e2d026eb8b36"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -263,11 +263,11 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "3b08960e5c2f3b65bf12d231de27576e"
+    "revision": "1e80dd06fc490b31322864094f9672aa"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "59d5f146a05696bd733836e536984d2e"
+    "revision": "d416bd57763a398019b216bf7b8423ae"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -291,7 +291,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "572acd39a0e5e1008deb74120da8b5d5"
+    "revision": "7d0e1e0fea69986abf18ca19a489eda0"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -316,6 +316,10 @@ self.__precacheManifest = [
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
     "revision": "45ea94c5e8c17e31ede5ed02e01c6057"
+  },
+  {
+    "url": "page-data/plakat-za-5-minut/page-data.json",
+    "revision": "65f395905083129e7dfbda2def008599"
   },
   {
     "url": "page-data/privacy/page-data.json",
@@ -354,16 +358,16 @@ self.__precacheManifest = [
     "revision": "fc2f54f3ce06a429a2dc814845b7181f"
   },
   {
-    "url": "page-data/xczasdd/page-data.json",
-    "revision": "44e1aa87cbec742c5d353f0b98462ffd"
-  },
-  {
     "url": "page-data/xczczx/page-data.json",
     "revision": "5ac7284eaf7d18de583c1d0c9dfdcbc0"
   },
   {
     "url": "page-data/zxcsd/page-data.json",
     "revision": "41dc7054d4b9d32e73363d1220924abb"
+  },
+  {
+    "url": "plakat-za-5-minut/index.html",
+    "revision": "3f42d47b1e1e48b03254e197085aa957"
   },
   {
     "url": "polyfill-ff9d631ac914200454f0.js"
@@ -386,7 +390,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "8f05114b629c3c1227128b54a8955f29"
+    "revision": "055b683992cffef495f618ff980cb8cb"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
@@ -607,10 +611,6 @@ self.__precacheManifest = [
   {
     "url": "xcxc/index.html",
     "revision": "8b6537cca0c6a7e0d6685b955bbf657e"
-  },
-  {
-    "url": "xczasdd/index.html",
-    "revision": "fdab576f9b5e714e55653b292a815fe3"
   },
   {
     "url": "xczczx/index.html",
