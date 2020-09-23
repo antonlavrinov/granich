@@ -193,9 +193,7 @@ const LegalDocumentText = styled.div`
         }
 
     }
-    u {
-        text-decoration: none;
-    }
+
 
 
     @media only screen and (max-width: 575px) {

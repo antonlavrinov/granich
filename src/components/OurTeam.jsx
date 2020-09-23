@@ -349,40 +349,38 @@ const OurTeam = ({data}) => {
                 <OurTeamCategoryTitle>Авторы</OurTeamCategoryTitle>
                 <OurTeamWrapper>
                     {data.edges.map((teacher, idx) => {
-                        return (
-                            <>
-                                {teacher.node.teacherCategory === 'Авторы' && (
-                                    <TeacherBlock key={idx} teacher={teacher.node}/>
-                                )}
-                            </>
-                            
-                            
-                        )
-                    })}
+                        if(teacher.node.teacherCategory === 'Авторы') {
+                            return (
+                                <TeacherBlock key={teacher.node.id} teacher={teacher.node}/>
+                            )
+                        }
+
+                        })
+                    }
                 </OurTeamWrapper>
                 <OurTeamCategoryTitle>Кураторы</OurTeamCategoryTitle>
                 <OurTeamWrapper>
                     {data.edges.map((teacher, idx) => {
-                        return (
-                            <>
-                                {teacher.node.teacherCategory === 'Кураторы' && (
-                                    <TeacherBlock key={idx} teacher={teacher.node}/>
-                                )}
-                            </>
-                        )
-                    })}
+                        if(teacher.node.teacherCategory === 'Кураторы') {
+                            return (
+                                <TeacherBlock key={teacher.node.id} teacher={teacher.node}/>
+                            )
+                        }
+
+                        })
+                    }
                 </OurTeamWrapper>
                 <OurTeamCategoryTitle>Координаторы</OurTeamCategoryTitle>
                 <OurTeamWrapper>
                     {data.edges.map((teacher, idx) => {
-                        return (
-                            <>
-                                {teacher.node.teacherCategory === 'Координаторы' && (
-                                    <TeacherBlock key={idx} teacher={teacher.node}/>
-                                )}
-                            </>
-                        )
-                    })}
+                        if(teacher.node.teacherCategory === 'Координаторы') {
+                            return (
+                                <TeacherBlock key={teacher.node.id} teacher={teacher.node}/>
+                            )
+                        }
+
+                        })
+                    }
                 </OurTeamWrapper>
             </Container>
         </OurTeamSection>

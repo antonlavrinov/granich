@@ -125,6 +125,7 @@ export const contentfulQuery = graphql`
         team: allContentfulGranichMainTeachers(sort: {fields: [teacherOrderNumber], order: ASC}) {
           edges {
             node {
+              id
               teacherDescr {
                 json
               }

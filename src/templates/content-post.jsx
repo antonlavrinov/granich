@@ -7,10 +7,6 @@ import YoutubeVideo from '../components/content-page/YoutubeVideo'
 import Mailing from '../components/Mailing';
 import ContentLinks from '../components/content-page/ContentLinks'
 import Banner from '../components/Banner'
-import Books from '../components/content-page/Books'
-import Tools from '../components/content-page/Tools'
-import Video from '../components/content-page/Video'
-
 
 
 
@@ -31,6 +27,7 @@ export const pageQuery = graphql`
             contentBannerSwitch
             contentTags
             contentType
+            
 
         }
         courseBanner: contentfulGranichCourse(courseTitle: {eq: $banner}) {
@@ -47,6 +44,7 @@ export const pageQuery = graphql`
             courseBannerSubtext
             courseSlug
             courseTags
+            courseTypeEmpty
         }
     }
 `

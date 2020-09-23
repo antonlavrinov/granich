@@ -29,6 +29,7 @@ export const podborkaPageQuery = graphql`
             contentBannerSwitch
             contentTags
             contentType
+            
 
         }
         coursePodborkaBanner: contentfulGranichCourse(courseTitle: {eq: $banner}) {
@@ -45,6 +46,7 @@ export const podborkaPageQuery = graphql`
             courseBannerSubtext
             courseSlug
             courseTags
+            courseTypeEmpty
         }
         videoPodborkaGraphDesign: allContentfulGranichCollectionVideo(filter: {videoAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [videoOrderNumber], order: ASC}) {
             edges {
@@ -236,14 +238,8 @@ const PodborkaPage = ({data}) => {
             )}
             {data.contentfulPodborka.contentSlug === 'osoznannaya-podborka-freelance' && (
                 <>
-                    <Video categoryTwo="Далее, лекции, которые не имеют прямого отношения к курсу. 
-                                        Но если у вас есть время, то для большего охвата материала полезны ↓" 
-                           categoryThree="Дальше, ценные лекции, если вы решили работать на себя ↓"
-                           data={data.videoPodborkaFreelance.edges}/>
-                    <Books categoryTwo="Далее книги более общие. Уже не столь практичные. Но толково расширяют кругозор в дизайне ↓" 
-                           categoryThree="А тут уже книги для крутых дизайнеров, когда одной эстетики уже мало ↓"
-                           data={data.booksPodborkaFreelance.edges}/>
-                    <Tools data={data.toolsPodborkaFreelance.edges}/>
+                    <Video data={data.videoPodborkaFreelance.edges}/>
+                    <Books data={data.booksPodborkaFreelance.edges}/>
                 </>
 
             )}

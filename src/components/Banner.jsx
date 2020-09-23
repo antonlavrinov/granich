@@ -31,21 +31,12 @@ const BannerContentWrapper = styled.div`
     align-items: center;
     width: 100%;
     @media only screen and (max-width: 575px) {
-        display: none;
-    }
-`
-
-const BannerContentWrapperMobile = styled.div`
-    display: none;
-    @media only screen and (max-width: 575px) {
-        display: flex;
-        // align-items: center;
         flex-direction: column;
-        // width: 100%;
+        align-items: flex-start;
     }
-
-
 `
+
+
 
 
 const BannerImage = styled(props => <Img {...props} />)`
@@ -99,6 +90,9 @@ const BannerTitle = styled.div`
 const BannerInfoItems = styled.div`
     display: flex;
     align-items: center;
+    @media only screen and (max-width: 575px) {
+        display: none;
+    }
 
 `
 
@@ -111,6 +105,11 @@ const BannerMainTag = styled.div`
     margin-right: 0.6vw;
     font-weight: 500;
     border: 1px solid var(--granich-red);
+    ${props => props.disabled && `
+        background: var(--granich-black);
+        border-color: var(--granich-black);
+    `}
+
 
 `
 const BannerTag = styled.div`
@@ -121,6 +120,10 @@ const BannerTag = styled.div`
     margin-right: 0.6vw;
     font-weight: 500;
     border: 1px solid var(--granich-red);
+    ${props => props.disabled && `
+        border-color: var(--granich-black);
+        color: var(--granich-black);
+    `}
 
 `
 const BannerTagList = styled.div`
@@ -131,14 +134,29 @@ const BannerCourseStart = styled.div`
     margin-right: 0.8vw;
     letter-spacing: -0.01vw;
     font-weight: 500;
+    white-space: nowrap;
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
         line-height: 1.4;
     }
 `
+
+const BannerCourseMobileStart = styled.div`
+    display: none;
+    margin-right: 0.8vw;
+    letter-spacing: -0.01vw;
+    font-weight: 500;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+        line-height: 1.4;
+        display: block;
+    }
+
+`
 const BannerCourseDuration = styled.div`
     font-weight: 500;
     letter-spacing: -0.01vw;
+    white-space: nowrap;
     @media only screen and (max-width: 575px) {
         display: none;
     }
@@ -159,6 +177,7 @@ const BannerCourseButton = styled.a`
     user-select: none;
     box-shadow: .25vw .25vw .4vw rgba(0,0,0,0.25);
     letter-spacing: 0.05vw;
+    white-space: nowrap;
 
 
     svg {
@@ -203,8 +222,48 @@ const BannerCourseButton = styled.a`
             padding: 3vw 10vw;
         }
     `}
+    ${props => props.status && `
+        background: var(--granich-black-gradient);
+    `}
 
 
+`
+
+const BannerCourseButtonDevelopment = styled.div`
+    display: inline-flex;
+    color: white;
+    background: var(--granich-black-gradient);
+    padding: 0.8vw 1.4vw 1vw 1.4vw;
+    border-radius: 0.3vw;
+    font-size: 1.5vw;
+    font-weight: 400;
+    user-select: none;
+    box-shadow: .25vw .25vw .4vw rgba(0,0,0,0.25);
+    letter-spacing: 0.05vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 4.3vw;
+        padding: 3vw 5vw;
+        border-radius: 1.5vw;
+        margin-right: 4.5vw;
+        box-shadow: 0.7vw 0.7vw 1.5vw rgba(0,0,0,0.3);
+    }
+
+`
+
+const BannerContentMain = styled.div`
+        display: flex;
+        @media only screen and (max-width: 575px) {
+            flex-direction: column;
+        }
+`
+
+const BannerContentButton = styled.div`
+        margin-left: auto;
+
+        @media only screen and (max-width: 575px) {
+            margin-left: 0;
+            display: flex;
+        }
 `
 
 
@@ -216,56 +275,55 @@ const Banner = ({data}) => {
                 <BannerWrapper>
                     {data.courseBannerImage && <BannerImage style={{ position: 'absolute'}} fluid={data.courseBannerImage.fluid}/>}
                     <BannerContentWrapper>
-                        <BannerSubtext>
-                            {data.courseBannerSubtext}
-                        </BannerSubtext>
-                        <BannerMainInfo>
-                            <BannerTitle>
-                                {data.courseTitle}
-                            </BannerTitle>
-                            <BannerInfoItems>
-                                <BannerMainTag>{data.courseType}</BannerMainTag>
-                                {data.courseType === 'Курс' ? (
-                                    <>
-                                        {data.courseStart && <BannerCourseStart>Стартуем {data.courseStart}</BannerCourseStart>}
-                                        {data.courseDuration && <BannerCourseDuration>Учимся {data.courseDuration}</BannerCourseDuration>}
-                                    </>
-                                ) : (
-                                    <>
-                                        <BannerTagList>
-                                            {data.courseTags.map((tag, idx) => {
-                                                return (
-                                                    <BannerTag key={idx}>{tag}</BannerTag>
-                                                )
-                                            })}
-                                        </BannerTagList>
-                                    </>
-                                )}
-                                
-                            </BannerInfoItems>                            
-                        </BannerMainInfo>
-                        {data.courseType === 'Курс' ? (
-                            <BannerCourseButton target="_blank" href={data.courseSlug}>Участвовать <CourseArrowOut/></BannerCourseButton>
-                        ) : (
-                            <BannerCourseButton target="_blank" href={data.courseSlug} type={data.courseType}>Купить <CourseArrowOut/></BannerCourseButton>
-                        )}
-                    </BannerContentWrapper>
-                    <BannerContentWrapperMobile>
-                        {data.courseBannerSubtext && <BannerSubtext>{data.courseBannerSubtext}</BannerSubtext>}
-                        <BannerTitle>
-                            {data.courseTitle}
-                        </BannerTitle>
-                        <BannerMainInfo>
-                            {data.courseType === 'Курс' ? (
-                                <BannerCourseButton target="_blank" href={`/${data.courseSlug}`}>Участвовать <CourseArrowOut/></BannerCourseButton>
+                        <BannerContentMain>
+                            <BannerSubtext>
+                                {data.courseBannerSubtext}
+                            </BannerSubtext>
+                            <BannerMainInfo>
+                                <BannerTitle>
+                                    {data.courseTitle}
+                                </BannerTitle>
+                                <BannerInfoItems>
+                                    <BannerMainTag disabled={data.courseTypeEmpty  || !data.courseStatus}>{data.courseType}</BannerMainTag>
+                                    {data.courseType === 'Курс' ? (
+                                        <>
+                                            {data.courseStart && <BannerCourseStart>Стартуем {data.courseStart}</BannerCourseStart>}
+                                            {data.courseDuration && <BannerCourseDuration>Учимся {data.courseDuration}</BannerCourseDuration>}
+                                        </>
+                                    ) : (
+                                        <>
+                                            <BannerTagList>
+                                                {data.courseTags.map((tag, idx) => {
+                                                    return (
+                                                        <BannerTag disabled={data.courseTypeEmpty || !data.courseStatus}  key={idx}>{tag}</BannerTag>
+                                                    )
+                                                })}
+                                            </BannerTagList>
+                                        </>
+                                    )}
+                                    
+                                </BannerInfoItems>                            
+                            </BannerMainInfo>
+                        </BannerContentMain>
+                        <BannerContentButton>
+                            {data.courseTypeEmpty ? (
+                                <BannerCourseButtonDevelopment>В разработке</BannerCourseButtonDevelopment>
                             ) : (
-                                <BannerCourseButton target="_blank" href={`/${data.courseSlug}`} type={data.courseType}>Купить <CourseArrowOut/></BannerCourseButton>
+                                <>
+                                    {data.courseType === 'Курс' ? (
+                                        <BannerCourseButton status={!data.courseStatus} target="_blank" href={data.courseSlug}>{data.courseStatus ? 'Участвовать' : 'Узнать о наборе'} <CourseArrowOut/></BannerCourseButton>
+                                    ) : (
+                                        <BannerCourseButton status={!data.courseStatus} target="_blank" href={data.courseSlug} type={data.courseType}>{data.courseStatus ? 'Купить' : 'Предзаказ'} <CourseArrowOut/></BannerCourseButton>
+                                    )}
+                                </>
                             )}
-                            {data.courseType === 'Курс' && data.courseStart && <BannerCourseStart>Стартуем <br/>{data.courseStart}</BannerCourseStart>}
                             
-                        </BannerMainInfo>
+                            {data.courseStart && <BannerCourseMobileStart>Стартуем <br/>{data.courseStart}</BannerCourseMobileStart>}
+                        </BannerContentButton>
+                       
+                        
 
-                    </BannerContentWrapperMobile>
+                    </BannerContentWrapper>
                 </BannerWrapper>
             </Container>
         </BannerSection>
