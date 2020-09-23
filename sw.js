@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "961dd5af37fb4605eadb05c90454ca69"
+    "revision": "637fa05bb4d45782516d9f1ae18b8e8d"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "d6e21bbc4c9255c32aa33c11ba716136"
+    "revision": "b2bcebf25642d155e29d79d4c6bb03bd"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -251,7 +251,7 @@ self.__precacheManifest = [
   },
   {
     "url": "maket-neo-geo/index.html",
-    "revision": "cb4bbc970e73fdd32c1b4e57af5c2c92"
+    "revision": "521a85563c4e5c2af228827cfb5d4f14"
   },
   {
     "url": "maket-techno/index.html",
@@ -271,15 +271,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "43094a64cb7a0605b0d8f8715bdfbc22"
+    "revision": "8f791a8a839bfab4263c4e2fcbd64526"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "0c903f280656c89128d747c4a1da2a85"
+    "revision": "6079845e7a5120c712de323ae0e6ef4e"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "81160c788ff1231d18f14b9bac1b2065"
+    "revision": "6bd44346d1cd87b2efd6bd56fcabe745"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -303,7 +303,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "1dd2d4d20f64fa13dce811da6b0487eb"
+    "revision": "dc722d1f90c5bb366bfdd2e6d255d7fe"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -315,7 +315,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/maket-neo-geo/page-data.json",
-    "revision": "88c40264550dfdd8cb326069688dee46"
+    "revision": "6b65a144d7c25242b87c4b628cef8e1f"
   },
   {
     "url": "page-data/maket-techno/page-data.json",
@@ -331,11 +331,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznannaya-podborka-freelance/page-data.json",
-    "revision": "30459d808f2fe92838792792163f568c"
+    "revision": "a616fcdf40035d02f51cb2eb02a398f4"
   },
   {
     "url": "page-data/osoznannaya-podborka-graphdesign/page-data.json",
-    "revision": "ef519978dc972c0b48f8e4af3d170324"
+    "revision": "2a6d8107c3378fd2394f11cc131e071e"
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
