@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "4ea91a27fd7b12e6cb7c9f893014cae0"
+    "revision": "1f6456dedb28073bd0938e5d019fc09b"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "57bef381cb3e2882d1ab9f89a4a186b5"
+    "revision": "4bee435bb875e62ec47f7cc645bacbb8"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -251,7 +251,7 @@ self.__precacheManifest = [
   },
   {
     "url": "maket-techno/index.html",
-    "revision": "64c49327c76b4d3ee22bad3e03fde490"
+    "revision": "80d28358ee591f7fa6eee4ff3e66d372"
   },
   {
     "url": "manifest.webmanifest",
@@ -271,15 +271,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "d7653e3be8a2cc6f6b5e048c8af54a46"
+    "revision": "e5253cbbdd640c6436b0aa23c468b6ac"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "5f5931094ee46ef1b7610119a71b79bc"
+    "revision": "608d4bf82a637d103de9fdc8cc8d21e7"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "c6ba6cda0588f98f6b4440bd5461a252"
+    "revision": "ee154013634a1421993f0155706d77c9"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -303,7 +303,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "2c50e5a51a57462eccf5cb7a83ee191f"
+    "revision": "5ed86d4bf40120f5ce4807f721e6c006"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -315,7 +315,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/maket-techno/page-data.json",
-    "revision": "73d2f009c720680d29a85b882bf3c8e1"
+    "revision": "8ff98b7e5d4f60b166726ce151dc0201"
   },
   {
     "url": "page-data/modulnaya-setka-1/page-data.json",
@@ -414,7 +414,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "768cdde6cb96636873f2bbc323f0a4c5"
+    "revision": "7dbd84420dc319906d982ddba7e3b575"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
