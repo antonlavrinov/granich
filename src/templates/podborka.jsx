@@ -221,7 +221,7 @@ const PodborkaPage = ({data}) => {
 
             <Mailing/>
             {data.contentfulPodborka.contentSlug === 'osoznannaya-podborka-graphdesign' && (
-                <>
+                <> 
                     <Video categoryTwo="Далее, лекции, которые не имеют прямого отношения к курсу. 
                                         Но если у вас есть время, то для большего охвата материала полезны ↓" 
                            categoryThree="Дальше, ценные лекции, если вы решили работать на себя ↓"
