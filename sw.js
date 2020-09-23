@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "6fffd938bc722d34b78175291c71017f"
+    "revision": "d7ddbc8d7eac6d9b99c5a3ad7ec8e528"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "294f729f8f916b4361c2ed65ac705ea3"
+    "revision": "312da30b8ad231d99661467c14832025"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -267,19 +267,19 @@ self.__precacheManifest = [
   },
   {
     "url": "oshibka-mishleniya/index.html",
-    "revision": "8d1c0a4867c98b965ed2bbd82fd183f7"
+    "revision": "a47bfb84c1bdc779afac87523abecaa6"
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "96fb9f810f11bcd66384aa1acaeb50c9"
+    "revision": "66ebe3327ffba77f9a9ee8560a727e26"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "b6c26fc97097ddd7af80d5d8ee3f41b7"
+    "revision": "6b4b0a1d24398e5c360eeca287720361"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "d3a55e5e96c32a02a734e079586ba2bc"
+    "revision": "8190fae35bf1cba160ce7a219ce22847"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -303,7 +303,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "646d9e918f94f369833504b2654da160"
+    "revision": "4670096d37dc240b978bad3f879d74be"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -327,7 +327,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/oshibka-mishleniya/page-data.json",
-    "revision": "d0978576d0321a5870bf1e05b4f82a88"
+    "revision": "de6d7d6d431f7fa35f179dcdd1a802b0"
   },
   {
     "url": "page-data/osoznannaya-podborka-freelance/page-data.json",
@@ -414,7 +414,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "6e900ed9e119b77f0e8da2efffcae5ea"
+    "revision": "768cdde6cb96636873f2bbc323f0a4c5"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
