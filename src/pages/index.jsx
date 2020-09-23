@@ -92,7 +92,6 @@ export const contentfulQuery = graphql`
               contentYoutubeTiming
               contentLinkPinterest
               contentLinkBehance
-              contentLinkYoutube
               contentLinkMedium
             }
         },
@@ -119,7 +118,6 @@ export const contentfulQuery = graphql`
               }
               contentLinkPinterest
               contentLinkBehance
-              contentLinkYoutube
               contentLinkMedium
               contentYoutubeTiming
             }

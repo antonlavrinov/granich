@@ -96,6 +96,7 @@ const OurTeamWrapper = styled.div`
     @media only screen and (max-width: 575px) {
         grid-template-columns: 1fr;
         grid-row-gap: 4vw;
+        margin-bottom: 5vw;
     }
 
 `
@@ -331,7 +332,8 @@ const OurTeamCategoryTitle = styled.div`
     font-weight: 700;
     margin-bottom: 1vw;
     @media only screen and (max-width: 575px) {
-        font-size: 11vw;
+        font-size: 9vw;
+        margin-bottom: 4vw;
     }
 `
 

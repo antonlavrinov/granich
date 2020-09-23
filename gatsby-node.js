@@ -85,7 +85,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       type ContentfulGranichMainContentCard implements Node {
         contentLinkPinterest: String
         contentLinkBehance: String
-        contentLinkYoutube: String
         contentLinkMedium: String
         contentYoutubeTiming: String
         contentYoutubeVideoLink: String
