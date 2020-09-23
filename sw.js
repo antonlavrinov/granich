@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "45c8743082fb9848fb98f6434f35abb3"
+    "revision": "4ea91a27fd7b12e6cb7c9f893014cae0"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "279b2c9c9a014b71211f701bf8e5967f"
+    "revision": "57bef381cb3e2882d1ab9f89a4a186b5"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -266,16 +266,20 @@ self.__precacheManifest = [
     "revision": "4749b34384c535b60c9585983268c15a"
   },
   {
+    "url": "oshibka-mishleniya/index.html",
+    "revision": "8d1c0a4867c98b965ed2bbd82fd183f7"
+  },
+  {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "d5dc8a9740e54ec1eae60a388aef31a8"
+    "revision": "d7653e3be8a2cc6f6b5e048c8af54a46"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "ab41a50388cf69032bbcff74c53dc6dd"
+    "revision": "5f5931094ee46ef1b7610119a71b79bc"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "0186582495fd1b50062aa5d7becdf5cb"
+    "revision": "c6ba6cda0588f98f6b4440bd5461a252"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -299,7 +303,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "d9a11171bf0e9b6631fe5082dc3cf0b1"
+    "revision": "2c50e5a51a57462eccf5cb7a83ee191f"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -320,6 +324,10 @@ self.__precacheManifest = [
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
     "revision": "f6081b83111aea4128c98944b7fafccc"
+  },
+  {
+    "url": "page-data/oshibka-mishleniya/page-data.json",
+    "revision": "d0978576d0321a5870bf1e05b4f82a88"
   },
   {
     "url": "page-data/osoznannaya-podborka-freelance/page-data.json",
@@ -406,7 +414,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "e3de86425ea47c807b3e6ed9fab280b6"
+    "revision": "768cdde6cb96636873f2bbc323f0a4c5"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
