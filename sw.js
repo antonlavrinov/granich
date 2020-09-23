@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "4c07f19b33cb708812967e1a2b5190a7"
+    "revision": "6fffd938bc722d34b78175291c71017f"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "bf511c6c1750ad499d8d131ce1836b6e"
+    "revision": "294f729f8f916b4361c2ed65ac705ea3"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -271,15 +271,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "f1ed5f85ba5311c16ebc0c9412761c8a"
+    "revision": "96fb9f810f11bcd66384aa1acaeb50c9"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "8c6f65e078909fb9b3bb1826c6e1057c"
+    "revision": "b6c26fc97097ddd7af80d5d8ee3f41b7"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "1542ab892722fc087e1d6865e34da2cf"
+    "revision": "d3a55e5e96c32a02a734e079586ba2bc"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -303,7 +303,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "38b659cc79214f4154685cf7dc6b369d"
+    "revision": "646d9e918f94f369833504b2654da160"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -355,7 +355,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sdsa/page-data.json",
-    "revision": "618f993faf9387a78ce15dc86f523a4c"
+    "revision": "1801acdcb23f9c6b5fcbb5570ff5c625"
   },
   {
     "url": "page-data/sq/d/1579113659.json",
@@ -410,11 +410,11 @@ self.__precacheManifest = [
   },
   {
     "url": "sdsa/index.html",
-    "revision": "ef420c795f37b7c45d983877b742452a"
+    "revision": "262cc7d3263349a893b312760637729d"
   },
   {
     "url": "sitemap.xml",
-    "revision": "9ac08d893f9c37b229c681394239b0dd"
+    "revision": "6e900ed9e119b77f0e8da2efffcae5ea"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
