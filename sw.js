@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "53163be7ec9ee8a9cd6a64217928b7bc"
+    "revision": "79f1618eaef62bf54b88022428c8f83f"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "37d6e5ee97c7c245bb995ddea91b8c41"
+    "revision": "79509600e1ccb728c28b20bedc96904d"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -267,15 +267,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "9f8cc9d253966d6056553eb5e73e38a2"
+    "revision": "eb0594da6e7b8943603c5bfbf7cae6fc"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "3fdbfd97bd65466aca50badcdd7a9b03"
+    "revision": "0618b9d36743f058030bf3fcd7f121f0"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "8692a1250e3c89609a342364ac188b99"
+    "revision": "366ac7f4944abd8eff3ff58868dc4517"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -299,7 +299,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "a3ab7fc5334421ed184ebc140cb2cb61"
+    "revision": "9e00451f7c789e9a6681dc7b74b81d40"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -374,6 +374,10 @@ self.__precacheManifest = [
     "revision": "4a451d63ffca1d5f9036e8977401e479"
   },
   {
+    "url": "page-data/strim-typography/page-data.json",
+    "revision": "6b8f296c2697a719fd1b3dedd244b947"
+  },
+  {
     "url": "page-data/vidy-garnitur/page-data.json",
     "revision": "61f177499aee0b5b84dba0ce6556cf6f"
   },
@@ -402,7 +406,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "0c7c412a59ac83c2ac4e2e94fbcbfe82"
+    "revision": "928e5e86a8a60ebcd720fd6274fcfc34"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
@@ -602,6 +606,10 @@ self.__precacheManifest = [
   {
     "url": "strim-swiss/index.html",
     "revision": "5db7dd8b8ee6f06b9647aca6212f3e62"
+  },
+  {
+    "url": "strim-typography/index.html",
+    "revision": "556abbf10d390b32a8f903822483481c"
   },
   {
     "url": "styles-c2fe8482057191dca484.js"
