@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "f008e58277c01057c1a390ef0a22e098"
+    "revision": "10c856c103c249379833d1a0ee6e31e6"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "b1a1ce57c89fac7603959f21d2622370"
+    "revision": "4415dac835e0c5ce9d05a11dd504b5a3"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -271,15 +271,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "bf1ad35602543c6cc8ec5358ae9e9c85"
+    "revision": "1bd326deab7a21826f99ffa7b580525b"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "e5a4e5092d0aea9abe516cad8ef15138"
+    "revision": "481c23d41bd05545f9feca7983a6ed08"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "0ca31e8a4dc95817923ab3e9ec6547fa"
+    "revision": "03213bcfc33ad1e7424f53ab074d2efb"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -303,7 +303,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "e6481d9a6ff8ca2511c03336a50e8efc"
+    "revision": "5d810be77d7bda46b0ce2911781236ca"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -383,7 +383,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/strim-typography/page-data.json",
-    "revision": "db83326e17ebb9139e95850847a0d1cc"
+    "revision": "343aa337558b1b76986b1f3e8442aa8a"
   },
   {
     "url": "page-data/vidy-garnitur/page-data.json",
@@ -418,7 +418,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "2990f5874fc5550f95a710fa774ec2c7"
+    "revision": "186b121a0dfa02720ff7eacc9ed0e4dd"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
@@ -621,7 +621,7 @@ self.__precacheManifest = [
   },
   {
     "url": "strim-typography/index.html",
-    "revision": "bd5a7e576680e72720cbc23ea1e9279c"
+    "revision": "09952e54b86bc3c050f4a8a725899527"
   },
   {
     "url": "styles-c2fe8482057191dca484.js"
