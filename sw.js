@@ -27,13 +27,6 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "02544da2802ea179efeb5392bd78347047b31cc9-6bd337b6c097a00e451b.js"
-  },
-  {
-    "url": "02544da2802ea179efeb5392bd78347047b31cc9-6bd337b6c097a00e451b.js.map",
-    "revision": "6cece77ab7e6c1ab8163c0d7ee45ea99"
-  },
-  {
     "url": "144x144.png",
     "revision": "86b0dda32768b241f5487d92b0fe6def"
   },
@@ -46,11 +39,11 @@ self.__precacheManifest = [
     "revision": "a5964e29bfc76dafb9c07458d5d49774"
   },
   {
-    "url": "29798ff7c59a770b9437c20c5a088bbd0c1e6a47-598e018d89aedc0712ae.js"
+    "url": "29798ff7c59a770b9437c20c5a088bbd0c1e6a47-c8695f46b5090bcc23c5.js"
   },
   {
-    "url": "29798ff7c59a770b9437c20c5a088bbd0c1e6a47-598e018d89aedc0712ae.js.map",
-    "revision": "cc57e5bb9c249e52f3a259c0dffa7ba8"
+    "url": "29798ff7c59a770b9437c20c5a088bbd0c1e6a47-c8695f46b5090bcc23c5.js.map",
+    "revision": "ebab8e8baad4bf33e9415449745a2e42"
   },
   {
     "url": "32x32.png",
@@ -62,18 +55,11 @@ self.__precacheManifest = [
   },
   {
     "url": "404.html",
-    "revision": "3a61d0ad575861a697bc0c49c2e7f90f"
+    "revision": "53776e6f79d28458e5352331c7582da9"
   },
   {
     "url": "404/index.html",
-    "revision": "606fa0d5e3d6b1ac6cd39aa29deac750"
-  },
-  {
-    "url": "44eb3edd383ce70e9766a92974170519ef90dbe5-2742bd349849985cd7aa.js"
-  },
-  {
-    "url": "44eb3edd383ce70e9766a92974170519ef90dbe5-2742bd349849985cd7aa.js.map",
-    "revision": "e4873101d1af02b9830d2dbe45fb38f6"
+    "revision": "e44c64271e52f34efc6754c864960a36"
   },
   {
     "url": "48x48.png",
@@ -84,11 +70,11 @@ self.__precacheManifest = [
     "revision": "030c6d71f5a703a37ed903a2a5be3e8e"
   },
   {
-    "url": "625520763f98a4997b62b01037b3105d225de680-f44e778095e188a28c2b.js"
+    "url": "625520763f98a4997b62b01037b3105d225de680-02b17afce657c45a2b69.js"
   },
   {
-    "url": "625520763f98a4997b62b01037b3105d225de680-f44e778095e188a28c2b.js.map",
-    "revision": "57870f8f49bbc65bd52064acadeb7e38"
+    "url": "625520763f98a4997b62b01037b3105d225de680-02b17afce657c45a2b69.js.map",
+    "revision": "fc04fc855dd86dd72dd5031185d0b326"
   },
   {
     "url": "64x64.png",
@@ -99,121 +85,142 @@ self.__precacheManifest = [
     "revision": "a1bf3b8a42031a1ca5ff4a66abc5467e"
   },
   {
-    "url": "7efcbb64e6531db39c789c77cd5c63c08b0064ad-0fc54578fe31a73635b3.js"
+    "url": "7a10ce5dfd848bb6bb33d0707dab5ed3877b250c-940014ffef477b21cd6b.js"
   },
   {
-    "url": "7efcbb64e6531db39c789c77cd5c63c08b0064ad-0fc54578fe31a73635b3.js.map",
-    "revision": "545f9bdf7f5a9638d2ea14356143c675"
+    "url": "7a10ce5dfd848bb6bb33d0707dab5ed3877b250c-940014ffef477b21cd6b.js.map",
+    "revision": "86b356c0c2c56834a438b9c02ea99e92"
   },
   {
-    "url": "85390c2c5a1f25d985c16673ae069ff7fcd61bc4-d44b6de5a193ed03c6ee.js"
+    "url": "7efcbb64e6531db39c789c77cd5c63c08b0064ad-899544be483e978ab5d0.js"
   },
   {
-    "url": "85390c2c5a1f25d985c16673ae069ff7fcd61bc4-d44b6de5a193ed03c6ee.js.map",
-    "revision": "f0403df609fbd3fd079df3b54bb6911d"
+    "url": "7efcbb64e6531db39c789c77cd5c63c08b0064ad-899544be483e978ab5d0.js.map",
+    "revision": "230b1954c3f506c657b52c909d76c3b2"
+  },
+  {
+    "url": "85390c2c5a1f25d985c16673ae069ff7fcd61bc4-d1a73ed0cf134d86e6ac.js"
+  },
+  {
+    "url": "85390c2c5a1f25d985c16673ae069ff7fcd61bc4-d1a73ed0cf134d86e6ac.js.map",
+    "revision": "d44272760dd5afcaa7a6ba1aa33fc934"
   },
   {
     "url": "96x96.png",
     "revision": "4803579e98254c95573be2fe9ece7ba6"
   },
   {
-    "url": "app-c674334f3ef4b4ee3d8f.js"
+    "url": "app-21c0afa73a6a0d8ba184.js"
   },
   {
-    "url": "app-c674334f3ef4b4ee3d8f.js.map",
-    "revision": "f9ff1f0b763ae7a7c16ea4e9c261e1e4"
+    "url": "app-21c0afa73a6a0d8ba184.js.map",
+    "revision": "4601f165485f71db52f40d35863b19d7"
   },
   {
     "url": "blog/index.html",
-    "revision": "bca19bf0ce2a61bf87a37ab64cea4948"
+    "revision": "4f915df496fcc84723cd1f3c9cb18064"
   },
   {
-    "url": "c008ada3e173a60331faea31dca12cf57fb6c38f-8af4d1afc3ea3b4fc0cc.js"
+    "url": "c008ada3e173a60331faea31dca12cf57fb6c38f-0ed69c5b0d8f71141d73.js"
   },
   {
-    "url": "c008ada3e173a60331faea31dca12cf57fb6c38f-8af4d1afc3ea3b4fc0cc.js.map",
-    "revision": "5250a301a1f8ca899a3b6a0f5a474f02"
+    "url": "c008ada3e173a60331faea31dca12cf57fb6c38f-0ed69c5b0d8f71141d73.js.map",
+    "revision": "0b58ea0e523c784a12278a63844947a6"
   },
   {
     "url": "chunk-map.json",
-    "revision": "a5f81ffcfd621626bfd757d1344f6c58"
+    "revision": "9b82bafe9263345f9f2469a9382e1292"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-5364357412861a5f7fcb.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-0339ae868cdf073a992d.js"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-5364357412861a5f7fcb.js.map",
-    "revision": "2ffd9bcb7539136a17a9686bddb08203"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-0339ae868cdf073a992d.js.map",
+    "revision": "ff45aae603c3a7de85792d3658e70f2e"
   },
   {
-    "url": "component---src-pages-404-jsx-1167051f81bea08ab65f.js"
+    "url": "component---src-pages-404-jsx-a04f5f60825e187b2790.js"
   },
   {
-    "url": "component---src-pages-404-jsx-1167051f81bea08ab65f.js.map",
-    "revision": "26501e11a8437cebef5cbd3aac6aface"
+    "url": "component---src-pages-404-jsx-a04f5f60825e187b2790.js.map",
+    "revision": "c55637eb6daadb5ae3632bb3daea45ca"
   },
   {
-    "url": "component---src-pages-blog-jsx-048f56e87967f557adf5.js"
+    "url": "component---src-pages-blog-jsx-d1171d89dca3486dc2b5.js"
   },
   {
-    "url": "component---src-pages-blog-jsx-048f56e87967f557adf5.js.map",
-    "revision": "1dbf446fd266b85633d6eead37234916"
+    "url": "component---src-pages-blog-jsx-d1171d89dca3486dc2b5.js.map",
+    "revision": "5e73536a3c85ffa674782d0da257d809"
   },
   {
-    "url": "component---src-pages-graphic-system-vhs-jsx-122012df6208b512b629.js"
+    "url": "component---src-pages-graphic-system-vhs-jsx-5f41da26b2b81d38d10b.js"
   },
   {
-    "url": "component---src-pages-graphic-system-vhs-jsx-122012df6208b512b629.js.map",
-    "revision": "353d39cebb89649161ab2d32bb63395b"
+    "url": "component---src-pages-graphic-system-vhs-jsx-5f41da26b2b81d38d10b.js.map",
+    "revision": "c0e411d9a3c965b02977ab14d90eb67b"
   },
   {
-    "url": "component---src-pages-index-jsx-67f35f74f37ce6455e1b.js"
+    "url": "component---src-pages-index-jsx-b8742f170f88cc0733da.js"
   },
   {
-    "url": "component---src-pages-index-jsx-67f35f74f37ce6455e1b.js.map",
-    "revision": "1348450c21652ad51b8f706a2db79fed"
+    "url": "component---src-pages-index-jsx-b8742f170f88cc0733da.js.map",
+    "revision": "bbef9ff5a6ae5b548f0329c35ca2e976"
   },
   {
-    "url": "component---src-pages-osoznanny-graph-design-jsx-4d37bdfc6979ec0efb9f.js"
+    "url": "component---src-pages-osoznanny-graph-design-jsx-3f262ff95b01b8ec4caa.js"
   },
   {
-    "url": "component---src-pages-osoznanny-graph-design-jsx-4d37bdfc6979ec0efb9f.js.map",
-    "revision": "a2c704e5df4dbd2a6cc27efc5a9793fb"
+    "url": "component---src-pages-osoznanny-graph-design-jsx-3f262ff95b01b8ec4caa.js.map",
+    "revision": "630f945636acb82a35f325fbc9b8db17"
   },
   {
-    "url": "component---src-pages-privacy-jsx-4ba4d7dbd88984878c86.js"
+    "url": "component---src-pages-privacy-jsx-8c71548313dd4f28b4e2.js"
   },
   {
-    "url": "component---src-pages-privacy-jsx-4ba4d7dbd88984878c86.js.map",
-    "revision": "86fafe97d0bc5263e3142fbdfb80c68c"
+    "url": "component---src-pages-privacy-jsx-8c71548313dd4f28b4e2.js.map",
+    "revision": "787046c309949e389a21be10dd4b66d8"
   },
   {
-    "url": "component---src-pages-public-offer-jsx-ee0c830e65e0b6a57429.js"
+    "url": "component---src-pages-public-offer-jsx-e2fb581b0af03bbf7768.js"
   },
   {
-    "url": "component---src-pages-public-offer-jsx-ee0c830e65e0b6a57429.js.map",
-    "revision": "e55eed45147e89e3502bda42fe63a457"
+    "url": "component---src-pages-public-offer-jsx-e2fb581b0af03bbf7768.js.map",
+    "revision": "5a1e195fe2dfd281fe3440016a0b72a9"
   },
   {
-    "url": "component---src-templates-content-post-jsx-6e45cee75afe197f5dab.js"
+    "url": "component---src-templates-content-post-jsx-78df7cd406469b289fd4.js"
   },
   {
-    "url": "component---src-templates-content-post-jsx-6e45cee75afe197f5dab.js.map",
-    "revision": "49f95d981250f269116fc0b8cf935fc5"
+    "url": "component---src-templates-content-post-jsx-78df7cd406469b289fd4.js.map",
+    "revision": "b0351ffb75b64b0a696127a0486d5d39"
   },
   {
-    "url": "component---src-templates-podborka-jsx-24b14e2f5dd7e3ce5775.js"
+    "url": "component---src-templates-podborka-jsx-3c792884b4a0bdf1140e.js"
   },
   {
-    "url": "component---src-templates-podborka-jsx-24b14e2f5dd7e3ce5775.js.map",
-    "revision": "b1a9935d2db0ae7323192347323fa2e1"
+    "url": "component---src-templates-podborka-jsx-3c792884b4a0bdf1140e.js.map",
+    "revision": "862b8adec02e6076955b598ab6954219"
   },
   {
-    "url": "f7d5a900547e88214faaba8307947e149ba9a7c9-24a67626dcd093dab221.js"
+    "url": "dd5eab29447d6307f940396869c932a10bc336ff-2742bd349849985cd7aa.js"
   },
   {
-    "url": "f7d5a900547e88214faaba8307947e149ba9a7c9-24a67626dcd093dab221.js.map",
-    "revision": "ebf57853c022b46def0574092bf5bf58"
+    "url": "dd5eab29447d6307f940396869c932a10bc336ff-2742bd349849985cd7aa.js.map",
+    "revision": "644ef1fa38af453351ef9404a251d345"
+  },
+  {
+    "url": "f7d5a900547e88214faaba8307947e149ba9a7c9-6cafc5d7ce2281154b38.js"
+  },
+  {
+    "url": "f7d5a900547e88214faaba8307947e149ba9a7c9-6cafc5d7ce2281154b38.js.map",
+    "revision": "74f4024492f9598c7f0cfc44b9669922"
+  },
+  {
+    "url": "f94defc1b2e491750d12a0b7fcbef5d9178dcdd3-2c8460573583f940e1d1.js"
+  },
+  {
+    "url": "f94defc1b2e491750d12a0b7fcbef5d9178dcdd3-2c8460573583f940e1d1.js.map",
+    "revision": "3060596cad2963ee58b09a926a0e0f58"
   },
   {
     "url": "favicon-32x32.png",
@@ -232,26 +239,26 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "2fdc16f6924d01f67bebc76d6bd5fab6"
+    "revision": "9d30ebe0352022c9b65eb563bcafd8dd"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "4d489ba821f2f48a75f4334bb8fb97f4"
+    "revision": "be7964ca00270900796aeb8b5f60f29f"
   },
   {
     "url": "kak-oformit-abzac/index.html",
-    "revision": "7095329da115d7054d5ae3e52172436e"
+    "revision": "4305de41da07dec489b06381be763381"
   },
   {
     "url": "maket-neo-geo/index.html",
-    "revision": "b3a86e457e1dfdfe0025d2c0459748fb"
+    "revision": "1a933266fca40e54d3b98721baf721ee"
   },
   {
     "url": "maket-techno/index.html",
-    "revision": "579cbad9ddb3bfc86c92fe437f425549"
+    "revision": "678687b94cb2d3eaf90d13c3b2d7f939"
   },
   {
     "url": "manifest.webmanifest",
@@ -259,27 +266,27 @@ self.__precacheManifest = [
   },
   {
     "url": "modulnaya-setka-1/index.html",
-    "revision": "eae242140f5fcc37b266d25b746763e7"
+    "revision": "5b5fc19ba45296c47f3b3bfcd710da1a"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "6339e892c9d87cb734b22d7bf001f6e6"
+    "revision": "ad30d5e38db1c18178dd7a355f25dc62"
   },
   {
     "url": "oshibka-mishleniya/index.html",
-    "revision": "ab26580439befe6ed25eb6f465167ad2"
+    "revision": "a9d070d2bfdebe7ec4ff18f2c3e94365"
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "1b424e0ffd10c3a4b4d24dd6681e5015"
+    "revision": "87a5928cb801d0864f3c35d56ef6a984"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "47c6b519c463b1cafc85d8db097b7f84"
+    "revision": "293d7e510455cab0851eeabe793fbf73"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "994321fd259e87cc684180dda28fedbc"
+    "revision": "2f4110141bc8fb09bf2e16cb894db196"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -291,7 +298,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "365bb6f22459b0933d8ad994652a10fd"
+    "revision": "75e9ed8ec23e6acdf1ead0396e0665cd"
   },
   {
     "url": "page-data/blog/page-data.json",
@@ -303,7 +310,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "5d810be77d7bda46b0ce2911781236ca"
+    "revision": "bab081ec8f5a739fa60126cb2e0724b0"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -311,11 +318,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/maket-neo-geo/page-data.json",
-    "revision": "4ed86906c01d0c2a89ca3021c8571ffb"
+    "revision": "e0e1bcdd9a1d9ec62ab93fbe48a4d404"
   },
   {
     "url": "page-data/maket-techno/page-data.json",
-    "revision": "67c6a38979d444c19cc469b499464171"
+    "revision": "5653e27f4bb7ee8a1292063b74837707"
   },
   {
     "url": "page-data/modulnaya-setka-1/page-data.json",
@@ -331,11 +338,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznannaya-podborka-freelance/page-data.json",
-    "revision": "c53d41bd4468d16b0c17e4993ac966b8"
+    "revision": "5dd06be5674fc247493a30b0affb2672"
   },
   {
     "url": "page-data/osoznannaya-podborka-graphdesign/page-data.json",
-    "revision": "ea5f4c97c6fbfcb84d83a0b4fecbc6d1"
+    "revision": "37af6650efe95becbab672a5cc1f39ef"
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
@@ -391,22 +398,22 @@ self.__precacheManifest = [
   },
   {
     "url": "plakat-za-5-minut/index.html",
-    "revision": "de4a105d8f0c39129150e44f7c3e1acc"
+    "revision": "3b25f3333de01679d517ca0ebacf57a1"
   },
   {
-    "url": "polyfill-ff9d631ac914200454f0.js"
+    "url": "polyfill-0921ec7cad0d253d02d3.js"
   },
   {
-    "url": "polyfill-ff9d631ac914200454f0.js.map",
-    "revision": "99ab2c8ce490d465d79dc1a9c700dc4f"
+    "url": "polyfill-0921ec7cad0d253d02d3.js.map",
+    "revision": "21a4c62ade754bbbd89be4609f493958"
   },
   {
     "url": "privacy/index.html",
-    "revision": "9bb21b8d4cca6c172a87a8b8b3870078"
+    "revision": "c3f54cff437b0dc1df95cb81008234bb"
   },
   {
     "url": "public-offer/index.html",
-    "revision": "93cc2201f6be05fb5a6814fade93b580"
+    "revision": "eb0c6f8c08f7e0c1efaf82e2c4edc831"
   },
   {
     "url": "robots.txt",
@@ -414,7 +421,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sdsa/index.html",
-    "revision": "83cd57bd827c30f19505bf204447b0a9"
+    "revision": "019020f2b83a4351f5a391fc326bf7a6"
   },
   {
     "url": "sitemap.xml",
@@ -617,11 +624,11 @@ self.__precacheManifest = [
   },
   {
     "url": "strim-swiss/index.html",
-    "revision": "b4a5b38f1462f58b210e195428b75e4a"
+    "revision": "799789ce05f0232d4824a99a87913997"
   },
   {
     "url": "strim-typography/index.html",
-    "revision": "09952e54b86bc3c050f4a8a725899527"
+    "revision": "8b652e7183b4d1413854a99bc951288a"
   },
   {
     "url": "styles-c2fe8482057191dca484.js"
@@ -635,18 +642,18 @@ self.__precacheManifest = [
   },
   {
     "url": "vidy-garnitur/index.html",
-    "revision": "6adbfe5301dc610371c58b5c27ad57de"
+    "revision": "3d74c2f81290c9f1d8ac130a21745b21"
   },
   {
-    "url": "webpack-runtime-95cc37dd6ef3cbaf16b6.js"
+    "url": "webpack-runtime-49e64e07dbf5f3fc6115.js"
   },
   {
-    "url": "webpack-runtime-95cc37dd6ef3cbaf16b6.js.map",
-    "revision": "931b20859e38b718da0b8a84f1a90f63"
+    "url": "webpack-runtime-49e64e07dbf5f3fc6115.js.map",
+    "revision": "9452e8d61903ab375cf4f45a097e03c0"
   },
   {
     "url": "webpack.stats.json",
-    "revision": "6f86db9b9fd88551a400c6cb4d458520"
+    "revision": "5adb24b04518468f108c502326236203"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -738,7 +745,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-c674334f3ef4b4ee3d8f.js`))) {
+  if (!resources || !(await caches.match(`/app-21c0afa73a6a0d8ba184.js`))) {
     return await fetch(event.request)
   }
 
