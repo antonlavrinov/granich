@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "e209366712995461c82064ae45a88b53"
+    "revision": "9417b084d9bc7a60e2217b776e1698aa"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "d38fce30e6b526716ed9983e7d2d204b"
+    "revision": "98cca460d642bb7f00c78aaa32c98351"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -271,15 +271,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "44fe142632cc69249aa23247c44f4651"
+    "revision": "f831c282f91c73e6e48e9545abf170d3"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "36d6e2c7182b42a0b62ea6cc0800f0a2"
+    "revision": "0eaf6f4334bc57d62710e9dfd83e2eb5"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "d1fdaefa7e0902767f85e81fc83b95f4"
+    "revision": "d2e7086b312b10d766fc5ccc009a03cc"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -299,11 +299,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/graphic-system-vhs/page-data.json",
-    "revision": "6998336e60e34590b9962f0de5e2559c"
+    "revision": "2ba35d6ad87e68992c175002bf5a65a9"
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "42a808a8ce5a8055880885290898a0ab"
+    "revision": "5d810be77d7bda46b0ce2911781236ca"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -311,11 +311,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/maket-neo-geo/page-data.json",
-    "revision": "e63629d11e64ff06397259b20a6ce064"
+    "revision": "4ed86906c01d0c2a89ca3021c8571ffb"
   },
   {
     "url": "page-data/maket-techno/page-data.json",
-    "revision": "7b3ffedfeeafa514f6a7ee086cfc7fd4"
+    "revision": "67c6a38979d444c19cc469b499464171"
   },
   {
     "url": "page-data/modulnaya-setka-1/page-data.json",
@@ -339,7 +339,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
-    "revision": "6a5378e5fb0a4f088eee85ff8ebe1106"
+    "revision": "02a67bee48d7cfdeda01d9b2c77f562a"
   },
   {
     "url": "page-data/plakat-za-5-minut/page-data.json",
