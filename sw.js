@@ -46,11 +46,11 @@ self.__precacheManifest = [
     "revision": "a5964e29bfc76dafb9c07458d5d49774"
   },
   {
-    "url": "29798ff7c59a770b9437c20c5a088bbd0c1e6a47-f1f099dc8803c8b1f6e0.js"
+    "url": "29798ff7c59a770b9437c20c5a088bbd0c1e6a47-598e018d89aedc0712ae.js"
   },
   {
-    "url": "29798ff7c59a770b9437c20c5a088bbd0c1e6a47-f1f099dc8803c8b1f6e0.js.map",
-    "revision": "67de00d5e7ff842236b415cf19b0e753"
+    "url": "29798ff7c59a770b9437c20c5a088bbd0c1e6a47-598e018d89aedc0712ae.js.map",
+    "revision": "cc57e5bb9c249e52f3a259c0dffa7ba8"
   },
   {
     "url": "32x32.png",
@@ -62,11 +62,11 @@ self.__precacheManifest = [
   },
   {
     "url": "404.html",
-    "revision": "9db4ce735a204235ca2b05006ea590a2"
+    "revision": "3a61d0ad575861a697bc0c49c2e7f90f"
   },
   {
     "url": "404/index.html",
-    "revision": "6e3ccaaf62b3d4c4a7ad9fefc2b39041"
+    "revision": "606fa0d5e3d6b1ac6cd39aa29deac750"
   },
   {
     "url": "44eb3edd383ce70e9766a92974170519ef90dbe5-2742bd349849985cd7aa.js"
@@ -125,7 +125,7 @@ self.__precacheManifest = [
   },
   {
     "url": "blog/index.html",
-    "revision": "880c7488e62b2125022d71702b7c3e12"
+    "revision": "bca19bf0ce2a61bf87a37ab64cea4948"
   },
   {
     "url": "c008ada3e173a60331faea31dca12cf57fb6c38f-8af4d1afc3ea3b4fc0cc.js"
@@ -136,7 +136,7 @@ self.__precacheManifest = [
   },
   {
     "url": "chunk-map.json",
-    "revision": "39671092532e7dc5a131500cf359d647"
+    "revision": "a5f81ffcfd621626bfd757d1344f6c58"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-5364357412861a5f7fcb.js"
@@ -167,11 +167,11 @@ self.__precacheManifest = [
     "revision": "353d39cebb89649161ab2d32bb63395b"
   },
   {
-    "url": "component---src-pages-index-jsx-df51e0ef12806ec29bbf.js"
+    "url": "component---src-pages-index-jsx-67f35f74f37ce6455e1b.js"
   },
   {
-    "url": "component---src-pages-index-jsx-df51e0ef12806ec29bbf.js.map",
-    "revision": "f14b3f4ad219caf0741a49c9067ab0f2"
+    "url": "component---src-pages-index-jsx-67f35f74f37ce6455e1b.js.map",
+    "revision": "1348450c21652ad51b8f706a2db79fed"
   },
   {
     "url": "component---src-pages-osoznanny-graph-design-jsx-4d37bdfc6979ec0efb9f.js"
@@ -232,26 +232,26 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "a49867ffc7c2ce04f39b978be9f75d4f"
+    "revision": "f008e58277c01057c1a390ef0a22e098"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "9a3b663f3c32a8c63dee4605a0bae7cf"
+    "revision": "b1a1ce57c89fac7603959f21d2622370"
   },
   {
     "url": "kak-oformit-abzac/index.html",
-    "revision": "b0425a0ca337f2e1fd0b67682b65d20f"
+    "revision": "7095329da115d7054d5ae3e52172436e"
   },
   {
     "url": "maket-neo-geo/index.html",
-    "revision": "79303ab37ce5ffeb75af046c95553b94"
+    "revision": "1fd9d1fcccdd18411c4882963b37f807"
   },
   {
     "url": "maket-techno/index.html",
-    "revision": "5c52aecdc4c17af1c110e330e954a08a"
+    "revision": "a1a79b38b9d60d580d6b02c0678b7790"
   },
   {
     "url": "manifest.webmanifest",
@@ -259,27 +259,27 @@ self.__precacheManifest = [
   },
   {
     "url": "modulnaya-setka-1/index.html",
-    "revision": "86d70b7f63b9d056949a73a5857d24de"
+    "revision": "eae242140f5fcc37b266d25b746763e7"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "851e7dc03b307d3aba56f34344a64ad7"
+    "revision": "6339e892c9d87cb734b22d7bf001f6e6"
   },
   {
     "url": "oshibka-mishleniya/index.html",
-    "revision": "302484e4d1325f028c8748364cb6fa0d"
+    "revision": "ab26580439befe6ed25eb6f465167ad2"
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "f3c86e188cb723c052fa5c83ee91d3cb"
+    "revision": "bf1ad35602543c6cc8ec5358ae9e9c85"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "c714f0f9c2819516b91bc65b99c209be"
+    "revision": "e5a4e5092d0aea9abe516cad8ef15138"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "751bb3bdb1c4dc48c9738a217971a08c"
+    "revision": "0ca31e8a4dc95817923ab3e9ec6547fa"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -291,7 +291,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "89eee8f6c6fbf527c0f287a176ac4c8b"
+    "revision": "365bb6f22459b0933d8ad994652a10fd"
   },
   {
     "url": "page-data/blog/page-data.json",
@@ -299,11 +299,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/graphic-system-vhs/page-data.json",
-    "revision": "9b0de646402dc2a7a2d9213227e8394d"
+    "revision": "2ba35d6ad87e68992c175002bf5a65a9"
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "77cc7eccd10f084176ac8fa8386207ac"
+    "revision": "e6481d9a6ff8ca2511c03336a50e8efc"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -391,7 +391,7 @@ self.__precacheManifest = [
   },
   {
     "url": "plakat-za-5-minut/index.html",
-    "revision": "ba47bcda5379d541eb9b741ea5f59426"
+    "revision": "de4a105d8f0c39129150e44f7c3e1acc"
   },
   {
     "url": "polyfill-ff9d631ac914200454f0.js"
@@ -402,11 +402,11 @@ self.__precacheManifest = [
   },
   {
     "url": "privacy/index.html",
-    "revision": "ee164ba380a863374968ed37f7feb0e3"
+    "revision": "9bb21b8d4cca6c172a87a8b8b3870078"
   },
   {
     "url": "public-offer/index.html",
-    "revision": "6a04ba7c311df5fd13748a4a57dac730"
+    "revision": "93cc2201f6be05fb5a6814fade93b580"
   },
   {
     "url": "robots.txt",
@@ -414,7 +414,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sdsa/index.html",
-    "revision": "7f2e1c75e2dfce623a239aacf11915f5"
+    "revision": "83cd57bd827c30f19505bf204447b0a9"
   },
   {
     "url": "sitemap.xml",
@@ -617,11 +617,11 @@ self.__precacheManifest = [
   },
   {
     "url": "strim-swiss/index.html",
-    "revision": "a93781d63862f4bd1450c2f08cce884f"
+    "revision": "b4a5b38f1462f58b210e195428b75e4a"
   },
   {
     "url": "strim-typography/index.html",
-    "revision": "2efdbd885ac6f8cacc08d950bf732ef7"
+    "revision": "bd5a7e576680e72720cbc23ea1e9279c"
   },
   {
     "url": "styles-c2fe8482057191dca484.js"
@@ -635,18 +635,18 @@ self.__precacheManifest = [
   },
   {
     "url": "vidy-garnitur/index.html",
-    "revision": "e8536c0b30a5c712603b4e515ab4aa05"
+    "revision": "6adbfe5301dc610371c58b5c27ad57de"
   },
   {
-    "url": "webpack-runtime-949a530233119b7d02ee.js"
+    "url": "webpack-runtime-95cc37dd6ef3cbaf16b6.js"
   },
   {
-    "url": "webpack-runtime-949a530233119b7d02ee.js.map",
-    "revision": "4e4a1d7539d5f1ff9a79e3ceb31e1a7b"
+    "url": "webpack-runtime-95cc37dd6ef3cbaf16b6.js.map",
+    "revision": "931b20859e38b718da0b8a84f1a90f63"
   },
   {
     "url": "webpack.stats.json",
-    "revision": "36c94fff528e1b68f9682a84bfa69817"
+    "revision": "6f86db9b9fd88551a400c6cb4d458520"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
