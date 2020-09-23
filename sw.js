@@ -232,14 +232,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "8833f19279c02baaa829e8395a8b0ce4"
+    "revision": "eb75986bd1772464eb1bf05dcfda854b"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "050d9fb9349283fb8959a6a79f28625c"
+    "revision": "4b4bef892db6999bd90411572588acd6"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -271,15 +271,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "05c29014590a0b08fa8ff795220b50d0"
+    "revision": "0281e73ed21844a483c7bdba812fe1dc"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "e635732cfb368d763587685fe29d6cfd"
+    "revision": "35e288bda02ae090303709bd5cda3858"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "ad987156dc1f25bbd3f715a04ddfcf26"
+    "revision": "91ead0b9d838cad95863b7e67096eefd"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -303,7 +303,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "4efcdfa1518c4419cad46c61cc4d9689"
+    "revision": "d9620b2a5f971d1666042c8dd08f6cc0"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -387,7 +387,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/vidy-garnitur/page-data.json",
-    "revision": "61f177499aee0b5b84dba0ce6556cf6f"
+    "revision": "eb40436e2519d5f8efcd152908e903b3"
   },
   {
     "url": "plakat-za-5-minut/index.html",
@@ -414,7 +414,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "768cdde6cb96636873f2bbc323f0a4c5"
+    "revision": "bb950bfddd8ccf7e39c7019ae00606f0"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
@@ -631,7 +631,7 @@ self.__precacheManifest = [
   },
   {
     "url": "vidy-garnitur/index.html",
-    "revision": "14d28583ee4cac84554d9fb107a31d81"
+    "revision": "9d9f6f17dd6006005be38646fa97db89"
   },
   {
     "url": "webpack-runtime-94287c409fe647eedf70.js"
