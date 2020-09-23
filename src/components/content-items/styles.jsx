@@ -202,7 +202,7 @@ export const  ContentTag = styled.div`
 
 export const  ContentTitle = styled.h4`
     font-size: 1.25vw;
-    line-height: 1;
+    line-height: 1.2;
     font-weight: 500;
     letter-spacing: -0.05vw;
     color: white;
@@ -403,6 +403,12 @@ export const  ContentButtonBlockTitle = styled.div`
 
 export const  ContentButtonReadBlockWrapper = styled.div`
     margin-bottom: -0.6vw;
+    display: flex;
+    flex-direction: column;
+
+    ${props => props.mixedPinterest && `
+     align-items: flex-end;
+    `}
 
 `
 

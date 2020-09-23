@@ -7,7 +7,7 @@ exports.createPages = ({graphql, actions}) => {
     const osoznannayaPodborkaPage = path.resolve('./src/templates/podborka.jsx');
     return graphql(`
         {
-            content: allContentfulGranichMainContentCard(filter: {contentType: {in: ["Youtube", "Youtube + Medium + Behance"]}}) {
+            content: allContentfulGranichMainContentCard(filter: {contentType: {in: ["Youtube", "Youtube + Medium + Behance", "Youtube + Pinterest"]}}) {
                 edges {
                     node {
                         contentSlug

@@ -199,6 +199,7 @@ export const podborkaPageQuery = graphql`
 `
 
 const PodborkaPage = ({data}) => {
+    console.log(data.coursePodborkaBanner)
     return (
         <Layout>
             <Header type="dark"/>

@@ -21,6 +21,7 @@ export const pageQuery = graphql`
             contentTitle
             contentYoutubeVideoLink
             contentLinkBehance
+            contentLinkPinterest
             contentLinkMedium
             contentPDF {
                 file { 
@@ -58,20 +59,9 @@ const ContentPage = ({data}) => {
                  url={`https://anton-dev.ru/${data.contentfulContent.contentSlug}`} />
             <div className="section-top-block"></div>
             {data.contentfulContent.contentBannerSwitch && data.courseBanner && <Banner data={data.courseBanner}/>}
-            {(data.contentfulContent.contentType === "Youtube" || data.contentfulContent.contentType === "Youtube + Medium + Behance") && (
-                <>
-                    <YoutubeVideo data={data}/>
-                    <ContentLinks data={data}/>
-                </>
-            )}
+            <YoutubeVideo data={data}/>
+            <ContentLinks data={data}/>
             <Mailing/>
-            {data.contentfulContent.contentType === "Осознанная подборка" && (
-                <>
-                    <Video data={data}/>
-                    <Books data={data}/>
-                    <Tools data={data}/>
-                </>
-            )}
 
         </Layout>
     )

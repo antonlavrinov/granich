@@ -10,13 +10,14 @@ module.exports = {
     keywords: `курс, осознанный, индизайн, indesign, графический, дизайн, granich, гранич, графдизайн`,
     ogImage: `${__dirname}/src/assets/images/author.jpg`,
     // siteUrl: `https://www.anton-dev.ru`,
-    siteUrl: `https://elated-kalam-d4b493.netlify.app/`
+    siteUrl: `https://probagran.ru`
   },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-smoothscroll`,
     `gatsby-background-image`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

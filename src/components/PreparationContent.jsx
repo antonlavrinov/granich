@@ -4,6 +4,7 @@ import BackgroundImage from 'gatsby-image';
 import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby'
 import YoutubeMixedContent from './content-items/YoutubeMixedContent';
+import YoutubeMixedPinterestContent from './content-items/YoutubeMixedPinterestContent';
 import YoutubeContent from './content-items/YoutubeContent';
 import BehanceContent from './content-items/BehanceContent';
 import PinterestContent from './content-items/PinterestContent';
@@ -18,6 +19,7 @@ const PreparationContent = ({content}) => {
     const behance = 'Behance';
     const pinterest = 'Pinterest';
     const mixed = 'Youtube + Medium + Behance';
+    const mixedPinterest = 'Youtube + Pinterest';
     const podborka = 'Осознанная подборка';
     const contentExternalLink = content.contentType === pinterest ? (
         content.contentLinkPinterest) : content.contentType === behance ? (content.contentLinkBehance) : '/';
@@ -94,6 +96,7 @@ const PreparationContent = ({content}) => {
             {content.contentType === behance && <BehanceContent contentExternalLink={contentExternalLink} behanceLinkIcon={behanceLinkIcon} content={content} behanceIcon={behanceIcon}/>}
             {content.contentType === pinterest && <PinterestContent  contentExternalLink={contentExternalLink} pinterestLinkIcon={pinterestLinkIcon} content={content} pinterestIcon={pinterestIcon}/>}
             {content.contentType === podborka && <PodborkaContent  podborkaLinkIcon={podborkaLinkIcon} content={content}/>}
+            {content.contentType === mixedPinterest && <YoutubeMixedPinterestContent content={content}  youtubePng={youtubePng} pinterestIcon={pinterestIcon}/>}
         </>
 
     )
