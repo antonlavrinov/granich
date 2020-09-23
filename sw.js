@@ -62,11 +62,11 @@ self.__precacheManifest = [
   },
   {
     "url": "404.html",
-    "revision": "abe562822ba130b05e29c1657f125729"
+    "revision": "9db4ce735a204235ca2b05006ea590a2"
   },
   {
     "url": "404/index.html",
-    "revision": "20bba6f27b45cf04ad8557851baa4f60"
+    "revision": "6e3ccaaf62b3d4c4a7ad9fefc2b39041"
   },
   {
     "url": "44eb3edd383ce70e9766a92974170519ef90dbe5-2742bd349849985cd7aa.js"
@@ -125,7 +125,7 @@ self.__precacheManifest = [
   },
   {
     "url": "blog/index.html",
-    "revision": "09aacb14ccf8f115ff78db90beaa6277"
+    "revision": "880c7488e62b2125022d71702b7c3e12"
   },
   {
     "url": "c008ada3e173a60331faea31dca12cf57fb6c38f-8af4d1afc3ea3b4fc0cc.js"
@@ -136,7 +136,7 @@ self.__precacheManifest = [
   },
   {
     "url": "chunk-map.json",
-    "revision": "8b06592e1366349a47f8c3524a99f869"
+    "revision": "39671092532e7dc5a131500cf359d647"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-5364357412861a5f7fcb.js"
@@ -167,11 +167,11 @@ self.__precacheManifest = [
     "revision": "353d39cebb89649161ab2d32bb63395b"
   },
   {
-    "url": "component---src-pages-index-jsx-0d2173eb246cfa6043fb.js"
+    "url": "component---src-pages-index-jsx-df51e0ef12806ec29bbf.js"
   },
   {
-    "url": "component---src-pages-index-jsx-0d2173eb246cfa6043fb.js.map",
-    "revision": "0dea65c2ceeb37c1741760646432d3e7"
+    "url": "component---src-pages-index-jsx-df51e0ef12806ec29bbf.js.map",
+    "revision": "f14b3f4ad219caf0741a49c9067ab0f2"
   },
   {
     "url": "component---src-pages-osoznanny-graph-design-jsx-4d37bdfc6979ec0efb9f.js"
@@ -181,32 +181,32 @@ self.__precacheManifest = [
     "revision": "a2c704e5df4dbd2a6cc27efc5a9793fb"
   },
   {
-    "url": "component---src-pages-privacy-jsx-e808d925b9160da0b329.js"
+    "url": "component---src-pages-privacy-jsx-4ba4d7dbd88984878c86.js"
   },
   {
-    "url": "component---src-pages-privacy-jsx-e808d925b9160da0b329.js.map",
-    "revision": "f38a5cbc066d0da7eecef2e33a2ebaf8"
+    "url": "component---src-pages-privacy-jsx-4ba4d7dbd88984878c86.js.map",
+    "revision": "86fafe97d0bc5263e3142fbdfb80c68c"
   },
   {
-    "url": "component---src-pages-public-offer-jsx-e38b7919f0a74584a1d3.js"
+    "url": "component---src-pages-public-offer-jsx-ee0c830e65e0b6a57429.js"
   },
   {
-    "url": "component---src-pages-public-offer-jsx-e38b7919f0a74584a1d3.js.map",
-    "revision": "88bf8029f39418046247047ce3517b4d"
+    "url": "component---src-pages-public-offer-jsx-ee0c830e65e0b6a57429.js.map",
+    "revision": "e55eed45147e89e3502bda42fe63a457"
   },
   {
-    "url": "component---src-templates-content-post-jsx-1cb74daf503dda8257f2.js"
+    "url": "component---src-templates-content-post-jsx-6e45cee75afe197f5dab.js"
   },
   {
-    "url": "component---src-templates-content-post-jsx-1cb74daf503dda8257f2.js.map",
-    "revision": "730de84df27240ce9f474e2a189eecd6"
+    "url": "component---src-templates-content-post-jsx-6e45cee75afe197f5dab.js.map",
+    "revision": "49f95d981250f269116fc0b8cf935fc5"
   },
   {
-    "url": "component---src-templates-podborka-jsx-680c67b8e68339713729.js"
+    "url": "component---src-templates-podborka-jsx-24b14e2f5dd7e3ce5775.js"
   },
   {
-    "url": "component---src-templates-podborka-jsx-680c67b8e68339713729.js.map",
-    "revision": "946f8797327f8eeb6e23f6668b10daeb"
+    "url": "component---src-templates-podborka-jsx-24b14e2f5dd7e3ce5775.js.map",
+    "revision": "b1a9935d2db0ae7323192347323fa2e1"
   },
   {
     "url": "f7d5a900547e88214faaba8307947e149ba9a7c9-24a67626dcd093dab221.js"
@@ -232,26 +232,26 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "dde70c7da236663d68f9bde8ee5e2f3c"
+    "revision": "840b1252e48656dba9adc6568921e6bb"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "7ed3217a28cdd7004ac9ea9d2b0d7a23"
+    "revision": "229559d913550bddc7e7db61d59f2c7e"
   },
   {
     "url": "kak-oformit-abzac/index.html",
-    "revision": "260cf92012e4e3b8b40efc26a498f533"
+    "revision": "b0425a0ca337f2e1fd0b67682b65d20f"
   },
   {
     "url": "maket-neo-geo/index.html",
-    "revision": "521a85563c4e5c2af228827cfb5d4f14"
+    "revision": "79303ab37ce5ffeb75af046c95553b94"
   },
   {
     "url": "maket-techno/index.html",
-    "revision": "4d30b6b0bd0d87c5113bcb3c282d7b86"
+    "revision": "5c52aecdc4c17af1c110e330e954a08a"
   },
   {
     "url": "manifest.webmanifest",
@@ -259,27 +259,27 @@ self.__precacheManifest = [
   },
   {
     "url": "modulnaya-setka-1/index.html",
-    "revision": "57e376350642fd6592670f53d0165681"
+    "revision": "86d70b7f63b9d056949a73a5857d24de"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "4749b34384c535b60c9585983268c15a"
+    "revision": "851e7dc03b307d3aba56f34344a64ad7"
   },
   {
     "url": "oshibka-mishleniya/index.html",
-    "revision": "a47bfb84c1bdc779afac87523abecaa6"
+    "revision": "302484e4d1325f028c8748364cb6fa0d"
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "4740e5532cafbd9956d5195fca8f1df8"
+    "revision": "14cd142f02e800f2293bc0fb2207f892"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "f3973a7892a18a6c657ef3808461e9c8"
+    "revision": "62c58e2915a629e1067d7de374e49150"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "f30dfffffcd50593b8e2539170ae686a"
+    "revision": "5ac2205ef0ead60a3f71890f5230b100"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -291,7 +291,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "215ac200eef8590918dabfe2bee8b2ae"
+    "revision": "89eee8f6c6fbf527c0f287a176ac4c8b"
   },
   {
     "url": "page-data/blog/page-data.json",
@@ -303,23 +303,23 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "77cc7eccd10f084176ac8fa8386207ac"
+    "revision": "9b9e1e908aef30b926c6725bb7a68f7e"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
-    "revision": "8364ccce47315fb3c304482a8eb4a7a6"
+    "revision": "3bf58f88cb89139023f4efd9b1fbe0ab"
   },
   {
     "url": "page-data/maket-neo-geo/page-data.json",
-    "revision": "6b65a144d7c25242b87c4b628cef8e1f"
+    "revision": "dc1868b7be1415f68fcebdf63ac68a20"
   },
   {
     "url": "page-data/maket-techno/page-data.json",
-    "revision": "cf1007a9010ae5cb2a855209b84c0e6f"
+    "revision": "a9a9d5db765ca49654427dbb81a7a69c"
   },
   {
     "url": "page-data/modulnaya-setka-1/page-data.json",
-    "revision": "e91b13b2dabeedda5ac79734108cb00e"
+    "revision": "abbc1fc23b98421cf874e48e183c4ee4"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -327,7 +327,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/oshibka-mishleniya/page-data.json",
-    "revision": "de6d7d6d431f7fa35f179dcdd1a802b0"
+    "revision": "60245dccb7210634ec0f54d8e8b83242"
   },
   {
     "url": "page-data/osoznannaya-podborka-freelance/page-data.json",
@@ -343,7 +343,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/plakat-za-5-minut/page-data.json",
-    "revision": "65f395905083129e7dfbda2def008599"
+    "revision": "0788a986138f2e9b08f86c8255fbdd45"
   },
   {
     "url": "page-data/privacy/page-data.json",
@@ -355,11 +355,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sdsa/page-data.json",
-    "revision": "1801acdcb23f9c6b5fcbb5570ff5c625"
+    "revision": "a1da8037435af1edc0d11f3ff847a23a"
   },
   {
     "url": "page-data/sq/d/1579113659.json",
-    "revision": "3392ac14a9b1263cfc5770f1480a07cd"
+    "revision": "6431b938716cbfe417f43157815fe03d"
   },
   {
     "url": "page-data/sq/d/1605903896.json",
@@ -379,19 +379,19 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/strim-swiss/page-data.json",
-    "revision": "4a451d63ffca1d5f9036e8977401e479"
+    "revision": "b11e20801e7ae65de7d8e14f360dba52"
   },
   {
     "url": "page-data/strim-typography/page-data.json",
-    "revision": "6b8f296c2697a719fd1b3dedd244b947"
+    "revision": "db83326e17ebb9139e95850847a0d1cc"
   },
   {
     "url": "page-data/vidy-garnitur/page-data.json",
-    "revision": "eb40436e2519d5f8efcd152908e903b3"
+    "revision": "16ce25b2a96938230fb0049e8b76c468"
   },
   {
     "url": "plakat-za-5-minut/index.html",
-    "revision": "3f42d47b1e1e48b03254e197085aa957"
+    "revision": "ba47bcda5379d541eb9b741ea5f59426"
   },
   {
     "url": "polyfill-ff9d631ac914200454f0.js"
@@ -402,19 +402,23 @@ self.__precacheManifest = [
   },
   {
     "url": "privacy/index.html",
-    "revision": "28aa77736240dcc02436f438aecc4829"
+    "revision": "ee164ba380a863374968ed37f7feb0e3"
   },
   {
     "url": "public-offer/index.html",
-    "revision": "4bb70d492d99a32f39c021179899f255"
+    "revision": "6a04ba7c311df5fd13748a4a57dac730"
+  },
+  {
+    "url": "robots.txt",
+    "revision": "06e9c0759c9d42e3a3ffe646648e2317"
   },
   {
     "url": "sdsa/index.html",
-    "revision": "262cc7d3263349a893b312760637729d"
+    "revision": "7f2e1c75e2dfce623a239aacf11915f5"
   },
   {
     "url": "sitemap.xml",
-    "revision": "c8fb81e9c929cf204d5b85987ac42b41"
+    "revision": "2990f5874fc5550f95a710fa774ec2c7"
   },
   {
     "url": "static/1cb32932886acdbb93335c77e5cb2ff8/03643/behance-link-icon.png"
@@ -613,11 +617,11 @@ self.__precacheManifest = [
   },
   {
     "url": "strim-swiss/index.html",
-    "revision": "5db7dd8b8ee6f06b9647aca6212f3e62"
+    "revision": "a93781d63862f4bd1450c2f08cce884f"
   },
   {
     "url": "strim-typography/index.html",
-    "revision": "556abbf10d390b32a8f903822483481c"
+    "revision": "2efdbd885ac6f8cacc08d950bf732ef7"
   },
   {
     "url": "styles-c2fe8482057191dca484.js"
@@ -631,18 +635,18 @@ self.__precacheManifest = [
   },
   {
     "url": "vidy-garnitur/index.html",
-    "revision": "9d9f6f17dd6006005be38646fa97db89"
+    "revision": "e8536c0b30a5c712603b4e515ab4aa05"
   },
   {
-    "url": "webpack-runtime-94287c409fe647eedf70.js"
+    "url": "webpack-runtime-949a530233119b7d02ee.js"
   },
   {
-    "url": "webpack-runtime-94287c409fe647eedf70.js.map",
-    "revision": "83729fe3f5b1148a5d86e5f485bd9b39"
+    "url": "webpack-runtime-949a530233119b7d02ee.js.map",
+    "revision": "4e4a1d7539d5f1ff9a79e3ceb31e1a7b"
   },
   {
     "url": "webpack.stats.json",
-    "revision": "ce857cf5e257aefce96908aedddbc338"
+    "revision": "36c94fff528e1b68f9682a84bfa69817"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
