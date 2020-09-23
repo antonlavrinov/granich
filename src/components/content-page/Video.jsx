@@ -356,7 +356,7 @@ const VideoItem = ({text, number, image, links, timing, setIsOpen,  videoLink}) 
     )
 }
 
-const Video = ({data}) => {
+const Video = ({data, categoryTwo, categoryThree}) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [videoLink, setvideoLink] = React.useState('');
     
@@ -402,6 +402,7 @@ const Video = ({data}) => {
                         <VideoSectionTitle>Ценные видеолекции</VideoSectionTitle>
                         <VideoSectionText>Осознанный Графдизайн — интенсивный. Чтобы успеть на курсе как можно больше, вы можете уже сейчас подготовиться, посмотрев эти видео.</VideoSectionText>
                     </VideoHeader>
+
                         <VideoList>
                             <Masonry
                                 breakpointCols={breakpointColumnsObj}
@@ -409,7 +410,7 @@ const Video = ({data}) => {
                                 columnClassName="my-masonry-grid_column">
                                     {data.map((videoItem, idx) => {
                                         return (
-                                            <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === 'Самые важные' && <VideoItem  timing={videoItem.node.videoTiming} 
+                                            <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === '1' && <VideoItem  timing={videoItem.node.videoTiming} 
                                                                                                              image={videoItem.node.videoImagePreview.fluid} 
                                                                                                              setIsOpen={openModal}
                                                                                                              
@@ -421,50 +422,55 @@ const Video = ({data}) => {
                                     })}
                             </Masonry>
                         </VideoList>
-                        <VideoList>
-                            <VideoListDescr>
-                                Далее, лекции, которые не имеют прямого отношения к курсу. Но если у вас есть время, то для большего охвата материала полезны ↓
-                            </VideoListDescr>
-                            <Masonry
-                                breakpointCols={breakpointColumnsObj}
-                                className="my-masonry-grid"
-                                columnClassName="my-masonry-grid_column">
-                                    {data.map((videoItem, idx) => {
-                                        return (
-                                            <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === 'Лекции, не имеющие отношения к курсу, но полезны' && <VideoItem timing={videoItem.node.videoTiming} 
-                                                                                                                                                 image={videoItem.node.videoImagePreview.fluid} 
-                                                                                                                                                 setIsOpen={openModal}
-                                                                                                                                                 videoLink={videoItem.node.videoLink}
-                                                                                                                                                
-                                                                                                                                                 number={videoItem.node.videoOrderNumber} 
-                                                                                                                                                 links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
-                                                                                                                                                 text={videoItem.node.videoText.json}/>}</React.Fragment> 
-                                        )
-                                    })}
-                            </Masonry>
-                        </VideoList>
-                        <VideoList>
-                            <VideoListDescr style={{width: '28vw'}}>
-                            Дальше, ценные лекции, если вы решили работать на себя ↓
-                            </VideoListDescr>
-                            <Masonry
-                                breakpointCols={breakpointColumnsObj}
-                                className="my-masonry-grid"
-                                columnClassName="my-masonry-grid_column">
-                                    {data.map((videoItem, idx) => {
-                                        return (
-                                            <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === 'Ценные лекции, если решили работать на себя' && <VideoItem timing={videoItem.node.videoTiming} 
-                                                                                                                                            image={videoItem.node.videoImagePreview.fluid} 
-                                                                                                                                            setIsOpen={openModal}
-                                                                                                                                            videoLink={videoItem.node.videoLink}
-                                                                                                                                           
-                                                                                                                                            number={videoItem.node.videoOrderNumber} 
-                                                                                                                                            links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
-                                                                                                                                            text={videoItem.node.videoText.json}/>}</React.Fragment> 
-                                        )
-                                    })}
-                            </Masonry>
-                        </VideoList>
+                        {categoryTwo && (
+                            <VideoList>
+                                <VideoListDescr>
+                                    {categoryTwo}
+                                </VideoListDescr>
+                                <Masonry
+                                    breakpointCols={breakpointColumnsObj}
+                                    className="my-masonry-grid"
+                                    columnClassName="my-masonry-grid_column">
+                                        {data.map((videoItem, idx) => {
+                                            return (
+                                                <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === '2' && <VideoItem timing={videoItem.node.videoTiming} 
+                                                                                                                                                    image={videoItem.node.videoImagePreview.fluid} 
+                                                                                                                                                    setIsOpen={openModal}
+                                                                                                                                                    videoLink={videoItem.node.videoLink}
+                                                                                                                                                    
+                                                                                                                                                    number={videoItem.node.videoOrderNumber} 
+                                                                                                                                                    links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
+                                                                                                                                                    text={videoItem.node.videoText.json}/>}</React.Fragment> 
+                                            )
+                                        })}
+                                </Masonry>
+                            </VideoList>
+                        )}
+                        {categoryThree && (
+                            <VideoList>
+                                <VideoListDescr style={{width: '28vw'}}>
+                                    {categoryThree}
+                                </VideoListDescr>
+                                <Masonry
+                                    breakpointCols={breakpointColumnsObj}
+                                    className="my-masonry-grid"
+                                    columnClassName="my-masonry-grid_column">
+                                        {data.map((videoItem, idx) => {
+                                            return (
+                                                <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === '3' && <VideoItem timing={videoItem.node.videoTiming} 
+                                                                                                                                                image={videoItem.node.videoImagePreview.fluid} 
+                                                                                                                                                setIsOpen={openModal}
+                                                                                                                                                videoLink={videoItem.node.videoLink}
+                                                                                                                                            
+                                                                                                                                                number={videoItem.node.videoOrderNumber} 
+                                                                                                                                                links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
+                                                                                                                                                text={videoItem.node.videoText.json}/>}</React.Fragment> 
+                                            )
+                                        })}
+                                </Masonry>
+                            </VideoList>
+                        )}
+
 
                 </VideoWrapper>
             </Container>

@@ -14,7 +14,7 @@ import PodborkaOffer from '../components/content-page/PodborkaOffer';
 
 
 export const podborkaPageQuery = graphql`
-    query ContentfulPodborkaBySlug($slug: String!, $banner: String) {
+    query ContentfulPodborkaGraphdesignBySlug($slug: String!, $banner: String) {
         contentfulPodborka: contentfulGranichMainContentCard( contentSlug: { eq: $slug }) {
             contentSlug
             contentTitle
@@ -69,6 +69,29 @@ export const podborkaPageQuery = graphql`
                 }
             }
         }
+        videoPodborkaFreelance: allContentfulGranichCollectionVideo(filter: {videoAttachmentTo: {eq: "Осознанный фриланс"}}, sort: {fields: [videoOrderNumber], order: ASC}) {
+            edges {
+                node {
+                    id
+                    videoLink
+                    videoImagePreview {
+                        fluid(maxWidth: 800, quality: 70) {
+                            ...GatsbyContentfulFluid_withWebp
+                        }
+                    }
+                    videoTiming
+                    videoText {
+                        json
+                    }
+                    childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode {
+                        json
+                    }
+                    videoOrderNumber
+                    videoCategory
+
+                }
+            }
+        }
         booksPodborkaGraphDesign: allContentfulGranichCollectionBooks(filter: {booksAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [booksOrderNumber], order: ASC}) {
             edges {
                 node {
@@ -90,7 +113,47 @@ export const podborkaPageQuery = graphql`
                 }
             }
         }
-        toolsPodborkaGraphDesign: allContentfulGranichCollectionTools(sort: {fields: [toolsOrderNumber], order: ASC}) {
+        booksPodborkaFreelance: allContentfulGranichCollectionBooks(filter: {booksAttachmentTo: {eq: "Осознанный фриланс"}}, sort: {fields: [booksOrderNumber], order: ASC}) {
+            edges {
+                node {
+                    id
+                    booksImage {
+                        fluid(maxWidth: 800, quality: 70) {
+                            ...GatsbyContentfulFluid_withWebp
+                        }
+                    }
+                    booksText {
+                        json
+                    }
+                    childContentfulGranichCollectionBooksBooksLinksRichTextNode {
+                        json
+                    }
+                    booksOrderNumber
+                    booksCategory
+
+                }
+            }
+        }
+        toolsPodborkaGraphDesign: allContentfulGranichCollectionTools(filter: {toolsAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [toolsOrderNumber], order: ASC}) {
+            edges {
+                node {
+                    id
+                    toolsImage {
+                        fluid(maxWidth: 190, quality: 70) {
+                            ...GatsbyContentfulFluid_withWebp
+                        }
+                    }
+                    toolsText {
+                        json
+                    }
+                    childContentfulGranichCollectionToolsToolsLinksRichTextNode {
+                        json
+                    }
+
+                }
+            }
+        }
+        toolsPodborkaFreelance: allContentfulGranichCollectionTools(filter: {toolsAttachmentTo: {eq: "Осознанный фриланс"}}, sort: {fields: [toolsOrderNumber], order: ASC}) {
             edges {
                 node {
                     id
@@ -120,6 +183,17 @@ export const podborkaPageQuery = graphql`
                 }
             }
         }
+        offerPodborkaFreelance: contentfulGranichCollectionOffer(collectionOfferAttachmentTo: {eq: "Осознанный фриланс"}) {
+            collectionOfferTitle {
+                json
+            }
+            collectionOfferDescr
+            collectionOfferMainImage {
+                fluid(maxWidth: 850) {
+                    ...GatsbyContentfulFluid_withWebp
+                }
+            }
+        }
 
     }
 `
@@ -132,11 +206,47 @@ const PodborkaPage = ({data}) => {
                  url={`https://anton-dev.ru/${data.contentfulPodborka.contentSlug}`} />
             <div className="section-top-block"></div>
             {data.contentfulPodborka.contentBannerSwitch && data.coursePodborkaBanner && <Banner data={data.coursePodborkaBanner}/>}
-            <PodborkaOffer tags={data.contentfulPodborka.contentTags} dataContentPodborka={data.offerPodborkaGraphDesign}/>
+            {data.contentfulPodborka.contentSlug === 'osoznannaya-podborka-graphdesign' && (
+                <>
+                    <PodborkaOffer tags={data.contentfulPodborka.contentTags} dataContentPodborka={data.offerPodborkaGraphDesign}/>
+                </>
+
+            )}
+            {data.contentfulPodborka.contentSlug === 'osoznannaya-podborka-freelance' && (
+                <>
+                    <PodborkaOffer tags={data.contentfulPodborka.contentTags} dataContentPodborka={data.offerPodborkaFreelance}/>
+                </>
+
+            )}
+
             <Mailing/>
-            <Video data={data.videoPodborkaGraphDesign.edges}/>
-            <Books data={data.booksPodborkaGraphDesign.edges}/>
-            <Tools data={data.toolsPodborkaGraphDesign.edges}/>
+            {data.contentfulPodborka.contentSlug === 'osoznannaya-podborka-graphdesign' && (
+                <>
+                    <Video categoryTwo="Далее, лекции, которые не имеют прямого отношения к курсу. 
+                                        Но если у вас есть время, то для большего охвата материала полезны ↓" 
+                           categoryThree="Дальше, ценные лекции, если вы решили работать на себя ↓"
+                           data={data.videoPodborkaGraphDesign.edges}/>
+                    <Books categoryTwo="Далее книги более общие. Уже не столь практичные. Но толково расширяют кругозор в дизайне ↓" 
+                           categoryThree="А тут уже книги для крутых дизайнеров, когда одной эстетики уже мало ↓"
+                           data={data.booksPodborkaGraphDesign.edges}/>
+                    <Tools data={data.toolsPodborkaGraphDesign.edges}/>
+                </>
+
+            )}
+            {data.contentfulPodborka.contentSlug === 'osoznannaya-podborka-freelance' && (
+                <>
+                    <Video categoryTwo="Далее, лекции, которые не имеют прямого отношения к курсу. 
+                                        Но если у вас есть время, то для большего охвата материала полезны ↓" 
+                           categoryThree="Дальше, ценные лекции, если вы решили работать на себя ↓"
+                           data={data.videoPodborkaFreelance.edges}/>
+                    <Books categoryTwo="Далее книги более общие. Уже не столь практичные. Но толково расширяют кругозор в дизайне ↓" 
+                           categoryThree="А тут уже книги для крутых дизайнеров, когда одной эстетики уже мало ↓"
+                           data={data.booksPodborkaFreelance.edges}/>
+                    <Tools data={data.toolsPodborkaFreelance.edges}/>
+                </>
+
+            )}
+
             <Wishes/>
 
 

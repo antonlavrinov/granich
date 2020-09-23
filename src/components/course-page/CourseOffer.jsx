@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import CourseArrowDown from '../../assets/svgs/course-arrow-down-27.svg';
@@ -9,6 +9,10 @@ import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+// import { useSprings, animated, interpolate } from 'react-spring'
+// import { useGesture } from 'react-use-gesture'
+
+
 
 const Potok = styled(props => <PotokIcon {...props}/>)`
     width: 1.3vw;
@@ -68,6 +72,7 @@ const CourseOfferWrapper = styled(props => <BackgroundImage {...props}></Backgro
     background-size: auto 100%;
     background-position: right;
     overflow: hidden;
+    display: flex;
     @media only screen and (max-width: 575px) {
         display: none;
     }
@@ -301,7 +306,84 @@ const CourseOfferButton = styled.a`
 
 `
 
+const CourseOfferInfo = styled.div`
 
+`
+
+const CoursePortfolioDeck = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+`
+
+// const OfferCardItemWrapper = styled(animated.div)`
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     z-index: 100;
+//     width: 30vw;
+//     height: 30vw;
+//     will-change: transform;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// `
+
+// const OfferCardItem = styled(animated.div)`
+//     background-color: white;
+//     background-size: auto 85%;
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     width: 20vw;
+//     // max-width: 300px;
+//     height: 20vw;
+//     // max-height: 570px;
+//     will-change: transform;
+//     border-radius: 10px;
+//     box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+// `
+
+// const cards = [
+//     'https://upload.wikimedia.org/wikipedia/en/f/f5/RWS_Tarot_08_Strength.jpg',
+//     'https://upload.wikimedia.org/wikipedia/en/5/53/RWS_Tarot_16_Tower.jpg',
+//     'https://upload.wikimedia.org/wikipedia/en/9/9b/RWS_Tarot_07_Chariot.jpg',
+//     'https://upload.wikimedia.org/wikipedia/en/d/db/RWS_Tarot_06_Lovers.jpg',
+//     'https://upload.wikimedia.org/wikipedia/en/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
+//     'https://upload.wikimedia.org/wikipedia/en/d/de/RWS_Tarot_01_Magician.jpg'
+//   ]
+
+// // These two are just helpers, they curate spring data, values that are later being interpolated into css
+// const to = i => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
+// const from = i => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
+// // This is being used down there in the view, it interpolates rotation and scale into a css transform
+// const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
+
+// const Deck = () => {
+//   const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
+//   const [props, set] = useSprings(cards.length, i => ({ ...to(i), from: from(i) })) // Create a bunch of springs using the helpers above
+//   // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
+//   const bind = useGesture(({ args: [index], down, delta: [xDelta], distance, direction: [xDir], velocity }) => {
+//     const trigger = velocity > 0.2 // If you flick hard enough it should trigger the card to fly out
+//     const dir = xDir < 0 ? -1 : 1 // Direction should either point left or right
+//     if (!down && trigger) gone.add(index) // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
+//     set(i => {
+//       if (index !== i) return // We're only interested in changing spring-data for the current spring
+//       const isGone = gone.has(index)
+//       const x = isGone ? (200 + window.innerWidth) * dir : down ? xDelta : 0 // When a card is gone it flys out left or right, otherwise goes back to zero
+//       const rot = xDelta / 100 + (isGone ? dir * 10 * velocity : 0) // How much the card tilts, flicking it harder makes it rotate faster
+//       const scale = down ? 1.1 : 1 // Active cards lift up a bit
+//       return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } }
+//     })
+//     if (!down && gone.size === cards.length) setTimeout(() => gone.clear() || set(i => to(i)), 600)
+//   })
+//   // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
+//   return props.map(({ x, y, rot, scale }, i) => (
+//     <OfferCardItemWrapper key={i} style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
+//       {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
+//       <OfferCardItem {...bind(i)} style={{ transform: interpolate([rot, scale], trans), backgroundImage: `url(${cards[i]})` }} />
+//     </OfferCardItemWrapper>
+//   ))
+// }
 
 
 const CourseOffer = ({data}) => {
@@ -309,34 +391,41 @@ const CourseOffer = ({data}) => {
         <CourseOfferSection>
             <Container>
                 <CourseOfferWrapper fluid={data.courseMainImage.fluid}>
-                    <CourseOfferTags>
+                    <CourseOfferInfo>
+                        <CourseOfferTags>
+                            {data.courseType === 'Курс' ? (
+                                <>
+                                    {data.courseStream && <CourseOfferMainTag><Potok/>{data.courseStream} поток</CourseOfferMainTag>}
+                                    {data.courseStart && <CourseOfferTag><Date/>Старт {data.courseStart}</CourseOfferTag>}
+                                    {data.courseDuration && <CourseOfferTag><Duration/>{data.courseDuration} интенсива</CourseOfferTag>}
+                                </>
+                            ) : (
+                                <>
+                                    {data.courseTags.map((tag, idx) => {
+                                        return (
+                                            <CourseOfferTag key={idx}>{tag}</CourseOfferTag>
+                                        )
+                                    })}
+                                </>
+                            )}
+                        </CourseOfferTags>
+                        <CourseOfferTitle type={data.courseType}>
+                            {documentToReactComponents(data.courseMainTitle.json)}
+                        </CourseOfferTitle>
+                        <CourseOfferDescr type={data.courseType}>
+                            {data.courseDescr}
+                        </CourseOfferDescr>
                         {data.courseType === 'Курс' ? (
-                            <>
-                                {data.courseStream && <CourseOfferMainTag><Potok/>{data.courseStream} поток</CourseOfferMainTag>}
-                                {data.courseStart && <CourseOfferTag><Date/>Старт {data.courseStart}</CourseOfferTag>}
-                                {data.courseDuration && <CourseOfferTag><Duration/>{data.courseDuration} интенсива</CourseOfferTag>}
-                            </>
+                            <CourseOfferButton onClick={() => scrollTo('#participation-section')}><CourseArrowDown/>Участвовать</CourseOfferButton>
                         ) : (
-                            <>
-                                {data.courseTags.map((tag, idx) => {
-                                    return (
-                                        <CourseOfferTag key={idx}>{tag}</CourseOfferTag>
-                                    )
-                                })}
-                            </>
+                            <CourseOfferButton onClick={() => scrollTo('#prices-range-section')}  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
                         )}
-                    </CourseOfferTags>
-                    <CourseOfferTitle type={data.courseType}>
-                        {documentToReactComponents(data.courseMainTitle.json)}
-                    </CourseOfferTitle>
-                    <CourseOfferDescr type={data.courseType}>
-                        {data.courseDescr}
-                    </CourseOfferDescr>
-                    {data.courseType === 'Курс' ? (
-                        <CourseOfferButton onClick={() => scrollTo('#participation-section')}><CourseArrowDown/>Участвовать</CourseOfferButton>
-                    ) : (
-                        <CourseOfferButton onClick={() => scrollTo('#prices-range-section')}  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
-                    )}
+                    </CourseOfferInfo>
+                    {/* <CoursePortfolioDeck>
+                        <Deck/>
+                    </CoursePortfolioDeck> */}
+                    
+
 
                     
                 </CourseOfferWrapper>

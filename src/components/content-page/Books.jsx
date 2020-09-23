@@ -266,7 +266,7 @@ const BooksItem = ({text, number, image, links}) => {
     )
 }
 
-const Books = ({data}) => {
+const Books = ({data, categoryTwo, categoryThree}) => {
     return (
         <BooksSection>
             <Container>
@@ -283,7 +283,7 @@ const Books = ({data}) => {
                                 columnClassName="my-masonry-grid_column">
                                     {data.map((booksItem, idx) => {
                                         return (
-                                            <React.Fragment key={booksItem.node.id}>{booksItem.node.booksCategory === 'Самые важные' && <BooksItem
+                                            <React.Fragment key={booksItem.node.id}>{booksItem.node.booksCategory === '1' && <BooksItem
                                                                                                              image={booksItem.node.booksImage.fluid} 
                                                                                                            
                                                                                                              number={booksItem.node.booksOrderNumber} 
@@ -293,42 +293,47 @@ const Books = ({data}) => {
                                     })}
                             </Masonry>
                         </BooksList>
-                        <BooksList>
-                            <BooksListDescr style={{width: '42vw'}}>Далее книги более общие. Уже не столь практичные. Но толково расширяют кругозор в дизайне ↓</BooksListDescr>
-                            <Masonry
-                                breakpointCols={breakpointColumnsObj}
-                                className="my-masonry-grid"
-                                columnClassName="my-masonry-grid_column">
-                                    {data.map((booksItem, idx) => {
-                                        return (
-                                            <React.Fragment key={booksItem.node.id}>{booksItem.node.booksCategory === 'Более общие. Расширяют кругозор в дизайне' && <BooksItem
-                                                                                                             image={booksItem.node.booksImage.fluid} 
-                                                                                                           
-                                                                                                             number={booksItem.node.booksOrderNumber} 
-                                                                                                             links={booksItem.node.childContentfulGranichCollectionBooksBooksLinksRichTextNode} 
-                                                                                                             text={booksItem.node.booksText.json}/>}</React.Fragment> 
-                                        )
-                                    })}
-                            </Masonry>
-                        </BooksList>
-                        <BooksList>
-                            <BooksListDescr style={{width: '33vw'}}>А тут уже книги для крутых дизайнеров, когда одной эстетики уже мало ↓</BooksListDescr>
-                            <Masonry
-                                breakpointCols={breakpointColumnsObj}
-                                className="my-masonry-grid"
-                                columnClassName="my-masonry-grid_column">
-                                    {data.map((booksItem, idx) => {
-                                        return (
-                                            <React.Fragment key={booksItem.node.id}>{booksItem.node.booksCategory === 'Для крутых дизайнеров' && <BooksItem
-                                                                                                             image={booksItem.node.booksImage.fluid} 
-                                                                                                           
-                                                                                                             number={booksItem.node.booksOrderNumber} 
-                                                                                                             links={booksItem.node.childContentfulGranichCollectionBooksBooksLinksRichTextNode} 
-                                                                                                             text={booksItem.node.booksText.json}/>}</React.Fragment> 
-                                        )
-                                    })}
-                            </Masonry>
-                        </BooksList>
+                        {categoryTwo && (
+                            <BooksList>
+                                    <BooksListDescr style={{width: '42vw'}}>{categoryTwo}</BooksListDescr>
+                                <Masonry
+                                    breakpointCols={breakpointColumnsObj}
+                                    className="my-masonry-grid"
+                                    columnClassName="my-masonry-grid_column">
+                                        {data.map((booksItem, idx) => {
+                                            return (
+                                                <React.Fragment key={booksItem.node.id}>{booksItem.node.booksCategory === '2' && <BooksItem
+                                                                                                                image={booksItem.node.booksImage.fluid} 
+                                                                                                            
+                                                                                                                number={booksItem.node.booksOrderNumber} 
+                                                                                                                links={booksItem.node.childContentfulGranichCollectionBooksBooksLinksRichTextNode} 
+                                                                                                                text={booksItem.node.booksText.json}/>}</React.Fragment> 
+                                            )
+                                        })}
+                                </Masonry>
+                            </BooksList>
+                        )}
+                        {categoryThree && (
+                            <BooksList>
+                                    <BooksListDescr style={{width: '33vw'}}>{categoryThree}</BooksListDescr>
+                                <Masonry
+                                    breakpointCols={breakpointColumnsObj}
+                                    className="my-masonry-grid"
+                                    columnClassName="my-masonry-grid_column">
+                                        {data.map((booksItem, idx) => {
+                                            return (
+                                                <React.Fragment key={booksItem.node.id}>{booksItem.node.booksCategory === '3' && <BooksItem
+                                                                                                                image={booksItem.node.booksImage.fluid} 
+                                                                                                            
+                                                                                                                number={booksItem.node.booksOrderNumber} 
+                                                                                                                links={booksItem.node.childContentfulGranichCollectionBooksBooksLinksRichTextNode} 
+                                                                                                                text={booksItem.node.booksText.json}/>}</React.Fragment> 
+                                            )
+                                        })}
+                                </Masonry>
+                            </BooksList>
+                        )}
+                        
 
                 </BooksWrapper>
             </Container>
