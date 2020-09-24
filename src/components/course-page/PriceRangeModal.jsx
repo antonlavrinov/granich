@@ -439,7 +439,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                 }}
                                 validationSchema={Yup.object().shape({
                                     politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
-                                    offerCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
+                                    offerCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на учебный договор'),
                                     formParams: Yup.object().shape({
                                         offer_id: Yup.string().required('Выберите один из пакетов'),
                                         email: Yup.string().email('Это не Электропочта').required('Сперва впишите Электропочту'),

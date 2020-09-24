@@ -219,7 +219,7 @@ const ErrorMessage = styled.div`
     color: var(--granich-red);
     margin-left: 0.4vw;
     margin-bottom: 0.5vw;
-    white-space: nowrap;
+    // white-space: nowrap;
     @media only screen and (max-width: 575px) {
         font-size: 3vw;
         white-space: normal;
@@ -377,7 +377,7 @@ const ParticipationForm = ({data}) => {
                                     formEl.current.submit();
                                 }}
                                 validationSchema={Yup.object().shape({
-                                    politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
+                                    politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на учебный договор и на обработку персональных данных'),
                                     formParams: Yup.object().shape({
                                         first_name: Yup.string().trim('Уберите пробелы в начале и в конце строки').strict().matches(myNameNewRegExp, 'Неверные символы в Имени').required('Сперва впишите Имя'),
                                         // first_name: Yup.string().email('Неверный формат электронного адреса').required('Заполните поле Емейл'),

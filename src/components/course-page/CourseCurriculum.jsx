@@ -2,7 +2,7 @@ import React, {memo, useState, useRef, useEffect } from 'react'
 import { Container } from '../style';
 import { useSpring, a } from 'react-spring';
 import ResizeObserver from 'resize-observer-polyfill'
-
+import { INLINES } from '@contentful/rich-text-types'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {
     AccordionItemButton,
@@ -107,7 +107,13 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
 
 
 
-
+const options = {
+    renderNode: {
+        [INLINES.HYPERLINK]: (node) => {
+        return <a href={node.data.uri} rel="noopener noreferrer" target='_blank' >{node.content[0].value}</a>;
+        }
+    },   
+}
 
 
 
@@ -162,7 +168,7 @@ const CourseCurriculum = ({data, dataHeader}) => {
                                         ) : (
                                             <>
                                                 {!type && descr && <CurriculumItemImportantDescr>{descr}</CurriculumItemImportantDescr>}
-                                                {tab.node.childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode && <CurriculumImportantText><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode.json)}</CurriculumImportantText>}
+                                                {tab.node.childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode && <CurriculumImportantText><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode.json, options)}</CurriculumImportantText>}
                                             </>
                                         )}
                                 </AccordionItemPanel>
@@ -187,7 +193,7 @@ const CourseCurriculum = ({data, dataHeader}) => {
                                          
                                         ) : (
                                             <>
-                                                {tab.node.childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode && <CurriculumImportantText><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode.json)}</CurriculumImportantText>}
+                                                {tab.node.childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode && <CurriculumImportantText><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode.json, options)}</CurriculumImportantText>}
                                             </>
                                         )}
 

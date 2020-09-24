@@ -119,6 +119,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode: ContentfulCurriculumThirdColumn
         childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode: ContentfulCurriculumFourthColumn
         childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode: ContentfulCurriculumImportantText
+        curriculumImportantDescr: String
       }
       type ContentfulCurriculumImportantText {
         json: JSON

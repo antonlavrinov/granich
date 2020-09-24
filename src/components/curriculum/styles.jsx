@@ -368,6 +368,13 @@ export const CurriculumImportantText = styled.div`
         white-space: normal;
         margin-bottom: 0.4vw;
     }
+    a {
+        border-bottom: 1px solid var(--granich-light-grey);
+        color: var(--granich-black);
+        :hover {
+            border-color: var(--granich-black);
+        }
+    }
     @media only screen and (max-width: 575px) {
         margin-bottom: -5vw;
         width: 100%;
