@@ -80,6 +80,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         teacherSocialPinterest: String
         teacherSocialInstagram: String
         teacherSocialTelegram: String
+        teacherEmail: String
       }
 
       type ContentfulGranichMainContentCard implements Node {

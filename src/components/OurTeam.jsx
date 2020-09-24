@@ -421,11 +421,14 @@ export const TeacherBlock = ({teacher, masterClass}) => {
                             )
                         })}
                     </TeacherSocialIcons>
-                    <CopyToClipboard text={teacher.teacherEmail}> 
-                        <TeacherEmail masterclass={masterClass ? 1 : 0} content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
-                            {teacher.teacherEmail}
-                        </TeacherEmail>
-                    </CopyToClipboard>
+                    {teacher.teacherEmail && (
+                        <CopyToClipboard text={teacher.teacherEmail}> 
+                            <TeacherEmail masterclass={masterClass ? 1 : 0} content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
+                                {teacher.teacherEmail}
+                            </TeacherEmail>
+                        </CopyToClipboard>
+                    )}
+
                 </TeacherSocials>
 
             </TeacherHeader>
