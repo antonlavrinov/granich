@@ -66,7 +66,7 @@ const CoursesWrapper = styled.div`
 
 
 const Courses = ({data, toggleMailingActive}) => {
-    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [modalIsOpen, setIsOpen] = useState(false);
 
 
 

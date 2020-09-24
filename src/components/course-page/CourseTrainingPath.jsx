@@ -223,9 +223,9 @@ const CourseTrainingPath = ({data}) => {
                                 </TrainingPathBlockContainer>
                                 {/* <TrainingPathImageContainer> */}
                                     <TrainingPathBlockImage>
-                                        {/* <Zoom> */}
+                                        <Zoom>
                                             <TrainingPathImage fluid={block.node.trainingPathImage.fluid}></TrainingPathImage>
-                                        {/* </Zoom> */}
+                                        </Zoom>
                                     </TrainingPathBlockImage>
 {/* 
                                 </TrainingPathImageContainer> */}

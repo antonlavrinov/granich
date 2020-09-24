@@ -349,23 +349,27 @@ const OurTeam = ({data}) => {
                 <OurTeamCategoryTitle>Авторы</OurTeamCategoryTitle>
                 <OurTeamWrapper>
                     {data.edges.map((teacher, idx) => {
-                        if(teacher.node.teacherCategory === 'Авторы') {
                             return (
-                                <TeacherBlock key={teacher.node.id} teacher={teacher.node}/>
+                                <React.Fragment key={teacher.node.id}>
+                                    {teacher.node.teacherCategory === 'Авторы' && (
+                                        <TeacherBlock  teacher={teacher.node}/>
+                                    )}
+                                </React.Fragment>
                             )
-                        }
-
                         })
                     }
                 </OurTeamWrapper>
                 <OurTeamCategoryTitle>Кураторы</OurTeamCategoryTitle>
                 <OurTeamWrapper>
                     {data.edges.map((teacher, idx) => {
-                        if(teacher.node.teacherCategory === 'Кураторы') {
-                            return (
-                                <TeacherBlock key={teacher.node.id} teacher={teacher.node}/>
-                            )
-                        }
+                        return (
+                            <React.Fragment key={teacher.node.id}>
+                                {teacher.node.teacherCategory === 'Кураторы' && (
+                                    <TeacherBlock  teacher={teacher.node}/>
+                                )}
+                            </React.Fragment>
+                        )
+
 
                         })
                     }
@@ -373,11 +377,14 @@ const OurTeam = ({data}) => {
                 <OurTeamCategoryTitle>Координаторы</OurTeamCategoryTitle>
                 <OurTeamWrapper>
                     {data.edges.map((teacher, idx) => {
-                        if(teacher.node.teacherCategory === 'Координаторы') {
-                            return (
-                                <TeacherBlock key={teacher.node.id} teacher={teacher.node}/>
-                            )
-                        }
+                        return (
+                            <React.Fragment key={teacher.node.id}>
+                                {teacher.node.teacherCategory === 'Координаторы' && (
+                                    <TeacherBlock  teacher={teacher.node}/>
+                                )}
+                            </React.Fragment>
+                        )
+
 
                         })
                     }

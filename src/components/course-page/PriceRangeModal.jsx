@@ -389,70 +389,6 @@ const FormSubTextEmail = styled.span`
 
 
 
-{/* <form id="ltForm862509"  action="https://granich.ru/pl/lite/block-public/process-html?id=855570200" method="post" data-open-new-window="0"><input type="hidden" name="formParams[setted_offer_id]" ><br>
-<input id="input-formPosition9651352" name='formParams[need_offer]' type='hidden' value="" /><br>
-<input
-								
-				data-price-value=""
-				data-old-price-value=""
-				data-price-currency="руб."
-				data-qty-value=""
-								id="input-formPosition9651352"
-				name='formParams[offer_id][]'
-				type='radio'  value="" 			><br>
-<input id="input-formPosition4562378" name='formParams[need_offer]' type='hidden' value="" /><br>
-<input
-								
-				data-price-value=""
-				data-old-price-value=""
-				data-price-currency="руб."
-				data-qty-value=""
-								id="input-formPosition4562378"
-				name='formParams[offer_id][]'
-				type='radio'  value="" 			><br>
-<input id="input-formPosition502819" name='formParams[need_offer]' type='hidden' value="" /><br>
-<input
-								
-				data-price-value=""
-				data-old-price-value=""
-				data-price-currency="руб."
-				data-qty-value=""
-								id="input-formPosition502819"
-				name='formParams[offer_id][]'
-				type='radio'  value="" 			><br>
-<input id="input-formPosition7402899" name='formParams[need_offer]' type='hidden' value="" /><br>
-<input
-								
-				data-price-value=""
-				data-old-price-value=""
-				data-price-currency="руб."
-				data-qty-value=""
-								id="input-formPosition7402899"
-				name='formParams[offer_id][]'
-				type='radio'  value="" 			><br>
-<input type="text" maxlength="60"  placeholder="Введите ваш эл. адрес" name="formParams[email]" value="" ><br>
-<button type="submit"
-		id="button1106661"
-		
-		style="color: ; background-color: ; " onclick="if(window['btnprs5f64b2ecda34e']){return false;}window['btnprs5f64b2ecda34e']=true;setTimeout(function(){window['btnprs5f64b2ecda34e']=false},6000);return true;">
-	Купить</button><br>
-<input type="hidden" id="2588285f64b2eccc844" name="__gc__internal__form__helper" class="__gc__internal__form__helper" value="">
-<input type="hidden" id="2588285f64b2eccc844ref" name="__gc__internal__form__helper_ref" class="__gc__internal__form__helper_ref" value="">
-<input type="hidden" name="requestTime" value="1600434924">
-<input type="hidden" name="requestSimpleSign" value="4f4c23141b98ff45a0730993668fc117">
-<input type="hidden" name="isHtmlWidget" value="1"/></form><span id="gccounterImgContainer"></span><script>
-	window.onload = function(){
-		let loc = document.getElementById("2588285f64b2eccc844");
-		loc.value = window.location.href;
-		let ref = document.getElementById("2588285f64b2eccc844ref");
-		ref.value = document.referrer;
-		
-		let statUrl = "https://granich.ru/stat/counter?ref=" + encodeURIComponent(document.referrer)
-			+ "&loc=" + encodeURIComponent(document.location.href);
-		document.getElementById('gccounterImgContainer').innerHTML
-			= "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
-	}
-</script> */}
 
 
 const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}) => {
@@ -547,7 +483,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                         <input  type="hidden" name="formParams[setted_offer_id]" />
                                         <input id="input-formPosition9651352" name='formParams[need_offer]' type='hidden' value="" />
                                         <br/>
-                                        <input id={`${data.edges[0].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" />
+                                        {/* <input id={`${data.edges[0].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" /> */}
                                         <FormCheckbox 
                                                 data-price-value={`${data.edges[0].node.pricesPrice}`}
                                                 data-old-price-value={`${data.edges[0].node.pricesPrice}`}
@@ -557,8 +493,10 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                 name="formParams[offer_id]"
                                                 value="1164222"
                                                 checked={values.formParams.offer_id === `${data.edges[0].node.pricesPrice}`}
+                                                
                                                 onChange={() => {
                                                     setFieldValue("formParams[offer_id]", `${data.edges[0].node.pricesPrice}`);
+                                                    
                                                     // setFieldTouched("formParams[offer_id]", true)
                                                 }}
                                                 id={`${data.edges[0].node.pricesPrice}`}
@@ -576,7 +514,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                             {`${data.edges[0].node.pricesPrice}`} ₽
                                                         </FormLabelPrice>
                                             </FormCheckboxLabel>
-                                            <input id={`${data.edges[1].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" />
+                                            {/* <input id={`${data.edges[1].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" /> */}
                                             <FormCheckbox 
                                                 data-price-value={`${data.edges[1].node.pricesPrice}`}
                                                 data-old-price-value={`${data.edges[1].node.pricesPrice}`}
@@ -606,7 +544,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                                     {`${data.edges[1].node.pricesPrice}`} ₽
                                                                 </FormLabelPrice>
                                                             </FormCheckboxLabel>
-                                            <input id={`${data.edges[2].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" />                
+                                            {/* <input id={`${data.edges[2].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" />                 */}
                                             <FormCheckbox 
                                                 data-price-value={`${data.edges[2].node.pricesPrice}`}
                                                 data-old-price-value={`${data.edges[2].node.pricesPrice}`}
@@ -635,7 +573,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                       {`${data.edges[2].node.pricesPrice}`} ₽
                                                   </FormLabelPrice>
                                             </FormCheckboxLabel>
-                                            <input id={`${data.edges[3].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" />
+                                            {/* <input id={`${data.edges[3].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" /> */}
                                             <FormCheckbox 
                                                 data-price-value={`${data.edges[3].node.pricesPrice}`}
                                                 data-old-price-value={`${data.edges[3].node.pricesPrice}`}

@@ -37,12 +37,7 @@ module.exports = {
         display: 'swap'
       }
     },
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        exclude: [`/privacy`, `/public-offer`]
-      }
-    },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

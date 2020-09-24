@@ -332,7 +332,7 @@ const breakpointColumnsObj = {
 const options = {
     renderNode: {
         [INLINES.HYPERLINK]: (node) => {
-        return <a href={node.data.uri} target='_blank' >{node.content[0].value}</a>;
+        return <a href={node.data.uri} rel="noopener noreferrer" target='_blank' >{node.content[0].value}</a>;
         }
     },   
 }
@@ -357,8 +357,8 @@ const VideoItem = ({text, number, image, links, timing, setIsOpen,  videoLink}) 
 }
 
 const Video = ({data, categoryTwo, categoryThree}) => {
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-    const [videoLink, setvideoLink] = React.useState('');
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const [videoLink, setvideoLink] = useState('');
     
 
 

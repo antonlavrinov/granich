@@ -5,7 +5,6 @@ import SEO from "../components/seo"
 import styled from 'styled-components';
 import { Container } from '../components/style';
 import Header from "../components/Header";
-import { Link } from "gatsby";
 import VKIcon from '../assets/svgs/granich-main-team/vk.svg';
 import InstagramIcon from '../assets/svgs/granich-main-team/instagram.svg';
 import TelegramIcon from '../assets/svgs/granich-main-team/telegram.svg';
@@ -65,43 +64,6 @@ const NotFoundText = styled.div`
   }
 `
 
-const NotFoundLinksWrapper = styled.div`
-  position: relative;
-  z-index: 2;
-  ul {
-    li {
-      margin-bottom: 0.5vw;
-    }
-  }
-  @media only screen and (max-width: 575px) {
-    ul {
-      li {
-        margin-bottom: 1.8vw;
-      }
-    }
-  }
-
-`
-
-const NotFoundLink = styled(props => <Link {...props}/>)`
-  color: var(--granich-red);
-  font-weight: 500;
-  border-bottom: 1px solid var(--granich-red);
-  font-size: 1.15vw;
-  :hover {
-    border-bottom: none;
-    font-weight: 500;
-    color: var(--granich-red);
-    font-size: 1.15vw;
-  }
-  @media only screen and (max-width: 575px) {
-    font-size: 3.8vw;
-    :hover {
-      font-size: 3.8vw;
-  }
-
-
-`
 const NotFoundSocials = styled.div`
   display: flex;
   align-items: center;
@@ -157,18 +119,17 @@ const NotFoundPage = () => (
           </NotFoundTitle>
           <NotFoundText>
             Когда мы его запустим на сайте мы оповестим на других площадках, где ведем блог школы:
-            {/* Оповестим о запуске на других площадках блога школы. <br/> 
-            Вот несколько других интересных материалов: */}
+
           </NotFoundText>
           <NotFoundSocials>
             <NotFoundSocial>
-              <VKIcon/> <a href="https://vk.com/granichvk" target="_blank">vk.com/granichvk</a>
+              <VKIcon/> <a href="https://vk.com/granichvk" rel="noopener noreferrer" target="_blank">vk.com/granichvk</a>
             </NotFoundSocial>
             <NotFoundSocial>
-              <TelegramIcon/> <a href="https://t.me/granichannel" target="_blank">t.me/granichannel</a>
+              <TelegramIcon/> <a href="https://t.me/granichannel" rel="noopener noreferrer" target="_blank">t.me/granichannel</a>
             </NotFoundSocial>
             <NotFoundSocial>
-              <InstagramIcon/> <a href="https://www.instagram.com/granichgram" target="_blank">@granichgram</a>
+              <InstagramIcon/> <a href="https://www.instagram.com/granichgram" rel="noopener noreferrer" target="_blank">@granichgram</a>
             </NotFoundSocial>
           </NotFoundSocials>
           {/* <NotFoundLinksWrapper>

@@ -1,7 +1,4 @@
 import React from 'react'
-import styled from 'styled-components';
-import BackgroundImage from 'gatsby-image';
-import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby'
 import YoutubeMixedContent from './content-items/YoutubeMixedContent';
 import YoutubeMixedPinterestContent from './content-items/YoutubeMixedPinterestContent';

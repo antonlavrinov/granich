@@ -235,7 +235,7 @@ const BooksItemInfoLinks = styled.div`
 const options = {
     renderNode: {
         [INLINES.HYPERLINK]: (node) => {
-        return <a href={node.data.uri} target='_blank' >{node.content[0].value}</a>;
+        return <a href={node.data.uri} target='_blank' rel="noopener noreferrer" >{node.content[0].value}</a>;
         }
     },   
 }

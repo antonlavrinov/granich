@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
-import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
@@ -10,10 +9,7 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 
 const PortfolioSection = styled.section`
-    // margin-bottom: 4vw;
-    // @media only screen and (max-width: 575px) {
-    //     margin-bottom: 5vw;
-    // }
+
 `
 
 

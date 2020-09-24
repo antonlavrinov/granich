@@ -8,8 +8,6 @@ import ArrowTopMobile from '../../assets/svgs/header-arrow-top_mobile.svg';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import { useSpring, a } from 'react-spring';
 import ResizeObserver from 'resize-observer-polyfill'
-import PlusSign from '../../assets/svgs/plus-sign.svg';
-import MinusSign from '../../assets/svgs/minus-sign.svg';
 import { animated } from 'react-spring';
 import {
     Accordion,
@@ -124,16 +122,7 @@ const AnswersLine = styled.div`
     `}
 `
 
-const Plus = styled(props => <PlusSign {...props}/>)`
-    width: 2.3vw;
-    height: 2.3vw;
-    margin-left: auto;
-`
-const Minus = styled(props => <MinusSign {...props}/>)`
-    width: 2.3vw;
-    height: 2.3vw;
-    margin-left: auto;
-`
+
 
 const AnswersItemFrame = styled.div`
     position: relative;

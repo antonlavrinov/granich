@@ -1,4 +1,4 @@
-import React, {useState, createRef, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
@@ -326,8 +326,8 @@ const PriceCategoryPackage = styled.div`
 
 
 const CoursePriceRange = ({data}) => {
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-    const [chosenPrice, setChosenPrice] = React.useState('');
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const [chosenPrice, setChosenPrice] = useState('');
 
 
     const openModal = () => {
