@@ -39,11 +39,11 @@ self.__precacheManifest = [
     "revision": "a5964e29bfc76dafb9c07458d5d49774"
   },
   {
-    "url": "29798ff7c59a770b9437c20c5a088bbd0c1e6a47-1d79212f2034e95394b4.js"
+    "url": "29798ff7c59a770b9437c20c5a088bbd0c1e6a47-2baa26289061b14e5b86.js"
   },
   {
-    "url": "29798ff7c59a770b9437c20c5a088bbd0c1e6a47-1d79212f2034e95394b4.js.map",
-    "revision": "714c9f38a38488903cc16221a46a8990"
+    "url": "29798ff7c59a770b9437c20c5a088bbd0c1e6a47-2baa26289061b14e5b86.js.map",
+    "revision": "d9e6c7e37fc54dfdcb2dd9c874da8158"
   },
   {
     "url": "32x32.png",
@@ -55,11 +55,11 @@ self.__precacheManifest = [
   },
   {
     "url": "404.html",
-    "revision": "ac60dee6d78d31898cece03137743ad5"
+    "revision": "9050df31edd1f7c0973740b0753802ac"
   },
   {
     "url": "404/index.html",
-    "revision": "d95fac3fdd66ae0ad93b2199d1913c79"
+    "revision": "363a70e89c9e4ca4803e9a2ed93d5d63"
   },
   {
     "url": "48x48.png",
@@ -125,7 +125,7 @@ self.__precacheManifest = [
   },
   {
     "url": "blog/index.html",
-    "revision": "bf6760088cc64d1f070ad7bf3070805a"
+    "revision": "f2987bd92d7f2d29bbe0ea0279d0cc67"
   },
   {
     "url": "c008ada3e173a60331faea31dca12cf57fb6c38f-0ed69c5b0d8f71141d73.js"
@@ -246,26 +246,26 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "73d4c8f0ac8fb9f5649d1db11302fb4d"
+    "revision": "f6df620e325b48c85cd4e7914e6c7617"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "fba16ffb9aefe46e957dd33b15aafb3f"
+    "revision": "1509fb369fce94d8aa81f0637383a861"
   },
   {
     "url": "kak-oformit-abzac/index.html",
-    "revision": "82d47bb75a41dfe5ab37a84148b651ba"
+    "revision": "832c261562d772d753d09dc66a467edd"
   },
   {
     "url": "maket-neo-geo/index.html",
-    "revision": "7ab09ea1854600ce9a8349ba4b10b6ac"
+    "revision": "ac61271484a92deea5524b6936f90327"
   },
   {
     "url": "maket-techno/index.html",
-    "revision": "79ad08091d99532952d4556a4e1d16f8"
+    "revision": "a0fb0efab3ea19fc76f9ce4b23b30407"
   },
   {
     "url": "manifest.webmanifest",
@@ -273,23 +273,23 @@ self.__precacheManifest = [
   },
   {
     "url": "modulnaya-setka-1/index.html",
-    "revision": "aba815252957258ea93132704ba83d53"
+    "revision": "931a73fdaaa356e72d1661f1a9ba6de6"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "74fc93cce40fafa00c6854ec26835dd7"
+    "revision": "77f9ca9c24048778f9573cb6229f42f1"
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "790ae78593e918e01b654d27bd5599ef"
+    "revision": "205d0757220c28d0a08035279c73da7b"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "a5268c4239e09779271a431afbd3cf93"
+    "revision": "b37217a73c53d034f6a6924d274c4adc"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "dcb9ca4687f2a0171674972b505d2e88"
+    "revision": "ccea836afbc1863911a82547c5c85369"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -301,7 +301,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "c21bab45ef8e2560a3359012fd646aec"
+    "revision": "58398fbe71417450eec0a90da3e5c6f5"
   },
   {
     "url": "page-data/blog/page-data.json",
@@ -313,7 +313,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "bada2cf1e4002e1229ec3ff36b890c52"
+    "revision": "45e4ac81c64dd3adffb83eb927827174"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -397,7 +397,7 @@ self.__precacheManifest = [
   },
   {
     "url": "plakat-za-5-minut/index.html",
-    "revision": "17ab1898645d4556fd419f16481f92fd"
+    "revision": "be4847429ffec7fb8bc421f82eaddcc9"
   },
   {
     "url": "polyfill-59be98e4b93386ac1856.js"
@@ -408,11 +408,11 @@ self.__precacheManifest = [
   },
   {
     "url": "privacy/index.html",
-    "revision": "f5d465240fe1f7ffda7882ddcc29dcf1"
+    "revision": "06d7992ab2cb2b67088e48397e65426a"
   },
   {
     "url": "public-offer/index.html",
-    "revision": "802174c2f63a3a659c79ef52a67f6117"
+    "revision": "5f1525d8283cb74e7a2f85efe7786a85"
   },
   {
     "url": "robots.txt",
@@ -420,7 +420,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sdsa/index.html",
-    "revision": "d1844b7103851c77ea94efe4a2088091"
+    "revision": "3fa727980c193682de5f156895666d47"
   },
   {
     "url": "sitemap.xml",
@@ -623,11 +623,11 @@ self.__precacheManifest = [
   },
   {
     "url": "strim-swiss/index.html",
-    "revision": "417cd912d6f2aa8139d6c93f84171480"
+    "revision": "074695583f34c564bac8421a29670d90"
   },
   {
     "url": "strim-typography/index.html",
-    "revision": "a82a67d3c7187c6097694bc0601af631"
+    "revision": "7860da1a2a533d20bc3d52e2aa6ec374"
   },
   {
     "url": "styles-c2fe8482057191dca484.js"
@@ -641,18 +641,18 @@ self.__precacheManifest = [
   },
   {
     "url": "vidy-garnitur/index.html",
-    "revision": "4be41ded44b6e36238035c4513ae6c60"
+    "revision": "8a2ced5d6eabf5b3bbb394596fef5f33"
   },
   {
-    "url": "webpack-runtime-705acec3b488bd37702e.js"
+    "url": "webpack-runtime-5b10765c03e033244350.js"
   },
   {
-    "url": "webpack-runtime-705acec3b488bd37702e.js.map",
-    "revision": "5a395fbe26a758d1504f9c34e309d964"
+    "url": "webpack-runtime-5b10765c03e033244350.js.map",
+    "revision": "50aa93b41b94a094ef74954e3c1e67b9"
   },
   {
     "url": "webpack.stats.json",
-    "revision": "a037072218ac909732d3c1c7e737214a"
+    "revision": "ea2d0411f10694dd3b14dc48442d2c4f"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
