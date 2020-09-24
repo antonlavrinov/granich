@@ -15,4 +15,6 @@
 <url> <loc>https://probagran.ru/graphic-system-vhs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://probagran.ru/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://probagran.ru/osoznanny-graph-design/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://probagran.ru/privacy/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://probagran.ru/public-offer/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
