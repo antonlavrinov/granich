@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "cfd5b07eb27b4231f335ba95659260f1"
+    "revision": "5cc581bf8a7abdaa7ee304f34ce8c662"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "788d9afd9b6e590b808507f6724e4e29"
+    "revision": "1fe47620c390c569835ceb80d34a0d6f"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
@@ -305,15 +305,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "4c2ef4511d60c88aea6145be5096792a"
+    "revision": "8771b13ab4f02db8d8928866028e52ef"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "ca60863b41bb69f1fcb6b0b934a84983"
+    "revision": "12867bf255ac34b104d0957cd7227e74"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "a27dbfc8bff90bd745fc2c5b9845a6e8"
+    "revision": "31524333ad74768c05cab829da940de6"
   },
   {
     "url": "page-data/404.html/page-data.json",
