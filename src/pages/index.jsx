@@ -168,14 +168,14 @@ const IndexPage = ({data}) => {
           keywords={['vhs', 'графсистема']}
           ogImage={ogImage}
           url="https://granich.design/" />
-      <Offer data={data.header}/>
-      <Courses data={data.courseCards} toggleMailingActive={toggleMailingActive} />
+      {/* <Offer data={data.header}/>
+      <Courses data={data.courseCards} toggleMailingActive={toggleMailingActive} /> */}
 
       <Manifest/>
-      {mailingActive && <Mailing/>}
+      {/* {mailingActive && <Mailing/>}
       <div className="content"></div>
       <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/>
-      <OurTeam data={data.team}/> 
+      <OurTeam data={data.team}/> */}
 
     </Layout>
   )
