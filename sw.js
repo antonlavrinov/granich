@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "74fe7aee1cf00310d2c3ccb31a824453"
+    "revision": "e42384638112cf631e11406f5a31e3d4"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "77f6aee72ca935f9720b90ced32d84fc"
+    "revision": "065af25e5b7d45782a5df0099dbccd5b"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
@@ -305,15 +305,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "fafc91b5c6316a90f6161153639ccd65"
+    "revision": "a92acb5d8a82cb0c407b03b60368edf3"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "b7d2a2a31e502baefc5aeb5fb913fd82"
+    "revision": "32886f6656714f795f086b13cc75c1ef"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "33dc118c57497ef8d34e1eb97bb82791"
+    "revision": "fc0d84e34c56ca015b6999d305f8ae3b"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -341,7 +341,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "2ce5c137c7344f8ad4eca646bc076ada"
+    "revision": "66a9396af8e41deb826f3cd42ae82412"
   },
   {
     "url": "page-data/kak-frilanseru-ocenit-stoimost-raboty/page-data.json",
@@ -393,7 +393,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
-    "revision": "ed2a7860287301a385a7db7b89af9f66"
+    "revision": "bdfd6e6a5b3caca59c33990a1cf5e07f"
   },
   {
     "url": "page-data/perspektiva-i-izometriya-adobe-illustrator-podrobnyi-urok/page-data.json",
@@ -456,6 +456,10 @@ self.__precacheManifest = [
     "revision": "6427308fc563fad6e0eb1c3a41a6e418"
   },
   {
+    "url": "page-data/urok-pro-ikonochnyi-shrift-v-indizain/page-data.json",
+    "revision": "b8d3392e345be57565ce1842464ac8e3"
+  },
+  {
     "url": "page-data/vidy-garnitur/page-data.json",
     "revision": "16ce25b2a96938230fb0049e8b76c468"
   },
@@ -500,7 +504,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "623f93e13c14d1005c2493201f61eb26"
+    "revision": "0e664169b962a9eb9d555de1dc386c2c"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
@@ -898,6 +902,10 @@ self.__precacheManifest = [
   {
     "url": "tipografika-primery-iz-praktiki/index.html",
     "revision": "7c82825c1a982d47726197839290415f"
+  },
+  {
+    "url": "urok-pro-ikonochnyi-shrift-v-indizain/index.html",
+    "revision": "26eb092ca604c29349a9499f36ef4f38"
   },
   {
     "url": "vidy-garnitur/index.html",
