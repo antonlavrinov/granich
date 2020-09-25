@@ -250,14 +250,18 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "04fecb2ddd69eaef27350745485fdada"
+    "revision": "040462ec540a5a945fc6bf566ff87cc8"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "e41cfc351b2990ce1457432e8b8149f9"
+    "revision": "be4e8f108d89bdda9cf56912954e5533"
+  },
+  {
+    "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
+    "revision": "a65ad9f0e06d89407d8ae53813008b78"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -297,15 +301,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "462ca93c5181d03ac1cca9e5a548340a"
+    "revision": "95b40c8a490b83cf16a4433a4a424d8c"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "4ff251de87a8f110e088693e4c6df3b1"
+    "revision": "a82b18d3b57f5a187d6e549a186f6a11"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "fc4f6a9ee2bc57c24cde9ebd561d2ec3"
+    "revision": "94f24acd88d305f96b1f8a9a7d5982a4"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -333,7 +337,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "b731c94aefc47264df316096f418db4c"
+    "revision": "a808ba8883cd78aa51b3b274e9d1bcf1"
+  },
+  {
+    "url": "page-data/kak-frilanseru-ocenit-stoimost-raboty/page-data.json",
+    "revision": "36542f5db90aa1b4309438473e380ddd"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -377,7 +385,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
-    "revision": "bdfd6e6a5b3caca59c33990a1cf5e07f"
+    "revision": "ed2a7860287301a385a7db7b89af9f66"
   },
   {
     "url": "page-data/perspektiva-i-izometriya-adobe-illustrator-podrobnyi-urok/page-data.json",
@@ -476,7 +484,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "c1c7940f05394a7f716d6cd83063bf50"
+    "revision": "8dcb5c253ae36cdd23d5805042bd508b"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
