@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "f572658170e7ebb885bcc2e81c2360bd"
+    "revision": "c3874d77c97c324e30e9ccc2ac5a7203"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "ba01c3532a304f2f560d452c8ba59371"
+    "revision": "651e689650f577f451df34ae974a1efa"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
@@ -285,7 +285,7 @@ self.__precacheManifest = [
   },
   {
     "url": "maket-techno/index.html",
-    "revision": "a4962475541e1548ce4ee5d3eb6dcd39"
+    "revision": "963ace71d00f049afb761fd03415a66b"
   },
   {
     "url": "manifest.webmanifest",
@@ -305,15 +305,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "2c6ebb77a64e13aa9133d4f239ff9018"
+    "revision": "1b6392dc13a4e2df207d829aa8518c88"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "82cde899ed9abca81baccd8f5ace6979"
+    "revision": "eaf4bd12e36e2ccd7836d53e1138af40"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "793c8f9aab317eea69d602b15faae45b"
+    "revision": "f7849cfef9ce93f2330b10ea55292eb5"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -341,7 +341,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "9b56cb8cec7b7b38167a446b3e1f2bb6"
+    "revision": "7b9cfeb1d8ee462e4522bd216f9f32aa"
   },
   {
     "url": "page-data/kak-frilanseru-ocenit-stoimost-raboty/page-data.json",
@@ -369,7 +369,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/maket-techno/page-data.json",
-    "revision": "a9a9d5db765ca49654427dbb81a7a69c"
+    "revision": "3015a43b14406bcb3b2ece59d67d111d"
   },
   {
     "url": "page-data/modulnaya-setka-1/page-data.json",
@@ -393,7 +393,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
-    "revision": "bdfd6e6a5b3caca59c33990a1cf5e07f"
+    "revision": "ed2a7860287301a385a7db7b89af9f66"
   },
   {
     "url": "page-data/perspektiva-i-izometriya-adobe-illustrator-podrobnyi-urok/page-data.json",
@@ -508,7 +508,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "b70c5b90ba8317e32a508dbe7f71f683"
+    "revision": "4dbbd579fe9efd0104537dc5e636e32d"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
