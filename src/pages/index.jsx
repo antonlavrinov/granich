@@ -171,7 +171,7 @@ const IndexPage = ({data}) => {
       <Offer data={data.header}/>
       <Courses data={data.courseCards} toggleMailingActive={toggleMailingActive} />
 
-      {/* <Manifest/> */}
+      <Manifest/>
       {mailingActive && <Mailing/>}
       <div className="content"></div>
       <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/>
