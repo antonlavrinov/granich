@@ -55,11 +55,11 @@ self.__precacheManifest = [
   },
   {
     "url": "404.html",
-    "revision": "0df729263f1347bc358f946298a879c8"
+    "revision": "72e7c966199b005eb7bd0e3c11d7ec47"
   },
   {
     "url": "404/index.html",
-    "revision": "9de4053aa10d23bb12003e0a453fccaa"
+    "revision": "b299b179c8f036790a7174e95bd07686"
   },
   {
     "url": "48x48.png",
@@ -117,15 +117,15 @@ self.__precacheManifest = [
     "revision": "4803579e98254c95573be2fe9ece7ba6"
   },
   {
-    "url": "app-cc79f604e263621c5d69.js"
+    "url": "app-d5aad86c692758666a95.js"
   },
   {
-    "url": "app-cc79f604e263621c5d69.js.map",
-    "revision": "9c9c0c918fc20cff5066a0613c41ebfa"
+    "url": "app-d5aad86c692758666a95.js.map",
+    "revision": "b9e217fa9a749acb745168b9bb4173ec"
   },
   {
     "url": "blog/index.html",
-    "revision": "1ddbbecb8dcb73a4683ea7e52323cca8"
+    "revision": "f606cc2ed8371fc70d9bc8c2d1dd2137"
   },
   {
     "url": "c008ada3e173a60331faea31dca12cf57fb6c38f-0ed69c5b0d8f71141d73.js"
@@ -136,7 +136,7 @@ self.__precacheManifest = [
   },
   {
     "url": "chunk-map.json",
-    "revision": "61f968937549f7a2f9813aea0d1ad355"
+    "revision": "586fc96e095295b323ef6b30f4b4b28a"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-903c6faf6e71a7d4068c.js"
@@ -246,26 +246,30 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "2aa602f79cd2ed1abb60705f7f6bad47"
+    "revision": "98e34cb5f58b30e11aba29effa0bea30"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "4132463db48e31e6746f6ba2ac52198d"
+    "revision": "a968fbfe40411645e83e34c0ea92cf12"
   },
   {
     "url": "kak-oformit-abzac/index.html",
-    "revision": "99e08f121cea65159c541096261c42a3"
+    "revision": "6f79cf9597cf6b93fd1adbfda0cbb867"
+  },
+  {
+    "url": "kak-postroit-setku-graficheskii-dizain-chast-2/index.html",
+    "revision": "c7e107d3acb6e8fe6b20cf9e062f70e9"
   },
   {
     "url": "maket-neo-geo/index.html",
-    "revision": "7dfa2fb60f644bc3671856241869d9fd"
+    "revision": "834c6f2d33a523cf2674de10df8f3432"
   },
   {
     "url": "maket-techno/index.html",
-    "revision": "0af7f3419e68da18b892c9def3976bc7"
+    "revision": "cd989920d2b0a081952f0aaeb233f8d8"
   },
   {
     "url": "manifest.webmanifest",
@@ -273,27 +277,27 @@ self.__precacheManifest = [
   },
   {
     "url": "modulnaya-setka-1/index.html",
-    "revision": "3200c1ab1b919b96b77dfe440876f61b"
+    "revision": "d92b2890201710617959aede98936aa3"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "3bc37439a44bec1ad584e2ea5e1a1d28"
+    "revision": "916bd36eceac6e0e0415db9c9e1691f5"
   },
   {
     "url": "oshibka-mishleniya/index.html",
-    "revision": "1f00a194c80a86f9e6ac722449e01af5"
+    "revision": "a1e27cbb5ff74c8aafaf00021a581d31"
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "ba14a302699522c9d79ac6ef4739a45f"
+    "revision": "c1e8cdff72d420656bc5a159cec6de8d"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "ebdc35566760f69438a74f18a20ac24d"
+    "revision": "9b5d82023d328916c08705d64af0c938"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "062bf0cf5b2cc9e70ea2e4b33a3d4961"
+    "revision": "6ebf5b6732e0fcae4399155dd14dc9bc"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -305,7 +309,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "ad43a5bb1c0b154923a85b2f34523b5c"
+    "revision": "76ffd05f606fb6c8c5a4b86626fdeb48"
   },
   {
     "url": "page-data/blog/page-data.json",
@@ -317,11 +321,15 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "c5a68aa4aacf4bb181a1f43c913a10f0"
+    "revision": "9c44875547ecffd04627ce457df9f96d"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
     "revision": "33642cb9438f3320efded6b653f44148"
+  },
+  {
+    "url": "page-data/kak-postroit-setku-graficheskii-dizain-chast-2/page-data.json",
+    "revision": "d7242c8d34d811a0a54d17ef3639e1c4"
   },
   {
     "url": "page-data/maket-neo-geo/page-data.json",
@@ -353,7 +361,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
-    "revision": "bdfd6e6a5b3caca59c33990a1cf5e07f"
+    "revision": "ed2a7860287301a385a7db7b89af9f66"
   },
   {
     "url": "page-data/plakat-za-5-minut/page-data.json",
@@ -409,7 +417,7 @@ self.__precacheManifest = [
   },
   {
     "url": "plakat-za-5-minut/index.html",
-    "revision": "78110674779d30c5b8125f2b04c0db35"
+    "revision": "6fca15543a9d2fe81ec8e02b07f88cd0"
   },
   {
     "url": "polyfill-59be98e4b93386ac1856.js"
@@ -420,11 +428,11 @@ self.__precacheManifest = [
   },
   {
     "url": "privacy/index.html",
-    "revision": "ed1c24faae6e06f185dd03df22c9384b"
+    "revision": "5fed79f5a45b741a81c864303525ac63"
   },
   {
     "url": "public-offer/index.html",
-    "revision": "95d440745e032c87168ce316138eb4ad"
+    "revision": "5dabda411a0cf53c33d28baa6d65ab70"
   },
   {
     "url": "robots.txt",
@@ -432,11 +440,11 @@ self.__precacheManifest = [
   },
   {
     "url": "sdsa/index.html",
-    "revision": "a018171c36308368efc2dfe29817ed99"
+    "revision": "56328f03c152fbdbe6a45e1caf8f01bd"
   },
   {
     "url": "sitemap.xml",
-    "revision": "fbb8ac213bbdbb5d899c494c3107b6f5"
+    "revision": "5c19a353af9ca2b20f55d6c8dbbc7fd6"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
@@ -815,11 +823,11 @@ self.__precacheManifest = [
   },
   {
     "url": "strim-swiss/index.html",
-    "revision": "05272a366eccb7fe8232813ce23ae1bc"
+    "revision": "5511c336dacc1863d38ed2a6b54a8efc"
   },
   {
     "url": "strim-typography/index.html",
-    "revision": "1a6f9c8fd6370b29802643589ecbd1ca"
+    "revision": "9c02fe93768c349d70dd1280561f894a"
   },
   {
     "url": "styles-c2fe8482057191dca484.js"
@@ -833,7 +841,7 @@ self.__precacheManifest = [
   },
   {
     "url": "vidy-garnitur/index.html",
-    "revision": "b9695b5c925510387540e0e27f602729"
+    "revision": "e46ae41d3ce31567a49c88b116b6eda1"
   },
   {
     "url": "webpack-runtime-dfc6753834729a748ca9.js"
@@ -844,7 +852,7 @@ self.__precacheManifest = [
   },
   {
     "url": "webpack.stats.json",
-    "revision": "1e48d46fbdaef172153eb63d9e5b617c"
+    "revision": "2e2f3e766ca8351d9c3218eceed1eb9f"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -936,7 +944,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-cc79f604e263621c5d69.js`))) {
+  if (!resources || !(await caches.match(`/app-d5aad86c692758666a95.js`))) {
     return await fetch(event.request)
   }
 
