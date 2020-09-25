@@ -475,11 +475,10 @@ export const TeacherBlock = ({teacher, masterClass}) => {
                 <TeacherImage masterclass={masterClass ? 1 : 0} fluid={teacher.teacherImage.fluid}></TeacherImage>
                 <TeacherSocials>
                     <TeacherSocialIcons>
-                        {teacher.teacherSocialsOrder.map((social, idx) => {
+                        {/* {teacher.teacherSocialsOrder.map((social, idx) => {
                             return (
                                 <React.Fragment key={idx}>
-                                    <div>1</div>
-                                    {/* {social.toLowerCase() === 'vk' ? (
+                                    {social.toLowerCase() === 'vk' ? (
                                         <SocialLink  href={teacher.teacherSocialVK} target="_blank"><SocialIcon fluid={vkIcon}/></SocialLink>
                                     ) : social.toLowerCase() === 'behance' ? (
                                         <SocialLink href={teacher.teacherSocialBehance} target="_blank"><SocialIcon fluid={behanceIcon}/></SocialLink>
@@ -489,10 +488,10 @@ export const TeacherBlock = ({teacher, masterClass}) => {
                                         <SocialLink  href={teacher.teacherSocialPinterest} target="_blank"><SocialIcon round fluid={pinterestIcon}/></SocialLink>
                                     ) : social.toLowerCase() === 'instagram' ? (
                                         <SocialLink  href={teacher.teacherSocialInstagram} target="_blank"><SocialIcon fluid={instagramIcon}/></SocialLink>
-                                    ) : null} */}
+                                    ) : null}
                                 </React.Fragment>
                             )
-                        })}
+                        })} */}
                     </TeacherSocialIcons>
                     {teacher.teacherEmail && (
                         <CopyToClipboard text={teacher.teacherEmail}> 
