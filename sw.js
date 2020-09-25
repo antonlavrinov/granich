@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "8f25d96ce2d488a9ff40ed71a6343e3f"
+    "revision": "08542e4fc15a9b0dfc10f1cb16664b11"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "11b3257b6ae6693cc126d41b90690347"
+    "revision": "f7368ddab8acb3e010810e57b9ac2419"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
@@ -305,15 +305,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "d883b09754d57bdd19724bfd7baf1ae4"
+    "revision": "a85bc417a765e4810a4faf4fa321ea73"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "42ce3a1a2fdc9082a73657cc25e579e8"
+    "revision": "cca9c799f50423def52dc8d7c4cb90cf"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "8bd6c602f10d44348415577652861849"
+    "revision": "5ec8a64dcc8e27a1891fcd8a0878e4c7"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -341,7 +341,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "30b1b89c4ad1b9b9bd205bea0a8fc22f"
+    "revision": "ea9ff859f4027f4a3061c3b6ea2415f9"
   },
   {
     "url": "page-data/kak-frilanseru-ocenit-stoimost-raboty/page-data.json",
@@ -465,7 +465,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/vidy-garnitur/page-data.json",
-    "revision": "16ce25b2a96938230fb0049e8b76c468"
+    "revision": "2344e6c26b7808eacda628db61a6abe5"
   },
   {
     "url": "page-data/zdorove-frilansera-kak-obustroit-rabochee-mesto/page-data.json",
@@ -508,7 +508,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "cc78561d730736650e20955a14b7c8d9"
+    "revision": "b70c5b90ba8317e32a508dbe7f71f683"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
@@ -917,7 +917,7 @@ self.__precacheManifest = [
   },
   {
     "url": "vidy-garnitur/index.html",
-    "revision": "6e5e57ebf55499585c4ff0da099d75d9"
+    "revision": "6092404c20c4bc13aa8a7040e1ea9826"
   },
   {
     "url": "webpack-runtime-dfc6753834729a748ca9.js"
