@@ -402,7 +402,7 @@ export const TeacherBlock = ({teacher, masterClass}) => {
             <TeacherHeader>
                 <TeacherImage masterclass={masterClass ? 1 : 0} fluid={teacher.teacherImage.fluid}></TeacherImage>
                 <TeacherSocials>
-                    <TeacherSocialIcons>
+                    {/* <TeacherSocialIcons>
                         {teacher.teacherSocialsOrder.map((social, idx) => {
                             return (
                                 <React.Fragment key={idx}>
@@ -420,7 +420,7 @@ export const TeacherBlock = ({teacher, masterClass}) => {
                                 </React.Fragment>
                             )
                         })}
-                    </TeacherSocialIcons>
+                    </TeacherSocialIcons> */}
                     {teacher.teacherEmail && (
                         <CopyToClipboard text={teacher.teacherEmail}> 
                             <TeacherEmail masterclass={masterClass ? 1 : 0} content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
