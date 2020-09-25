@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "e42384638112cf631e11406f5a31e3d4"
+    "revision": "c9d38110cba649c498401f6b3dfae5ba"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "065af25e5b7d45782a5df0099dbccd5b"
+    "revision": "8a6f96e477f8dbf17df89e7ad80005ce"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
@@ -305,15 +305,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "a92acb5d8a82cb0c407b03b60368edf3"
+    "revision": "731fe68d22178094903ef54d65319548"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "32886f6656714f795f086b13cc75c1ef"
+    "revision": "e289396225838804bf280438f4cca6b3"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "fc0d84e34c56ca015b6999d305f8ae3b"
+    "revision": "437d2964d363bf4c6e05af6921f4d422"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -341,7 +341,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "66a9396af8e41deb826f3cd42ae82412"
+    "revision": "fd02b98dc901644a83d71dbf535f3f78"
   },
   {
     "url": "page-data/kak-frilanseru-ocenit-stoimost-raboty/page-data.json",
@@ -460,6 +460,10 @@ self.__precacheManifest = [
     "revision": "b8d3392e345be57565ce1842464ac8e3"
   },
   {
+    "url": "page-data/urok-verstki-zhurnala-v-indizain-rabota-s-tekstom/page-data.json",
+    "revision": "a9e8a809a8ba4a1be0eacacd4c68f539"
+  },
+  {
     "url": "page-data/vidy-garnitur/page-data.json",
     "revision": "16ce25b2a96938230fb0049e8b76c468"
   },
@@ -504,7 +508,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "0e664169b962a9eb9d555de1dc386c2c"
+    "revision": "16562e1267e65596047ce0c5898f9879"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
@@ -906,6 +910,10 @@ self.__precacheManifest = [
   {
     "url": "urok-pro-ikonochnyi-shrift-v-indizain/index.html",
     "revision": "26eb092ca604c29349a9499f36ef4f38"
+  },
+  {
+    "url": "urok-verstki-zhurnala-v-indizain-rabota-s-tekstom/index.html",
+    "revision": "cf470a0fece403a3fc937bb5bfe3621c"
   },
   {
     "url": "vidy-garnitur/index.html",
