@@ -10,7 +10,30 @@ import TelegramIcon from '../assets/svgs/granich-main-team/telegram.svg';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import CopyIcon from '../assets/svgs/copy-icon.svg';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image';
 
+
+const SocialIcon = styled(props => <Img {...props}/>)`
+    width: 2.1vw;
+    height: 2.1vw;
+    transition: transform 0.2s ease;
+    :hover {
+        transform: scale(1.05);
+    }
+    @media only screen and (max-width: 575px) {
+        width: 7.5vw;
+        height: 7.5vw;
+    }
+    ${props => props.round && `
+        width: 2vw;
+        height: 2vw;
+        @media only screen and (max-width: 575px) {
+            width: 7vw;
+            height: 7vw;
+        }
+    `}
+`
 
 // const Copy = styled(props => <CopyIcon {...props}/>)`
 //     width: 0.8vw;
@@ -342,6 +365,8 @@ const OurTeamCategoryTitle = styled.div`
 
 
 
+
+
 const OurTeam = ({data}) => {
     return (
         <OurTeamSection>
@@ -397,30 +422,77 @@ const OurTeam = ({data}) => {
 export const TeacherBlock = ({teacher, masterClass}) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
 
+    const data = useStaticQuery(graphql`
+        query teamSocialIcons {
+            vk: file(relativePath: { eq: "team_socials/team_vk.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 65) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+            instagram: file(relativePath: { eq: "team_socials/team_instagram.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 65) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+            pinterest: file(relativePath: { eq: "team_socials/team_pinterest.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 65) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+            telegram: file(relativePath: { eq: "team_socials/team_telegram.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 65) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+            behance: file(relativePath: { eq: "team_socials/team_behance.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 65) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+
+        }
+        `)
+
+        const vkIcon = data.vk.childImageSharp.fluid
+        const pinterestIcon = data.pinterest.childImageSharp.fluid
+        const instagramIcon = data.instagram.childImageSharp.fluid
+        const telegramIcon = data.telegram.childImageSharp.fluid
+        const behanceIcon = data.behance.childImageSharp.fluid
+
     return (
         <TeacherWrapper masterclass={masterClass ? 1 : 0}>
             <TeacherHeader>
                 <TeacherImage masterclass={masterClass ? 1 : 0} fluid={teacher.teacherImage.fluid}></TeacherImage>
                 <TeacherSocials>
-                    {/* <TeacherSocialIcons>
+                    <TeacherSocialIcons>
                         {teacher.teacherSocialsOrder.map((social, idx) => {
                             return (
                                 <React.Fragment key={idx}>
                                     {social.toLowerCase() === 'vk' ? (
-                                        <SocialLink  href={teacher.teacherSocialVK} target="_blank"><VK/></SocialLink>
+                                        <SocialLink  href={teacher.teacherSocialVK} target="_blank"><SocialIcon fluid={vkIcon}/></SocialLink>
                                     ) : social.toLowerCase() === 'behance' ? (
-                                        <SocialLink href={teacher.teacherSocialBehance} target="_blank"><Behance/></SocialLink>
+                                        <SocialLink href={teacher.teacherSocialBehance} target="_blank"><SocialIcon fluid={behanceIcon}/></SocialLink>
                                     ) : social.toLowerCase() === 'telegram' ? (
-                                        <SocialLink  href={teacher.teacherSocialTelegram} target="_blank"><Telegram/></SocialLink>
+                                        <SocialLink  href={teacher.teacherSocialTelegram} target="_blank"><SocialIcon round fluid={telegramIcon}/></SocialLink>
                                     ) : social.toLowerCase() === 'pinterest' ? (
-                                        <SocialLink  href={teacher.teacherSocialPinterest} target="_blank"><Pinterest/></SocialLink>
+                                        <SocialLink  href={teacher.teacherSocialPinterest} target="_blank"><SocialIcon round fluid={pinterestIcon}/></SocialLink>
                                     ) : social.toLowerCase() === 'instagram' ? (
-                                        <SocialLink  href={teacher.teacherSocialInstagram} target="_blank"><Instagram/></SocialLink>
+                                        <SocialLink  href={teacher.teacherSocialInstagram} target="_blank"><SocialIcon fluid={instagramIcon}/></SocialLink>
                                     ) : null}
                                 </React.Fragment>
                             )
                         })}
-                    </TeacherSocialIcons> */}
+                    </TeacherSocialIcons>
                     {teacher.teacherEmail && (
                         <CopyToClipboard text={teacher.teacherEmail}> 
                             <TeacherEmail masterclass={masterClass ? 1 : 0} content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>

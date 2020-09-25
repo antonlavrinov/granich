@@ -139,6 +139,7 @@ export const contentfulQuery = graphql`
               teacherSocialInstagram
               teacherSocialPinterest
               teacherSocialTelegram
+              teacherSocialBehance
               teacherSocialVK
               teacherSocialsOrder
               teacherCategory
