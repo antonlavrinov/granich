@@ -124,6 +124,10 @@ self.__precacheManifest = [
     "revision": "b9e217fa9a749acb745168b9bb4173ec"
   },
   {
+    "url": "blend-perekhod-v-adobe-illustrator-podrobnyi-urok/index.html",
+    "revision": "7512aba930eebdf2a5740953995dbd2f"
+  },
+  {
     "url": "blog/index.html",
     "revision": "f606cc2ed8371fc70d9bc8c2d1dd2137"
   },
@@ -246,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "8fba50eaa1f7a03086d2f04038c3980e"
+    "revision": "7692b48cbaab76b3180f1cdf73b94800"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "da715be8835a6e1c7c9a076bca257581"
+    "revision": "fa58a8a690c931f69c4f79e252573332"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -293,15 +297,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "8876443d4570e8e9d624944332257f93"
+    "revision": "523fc8101a4ac1039e23c5e1ed8021be"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "e2b36682a54bea6ea24761920034c509"
+    "revision": "afab909a604fc5113a9857cfd8b24b3d"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "1ab7f349711b5e444ad2149e366a71a4"
+    "revision": "4a0c327da72a9dc99582d4988c7709b4"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -316,6 +320,10 @@ self.__precacheManifest = [
     "revision": "76ffd05f606fb6c8c5a4b86626fdeb48"
   },
   {
+    "url": "page-data/blend-perekhod-v-adobe-illustrator-podrobnyi-urok/page-data.json",
+    "revision": "39b02f09ccc624321106e784da507129"
+  },
+  {
     "url": "page-data/blog/page-data.json",
     "revision": "5173b8491ac5e913ffe3fcc31fd33985"
   },
@@ -325,7 +333,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "b9a8cca0488e601c110556bbbd49509e"
+    "revision": "c557423fd3d836966a05ba7bab7b7af0"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -460,7 +468,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "d8149bb5d7f6901fc66dcbf01b7d45b6"
+    "revision": "322c26fb5d35e0c56e2b63e4b877a039"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
