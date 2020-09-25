@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "552708b9aa7f80fb9ae651b57aaf58e7"
+    "revision": "74fe7aee1cf00310d2c3ccb31a824453"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "102e15812bc48369848677f7d9389250"
+    "revision": "77f6aee72ca935f9720b90ced32d84fc"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
@@ -305,15 +305,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "9ceba1bfb9f0f254da94bf1d0d347e3f"
+    "revision": "fafc91b5c6316a90f6161153639ccd65"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "16e3a664913701f5a3fdf59c2126fa56"
+    "revision": "b7d2a2a31e502baefc5aeb5fb913fd82"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "ce11690ab032dcf3a4ddfac938423e90"
+    "revision": "33dc118c57497ef8d34e1eb97bb82791"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -341,7 +341,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "185cf6ef6e0e67a1c1b2939684c9eb75"
+    "revision": "2ce5c137c7344f8ad4eca646bc076ada"
   },
   {
     "url": "page-data/kak-frilanseru-ocenit-stoimost-raboty/page-data.json",
@@ -393,7 +393,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
-    "revision": "bdfd6e6a5b3caca59c33990a1cf5e07f"
+    "revision": "ed2a7860287301a385a7db7b89af9f66"
   },
   {
     "url": "page-data/perspektiva-i-izometriya-adobe-illustrator-podrobnyi-urok/page-data.json",
@@ -452,6 +452,10 @@ self.__precacheManifest = [
     "revision": "343aa337558b1b76986b1f3e8442aa8a"
   },
   {
+    "url": "page-data/tipografika-primery-iz-praktiki/page-data.json",
+    "revision": "6427308fc563fad6e0eb1c3a41a6e418"
+  },
+  {
     "url": "page-data/vidy-garnitur/page-data.json",
     "revision": "16ce25b2a96938230fb0049e8b76c468"
   },
@@ -496,7 +500,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "7be6714f9ea925fd1570482a5ebc19c7"
+    "revision": "623f93e13c14d1005c2493201f61eb26"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
@@ -890,6 +894,10 @@ self.__precacheManifest = [
   },
   {
     "url": "styles.5a7617267346240388c2.css"
+  },
+  {
+    "url": "tipografika-primery-iz-praktiki/index.html",
+    "revision": "7c82825c1a982d47726197839290415f"
   },
   {
     "url": "vidy-garnitur/index.html",
