@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "f9d34a14a40cecbf4beb84fb57c9c174"
+    "revision": "552708b9aa7f80fb9ae651b57aaf58e7"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "0a44d73f242fae73a2d58d9e72fc5db9"
+    "revision": "102e15812bc48369848677f7d9389250"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
@@ -274,6 +274,10 @@ self.__precacheManifest = [
   {
     "url": "kak-postroit-setku-graficheskii-dizain-chast-2/index.html",
     "revision": "c7e107d3acb6e8fe6b20cf9e062f70e9"
+  },
+  {
+    "url": "kak-sdelat-evrobuklet-v-indizain/index.html",
+    "revision": "4e3a5428a79fa19784b286d1d4cacdb5"
   },
   {
     "url": "maket-neo-geo/index.html",
@@ -301,15 +305,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "4dfcffe26e2de89f3d1b75539ad642dc"
+    "revision": "9ceba1bfb9f0f254da94bf1d0d347e3f"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "6f513f4544c02102906c482051b2fc3c"
+    "revision": "16e3a664913701f5a3fdf59c2126fa56"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "97a0afa8a4cc8a7811b0c646786be1c1"
+    "revision": "ce11690ab032dcf3a4ddfac938423e90"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -337,7 +341,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "3468ba02b887d156aad80a9b1438695d"
+    "revision": "185cf6ef6e0e67a1c1b2939684c9eb75"
   },
   {
     "url": "page-data/kak-frilanseru-ocenit-stoimost-raboty/page-data.json",
@@ -354,6 +358,10 @@ self.__precacheManifest = [
   {
     "url": "page-data/kak-postroit-setku-graficheskii-dizain-chast-2/page-data.json",
     "revision": "d7242c8d34d811a0a54d17ef3639e1c4"
+  },
+  {
+    "url": "page-data/kak-sdelat-evrobuklet-v-indizain/page-data.json",
+    "revision": "7a58f48e174aa3919160cfa8b9356339"
   },
   {
     "url": "page-data/maket-neo-geo/page-data.json",
@@ -488,7 +496,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "9d3429af1b4b90cc5bd069f45793f987"
+    "revision": "7be6714f9ea925fd1570482a5ebc19c7"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
