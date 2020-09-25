@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "08542e4fc15a9b0dfc10f1cb16664b11"
+    "revision": "6522c8ce16d827d13de5ad55a150b5d9"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "f7368ddab8acb3e010810e57b9ac2419"
+    "revision": "5b447330bfddea04a4f8843c8e8d497b"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
@@ -305,15 +305,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "a85bc417a765e4810a4faf4fa321ea73"
+    "revision": "9f2b46bf18009f6020b9bee687fcd5a3"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "cca9c799f50423def52dc8d7c4cb90cf"
+    "revision": "88e1ad5a44e84ae67e6aa03e6dee1488"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "5ec8a64dcc8e27a1891fcd8a0878e4c7"
+    "revision": "e14d1123850299e3e379b83cc9c38b46"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -341,7 +341,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "ea9ff859f4027f4a3061c3b6ea2415f9"
+    "revision": "283db5d688b700b67a2f86fb6c0d17b7"
   },
   {
     "url": "page-data/kak-frilanseru-ocenit-stoimost-raboty/page-data.json",
@@ -393,7 +393,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
-    "revision": "bdfd6e6a5b3caca59c33990a1cf5e07f"
+    "revision": "ed2a7860287301a385a7db7b89af9f66"
   },
   {
     "url": "page-data/perspektiva-i-izometriya-adobe-illustrator-podrobnyi-urok/page-data.json",
