@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "7692b48cbaab76b3180f1cdf73b94800"
+    "revision": "04fecb2ddd69eaef27350745485fdada"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "fa58a8a690c931f69c4f79e252573332"
+    "revision": "e41cfc351b2990ce1457432e8b8149f9"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -297,15 +297,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "523fc8101a4ac1039e23c5e1ed8021be"
+    "revision": "462ca93c5181d03ac1cca9e5a548340a"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "afab909a604fc5113a9857cfd8b24b3d"
+    "revision": "4ff251de87a8f110e088693e4c6df3b1"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "4a0c327da72a9dc99582d4988c7709b4"
+    "revision": "fc4f6a9ee2bc57c24cde9ebd561d2ec3"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -333,7 +333,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "c557423fd3d836966a05ba7bab7b7af0"
+    "revision": "b731c94aefc47264df316096f418db4c"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -394,6 +394,10 @@ self.__precacheManifest = [
   {
     "url": "page-data/public-offer/page-data.json",
     "revision": "4380ab7687afab1c9206ddeff6b35b60"
+  },
+  {
+    "url": "page-data/raznica-mezhdu-fotoshop-illyustrator-indizain-chto-luchshe/page-data.json",
+    "revision": "6d10cfb55c1676a0cfd77ee55441dbe8"
   },
   {
     "url": "page-data/sdsa/page-data.json",
@@ -459,6 +463,10 @@ self.__precacheManifest = [
     "revision": "5dabda411a0cf53c33d28baa6d65ab70"
   },
   {
+    "url": "raznica-mezhdu-fotoshop-illyustrator-indizain-chto-luchshe/index.html",
+    "revision": "22ca24598ebc3c5aa747dfbaff9143b3"
+  },
+  {
     "url": "robots.txt",
     "revision": "4077eb321175305ef56b34259aa6d6f3"
   },
@@ -468,7 +476,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "322c26fb5d35e0c56e2b63e4b877a039"
+    "revision": "c1c7940f05394a7f716d6cd83063bf50"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
