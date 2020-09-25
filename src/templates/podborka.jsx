@@ -206,7 +206,7 @@ const PodborkaPage = ({data}) => {
         <Layout>
             <Header type="dark"/>
             <SEO title={`${data.contentfulPodborka.contentTitle}`}
-                 url={`https://anton-dev.ru/${data.contentfulPodborka.contentSlug}`} />
+                 url={`https://granich.design/${data.contentfulPodborka.contentSlug}`} />
             <div className="section-top-block"></div>
             {data.contentfulPodborka.contentBannerSwitch && data.coursePodborkaBanner && <Banner data={data.coursePodborkaBanner}/>}
             {data.contentfulPodborka.contentSlug === 'osoznannaya-podborka-graphdesign' && (

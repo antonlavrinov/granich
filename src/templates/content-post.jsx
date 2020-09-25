@@ -54,7 +54,7 @@ const ContentPage = ({data}) => {
         <Layout>
             <Header type="dark"/>
             <SEO title={`${data.contentfulContent.contentTitle}`}
-                 url={`https://anton-dev.ru/${data.contentfulContent.contentSlug}`} />
+                 url={`https://granich.design/${data.contentfulContent.contentSlug}`} />
             <div className="section-top-block"></div>
             {data.contentfulContent.contentBannerSwitch && data.courseBanner && <Banner data={data.courseBanner}/>}
             <YoutubeVideo data={data}/>

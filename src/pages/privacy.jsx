@@ -40,7 +40,7 @@ const PrivacyPage = ({data}) => {
     return (
         <Layout>
             <SEO title="Политика конфиденциальности"
-                url="https://anton-dev.ru/privacy" />
+                url="https://granich.design/privacy" />
             <Header type={'dark'}/>
             <div className="section-top-block"></div>
             <LegalDocument additionalInfo={additionalInfo} type={docType} mainText={mainText} dataPdf={dataPdf} date={date}/>

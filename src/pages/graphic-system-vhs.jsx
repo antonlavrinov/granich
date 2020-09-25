@@ -140,7 +140,7 @@ const GraphicSystemVhsPage = ({data}) => (
          description="Мастер-класс по графической системе VHS"
          keywords={['vhs', 'графсистема']}
          ogImage={ogImage}
-         url="https://anton-dev.ru/graphic-system-vhs" />
+         url="https://granich.design/graphic-system-vhs" />
     <CourseOffer data={data.VHSoffer}/>
     <CourseExplanations data={data.VHSexplanations}/>
     <CourseAuthors data={data.VHSteam}/>

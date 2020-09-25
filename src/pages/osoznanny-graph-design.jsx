@@ -227,7 +227,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
          description="Осознанный курс по графическому дизайну от Вадима Гранича (Granich). За 2 месяца вы получите упорядоченные знания о графическом дизайне и создадите свое портфолио. А еще изучите Adobe InDesign"
          keywords={['vhs', 'графсистема']}
          ogImage={ogImage}
-         url="https://anton-dev.ru/osoznanny-graph-design" />
+         url="https://granich.design/osoznanny-graph-design" />
     <div className="section-top-block"></div>
     <CourseOffer data={data.offer}/>
     <CourseExplanations data={data.explanations}/>

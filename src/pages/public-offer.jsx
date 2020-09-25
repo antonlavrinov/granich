@@ -40,7 +40,7 @@ const PublicOfferPage = ({data}) => {
     return (
         <Layout>
             <SEO title="Пользовательское соглашение"
-                 url="https://anton-dev.ru/public-offer" />
+                 url="https://granich.design/public-offer" />
             <Header type={'dark'}/>
             <div className="section-top-block"></div>
             <LegalDocument additionalInfo={additionalInfo} type={docType} mainText={mainText} dataPdf={dataPdf} date={date}/>

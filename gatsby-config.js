@@ -9,8 +9,7 @@ module.exports = {
     author: `Вадим Гранич`,
     keywords: `курс, осознанный, индизайн, indesign, графический, дизайн, granich, гранич, графдизайн`,
     ogImage: `${__dirname}/src/assets/images/author.jpg`,
-    // siteUrl: `https://www.anton-dev.ru`,
-    siteUrl: `https://probagran.ru`
+    siteUrl: `https://granich.design`
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -124,16 +123,16 @@ module.exports = {
             "type": "image/png"
           }
         ], 
-        cache_busting_mode: 'none' // This path is relative to the root of the site.
+        // cache_busting_mode: 'none' // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        workboxConfig: {
-          globPatterns: ['**/*']
-        }
-      }
-    }
+    // {
+    //   resolve: `gatsby-plugin-offline`,
+    //   options: {
+    //     workboxConfig: {
+    //       globPatterns: ['**/*']
+    //     }
+    //   }
+    // }
   ],
 }

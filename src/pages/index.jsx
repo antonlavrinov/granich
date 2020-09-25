@@ -167,7 +167,7 @@ const IndexPage = ({data}) => {
           description="Онлайн-школа Granich"
           keywords={['vhs', 'графсистема']}
           ogImage={ogImage}
-          url="https://anton-dev.ru/" />
+          url="https://granich.design/" />
       <Offer data={data.header}/>
       <Courses data={data.courseCards} toggleMailingActive={toggleMailingActive} />
 
