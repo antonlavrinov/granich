@@ -478,7 +478,8 @@ export const TeacherBlock = ({teacher, masterClass}) => {
                         {teacher.teacherSocialsOrder.map((social, idx) => {
                             return (
                                 <React.Fragment key={idx}>
-                                    {social.toLowerCase() === 'vk' ? (
+                                    <div>1</div>
+                                    {/* {social.toLowerCase() === 'vk' ? (
                                         <SocialLink  href={teacher.teacherSocialVK} target="_blank"><SocialIcon fluid={vkIcon}/></SocialLink>
                                     ) : social.toLowerCase() === 'behance' ? (
                                         <SocialLink href={teacher.teacherSocialBehance} target="_blank"><SocialIcon fluid={behanceIcon}/></SocialLink>
@@ -488,7 +489,7 @@ export const TeacherBlock = ({teacher, masterClass}) => {
                                         <SocialLink  href={teacher.teacherSocialPinterest} target="_blank"><SocialIcon round fluid={pinterestIcon}/></SocialLink>
                                     ) : social.toLowerCase() === 'instagram' ? (
                                         <SocialLink  href={teacher.teacherSocialInstagram} target="_blank"><SocialIcon fluid={instagramIcon}/></SocialLink>
-                                    ) : null}
+                                    ) : null} */}
                                 </React.Fragment>
                             )
                         })}

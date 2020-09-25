@@ -327,7 +327,7 @@ const Header = ({ siteTitle, type }) => (
             <LogoMobileWrapper to="/" propstyle={type}>
               <WhiteLogo  />
             </LogoMobileWrapper>
-            <LoginMobileButton href="https://granich.ru/cms/system/login" target="_blank">
+            <LoginMobileButton rel="noopener noreferrer" href="https://granich.ru/cms/system/login" target="_blank">
               <LoginButtonIcon/>Войти
             </LoginMobileButton>
           </LogoAndLoginButtonWrapper>
@@ -361,7 +361,7 @@ const Header = ({ siteTitle, type }) => (
 
               </li>  
               <li>
-                <NavLinkExternal href="/blog" target="_blank" propstyle={type}>
+                <NavLinkExternal rel="noopener noreferrer" href="/blog" target="_blank" propstyle={type}>
                   Блог
                   <ArrowLinkOut/>
                 </NavLinkExternal>
@@ -369,7 +369,7 @@ const Header = ({ siteTitle, type }) => (
 
             </ul>
           </NavLinks>
-          <LoginButton href="https://granich.ru/cms/system/login" target="_blank">
+          <LoginButton rel="noopener noreferrer" href="https://granich.ru/cms/system/login" target="_blank">
             <LoginButtonIcon/>Войти
           </LoginButton>
 
