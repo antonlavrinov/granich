@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "c9d38110cba649c498401f6b3dfae5ba"
+    "revision": "b1f6f615c63bccff4aa6713b952b5f1d"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "8a6f96e477f8dbf17df89e7ad80005ce"
+    "revision": "9469006773a3269d89eaede32c392f1f"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
@@ -296,24 +296,24 @@ self.__precacheManifest = [
     "revision": "d92b2890201710617959aede98936aa3"
   },
   {
+    "url": "nastroiki-indizaina-kakie-opcii-vazhny/index.html",
+    "revision": "82aef7846915c4f4a74a772d1c34000d"
+  },
+  {
     "url": "offline-plugin-app-shell-fallback/index.html",
     "revision": "916bd36eceac6e0e0415db9c9e1691f5"
   },
   {
-    "url": "oshibka-mishleniya/index.html",
-    "revision": "a1e27cbb5ff74c8aafaf00021a581d31"
-  },
-  {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "731fe68d22178094903ef54d65319548"
+    "revision": "af501e365cb0bb52e9c47f6bdef5a565"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "e289396225838804bf280438f4cca6b3"
+    "revision": "8d84447b35162defd1d170693e0b85f6"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "437d2964d363bf4c6e05af6921f4d422"
+    "revision": "8d519baf489ec661ff16196b37fb60bd"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -341,7 +341,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "fd02b98dc901644a83d71dbf535f3f78"
+    "revision": "0c721d3468ec25c983bafac4c2d8dbc4"
   },
   {
     "url": "page-data/kak-frilanseru-ocenit-stoimost-raboty/page-data.json",
@@ -376,12 +376,12 @@ self.__precacheManifest = [
     "revision": "22490195c198701ee276704812433cbe"
   },
   {
-    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "f6081b83111aea4128c98944b7fafccc"
+    "url": "page-data/nastroiki-indizaina-kakie-opcii-vazhny/page-data.json",
+    "revision": "330bd135c7a44558fb715595f1889745"
   },
   {
-    "url": "page-data/oshibka-mishleniya/page-data.json",
-    "revision": "60245dccb7210634ec0f54d8e8b83242"
+    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
+    "revision": "f6081b83111aea4128c98944b7fafccc"
   },
   {
     "url": "page-data/osoznannaya-podborka-freelance/page-data.json",
@@ -508,7 +508,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "16562e1267e65596047ce0c5898f9879"
+    "revision": "b9a61f84bc5d25107863ddf6e73a0386"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
