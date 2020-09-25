@@ -55,11 +55,11 @@ self.__precacheManifest = [
   },
   {
     "url": "404.html",
-    "revision": "72e7c966199b005eb7bd0e3c11d7ec47"
+    "revision": "9188c44473e873aa1eb7bed5f960dc3c"
   },
   {
     "url": "404/index.html",
-    "revision": "b299b179c8f036790a7174e95bd07686"
+    "revision": "00c11fb2e137986724762b274e245730"
   },
   {
     "url": "48x48.png",
@@ -117,19 +117,19 @@ self.__precacheManifest = [
     "revision": "4803579e98254c95573be2fe9ece7ba6"
   },
   {
-    "url": "app-d5aad86c692758666a95.js"
+    "url": "app-ae9cdc41a31f16a5a2b5.js"
   },
   {
-    "url": "app-d5aad86c692758666a95.js.map",
-    "revision": "b9e217fa9a749acb745168b9bb4173ec"
+    "url": "app-ae9cdc41a31f16a5a2b5.js.map",
+    "revision": "2713c1ae25b6e5033c352b614df6a63f"
   },
   {
     "url": "blend-perekhod-v-adobe-illustrator-podrobnyi-urok/index.html",
-    "revision": "7512aba930eebdf2a5740953995dbd2f"
+    "revision": "cd51db650693d8ed95b209dfb018a70d"
   },
   {
     "url": "blog/index.html",
-    "revision": "f606cc2ed8371fc70d9bc8c2d1dd2137"
+    "revision": "4ba85fc54e11be72dea507669b5d1376"
   },
   {
     "url": "c008ada3e173a60331faea31dca12cf57fb6c38f-0ed69c5b0d8f71141d73.js"
@@ -140,7 +140,7 @@ self.__precacheManifest = [
   },
   {
     "url": "chunk-map.json",
-    "revision": "586fc96e095295b323ef6b30f4b4b28a"
+    "revision": "df60bfbda1ab3533743054aa2349f437"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-903c6faf6e71a7d4068c.js"
@@ -250,42 +250,42 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "b1f6f615c63bccff4aa6713b952b5f1d"
+    "revision": "f04a590c2c968afb17b7e6df463b2750"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "9469006773a3269d89eaede32c392f1f"
+    "revision": "1639c6568029b08a28e17c173a1418b4"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
-    "revision": "a65ad9f0e06d89407d8ae53813008b78"
+    "revision": "8474b0b53e0c13f803486d56ef152127"
   },
   {
     "url": "kak-oformit-abzac/index.html",
-    "revision": "6f79cf9597cf6b93fd1adbfda0cbb867"
+    "revision": "8a798f892ef4523d74b43b5b3729dc7c"
   },
   {
     "url": "kak-postroit-setku-chast-3/index.html",
-    "revision": "6ac82d0a18eab5c3947a9383c0d4d19e"
+    "revision": "107fc64dab2c1d0fa7bd94025a924e3e"
   },
   {
     "url": "kak-postroit-setku-graficheskii-dizain-chast-2/index.html",
-    "revision": "c7e107d3acb6e8fe6b20cf9e062f70e9"
+    "revision": "39e52ad5522a2e90fc6da506a2cdce35"
   },
   {
     "url": "kak-sdelat-evrobuklet-v-indizain/index.html",
-    "revision": "4e3a5428a79fa19784b286d1d4cacdb5"
+    "revision": "5953eb017abbf4601aab660af21c6e36"
   },
   {
     "url": "maket-neo-geo/index.html",
-    "revision": "834c6f2d33a523cf2674de10df8f3432"
+    "revision": "fc4aa10b735a72445e9bd6ba4975a94a"
   },
   {
     "url": "maket-techno/index.html",
-    "revision": "cd989920d2b0a081952f0aaeb233f8d8"
+    "revision": "a4962475541e1548ce4ee5d3eb6dcd39"
   },
   {
     "url": "manifest.webmanifest",
@@ -293,27 +293,27 @@ self.__precacheManifest = [
   },
   {
     "url": "modulnaya-setka-1/index.html",
-    "revision": "d92b2890201710617959aede98936aa3"
+    "revision": "a3214efd40f3247020d97d05e1919c32"
   },
   {
     "url": "nastroiki-indizaina-kakie-opcii-vazhny/index.html",
-    "revision": "82aef7846915c4f4a74a772d1c34000d"
+    "revision": "f9566ab1d5eaecd40b5749402e99d232"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "916bd36eceac6e0e0415db9c9e1691f5"
+    "revision": "7c71e3c3616a5f91b398dc83a26b97bd"
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "af501e365cb0bb52e9c47f6bdef5a565"
+    "revision": "3d980baf163d10c39a50af40dd717a7c"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "8d84447b35162defd1d170693e0b85f6"
+    "revision": "a5d8ed345dbed1f7ff97d38377e4271c"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "8d519baf489ec661ff16196b37fb60bd"
+    "revision": "18461b2b2f8dfe69ad6fdd5c05f09041"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -325,7 +325,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "76ffd05f606fb6c8c5a4b86626fdeb48"
+    "revision": "b7aa8129b57dfa45a7169e6948dfb5b9"
   },
   {
     "url": "page-data/blend-perekhod-v-adobe-illustrator-podrobnyi-urok/page-data.json",
@@ -473,11 +473,11 @@ self.__precacheManifest = [
   },
   {
     "url": "perspektiva-i-izometriya-adobe-illustrator-podrobnyi-urok/index.html",
-    "revision": "f50e95f01316558a4a06423ea9514cec"
+    "revision": "a73241ac1e64b483bd613f39492c1f3d"
   },
   {
     "url": "plakat-za-5-minut/index.html",
-    "revision": "6fca15543a9d2fe81ec8e02b07f88cd0"
+    "revision": "7ee75139330101d19e585dba1fe2a5aa"
   },
   {
     "url": "polyfill-59be98e4b93386ac1856.js"
@@ -488,15 +488,15 @@ self.__precacheManifest = [
   },
   {
     "url": "privacy/index.html",
-    "revision": "5fed79f5a45b741a81c864303525ac63"
+    "revision": "4359ed4644009ac20cc29dc00743c740"
   },
   {
     "url": "public-offer/index.html",
-    "revision": "5dabda411a0cf53c33d28baa6d65ab70"
+    "revision": "1417cddedba93015acb9988b82e8a32e"
   },
   {
     "url": "raznica-mezhdu-fotoshop-illyustrator-indizain-chto-luchshe/index.html",
-    "revision": "22ca24598ebc3c5aa747dfbaff9143b3"
+    "revision": "77a43f9599f6fb7f7da2968ee1f35f9c"
   },
   {
     "url": "robots.txt",
@@ -504,7 +504,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sdsa/index.html",
-    "revision": "56328f03c152fbdbe6a45e1caf8f01bd"
+    "revision": "b20bab34dfefcddfe302f8725cbd8c70"
   },
   {
     "url": "sitemap.xml",
@@ -887,11 +887,11 @@ self.__precacheManifest = [
   },
   {
     "url": "strim-swiss/index.html",
-    "revision": "5511c336dacc1863d38ed2a6b54a8efc"
+    "revision": "36c4a7c6cc20ae4da263e4bedf220e98"
   },
   {
     "url": "strim-typography/index.html",
-    "revision": "9c02fe93768c349d70dd1280561f894a"
+    "revision": "23a6f91ce99e6a8dccb141a605612466"
   },
   {
     "url": "styles-c2fe8482057191dca484.js"
@@ -905,19 +905,19 @@ self.__precacheManifest = [
   },
   {
     "url": "tipografika-primery-iz-praktiki/index.html",
-    "revision": "7c82825c1a982d47726197839290415f"
+    "revision": "bba489d3af6b2f3995329d0e0b4f5880"
   },
   {
     "url": "urok-pro-ikonochnyi-shrift-v-indizain/index.html",
-    "revision": "26eb092ca604c29349a9499f36ef4f38"
+    "revision": "6ce2cdbfd22b0cba1e4e9a03e9e2a046"
   },
   {
     "url": "urok-verstki-zhurnala-v-indizain-rabota-s-tekstom/index.html",
-    "revision": "cf470a0fece403a3fc937bb5bfe3621c"
+    "revision": "e0eac26ed3fbe2f4388f0ad641113c58"
   },
   {
     "url": "vidy-garnitur/index.html",
-    "revision": "e46ae41d3ce31567a49c88b116b6eda1"
+    "revision": "6e5e57ebf55499585c4ff0da099d75d9"
   },
   {
     "url": "webpack-runtime-dfc6753834729a748ca9.js"
@@ -928,11 +928,11 @@ self.__precacheManifest = [
   },
   {
     "url": "webpack.stats.json",
-    "revision": "2e2f3e766ca8351d9c3218eceed1eb9f"
+    "revision": "0487fa87dc1e4b20693e3e035faa1218"
   },
   {
     "url": "zdorove-frilansera-kak-obustroit-rabochee-mesto/index.html",
-    "revision": "f992d02ddeb854dd5e12841296e2df54"
+    "revision": "c1a6d0bc5b4bb613254a624d926e08b2"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -1024,7 +1024,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-d5aad86c692758666a95.js`))) {
+  if (!resources || !(await caches.match(`/app-ae9cdc41a31f16a5a2b5.js`))) {
     return await fetch(event.request)
   }
 
