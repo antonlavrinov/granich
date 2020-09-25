@@ -170,7 +170,7 @@ const IndexPage = ({data}) => {
           ogImage={ogImage}
           url="https://granich.design/" />
       <Offer data={data.header}/>
-      <Courses data={data.courseCards} toggleMailingActive={toggleMailingActive} />
+      {/* <Courses data={data.courseCards} toggleMailingActive={toggleMailingActive} /> */}
 
       <Manifest/>
       {mailingActive && <Mailing/>}
