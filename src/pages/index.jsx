@@ -175,7 +175,7 @@ const IndexPage = ({data}) => {
       {/* {mailingActive && <Mailing/>} */}
       <div className="content"></div>
       <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/>
-      {/* <OurTeam data={data.team}/> */}
+      <OurTeam data={data.team}/>
 
     </Layout>
   )
