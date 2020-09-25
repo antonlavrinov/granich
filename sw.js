@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "497e9c6559c63ede2283d945500e7160"
+    "revision": "024e6c2c6006a28d236bae96a50ca2f8"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "cea50b2571aece38e539ee9613903776"
+    "revision": "d3092c8f4bf3f042cf2cf4e46e9d9555"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
@@ -305,15 +305,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "a5e153c2fdd6b282aa5e887ae22b92d5"
+    "revision": "d4ca0f945ec0ca823557b287c465678c"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "19b9ee39c220c628cfb794163f912ed8"
+    "revision": "a13c1ca9dad912fc54c1d606c01bde79"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "a610929edb29980d60acf4c8b67b6abd"
+    "revision": "01c2bd3df006ab340254ae9a6d513b46"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -341,7 +341,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "8d263b7657af6589d0f331ff348c6b5c"
+    "revision": "0a4325a74533e9996a93fa5cdf477869"
   },
   {
     "url": "page-data/kak-frilanseru-ocenit-stoimost-raboty/page-data.json",
@@ -417,7 +417,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sdsa/page-data.json",
-    "revision": "a1da8037435af1edc0d11f3ff847a23a"
+    "revision": "6e25059e81dbb91814550619ee3f4a6b"
   },
   {
     "url": "page-data/sq/d/1579113659.json",
@@ -504,11 +504,11 @@ self.__precacheManifest = [
   },
   {
     "url": "sdsa/index.html",
-    "revision": "b20bab34dfefcddfe302f8725cbd8c70"
+    "revision": "7b19b723c2b4c8116882ad831189ea97"
   },
   {
     "url": "sitemap.xml",
-    "revision": "b8652bbbf37040e0cb4c76ac9a8cacdd"
+    "revision": "e6663411b32b3abfc21171260f288bfc"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
