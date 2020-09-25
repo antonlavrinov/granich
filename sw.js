@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "024e6c2c6006a28d236bae96a50ca2f8"
+    "revision": "8f25d96ce2d488a9ff40ed71a6343e3f"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "d3092c8f4bf3f042cf2cf4e46e9d9555"
+    "revision": "11b3257b6ae6693cc126d41b90690347"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
@@ -265,7 +265,7 @@ self.__precacheManifest = [
   },
   {
     "url": "kak-oformit-abzac/index.html",
-    "revision": "8a798f892ef4523d74b43b5b3729dc7c"
+    "revision": "d5e26f00739459aa193b53d6631bbda9"
   },
   {
     "url": "kak-postroit-setku-chast-3/index.html",
@@ -305,15 +305,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "d4ca0f945ec0ca823557b287c465678c"
+    "revision": "d883b09754d57bdd19724bfd7baf1ae4"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "a13c1ca9dad912fc54c1d606c01bde79"
+    "revision": "42ce3a1a2fdc9082a73657cc25e579e8"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "01c2bd3df006ab340254ae9a6d513b46"
+    "revision": "8bd6c602f10d44348415577652861849"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -341,7 +341,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "0a4325a74533e9996a93fa5cdf477869"
+    "revision": "30b1b89c4ad1b9b9bd205bea0a8fc22f"
   },
   {
     "url": "page-data/kak-frilanseru-ocenit-stoimost-raboty/page-data.json",
@@ -349,7 +349,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
-    "revision": "33642cb9438f3320efded6b653f44148"
+    "revision": "ea189b206a6dab404f42f56f8abd8757"
   },
   {
     "url": "page-data/kak-postroit-setku-chast-3/page-data.json",
@@ -393,7 +393,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
-    "revision": "ed2a7860287301a385a7db7b89af9f66"
+    "revision": "bdfd6e6a5b3caca59c33990a1cf5e07f"
   },
   {
     "url": "page-data/perspektiva-i-izometriya-adobe-illustrator-podrobnyi-urok/page-data.json",
@@ -508,7 +508,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "e6663411b32b3abfc21171260f288bfc"
+    "revision": "cc78561d730736650e20955a14b7c8d9"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
