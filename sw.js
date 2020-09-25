@@ -246,18 +246,22 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "b7aa25fcb3ce57fe8dc9dc885ae7ba08"
+    "revision": "041c793c25e5d41c6ec3d721105a6062"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "4129e141ad9d04ad36a878c82b3fd2a2"
+    "revision": "66c665e590c4c56ddfad77c7be3a87ca"
   },
   {
     "url": "kak-oformit-abzac/index.html",
     "revision": "6f79cf9597cf6b93fd1adbfda0cbb867"
+  },
+  {
+    "url": "kak-postroit-setku-chast-3/index.html",
+    "revision": "6ac82d0a18eab5c3947a9383c0d4d19e"
   },
   {
     "url": "kak-postroit-setku-graficheskii-dizain-chast-2/index.html",
@@ -289,15 +293,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "923e74e91261b4600986c34a31925ac1"
+    "revision": "8e23af075fe525dcbc84ccc138c7545f"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "6773c126882ef5002abcd98886106ee4"
+    "revision": "794d45e45baf910f97392e345f688602"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "3da117ab3a92ffa2294ef2d6f4982532"
+    "revision": "33dba6f8ee7ac3fccd894392a0ac53ea"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -321,11 +325,15 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "9c44875547ecffd04627ce457df9f96d"
+    "revision": "237e42d4f72126fe7bbec431d2cb41d8"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
     "revision": "33642cb9438f3320efded6b653f44148"
+  },
+  {
+    "url": "page-data/kak-postroit-setku-chast-3/page-data.json",
+    "revision": "eeac06d9def7e82ccca27b0a7bc2dadf"
   },
   {
     "url": "page-data/kak-postroit-setku-graficheskii-dizain-chast-2/page-data.json",
@@ -361,7 +369,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
-    "revision": "ed2a7860287301a385a7db7b89af9f66"
+    "revision": "bdfd6e6a5b3caca59c33990a1cf5e07f"
   },
   {
     "url": "page-data/plakat-za-5-minut/page-data.json",
@@ -444,7 +452,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "5c19a353af9ca2b20f55d6c8dbbc7fd6"
+    "revision": "ad7bfe5f0ffa3d68348c08e586b8b48c"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
