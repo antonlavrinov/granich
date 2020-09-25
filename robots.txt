@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://probagran.ru/sitemap.xml
-Host: https://probagran.ru
+Sitemap: https://granich.design/sitemap.xml
+Host: https://granich.design
