@@ -475,7 +475,7 @@ export const TeacherBlock = ({teacher, masterClass}) => {
                 <TeacherImage masterclass={masterClass ? 1 : 0} fluid={teacher.teacherImage.fluid}></TeacherImage>
                 <TeacherSocials>
                     <TeacherSocialIcons>
-                        {/* {teacher.teacherSocialsOrder.map((social, idx) => {
+                        {teacher.teacherSocialsOrder.map((social, idx) => {
                             return (
                                 <React.Fragment key={idx}>
                                     {social.toLowerCase() === 'vk' ? (
@@ -491,7 +491,7 @@ export const TeacherBlock = ({teacher, masterClass}) => {
                                     ) : null}
                                 </React.Fragment>
                             )
-                        })} */}
+                        })}
                     </TeacherSocialIcons>
                     {teacher.teacherEmail && (
                         <CopyToClipboard text={teacher.teacherEmail}> 
