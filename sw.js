@@ -246,14 +246,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "f13b9d618587c653a5708243c314323f"
+    "revision": "79b940f4eb63f381c8d585ef41900f92"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "f087d521945d77f8e1198237804ed858"
+    "revision": "59442912750346ac58ed1d3e540f78e8"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -280,16 +280,20 @@ self.__precacheManifest = [
     "revision": "3bc37439a44bec1ad584e2ea5e1a1d28"
   },
   {
+    "url": "oshibka-mishleniya/index.html",
+    "revision": "1f00a194c80a86f9e6ac722449e01af5"
+  },
+  {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "40144462fd3c30e43bcee5a4c0ca0af3"
+    "revision": "07530c662365d7b1122210cdb57f5c82"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "ff297c11ceb9354b0096822797081623"
+    "revision": "f441b584591a40b15ca99945f5abf32e"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "fc57af3009b4b4c01599d884dde1820e"
+    "revision": "b52d0c4c41f4392a6ec00af7a98e63b7"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -313,7 +317,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "8188dd89fb09a46504bf9fd38dda6902"
+    "revision": "2ba6d99d974f58583060e8f392ea269e"
   },
   {
     "url": "page-data/kak-oformit-abzac/page-data.json",
@@ -334,6 +338,10 @@ self.__precacheManifest = [
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
     "revision": "f6081b83111aea4128c98944b7fafccc"
+  },
+  {
+    "url": "page-data/oshibka-mishleniya/page-data.json",
+    "revision": "60245dccb7210634ec0f54d8e8b83242"
   },
   {
     "url": "page-data/osoznannaya-podborka-freelance/page-data.json",
@@ -428,7 +436,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "adcb9200912632992af10a88a00bcad8"
+    "revision": "007848f6226fa2097c8fc247599a7308"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
