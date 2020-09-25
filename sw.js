@@ -246,14 +246,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "ff40429b08a799a854dbbe8df8a44b7e"
+    "revision": "178f81e3ce6b029505b2b9e5cd4bb15f"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "edcc0bcc46e7282a728f57005ac1aed3"
+    "revision": "64ca387294d23ed0c82867e85d7003a9"
   },
   {
     "url": "kak-oformit-abzac/index.html",
@@ -281,15 +281,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "f369a790548405462f6208a4a7aae769"
+    "revision": "1dcd93c358045c5f3bf4873da5ebee86"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "d829093b4f809732c8d491130904b9a6"
+    "revision": "0886b93da2f6014f5699cd75308c76f2"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "e35a76202420043e5863bf64b7545b2b"
+    "revision": "1be04659b6572167b36a422ffd3e8101"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -345,7 +345,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
-    "revision": "993d5aa97f7435d10d67dd3a3070e5ef"
+    "revision": "904eb42767e58414177c513ca53dd016"
   },
   {
     "url": "page-data/plakat-za-5-minut/page-data.json",
