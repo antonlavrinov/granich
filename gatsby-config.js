@@ -143,6 +143,7 @@ module.exports = {
         // cache_busting_mode: 'none' // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-remove-serviceworker`,
     // {
     //   resolve: `gatsby-plugin-offline`,
     //   options: {
