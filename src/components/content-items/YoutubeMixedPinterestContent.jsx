@@ -43,14 +43,14 @@ const YoutubeMixedPinterestContent = ({content, youtubePng, pinterestIcon}) => {
                     <ContentButtonWatchBlockWrapper>
                         <ContentButtonBlockTitle>Посмотреть</ContentButtonBlockTitle>
                             <ContentButtonWatchBlock>
-                                <YoutubeMixed fluid={youtubePng}/>
+                                {/* <YoutubeMixed fluid={youtubePng}/> */}
                                 {content.contentYoutubeTiming && <ContentButtonMixedTiming>{content.contentYoutubeTiming}</ContentButtonMixedTiming>}  
                             </ContentButtonWatchBlock>
                         </ContentButtonWatchBlockWrapper>
                         <ContentButtonReadBlockWrapper mixedPinterest>
                             <ContentButtonBlockTitle>Изучить</ContentButtonBlockTitle>
                             <ContentButtonReadBlock>
-                                <BehanceMixed fluid={pinterestIcon}/>
+                                {/* <BehanceMixed fluid={pinterestIcon}/> */}
                             </ContentButtonReadBlock>
                         </ContentButtonReadBlockWrapper>
                     </ContentButtonWrapper>

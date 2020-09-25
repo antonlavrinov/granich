@@ -37,8 +37,8 @@ const PinterestContent = ({content, pinterestIcon, pinterestLinkIcon, contentExt
                     <ContentButtonWrapper>
                         <ContentButtonText>Изучить</ContentButtonText>
                         <ContentIconsWrapper>
-                            <Pinterest fluid={pinterestIcon}/>
-                            <PinterestOut fluid={pinterestLinkIcon}/>
+                            {/* <Pinterest fluid={pinterestIcon}/>
+                            <PinterestOut fluid={pinterestLinkIcon}/> */}
                         </ContentIconsWrapper>
                     </ContentButtonWrapper>
                 </ContentButtonContainer>

@@ -42,8 +42,8 @@ const YoutubeContent = ({content, youtubePng, pinterestLinkIcon}) => {
                             {content.contentYoutubeTiming && <ContentButtonYoutubeTiming>{content.contentYoutubeTiming}</ContentButtonYoutubeTiming>}  
                         </ContentButtonYoutubeTextWrapper>
                         <YoutubeIconsWrapper>
-                            <Youtube fluid={youtubePng}/>
-                            <PinterestOut fluid={pinterestLinkIcon}/>
+                            {/* <Youtube fluid={youtubePng}/>
+                            <PinterestOut fluid={pinterestLinkIcon}/> */}
                         </YoutubeIconsWrapper>
 
                     </ContentButtonWrapper>

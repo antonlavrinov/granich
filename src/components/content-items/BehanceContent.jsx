@@ -37,8 +37,8 @@ const BehanceContent = ({content, behanceIcon, behanceLinkIcon, contentExternalL
                     <ContentButtonWrapper>
                         <ContentButtonText>Изучить</ContentButtonText>
                         <ContentIconsWrapper>
-                            <Behance fluid={behanceIcon}/>
-                            <BehanceOut fluid={behanceLinkIcon}/>
+                            {/* <Behance fluid={behanceIcon}/>
+                            <BehanceOut fluid={behanceLinkIcon}/> */}
                         </ContentIconsWrapper>
                     </ContentButtonWrapper>
                 </ContentButtonContainer>

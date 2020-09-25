@@ -44,15 +44,15 @@ const YoutubeMixedContent = ({content, youtubePng, mediumIcon, behanceIcon}) => 
                     <ContentButtonWatchBlockWrapper>
                         <ContentButtonBlockTitle>Посмотреть</ContentButtonBlockTitle>
                             <ContentButtonWatchBlock>
-                                <YoutubeMixed fluid={youtubePng}/>
+                                {/* <YoutubeMixed fluid={youtubePng}/> */}
                                 {content.contentYoutubeTiming && <ContentButtonMixedTiming>{content.contentYoutubeTiming}</ContentButtonMixedTiming>}  
                             </ContentButtonWatchBlock>
                         </ContentButtonWatchBlockWrapper>
                         <ContentButtonReadBlockWrapper>
                             <ContentButtonBlockTitle>Почитать</ContentButtonBlockTitle>
                             <ContentButtonReadBlock>
-                                <Medium fluid={mediumIcon}/>
-                                <BehanceMixed fluid={behanceIcon}/>
+                                {/* <Medium fluid={mediumIcon}/>
+                                <BehanceMixed fluid={behanceIcon}/> */}
                             </ContentButtonReadBlock>
                         </ContentButtonReadBlockWrapper>
                     </ContentButtonWrapper>
