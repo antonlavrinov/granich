@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "040462ec540a5a945fc6bf566ff87cc8"
+    "revision": "f9d34a14a40cecbf4beb84fb57c9c174"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "be4e8f108d89bdda9cf56912954e5533"
+    "revision": "0a44d73f242fae73a2d58d9e72fc5db9"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
@@ -301,15 +301,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "95b40c8a490b83cf16a4433a4a424d8c"
+    "revision": "4dfcffe26e2de89f3d1b75539ad642dc"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "a82b18d3b57f5a187d6e549a186f6a11"
+    "revision": "6f513f4544c02102906c482051b2fc3c"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "94f24acd88d305f96b1f8a9a7d5982a4"
+    "revision": "97a0afa8a4cc8a7811b0c646786be1c1"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -337,7 +337,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "a808ba8883cd78aa51b3b274e9d1bcf1"
+    "revision": "3468ba02b887d156aad80a9b1438695d"
   },
   {
     "url": "page-data/kak-frilanseru-ocenit-stoimost-raboty/page-data.json",
@@ -385,7 +385,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/osoznanny-graph-design/page-data.json",
-    "revision": "ed2a7860287301a385a7db7b89af9f66"
+    "revision": "bdfd6e6a5b3caca59c33990a1cf5e07f"
   },
   {
     "url": "page-data/perspektiva-i-izometriya-adobe-illustrator-podrobnyi-urok/page-data.json",
@@ -448,6 +448,10 @@ self.__precacheManifest = [
     "revision": "16ce25b2a96938230fb0049e8b76c468"
   },
   {
+    "url": "page-data/zdorove-frilansera-kak-obustroit-rabochee-mesto/page-data.json",
+    "revision": "88a03425f79e911e7b80be7e032ae241"
+  },
+  {
     "url": "perspektiva-i-izometriya-adobe-illustrator-podrobnyi-urok/index.html",
     "revision": "f50e95f01316558a4a06423ea9514cec"
   },
@@ -484,7 +488,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sitemap.xml",
-    "revision": "8dcb5c253ae36cdd23d5805042bd508b"
+    "revision": "9d3429af1b4b90cc5bd069f45793f987"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
@@ -893,6 +897,10 @@ self.__precacheManifest = [
   {
     "url": "webpack.stats.json",
     "revision": "2e2f3e766ca8351d9c3218eceed1eb9f"
+  },
+  {
+    "url": "zdorove-frilansera-kak-obustroit-rabochee-mesto/index.html",
+    "revision": "f992d02ddeb854dd5e12841296e2df54"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
