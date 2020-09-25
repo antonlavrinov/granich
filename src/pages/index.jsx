@@ -168,8 +168,8 @@ const IndexPage = ({data}) => {
           keywords={['vhs', 'графсистема']}
           ogImage={ogImage}
           url="https://granich.design/" />
-      {/* <Offer data={data.header}/>
-      <Courses data={data.courseCards} toggleMailingActive={toggleMailingActive} /> */}
+      <Offer data={data.header}/>
+      {/* <Courses data={data.courseCards} toggleMailingActive={toggleMailingActive} /> */}
 
       <Manifest/>
       {mailingActive && <Mailing/>}
