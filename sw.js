@@ -250,14 +250,14 @@ self.__precacheManifest = [
   },
   {
     "url": "graphic-system-vhs/index.html",
-    "revision": "47ea744a787b5cbf2488c126f6ef3623"
+    "revision": "1710d2300321d6b1efb90a3faf6a665f"
   },
   {
     "url": "idb-keyval-3.2.0-iife.min.js"
   },
   {
     "url": "index.html",
-    "revision": "66b974684cbdf53330d461d99e17851a"
+    "revision": "837dbb0f64b439af239e8a55e44d2251"
   },
   {
     "url": "kak-frilanseru-ocenit-stoimost-raboty/index.html",
@@ -305,15 +305,15 @@ self.__precacheManifest = [
   },
   {
     "url": "osoznannaya-podborka-freelance/index.html",
-    "revision": "ce57bc8e27b8f75aef4e203a35ab4079"
+    "revision": "d591ac467865f7140b84d3175303fd78"
   },
   {
     "url": "osoznannaya-podborka-graphdesign/index.html",
-    "revision": "383cc8d5ac00c7751312b60927e600fc"
+    "revision": "e09384221dc561e4ed86027ef20ab816"
   },
   {
     "url": "osoznanny-graph-design/index.html",
-    "revision": "6249ab4d485e1bdc11202251c26b0eef"
+    "revision": "dd9a54482638acc4f008d4d585fd0a36"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -341,7 +341,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "ea9ff859f4027f4a3061c3b6ea2415f9"
+    "revision": "a44b2fa4ff4889a8922a5e7e6a8a54dd"
   },
   {
     "url": "page-data/kak-frilanseru-ocenit-stoimost-raboty/page-data.json",
@@ -401,7 +401,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/plakat-za-5-minut/page-data.json",
-    "revision": "6624b10930c92005b5a035131d93ff6e"
+    "revision": "652415b2dbf9b2bf662abbddc0ab8b2c"
   },
   {
     "url": "page-data/privacy/page-data.json",
@@ -417,7 +417,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sdsa/page-data.json",
-    "revision": "6e25059e81dbb91814550619ee3f4a6b"
+    "revision": "150069501f5b25ca0b73c07216ee2e5b"
   },
   {
     "url": "page-data/sq/d/1579113659.json",
@@ -477,7 +477,7 @@ self.__precacheManifest = [
   },
   {
     "url": "plakat-za-5-minut/index.html",
-    "revision": "bbc33220566e83d30c76db17cb05ed56"
+    "revision": "d369c0c09f99050185c31f41e1a29a70"
   },
   {
     "url": "polyfill-59be98e4b93386ac1856.js"
@@ -504,11 +504,11 @@ self.__precacheManifest = [
   },
   {
     "url": "sdsa/index.html",
-    "revision": "7b19b723c2b4c8116882ad831189ea97"
+    "revision": "d8ad8f884a43d08a74e8e9d72f9269fc"
   },
   {
     "url": "sitemap.xml",
-    "revision": "b70c5b90ba8317e32a508dbe7f71f683"
+    "revision": "f56ba51426cd68bea842cb19c911533c"
   },
   {
     "url": "static/041efd75f930ceb90cd785993ca22aff/06371/team_pinterest.png"
