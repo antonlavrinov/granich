@@ -234,7 +234,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <CourseExplanations data={data.explanations}/>
     <CourseExample/>
     <CourseForWhom data={data.forWhom}/>
-    <CourseCommitment/>
+    {/* <CourseCommitment/>
     <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
     
     <CourseTrainingPath data={data.trainingPath}/>
@@ -249,7 +249,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     )}
     <LazyLoad once>
       <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/> 
-    </LazyLoad>
+    </LazyLoad> */}
     
     
 
