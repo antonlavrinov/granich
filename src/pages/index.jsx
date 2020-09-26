@@ -175,9 +175,7 @@ const IndexPage = ({data}) => {
       <Manifest/>
       {mailingActive && <Mailing/>}
       <div style={{height: '0.5vw'}} id="content"></div>
-      <LazyLoad height={500} once>
-        <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/>
-      </LazyLoad>
+      <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/>
 
 
       <LazyLoad height={500} once>
