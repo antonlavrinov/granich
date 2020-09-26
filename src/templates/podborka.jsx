@@ -229,7 +229,7 @@ const PodborkaPage = ({data}) => {
                                         Но если у вас есть время, то для большего охвата материала полезны ↓" 
                            data={data.videoPodborkaGraphDesign.edges}/>
                     <Books categoryTwo="Далее книги более общие. Уже не столь практичные. Но толково расширяют кругозор в дизайне ↓" 
-                           categoryThree="А тут уже книги для крутых дизайнеров, когда одной эстетики уже мало ↓"
+                           
                            data={data.booksPodborkaGraphDesign.edges}/>
                     <Tools data={data.toolsPodborkaGraphDesign.edges}/>
                 </>

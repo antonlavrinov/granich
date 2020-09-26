@@ -11,7 +11,7 @@ const AuthorsSection = styled.section`
 `
 
 const AuthorsWrapper = styled.section`
- padding: 4.7vw 5vw 4.7vw 4.7vw;
+ padding: 4.7vw 4vw 4.7vw 4.7vw;
  border-radius: 0.6vw;
  background: white;
  @media only screen and (max-width: 575px) {
@@ -88,13 +88,14 @@ const AuthorsText = styled.div`
     }
 `
 const AuthorsQuote = styled.div`
-    font-size: 1.55vw;
+    font-size: 1.4vw;
     color: var(--granich-black);
     padding-left: 1.5vw;
     border-left: 2.5px solid var(--granich-red);
     margin-right: 1vw;
     font-weight: 500;
-    min-width: 32vw;
+    min-width: 27.8vw;
+    width: 27.8vw;
     line-height: 1.45;
     @media only screen and (max-width: 575px) {
         font-size: 5.1vw;
@@ -105,9 +106,8 @@ const AuthorsQuote = styled.div`
     }
 `
 const AuthorsDescr = styled.div`
-    font-size: 1.15vw;
+    font-size: 1.2vw;
     color: var(--granich-grey);
-    padding-top: 0.5vw;
     line-height: 1.45;
     a {
         border-bottom: 1px solid var(--granich-light-grey);
@@ -138,9 +138,9 @@ const CourseAuthors = ({data}) => {
                     </AuthorsTeachers>
                     <AuthorsText>
                         <AuthorsQuote>
-                            Мастер-класс создан соавторами. Исследование, запись видеолекции и инструкции — Елизавета Черникова. Дизайн-система, рекомендации и забота — Вадим Гранич.
+                            Мастер-класс создан соавторами. Исследование, запись видеолекции и инструкции — Елизавета Черникова. Дизайн-система, рекомендации и забота — Вадим Гранич.
                         </AuthorsQuote>
-                        <AuthorsDescr>Я отыскала всё самое интересное и полезное про графдизайн VHS-кассет: почему он появился, какие графсистемы с ним связаны, кто использует его в своей айдентике и как самостоятельно создавать VHS-макеты. Вдобавок, в <a href="https://www.pinterest.ru/vadim_granich/vhs/" rel="noopener noreferrer">Энциклопедии графдизайна</a> на Пинтересте есть примеры работ в графсистеме VHS</AuthorsDescr>
+                        <AuthorsDescr>«Я отыскала всё самое интересное и полезное про графдизайн VHS-кассет: почему он появился, какие графсистемы с ним связаны, кто использует его в своей айдентике и как самостоятельно создавать VHS-макеты. Вдобавок, в <a href="https://www.pinterest.ru/vadim_granich/vhs/" rel="noopener noreferrer">Энциклопедии графдизайна</a> на Пинтересте есть примеры работ в графсистеме VHS»</AuthorsDescr>
                     </AuthorsText>
 
                     
