@@ -234,23 +234,13 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <CourseExplanations data={data.explanations}/>
     <CourseExample/>
     <CourseForWhom data={data.forWhom}/>
-    <LazyLoad once>
-      <CourseCommitment/>
-    </LazyLoad>
-    <LazyLoad once>
-      <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
-    </LazyLoad>
+    <CourseCommitment/>
+    <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
+    
     <CourseTrainingPath data={data.trainingPath}/>
-    <LazyLoad once>
-      <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
-    </LazyLoad>
-    <LazyLoad once>
-      <CourseFeatures data={data.features}/>
-    </LazyLoad>
-    <LazyLoad once>
-      <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
-    </LazyLoad>
-
+    <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
+    <CourseFeatures data={data.features}/>
+    <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
     <div id="participation-section"></div>
     {data.offer.courseStatus ? (
       <CourseParticipation data={data.offer}/>
