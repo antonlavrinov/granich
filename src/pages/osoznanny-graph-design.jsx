@@ -249,12 +249,18 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <CourseFeatures data={data.features}/>
     <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
     <div id="participation-section"></div>
-    {data.offer.courseStatus ? (
-      <CourseParticipation data={data.offer}/>
-    ) : (
-      <Mailing/>
-    )}
-    <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/> 
+    <LazyLoad once>
+      {data.offer.courseStatus ? (
+        <CourseParticipation data={data.offer}/>
+      ) : (
+        <Mailing/>
+      )}
+    </LazyLoad>
+
+    <LazyLoad once>
+      <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/> 
+    </LazyLoad>
+    
     
 
 
