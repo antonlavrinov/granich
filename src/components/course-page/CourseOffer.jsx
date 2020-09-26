@@ -421,7 +421,7 @@ const CourseOffer = ({data}) => {
                             <CourseOfferButton onClick={() => scrollTo('#prices-range-section')}  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
                         )}
                     </CourseOfferInfo>
-                    <div onClick={() => {
+                    {/* <div onClick={() => {
                         trackCustomEvent({
                             // string - required - The object that was interacted with (e.g.video)
                             category: "Special Button",
@@ -432,7 +432,7 @@ const CourseOffer = ({data}) => {
                             // number - optional - Numeric value associated with the event. (e.g. A product ID)
                             value: 43
                           })
-                    }}>cutom event</div>
+                    }}>cutom event</div> */}
                     {/* <CoursePortfolioDeck>
                         <Deck/>
                     </CoursePortfolioDeck> */}
