@@ -11,7 +11,7 @@ const AuthorsSection = styled.section`
 `
 
 const AuthorsWrapper = styled.section`
- padding: 4.7vw 7vw 4.7vw 4.7vw;
+ padding: 4.7vw 5vw 4.7vw 4.7vw;
  border-radius: 0.6vw;
  background: white;
  @media only screen and (max-width: 575px) {
@@ -94,7 +94,7 @@ const AuthorsQuote = styled.div`
     border-left: 2.5px solid var(--granich-red);
     margin-right: 1vw;
     font-weight: 500;
-    min-width: 28vw;
+    min-width: 32vw;
     line-height: 1.45;
     @media only screen and (max-width: 575px) {
         font-size: 5.1vw;
@@ -109,6 +109,12 @@ const AuthorsDescr = styled.div`
     color: var(--granich-grey);
     padding-top: 0.5vw;
     line-height: 1.45;
+    a {
+        border-bottom: 1px solid var(--granich-light-grey);
+        :hover {
+            border-color: var(--granich-grey);
+        }
+    }
     @media only screen and (max-width: 575px) {
         font-size: 3.8vw;
     }
@@ -132,9 +138,9 @@ const CourseAuthors = ({data}) => {
                     </AuthorsTeachers>
                     <AuthorsText>
                         <AuthorsQuote>
-                            Мастер-класс сделан совместно с Елизаветой Черниковой, видеолекции и инструкции записывала она
+                            Мастер-класс создан соавторами. Исследование, запись видеолекции и инструкции — Елизавета Черникова. Дизайн-система, рекомендации и забота — Вадим Гранич.
                         </AuthorsQuote>
-                        <AuthorsDescr>Елизавета прошла у меня суровую подготовку, знает все необходимые стандарты качества, ценит осознанный подход. Именно она является главным исследователем в моей команде. Вдобавок, она, вместе со мной, ведет Энциклопедию Графдизайна на Пинтересте.</AuthorsDescr>
+                        <AuthorsDescr>Я отыскала всё самое интересное и полезное про графдизайн VHS-кассет: почему он появился, какие графсистемы с ним связаны, кто использует его в своей айдентике и как самостоятельно создавать VHS-макеты. Вдобавок, в <a href="https://www.pinterest.ru/vadim_granich/vhs/" rel="noopener noreferrer">Энциклопедии графдизайна</a> на Пинтересте есть примеры работ в графсистеме VHS</AuthorsDescr>
                     </AuthorsText>
 
                     
