@@ -11,7 +11,7 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 // import { useSprings, animated, interpolate } from 'react-spring'
 // import { useGesture } from 'react-use-gesture'
-
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 
 const Potok = styled(props => <PotokIcon {...props}/>)`
@@ -421,6 +421,18 @@ const CourseOffer = ({data}) => {
                             <CourseOfferButton onClick={() => scrollTo('#prices-range-section')}  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
                         )}
                     </CourseOfferInfo>
+                    <div onClick={() => {
+                        trackCustomEvent({
+                            // string - required - The object that was interacted with (e.g.video)
+                            category: "Special Button",
+                            // string - required - Type of interaction (e.g. 'play')
+                            action: "Click",
+                            // string - optional - Useful for categorizing events (e.g. 'Spring Campaign')
+                            label: "Gatsby Plugin Example Campaign",
+                            // number - optional - Numeric value associated with the event. (e.g. A product ID)
+                            value: 43
+                          })
+                    }}>cutom event</div>
                     {/* <CoursePortfolioDeck>
                         <Deck/>
                     </CoursePortfolioDeck> */}
