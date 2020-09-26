@@ -348,12 +348,12 @@ const Header = ({ siteTitle, type }) => (
               </li>  
               <li>
                 {type === 'dark' ? (
-                  <NavLink to="/#preparation" propstyle={type}>
+                  <NavLink to="/#content" propstyle={type}>
                     Подготовка
                     {type === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
                   </NavLink>
                 ) : (
-                  <NavLinkExternal onClick={() => scrollTo('#preparation')} propstyle={type}>
+                  <NavLinkExternal onClick={() => scrollTo('#content')} propstyle={type}>
                     Подготовка
                     {type === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
                   </NavLinkExternal>

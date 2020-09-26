@@ -298,16 +298,16 @@ const TeacherEmail = styled.span`
 `
 const TeacherInfo = styled.div`
 
-    border-left: 1.5px solid #D7D7D7;
-    padding-left: 1.4vw;
-    margin-left: -0.4vw;
+    // border-left: 1.5px solid #D7D7D7;
+    // padding-left: 1.4vw;
+    // margin-left: -0.4vw;
     min-height: 5.8vw;
     line-height: 1.35;
 
     @media only screen and (max-width: 575px) {
-        border-left: 0.5vw solid #D7D7D7;
-        padding-left: 4.5vw;
-        margin-left: -0.5vw;
+        // border-left: 0.5vw solid #D7D7D7;
+        // padding-left: 4.5vw;
+        // margin-left: -0.5vw;
         min-height: 21vw;
     }
 `
@@ -315,11 +315,13 @@ const TeacherInfoName = styled.div`
     font-weight: 600;
     font-size: 1.16vw;
     width: 18.5vw;
+    padding-bottom: 0.4vw;
 
     @media only screen and (max-width: 575px) {
         font-size: 4.4vw;
         line-height: 1.3;
         width: 67vw;
+        padding-bottom: 1.5vw;
         ${props => props.masterclass && `
             font-size: 3.8vw;
         `}
@@ -330,15 +332,41 @@ const TeacherDescription = styled.div`
     font-size: 1.16vw;
     font-weight: 500;
     width: 18.5vw;
+    p:empty { 
+        display: none; 
+    }
 
     p {
         color: var(--granich-grey);
+        padding-bottom: 0.4vw;
+        position: relative;
+
+        :before {
+            content: '- ';
+            position: absolute;
+            top: 0;
+            left: -1vw;
+        }
+        // border-bottom: 1px solid var(--granich-light-grey);
     }
     @media only screen and (max-width: 575px) {
         font-size: 4.3vw;
         line-height: 1.3;
         margin-top: 0;
         width: 67vw;
+        p {
+            color: var(--granich-grey);
+            padding-bottom: 1.5vw;
+            position: relative;
+    
+            :before {
+                content: '- ';
+                position: absolute;
+                top: 0;
+                left: -4vw;
+            }
+            // border-bottom: 1px solid var(--granich-light-grey);
+        }
         ${props => props.masterclass && `
             font-size: 3.8vw;
         `}

@@ -17,6 +17,7 @@ import {graphql} from 'gatsby';
 import CourseAnswers from "../components/course-page/CourseAnswers";
 import Mailing from '../components/Mailing';
 import ogImage from '../assets/images/seo/osoznanny-graph-design.jpg';
+import LazyLoad from "react-lazyload";
 
 export const contentfulQuery = graphql`
 
@@ -233,10 +234,18 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <CourseExplanations data={data.explanations}/>
     <CourseExample/>
     <CourseForWhom data={data.forWhom}/>
-    <CourseCommitment/>
-    <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
+    <LazyLoad once>
+      <CourseCommitment/>
+    </LazyLoad>
+    <LazyLoad once>
+      <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
+    </LazyLoad>
+    
     <CourseTrainingPath data={data.trainingPath}/>
-    <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
+    <LazyLoad once>
+      <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
+    </LazyLoad>
+    
     <CourseFeatures data={data.features}/>
     <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
     <div id="participation-section"></div>
