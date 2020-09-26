@@ -3,7 +3,7 @@ import { Container } from '../style';
 import styled from 'styled-components';
 // import commitmentVideo from '../../assets/images/graph-design/commitment/ezgif.com-gif-to-mp4.mp4';
 import CommitmentGif from '../../assets/images/graph-design/commitment/commitment.gif';
-
+import LazyLoad from 'react-lazyload';
 
 const CommitmentSection = styled.section`
     margin-bottom: 4vw;
@@ -128,7 +128,10 @@ const CourseCommitment = () => {
         <CommitmentSection>
             <Container>
                 <CommitmentWrapper>
-                    <CommitmentImage src={CommitmentGif} alt="commitment"/>
+                    <LazyLoad once>
+                        <CommitmentImage src={CommitmentGif} alt="commitment"/>
+                    </LazyLoad>
+
                     {/* <video muted loop autoPlay>
                         <source src={commitmentVideo} type="video/mp4" />
                     </video> */}
