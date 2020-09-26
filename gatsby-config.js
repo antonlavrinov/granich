@@ -18,15 +18,15 @@ module.exports = {
         // The property ID; the tracking code won't be generated without it
         trackingId: "UA-179098660-1",
         // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
+        // head: false,
         // Setting this parameter is optional
-        anonymize: true,
+        // anonymize: true,
         // Setting this parameter is also optional
-        respectDNT: true,
+        // respectDNT: true,
         // Avoids sending pageview hits from custom paths
         // exclude: ["/preview/**", "/do-not-track/me/too/"],
         // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
+        // pageTransitionDelay: 0,
         // Enables Google Optimize using your container Id
         // optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
         // Enables Google Optimize Experiment ID
@@ -34,7 +34,7 @@ module.exports = {
         // Set Variation ID. 0 for original 1,2,3....
         // variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
         // Defers execution of google analytics script after page load
-        defer: false,
+        // defer: false,
         // Any additional optional fields
         // sampleRate: 5,
         // siteSpeedSampleRate: 10,
@@ -87,23 +87,23 @@ module.exports = {
     
     `gatsby-transformer-sharp`,
 
-    {
-      resolve: `gatsby-plugin-yandex-metrika`,
-      options: {
-        // The ID of yandex metrika.
-        trackingId: 67665898,
-        // Enabled a webvisor. The default value is `false`.
-        webvisor: true,
-        // Enables tracking a hash in URL. The default value is `false`.
-        trackHash: true,
-        // Defines where to place the tracking script - `false` means before body (slower loading, more hits)
-        // and `true` means after the body (faster loading, less hits). The default value is `false`.
-        afterBody: true,
-        // Use `defer` attribute of metrika script. If set to `false` - script will be loaded with `async` attribute.
-        // Async enables earlier loading of the metrika but it can negatively affect page loading speed. The default value is `false`.
-        defer: false,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-yandex-metrika`,
+    //   options: {
+    //     // The ID of yandex metrika.
+    //     trackingId: 67665898,
+    //     // Enabled a webvisor. The default value is `false`.
+    //     webvisor: true,
+    //     // Enables tracking a hash in URL. The default value is `false`.
+    //     trackHash: true,
+    //     // Defines where to place the tracking script - `false` means before body (slower loading, more hits)
+    //     // and `true` means after the body (faster loading, less hits). The default value is `false`.
+    //     afterBody: true,
+    //     // Use `defer` attribute of metrika script. If set to `false` - script will be loaded with `async` attribute.
+    //     // Async enables earlier loading of the metrika but it can negatively affect page loading speed. The default value is `false`.
+    //     defer: false,
+    //   },
+    // },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-contentful`,
@@ -182,7 +182,7 @@ module.exports = {
         // cache_busting_mode: 'none' // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-remove-serviceworker`,
+    // `gatsby-plugin-remove-serviceworker`,
     // {
     //   resolve: `gatsby-plugin-offline`,
     //   options: {
