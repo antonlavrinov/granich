@@ -237,20 +237,19 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <LazyLoad once>
       <CourseCommitment/>
     </LazyLoad>
-    {/* <LazyLoad once> */}
+    <LazyLoad once>
       <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
-    {/* </LazyLoad> */}
-    
+    </LazyLoad>
     <CourseTrainingPath data={data.trainingPath}/>
-    {/* <LazyLoad once> */}
+    <LazyLoad once>
       <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
-    {/* </LazyLoad> */}
-    {/* <LazyLoad once> */}
+    </LazyLoad>
+    <LazyLoad once>
       <CourseFeatures data={data.features}/>
-    {/* </LazyLoad> */}
-    {/* <LazyLoad> */}
+    </LazyLoad>
+    <LazyLoad once>
       <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
-    {/* </LazyLoad> */}
+    </LazyLoad>
 
     <div id="participation-section"></div>
     {data.offer.courseStatus ? (

@@ -416,9 +416,9 @@ const CourseOffer = ({data}) => {
                             {data.courseDescr}
                         </CourseOfferDescr>
                         {data.courseType === 'Курс' ? (
-                            <CourseOfferButton onClick={() => scrollTo('#participation-section')}><CourseArrowDown/>Участвовать</CourseOfferButton>
+                            <CourseOfferButton href="#participation-section"><CourseArrowDown/>Участвовать</CourseOfferButton>
                         ) : (
-                            <CourseOfferButton onClick={() => scrollTo('#prices-range-section')}  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
+                            <CourseOfferButton href="#prices-range-section"  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
                         )}
                     </CourseOfferInfo>
                     {/* <CoursePortfolioDeck>
@@ -455,9 +455,9 @@ const CourseOffer = ({data}) => {
                         {data.courseDescr}
                     </CourseOfferDescr>
                     {data.courseType === 'Курс' ? (
-                        <CourseOfferButton onClick={() => scrollTo('#participation-section')}><CourseArrowDown/>Участвовать</CourseOfferButton>
+                        <CourseOfferButton href="#participation-section"><CourseArrowDown/>Участвовать</CourseOfferButton>
                     ) : (
-                        <CourseOfferButton onClick={() => scrollTo('#prices-range-section')}  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
+                        <CourseOfferButton href="#prices-range-section"  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
                     )}
                 </CourseOfferWrapperMobile>
             </Container>
@@ -467,3 +467,9 @@ const CourseOffer = ({data}) => {
 }
 
 export default CourseOffer
+
+// {data.courseType === 'Курс' ? (
+//     <CourseOfferButton onClick={() => scrollTo('#participation-section')}><CourseArrowDown/>Участвовать</CourseOfferButton>
+// ) : (
+//     <CourseOfferButton onClick={() => scrollTo('#prices-range-section')}  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
+// )}
