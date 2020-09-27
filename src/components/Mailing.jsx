@@ -1,6 +1,6 @@
 import React, {useRef, useState, useEffect} from 'react'
 import styled from 'styled-components';
-import BlackArrowRight from '../assets/svgs/arrow-black-right.svg';
+// import BlackArrowRight from '../assets/svgs/arrow-black-right.svg';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import { Container } from './style';
@@ -21,12 +21,12 @@ const ShakeForm = posed.div({
     }
   });
 
-const ArrowRightButton = styled(props => <BlackArrowRight {...props}/>)`
-    width: 3.6vw;
-    @media only screen and (max-width: 575px) {
-        width: 11.5vw;
-    }
-`
+// const ArrowRightButton = styled(props => <BlackArrowRight {...props}/>)`
+//     width: 3.6vw;
+//     @media only screen and (max-width: 575px) {
+//         width: 11.5vw;
+//     }
+// `
 
 const PrivacyLink = styled(props => <Link {...props}/>)`
 
@@ -392,7 +392,9 @@ const Mailing = ({popup}) => {
                                                                                     window['btnprs5f67e38dd2018']=false},6000);
                                                                                     return true;
                                                                             }}
-                                                                            disabled={isSubmitting}><ArrowRightButton/></MailingButton>
+                                                                            disabled={isSubmitting}>
+                                                                                {/* <ArrowRightButton/> */}
+                                                                                </MailingButton>
                                                             
                                                         
                                                     </MailingWrapperInputAndButton>
