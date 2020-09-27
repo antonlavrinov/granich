@@ -223,7 +223,7 @@ export const contentfulQuery = graphql`
 
 const OsoznannyGraphDesignPage = ({data}) => (
   <Layout>
-    {/* <Header type={'dark'}/> */}
+    <Header type={'dark'}/>
     <SEO title="Осознанный Графдизайн"
          description="Осознанный курс по графическому дизайну от Вадима Гранича (Granich). За 2 месяца вы получите упорядоченные знания о графическом дизайне и создадите свое портфолио. А еще изучите Adobe InDesign"
          keywords={['vhs', 'графсистема']}
@@ -232,10 +232,10 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <div className="section-top-block"></div>
     {/* <CourseOffer data={data.offer}/> */}
     <CourseExplanations data={data.explanations}/>
-    {/* <CourseExample/>
+    <CourseExample/>
     <CourseForWhom data={data.forWhom}/>
     <CourseCommitment/>
-    <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
+    {/* <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
     
     <CourseTrainingPath data={data.trainingPath}/>
     <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
@@ -247,7 +247,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     ) : (
       <Mailing/>
     )}
-    <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/>  */}
+    <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/> */}
     
     
 
