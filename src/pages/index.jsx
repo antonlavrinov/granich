@@ -21,7 +21,7 @@ export const contentfulQuery = graphql`
             node {
               headerImage {
                 fluid(maxWidth: 2729) {
-                  ...GatsbyContentfulFluid_withWebp
+                  ...GatsbyContentfulFluid
                 }
                 
               }
