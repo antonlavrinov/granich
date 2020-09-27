@@ -247,9 +247,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     ) : (
       <Mailing/>
     )}
-    <LazyLoad once>
-      <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/> 
-    </LazyLoad>
+    <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/> 
     
     
 

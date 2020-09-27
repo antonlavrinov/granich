@@ -7,6 +7,7 @@ import FullscreenInIcon from '../../../assets/svgs/graph-design/graph-design-ful
 import SliderLeftIcon from '../../../assets/svgs/graph-design/graph-design-slider-left.svg';
 import SliderRightIcon from '../../../assets/svgs/graph-design/graph-design-slider-right.svg';
 import styled from 'styled-components';
+import LazyLoad from 'react-lazyload';
 
 const FullscreenOut = styled(props => <FullscreenOutIcon {...props}/>)`
     width: 1.8vw;
@@ -74,6 +75,14 @@ const SliderRight = styled(props => <SliderRightIcon {...props}/>)`
     }
 `
 
+const SliderWrapper = styled.div`
+    min-height: 16vw;
+    @media only screen and (max-width: 575px) {
+        min-height: 60vw;
+    }
+
+`
+
 const Slider = styled(props => <BackgroundImage {...props}/>)`
     // :before {
     //     background-size: cover !important;
@@ -138,7 +147,18 @@ const PortfolioImageGallery = ({images}) => {
 
     const _renderItem = (item, isFullscreen) => {
         return (
-          <Slider className="gallery-custom-slider" style={{width: '100%', backgroundSize: `${fullscreen ? 'contain' : "cover"}`}} fluid={item.fluid}></Slider>
+            <SliderWrapper style={{background: `${fullscreen ? 'black' : 'lightgrey'}`}}>
+                {/* <div className="loadingio-spinner-rolling-ta5f1nqy5p">
+                    <div className="ldio-6b142d04hhl">
+                        <div></div>
+                    </div>
+                </div> */}
+                <LazyLoad once>
+                    <Slider className="gallery-custom-slider" style={{width: '100%', backgroundSize: `${fullscreen ? 'contain' : "cover"}`}} fluid={item.fluid}></Slider>
+                </LazyLoad>
+            </SliderWrapper>
+
+          
         )
         }
     

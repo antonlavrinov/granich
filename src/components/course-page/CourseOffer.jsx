@@ -419,7 +419,7 @@ const CourseOffer = ({data}) => {
                         {data.courseType === 'Курс' ? (
                             <CourseOfferButton to='#participation-section'><CourseArrowDown/>Участвовать</CourseOfferButton>
                         ) : (
-                            <CourseOfferButton to='#participation-section'  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
+                            <CourseOfferButton to='#prices-range-section'  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
                         )}
                        
                     </CourseOfferInfo>
@@ -472,7 +472,7 @@ const CourseOffer = ({data}) => {
                     {data.courseType === 'Курс' ? (
                         <CourseOfferButton to='#participation-section'><CourseArrowDown/>Участвовать</CourseOfferButton>
                     ) : (
-                         <CourseOfferButton to='#participation-section'  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
+                         <CourseOfferButton to='#prices-range-section'  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
                     )}
                     
                 </CourseOfferWrapperMobile>

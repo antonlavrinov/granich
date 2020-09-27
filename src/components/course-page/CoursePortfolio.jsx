@@ -290,7 +290,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                         })}
 
                     </PortfolioOnePagersWrapper>
-                        <LazyLoad once height="55.1vw" offsetTop={500}>
+                        {/* <LazyLoad once offsetTop={500} offsetBottom={500}> */}
                             {imageGallery.length > 0 && (
                                 <PortfolioMiltiPagesWrapper>
                                     
@@ -304,7 +304,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                                 
                                 </PortfolioMiltiPagesWrapper>
                             )}
-                        </LazyLoad>
+                        {/* </LazyLoad> */}
                     
 
                     

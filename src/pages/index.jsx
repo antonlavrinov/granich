@@ -11,7 +11,7 @@ import Header from '../components/Header';
 import PreCoursePreparation from "../components/PreCoursePreparation"
 import OurTeam from "../components/OurTeam"
 import ogImage from '../assets/images/seo/index.jpg';
-import LazyLoad from 'react-lazyload';
+
 
 
 export const contentfulQuery = graphql`
@@ -176,11 +176,7 @@ const IndexPage = ({data}) => {
       {mailingActive && <Mailing/>}
       <div style={{height: '0.2vw', marginTop: '0.5vw'}} id="content"></div>
       <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/>
-
-
-      <LazyLoad height={500} once>
-        <OurTeam data={data.team}/>
-      </LazyLoad>
+      <OurTeam data={data.team}/>
 
     </Layout>
   )

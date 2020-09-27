@@ -53,6 +53,21 @@ const CommitmentImage = styled.img`
 
     }
 `
+const CommitmentImageWrapper = styled.div`
+    min-width: 36.3vw;
+    width: 36.3vw;
+    margin-right: 3vw;
+    border-radius: 0.5vw;
+    background: #f2f2f2;
+    @media only screen and (max-width: 575px) {
+        min-width: 100%;
+        width: 100%;
+        margin-right: 3vw;
+        border-radius: 2vw;
+        margin-bottom: 5vw;
+
+    }
+`
 
 const CommitmentInfo = styled.div`
 
@@ -128,9 +143,12 @@ const CourseCommitment = () => {
         <CommitmentSection>
             <Container>
                 <CommitmentWrapper>
-                    <LazyLoad once>
-                        <CommitmentImage src={CommitmentGif} alt="commitment"/>
-                    </LazyLoad>
+                    <CommitmentImageWrapper>
+                        <LazyLoad once>
+                            <CommitmentImage src={CommitmentGif} alt="commitment"/>
+                        </LazyLoad>
+                    </CommitmentImageWrapper>
+
 
                     {/* <video muted loop autoPlay>
                         <source src={commitmentVideo} type="video/mp4" />

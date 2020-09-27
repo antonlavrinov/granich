@@ -3,6 +3,8 @@ import {TeacherBlock} from '../OurTeam';
 import { Container } from '../style';
 import styled from 'styled-components';
 
+
+
 const AuthorsSection = styled.section`
     margin-bottom: 4vw;
     @media only screen and (max-width: 575px) {
@@ -103,6 +105,8 @@ const AuthorsQuote = styled.div`
         padding-left: 3.5vw;
         margin-right: 0;
         margin-bottom: 3vw;
+        min-width: 100%;
+        width: 100%;
     }
 `
 const AuthorsDescr = styled.div`
@@ -140,7 +144,7 @@ const CourseAuthors = ({data}) => {
                         <AuthorsQuote>
                             Мастер-класс создан соавторами. Исследование, запись видеолекции и инструкции — Елизавета Черникова. Дизайн-система, рекомендации и забота — Вадим Гранич.
                         </AuthorsQuote>
-                        <AuthorsDescr>«Я отыскала всё самое интересное и полезное про графдизайн VHS-кассет: почему он появился, какие графсистемы с ним связаны, кто использует его в своей айдентике и как самостоятельно создавать VHS-макеты. Вдобавок, в <a href="https://www.pinterest.ru/vadim_granich/vhs/" rel="noopener noreferrer">Энциклопедии графдизайна</a> на Пинтересте есть примеры работ в графсистеме VHS»</AuthorsDescr>
+                        <AuthorsDescr>«Я отыскала всё самое интересное и полезное про графдизайн VHS-кассет: почему он появился, какие графсистемы с ним связаны, кто использует его в своей айдентике и как самостоятельно создавать VHS-макеты. Вдобавок, в <a href="https://www.pinterest.ru/vadim_granich/vhs/" target="_blank" rel="noopener noreferrer">Энциклопедии графдизайна</a> на Пинтересте есть примеры работ в графсистеме VHS»</AuthorsDescr>
                     </AuthorsText>
 
                     
