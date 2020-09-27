@@ -23,15 +23,16 @@ export const contentfulQuery = graphql`
                 fluid(maxWidth: 2729) {
                   ...GatsbyContentfulFluid_withWebp
                 }
+                
               }
               headerImageMobile {
                 fluid(maxWidth: 575) {
-                  ...GatsbyContentfulFluid_withWebp
+                  ...GatsbyContentfulFluid_withWebp_noBase64
                 }
               }
               headerSubtitleImage {
                 fluid(maxWidth: 50) {
-                  ...GatsbyContentfulFluid_withWebp_noBase64
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               headerSubtitle_01

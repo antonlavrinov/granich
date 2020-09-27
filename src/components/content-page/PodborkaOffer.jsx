@@ -174,7 +174,7 @@ const PodborkaOffer = ({tags, dataContentPodborka}) => {
                     <PodborkaOfferTitle>
                         {documentToReactComponents(dataContentPodborka.collectionOfferTitle.json)}
                     </PodborkaOfferTitle>
-                    <PodborkaOfferMainImage fluid={dataContentPodborka.collectionOfferMainImage.fluid}/>
+                    <PodborkaOfferMainImage loading="eager" fadeIn={false} fluid={dataContentPodborka.collectionOfferMainImage.fluid}/>
                     <PodborkaOfferDescr>
                         {dataContentPodborka.collectionOfferDescr}
                     </PodborkaOfferDescr>

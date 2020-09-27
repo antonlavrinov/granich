@@ -42,6 +42,8 @@ const OfferMobileSection = styled(props => <BackgroundImage {...props}></Backgro
     }
 `
 
+
+
 const OfferMobileWrapper = styled.div`
     display: none;
     position: relative;
@@ -175,7 +177,7 @@ const Offer = ({data}) => {
 
     return (
         <>
-            <OfferSection fluid={headerImage} id="offer" >
+            <OfferSection  fluid={headerImage} id="offer" >
 
                 <Container>
                     <OfferTitle>{headerTitle}</OfferTitle>
@@ -185,7 +187,7 @@ const Offer = ({data}) => {
                 </Container>
 
             </OfferSection>
-            <OfferMobileSection  fluid={headerImageMobile} id="offer" >
+            <OfferMobileSection loading="eager" fadeIn={false} fluid={headerImageMobile} id="offer" >
                 <Container>
                     <OfferMobileWrapper>
                         <OfferTitle>{headerTitle}</OfferTitle>
