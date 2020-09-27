@@ -8,9 +8,9 @@ import CourseExample from "../components/course-page/CourseExample"
 import CourseForWhom from "../components/course-page/CourseForWhom"
 import CoursePortfolio from "../components/course-page/CoursePortfolio"
 import CourseTrainingPath from "../components/course-page/CourseTrainingPath"
-import CourseCurriculum from "../components/course-page/CourseCurriculum"
+// import CourseCurriculum from "../components/course-page/CourseCurriculum"
 import CourseFeatures from "../components/course-page/CourseFeatures"
-import CourseReviews from "../components/course-page/CourseReviews"
+// import CourseReviews from "../components/course-page/CourseReviews"
 import CourseParticipation from "../components/course-page/CourseParticipation"
 import CourseCommitment from "../components/course-page/CourseCommitment"
 import {graphql} from 'gatsby';
@@ -238,9 +238,9 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
     
     <CourseTrainingPath data={data.trainingPath}/>
-    <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
+    {/* <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/> */}
     <CourseFeatures data={data.features}/>
-    <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
+    {/* <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/> */}
     <div id="participation-section"></div>
     {data.offer.courseStatus ? (
       <CourseParticipation data={data.offer}/>
