@@ -2,22 +2,22 @@ import React, {useRef, useState, useEffect} from 'react'
 import styled from 'styled-components';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
-// import posed from "react-pose";
+import posed from "react-pose";
 import { Link } from "gatsby";
 
-// const ShakeForm = posed.div({
-//     shake: {
-//       applyAtEnd: { x: 0 },
-//       applyAtStart: { x: -10 },
-//       x: 0,
-//       transition: {
-//         type: "spring",
-//         stiffness: 1000,
-//         damping: 10,
-//         duration: 4
-//       }
-//     }
-// });
+const ShakeForm = posed.div({
+    shake: {
+      applyAtEnd: { x: 0 },
+      applyAtStart: { x: -10 },
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 1000,
+        damping: 10,
+        duration: 4
+      }
+    }
+});
 
 const FormMainWrapper = styled.div`
 
@@ -364,7 +364,7 @@ const ParticipationForm = ({data}) => {
     return (
         
         <FormMainWrapper>
-        {/* <ShakeForm style={{height: '100%'}} pose={["shake"]} poseKey={shakeTrigger}> */}
+        <ShakeForm style={{height: '100%'}} pose={["shake"]} poseKey={shakeTrigger}>
 
                 <Formik isInitialValid={isInitialValid} 
                                 initialValues={{politikaCheckbox: true, formParams: {
@@ -565,7 +565,7 @@ const ParticipationForm = ({data}) => {
                             <span id="gccounterImgContainer"></span>
                             
 
-        {/* </ShakeForm> */}
+        </ShakeForm>
         </FormMainWrapper>
     )
 }
