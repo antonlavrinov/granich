@@ -40,7 +40,7 @@ const YoutubeMixedPinterestContent = ({content, youtubePng, pinterestIcon}) => {
                     <ContentTitle>{content.contentTitle}</ContentTitle>
                 </ContentContainer>
                 <ContentButton>
-                    <ContentButtonContainer youtubeMixed>
+                    {/* <ContentButtonContainer youtubeMixed>
                         <ContentButtonWrapper youtubeMixed>
                         <ContentButtonWatchBlockWrapper>
                             <ContentButtonBlockTitle>Посмотреть</ContentButtonBlockTitle>
@@ -56,7 +56,7 @@ const YoutubeMixedPinterestContent = ({content, youtubePng, pinterestIcon}) => {
                                 </ContentButtonReadBlock>
                             </ContentButtonReadBlockWrapper>
                         </ContentButtonWrapper>
-                    </ContentButtonContainer>
+                    </ContentButtonContainer> */}
                 </ContentButton>
            {/* </LazyLoad> */}
             

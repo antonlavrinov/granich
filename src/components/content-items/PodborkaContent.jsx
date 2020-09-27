@@ -17,7 +17,7 @@ import {ContentWrapperLink,
 
 
     } from './styles';
-import LazyLoad from 'react-lazyload';
+
 
 
 const PodborkaContent = ({content, podborkaLinkIcon}) => {
@@ -38,14 +38,14 @@ const PodborkaContent = ({content, podborkaLinkIcon}) => {
                     <ContentDescr>{documentToReactComponents(content.contentDescription.json)}</ContentDescr>
                 </ContentContainer>
                 <ContentButton podborka>
-                    <ContentButtonContainer>
+                    {/* <ContentButtonContainer>
                         <ContentButtonWrapper>
                             <ContentButtonText>Изучить</ContentButtonText>
                             <ContentIconsWrapper>
                                 <PodborkaOut fluid={podborkaLinkIcon}/>
                             </ContentIconsWrapper>
                         </ContentButtonWrapper>
-                    </ContentButtonContainer>
+                    </ContentButtonContainer> */}
                 </ContentButton>
             {/* </LazyLoad> */}
             

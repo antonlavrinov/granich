@@ -15,7 +15,7 @@ import {ContentWrapperExternalLink,
         Behance,
         BehanceOut
     } from './styles';
-import LazyLoad from 'react-lazyload';
+
 
 
 const BehanceContent = ({content, behanceIcon, behanceLinkIcon, contentExternalLink}) => {
@@ -35,7 +35,7 @@ const BehanceContent = ({content, behanceIcon, behanceLinkIcon, contentExternalL
                     <ContentDescr>{documentToReactComponents(content.contentDescription.json)}</ContentDescr>
                 </ContentContainer>
                 <ContentButton behance>
-                    <ContentButtonContainer>
+                    {/* <ContentButtonContainer>
                         <ContentButtonWrapper>
                             <ContentButtonText>Изучить</ContentButtonText>
                             <ContentIconsWrapper>
@@ -43,7 +43,7 @@ const BehanceContent = ({content, behanceIcon, behanceLinkIcon, contentExternalL
                                 <BehanceOut fluid={behanceLinkIcon}/>
                             </ContentIconsWrapper>
                         </ContentButtonWrapper>
-                    </ContentButtonContainer>
+                    </ContentButtonContainer> */}
                 </ContentButton>
             {/* </LazyLoad> */}
             

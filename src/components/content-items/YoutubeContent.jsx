@@ -37,7 +37,7 @@ const YoutubeContent = ({content, youtubePng, pinterestLinkIcon}) => {
                     <ContentTitle>{content.contentTitle}</ContentTitle>
                 </ContentContainer>
                 <ContentButton youtube>
-                    <ContentButtonContainer youtube>
+                    {/* <ContentButtonContainer youtube>
                         <ContentButtonWrapper type={content.contentType}>
                             <ContentButtonYoutubeTextWrapper>
                                 <ContentButtonYoutubeText>Посмотреть</ContentButtonYoutubeText>
@@ -49,7 +49,7 @@ const YoutubeContent = ({content, youtubePng, pinterestLinkIcon}) => {
                             </YoutubeIconsWrapper>
 
                         </ContentButtonWrapper>
-                    </ContentButtonContainer>
+                    </ContentButtonContainer> */}
                 </ContentButton>
             {/* </LazyLoad> */}
             

@@ -15,7 +15,7 @@ import {ContentWrapperExternalLink,
         Pinterest,
         PinterestOut
     } from './styles';
-import LazyLoad from 'react-lazyload';
+
 
 
 const PinterestContent = ({content, pinterestIcon, pinterestLinkIcon, contentExternalLink}) => {
@@ -35,7 +35,7 @@ const PinterestContent = ({content, pinterestIcon, pinterestLinkIcon, contentExt
                     <ContentDescr>{documentToReactComponents(content.contentDescription.json)}</ContentDescr>
                 </ContentContainer>
                 <ContentButton pinterest>
-                    <ContentButtonContainer>
+                    {/* <ContentButtonContainer>
                         <ContentButtonWrapper>
                             <ContentButtonText>Изучить</ContentButtonText>
                             <ContentIconsWrapper>
@@ -43,7 +43,7 @@ const PinterestContent = ({content, pinterestIcon, pinterestLinkIcon, contentExt
                                 <PinterestOut fluid={pinterestLinkIcon}/>
                             </ContentIconsWrapper>
                         </ContentButtonWrapper>
-                    </ContentButtonContainer>
+                    </ContentButtonContainer> */}
                 </ContentButton>
             {/* </LazyLoad> */}
 

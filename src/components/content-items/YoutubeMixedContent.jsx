@@ -39,7 +39,7 @@ const YoutubeMixedContent = ({content, youtubePng, mediumIcon, behanceIcon}) => 
                 <ContentTitle>{content.contentTitle}</ContentTitle>
             </ContentContainer>
             <ContentButton>
-                <ContentButtonContainer youtubeMixed>
+                {/* <ContentButtonContainer youtubeMixed>
                     <ContentButtonWrapper youtubeMixed>
                     <ContentButtonWatchBlockWrapper>
                         <ContentButtonBlockTitle>Посмотреть</ContentButtonBlockTitle>
@@ -56,7 +56,7 @@ const YoutubeMixedContent = ({content, youtubePng, mediumIcon, behanceIcon}) => 
                             </ContentButtonReadBlock>
                         </ContentButtonReadBlockWrapper>
                     </ContentButtonWrapper>
-                </ContentButtonContainer>
+                </ContentButtonContainer> */}
             </ContentButton>
         </ContentWrapperLink>
     )
