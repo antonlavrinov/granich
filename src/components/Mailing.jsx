@@ -28,9 +28,9 @@ const ShakeForm = posed.div({
 //     }
 // `
 
-const PrivacyLink = styled(props => <Link {...props}/>)`
+// const PrivacyLink = styled(props => <Link {...props}/>)`
 
-`
+// `
 
 const PrivacyPopupLink = styled.a`
 
