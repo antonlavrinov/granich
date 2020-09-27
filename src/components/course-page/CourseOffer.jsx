@@ -7,7 +7,7 @@ import DurationIcon from '../../assets/svgs/graph-design/graph-design-duration-i
 import DateIcon from '../../assets/svgs/graph-design/graph-design-date-icon.svg';
 import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
-import scrollTo from 'gatsby-plugin-smoothscroll';
+// import scrollTo from 'gatsby-plugin-smoothscroll';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 // import { useSprings, animated, interpolate } from 'react-spring'
 // import { useGesture } from 'react-use-gesture'

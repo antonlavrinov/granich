@@ -6,7 +6,7 @@ import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import PortfolioImageGallery from './portfolio/PortfolioImageGallery';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
-import LazyLoad from 'react-lazyload';
+
 
 
 const PortfolioSection = styled.section`
@@ -290,21 +290,21 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                         })}
 
                     </PortfolioOnePagersWrapper>
-                        {/* <LazyLoad once offsetTop={500} offsetBottom={500}> */}
-                            {imageGallery.length > 0 && (
-                                <PortfolioMiltiPagesWrapper>
-                                    
-                                        {imageGallery.map((multi, idx) => {
-                                            return (
-                                                
-                                                <PortfolioImageGallery key={idx} images={multi}/>
-                                            )
-                                        })}
-                                    
-                                
-                                </PortfolioMiltiPagesWrapper>
-                            )}
-                        {/* </LazyLoad> */}
+
+                    {imageGallery.length > 0 && (
+                        <PortfolioMiltiPagesWrapper>
+                            
+                                {imageGallery.map((multi, idx) => {
+                                    return (
+                                        
+                                        <PortfolioImageGallery key={idx} images={multi}/>
+                                    )
+                                })}
+                            
+                        
+                        </PortfolioMiltiPagesWrapper>
+                    )}
+
                     
 
                     
