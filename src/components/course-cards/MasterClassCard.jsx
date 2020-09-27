@@ -1,7 +1,7 @@
 import React from 'react'
 import {
-    RedArrow,
-    BlackArrow,
+    // RedArrow,
+    // BlackArrow,
     CourseWrapper,
     CourseContainer,
     CourseButtonContainer,
@@ -17,7 +17,7 @@ import {
     CourseTeachers,
     CourseTeacher,
     CourseDescr,
-    Calendar
+    // Calendar
 } from './styles';
 
 
@@ -74,7 +74,7 @@ const MasterCard = ({courseData, empty}) => {
                                 <CourseButtonText empty>
                                     Узнать <br/>о дате старта
                                 </CourseButtonText>
-                                <Calendar/>
+                                {/* <Calendar/> */}
                             </>
                         ) : (
 
@@ -84,14 +84,14 @@ const MasterCard = ({courseData, empty}) => {
                                         <CourseButtonText>
                                             Купить
                                         </CourseButtonText>
-                                        <RedArrow/>
+                                        {/* <RedArrow/> */}
                                     </>
                                 ) : (
                                     <>
                                         <CourseButtonText>
                                             Предзаказ
                                         </CourseButtonText>
-                                        <BlackArrow/>
+                                        {/* <BlackArrow/> */}
                                     </>
                                 )}                            
                             

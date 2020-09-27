@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-image';
-import WhiteArrowNewPage from '../../assets/svgs/arrow-white-newpage.svg';
-import BlackArrowNewPage from '../../assets/svgs/arrow-black-newpage.svg';
+// import WhiteArrowNewPage from '../../assets/svgs/arrow-white-newpage.svg';
+// import BlackArrowNewPage from '../../assets/svgs/arrow-black-newpage.svg';
 // import { Link } from 'gatsby';
 import CogwheelIcon from '../../assets/svgs/cogwheels.svg';
-import CalendarIcon from '../../assets/svgs/empty_calendar.svg';
+// import CalendarIcon from '../../assets/svgs/empty_calendar.svg';
 
 export const Cogwheel = styled(props => <CogwheelIcon {...props}/>)`
     width: 5vw;
@@ -17,28 +17,28 @@ export const Cogwheel = styled(props => <CogwheelIcon {...props}/>)`
 
 `
 
-export const RedArrow = styled(props => <WhiteArrowNewPage {...props}/>)`
-    width: 3.1vw; 
-    @media only screen and (max-width: 575px) {
-        width: 7.5vw; 
-        margin-right: -0.5vw;
-    }
-`
-export const BlackArrow = styled(props => <BlackArrowNewPage {...props}/>)`
-    width: 3.1vw; 
-    @media only screen and (max-width: 575px) {
-        width: 7.5vw; 
-        margin-right: -0.5vw;  
-    }
-`
+// export const RedArrow = styled(props => <WhiteArrowNewPage {...props}/>)`
+//     width: 3.1vw; 
+//     @media only screen and (max-width: 575px) {
+//         width: 7.5vw; 
+//         margin-right: -0.5vw;
+//     }
+// `
+// export const BlackArrow = styled(props => <BlackArrowNewPage {...props}/>)`
+//     width: 3.1vw; 
+//     @media only screen and (max-width: 575px) {
+//         width: 7.5vw; 
+//         margin-right: -0.5vw;  
+//     }
+// `
 
-export const Calendar = styled(props => <CalendarIcon {...props}/>)`
-    width: 3.1vw; 
-    @media only screen and (max-width: 575px) {
-        width: 7.5vw; 
-        margin-right: -0.5vw;  
-    }
-`
+// export const Calendar = styled(props => <CalendarIcon {...props}/>)`
+//     width: 3.1vw; 
+//     @media only screen and (max-width: 575px) {
+//         width: 7.5vw; 
+//         margin-right: -0.5vw;  
+//     }
+// `
 
 
 

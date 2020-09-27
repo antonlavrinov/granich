@@ -1,7 +1,7 @@
 import React from 'react'
 import {
-    RedArrow,
-    BlackArrow,
+    // RedArrow,
+    // BlackArrow,
     CourseWrapper,
     CourseContainer,
     CourseButtonContainer,
@@ -19,7 +19,7 @@ import {
     CourseDuration,
     CourseTeachers,
     CourseTeacher,
-    Calendar
+    // Calendar
 } from './styles';
 
 
@@ -83,7 +83,7 @@ const CourseCard = ({courseData, empty}) => {
                                 <CourseButtonText empty>
                                     Узнать <br/>о дате старта
                                 </CourseButtonText>
-                                <Calendar/>
+                                {/* <Calendar/> */}
                             </>
                         ) : (
                             <>
@@ -93,7 +93,7 @@ const CourseCard = ({courseData, empty}) => {
                                         <CourseButtonText>
                                             Участвовать
                                         </CourseButtonText>
-                                        <RedArrow/>
+                                        {/* <RedArrow/> */}
                                         
                                     </>
                                 ) : (
@@ -101,7 +101,7 @@ const CourseCard = ({courseData, empty}) => {
                                         <CourseButtonText>
                                             Узнать <br/>о наборе
                                         </CourseButtonText>
-                                        <BlackArrow/>
+                                        {/* <BlackArrow/> */}
                                     </>
                                 )}                            
                             </>
