@@ -230,7 +230,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
          ogImage={ogImage}
          url="https://granich.design/osoznanny-graph-design" />
     <div className="section-top-block"></div>
-    <CourseOffer data={data.offer}/>
+    {/* <CourseOffer data={data.offer}/> */}
     <CourseExplanations data={data.explanations}/>
     {/* <CourseExample/>
     <CourseForWhom data={data.forWhom}/>
