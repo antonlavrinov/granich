@@ -17,34 +17,38 @@ import {ContentWrapperLink,
 
 
     } from './styles';
+import LazyLoad from 'react-lazyload';
 
 
 const PodborkaContent = ({content, podborkaLinkIcon}) => {
     return (
         <ContentWrapperLink className="content" podborka href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
-            {/* <ContentContainer>
-                <ContentTagList>
-                    {content.contentTags.map((contentTag, idx) => {
-                        return (
-                            <ContentTag key={idx}>{contentTag}</ContentTag>
-                        )
-                        
-                    })}
-                </ContentTagList>
-                <ContentImage fluid={content.contentImage.fluid}></ContentImage>
-                <ContentTitle>{content.contentTitle}</ContentTitle>
-                <ContentDescr>{documentToReactComponents(content.contentDescription.json)}</ContentDescr>
-            </ContentContainer>
-            <ContentButton podborka>
-                <ContentButtonContainer>
-                    <ContentButtonWrapper>
-                        <ContentButtonText>Изучить</ContentButtonText>
-                        <ContentIconsWrapper>
-                            <PodborkaOut fluid={podborkaLinkIcon}/>
-                        </ContentIconsWrapper>
-                    </ContentButtonWrapper>
-                </ContentButtonContainer>
-            </ContentButton> */}
+            {/* <LazyLoad once> */}
+                <ContentContainer>
+                    <ContentTagList>
+                        {content.contentTags.map((contentTag, idx) => {
+                            return (
+                                <ContentTag key={idx}>{contentTag}</ContentTag>
+                            )
+                            
+                        })}
+                    </ContentTagList>
+                    <ContentImage fluid={content.contentImage.fluid}></ContentImage>
+                    <ContentTitle>{content.contentTitle}</ContentTitle>
+                    <ContentDescr>{documentToReactComponents(content.contentDescription.json)}</ContentDescr>
+                </ContentContainer>
+                <ContentButton podborka>
+                    <ContentButtonContainer>
+                        <ContentButtonWrapper>
+                            <ContentButtonText>Изучить</ContentButtonText>
+                            <ContentIconsWrapper>
+                                <PodborkaOut fluid={podborkaLinkIcon}/>
+                            </ContentIconsWrapper>
+                        </ContentButtonWrapper>
+                    </ContentButtonContainer>
+                </ContentButton>
+            {/* </LazyLoad> */}
+            
         </ContentWrapperLink>
     )
 }
