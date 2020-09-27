@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import "normalize.css";
 import {GlobalStyle} from './style';
 import '../styles/App.scss';
-import Footer from "./Footer";
+// import Footer from "./Footer";
 // import SideButtons from "./SideButtons";
 
 
@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
         <GlobalStyle/>
             <main>{children}</main>
         {/* <SideButtons/> */}
-        <Footer/>
+        {/* <Footer/> */}
     </>
   )
 }

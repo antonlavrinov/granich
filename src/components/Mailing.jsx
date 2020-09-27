@@ -5,7 +5,7 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import { Container } from './style';
 import posed from "react-pose";
-import Link from 'gatsby-link';
+// import Link from 'gatsby-link';
 
 const ShakeForm = posed.div({
     shake: {
@@ -413,17 +413,7 @@ const Mailing = ({popup}) => {
 
                                                             <FormCheckboxLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">
                                                                 <FormCheckboxLabelText errorMessage={errors.politikaCheckbox && touched.politikaCheckbox ? errors.politikaCheckbox : 0}>
-                                                                    {popup ? (
-                                                                        <>
-                                                                            Принять<PrivacyPopupLink href="/privacy"> политику конфиденциальности</PrivacyPopupLink>
-                                                                        </>
-                                                                    ) : (
-                                                                        <>
-                                                                            Принять<PrivacyLink to="/privacy"> политику конфиденциальности</PrivacyLink>
-                                                                        </>
-                                                                        
-                                                                    )}
-                                                                    
+                                                                    Принять<PrivacyPopupLink href="/privacy"> политику конфиденциальности</PrivacyPopupLink>
                                                                 </FormCheckboxLabelText>
                                                             </FormCheckboxLabel> 
                                                             <input type="hidden" id="2588475f67e38dc85f8" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value=""/>
