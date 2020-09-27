@@ -19,6 +19,7 @@ import {
 import 'react-accessible-accordion/dist/fancy-example.css';
 import PlusImage from '../../assets/images/plus.png';
 import MinusImage from '../../assets/images/minus.png';
+import LazyLoad from 'react-lazyload';
 
 const toggle = {
     cursor: 'pointer',
@@ -510,29 +511,31 @@ const CourseAnswers = ({data, courseStatus}) => {
                             })}
                         </AnswersAccordeon>
                         <AnswersAccordionMobile preExpanded={[0]} allowMultipleExpanded allowZeroExpanded>
-                        {data.edges.map((tab, idx) => {
-                            const type = tab.node.answersTagType;
-                            const tag = tab.node.answersTagName;
-                            return (
-                                <AnswersAccordionItem uuid={idx} key={tab.node.id}>
-                                    <AnswersAccordionHeading>
-                                        <AccordionItemButton className="accordion-answers-button">
-                                            <AnswersLessonAndLineWrapper>
-                                                <AnswersTagColumn>
-                                                    <AnswersTag type={type ? 1 : 0}>{tag}</AnswersTag>
-                                                </AnswersTagColumn>
-                                                <AnswersItemLineMobile/>
-                                            </AnswersLessonAndLineWrapper>                                         
-                                        </AccordionItemButton>
-                                    </AnswersAccordionHeading>
-                                    <AccordionItemPanel className="accordion__panel accordion__panel_answers">
-                                            {tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode && <AnswerCategoryColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode.json)}</AnswerCategoryColumn>}
-                                            {tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode && <AnswerCategoryColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode.json)}</AnswerCategoryColumn>} 
-                                    </AccordionItemPanel>
-                                </AnswersAccordionItem>
-                            )
-                        } )}
-
+                            <LazyLoad once>
+                                {data.edges.map((tab, idx) => {
+                                    const type = tab.node.answersTagType;
+                                    const tag = tab.node.answersTagName;
+                                    return (
+                                        <AnswersAccordionItem uuid={idx} key={tab.node.id}>
+                                            <AnswersAccordionHeading>
+                                                <AccordionItemButton className="accordion-answers-button">
+                                                    <AnswersLessonAndLineWrapper>
+                                                        <AnswersTagColumn>
+                                                            <AnswersTag type={type ? 1 : 0}>{tag}</AnswersTag>
+                                                        </AnswersTagColumn>
+                                                        <AnswersItemLineMobile/>
+                                                    </AnswersLessonAndLineWrapper>                                         
+                                                </AccordionItemButton>
+                                            </AnswersAccordionHeading>
+                                            <AccordionItemPanel className="accordion__panel accordion__panel_answers">
+                                                    {tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode && <AnswerCategoryColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode.json)}</AnswerCategoryColumn>}
+                                                    {tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode && <AnswerCategoryColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode.json)}</AnswerCategoryColumn>} 
+                                            </AccordionItemPanel>
+                                        </AnswersAccordionItem>
+                                    )
+                                } )}
+                            </LazyLoad>
+                        
                         </AnswersAccordionMobile>
 
 
