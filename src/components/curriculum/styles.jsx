@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import PlusSign from '../../assets/svgs/plus-sign.svg';
-import MinusSign from '../../assets/svgs/minus-sign.svg';
+// import PlusSign from '../../assets/svgs/plus-sign.svg';
+// import MinusSign from '../../assets/svgs/minus-sign.svg';
 import { animated } from 'react-spring';
 import {
     Accordion,
@@ -207,16 +207,16 @@ export const CurriculumItemLineMobile = styled.div`
 
 //SPRING ACCORDION
 
-export const Plus = styled(props => <PlusSign {...props}/>)`
-    width: 2.3vw;
-    height: 2.3vw;
-    margin-left: auto;
-`
-export const Minus = styled(props => <MinusSign {...props}/>)`
-    width: 2.3vw;
-    height: 2.3vw;
-    margin-left: auto;
-`
+// export const Plus = styled(props => <PlusSign {...props}/>)`
+//     width: 2.3vw;
+//     height: 2.3vw;
+//     margin-left: auto;
+// `
+// export const Minus = styled(props => <MinusSign {...props}/>)`
+//     width: 2.3vw;
+//     height: 2.3vw;
+//     margin-left: auto;
+// `
 
 export const CurriculumItemFrame = styled.div`
     position: relative;
