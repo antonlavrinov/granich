@@ -9,7 +9,7 @@ import Mailing from "../components/Mailing";
 import Manifest from "../components/Manifest";
 import Header from '../components/Header';
 import PreCoursePreparation from "../components/PreCoursePreparation"
-// import OurTeam from "../components/OurTeam"
+import OurTeam from "../components/OurTeam"
 import ogImage from '../assets/images/seo/index.jpg';
 
 
@@ -176,7 +176,7 @@ const IndexPage = ({data}) => {
       {mailingActive && <Mailing/>}
       <div style={{height: '0.2vw', marginTop: '0.5vw'}} id="content"></div>
       <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/>
-      {/* <OurTeam data={data.team}/> */}
+      <OurTeam data={data.team}/>
 
     </Layout>
   )
