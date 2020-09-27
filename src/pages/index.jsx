@@ -27,7 +27,7 @@ export const contentfulQuery = graphql`
               }
               headerImageMobile {
                 fluid(maxWidth: 575) {
-                  ...GatsbyContentfulFluid_withWebp_noBase64
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               headerSubtitleImage {
