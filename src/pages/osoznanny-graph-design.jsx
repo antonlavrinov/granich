@@ -238,7 +238,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
     
     <CourseTrainingPath data={data.trainingPath}/>
-    {/* <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/> */}
+    <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
     <CourseFeatures data={data.features}/>
     {/* <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/> */}
     <div id="participation-section"></div>
