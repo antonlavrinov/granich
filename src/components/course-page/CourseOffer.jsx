@@ -465,7 +465,6 @@ const CourseOffer = ({data}) => {
                         {documentToReactComponents(data.courseMainTitle.json)}
                     </CourseOfferTitle>
                     <CourseOfferMainImage fluid={data.courseMainImage.fluid}/>
-                    <img alt="offer-image" src="|"/>
                     <CourseOfferDescr type={data.courseType}>
                         {data.courseDescr}
                     </CourseOfferDescr>

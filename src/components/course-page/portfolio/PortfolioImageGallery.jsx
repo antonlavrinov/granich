@@ -153,9 +153,9 @@ const PortfolioImageGallery = ({images}) => {
                         <div></div>
                     </div>
                 </div> */}
-                <LazyLoad once>
+                {/* <LazyLoad once>
                     <Slider className="gallery-custom-slider" style={{width: '100%', backgroundSize: `${fullscreen ? 'contain' : "cover"}`}} fluid={item.fluid}></Slider>
-                </LazyLoad>
+                </LazyLoad> */}
             </SliderWrapper>
 
           

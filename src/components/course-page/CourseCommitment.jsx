@@ -59,12 +59,15 @@ const CommitmentImageWrapper = styled.div`
     margin-right: 3vw;
     border-radius: 0.5vw;
     background: #f2f2f2;
+    min-height: 20.5vw;
+    height: 20.5vw;
     @media only screen and (max-width: 575px) {
         min-width: 100%;
         width: 100%;
-        margin-right: 3vw;
         border-radius: 2vw;
         margin-bottom: 5vw;
+        min-height: 44vw;
+        height: 44vw;
 
     }
 `
