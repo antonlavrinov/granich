@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import { Container } from './style';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 import Logo from '../assets/svgs/granich-logo.svg';
 import VisaIcon from '../assets/svgs/Visa.svg';
 import MastercardIcon from '../assets/svgs/Mastercard.svg';
@@ -67,7 +66,7 @@ const FooterWrapper = styled.div`
     }
 `
 
-const LogoWrapper = styled(props => <Link to="/" {...props} />)`
+const LogoWrapper = styled.a`
 //   height: auto;
   fill: var(--granich-black);
   margin-right: 0.7vw;
@@ -191,7 +190,7 @@ const FooterInfoMail = styled.div`
 
     }
 `
-const FooterLink = styled(props => <Link {...props}/>)`
+const FooterLink = styled.a`
     line-height: 1.4;
     color: var(--granich-light-grey);
     font-size: 1.16vw;
@@ -312,7 +311,7 @@ const Footer = () => {
             <Container>
                 <FooterWrapper>
                     <FooterLogoAndInfo>
-                        <LogoWrapper>
+                        <LogoWrapper href="/">
                             <BlackLogo/>
                         </LogoWrapper>
                         
@@ -336,8 +335,8 @@ const Footer = () => {
                         </FooterInfo>
                     </FooterLogoAndInfo>
                     <FooterLinks>
-                        <FooterLink to="/public-offer"><span>Пользовательское <br/>соглашение</span></FooterLink>
-                        <FooterLink to="/privacy"><span>Политика <br/>конфиденциальности</span></FooterLink>
+                        <FooterLink href="/public-offer"><span>Пользовательское <br/>соглашение</span></FooterLink>
+                        <FooterLink href="/privacy"><span>Политика <br/>конфиденциальности</span></FooterLink>
                     </FooterLinks>
                     <FooterCredentialsAndPayment>
                         <FooterCredentials>
