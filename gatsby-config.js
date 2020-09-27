@@ -188,7 +188,7 @@ module.exports = {
         devMode: true,
       },
     },
-    // `gatsby-plugin-remove-serviceworker`,
+    `gatsby-plugin-remove-serviceworker`,
     // {
     //   resolve: `gatsby-plugin-offline`,
     //   options: {
