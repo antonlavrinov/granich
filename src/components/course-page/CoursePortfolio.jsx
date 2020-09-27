@@ -291,7 +291,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
 
                     </PortfolioOnePagersWrapper>
                         {/* <LazyLoad once offsetTop={500} offsetBottom={500}> */}
-                            {imageGallery.length > 0 && (
+                            {/* {imageGallery.length > 0 && (
                                 <PortfolioMiltiPagesWrapper>
                                     
                                         {imageGallery.map((multi, idx) => {
@@ -303,7 +303,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                                     
                                 
                                 </PortfolioMiltiPagesWrapper>
-                            )}
+                            )} */}
                         {/* </LazyLoad> */}
                     
 
