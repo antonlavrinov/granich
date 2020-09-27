@@ -4,23 +4,23 @@ import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import BackgroundImage from 'gatsby-background-image';
-import YoutubeIcon from '../../assets/svgs/youtube-icon.svg';
+// import YoutubeIcon from '../../assets/svgs/youtube-icon.svg';
 import { Modal } from "react-responsive-modal";
 import { INLINES } from '@contentful/rich-text-types'
 import Cross from '../../assets/svgs/cross.svg';
 
 
-const Youtube = styled(props => <YoutubeIcon {...props}/>)`
-    width: 5vw;
-    height: 3.5vw;
-    transition: transform 0.2s ease;
-    @media only screen and (max-width: 575px) {
-        width: 15vw;
-        height: 11.5vw;
-    }
+// const Youtube = styled(props => <YoutubeIcon {...props}/>)`
+//     width: 5vw;
+//     height: 3.5vw;
+//     transition: transform 0.2s ease;
+//     @media only screen and (max-width: 575px) {
+//         width: 15vw;
+//         height: 11.5vw;
+//     }
 
 
-`
+// `
 
 const VideoSection = styled.section`
     margin-top: 1.7vw;
@@ -341,7 +341,9 @@ const options = {
 const VideoItem = ({text, number, image, links, timing, setIsOpen,  videoLink}) => {
     return (
         <VideoItemWrapper>
-            <VideoItemImage fluid={image} onClick={() => setIsOpen(videoLink)}><Youtube/></VideoItemImage>
+            <VideoItemImage fluid={image} onClick={() => setIsOpen(videoLink)}>
+                {/* <Youtube/> */}
+            </VideoItemImage>
             <VideoItemInfo>
                 <VideoItemInfoDetails>
                     <VideoItemNumber>{`№${number}`}</VideoItemNumber>
