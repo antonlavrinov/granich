@@ -22,7 +22,7 @@ import {ContentWrapperLink,
 const YoutubeContent = ({content, youtubePng, pinterestLinkIcon}) => {
     return (
         <ContentWrapperLink className="content" href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
-            <ContentContainer>
+            {/* <ContentContainer>
                 <ContentTagList>
                     {content.contentTags.map((contentTag, idx) => {
                         return (
@@ -48,7 +48,7 @@ const YoutubeContent = ({content, youtubePng, pinterestLinkIcon}) => {
 
                     </ContentButtonWrapper>
                 </ContentButtonContainer>
-            </ContentButton>
+            </ContentButton> */}
         </ContentWrapperLink>
     )
 }

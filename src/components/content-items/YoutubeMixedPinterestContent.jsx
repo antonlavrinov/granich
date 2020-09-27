@@ -25,7 +25,7 @@ import {ContentWrapperLink,
 const YoutubeMixedPinterestContent = ({content, youtubePng, pinterestIcon}) => {
     return (
         <ContentWrapperLink className="content" href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
-            <ContentContainer>
+            {/* <ContentContainer>
                 <ContentTagList>
                     {content.contentTags.map((contentTag, idx) => {
                         return (
@@ -55,7 +55,7 @@ const YoutubeMixedPinterestContent = ({content, youtubePng, pinterestIcon}) => {
                         </ContentButtonReadBlockWrapper>
                     </ContentButtonWrapper>
                 </ContentButtonContainer>
-            </ContentButton>
+            </ContentButton> */}
         </ContentWrapperLink>
     )
 }

@@ -26,7 +26,7 @@ import {ContentWrapperLink,
 const YoutubeMixedContent = ({content, youtubePng, mediumIcon, behanceIcon}) => {
     return (
         <ContentWrapperLink className="content" href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
-            <ContentContainer>
+            {/* <ContentContainer>
                 <ContentTagList>
                     {content.contentTags.map((contentTag, idx) => {
                         return (
@@ -57,7 +57,7 @@ const YoutubeMixedContent = ({content, youtubePng, mediumIcon, behanceIcon}) => 
                         </ContentButtonReadBlockWrapper>
                     </ContentButtonWrapper>
                 </ContentButtonContainer>
-            </ContentButton>
+            </ContentButton> */}
         </ContentWrapperLink>
     )
 }
