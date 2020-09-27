@@ -230,12 +230,12 @@ const OsoznannyGraphDesignPage = ({data}) => (
          ogImage={ogImage}
          url="https://granich.design/osoznanny-graph-design" />
     <div className="section-top-block"></div>
-    {/* <CourseOffer data={data.offer}/> */}
+    <CourseOffer data={data.offer}/>
     <CourseExplanations data={data.explanations}/>
     <CourseExample/>
     <CourseForWhom data={data.forWhom}/>
     <CourseCommitment/>
-    {/* <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
+    <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
     
     <CourseTrainingPath data={data.trainingPath}/>
     <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
@@ -247,7 +247,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     ) : (
       <Mailing/>
     )}
-    <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/> */}
+    <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/>
     
     
 
