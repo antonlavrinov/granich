@@ -2,13 +2,13 @@ import React, {useState} from 'react'
 import { Container } from './style';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image'
-import BehanceIcon from '../assets/svgs/granich-main-team/behance.svg';
-import PinterestIcon from '../assets/svgs/granich-main-team/pinterest.svg';
-import InstagramIcon from '../assets/svgs/granich-main-team/instagram.svg';
-import VKIcon from '../assets/svgs/granich-main-team/vk.svg';
-import TelegramIcon from '../assets/svgs/granich-main-team/telegram.svg';
+// import BehanceIcon from '../assets/svgs/granich-main-team/behance.svg';
+// import PinterestIcon from '../assets/svgs/granich-main-team/pinterest.svg';
+// import InstagramIcon from '../assets/svgs/granich-main-team/instagram.svg';
+// import VKIcon from '../assets/svgs/granich-main-team/vk.svg';
+// import TelegramIcon from '../assets/svgs/granich-main-team/telegram.svg';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import CopyIcon from '../assets/svgs/copy-icon.svg';
+// import CopyIcon from '../assets/svgs/copy-icon.svg';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image';
@@ -59,50 +59,50 @@ const SocialIcon = styled(props => <Img {...props}/>)`
 //     }
 // `
 
-const VK = styled(props => <VKIcon {...props}/>)`
-    width: 2.1vw;
-    height: 2.1vw;
-    @media only screen and (max-width: 575px) {
-        width: 7.5vw;
-        height: 7.5vw;
-    }
-`
-const Pinterest = styled(props => <PinterestIcon {...props}/>)`
-    width: 2vw;
-    height: 2vw;
+// const VK = styled(props => <VKIcon {...props}/>)`
+//     width: 2.1vw;
+//     height: 2.1vw;
+//     @media only screen and (max-width: 575px) {
+//         width: 7.5vw;
+//         height: 7.5vw;
+//     }
+// `
+// const Pinterest = styled(props => <PinterestIcon {...props}/>)`
+//     width: 2vw;
+//     height: 2vw;
 
     
-    @media only screen and (max-width: 575px) {
-        width: 7vw;
-        height: 7vw;
-        margin-bottom: -0.1vw;
-    }
-`
-const Behance = styled(props => <BehanceIcon {...props}/>)`
-    width: 2.1vw;
-    height: 2.1vw;
-    @media only screen and (max-width: 575px) {
-        width: 7.5vw;
-        height: 7.5vw;
-    }
-`
-const Instagram = styled(props => <InstagramIcon {...props}/>)`
-    width: 2.1vw;
-    height: 2.1vw;
-    @media only screen and (max-width: 575px) {
-        width: 7.5vw;
-        height: 7.5vw;
-    }
-`
-const Telegram = styled(props => <TelegramIcon {...props}/>)`
-    width: 2vw;
-    height: 2vw;
-    @media only screen and (max-width: 575px) {
-        width: 7vw;
-        height: 7vw;
-        margin-bottom: -0.1vw;
-    }
-`
+//     @media only screen and (max-width: 575px) {
+//         width: 7vw;
+//         height: 7vw;
+//         margin-bottom: -0.1vw;
+//     }
+// `
+// const Behance = styled(props => <BehanceIcon {...props}/>)`
+//     width: 2.1vw;
+//     height: 2.1vw;
+//     @media only screen and (max-width: 575px) {
+//         width: 7.5vw;
+//         height: 7.5vw;
+//     }
+// `
+// const Instagram = styled(props => <InstagramIcon {...props}/>)`
+//     width: 2.1vw;
+//     height: 2.1vw;
+//     @media only screen and (max-width: 575px) {
+//         width: 7.5vw;
+//         height: 7.5vw;
+//     }
+// `
+// const Telegram = styled(props => <TelegramIcon {...props}/>)`
+//     width: 2vw;
+//     height: 2vw;
+//     @media only screen and (max-width: 575px) {
+//         width: 7vw;
+//         height: 7vw;
+//         margin-bottom: -0.1vw;
+//     }
+// `
 
 
 const OurTeamSection = styled.section`
