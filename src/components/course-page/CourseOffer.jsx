@@ -12,6 +12,7 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 // import { useSprings, animated, interpolate } from 'react-spring'
 // import { useGesture } from 'react-use-gesture'
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
+import { Link } from 'gatsby';
 
 
 const Potok = styled(props => <PotokIcon {...props}/>)`
@@ -241,7 +242,7 @@ const CourseOfferDescr = styled.div`
 
 `
 
-const CourseOfferButton = styled.a`
+const CourseOfferButton = styled(props => <Link {...props}/>)`
   display: inline-flex;
   align-items: center;
   color: white;
@@ -416,10 +417,11 @@ const CourseOffer = ({data}) => {
                             {data.courseDescr}
                         </CourseOfferDescr>
                         {data.courseType === 'Курс' ? (
-                            <CourseOfferButton onClick={() => scrollTo('#participation-section')}><CourseArrowDown/>Участвовать</CourseOfferButton>
+                            <CourseOfferButton to='#participation-section'><CourseArrowDown/>Участвовать</CourseOfferButton>
                         ) : (
-                            <CourseOfferButton onClick={() => scrollTo('#prices-range-section')}  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
+                            <CourseOfferButton to='#participation-section'  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
                         )}
+                       
                     </CourseOfferInfo>
                     {/* <div onClick={() => {
                         trackCustomEvent({
@@ -468,10 +470,11 @@ const CourseOffer = ({data}) => {
                         {data.courseDescr}
                     </CourseOfferDescr>
                     {data.courseType === 'Курс' ? (
-                        <CourseOfferButton onClick={() => scrollTo('#participation-section')}><CourseArrowDown/>Участвовать</CourseOfferButton>
+                        <CourseOfferButton to='#participation-section'><CourseArrowDown/>Участвовать</CourseOfferButton>
                     ) : (
-                         <CourseOfferButton onClick={() => scrollTo('#prices-range-section')}  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
+                         <CourseOfferButton to='#participation-section'  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
                     )}
+                    
                 </CourseOfferWrapperMobile>
             </Container>
 
