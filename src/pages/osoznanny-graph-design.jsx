@@ -232,7 +232,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <div className="section-top-block"></div>
     <CourseOffer data={data.offer}/>
     <CourseExplanations data={data.explanations}/>
-    <CourseExample/>
+    {/* <CourseExample/>
     <CourseForWhom data={data.forWhom}/>
     <CourseCommitment/>
     <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
@@ -247,7 +247,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     ) : (
       <Mailing/>
     )}
-    <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/> 
+    <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/>  */}
     
     
 
