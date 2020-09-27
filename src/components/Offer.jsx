@@ -33,6 +33,7 @@ const OfferMobileSection = styled(props => <BackgroundImage {...props}></Backgro
         position: relative;
         width: 100%;
         letter-spacing: 0em;
+        background-color: var(--granich-black);
         background-size: 'cover';
         background-position: top center;
         background-repeat: 'no-repeat';
