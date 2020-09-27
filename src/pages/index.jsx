@@ -163,7 +163,7 @@ const IndexPage = ({data}) => {
   return (
     <Layout>
       
-      {/* <Header/> */}
+      <Header/>
       <SEO title="Онлайн-школа Granich"
           description="Онлайн-школа Granich"
           keywords={['vhs', 'графсистема']}

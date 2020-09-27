@@ -20,6 +20,7 @@ const OfferSection = styled(props => <BackgroundImage {...props}></BackgroundIma
     background-size: 'cover';
     background-repeat: 'no-repeat';
     background-size: '100%';
+    background-color: var(--granich-black);
     @media only screen and (max-width: 575px) {
         display: none;
     }
