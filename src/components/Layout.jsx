@@ -11,7 +11,7 @@ import "normalize.css";
 import {GlobalStyle} from './style';
 import '../styles/App.scss';
 import Footer from "./Footer";
-// import SideButtons from "./SideButtons";
+import SideButtons from "./SideButtons";
 
 
 
@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
     <>
         <GlobalStyle/>
             <main>{children}</main>
-        {/* <SideButtons/> */}
+        <SideButtons/>
         <Footer/>
     </>
   )

@@ -312,6 +312,8 @@ const SideButtons = () => {
     const toggleChatOpen = (boolean) => {
         setChatOpen(boolean)
     }
+
+
     return (
         <SideButtonsSection>
             <SideButtonsWrapper>
