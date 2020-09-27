@@ -2,8 +2,8 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
-import TelegramIcon from '../../assets/svgs/telegram-small-link-out.svg';
-import TelegramLinkOut from '../../assets/svgs/telegram-small-icon.svg';
+// import TelegramIcon from '../../assets/svgs/telegram-small-link-out.svg';
+// import TelegramLinkOut from '../../assets/svgs/telegram-small-icon.svg';
 import ArrowIcon from '../../assets/svgs/white-arrow-inter.svg';
 
 const Arrow = styled(props => <ArrowIcon {...props}/>)`
@@ -18,23 +18,23 @@ const Arrow = styled(props => <ArrowIcon {...props}/>)`
 `
 
 
-const Telegram = styled(props => <TelegramIcon {...props}/>)`
-    width: 2.3vw;
-    height: 2.3vw;
-    @media only screen and (max-width: 575px) {
-        width: 7.5vw;
-        height: 7.5vw;
-    }
-`
+// const Telegram = styled(props => <TelegramIcon {...props}/>)`
+//     width: 2.3vw;
+//     height: 2.3vw;
+//     @media only screen and (max-width: 575px) {
+//         width: 7.5vw;
+//         height: 7.5vw;
+//     }
+// `
 
-const TelegramOut = styled(props => <TelegramLinkOut {...props}/>)`
-    width: 2.3vw;
-    height: 2.3vw;
-    @media only screen and (max-width: 575px) {
-        width: 7.5vw;
-        height: 7.5vw;
-    }
-`
+// const TelegramOut = styled(props => <TelegramLinkOut {...props}/>)`
+//     width: 2.3vw;
+//     height: 2.3vw;
+//     @media only screen and (max-width: 575px) {
+//         width: 7.5vw;
+//         height: 7.5vw;
+//     }
+// `
 
 const ReviewsSection = styled.section`
     // margin-bottom: 4vw;
@@ -305,7 +305,7 @@ const Review = ({image, link}) => {
             <ReviewButton href={link} target="_blank">
                 <span>Показать полностью</span>
                 <ReviewButtonIcons>
-                    <Telegram/><TelegramOut/>
+                    {/* <Telegram/><TelegramOut/> */}
                 </ReviewButtonIcons> 
             </ReviewButton>
         </ReviewWrapper>
