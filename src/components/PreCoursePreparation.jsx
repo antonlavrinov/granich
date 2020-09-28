@@ -3,7 +3,7 @@ import { Container } from './style';
 import styled from 'styled-components';
 import PreparationContent from './PreparationContent';
 import TagCross from '../assets/svgs/tag-cross-icon-01.svg';
-
+import LazyLoad from 'react-lazyload';
 
 const PreparationSection = styled.section`
     margin-top: 4vw;
@@ -275,6 +275,7 @@ const PreparationButtonMoreText = styled.div`
 
 
 const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
+
     //initial data contents(recommended)
     const [data, setData] = useState(dataRecommended);
 
@@ -465,14 +466,14 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
                             })}
                         </PreparationTags>
                     </PreparationMobileWrapper>
-                    
-                    <PreparationContents>
-                        {filteredContents.slice(0, contentPagination).map((content, idx) => {
-                            return (
-                                <PreparationContent  key={idx} content={content}/>
-                            )
-                        })}
-                    </PreparationContents>
+                    <LazyLoad once>
+                        <PreparationContents>
+                            {filteredContents.slice(0, contentPagination).map((content, idx) => {
+                                return (
+                                    <PreparationContent  key={idx} content={content}/>
+                                )
+                            })}
+                        </PreparationContents>
 
                         {filteredContents.length > 12 && (
                             <>
@@ -482,6 +483,10 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
                             </>
                             
                         )}
+
+                    </LazyLoad>
+                    
+                    
                 </PreparationWrapper>
             </Container>
 
