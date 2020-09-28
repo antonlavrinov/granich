@@ -11,10 +11,10 @@ export const onServiceWorkerUpdateReady = () => window.location.reload();
 
 
 
-exports.onRouteUpdate = () => {
-    if (typeof window !== `undefined`) { window.scrollTo(0, 0)}
-  }
+// exports.onRouteUpdate = () => {
+//     if (typeof window !== `undefined`) { window.scrollTo(0, 0)}
+//   }
   
-exports.shouldUpdateScroll = args => {
-    return false;
-};
+// exports.shouldUpdateScroll = args => {
+//     return false;
+// };
