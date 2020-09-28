@@ -2,9 +2,9 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
-// import TelegramIcon from '../../assets/svgs/telegram-small-link-out.svg';
-// import TelegramLinkOut from '../../assets/svgs/telegram-small-icon.svg';
 import ArrowIcon from '../../assets/svgs/white-arrow-inter.svg';
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image';
 
 const Arrow = styled(props => <ArrowIcon {...props}/>)`
     width: 1vw;
@@ -18,23 +18,25 @@ const Arrow = styled(props => <ArrowIcon {...props}/>)`
 `
 
 
-// const Telegram = styled(props => <TelegramIcon {...props}/>)`
-//     width: 2.3vw;
-//     height: 2.3vw;
-//     @media only screen and (max-width: 575px) {
-//         width: 7.5vw;
-//         height: 7.5vw;
-//     }
-// `
+const Telegram = styled(props => <Img {...props}/>)`
+    width: 2.3vw;
+    height: 2.3vw;
+    @media only screen and (max-width: 575px) {
+        width: 7.5vw;
+        height: 7.5vw;
+    }
+`
 
-// const TelegramOut = styled(props => <TelegramLinkOut {...props}/>)`
-//     width: 2.3vw;
-//     height: 2.3vw;
-//     @media only screen and (max-width: 575px) {
-//         width: 7.5vw;
-//         height: 7.5vw;
-//     }
-// `
+const TelegramOut = styled(props => <Img {...props}/>)`
+    width: 2.3vw;
+    height: 2.3vw;
+    margin-right: -0.4vw;
+    @media only screen and (max-width: 575px) {
+        width: 7.5vw;
+        height: 7.5vw;
+        margin-right: -1.3vw;
+    }
+`
 
 const ReviewsSection = styled.section`
     // margin-bottom: 4vw;
@@ -136,18 +138,6 @@ const ReviewButtonIcons = styled.div`
     margin-left: auto;
     display: flex;
 
-    svg {
-        :first-child {
-            margin-right: -0.4vw;
-        }
-    }
-    @media only screen and (max-width: 575px) {
-        svg {
-            :first-child {
-                margin-right: -1.3vw;
-            }
-        }
-    }
     @media only screen and (max-width: 575px) {
         margin-top: 1vw;
     }
@@ -298,14 +288,14 @@ const ReviewsLinkVk = styled.a`
 
 
 
-const Review = ({image, link}) => {
+const Review = ({image, link, telegramIcon, telegramIconOut}) => {
     return (
         <ReviewWrapper>
             <ReviewImage fluid={image}></ReviewImage>
             <ReviewButton href={link} target="_blank">
                 <span>Показать полностью</span>
                 <ReviewButtonIcons>
-                    {/* <Telegram/><TelegramOut/> */}
+                    <TelegramOut fluid={telegramIconOut}/><Telegram fluid={telegramIcon}/>
                 </ReviewButtonIcons> 
             </ReviewButton>
         </ReviewWrapper>
@@ -314,6 +304,28 @@ const Review = ({image, link}) => {
 
 
 const CourseReviews = ({data, dataHeader, masterClass}) => {
+    const dataImage = useStaticQuery(graphql`
+        query reviewsIcons {
+            telegramReviewsIcon: file(relativePath: { eq: "graph-design/reviews/telegram-small-icon-01.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            telegramReviewsIconOut: file(relativePath: { eq: "graph-design/reviews/telegram-small-link-out-01.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+        }
+    `)
+
+    const telegramIcon = dataImage.telegramReviewsIcon.childImageSharp.fluid;
+    const telegramIconOut = dataImage.telegramReviewsIconOut.childImageSharp.fluid;
 
     return (
         <ReviewsSection>
@@ -328,7 +340,7 @@ const CourseReviews = ({data, dataHeader, masterClass}) => {
                     <ReviewsList>
                         {data.edges.map((review) => {
                             return (
-                                <Review key={review.node.id} image={review.node.reviewsImage.fluid} link={review.node.reviewsLink}/>
+                                <Review telegramIcon={telegramIcon} telegramIconOut={telegramIconOut} key={review.node.id} image={review.node.reviewsImage.fluid} link={review.node.reviewsLink}/>
                             )
                         })}
                     </ReviewsList>

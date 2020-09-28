@@ -6,6 +6,8 @@ import BackgroundImage from 'gatsby-image';
 // import { Link } from 'gatsby';
 import CogwheelIcon from '../../assets/svgs/cogwheels.svg';
 // import CalendarIcon from '../../assets/svgs/empty_calendar.svg';
+import Img from 'gatsby-image';
+
 
 export const Cogwheel = styled(props => <CogwheelIcon {...props}/>)`
     width: 5vw;
@@ -17,13 +19,13 @@ export const Cogwheel = styled(props => <CogwheelIcon {...props}/>)`
 
 `
 
-// export const RedArrow = styled(props => <WhiteArrowNewPage {...props}/>)`
-//     width: 3.1vw; 
-//     @media only screen and (max-width: 575px) {
-//         width: 7.5vw; 
-//         margin-right: -0.5vw;
-//     }
-// `
+export const ArrowIcon = styled(props => <Img {...props}/>)`
+    width: 3.1vw; 
+    @media only screen and (max-width: 575px) {
+        width: 7.5vw; 
+        margin-right: -0.5vw;
+    }
+`
 // export const BlackArrow = styled(props => <BlackArrowNewPage {...props}/>)`
 //     width: 3.1vw; 
 //     @media only screen and (max-width: 575px) {

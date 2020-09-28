@@ -6,8 +6,6 @@ import {ContentWrapperLink,
         ContentImage,
         ContentTitle,
         ContentButton,
-        ContentButtonContainer,
-        ContentButtonWrapper,
         ContentButtonWatchBlockWrapper,
         ContentButtonBlockTitle,
         ContentButtonWatchBlock,
@@ -39,24 +37,20 @@ const YoutubeMixedContent = ({content, youtubePng, mediumIcon, behanceIcon}) => 
                 <ContentTitle>{content.contentTitle}</ContentTitle>
             </ContentContainer>
             <ContentButton>
-                {/* <ContentButtonContainer youtubeMixed>
-                    <ContentButtonWrapper youtubeMixed>
-                    <ContentButtonWatchBlockWrapper>
-                        <ContentButtonBlockTitle>Посмотреть</ContentButtonBlockTitle>
-                            <ContentButtonWatchBlock>
-                                <YoutubeMixed fluid={youtubePng}/>
-                                {content.contentYoutubeTiming && <ContentButtonMixedTiming>{content.contentYoutubeTiming}</ContentButtonMixedTiming>}  
-                            </ContentButtonWatchBlock>
-                        </ContentButtonWatchBlockWrapper>
-                        <ContentButtonReadBlockWrapper>
-                            <ContentButtonBlockTitle>Почитать</ContentButtonBlockTitle>
-                            <ContentButtonReadBlock>
-                                <Medium fluid={mediumIcon}/>
-                                <BehanceMixed fluid={behanceIcon}/>
-                            </ContentButtonReadBlock>
-                        </ContentButtonReadBlockWrapper>
-                    </ContentButtonWrapper>
-                </ContentButtonContainer> */}
+                <ContentButtonWatchBlockWrapper>
+                    <ContentButtonBlockTitle>Посмотреть</ContentButtonBlockTitle>
+                        <ContentButtonWatchBlock>
+                            <YoutubeMixed fluid={youtubePng}/>
+                            {content.contentYoutubeTiming && <ContentButtonMixedTiming>{content.contentYoutubeTiming}</ContentButtonMixedTiming>}  
+                        </ContentButtonWatchBlock>
+                    </ContentButtonWatchBlockWrapper>
+                    <ContentButtonReadBlockWrapper>
+                        <ContentButtonBlockTitle>Почитать</ContentButtonBlockTitle>
+                        <ContentButtonReadBlock>
+                            <Medium fluid={mediumIcon}/>
+                            <BehanceMixed fluid={behanceIcon}/>
+                        </ContentButtonReadBlock>
+                    </ContentButtonReadBlockWrapper>
             </ContentButton>
         </ContentWrapperLink>
     )

@@ -1,5 +1,4 @@
 import React from 'react'
-import LazyLoad from 'react-lazyload';
 import {ContentWrapperLink,
         ContentContainer,
         ContentTagList,
@@ -7,8 +6,6 @@ import {ContentWrapperLink,
         ContentImage,
         ContentTitle,
         ContentButton,
-        ContentButtonContainer,
-        ContentButtonWrapper,
         ContentButtonYoutubeTextWrapper,
         ContentButtonYoutubeText,
         ContentButtonYoutubeTiming,
@@ -23,7 +20,6 @@ import {ContentWrapperLink,
 const YoutubeContent = ({content, youtubePng, pinterestLinkIcon}) => {
     return (
         <ContentWrapperLink className="content" href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
-            {/* <LazyLoad once> */}
                 <ContentContainer>
                     <ContentTagList>
                         {content.contentTags.map((contentTag, idx) => {
@@ -37,8 +33,6 @@ const YoutubeContent = ({content, youtubePng, pinterestLinkIcon}) => {
                     <ContentTitle>{content.contentTitle}</ContentTitle>
                 </ContentContainer>
                 <ContentButton youtube>
-                    {/* <ContentButtonContainer youtube>
-                        <ContentButtonWrapper type={content.contentType}>
                             <ContentButtonYoutubeTextWrapper>
                                 <ContentButtonYoutubeText>Посмотреть</ContentButtonYoutubeText>
                                 {content.contentYoutubeTiming && <ContentButtonYoutubeTiming>{content.contentYoutubeTiming}</ContentButtonYoutubeTiming>}  
@@ -47,11 +41,8 @@ const YoutubeContent = ({content, youtubePng, pinterestLinkIcon}) => {
                                 <Youtube fluid={youtubePng}/>
                                 <PinterestOut fluid={pinterestLinkIcon}/>
                             </YoutubeIconsWrapper>
-
-                        </ContentButtonWrapper>
-                    </ContentButtonContainer> */}
                 </ContentButton>
-            {/* </LazyLoad> */}
+
             
         </ContentWrapperLink>
     )

@@ -1,5 +1,4 @@
 import React from 'react'
-import LazyLoad from 'react-lazyload';
 import {ContentWrapperLink,
         ContentContainer,
         ContentTagList,
@@ -7,8 +6,6 @@ import {ContentWrapperLink,
         ContentImage,
         ContentTitle,
         ContentButton,
-        ContentButtonContainer,
-        ContentButtonWrapper,
         ContentButtonWatchBlockWrapper,
         ContentButtonBlockTitle,
         ContentButtonWatchBlock,
@@ -26,7 +23,7 @@ import {ContentWrapperLink,
 const YoutubeMixedPinterestContent = ({content, youtubePng, pinterestIcon}) => {
     return (
         <ContentWrapperLink className="content" href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
-           {/* <LazyLoad once> */}
+
             <ContentContainer>
                     <ContentTagList>
                         {content.contentTags.map((contentTag, idx) => {
@@ -40,25 +37,20 @@ const YoutubeMixedPinterestContent = ({content, youtubePng, pinterestIcon}) => {
                     <ContentTitle>{content.contentTitle}</ContentTitle>
                 </ContentContainer>
                 <ContentButton>
-                    {/* <ContentButtonContainer youtubeMixed>
-                        <ContentButtonWrapper youtubeMixed>
-                        <ContentButtonWatchBlockWrapper>
-                            <ContentButtonBlockTitle>Посмотреть</ContentButtonBlockTitle>
-                                <ContentButtonWatchBlock>
-                                    <YoutubeMixed fluid={youtubePng}/>
-                                    {content.contentYoutubeTiming && <ContentButtonMixedTiming>{content.contentYoutubeTiming}</ContentButtonMixedTiming>}  
-                                </ContentButtonWatchBlock>
-                            </ContentButtonWatchBlockWrapper>
-                            <ContentButtonReadBlockWrapper mixedPinterest>
-                                <ContentButtonBlockTitle>Изучить</ContentButtonBlockTitle>
-                                <ContentButtonReadBlock>
-                                    <BehanceMixed fluid={pinterestIcon}/>
-                                </ContentButtonReadBlock>
-                            </ContentButtonReadBlockWrapper>
-                        </ContentButtonWrapper>
-                    </ContentButtonContainer> */}
+                    <ContentButtonWatchBlockWrapper>
+                        <ContentButtonBlockTitle>Посмотреть</ContentButtonBlockTitle>
+                            <ContentButtonWatchBlock>
+                                <YoutubeMixed fluid={youtubePng}/>
+                                {content.contentYoutubeTiming && <ContentButtonMixedTiming>{content.contentYoutubeTiming}</ContentButtonMixedTiming>}  
+                            </ContentButtonWatchBlock>
+                        </ContentButtonWatchBlockWrapper>
+                        <ContentButtonReadBlockWrapper mixedPinterest>
+                            <ContentButtonBlockTitle>Изучить</ContentButtonBlockTitle>
+                            <ContentButtonReadBlock>
+                                <BehanceMixed fluid={pinterestIcon}/>
+                            </ContentButtonReadBlock>
+                        </ContentButtonReadBlockWrapper>
                 </ContentButton>
-           {/* </LazyLoad> */}
             
         </ContentWrapperLink>
     )

@@ -6,6 +6,8 @@ import * as Yup from 'yup';
 import { Container } from './style';
 import posed from "react-pose";
 // import Link from 'gatsby-link';
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image';
 
 const ShakeForm = posed.div({
     shake: {
@@ -21,12 +23,17 @@ const ShakeForm = posed.div({
     }
   });
 
-// const ArrowRightButton = styled(props => <BlackArrowRight {...props}/>)`
-//     width: 3.6vw;
-//     @media only screen and (max-width: 575px) {
-//         width: 11.5vw;
-//     }
-// `
+const ArrowRightButton = styled(props => <Img {...props}/>)`
+    width: 3.6vw;
+    transition: all 0.2s ease;
+    :hover {
+        transform: scale(1.1);
+    }
+
+    @media only screen and (max-width: 575px) {
+        width: 11.5vw;
+    }
+`
 
 // const PrivacyLink = styled(props => <Link {...props}/>)`
 
@@ -145,12 +152,7 @@ const MailingButton = styled.button`
         cursor: pointer;
 
     }
-    svg {
-        transition: all 0.2s ease;
-        :hover {
-            transform: scale(1.1);
-        }
-    }
+
     @media only screen and (max-width: 575px) {
         min-width: 14vw;
         min-height: 14vw;
@@ -310,6 +312,24 @@ const Mailing = ({popup}) => {
         if (!props.validationSchema) return true;
         return props.validationSchema.isValidSync(props.initialValues);
       }
+    
+      const data = useStaticQuery(graphql`
+        query mailingIcon {
+            arrowBlackRight: file(relativePath: { eq: "arrow-black-right-01.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+        }
+    `)
+
+    const arrowRight = data.arrowBlackRight.childImageSharp.fluid;
+
+
+
     return (
         <MailingSection>
             <Container>
@@ -393,7 +413,7 @@ const Mailing = ({popup}) => {
                                                                                     return true;
                                                                             }}
                                                                             disabled={isSubmitting}>
-                                                                                {/* <ArrowRightButton/> */}
+                                                                                <ArrowRightButton fluid={arrowRight}/>
                                                                                 </MailingButton>
                                                             
                                                         

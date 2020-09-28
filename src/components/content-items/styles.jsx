@@ -249,33 +249,16 @@ export const  ContentDescr = styled.div`
     }
 `
 
-export const  ContentButtonContainer = styled.div`
-    padding: 1vw 1.1vw 1vw;
-    ${props => props.youtube && `
-        display: flex;
-        padding: 0.9vw 1.1vw 0.9vw;
-    `}
-    ${props => props.youtubeMixed && `
-        display: flex;
-        padding: 0.3vw 1.1vw 1vw;
-    `}
-    @media only screen and (max-width: 575px) {
-        padding: 2.4vw 3vw 2.4vw;
-        ${props => props.youtube && `
-        display: flex;
-        padding: 2.4vw 3vw 2.4vw;
-        `}
-        ${props => props.youtubeMixed && `
-            display: flex;
-            padding: 1.5vw 3vw 2.4vw;
-        `}
-    }
-`
+
 
 export const  ContentButton = styled.div`
     background: none;
     border-radius: 0 0 0.5vw 0.5vw;
     margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw 1.1vw 1vw;
+    align-items: center;
     ${props => props.youtube && `
     background: #222222;
     ` }
@@ -292,23 +275,11 @@ export const  ContentButton = styled.div`
 
     @media only screen and (max-width: 575px) {
         border-radius: 0 0 1.5vw 1.5vw;
+        padding: 2.4vw 3vw 2.4vw;
     }
 `
 
-export const  ContentButtonWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    ${props => props.podborka && `
-        height: 2.2vw;
-    `
-    }
-    ${props => props.youtubeMixed && `
-        align-items: start;
-    `
-    }
-`
+
 
 
 export const  ContentButtonText = styled.div`

@@ -8,8 +8,6 @@ import {ContentWrapperExternalLink,
         ContentTitle,
         ContentDescr,
         ContentButton,
-        ContentButtonContainer,
-        ContentButtonWrapper,
         ContentButtonText,
         ContentIconsWrapper,
         Pinterest,
@@ -21,7 +19,6 @@ import {ContentWrapperExternalLink,
 const PinterestContent = ({content, pinterestIcon, pinterestLinkIcon, contentExternalLink}) => {
     return (
         <ContentWrapperExternalLink className="content" pinterest rel="noopener noreferrer" href={contentExternalLink} target="_blank">
-            {/* <LazyLoad once> */}
                 <ContentContainer>
                     <ContentTagList>
                         {content.contentTags.map((contentTag, idx) => {
@@ -35,17 +32,12 @@ const PinterestContent = ({content, pinterestIcon, pinterestLinkIcon, contentExt
                     <ContentDescr>{documentToReactComponents(content.contentDescription.json)}</ContentDescr>
                 </ContentContainer>
                 <ContentButton pinterest>
-                    {/* <ContentButtonContainer>
-                        <ContentButtonWrapper>
                             <ContentButtonText>Изучить</ContentButtonText>
                             <ContentIconsWrapper>
                                 <Pinterest fluid={pinterestIcon}/>
                                 <PinterestOut fluid={pinterestLinkIcon}/>
                             </ContentIconsWrapper>
-                        </ContentButtonWrapper>
-                    </ContentButtonContainer> */}
                 </ContentButton>
-            {/* </LazyLoad> */}
 
             
         </ContentWrapperExternalLink>

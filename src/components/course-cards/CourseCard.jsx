@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    // RedArrow,
+    ArrowIcon,
     // BlackArrow,
     CourseWrapper,
     CourseContainer,
@@ -24,7 +24,8 @@ import {
 
 
 
-const CourseCard = ({courseData, empty}) => {
+const CourseCard = ({courseData, empty, calendar, arrowWhite, arrowBlack}) => {
+    
     return (
         <CourseWrapper>
             <CourseContainer>
@@ -83,7 +84,7 @@ const CourseCard = ({courseData, empty}) => {
                                 <CourseButtonText empty>
                                     Узнать <br/>о дате старта
                                 </CourseButtonText>
-                                {/* <Calendar/> */}
+                                <ArrowIcon fluid={calendar}/>
                             </>
                         ) : (
                             <>
@@ -93,7 +94,7 @@ const CourseCard = ({courseData, empty}) => {
                                         <CourseButtonText>
                                             Участвовать
                                         </CourseButtonText>
-                                        {/* <RedArrow/> */}
+                                        <ArrowIcon fluid={arrowWhite}/>
                                         
                                     </>
                                 ) : (
@@ -101,7 +102,7 @@ const CourseCard = ({courseData, empty}) => {
                                         <CourseButtonText>
                                             Узнать <br/>о наборе
                                         </CourseButtonText>
-                                        {/* <BlackArrow/> */}
+                                        <ArrowIcon fluid={arrowWhite}/>
                                     </>
                                 )}                            
                             </>

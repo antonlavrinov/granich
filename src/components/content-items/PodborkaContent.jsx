@@ -7,8 +7,6 @@ import {ContentWrapperLink,
         ContentImage,
         ContentTitle,
         ContentButton,
-        ContentButtonContainer,
-        ContentButtonWrapper,
         ContentDescr,
         ContentButtonText,
         ContentIconsWrapper,
@@ -23,7 +21,6 @@ import {ContentWrapperLink,
 const PodborkaContent = ({content, podborkaLinkIcon}) => {
     return (
         <ContentWrapperLink className="content" podborka href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >
-            {/* <LazyLoad once> */}
                 <ContentContainer>
                     <ContentTagList>
                         {content.contentTags.map((contentTag, idx) => {
@@ -38,16 +35,11 @@ const PodborkaContent = ({content, podborkaLinkIcon}) => {
                     <ContentDescr>{documentToReactComponents(content.contentDescription.json)}</ContentDescr>
                 </ContentContainer>
                 <ContentButton podborka>
-                    {/* <ContentButtonContainer>
-                        <ContentButtonWrapper>
                             <ContentButtonText>Изучить</ContentButtonText>
                             <ContentIconsWrapper>
                                 <PodborkaOut fluid={podborkaLinkIcon}/>
                             </ContentIconsWrapper>
-                        </ContentButtonWrapper>
-                    </ContentButtonContainer> */}
                 </ContentButton>
-            {/* </LazyLoad> */}
             
         </ContentWrapperLink>
     )

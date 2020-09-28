@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import CourseCard from './course-cards/CourseCard';
 import MasterClassCard from './course-cards/MasterClassCard';
 import DevelopmentCard from './course-cards/DevelopmentCard';
-
+import { graphql, useStaticQuery } from 'gatsby'
 
 
 
@@ -37,6 +37,41 @@ const CourseLinkModal = styled.div`
 
 
 const Course = ({courseData, openModal}) => {
+    const data = useStaticQuery(graphql`
+        query courseIcons {
+            courseCalendar: file(relativePath: { eq: "empty_calendar-01.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            courseArrowBlack: file(relativePath: { eq: "arrow-black-newpage-01.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            courseArrowWhite: file(relativePath: { eq: "arrow-white-newpage-01.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+
+        }
+    `)
+
+    const calendar = data.courseCalendar.childImageSharp.fluid;
+    const arrowWhite = data.courseArrowWhite.childImageSharp.fluid;
+    const arrowBlack = data.courseArrowBlack.childImageSharp.fluid;
+
+
+
+
     return (
         <>
             {courseData.node.courseTypeDevelopment ? (
@@ -46,18 +81,18 @@ const Course = ({courseData, openModal}) => {
                     {courseData.node.courseTypeEmpty ? (
                         <CourseLinkModal onClick={openModal} >
                             {courseData.node.courseType === 'Курс' ? (
-                                <CourseCard empty courseData={courseData} />
+                                <CourseCard arrowBlack={arrowBlack} arrowWhite={arrowWhite} calendar={calendar} empty courseData={courseData} />
                             ) : (
-                                <MasterClassCard empty courseData={courseData}/>
+                                <MasterClassCard arrowBlack={arrowBlack} arrowWhite={arrowWhite} calendar={calendar} empty courseData={courseData}/>
                             )}
                         </CourseLinkModal>
                     ) : (
                         <CourseLinkWrapper href={`/${courseData.node.courseSlug}`}>
                             <>
                                 {courseData.node.courseType === 'Курс' ? (
-                                    <CourseCard courseData={courseData} />
+                                    <CourseCard arrowBlack={arrowBlack} arrowWhite={arrowWhite} calendar={calendar} courseData={courseData} />
                                 ) : (
-                                    <MasterClassCard courseData={courseData}/>
+                                    <MasterClassCard arrowBlack={arrowBlack} arrowWhite={arrowWhite} calendar={calendar} courseData={courseData}/>
                                 )}
                             </>
                         </CourseLinkWrapper>

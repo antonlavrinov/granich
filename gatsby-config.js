@@ -182,13 +182,13 @@ module.exports = {
         // cache_busting_mode: 'none' // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
-      options: {
-        devMode: true,
-      },
-    },
-    `gatsby-plugin-remove-serviceworker`,
+    // {
+    //   resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+    //   options: {
+    //     devMode: true,
+    //   },
+    // },
+    // `gatsby-plugin-remove-serviceworker`,
     // {
     //   resolve: `gatsby-plugin-offline`,
     //   options: {
