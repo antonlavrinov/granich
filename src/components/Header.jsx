@@ -10,7 +10,7 @@ import LoginButtonIcon from '../assets/svgs/login-button-icon.svg';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 
-const WhiteLogo = styled.a`
+const WhiteLogo = styled(props => <Logo {...props}/>)`
   width: 4.8vw;
   min-width: 4.8vw;
   height: 3vw;
