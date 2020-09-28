@@ -189,7 +189,6 @@ const PortfolioOnePagersWrapper = styled.div`
         grid-column-gap: 3vw;
         grid-row-gap: 3vw;
         margin-bottom: 3vw;
-        display: none;
     }
 
 `
@@ -213,6 +212,7 @@ const PortfolioMiltiPagesWrapper = styled.div`
     // min-height: 55.1vw;
     @media only screen and (max-width: 575px) {
         margin-bottom: 0;
+        display: none;
     }
 `
 
