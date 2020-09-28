@@ -25,7 +25,7 @@ export const contentfulQuery = graphql`
         offer:   contentfulGranichCourse(courseTitle: {eq: "Осознанный Графдизайн"}) {
           courseMainImage {
             fluid(maxWidth: 850, quality: 90) {
-              ...GatsbyContentfulFluid_withWebp_noBase64
+              ...GatsbyContentfulFluid_withWebp
             }
           }
           courseMainTitle {
