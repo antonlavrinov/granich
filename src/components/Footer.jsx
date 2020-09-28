@@ -6,7 +6,7 @@ import VisaIcon from '../assets/svgs/Visa.svg';
 import MastercardIcon from '../assets/svgs/Mastercard.svg';
 import RobokassaIcon from '../assets/svgs/Robokassa.svg';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-
+import Link from 'gatsby-link';
 
 const BlackLogo = styled(props => <Logo {...props}/>)`
     width: 4.8vw;
@@ -66,7 +66,7 @@ const FooterWrapper = styled.div`
     }
 `
 
-const LogoWrapper = styled.a`
+const LogoWrapper = styled(props => <Link {...props}/>)`
 //   height: auto;
   fill: var(--granich-black);
   margin-right: 0.7vw;
@@ -311,7 +311,7 @@ const Footer = () => {
             <Container>
                 <FooterWrapper>
                     <FooterLogoAndInfo>
-                        <LogoWrapper href="/">
+                        <LogoWrapper to="/">
                             <BlackLogo/>
                         </LogoWrapper>
                         
