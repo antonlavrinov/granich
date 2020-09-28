@@ -504,7 +504,7 @@ export const TeacherBlock = ({teacher, masterClass}) => {
                 <TeacherSocials>
                     <TeacherSocialIcons>
 
-                            {teacher.teacherSocialsOrder.map((social, idx) => {
+                            {/* {teacher.teacherSocialsOrder.map((social, idx) => {
                                 return (
                                     <React.Fragment key={idx}>
                                         {social.toLowerCase() === 'vk' ? (
@@ -520,7 +520,7 @@ export const TeacherBlock = ({teacher, masterClass}) => {
                                         ) : null}
                                     </React.Fragment>
                                 )
-                            })}
+                            })} */}
                         
 
                     </TeacherSocialIcons>
