@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
-import PortfolioImageGallery from './portfolio/PortfolioImageGallery';
+// import PortfolioImageGallery from './portfolio/PortfolioImageGallery';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 
@@ -291,7 +291,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
 
                     </PortfolioOnePagersWrapper>
 
-                    {imageGallery.length > 0 && (
+                    {/* {imageGallery.length > 0 && (
                         <PortfolioMiltiPagesWrapper>
                             
                                 {imageGallery.map((multi, idx) => {
@@ -303,7 +303,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                             
                         
                         </PortfolioMiltiPagesWrapper>
-                    )}
+                    )} */}
 
                     
 
