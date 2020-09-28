@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import CourseArrowDown from '../../assets/svgs/course-arrow-down-27.svg';
@@ -10,8 +10,8 @@ import Img from 'gatsby-image';
 // import scrollTo from 'gatsby-plugin-smoothscroll';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 // import { useSprings, animated, interpolate } from 'react-spring'
-// import { useGesture } from 'react-use-gesture'
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
+// // import { useGesture } from 'react-use-gesture'
+// import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 import { Link } from 'gatsby';
 
 
@@ -311,11 +311,11 @@ const CourseOfferInfo = styled.div`
 
 `
 
-const CoursePortfolioDeck = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-`
+// const CoursePortfolioDeck = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// `
 
 // const OfferCardItemWrapper = styled(animated.div)`
 //     position: absolute;
@@ -464,7 +464,7 @@ const CourseOffer = ({data}) => {
                     <CourseOfferTitle type={data.courseType}>
                         {documentToReactComponents(data.courseMainTitle.json)}
                     </CourseOfferTitle>
-                    <CourseOfferMainImage fadeIn={false} loading="eager" fluid={data.courseMainImage.fluid}/>
+                    <CourseOfferMainImage fluid={data.courseMainImage.fluid}/>
                     <CourseOfferDescr type={data.courseType}>
                         {data.courseDescr}
                     </CourseOfferDescr>

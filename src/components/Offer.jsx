@@ -187,7 +187,7 @@ const Offer = ({data}) => {
                 </Container>
 
             </OfferSection>
-            <OfferMobileSection fadeIn={false} loading="eager" fluid={headerImageMobile} id="offer" >
+            <OfferMobileSection  fluid={headerImageMobile} id="offer" >
                 <Container>
                     <OfferMobileWrapper>
                         <OfferTitle>{headerTitle}</OfferTitle>
