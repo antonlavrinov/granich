@@ -8,6 +8,8 @@ import ArrowOut from '../assets/svgs/header-arrow-icon-out.svg';
 import ArrowBack from '../assets/svgs/header-arrow-back.svg';
 import LoginButtonIcon from '../assets/svgs/login-button-icon.svg';
 import scrollTo from 'gatsby-plugin-smoothscroll';
+import {Link} from 'gatsby';
+
 
 const WhiteLogo = styled(props => <Logo {...props}/>)`
   width: 4.8vw;
@@ -32,7 +34,7 @@ const HeaderSection = styled.header`
 
 `
 
-const LogoWrapper = styled.a`
+const LogoWrapper = styled(props => <Link {...props}/>)`
   display: flex;
   align-items: center;
   fill: white;
@@ -80,7 +82,7 @@ const NavLinks = styled.nav`
   }
 `
 
-const NavLink = styled.a`
+const NavLink = styled(props => <Link {...props}/>)`
   display: block;
   position: relative;
   color: white;
@@ -256,7 +258,7 @@ const LoginButton = styled.a`
     display: none;
   }
 `
-const LogoMobileWrapper = styled.a`
+const LogoMobileWrapper = styled(props => <Link {...props}/>)`
   display: none;
   @media only screen and (max-width: 575px) {
     display: flex;
@@ -319,11 +321,11 @@ const Header = ({ siteTitle, type }) => (
       <Container>
         <HeaderWrapper>
 
-          <LogoWrapper href="/" propstyle={type}>
+          <LogoWrapper to="/" propstyle={type}>
             <WhiteLogo  />
           </LogoWrapper>
           <LogoAndLoginButtonWrapper>
-            <LogoMobileWrapper href="/" propstyle={type}>
+            <LogoMobileWrapper to="/" propstyle={type}>
               <WhiteLogo  />
             </LogoMobileWrapper>
             <LoginMobileButton rel="noopener noreferrer" href="https://granich.ru/cms/system/login" target="_blank">
@@ -334,7 +336,7 @@ const Header = ({ siteTitle, type }) => (
             <ul >
               <li>
                 {type === 'dark' ? (
-                    <NavLink href="/#courses" propstyle={type}>
+                    <NavLink to="/#courses" propstyle={type}>
                       Курсы
                       {type === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
                     </NavLink>
@@ -347,7 +349,7 @@ const Header = ({ siteTitle, type }) => (
               </li>  
               <li>
                 {type === 'dark' ? (
-                  <NavLink href="/#content" propstyle={type}>
+                  <NavLink to="/#content" propstyle={type}>
                     Подготовка
                     {type === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
                   </NavLink>
