@@ -56,12 +56,6 @@ module.exports = {
     `gatsby-background-image`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-robots-txt`,
-    { 
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true
-      }
-    },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
