@@ -307,7 +307,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
 
                     </PortfolioOnePagersWrapper>
 
-                    {/* {imageGallery.length > 0 && (
+                    {imageGallery.length > 0 && (
                         <PortfolioMiltiPagesWrapper>
                             
                                 {imageGallery.map((multi, idx) => {
@@ -319,7 +319,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                             
                         
                         </PortfolioMiltiPagesWrapper>
-                    )} */}
+                    )}
 
                     
 
