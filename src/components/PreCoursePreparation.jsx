@@ -3,7 +3,7 @@ import { Container } from './style';
 import styled from 'styled-components';
 import PreparationContent from './PreparationContent';
 import TagCross from '../assets/svgs/tag-cross-icon-01.svg';
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 
 const PreparationSection = styled.section`
     margin-top: 4vw;
@@ -466,7 +466,7 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
                             })}
                         </PreparationTags>
                     </PreparationMobileWrapper>
-                    <LazyLoad once>
+                    {/* <LazyLoad once> */}
                         <PreparationContents>
                             {filteredContents.slice(0, contentPagination).map((content, idx) => {
                                 return (
@@ -484,7 +484,7 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
                             
                         )}
 
-                    </LazyLoad>
+                    {/* </LazyLoad> */}
                     
                     
                 </PreparationWrapper>
