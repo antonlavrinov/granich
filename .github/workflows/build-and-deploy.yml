@@ -35,11 +35,11 @@ jobs:
       - name: Push to server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.GRANICH_SITE_IP }}
-          username: ${{ secrets.GRANICH_SITE_LOGIN }}
-          password: ${{ secrets.GRANICH_SITE_PASSWORD }}
+          host: ${{ secrets.GRANICH_DESIGN_IP }}
+          username: ${{ secrets.GRANICH_DESIGN_LOGIN }}
+          password: ${{ secrets.GRANICH_DESIGN_PASSWORD }}
           script: |
-                  cd ${{secrets.GRANICH_SITE_PATH}} && git reset --hard HEAD^
+                  cd ${{secrets.GRANICH_DESIGN_PATH}} && git reset --hard HEAD^
                   git pull https://github.com/antonlavrinov/granich.git gatsby-build
                   
 # git clone https://github.com/antonlavrinov/granich.git gatsby-build
