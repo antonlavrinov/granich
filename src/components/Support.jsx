@@ -1,6 +1,6 @@
 import React from 'react'
-import ChatIcon from '../assets/svgs/chat.svg';
-import ChatCrossIcon from '../assets/svgs/social-side-icons/chat-cross.svg';
+import ChatIcon from '../assets/svgs/chat_noshadow.svg';
+import ChatCrossIcon from '../assets/svgs/social-side-icons/chat-cross_noshadow.svg';
 import styled from 'styled-components';
 
 const ChatCrossWrapper = styled(props => <ChatCrossIcon {...props}/>)`

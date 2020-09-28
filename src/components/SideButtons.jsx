@@ -2,10 +2,10 @@ import React, {useState} from 'react'
 import Support from './Support'
 import PageTop from './PageTop';
 import styled from 'styled-components';
-import EmailIcon from '../assets/svgs/social-side-icons/social-side-icon-email.svg';
-import TelegramIcon from '../assets/svgs/social-side-icons/social-side-icon-telegram.svg';
-import VKIcon from '../assets/svgs/social-side-icons/social-side-icon-vk.svg';
-import WhatsupIcon from '../assets/svgs/social-side-icons/social-side-icon-whatsup.svg';
+import EmailIcon from '../assets/svgs/social-side-icons/social-side-icon-email_noshadow.svg';
+import TelegramIcon from '../assets/svgs/social-side-icons/social-side-icon-telegram_noshadow.svg';
+import VKIcon from '../assets/svgs/social-side-icons/social-side-icon-vk_noshadow.svg';
+import WhatsupIcon from '../assets/svgs/social-side-icons/social-side-icon-whatsup_noshadow.svg';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { CSSTransition } from 'react-transition-group';
 
