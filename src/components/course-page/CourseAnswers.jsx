@@ -19,7 +19,7 @@ import {
 import 'react-accessible-accordion/dist/fancy-example.css';
 import PlusImage from '../../assets/images/plus.png';
 import MinusImage from '../../assets/images/minus.png';
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 import { INLINES } from '@contentful/rich-text-types'
 
 const toggle = {
@@ -528,7 +528,7 @@ const CourseAnswers = ({data, courseStatus}) => {
                             })}
                         </AnswersAccordeon>
                         <AnswersAccordionMobile preExpanded={[0]} allowMultipleExpanded allowZeroExpanded>
-                            <LazyLoad once>
+                            {/* <LazyLoad once> */}
                                 {data.edges.map((tab, idx) => {
                                     const type = tab.node.answersTagType;
                                     const tag = tab.node.answersTagName;
@@ -551,7 +551,7 @@ const CourseAnswers = ({data, courseStatus}) => {
                                         </AnswersAccordionItem>
                                     )
                                 } )}
-                            </LazyLoad>
+                            {/* </LazyLoad> */}
                         
                         </AnswersAccordionMobile>
 
