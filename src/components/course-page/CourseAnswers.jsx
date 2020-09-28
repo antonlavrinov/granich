@@ -20,6 +20,7 @@ import 'react-accessible-accordion/dist/fancy-example.css';
 import PlusImage from '../../assets/images/plus.png';
 import MinusImage from '../../assets/images/minus.png';
 import LazyLoad from 'react-lazyload';
+import { INLINES } from '@contentful/rich-text-types'
 
 const toggle = {
     cursor: 'pointer',
@@ -322,6 +323,12 @@ const AnswerCategoryColumn = styled.div`
         font-weight: 500;
         margin-top: 1vw;
     }
+    a {
+        border-bottom: 1px solid var(--granich-light-grey);
+        :hover {
+            border-color: var(--granich-grey);
+        }
+    }
     @media only screen and (max-width: 575px) {
         width: 100%;
         min-width: 100%;
@@ -483,6 +490,16 @@ export const AnswersItemLineMobile = styled.div`
 
 
 
+const options = {
+    renderNode: {
+        [INLINES.HYPERLINK]: (node) => {
+        return <a href={node.data.uri} rel="noopener noreferrer" target='_blank' >{node.content[0].value}</a>;
+        }
+    },   
+}
+
+
+
 
 const CourseAnswers = ({data, courseStatus}) => {
     return (
@@ -500,8 +517,8 @@ const CourseAnswers = ({data, courseStatus}) => {
                                     <AnswersItem open={idx} key={tab.node.id} tag={tab.node.answersTagName} type={tab.node.answersTagType ? 1 : 0}>
                                         <AnswersContentWrapper>
                                         <AnswersTextWrapper>
-                                            {tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode && <AnswerCategoryColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode.json)}</AnswerCategoryColumn>}
-                                            {tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode && <AnswerCategoryColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode.json)}</AnswerCategoryColumn>} 
+                                            {tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode && <AnswerCategoryColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode.json, options)}</AnswerCategoryColumn>}
+                                            {tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode && <AnswerCategoryColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode.json, options)}</AnswerCategoryColumn>} 
                                         </AnswersTextWrapper>
 
                                     
@@ -528,8 +545,8 @@ const CourseAnswers = ({data, courseStatus}) => {
                                                 </AccordionItemButton>
                                             </AnswersAccordionHeading>
                                             <AccordionItemPanel className="accordion__panel accordion__panel_answers">
-                                                    {tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode && <AnswerCategoryColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode.json)}</AnswerCategoryColumn>}
-                                                    {tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode && <AnswerCategoryColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode.json)}</AnswerCategoryColumn>} 
+                                                    {tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode && <AnswerCategoryColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode.json, options)}</AnswerCategoryColumn>}
+                                                    {tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode && <AnswerCategoryColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode.json, options)}</AnswerCategoryColumn>} 
                                             </AccordionItemPanel>
                                         </AnswersAccordionItem>
                                     )

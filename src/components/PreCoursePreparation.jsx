@@ -53,7 +53,7 @@ const PreparationTitle = styled.h2`
     letter-spacing: -0.2vw;
     font-weight: 700;
     line-height: 1.05;
-    margin-right: 4vw;
+    margin-right: 12vw;
     @media only screen and (max-width: 575px) {
         font-size: 11.9vw;
         letter-spacing: -0.7vw;
@@ -441,10 +441,10 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
                     <PreparationMobileWrapper>
                         <PreparationHeader>
                             <PreparationTitle>
-                                Подготовка <br/>к курсам
+                                Контент <br/>школы
                             </PreparationTitle>
                             <PreparationText>
-                                Сомневаетесь записаться ли на курс? <br/>Изучите бесплатные материалы школы <br/>и ознакомьтесь с нашим подходом
+                                1. Оцените качество нашего подхода к обучению <br/>2. Потренируйтесь сами, если еще не можете записаться на курс
                             </PreparationText>
                         </PreparationHeader>
                         <PreparationFilters>

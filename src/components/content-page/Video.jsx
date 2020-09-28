@@ -5,7 +5,7 @@ import Masonry from 'react-masonry-css';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import BackgroundImage from 'gatsby-background-image';
 // import YoutubeIcon from '../../assets/svgs/youtube-icon.svg';
-import { Modal } from "react-responsive-modal";
+// import { Modal } from "react-responsive-modal";
 import { INLINES } from '@contentful/rich-text-types'
 import Cross from '../../assets/svgs/cross.svg';
 
@@ -115,10 +115,21 @@ const VideoItemWrapper = styled.div`
     padding: 1.8vw 1.8vw 2.3vw;
     border-radius: 0.6vw;
     background: #2A2A2A;
+    transition: transform 0.2s ease;
+    display: block;
+    :hover {
+        transform: scale(1.02);
+        cursor: pointer;
+    }
     @media only screen and (max-width: 575px) {
         padding: 4vw 4vw 7vw;
         border-radius: 1.7vw;
     }
+
+`
+
+const VideoItemWrapperLink = styled.a`
+
 `
 
 const VideoItemImage = styled(props => <BackgroundImage {...props}/>)`
@@ -272,57 +283,57 @@ const VideoItemInfoLinks = styled.div`
     }
 `
 
-const VideoModal = styled.div`
-    display: block;
-    padding: 2vw;
-    background: #2b2b2b;
-    border-radius: 0.6vw;
-    @media only screen and (max-width: 575px) {
-        padding: 4vw;
-        background: #2b2b2b;
-        border-radius: 1.7vw;
-    }
-`
+// const VideoModal = styled.div`
+//     display: block;
+//     padding: 2vw;
+//     background: #2b2b2b;
+//     border-radius: 0.6vw;
+//     @media only screen and (max-width: 575px) {
+//         padding: 4vw;
+//         background: #2b2b2b;
+//         border-radius: 1.7vw;
+//     }
+// `
 
-const VideoModalWrapper = styled.div`
-    position: relative;
-    padding-bottom: 56%;
-    height: 0;
-    overflow: hidden;
-    iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-`
+// const VideoModalWrapper = styled.div`
+//     position: relative;
+//     padding-bottom: 56%;
+//     height: 0;
+//     overflow: hidden;
+//     iframe {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//     }
+// `
 
-const VideoCross = styled.div`
-      position: absolute;
-      top: -0.8vw;
-      right: -4vw;
-      svg {
-          fill: rgba(0,0,0,0.5);
-          width: 4vw;
-          height: 4vw;
-      }
-      :hover {
-          cursor: pointer;
-          svg {
-            fill: var(--granich-red);
-          }
+// const VideoCross = styled.div`
+//       position: absolute;
+//       top: -0.8vw;
+//       right: -4vw;
+//       svg {
+//           fill: rgba(0,0,0,0.5);
+//           width: 4vw;
+//           height: 4vw;
+//       }
+//       :hover {
+//           cursor: pointer;
+//           svg {
+//             fill: var(--granich-red);
+//           }
 
-      }
-      @media only screen and (max-width: 575px) {
-        top: -12vw;
-        right: -2.3vw;
-        svg {
-            width: 12vw;
-            height: 12vw;
-        }
-      }
-`
+//       }
+//       @media only screen and (max-width: 575px) {
+//         top: -12vw;
+//         right: -2.3vw;
+//         svg {
+//             width: 12vw;
+//             height: 12vw;
+//         }
+//       }
+// `
 
 const breakpointColumnsObj = {
     default: 2,
@@ -338,22 +349,25 @@ const options = {
 }
 
 
-const VideoItem = ({text, number, image, links, timing, setIsOpen,  videoLink}) => {
+const VideoItem = ({text, number, image, links, timing}) => {
     return (
-        <VideoItemWrapper>
-            <VideoItemImage fluid={image} onClick={() => setIsOpen(videoLink)}>
-                {/* <Youtube/> */}
-            </VideoItemImage>
-            <VideoItemInfo>
-                <VideoItemInfoDetails>
-                    <VideoItemNumber>{`№${number}`}</VideoItemNumber>
-                    {links && <VideoItemInfoLinks className="collection_link">{documentToReactComponents(links.json, options)}</VideoItemInfoLinks>}
-                    <VideoItemInfoTiming>{timing}</VideoItemInfoTiming>
-                </VideoItemInfoDetails>
-                <VideoItemInfoText>
-                 {documentToReactComponents(text, options)}
-                </VideoItemInfoText>
-            </VideoItemInfo>
+        <VideoItemWrapper >
+            <VideoItemWrapperLink target="_blank" href="/" rel="noopener noreferrer">
+                <VideoItemImage fluid={image}>
+                    {/* <Youtube/> */}
+                </VideoItemImage>
+                <VideoItemInfo>
+                    <VideoItemInfoDetails>
+                        <VideoItemNumber>{`№${number}`}</VideoItemNumber>
+                        {links && <VideoItemInfoLinks className="collection_link">{documentToReactComponents(links.json, options)}</VideoItemInfoLinks>}
+                        <VideoItemInfoTiming>{timing}</VideoItemInfoTiming>
+                    </VideoItemInfoDetails>
+                    <VideoItemInfoText>
+                    {documentToReactComponents(text, options)}
+                    </VideoItemInfoText>
+                </VideoItemInfo>
+            </VideoItemWrapperLink>
+
         </VideoItemWrapper>
     )
 }
@@ -377,7 +391,7 @@ const Video = ({data, categoryTwo, categoryThree}) => {
     return (
         <VideoSection>
             <Container>
-                <Modal  center 
+                {/* <Modal  center 
                         closeIcon={<div></div>}
                         open={modalIsOpen} 
                         onClose={closeModal}
@@ -398,7 +412,7 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                         </VideoModalWrapper>
                        
                     </VideoModal>
-                </Modal>
+                </Modal> */}
                 <VideoWrapper>
                     <VideoHeader>
                         <VideoSectionTitle>Ценные видеолекции</VideoSectionTitle>
@@ -412,7 +426,7 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                                 columnClassName="my-masonry-grid_column">
                                     {data.map((videoItem, idx) => {
                                         return (
-                                            <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === '1' && <VideoItem  timing={videoItem.node.videoTiming} 
+                                            <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === '1' && <VideoItem   timing={videoItem.node.videoTiming} 
                                                                                                              image={videoItem.node.videoImagePreview.fluid} 
                                                                                                              setIsOpen={openModal}
                                                                                                              

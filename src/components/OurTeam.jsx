@@ -337,10 +337,13 @@ const TeacherDescription = styled.div`
         position: relative;
 
         :before {
-            content: '- ';
+            content: '• ';
             position: absolute;
-            top: 0;
+            top: -0vw;
             left: -1vw;
+            font-size: 1.1vw;
+            color: rgba(0,0,0,0.2);
+
         }
         // border-bottom: 1px solid var(--granich-light-grey);
     }
@@ -353,12 +356,14 @@ const TeacherDescription = styled.div`
             color: var(--granich-grey);
             padding-bottom: 1.5vw;
             position: relative;
-    
             :before {
-                content: '- ';
+                content: '• ';
                 position: absolute;
-                top: 0;
+                top: -0vw;
                 left: -4vw;
+                font-size: 4vw;
+                color: rgba(0,0,0,0.2);
+    
             }
             // border-bottom: 1px solid var(--granich-light-grey);
         }

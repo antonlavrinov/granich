@@ -6,7 +6,7 @@ import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import PortfolioImageGallery from './portfolio/PortfolioImageGallery';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
-
+import { INLINES } from '@contentful/rich-text-types'
 
 
 const PortfolioSection = styled.section`
@@ -91,6 +91,12 @@ const PortfolioBonusBlock = styled.div`
             font-size: inherit;
             font-weight: 500;
             display: block;
+        }
+    }
+    a {
+        border-bottom: 1px solid var(--granich-light-grey);
+        :hover {
+            border-color: var(--granich-grey);
         }
     }
     @media only screen and (max-width: 575px) {
@@ -216,6 +222,15 @@ const PortfolioMiltiPagesWrapper = styled.div`
     }
 `
 
+const options = {
+    renderNode: {
+        [INLINES.HYPERLINK]: (node) => {
+        return <a href={node.data.uri} rel="noopener noreferrer" target='_blank' >{node.content[0].value}</a>;
+        }
+    },   
+}
+
+
 
 
 const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
@@ -264,7 +279,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
 
 
                                     <PortfolioBonusBlock>
-                                        {documentToReactComponents(dataHeader.portfolioHeaderInfo.json)}
+                                        {documentToReactComponents(dataHeader.portfolioHeaderInfo.json, options)}
                                     </PortfolioBonusBlock>
                                     </PortfolioHeader>
                             ) : (
@@ -275,7 +290,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                                     </PortfolioTitleAndContent>
                                     
                                     <PortfolioBonusBlock>
-                                        {documentToReactComponents(dataHeader.portfolioHeaderInfo.json)}
+                                        {documentToReactComponents(dataHeader.portfolioHeaderInfo.json, options)}
                                     </PortfolioBonusBlock>
                                     </PortfolioHeader>
                             )}
