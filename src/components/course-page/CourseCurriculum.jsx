@@ -138,7 +138,7 @@ const CourseCurriculum = ({data, dataHeader}) => {
                         </CurriculumBonusBlock>
                     </CurriculumHeader>
                     <CurriculumAccordionMobile allowMultipleExpanded allowZeroExpanded>
-                        {/* <LazyLoad once> */}
+                        <LazyLoad once>
                             {data.edges.map((tab, idx) => {
                                 const type = tab.node.curriculumType;
                                 const tag = tab.node.curriculumTagName;
@@ -177,7 +177,7 @@ const CourseCurriculum = ({data, dataHeader}) => {
                                     </CurriculumAccordionItem>
                                 )
                             } )}
-                        {/* </LazyLoad> */}
+                        </LazyLoad>
                     
 
                     </CurriculumAccordionMobile>
