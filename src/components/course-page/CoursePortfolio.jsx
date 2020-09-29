@@ -234,8 +234,11 @@ const options = {
 
 const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
     const [imageGallery, setImageGallery] = useState([]);
-    const isDesktopOrMobile = useMediaQuery({
+    const isMobile = useMediaQuery({
         query: '(max-width: 575px)'
+    })
+    const isDesktop = useMediaQuery({
+        query: '(min-width: 575px)'
     })
 
     useEffect(() => {
@@ -308,7 +311,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                         })}
 
                     </PortfolioOnePagersWrapper>
-                    {!isDesktopOrMobile ? (
+                    {isDesktop && (
                         <>
                             {imageGallery.length > 0 && (
                                 <PortfolioMiltiPagesWrapper>
@@ -324,7 +327,12 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                                 </PortfolioMiltiPagesWrapper>
                             )}
                         </>
-                    ) : <div>dd</div>}
+                    )}
+                    {isMobile && (
+                        <div>
+                            dffdfd
+                        </div>
+                    )}
 
 
                     

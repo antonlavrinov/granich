@@ -13,7 +13,7 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 // // import { useGesture } from 'react-use-gesture'
 // import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 import { Link } from 'gatsby';
-import { useMediaQuery } from 'react-responsive'
+
 
 
 const Potok = styled(props => <PotokIcon {...props}/>)`
@@ -76,7 +76,7 @@ const CourseOfferWrapper = styled(props => <BackgroundImage {...props}></Backgro
     overflow: hidden;
     display: flex;
     @media only screen and (max-width: 575px) {
-        // display: none;
+        display: none;
     }
 
 
@@ -389,13 +389,10 @@ const CourseOfferInfo = styled.div`
 
 
 const CourseOffer = ({data}) => {
-    const isDesktopOrMobile = useMediaQuery({
-        query: '(max-width: 575px)'
-    })
+
     return (
         <CourseOfferSection>
             <Container>
-                {!isDesktopOrMobile ? (
                     <CourseOfferWrapper fluid={data.courseMainImage.fluid}>
                     <CourseOfferInfo>
                         <CourseOfferTags>
@@ -448,7 +445,6 @@ const CourseOffer = ({data}) => {
 
                     
                     </CourseOfferWrapper>
-                ) : (
                     <CourseOfferWrapperMobile>
                         <CourseOfferTags>
                             {data.courseType === 'Курс' ? (
@@ -481,7 +477,6 @@ const CourseOffer = ({data}) => {
                         )}
                         
                     </CourseOfferWrapperMobile>
-                )}
                
               
             </Container>

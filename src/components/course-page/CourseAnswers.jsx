@@ -21,6 +21,7 @@ import PlusImage from '../../assets/images/plus.png';
 import MinusImage from '../../assets/images/minus.png';
 // import LazyLoad from 'react-lazyload';
 import { INLINES } from '@contentful/rich-text-types'
+import { useMediaQuery } from 'react-responsive'
 
 const toggle = {
     cursor: 'pointer',
@@ -502,6 +503,12 @@ const options = {
 
 
 const CourseAnswers = ({data, courseStatus}) => {
+    const isMobile = useMediaQuery({
+        query: '(max-width: 575px)'
+    })
+    const isDesktop = useMediaQuery({
+        query: '(min-width: 575px)'
+    })
     return (
         <AnswersSection>
             <Container>
@@ -511,23 +518,26 @@ const CourseAnswers = ({data, courseStatus}) => {
                             <AnswersSectionTitle>Точечные ответы о курсе</AnswersSectionTitle>
                             <AnswersSectionText>Тут мы собрали ответы на самые популярные вопросы о курсе Осознанный графдизайн</AnswersSectionText>
                         </AnswersHeader>
-                        <AnswersAccordeon>
-                            {data.edges.map((tab, idx) => {
-                                return (
-                                    <AnswersItem open={idx} key={tab.node.id} tag={tab.node.answersTagName} type={tab.node.answersTagType ? 1 : 0}>
-                                        <AnswersContentWrapper>
-                                        <AnswersTextWrapper>
-                                            {tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode && <AnswerCategoryColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode.json, options)}</AnswerCategoryColumn>}
-                                            {tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode && <AnswerCategoryColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode.json, options)}</AnswerCategoryColumn>} 
-                                        </AnswersTextWrapper>
+                        {isDesktop && (
+                            <AnswersAccordeon>
+                                {data.edges.map((tab, idx) => {
+                                    return (
+                                        <AnswersItem open={idx} key={tab.node.id} tag={tab.node.answersTagName} type={tab.node.answersTagType ? 1 : 0}>
+                                            <AnswersContentWrapper>
+                                            <AnswersTextWrapper>
+                                                {tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode && <AnswerCategoryColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode.json, options)}</AnswerCategoryColumn>}
+                                                {tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode && <AnswerCategoryColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode.json, options)}</AnswerCategoryColumn>} 
+                                            </AnswersTextWrapper>
 
-                                    
-                                        </AnswersContentWrapper>
-                                    </AnswersItem>
-                                )
-                            })}
-                        </AnswersAccordeon>
-                        <AnswersAccordionMobile preExpanded={[0]} allowMultipleExpanded allowZeroExpanded>
+                                        
+                                            </AnswersContentWrapper>
+                                        </AnswersItem>
+                                    )
+                                })}
+                            </AnswersAccordeon>
+                        )}
+                        {isMobile && (
+                            <AnswersAccordionMobile preExpanded={[0]} allowMultipleExpanded allowZeroExpanded>
                             {/* <LazyLoad once> */}
                                 {data.edges.map((tab, idx) => {
                                     const type = tab.node.answersTagType;
@@ -552,9 +562,12 @@ const CourseAnswers = ({data, courseStatus}) => {
                                     )
                                 } )}
                             {/* </LazyLoad> */}
-                        
-                        </AnswersAccordionMobile>
 
+                            </AnswersAccordionMobile>
+
+                        )}
+                        
+                       
 
                     </AnswersWrapper>
                     <AnswersFooterContainer>
