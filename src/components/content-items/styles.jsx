@@ -53,7 +53,7 @@ export const  YoutubeMixed = styled(props => <Img {...props}/>)`
         margin-left: -1vw;
     }
 `
-export const  Medium = styled(props => <Img {...props}/>)`
+export const Medium = styled(props => <Img {...props}/>)`
     width: 2.7vw;
     margin-right: 0.4vw;
     display: block;
@@ -61,13 +61,31 @@ export const  Medium = styled(props => <Img {...props}/>)`
         width: 7vw;
     }
 `
-export const  Pinterest = styled(props => <Img {...props}/>)`
-    width: 2.1vw;
+
+export const ContentLinkIcon = styled(props => <Img {...props}/>)`
+    width: 2.3vw;
     display: block;
     margin-right: -0.4vw;
     @media only screen and (max-width: 575px) {
         width: 6.5vw;
         margin-right: -1.4vw;
+    }
+`
+
+export const ContentLinkOutIcon = styled(props => <Img {...props}/>)`
+    width: 2.2vw;
+    display: block;
+    @media only screen and (max-width: 575px) {
+        width: 6.5vw;
+    }
+`
+
+export const  Pinterest = styled(props => <Img {...props}/>)`
+    width: 2.2vw;
+    display: block;
+    margin-right: -0.4vw;
+    @media only screen and (max-width: 575px) {
+        width: 6.5vw;
     }
 
 
@@ -115,6 +133,7 @@ export const  ContentWrapperLink = styled.a`
     }
     ${props => props.podborka && `
         background: #CBA181;
+        background: linear-gradient(90deg, rgba(203,161,129,1) 0%, rgba(181,141,110,1) 100%);
     `}
 
 
@@ -139,6 +158,11 @@ export const  ContentWrapperExternalLink = styled(props => <OutboundLink {...pro
     ${props => props.behance && `
         background: #0E3983;
     ` }   
+    ${props => props.medium && `
+        background: var(--granich-light-grey);
+
+        background: linear-gradient(90deg, rgba(185,185,185,1) 0%, rgba(143,143,143,1) 100%);
+    ` }
     @media only screen and (max-width: 575px) {
         min-height: 56vw;
 
@@ -265,6 +289,7 @@ export const  ContentButton = styled.div`
     ${props => props.podborka && `
         background: #A67B5B;
         align-items: center;
+        background: linear-gradient(145deg, rgba(181,140,109,1) 0%, rgba(145,106,77,1) 100%);
     ` }
     ${props => props.pinterest && `
         background: #4C0101;
@@ -272,6 +297,13 @@ export const  ContentButton = styled.div`
     ${props => props.behance && `
         background: #011E4B;
     ` }
+    ${props => props.medium && `
+        background: var(--granich-grey);
+        background: linear-gradient(145deg, rgba(136,137,137,1) 0%, rgba(79,79,79,1) 100%);
+    ` }
+    ${props => props.mixed && `
+        align-items: flex-start;
+    `}
 
     @media only screen and (max-width: 575px) {
         border-radius: 0 0 1.5vw 1.5vw;
@@ -354,7 +386,7 @@ export const  ContentButtonYoutubeTiming = styled.div`
 // MIXED
 
 export const  ContentButtonWatchBlockWrapper = styled.div`
-    // margin-bottom: -0.6vw;
+    
 `
 
 export const  ContentButtonWatchBlock = styled.div`

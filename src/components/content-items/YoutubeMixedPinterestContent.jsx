@@ -36,7 +36,7 @@ const YoutubeMixedPinterestContent = ({content, youtubePng, pinterestIcon}) => {
                     <ContentImage fluid={content.contentImage.fluid}></ContentImage>
                     <ContentTitle>{content.contentTitle}</ContentTitle>
                 </ContentContainer>
-                <ContentButton>
+                <ContentButton mixed>
                     <ContentButtonWatchBlockWrapper>
                         <ContentButtonBlockTitle>Посмотреть</ContentButtonBlockTitle>
                             <ContentButtonWatchBlock>

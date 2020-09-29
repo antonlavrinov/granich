@@ -209,7 +209,7 @@ const ContentLinks = ({data}) => {
                     {data.contentfulContent.contentLinkMedium && <ContentLink  type="Medium" text={'Читайте урок в формате статьи на Медиуме '} title={'Читать на Медиуме'} link={data.contentfulContent.contentLinkMedium}/> }
                     {data.contentfulContent.contentLinkBehance && <ContentLink  type="Behance" text={'Смотрите и Добавьте материал себе на Биханс'} title={'Смотреть на Бихансе'} link={data.contentfulContent.contentLinkBehance}/> }
                     {data.contentfulContent.contentLinkPinterest && <ContentLink  type="Pinterest" text={'Подробнее о материале на доске Пинтереста'} title={'Смотреть на Пинтересте'} link={data.contentfulContent.contentLinkPinterest}/> }
-                    {data.contentfulContent.contentAiFileLink && <ContentLink  type="Illustrator" text={'Подробнее о материале на доске Пинтереста'} title={'Смотреть на Пинтересте'} link={data.contentfulContent.contentAiFileLink}/> }
+                    {data.contentfulContent.contentAiFileLink && <ContentLink  type="Illustrator" text={'Все слайды расположены на отдельных артбордах'} title={'Скачать Ai-файл урока'} link={data.contentfulContent.contentAiFileLink}/> }
                     
                 </ContentLinksWrapper>
 

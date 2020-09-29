@@ -4,6 +4,7 @@ import YoutubeMixedContent from './content-items/YoutubeMixedContent';
 import YoutubeMixedPinterestContent from './content-items/YoutubeMixedPinterestContent';
 import YoutubeContent from './content-items/YoutubeContent';
 import BehanceContent from './content-items/BehanceContent';
+import MediumContent from './content-items/MediumContent';
 import PinterestContent from './content-items/PinterestContent';
 import PodborkaContent from './content-items/PodborkaContent';
 
@@ -15,6 +16,7 @@ const PreparationContent = ({content}) => {
     const youtube = 'Youtube';
     const behance = 'Behance';
     const pinterest = 'Pinterest';
+    const medium = 'Medium';
     const mixed = 'Youtube + Medium + Behance';
     const mixedPinterest = 'Youtube + Pinterest';
     const podborka = 'Осознанная подборка';
@@ -73,15 +75,23 @@ const PreparationContent = ({content}) => {
                     }
                 }
             }
+            mediumLinkContentIcon: file(relativePath: { eq: "arrow-black-newpage-01.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 60, quality: 80) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
 
         }
     `)
-    console.log(data)
+
     const behanceIcon = data.behanceContentIcon.childImageSharp.fluid;
     const pinterestIcon = data.pinterestContentIcon.childImageSharp.fluid;
     const pinterestLinkIcon = data.pinterestLinkContentIcon.childImageSharp.fluid;
     const behanceLinkIcon = data.behanceLinkContentIcon.childImageSharp.fluid;
     const mediumIcon = data.contentMediumPng.childImageSharp.fluid;
+    const mediumLinkIcon = data.mediumLinkContentIcon.childImageSharp.fluid;
     const youtubePng = data.contentYoutubePng.childImageSharp.fluid;
     const podborkaLinkIcon = data.podborkaLinkContentIcon.childImageSharp.fluid;
 
@@ -92,6 +102,7 @@ const PreparationContent = ({content}) => {
             {content.contentType === youtube && <YoutubeContent pinterestLinkIcon={pinterestLinkIcon} content={content} youtubePng={youtubePng}/>}
             {content.contentType === behance && <BehanceContent contentExternalLink={contentExternalLink} behanceLinkIcon={behanceLinkIcon} content={content} behanceIcon={behanceIcon}/>}
             {content.contentType === pinterest && <PinterestContent  contentExternalLink={contentExternalLink} pinterestLinkIcon={pinterestLinkIcon} content={content} pinterestIcon={pinterestIcon}/>}
+            {content.contentType === medium && <MediumContent  contentExternalLink={contentExternalLink} mediumLinkIcon={mediumLinkIcon} content={content} mediumIcon={mediumIcon}/>}
             {content.contentType === podborka && <PodborkaContent  podborkaLinkIcon={podborkaLinkIcon} content={content}/>}
             {content.contentType === mixedPinterest && <YoutubeMixedPinterestContent content={content}  youtubePng={youtubePng} pinterestIcon={pinterestIcon}/>}
         </>
