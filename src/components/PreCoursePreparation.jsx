@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import PreparationContent from './PreparationContent';
 import TagCross from '../assets/svgs/tag-cross-icon-01.svg';
 // import LazyLoad from 'react-lazyload';
+import { useInView } from 'react-intersection-observer'
 
 const PreparationSection = styled.section`
     margin-top: 4vw;
@@ -289,6 +290,9 @@ const PreparationButtonMoreText = styled.div`
 
 
 const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
+    const [ref, inView] = useInView({
+        threshold: 0,
+      })
 
     //initial data contents(recommended)
     const [data, setData] = useState(dataRecommended);
@@ -449,7 +453,7 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
 
 
     return (
-        <PreparationSection id="preparation">
+        <PreparationSection id="preparation" ref={ref}>
             <Container>
                 <PreparationWrapper>
                     <PreparationMobileWrapper>
@@ -480,25 +484,28 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
                             })}
                         </PreparationTags>
                     </PreparationMobileWrapper>
-                    {/* <LazyLoad once> */}
-                        <PreparationContents>
-                            {filteredContents.slice(0, contentPagination).map((content, idx) => {
-                                return (
-                                    <PreparationContent  key={idx} content={content}/>
-                                )
-                            })}
-                        </PreparationContents>
+                    {inView && (
+                        <>
+                            <PreparationContents>
+                                {filteredContents.slice(0, contentPagination).map((content, idx) => {
+                                    return (
+                                        <PreparationContent  key={idx} content={content}/>
+                                    )
+                                })}
+                            </PreparationContents>
 
-                        {filteredContents.length > 12 && (
-                            <>
-                                {contentShown < filteredContents.length && (
-                                    <PreparationButtonMore onClick={() => setContentPagination(contentPagination + 12)}><PreparationButtonMoreText>Показать еще</PreparationButtonMoreText></PreparationButtonMore>
-                                )}
-                            </>
-                            
-                        )}
+                            {filteredContents.length > 12 && (
+                                <>
+                                    {contentShown < filteredContents.length && (
+                                        <PreparationButtonMore onClick={() => setContentPagination(contentPagination + 12)}><PreparationButtonMoreText>Показать еще</PreparationButtonMoreText></PreparationButtonMore>
+                                    )}
+                                </>
+                                
+                            )}
+                        
+                        </>
+                    )}
 
-                    {/* </LazyLoad> */}
                     
                     
                 </PreparationWrapper>

@@ -88,11 +88,13 @@ const PodborkaOfferTitle = styled.h1`
     margin: 0;
     margin-bottom: 4.25vw;
     p {
-        font-size: 7.5vw;
+        font-size: 6.5vw;
         letter-spacing: 0.28vw;
+        letter-spacing: 0;
         font-family: EB Garamond;
         style: normal;
         font-weight: 500;
+        width: 60%;
         i {
             display: block;
             letter-spacing: -0.05vw;
