@@ -176,7 +176,7 @@ const IndexPage = ({data}) => {
       <Manifest/>
       {mailingActive && <Mailing/>}
       <div style={{height: '0.2vw', marginTop: '0.5vw'}} id="content"></div>
-      <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/>
+      {/* <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/> */}
       <OurTeam data={data.team}/>
 
     </Layout>

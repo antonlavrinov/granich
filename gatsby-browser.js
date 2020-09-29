@@ -19,3 +19,7 @@ export const onServiceWorkerUpdateReady = () => window.location.reload();
 //     return false;
 // };
 
+
+// exports.onInitialClientRender = () => {
+//     window.scrollTo(0, 0);
+//   };
