@@ -13,6 +13,7 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 // // import { useGesture } from 'react-use-gesture'
 // import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 import { Link } from 'gatsby';
+import { useMediaQuery } from 'react-responsive'
 
 
 const Potok = styled(props => <PotokIcon {...props}/>)`
@@ -388,10 +389,14 @@ const CourseOfferInfo = styled.div`
 
 
 const CourseOffer = ({data}) => {
+    const isDesktopOrMobile = useMediaQuery({
+        query: '(max-width: 575px)'
+    })
     return (
         <CourseOfferSection>
             <Container>
-                <CourseOfferWrapper fluid={data.courseMainImage.fluid}>
+                {!isDesktopOrMobile ? (
+                    <CourseOfferWrapper fluid={data.courseMainImage.fluid}>
                     <CourseOfferInfo>
                         <CourseOfferTags>
                             {data.courseType === 'Курс' ? (
@@ -421,7 +426,7 @@ const CourseOffer = ({data}) => {
                         ) : (
                             <CourseOfferButton to='#prices-range-section'  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
                         )}
-                       
+                        
                     </CourseOfferInfo>
                     {/* <div onClick={() => {
                         trackCustomEvent({
@@ -433,7 +438,7 @@ const CourseOffer = ({data}) => {
                             label: "Gatsby Plugin Example Campaign",
                             // number - optional - Numeric value associated with the event. (e.g. A product ID)
                             value: 43
-                          })
+                        })
                     }}>cutom event</div> */}
                     {/* <CoursePortfolioDeck>
                         <Deck/>
@@ -442,39 +447,43 @@ const CourseOffer = ({data}) => {
 
 
                     
-                </CourseOfferWrapper>
-                <CourseOfferWrapperMobile>
-                    <CourseOfferTags>
+                    </CourseOfferWrapper>
+                ) : (
+                    <CourseOfferWrapperMobile>
+                        <CourseOfferTags>
+                            {data.courseType === 'Курс' ? (
+                                <>
+                                    {data.courseStream && <CourseOfferMainTag><Potok/>{data.courseStream} поток</CourseOfferMainTag>}
+                                    {data.courseStart && <CourseOfferTag><Date/>Старт {data.courseStart}</CourseOfferTag>}
+                                    {data.courseDuration && <CourseOfferTag><Duration/>{data.courseDuration} интенсива</CourseOfferTag>}
+                                </>
+                            ) : (
+                                <>
+                                    {data.courseTags.map((tag, idx) => {
+                                        return (
+                                            <CourseOfferTag key={idx}>{tag}</CourseOfferTag>
+                                        )
+                                    })}
+                                </>
+                            )}
+                        </CourseOfferTags>
+                        <CourseOfferTitle type={data.courseType}>
+                            {documentToReactComponents(data.courseMainTitle.json)}
+                        </CourseOfferTitle>
+                        <CourseOfferMainImage fluid={data.courseMainImage.fluid}/>
+                        <CourseOfferDescr type={data.courseType}>
+                            {data.courseDescr}
+                        </CourseOfferDescr>
                         {data.courseType === 'Курс' ? (
-                            <>
-                                {data.courseStream && <CourseOfferMainTag><Potok/>{data.courseStream} поток</CourseOfferMainTag>}
-                                {data.courseStart && <CourseOfferTag><Date/>Старт {data.courseStart}</CourseOfferTag>}
-                                {data.courseDuration && <CourseOfferTag><Duration/>{data.courseDuration} интенсива</CourseOfferTag>}
-                            </>
+                            <CourseOfferButton to='#participation-section'><CourseArrowDown/>Участвовать</CourseOfferButton>
                         ) : (
-                            <>
-                                {data.courseTags.map((tag, idx) => {
-                                    return (
-                                        <CourseOfferTag key={idx}>{tag}</CourseOfferTag>
-                                    )
-                                })}
-                            </>
+                            <CourseOfferButton to='#prices-range-section'  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
                         )}
-                    </CourseOfferTags>
-                    <CourseOfferTitle type={data.courseType}>
-                        {documentToReactComponents(data.courseMainTitle.json)}
-                    </CourseOfferTitle>
-                    <CourseOfferMainImage fluid={data.courseMainImage.fluid}/>
-                    <CourseOfferDescr type={data.courseType}>
-                        {data.courseDescr}
-                    </CourseOfferDescr>
-                    {data.courseType === 'Курс' ? (
-                        <CourseOfferButton to='#participation-section'><CourseArrowDown/>Участвовать</CourseOfferButton>
-                    ) : (
-                         <CourseOfferButton to='#prices-range-section'  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
-                    )}
-                    
-                </CourseOfferWrapperMobile>
+                        
+                    </CourseOfferWrapperMobile>
+                )}
+               
+              
             </Container>
 
         </CourseOfferSection>
