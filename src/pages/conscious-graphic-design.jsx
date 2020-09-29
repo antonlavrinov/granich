@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import CourseOffer from '../components/course-page/CourseOffer';
+// import CourseOffer from '../components/course-page/CourseOffer';
 import Header from "../components/Header"
 import CourseExplanations from "../components/course-page/CourseExplanations"
 import CourseExample from "../components/course-page/CourseExample"
@@ -230,7 +230,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
          ogImage={ogImage}
          url="https://granich.design/osoznanny-graph-design" />
     <div className="section-top-block"></div>
-    <CourseOffer data={data.offer}/>
+    {/* <CourseOffer data={data.offer}/> */}
     <CourseExplanations data={data.explanations}/>
     <CourseExample/>
     <CourseForWhom data={data.forWhom}/>
