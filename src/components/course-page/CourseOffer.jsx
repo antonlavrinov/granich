@@ -76,7 +76,7 @@ const CourseOfferWrapper = styled(props => <BackgroundImage {...props}></Backgro
     overflow: hidden;
     display: flex;
     @media only screen and (max-width: 575px) {
-        display: none;
+        // display: none;
     }
 
 
