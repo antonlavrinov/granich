@@ -190,7 +190,7 @@ const FooterInfoMail = styled.div`
 
     }
 `
-const FooterLink = styled.a`
+const FooterLink = styled(props => <Link {...props}/>)`
     line-height: 1.4;
     color: var(--granich-light-grey);
     font-size: 1.16vw;
@@ -335,8 +335,8 @@ const Footer = () => {
                         </FooterInfo>
                     </FooterLogoAndInfo>
                     <FooterLinks>
-                        <FooterLink href="/public-offer"><span>Пользовательское <br/>соглашение</span></FooterLink>
-                        <FooterLink href="/privacy"><span>Политика <br/>конфиденциальности</span></FooterLink>
+                        <FooterLink to="/public-offer"><span>Пользовательское <br/>соглашение</span></FooterLink>
+                        <FooterLink to="/privacy"><span>Политика <br/>конфиденциальности</span></FooterLink>
                     </FooterLinks>
                     <FooterCredentialsAndPayment>
                         <FooterCredentials>
