@@ -502,27 +502,12 @@ export const TeacherBlock = ({teacher, masterClass}) => {
             <TeacherHeader>
                 <TeacherImage masterclass={masterClass ? 1 : 0} fluid={teacher.teacherImage.fluid}></TeacherImage>
                 <TeacherSocials>
-                    <TeacherSocialIcons>
-
-                            {/* {teacher.teacherSocialsOrder.map((social, idx) => {
-                                return (
-                                    <React.Fragment key={idx}>
-                                        {social.toLowerCase() === 'vk' ? (
-                                            <SocialLink  href={teacher.teacherSocialVK} target="_blank"><SocialIcon fluid={vkIcon}/></SocialLink>
-                                        ) : social.toLowerCase() === 'behance' ? (
-                                            <SocialLink href={teacher.teacherSocialBehance} target="_blank"><SocialIcon fluid={behanceIcon}/></SocialLink>
-                                        ) : social.toLowerCase() === 'telegram' ? (
-                                            <SocialLink  href={teacher.teacherSocialTelegram} target="_blank"><SocialIcon round fluid={telegramIcon}/></SocialLink>
-                                        ) : social.toLowerCase() === 'pinterest' ? (
-                                            <SocialLink  href={teacher.teacherSocialPinterest} target="_blank"><SocialIcon round fluid={pinterestIcon}/></SocialLink>
-                                        ) : social.toLowerCase() === 'instagram' ? (
-                                            <SocialLink  href={teacher.teacherSocialInstagram} target="_blank"><SocialIcon fluid={instagramIcon}/></SocialLink>
-                                        ) : null}
-                                    </React.Fragment>
-                                )
-                            })} */}
-                        
-
+                    <TeacherSocialIcons>                          
+                            {teacher.teacherSocialTelegram && <SocialLink  href={teacher.teacherSocialTelegram} target="_blank"><SocialIcon fluid={telegramIcon}/></SocialLink>}
+                            {teacher.teacherSocialVK && <SocialLink  href={teacher.teacherSocialVK} target="_blank"><SocialIcon fluid={vkIcon}/></SocialLink>}
+                            {teacher.teacherSocialInstagram && <SocialLink  href={teacher.teacherSocialInstagram} target="_blank"><SocialIcon fluid={instagramIcon}/></SocialLink>}
+                            {teacher.teacherSocialBehance && <SocialLink  href={teacher.teacherSocialBehance} target="_blank"><SocialIcon fluid={behanceIcon}/></SocialLink>}
+                            {teacher.teacherSocialPinterest && <SocialLink  href={teacher.teacherSocialPinterest} target="_blank"><SocialIcon fluid={pinterestIcon}/></SocialLink>}
                     </TeacherSocialIcons>
                     {teacher.teacherEmail && (
                         <CopyToClipboard text={teacher.teacherEmail}> 
