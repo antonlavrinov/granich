@@ -86,17 +86,6 @@ const CourseOfferWrapper = styled.div`
 
 `
 
-// const CourseOfferWrapperMobile = styled.section`
-//     display: none;
-//     @media only screen and (max-width: 575px) {
-//         display: block;
-//         background: white;
-//         border-radius: 2.5vw;
-//         padding: 7vw 1vw 6vw;
-//         box-shadow: 0 0 1.8vw rgba(0,0,0,0.15);
-//     }
-// `
-
 
 
 const CourseOfferMainImage = styled(props => <Img {...props} />)`
@@ -106,6 +95,7 @@ const CourseOfferMainImage = styled(props => <Img {...props} />)`
     right: 0;
     bottom: 0;
     z-index: 0;
+    user-select: none;
     @media only screen and (max-width: 575px) {
         margin-bottom: 5vw;
         position: relative !important;

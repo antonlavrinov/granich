@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Container } from './style';
 import BackgroundClip from '../assets/svgs/background-clip-01.svg';
 import scrollTo from 'gatsby-plugin-smoothscroll';
-import BackgroundImage from 'gatsby-background-image'
 import UnderlineLinkIcon from '../assets/svgs/offer-underline-link.svg';
 import Img from 'gatsby-image';
 
@@ -12,46 +11,17 @@ import Img from 'gatsby-image';
 
 
 
-const OfferSection = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
+const OfferSection = styled.div`
     position: relative;
     width: 100%;
-    padding: 12.2vw 0 5vw 0;
     height: 43.5vw;
-    background-size: 'cover';
-    background-repeat: 'no-repeat';
-    background-size: '100%';
-
+    background-color: var(--granich-black);
     @media only screen and (max-width: 575px) {
-        display: none;
+        height: 134vw;
     }
 `  
-const OfferMobileSection = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-    display: none;
-    position: relative;
-    @media only screen and (max-width: 575px) {
-        display: block;
-        height: 134vw;
-        position: relative;
-        width: 100%;
-        letter-spacing: 0em;
-        background-color: var(--granich-black);
-        background-size: 'cover';
-        background-position: top center;
-        background-repeat: 'no-repeat';
-        padding: 28vw 0;    
-    }
-`
 
 
-
-const OfferMobileWrapper = styled.div`
-    display: none;
-    position: relative;
-    @media only screen and (max-width: 575px) {
-        display: block;
-        padding: 0 6vw;    
-    }
-`
 
 const OfferTitle = styled.h1`
     font-family: Inter, sans-serif;
@@ -158,6 +128,50 @@ const OfferFlagsImg = styled(props => <Img {...props} />)`
     }
 ` 
 
+const OfferMainImage = styled(props => <Img {...props} />)`
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100% !important;
+    user-select: none;
+    @media only screen and (max-width: 575px) {
+        display: none;
+    }
+
+
+`
+
+const OfferMainImageMobile = styled(props => <Img {...props} />)`
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100% !important;
+    display: none;
+    height: 100% !important;
+    user-select: none;
+    @media only screen and (max-width: 575px) {
+        display: block;
+    }
+
+
+`
+
+const OfferWrapper = styled.div`
+    padding: 12.2vw 0 5vw 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    @media only screen and (max-width: 575px) {
+        padding: 28vw 6vw;  
+    }
+
+
+
+`
+
 
 
 
@@ -177,27 +191,21 @@ const Offer = ({data}) => {
 
     return (
         <>
-            <OfferSection fluid={headerImage} id="offer" >
-
+            <OfferSection id="offer" >
+                <OfferMainImage fluid={headerImage}/>
+                <OfferMainImageMobile fluid={headerImageMobile}/>
                 <Container>
-                    <OfferTitle>{headerTitle}</OfferTitle>
-                    <OfferDescr>
-                        {headerSubtitle_01} <OfferFlagsImg alt="flags" fluid={headerSubtitleImage} /> <br/> {headerSubtitle_02} <span tabIndex={0} role="button" onKeyDown={() => scrollTo('#manifest')} onClick={() => scrollTo('#manifest')}>{headerSubtitle_03} <OfferUnderlineIcon/></span>
-                    </OfferDescr>
-                </Container>
-
-            </OfferSection>
-            <OfferMobileSection  fluid={headerImageMobile} id="offer" >
-                <Container>
-                    <OfferMobileWrapper>
+                    <OfferWrapper>
                         <OfferTitle>{headerTitle}</OfferTitle>
                         <OfferDescr>
                             {headerSubtitle_01} <OfferFlagsImg alt="flags" fluid={headerSubtitleImage} /> <br/> {headerSubtitle_02} <span tabIndex={0} role="button" onKeyDown={() => scrollTo('#manifest')} onClick={() => scrollTo('#manifest')}>{headerSubtitle_03} <OfferUnderlineIcon/></span>
                         </OfferDescr>
-                    </OfferMobileWrapper>
+                    </OfferWrapper>
+                    
 
                 </Container>
-            </OfferMobileSection>
+
+            </OfferSection>
             <OfferSvgClip/>
 
         </>
