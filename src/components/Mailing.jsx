@@ -338,7 +338,7 @@ const Mailing = ({popup}) => {
                         <MailingContainer>
                             
                             <MailingText>
-                                <span>Оставьте почту,</span> чтобы узнать о наборах на курсы и новом бесплатном контенте. Без спама.
+                                <span>Оставьте почту,</span> чтобы узнать о наборах на курсы, мастер-классы и новом бесплатном контенте. Без спама.
                             </MailingText>
                             
                                 <Formik isInitialValid={isInitialValid}  initialValues={{politikaCheckbox: true, formParams: {
