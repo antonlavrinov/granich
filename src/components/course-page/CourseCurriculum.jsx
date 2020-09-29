@@ -35,6 +35,8 @@ import {
 } from '../curriculum/styles';
 import PlusImage from '../../assets/images/plus.png';
 import MinusImage from '../../assets/images/minus.png';
+
+
 // import LazyLoad from 'react-lazyload';
 
 
@@ -134,7 +136,7 @@ const CourseCurriculum = ({data, dataHeader}) => {
 
                         </CurriculumTitleAndContent>
                         <CurriculumBonusBlock>
-                            {documentToReactComponents(dataHeader.curriculumHeaderInfo.json)}
+                            {documentToReactComponents(dataHeader.curriculumHeaderInfo.json, options)}
                         </CurriculumBonusBlock>
                     </CurriculumHeader>
                     <CurriculumAccordionMobile allowMultipleExpanded allowZeroExpanded>

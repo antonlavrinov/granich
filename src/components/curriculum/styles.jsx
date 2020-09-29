@@ -139,6 +139,12 @@ export const CurriculumBonusBlock = styled.div`
         }
 
     }
+    a {
+        border-bottom: 1px solid var(--granich-light-grey);
+        :hover {
+            border-color: var(--granich-grey);
+        }
+    }
     @media only screen and (max-width: 575px) {
         p {
             border-radius: 1.5vw;
