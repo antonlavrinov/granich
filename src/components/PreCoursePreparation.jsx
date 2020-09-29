@@ -49,11 +49,12 @@ const PreparationMobileWrapper = styled.div`
 
 const PreparationTitle = styled.h2`
     color: var(--granich-black);
-    font-size: 4.55vw;
+    font-size: 6vw;
     letter-spacing: -0.2vw;
     font-weight: 700;
     line-height: 1.05;
-    margin-right: 12vw;
+    // margin-right: 12vw;
+    min-width: 45%;
     @media only screen and (max-width: 575px) {
         font-size: 11.9vw;
         letter-spacing: -0.7vw;
@@ -65,15 +66,28 @@ const PreparationTitle = styled.h2`
 `
 
 const PreparationText = styled.div`
-    color: var(--granich-black);
-    font-size: 1.5vw;
     margin-top: 1.5vw;
-    line-height: 1.55;
-    letter-spacing: 0.02vw;
-    font-weight: 500;
+
+    p {
+        color: var(--granich-black);
+        font-size: 1.4vw;
+        letter-spacing: 0;
+        font-weight: 500;
+        line-height: 1.35;
+        border: 1px solid var(--granich-light-grey);
+        border-radius: 0.5vw;
+        padding: 0.9vw 1.5vw;
+        margin-bottom: 1vw;
+    }
     @media only screen and (max-width: 575px) {
-        font-size: 3.9vw;
-        letter-spacing: -0.08vw;
+        p {
+            font-size: 3.9vw;
+            letter-spacing: -0.08vw;
+            padding: 3vw 4vw;
+            margin-bottom: 3vw;
+            border-radius: 2vw;
+        }
+
     }
     
 
@@ -432,8 +446,7 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
     // const filteredContents = multiPropsFilter(contentContents, filters);
 
     const filteredContents = multiPropsFilter(data, filters);
-    console.log('CONTENTSHOWN', contentShown)
-    console.log('LENGTH', filteredContents.length)
+
 
     return (
         <PreparationSection id="preparation">
@@ -445,7 +458,8 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
                                 Контент <br/>школы
                             </PreparationTitle>
                             <PreparationText>
-                                1. Оцените качество нашего подхода к обучению <br/>2. Потренируйтесь сами, если еще не можете записаться на курс
+                                <p>Оцените качество нашего подхода к обучению </p>
+                                <p>Потренируйтесь сами, если еще не можете записаться на курс</p>
                             </PreparationText>
                         </PreparationHeader>
                         <PreparationFilters>

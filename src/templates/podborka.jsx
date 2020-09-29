@@ -52,7 +52,7 @@ export const podborkaPageQuery = graphql`
             edges {
                 node {
                     id
-                    videoLink
+                    
                     videoImagePreview {
                         fluid(maxWidth: 800, quality: 70) {
                             ...GatsbyContentfulFluid_withWebp
@@ -67,6 +67,7 @@ export const podborkaPageQuery = graphql`
                     }
                     videoOrderNumber
                     videoCategory
+                    videoPageLink
 
                 }
             }
@@ -75,7 +76,6 @@ export const podborkaPageQuery = graphql`
             edges {
                 node {
                     id
-                    videoLink
                     videoImagePreview {
                         fluid(maxWidth: 800, quality: 70) {
                             ...GatsbyContentfulFluid_withWebp
@@ -90,6 +90,7 @@ export const podborkaPageQuery = graphql`
                     }
                     videoOrderNumber
                     videoCategory
+                    videoPageLink
 
                 }
             }
@@ -209,13 +210,13 @@ const PodborkaPage = ({data}) => {
                  url={`https://granich.design/${data.contentfulPodborka.contentSlug}`} />
             <div className="section-top-block"></div>
             {data.contentfulPodborka.contentBannerSwitch && data.coursePodborkaBanner && <Banner data={data.coursePodborkaBanner}/>}
-            {data.contentfulPodborka.contentSlug === 'osoznannaya-podborka-graphdesign' && (
+            {data.contentfulPodborka.contentSlug === 'conscious-graphic-design-compilation' && (
                 <>
                     <PodborkaOffer tags={data.contentfulPodborka.contentTags} dataContentPodborka={data.offerPodborkaGraphDesign}/>
                 </>
 
             )}
-            {data.contentfulPodborka.contentSlug === 'osoznannaya-podborka-freelance' && (
+            {data.contentfulPodborka.contentSlug === 'conscious-freelance-compilation' && (
                 <>
                     <PodborkaOffer tags={data.contentfulPodborka.contentTags} dataContentPodborka={data.offerPodborkaFreelance}/>
                 </>
@@ -223,7 +224,7 @@ const PodborkaPage = ({data}) => {
             )}
 
             <Mailing/>
-            {data.contentfulPodborka.contentSlug === 'osoznannaya-podborka-graphdesign' && (
+            {data.contentfulPodborka.contentSlug === 'conscious-graphic-design-compilation' && (
                 <> 
                     <Video categoryTwo="Далее, лекции, которые не имеют прямого отношения к курсу. 
                                         Но если у вас есть время, то для большего охвата материала полезны ↓" 
@@ -235,7 +236,7 @@ const PodborkaPage = ({data}) => {
                 </>
 
             )}
-            {data.contentfulPodborka.contentSlug === 'osoznannaya-podborka-freelance' && (
+            {data.contentfulPodborka.contentSlug === 'conscious-freelance-compilation' && (
                 <>
                     <Video data={data.videoPodborkaFreelance.edges}/>
                     <Books data={data.booksPodborkaFreelance.edges}/>

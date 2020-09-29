@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
@@ -7,7 +7,7 @@ import BackgroundImage from 'gatsby-background-image';
 // import YoutubeIcon from '../../assets/svgs/youtube-icon.svg';
 // import { Modal } from "react-responsive-modal";
 import { INLINES } from '@contentful/rich-text-types'
-import Cross from '../../assets/svgs/cross.svg';
+// import Cross from '../../assets/svgs/cross.svg';
 
 
 // const Youtube = styled(props => <YoutubeIcon {...props}/>)`
@@ -349,10 +349,10 @@ const options = {
 }
 
 
-const VideoItem = ({text, number, image, links, timing}) => {
+const VideoItem = ({text, number, image, links, timing, videoPageLink}) => {
     return (
         <VideoItemWrapper >
-            <VideoItemWrapperLink target="_blank" href="/" rel="noopener noreferrer">
+            <VideoItemWrapperLink target="_blank" href={videoPageLink} rel="noopener noreferrer">
                 <VideoItemImage fluid={image}>
                     {/* <Youtube/> */}
                 </VideoItemImage>
@@ -373,21 +373,21 @@ const VideoItem = ({text, number, image, links, timing}) => {
 }
 
 const Video = ({data, categoryTwo, categoryThree}) => {
-    const [modalIsOpen, setIsOpen] = useState(false);
-    const [videoLink, setvideoLink] = useState('');
+    // const [modalIsOpen, setIsOpen] = useState(false);
+    // const [videoLink, setvideoLink] = useState('');
     
 
 
 
-    const openModal = (link) => {
-        setIsOpen(true);
-        setvideoLink(link)
+    // const openModal = (link) => {
+    //     setIsOpen(true);
+    //     setvideoLink(link)
         
-    }
+    // }
 
-    const closeModal = () => {
-        setIsOpen(false);
-    }
+    // const closeModal = () => {
+    //     setIsOpen(false);
+    // }
     return (
         <VideoSection>
             <Container>
@@ -428,9 +428,9 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                                         return (
                                             <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === '1' && <VideoItem   timing={videoItem.node.videoTiming} 
                                                                                                              image={videoItem.node.videoImagePreview.fluid} 
-                                                                                                             setIsOpen={openModal}
-                                                                                                             
-                                                                                                             videoLink={videoItem.node.videoLink}
+                                                                                                            //  setIsOpen={openModal}
+                                                                                                            videoPageLink={videoItem.node.videoPageLink}
+                                                                                                            //  videoLink={videoItem.node.videoLink}
                                                                                                              number={videoItem.node.videoOrderNumber} 
                                                                                                              links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
                                                                                                              text={videoItem.node.videoText.json}/>}</React.Fragment> 
@@ -451,9 +451,9 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                                             return (
                                                 <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === '2' && <VideoItem timing={videoItem.node.videoTiming} 
                                                                                                                                                     image={videoItem.node.videoImagePreview.fluid} 
-                                                                                                                                                    setIsOpen={openModal}
-                                                                                                                                                    videoLink={videoItem.node.videoLink}
-                                                                                                                                                    
+                                                                                                                                                    // setIsOpen={openModal}
+                                                                                                                                                    // videoLink={videoItem.node.videoLink}
+                                                                                                                                                    videoPageLink={videoItem.node.videoPageLink}
                                                                                                                                                     number={videoItem.node.videoOrderNumber} 
                                                                                                                                                     links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
                                                                                                                                                     text={videoItem.node.videoText.json}/>}</React.Fragment> 
@@ -475,9 +475,9 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                                             return (
                                                 <React.Fragment key={videoItem.node.id}>{videoItem.node.videoCategory === '3' && <VideoItem timing={videoItem.node.videoTiming} 
                                                                                                                                                 image={videoItem.node.videoImagePreview.fluid} 
-                                                                                                                                                setIsOpen={openModal}
-                                                                                                                                                videoLink={videoItem.node.videoLink}
-                                                                                                                                            
+                                                                                                                                                // setIsOpen={openModal}
+                                                                                                                                                // videoLink={videoItem.node.videoLink}
+                                                                                                                                                videoPageLink={videoItem.node.videoPageLink}
                                                                                                                                                 number={videoItem.node.videoOrderNumber} 
                                                                                                                                                 links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
                                                                                                                                                 text={videoItem.node.videoText.json}/>}</React.Fragment> 
