@@ -212,7 +212,8 @@ const PortfolioOnePager = styled(props => <Img {...props}/>)`
 `
 
 const PortfolioMiltiPagesWrapper = styled.div`
-    display: flex;
+    display: none;
+    // display: flex;
     flex-wrap: wrap;
     padding: 0 0.6vw 1.5vw;
     // min-height: 55.1vw;
@@ -307,7 +308,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
 
                     </PortfolioOnePagersWrapper>
 
-                    {/* {imageGallery.length > 0 && (
+                    {imageGallery.length > 0 && (
                         <PortfolioMiltiPagesWrapper>
                             
                                 {imageGallery.map((multi, idx) => {
@@ -319,7 +320,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                             
                         
                         </PortfolioMiltiPagesWrapper>
-                    )} */}
+                    )}
 
                     
 
