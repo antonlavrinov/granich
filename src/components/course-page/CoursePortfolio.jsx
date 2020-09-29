@@ -7,7 +7,7 @@ import 'react-medium-image-zoom/dist/styles.css'
 import PortfolioImageGallery from './portfolio/PortfolioImageGallery';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import { INLINES } from '@contentful/rich-text-types'
-
+import { useMediaQuery } from 'react-responsive'
 
 const PortfolioSection = styled.section`
 
@@ -218,7 +218,6 @@ const PortfolioMiltiPagesWrapper = styled.div`
     // min-height: 55.1vw;
     @media only screen and (max-width: 575px) {
         margin-bottom: 0;
-        display: none;
     }
 `
 
@@ -235,6 +234,9 @@ const options = {
 
 const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
     const [imageGallery, setImageGallery] = useState([]);
+    const isDesktopOrMobile = useMediaQuery({
+        query: '(max-width: 575px)'
+    })
 
     useEffect(() => {
         if(multiPages) {
@@ -306,7 +308,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                         })}
 
                     </PortfolioOnePagersWrapper>
-                    {false ? (
+                    {!isDesktopOrMobile ? (
                         <>
                             {imageGallery.length > 0 && (
                                 <PortfolioMiltiPagesWrapper>
