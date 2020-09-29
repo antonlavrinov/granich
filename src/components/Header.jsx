@@ -33,7 +33,7 @@ const HeaderSection = styled.header`
 
 `
 
-const LogoWrapper = styled(props => <Link {...props}/>)`
+const LogoWrapper = styled.a`
   display: flex;
   align-items: center;
   fill: white;
@@ -257,7 +257,7 @@ const LoginButton = styled.a`
     display: none;
   }
 `
-const LogoMobileWrapper = styled(props => <Link {...props}/>)`
+const LogoMobileWrapper = styled.a`
   display: none;
   @media only screen and (max-width: 575px) {
     display: flex;
@@ -320,11 +320,11 @@ const Header = ({ siteTitle, type }) => (
       <Container>
         <HeaderWrapper>
 
-          <LogoWrapper to="/" propstyle={type}>
+          <LogoWrapper href="/" propstyle={type}>
             <WhiteLogo  />
           </LogoWrapper>
           <LogoAndLoginButtonWrapper>
-            <LogoMobileWrapper to="/" propstyle={type}>
+            <LogoMobileWrapper href="/" propstyle={type}>
               <WhiteLogo  />
             </LogoMobileWrapper>
             <LoginMobileButton rel="noopener noreferrer" href="https://granich.ru/cms/system/login" target="_blank">

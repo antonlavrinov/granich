@@ -3,8 +3,7 @@ import { Container } from './style';
 import styled from 'styled-components';
 import PreparationContent from './PreparationContent';
 import TagCross from '../assets/svgs/tag-cross-icon-01.svg';
-// import LazyLoad from 'react-lazyload';
-import { useInView } from 'react-intersection-observer'
+
 
 const PreparationSection = styled.section`
     margin-top: 4vw;
@@ -290,9 +289,7 @@ const PreparationButtonMoreText = styled.div`
 
 
 const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
-    const [ref, inView] = useInView({
-        threshold: 0,
-      })
+
 
     //initial data contents(recommended)
     const [data, setData] = useState(dataRecommended);
@@ -453,7 +450,7 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
 
 
     return (
-        <PreparationSection id="preparation" ref={ref}>
+        <PreparationSection id="preparation">
             <Container>
                 <PreparationWrapper>
                     <PreparationMobileWrapper>
@@ -484,8 +481,6 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
                             })}
                         </PreparationTags>
                     </PreparationMobileWrapper>
-                    {inView && (
-                        <>
                             <PreparationContents>
                                 {filteredContents.slice(0, contentPagination).map((content, idx) => {
                                     return (
@@ -502,9 +497,7 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
                                 </>
                                 
                             )}
-                        
-                        </>
-                    )}
+
 
                     
                     

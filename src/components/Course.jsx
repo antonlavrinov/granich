@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import CourseCard from './course-cards/CourseCard';
 import MasterClassCard from './course-cards/MasterClassCard';
 import DevelopmentCard from './course-cards/DevelopmentCard';
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 
 
-const CourseLinkWrapper = styled(props => <Link {...props}/>)`
+const CourseLinkWrapper = styled.a`
     transition: all 0.2s ease;
     :hover {
         cursor: pointer;
@@ -87,7 +87,7 @@ const Course = ({courseData, openModal}) => {
                             )}
                         </CourseLinkModal>
                     ) : (
-                        <CourseLinkWrapper to={`/${courseData.node.courseSlug}`}>
+                        <CourseLinkWrapper href={`/${courseData.node.courseSlug}`}>
                             <>
                                 {courseData.node.courseType === 'Курс' ? (
                                     <CourseCard arrowBlack={arrowBlack} arrowWhite={arrowWhite} calendar={calendar} courseData={courseData} />
