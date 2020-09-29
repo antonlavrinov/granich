@@ -27,6 +27,7 @@ export const pageQuery = graphql`
             contentBannerSwitch
             contentTags
             contentType
+            contentAiFileLink
             
 
         }

@@ -91,6 +91,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         contentYoutubeVideoLink: String
         contentBannerSwitch: Boolean
         contentBanner: String
+        contentAiFileLink: String
       }
 
 

@@ -3,6 +3,7 @@ import { Container } from '../style';
 import styled from 'styled-components';
 import BehanceIcon from '../../assets/svgs/behance-icon.svg';
 import PinterestIcon from '../../assets/svgs/pinterest-icon.svg';
+import IllustratorIcon from '../../assets/svgs/illustrator-icon.svg';
 import PDFIcon from '../../assets/svgs/pdf-icon.svg';
 import MediumIcon from '../../assets/svgs/medium-icon.svg';
 import ArrowDown from '../../assets/svgs/header-arrow-icon-down.svg';
@@ -25,6 +26,21 @@ const ArrowLinkDown = styled(props => <ArrowDown {...props}/>)`
 `
 
 const Medium = styled(props => <MediumIcon {...props}/>)`
+    min-width: 5.8vw;
+    min-height: 5.8vw;
+    width: 5.8vw;
+    height: 5.8vw;
+    margin-right: 0.5vw;
+    @media only screen and (max-width: 575px) {
+        min-width: 18vw;
+        min-height: 18vw;
+        width: 18vw;
+        height: 18vw;
+        margin-right: 2vw;
+    }
+`
+
+const Illustrator = styled(props => <IllustratorIcon {...props}/>)`
     min-width: 5.8vw;
     min-height: 5.8vw;
     width: 5.8vw;
@@ -174,7 +190,7 @@ const ContentLink = ({link, type, text, title}) => {
 
     return (
         <LinkBlock target="_blank" href={link}>
-            {type === 'Behance' ? (<Behance/>) : (type === 'Medium') ? (<Medium/>) : (type === 'PDF') ? (<PDF/>) : (type === 'Pinterest') ? (<Pinterest/>) : null}
+            {type === 'Behance' ? (<Behance/>) : (type === 'Medium') ? (<Medium/>) : (type === 'PDF') ? (<PDF/>) : (type === 'Pinterest') ? (<Pinterest/>): (type === 'Illustrator') ? (<Illustrator/>) : null}
             <LinkText>
                 <span>{title}{arrow}</span><br/>{text}
             </LinkText>
@@ -188,11 +204,12 @@ const ContentLinks = ({data}) => {
     return (
         <ContentLinksSection>
             <Container>
-                <ContentLinksWrapper exists={data.contentfulContent.contentPDF || data.contentfulContent.contentLinkMedium || data.contentfulContent.contentLinkBehance}>
+                <ContentLinksWrapper exists={data.contentfulContent.contentPDF || data.contentfulContent.contentLinkMedium || data.contentfulContent.contentLinkBehance || data.contentfulContent.contentLinkPinterest || data.contentfulContent.contentAiFileLink}>
                     {data.contentfulContent.contentPDF && <ContentLink  type="PDF" text={'Скачайте и читайте урок оффлайн в любое время'} title={'Скачать PDF'} link={data.contentfulContent.contentPDF.file.url}/> }
                     {data.contentfulContent.contentLinkMedium && <ContentLink  type="Medium" text={'Читайте урок в формате статьи на Медиуме '} title={'Читать на Медиуме'} link={data.contentfulContent.contentLinkMedium}/> }
                     {data.contentfulContent.contentLinkBehance && <ContentLink  type="Behance" text={'Смотрите и Добавьте материал себе на Биханс'} title={'Смотреть на Бихансе'} link={data.contentfulContent.contentLinkBehance}/> }
                     {data.contentfulContent.contentLinkPinterest && <ContentLink  type="Pinterest" text={'Подробнее о материале на доске Пинтереста'} title={'Смотреть на Пинтересте'} link={data.contentfulContent.contentLinkPinterest}/> }
+                    {data.contentfulContent.contentAiFileLink && <ContentLink  type="Illustrator" text={'Подробнее о материале на доске Пинтереста'} title={'Смотреть на Пинтересте'} link={data.contentfulContent.contentAiFileLink}/> }
                     
                 </ContentLinksWrapper>
 

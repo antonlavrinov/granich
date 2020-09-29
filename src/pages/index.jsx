@@ -70,7 +70,7 @@ export const contentfulQuery = graphql`
             }
           }
         },
-        contentCardsNew: allContentfulGranichMainContentCard(sort: {fields: [createdAt], order: DESC}) {
+        contentCardsNew: allContentfulGranichMainContentCard(sort: {fields: [contentOrderNumberNew], order: DESC}) {
             nodes {
               contentDescription {
                 json
