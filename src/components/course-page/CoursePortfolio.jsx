@@ -5,6 +5,8 @@ import Img from 'gatsby-image';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import PortfolioImageGallery from './portfolio/PortfolioImageGallery';
+import PortfolioMultiPagesMobile from './portfolio/PortfolioMultiPagesMobile';
+
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import { INLINES } from '@contentful/rich-text-types'
 import { useMediaQuery } from 'react-responsive'
@@ -329,9 +331,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                         </>
                     )}
                     {isMobile && (
-                        <div>
-                            dffdfd
-                        </div>
+                        <PortfolioMultiPagesMobile multiPages={multiPages}/>
                     )}
 
 
