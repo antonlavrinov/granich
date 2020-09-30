@@ -16,7 +16,7 @@ import {ContentWrapperExternalLink,
 
 
 
-const PinterestContent = ({content, mediumIcon, mediumLinkIcon, contentExternalLink}) => {
+const MediumContent = ({content, mediumIcon, mediumLinkIcon, contentExternalLink}) => {
     return (
         <ContentWrapperExternalLink className="content" medium rel="noopener noreferrer" href={contentExternalLink} target="_blank">
                 <ContentContainer>
@@ -44,4 +44,4 @@ const PinterestContent = ({content, mediumIcon, mediumLinkIcon, contentExternalL
     )
 }
 
-export default PinterestContent
+export default MediumContent

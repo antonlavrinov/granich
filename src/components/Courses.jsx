@@ -88,7 +88,7 @@ const Courses = ({data, toggleMailingActive}) => {
                     closeIcon={<div></div>}
                     open={modalIsOpen} 
                     onClose={closeModal}
-                    focusTrapped={true}
+                    focusTrapped={false}
                     classNames={{
                         overlay: 'mailingOverlay',
                         modal: 'mailingModal',

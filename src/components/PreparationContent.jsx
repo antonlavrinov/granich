@@ -21,7 +21,8 @@ const PreparationContent = ({content}) => {
     const mixedPinterest = 'Youtube + Pinterest';
     const podborka = 'Осознанная подборка';
     const contentExternalLink = content.contentType === pinterest ? (
-        content.contentLinkPinterest) : content.contentType === behance ? (content.contentLinkBehance) : '/';
+        content.contentLinkPinterest) : content.contentType === behance ? (
+            content.contentLinkBehance) : content.contentType === medium ? (content.contentLinkMedium) : '/';
 
 
     const data = useStaticQuery(graphql`

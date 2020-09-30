@@ -262,7 +262,11 @@ export const  ContentDescr = styled.div`
         font-weight: 400;
         letter-spacing: -0.01vw;
         line-height: 1.15;
+        i {
+            color: inherit;
+        }
     }
+
     @media only screen and (max-width: 575px) {
         max-width: 100%;
         margin-top: 1vw;
