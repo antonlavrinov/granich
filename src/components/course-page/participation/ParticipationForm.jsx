@@ -167,27 +167,28 @@ const FormInputLabelMobile = styled.label`
     }
 `
 
-const FormCheckbox = styled.input`
-    margin-left: 0.3vw;
-    @media only screen and (max-width: 575px) {
+// const FormCheckbox = styled.input`
+//     margin-left: 0.3vw;
+//     @media only screen and (max-width: 575px) {
         
-    }
+//     }
 
 
-`
+// `
 
-const FormCheckboxLabel = styled.label`
+const FormPolitikaLabel = styled.div`
     font-size: 1.2vw;
     user-select: none;
     letter-spacing: -0.02vw;
     margin-top: 1.5vw;
     margin-left: 0.4vw;
     margin-bottom: 0.7vw;
+    line-height: 1.4;
+
     a {
         color: var(--granich-red);
         font-weight: 400;
         display: inline-block;
-        margin: 0 0.4vw;
         position: relative;
        
         :after {
@@ -202,7 +203,6 @@ const FormCheckboxLabel = styled.label`
         }
         
         :hover {
-            // border-bottom: none;
             :after {
                 background: var(--granich-red);
             }
@@ -367,17 +367,19 @@ const ParticipationForm = ({data}) => {
         <ShakeForm style={{height: '100%'}} pose={["shake"]} poseKey={shakeTrigger}>
 
                 <Formik isInitialValid={isInitialValid} 
-                                initialValues={{politikaCheckbox: true, formParams: {
-                                    first_name: '',
-                                    last_name: '',
-                                    email: '',
-                                    phone: ''
+                                initialValues={{
+                                    // politikaCheckbox: true, 
+                                    formParams: {
+                                        first_name: '',
+                                        last_name: '',
+                                        email: '',
+                                        phone: ''
                                 }}}
                                 onSubmit={(values, {setSubmitting}, e) => {
                                     formEl.current.submit();
                                 }}
                                 validationSchema={Yup.object().shape({
-                                    politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на учебный договор и на обработку персональных данных'),
+                                    // politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на учебный договор и на обработку персональных данных'),
                                     formParams: Yup.object().shape({
                                         first_name: Yup.string().trim('Уберите пробелы в начале и в конце строки').strict().matches(myNameNewRegExp, 'Неверные символы в Имени').required('Сперва впишите Имя'),
                                         // first_name: Yup.string().email('Неверный формат электронного адреса').required('Заполните поле Емейл'),
@@ -399,8 +401,8 @@ const ParticipationForm = ({data}) => {
                                         isValid,
                                         touched,
                                         handleBlur,
-                                        setFieldValue,
-                                        setFieldTouched,
+                                        // setFieldValue,
+                                        // setFieldTouched,
                                         
 
                                     } = props;
@@ -492,7 +494,7 @@ const ParticipationForm = ({data}) => {
                                                 <ErrorMessage>{errors.formParams.phone}</ErrorMessage>
                                             )}
                                             <FormInputLabelMobile htmlFor="formParams[phone]">для экстренной связи</FormInputLabelMobile>
-                                            <FormCheckbox 
+                                            {/* <FormCheckbox 
                                                 type="checkbox"
                                                 name="politikaCheckbox"
                                                 value={values.politikaCheckbox}
@@ -504,13 +506,14 @@ const ParticipationForm = ({data}) => {
                                                 id="politikaCheckbox"
                                                 className={`course-form-checkbox`}
                                                 
-                                            /> 
+                                            />  */}
                                            
-                                            <FormCheckboxLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">Принять <Link to="/public-offer"> оферту </Link> и <Link to="/privacy"> политику конфиденциальности</Link></FormCheckboxLabel>
-                                            
+                                            {/* <FormPolitikaLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">Принять <Link to="/public-offer"> оферту </Link> и <Link to="/privacy"> политику конфиденциальности</Link></FormPolitikaLabel> */}
+                                            <FormPolitikaLabel> Нажимая на кнопку, принимаю условия <Link to="/public-offer"> оферты </Link> <br style={{display: 'block'}}/>и <Link to="/privacy"> политики конфиденциальности</Link></FormPolitikaLabel>
+{/*                                             
                                             {errors.politikaCheckbox && touched.politikaCheckbox && (
                                                 <ErrorMessage>{errors.politikaCheckbox}</ErrorMessage>
-                                            )}
+                                            )} */}
                                         </FormContainer>
 
 

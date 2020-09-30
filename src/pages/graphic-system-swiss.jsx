@@ -141,7 +141,7 @@ const GraphicSystemSwissPage = ({data}) => (
          keywords={['vhs', 'графсистема']}
          ogImage={ogImage}
          url="https://granich.design/graphic-system-swiss" />
-    <CourseOffer data={data.SwissOffer}/>
+    <CourseOffer courseName={'Swiss'} data={data.SwissOffer}/>
     <CourseExplanations data={data.SwissExplanations}/>
     <CourseAuthors data={data.SwissTeam}/>
     <MasterClassExample/>

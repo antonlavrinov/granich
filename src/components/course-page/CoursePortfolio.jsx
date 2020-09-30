@@ -330,9 +330,14 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                             )}
                         </>
                     )}
-                    {isMobile && (
-                        <PortfolioMultiPagesMobile multiPages={multiPages}/>
+                    {!masterClass && (
+                        <>
+                            {isMobile && (
+                                <PortfolioMultiPagesMobile multiPages={multiPages}/>
+                            )}
+                        </>
                     )}
+
 
 
                     

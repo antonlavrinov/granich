@@ -146,23 +146,20 @@ const ShakeForm = posed.div({
   
   `
   
-  const FormCheckboxLabel = styled.label`
+  const FormPolitikaLabel = styled.div`
       font-size: 1.2vw;
-      user-select: none;
       letter-spacing: -0.02vw;
       margin-top: 1vw;
       margin-left: 0.4vw;
       margin-bottom: 0.7vw;
-      display: flex;
-
       padding-bottom: 1vw;
       margin-right: .8vw;
+      line-height: 1.4;
 
       a {
           color: var(--granich-red);
           font-weight: 400;
           display: inline-block;
-          margin: 0 0.4vw;
           position: relative;
          
           :after {
@@ -197,6 +194,58 @@ const ShakeForm = posed.div({
         }
       `}
   `
+
+  const FormCheckboxLabel = styled.label`
+  font-size: 1.2vw;
+  user-select: none;
+  letter-spacing: -0.02vw;
+  margin-top: 1vw;
+  margin-left: 0.4vw;
+  margin-bottom: 0.7vw;
+  display: flex;
+
+  padding-bottom: 1vw;
+  margin-right: .8vw;
+
+  a {
+      color: var(--granich-red);
+      font-weight: 400;
+      display: inline-block;
+      margin: 0 0.4vw;
+      position: relative;
+     
+      :after {
+          content: '';
+          height: 1px;
+          width: 100%;
+          background: rgba(228,5,33, 0.2);
+          position: absolute;
+          bottom: -0.1vw;
+          left: 0;
+
+      }
+      
+      :hover {
+          // border-bottom: none;
+          :after {
+              background: var(--granich-red);
+          }
+      }
+  }
+  @media only screen and (max-width: 575px) {
+      font-size: 3vw;
+      margin-top: 3vw;
+  }
+  ${props => props.line && `
+    border-bottom: 1px solid #dedede;
+    :last-child {
+        border-bottom: none;
+    }
+    @media only screen and (max-width: 575px) {
+        padding-bottom: 3vw;
+    }
+  `}
+`
 
 const FormLabelPrice = styled.div`
     font-family: EB Garamond;
@@ -429,7 +478,10 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
         <>
                 <ShakeForm  pose={["shake"]} poseKey={shakeTrigger}>
                     <Formik isInitialValid={isInitialValid} 
-                                initialValues={{politikaCheckbox: true,offerCheckbox: true, formParams: {
+                                initialValues={{
+                                    // politikaCheckbox: true,
+                                    // offerCheckbox: true, 
+                                    formParams: {
                                     offer_id: `${chosenPrice}`,
                                     email: '',
                                     
@@ -438,8 +490,8 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                     formEl.current.submit();
                                 }}
                                 validationSchema={Yup.object().shape({
-                                    politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
-                                    offerCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на учебный договор'),
+                                    // politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
+                                    // offerCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на учебный договор'),
                                     formParams: Yup.object().shape({
                                         offer_id: Yup.string().required('Выберите один из пакетов'),
                                         email: Yup.string().email('Это не Электропочта').required('Сперва впишите Электропочту'),
@@ -628,8 +680,9 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                             {errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email && (
                                                 <ErrorMessage>{errors.formParams.email}</ErrorMessage>
                                             )}
+                                            <FormPolitikaLabel>Нажимая на кнопку, принимаю условия<a target="_blank" href="/privacy" > политики конфиденциальности</a> и <a target="_blank" href="/public-offer" > учебного договора</a></FormPolitikaLabel>
 
-                                            <FormCheckbox 
+                                            {/* <FormCheckbox 
                                                 type="checkbox"
                                                 name="politikaCheckbox"
                                                 value={values.politikaCheckbox}
@@ -641,9 +694,10 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                 id="politikaCheckbox"
                                                 className={`course-form-checkbox`}
                                                 
-                                            /> 
-                                           
-                                            <FormCheckboxLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">Принять <a target="_blank" href="/privacy" > политику конфиденциальности</a></FormCheckboxLabel>
+                                            />  */}
+                                          
+                                            {/* <FormCheckboxLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">Принять <a target="_blank" href="/privacy" > политику конфиденциальности</a></FormCheckboxLabel>
+                                            
                                             
                                             {errors.politikaCheckbox && touched.politikaCheckbox && (
                                                 <ErrorMessage>{errors.politikaCheckbox}</ErrorMessage>
@@ -668,7 +722,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                             
                                             {errors.offerCheckbox && touched.offerCheckbox && (
                                                 <ErrorMessage>{errors.offerCheckbox}</ErrorMessage>
-                                            )}
+                                            )} */}
                                         </FormContainer>
 
 

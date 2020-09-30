@@ -114,7 +114,7 @@ const Cookies = () => {
                     <CookiesText>
                         Да, это соглашение на использование <span>cookies</span>. Пожалуйста, подтвердите его и закончим на этом ;)
                     </CookiesText>
-                    <CookiesButton onClick={removeCookies}>Окей</CookiesButton>
+                    <CookiesButton onClick={removeCookies}>Добро</CookiesButton>
                     
                 </CookiesWrapper>
             )}

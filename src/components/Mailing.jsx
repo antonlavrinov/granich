@@ -277,7 +277,7 @@ const MailingButton = styled.button`
 
 const FormPolitikaLabel = styled.div`
     color: white;
-    margin-top: 0.7vw;
+    margin-top: 0.9vw;
     font-size: 1.15vw;
     a {
         color: white;
@@ -307,10 +307,9 @@ const FormPolitikaLabel = styled.div`
     @media only screen and (max-width: 575px) {
         font-size: 3.6vw;
         margin-top: 2vw;
-        white-space: nowrap;
+        line-height: 1.3;
         a {
             margin: 0;
-            margin-left: 1.5vw;
         }
     }
 `
@@ -459,7 +458,7 @@ const Mailing = ({popup}) => {
                                                         
                                                     </MailingWrapperInputAndButton>
                                                     <FormPolitikaLabel>
-                                                        Нажимая кнопку, принимаю<PrivacyPopupLink href="/privacy"> политику конфиденциальности</PrivacyPopupLink>
+                                                        Нажимая кнопку, принимаю<PrivacyPopupLink href="/privacy"> политику конфиденциальности</PrivacyPopupLink>
                                                     </FormPolitikaLabel>
                                                     {/* <FormCheckbox 
                                                             type="checkbox"

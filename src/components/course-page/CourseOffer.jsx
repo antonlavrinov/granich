@@ -222,6 +222,21 @@ const CourseOfferTitle = styled.h1`
             }
         }
     `}
+    ${props => props.courseName === 'Swiss' && `
+        p {
+            letter-spacing: 0 !important;
+            font-size: 7vw;
+            line-height: 1.05;
+
+        }
+        @media only screen and (max-width: 575px) {
+            p {
+                font-size: 15vw;
+            }
+        }
+        
+
+    `}
 `
 const CourseOfferDescr = styled.div`
     width: 33vw;
@@ -234,7 +249,7 @@ const CourseOfferDescr = styled.div`
     position: relative;
     z-index: 1;
     ${props => props.type === 'Мастер-класс' && `
-        width: 26vw;
+        width: 35vw;
         margin-bottom: 2vw;
         @media only screen and (max-width: 575px) {
             font-size: 4.4vw;
@@ -249,6 +264,12 @@ const CourseOfferDescr = styled.div`
         margin-bottom: 5vw;
         margin-left: 0;
     }
+    ${props => props.courseName === 'Swiss' && `
+        width: 28vw;
+
+        
+
+    `}
 
 `
 
@@ -400,7 +421,7 @@ const CourseOfferInfo = styled.div`
 // }
 
 
-const CourseOffer = ({data}) => {
+const CourseOffer = ({data, courseName}) => {
 
     return (
         <CourseOfferSection>
@@ -424,13 +445,13 @@ const CourseOffer = ({data}) => {
                                 </>
                             )}
                         </CourseOfferTags>
-                        <CourseOfferTitle type={data.courseType}>
+                        <CourseOfferTitle courseName={courseName} type={data.courseType}>
                             {documentToReactComponents(data.courseMainTitle.json)}
                         </CourseOfferTitle>
                         <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/>
 
                         
-                        <CourseOfferDescr type={data.courseType}>
+                        <CourseOfferDescr courseName={courseName} type={data.courseType}>
                             {data.courseDescr}
                         </CourseOfferDescr>
                         {data.courseType === 'Курс' ? (
