@@ -161,6 +161,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
       type ContentfulGranichCollectionVideo implements Node {
         videoPageLink: String
+        videoContentIcons: [String]
         childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode: ContentfulVideoAdditionalLinks
       }
       type ContentfulVideoAdditionalLinks {

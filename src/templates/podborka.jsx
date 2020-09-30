@@ -68,6 +68,7 @@ export const podborkaPageQuery = graphql`
                     videoOrderNumber
                     videoCategory
                     videoPageLink
+                    videoContentIcons
 
                 }
             }
@@ -91,6 +92,8 @@ export const podborkaPageQuery = graphql`
                     videoOrderNumber
                     videoCategory
                     videoPageLink
+                    videoContentIcons
+                    
 
                 }
             }

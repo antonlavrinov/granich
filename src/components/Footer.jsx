@@ -66,8 +66,7 @@ const FooterWrapper = styled.div`
     }
 `
 
-const LogoWrapper = styled(props => <Link {...props}/>)`
-//   height: auto;
+const LogoWrapper = styled.a`
   fill: var(--granich-black);
   margin-right: 0.7vw;
   @media only screen and (max-width: 575px) {
@@ -311,7 +310,7 @@ const Footer = () => {
             <Container>
                 <FooterWrapper>
                     <FooterLogoAndInfo>
-                        <LogoWrapper to="/">
+                        <LogoWrapper href="/">
                             <BlackLogo/>
                         </LogoWrapper>
                         

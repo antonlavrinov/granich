@@ -7,6 +7,10 @@ import BackgroundImage from 'gatsby-background-image';
 // import YoutubeIcon from '../../assets/svgs/youtube-icon.svg';
 // import { Modal } from "react-responsive-modal";
 import { INLINES } from '@contentful/rich-text-types'
+import Img from 'gatsby-image';
+import { graphql, useStaticQuery } from 'gatsby'
+
+
 // import Cross from '../../assets/svgs/cross.svg';
 
 
@@ -247,40 +251,56 @@ const VideoItemInfoTiming = styled.div`
     }
 `
 
-const VideoItemInfoLinks = styled.div`
-    width: 4vw;
-    margin-bottom: 0.5vw;
-    p {
-        margin-top: 0.2vw;
-        line-height: 1.3;
-        font-size: 0.8vw;
+// const VideoItemInfoLinks = styled.div`
+//     width: 4vw;
+//     margin-bottom: 0.5vw;
+//     p {
+//         margin-top: 0.2vw;
+//         line-height: 1.3;
+//         font-size: 0.8vw;
 
 
-    }
-    p:empty { 
-        display: none; 
+//     }
+//     p:empty { 
+//         display: none; 
 
-    }
-    a {
-        color: white; 
-        font-size: 0.8vw;
-        position: relative;
-        display: inline;
-        border-bottom: 1px solid var(--granich-grey);
-        :hover {
-            border-bottom: 1px solid white;
-        }
-    } 
+//     }
+//     a {
+//         color: white; 
+//         font-size: 0.8vw;
+//         position: relative;
+//         display: inline;
+//         border-bottom: 1px solid var(--granich-grey);
+//         :hover {
+//             border-bottom: 1px solid white;
+//         }
+//     } 
+//     @media only screen and (max-width: 575px) {
+//         width: 16vw;
+//         margin-bottom: 2vw;
+//         p {
+//             margin-top: 1vw;
+//         }
+//         a { 
+//             font-size: 2.5vw;
+//         } 
+//     }
+// `
+
+const VideoIcons = styled.div`
+
+`
+
+const VideoIconImg = styled(props => <Img {...props}/>)`
+    width: 2.5vw;
+    height: 2.5vw;
+    margin: 0.2vw 0;
     @media only screen and (max-width: 575px) {
-        width: 16vw;
-        margin-bottom: 2vw;
-        p {
-            margin-top: 1vw;
-        }
-        a { 
-            font-size: 2.5vw;
-        } 
+        width: 9vw;
+        height: 9vw;
+        margin: 1vw 0;
     }
+
 `
 
 // const VideoModal = styled.div`
@@ -349,7 +369,7 @@ const options = {
 }
 
 
-const VideoItem = ({text, number, image, links, timing, videoPageLink}) => {
+const VideoItem = ({text, number, image, links, timing, videoPageLink, videoIcons, mediumIcon, behanceIcon, pdfIcon}) => {
     return (
         <VideoItemWrapper >
             <VideoItemWrapperLink target="_blank" href={videoPageLink} rel="noopener noreferrer">
@@ -359,7 +379,22 @@ const VideoItem = ({text, number, image, links, timing, videoPageLink}) => {
                 <VideoItemInfo>
                     <VideoItemInfoDetails>
                         <VideoItemNumber>{`№${number}`}</VideoItemNumber>
-                        {links && <VideoItemInfoLinks className="collection_link">{documentToReactComponents(links.json, options)}</VideoItemInfoLinks>}
+                        {videoIcons && (
+                            <VideoIcons>
+                                {videoIcons.map((item, idx) => {
+                                    return (
+                                        <React.Fragment key={idx}>
+                                            {item === 'PDF' && <VideoIconImg fluid={pdfIcon}/>}
+                                            {item === 'Behance' && <VideoIconImg fluid={behanceIcon}/>}
+                                            {item === 'Medium' && <VideoIconImg fluid={mediumIcon}/>}
+                                        </React.Fragment>
+                                    
+                                    )
+                                })}
+                            </VideoIcons>
+
+                        )}
+                        {/* {links && <VideoItemInfoLinks className="collection_link">{documentToReactComponents(links.json, options)}</VideoItemInfoLinks>} */}
                         <VideoItemInfoTiming>{timing}</VideoItemInfoTiming>
                     </VideoItemInfoDetails>
                     <VideoItemInfoText>
@@ -373,6 +408,38 @@ const VideoItem = ({text, number, image, links, timing, videoPageLink}) => {
 }
 
 const Video = ({data, categoryTwo, categoryThree}) => {
+
+    const videoImageData = useStaticQuery(graphql`
+        query videoContentIcons {
+            videoContentIconPDFImg: file(relativePath: { eq: "pdf-icon.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 90) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            videoContentIconBehance: file(relativePath: { eq: "behance-icon.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 90) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            videoContentIconMedium: file(relativePath: { eq: "medium-icon.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 90) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+
+        }
+    `)
+
+    const pdf = videoImageData.videoContentIconPDFImg.childImageSharp.fluid;
+    const behance = videoImageData.videoContentIconBehance.childImageSharp.fluid;
+    const medium = videoImageData.videoContentIconMedium.childImageSharp.fluid;
     // const [modalIsOpen, setIsOpen] = useState(false);
     // const [videoLink, setvideoLink] = useState('');
     
@@ -419,6 +486,7 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                         <VideoSectionText>Осознанный Графдизайн — интенсивный. Чтобы успеть на курсе как можно больше, вы можете уже сейчас подготовиться, посмотрев эти видео.</VideoSectionText>
                     </VideoHeader>
 
+
                         <VideoList>
                             <Masonry
                                 breakpointCols={breakpointColumnsObj}
@@ -430,7 +498,11 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                                                                                                              image={videoItem.node.videoImagePreview.fluid} 
                                                                                                             //  setIsOpen={openModal}
                                                                                                             videoPageLink={videoItem.node.videoPageLink}
+                                                                                                            pdfIcon={pdf}
+                                                                                                            behanceIcon={behance}
+                                                                                                            mediumIcon={medium}
                                                                                                             //  videoLink={videoItem.node.videoLink}
+                                                                                                            videoIcons={videoItem.node.videoContentIcons}
                                                                                                              number={videoItem.node.videoOrderNumber} 
                                                                                                              links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
                                                                                                              text={videoItem.node.videoText.json}/>}</React.Fragment> 
@@ -453,6 +525,10 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                                                                                                                                                     image={videoItem.node.videoImagePreview.fluid} 
                                                                                                                                                     // setIsOpen={openModal}
                                                                                                                                                     // videoLink={videoItem.node.videoLink}
+                                                                                                                                                    pdfIcon={pdf}
+                                                                                                                                                    behanceIcon={behance}
+                                                                                                                                                    mediumIcon={medium}
+                                                                                                                                                    videoIcons={videoItem.node.videoContentIcons}
                                                                                                                                                     videoPageLink={videoItem.node.videoPageLink}
                                                                                                                                                     number={videoItem.node.videoOrderNumber} 
                                                                                                                                                     links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
@@ -477,6 +553,10 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                                                                                                                                                 image={videoItem.node.videoImagePreview.fluid} 
                                                                                                                                                 // setIsOpen={openModal}
                                                                                                                                                 // videoLink={videoItem.node.videoLink}
+                                                                                                                                                pdfIcon={pdf}
+                                                                                                                                                behanceIcon={behance}
+                                                                                                                                                mediumIcon={medium}
+                                                                                                                                                videoIcons={videoItem.node.videoContentIcons}
                                                                                                                                                 videoPageLink={videoItem.node.videoPageLink}
                                                                                                                                                 number={videoItem.node.videoOrderNumber} 
                                                                                                                                                 links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
