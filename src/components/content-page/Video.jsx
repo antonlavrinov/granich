@@ -193,6 +193,13 @@ const VideoItemInfoText = styled.div`
         font-weight: 500;
         line-height: 1.35;
     }
+    b {
+        color: white;
+        font-size: 1.17vw;
+        font-weight: 500;
+        line-height: 1.35;
+
+    }
     a {
         text-decoration: underline;
     }

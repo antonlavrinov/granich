@@ -163,6 +163,11 @@ const BooksItemInfoText = styled.div`
         margin-bottom: 0.7vw;
         font-weight: 500;
     }
+    b {
+        color: var(--granich-black);  
+        font-size: 1.17vw;
+        font-weight: 500;
+    }
     a {
         border-bottom: 1px solid rgba(0,0,0,0.2);
         :hover {

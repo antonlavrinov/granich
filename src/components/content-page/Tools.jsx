@@ -116,6 +116,11 @@ const ToolsItemInfoText = styled.div`
         margin-bottom: 0.7vw;
         font-weight: 500;
     }
+    b {
+        color: var(--granich-black);   
+        font-size: 1.17vw;
+        font-weight: 500;
+    }
     a {
         border-bottom: 1px solid #dedede;
         :hover {

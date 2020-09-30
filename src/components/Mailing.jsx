@@ -112,7 +112,7 @@ const MailingInput = styled.input`
     border-radius: 0.6vw;
     box-shadow: 0 0 0.5vw rgba(0,0,0,0.5) inset;
     padding: 1vw 1.1vw;
-    width: 27.5vw;
+    width: 30vw;
     font-size: 1.55vw;
     margin-right: 1.1vw;
     ${props => props.errorStyle && `
@@ -164,19 +164,121 @@ const MailingButton = styled.button`
 
 `
 
-const FormCheckbox = styled.input`
-    margin-left: 0.3vw;
+// const FormCheckbox = styled.input`
+//     margin-left: 0.3vw;
 
-`
+// `
 
-const FormCheckboxLabel = styled.label`
-    font-size: 1.2vw;
-    user-select: none;
-    letter-spacing: -0.02vw;
-    margin-top: 1vw;
-    position: relative;
+// const FormCheckboxLabel = styled.label`
+//     font-size: 1.2vw;
+//     user-select: none;
+//     letter-spacing: -0.02vw;
+//     margin-top: 1vw;
+//     position: relative;
+//     color: white;
+
+//     a {
+//         color: white;
+//         font-weight: 500;
+//         display: inline-block;
+//         margin: 0 0.4vw;
+//         position: relative;
+//         font-weight: 400;
+        
+       
+//         :after {
+//             content: '';
+//             height: 1px;
+//             width: 100%;
+//             background: rgba(256,256,256,0.5);
+//             position: absolute;
+//             bottom: -0.2vw;
+//             left: 0;
+
+//         }
+        
+//         :hover {
+//             :after {
+//                 background: white;
+//             }
+//         }
+//     }
+//     @media only screen and (max-width: 575px) {
+//         font-size: 3.6vw;
+//         margin-top: 2vw;
+//         white-space: nowrap;
+//         a {
+//             margin: 0;
+//             margin-left: 1.5vw;
+//         }
+//     }
+
+// `
+
+// const FormCheckboxLabelText = styled.span`
+//     color: white;
+//     position: relative;
+//     ${props => props.errorMessage && `
+//         :after {
+//             content: '${props.errorMessage}';
+//             position: absolute;
+//             top: 2.5vw;
+//             left: -33%;
+//             min-width: 50%;
+//             width: 50%;
+//             color: var(--granich-grey);
+//             color: white;
+//             background: var(--granich-black);
+//             border-radius: 0.2vw;
+//             padding: 1vw;
+//             z-index: 5;
+//             cursor: default;
+//             font-size: 1vw;
+//             line-height: 1.45;
+//             white-space: normal;
+
+//         }
+//         :before {
+//             content: '';
+//             position: absolute;
+//             z-index: 5;
+//             top: 2.1vw;
+//             left: -7%;
+//             width: 0;
+//             height: 0;
+//             //bottom
+//             border-right: 0.55vw solid transparent;
+//             border-left: 0.55vw solid transparent;
+//             border-bottom: 0.55vw solid var(--granich-black);
+//         }
+//         @media only screen and (max-width: 575px) {
+//             :after {
+//                 top: 6vw;
+//                 left: -12%;
+//                 min-width: 50%;
+//                 width: 50%;
+//                 border-radius: 0.2vw;
+//                 padding: 3vw;
+//                 font-size: 3.7vw;
+    
+//             }
+//             :before {
+//                 top: 4.5vw;
+//                 left: -9.5%;
+
+//                 border-right: 3vw solid transparent;
+//                 border-left: 3vw solid transparent;
+//                 border-bottom: 3vw solid var(--granich-black);
+//             }
+//         }
+
+//     `}
+// ` 
+
+const FormPolitikaLabel = styled.div`
     color: white;
-
+    margin-top: 0.7vw;
+    font-size: 1.15vw;
     a {
         color: white;
         font-weight: 500;
@@ -196,7 +298,6 @@ const FormCheckboxLabel = styled.label`
             left: 0;
 
         }
-        
         :hover {
             :after {
                 background: white;
@@ -212,68 +313,7 @@ const FormCheckboxLabel = styled.label`
             margin-left: 1.5vw;
         }
     }
-
 `
-
-const FormCheckboxLabelText = styled.span`
-    color: white;
-    position: relative;
-    ${props => props.errorMessage && `
-        :after {
-            content: '${props.errorMessage}';
-            position: absolute;
-            top: 2.5vw;
-            left: -33%;
-            min-width: 50%;
-            width: 50%;
-            color: var(--granich-grey);
-            color: white;
-            background: var(--granich-black);
-            border-radius: 0.2vw;
-            padding: 1vw;
-            z-index: 5;
-            cursor: default;
-            font-size: 1vw;
-            line-height: 1.45;
-            white-space: normal;
-
-        }
-        :before {
-            content: '';
-            position: absolute;
-            z-index: 5;
-            top: 2.1vw;
-            left: -7%;
-            width: 0;
-            height: 0;
-            //bottom
-            border-right: 0.55vw solid transparent;
-            border-left: 0.55vw solid transparent;
-            border-bottom: 0.55vw solid var(--granich-black);
-        }
-        @media only screen and (max-width: 575px) {
-            :after {
-                top: 6vw;
-                left: -12%;
-                min-width: 50%;
-                width: 50%;
-                border-radius: 0.2vw;
-                padding: 3vw;
-                font-size: 3.7vw;
-    
-            }
-            :before {
-                top: 4.5vw;
-                left: -9.5%;
-
-                border-right: 3vw solid transparent;
-                border-left: 3vw solid transparent;
-                border-bottom: 3vw solid var(--granich-black);
-            }
-        }
-
-    `}
-`   
 
 
 const MailingWrapperInputAndButton = styled.div`
@@ -350,7 +390,7 @@ const Mailing = ({popup}) => {
                                     formEl.current.submit();
                                 }}
                                 validationSchema={Yup.object().shape({
-                                    politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
+                                    // politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
                                     formParams: Yup.object().shape({
                                         email: Yup.string().email('Это не электропочта  >__<').required('Сперва впишите почту :)'),
                                     })
@@ -418,7 +458,10 @@ const Mailing = ({popup}) => {
                                                             
                                                         
                                                     </MailingWrapperInputAndButton>
-                                                    <FormCheckbox 
+                                                    <FormPolitikaLabel>
+                                                        Нажимая кнопку, принимаю<PrivacyPopupLink href="/privacy"> политику конфиденциальности</PrivacyPopupLink>
+                                                    </FormPolitikaLabel>
+                                                    {/* <FormCheckbox 
                                                             type="checkbox"
                                                             name="politikaCheckbox"
                                                             value={values.politikaCheckbox}
@@ -429,13 +472,13 @@ const Mailing = ({popup}) => {
                                                             }}
                                                             id="politikaCheckbox"
                                                             className={`course-form-checkbox_black`}
-                                                            /> 
-
+                                                            />  */}
+{/* 
                                                             <FormCheckboxLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">
                                                                 <FormCheckboxLabelText errorMessage={errors.politikaCheckbox && touched.politikaCheckbox ? errors.politikaCheckbox : 0}>
                                                                     Принять<PrivacyPopupLink href="/privacy"> политику конфиденциальности</PrivacyPopupLink>
                                                                 </FormCheckboxLabelText>
-                                                            </FormCheckboxLabel> 
+                                                            </FormCheckboxLabel>  */}
                                                             <input type="hidden" id="2588475f67e38dc85f8" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value=""/>
                                                             <input type="hidden" id="2588475f67e38dc85f8ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value=""/>
                                                             <input type="hidden" name="requestTime" value="1600643981"/>
