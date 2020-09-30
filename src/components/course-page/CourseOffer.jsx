@@ -249,7 +249,7 @@ const CourseOfferDescr = styled.div`
     position: relative;
     z-index: 1;
     ${props => props.type === 'Мастер-класс' && `
-        width: 35vw;
+        width: 37vw;
         margin-bottom: 2vw;
         @media only screen and (max-width: 575px) {
             font-size: 4.4vw;
@@ -264,12 +264,7 @@ const CourseOfferDescr = styled.div`
         margin-bottom: 5vw;
         margin-left: 0;
     }
-    ${props => props.courseName === 'Swiss' && `
-        width: 28vw;
 
-        
-
-    `}
 
 `
 
