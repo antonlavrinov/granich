@@ -5,7 +5,7 @@ import {GlobalStyle} from './style';
 import '../styles/App.scss';
 import Footer from "./Footer";
 import SideButtons from "./SideButtons";
-
+import Cookies from './Cookies';
 
 
 
@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
         <GlobalStyle/>
             <main>{children}</main>
         <SideButtons/>
+        <Cookies/>
         <Footer/>
     </>
   )
