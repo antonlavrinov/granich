@@ -18,7 +18,7 @@ import {ContentWrapperExternalLink,
 
 const MediumContent = ({content, mediumIcon, mediumLinkIcon, contentExternalLink}) => {
     return (
-        <ContentWrapperExternalLink className="content" medium rel="noopener noreferrer" href={contentExternalLink} target="_blank">
+        <ContentWrapperExternalLink className="content" medium="true" rel="noopener noreferrer" href={contentExternalLink} target="_blank">
                 <ContentContainer>
                     <ContentTagList>
                         {content.contentTags.map((contentTag, idx) => {

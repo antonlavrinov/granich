@@ -18,7 +18,7 @@ import {ContentWrapperExternalLink,
 
 const PinterestContent = ({content, pinterestIcon, pinterestLinkIcon, contentExternalLink}) => {
     return (
-        <ContentWrapperExternalLink className="content" pinterest rel="noopener noreferrer" href={contentExternalLink} target="_blank">
+        <ContentWrapperExternalLink className="content" pinterest="true" rel="noopener noreferrer" href={contentExternalLink} target="_blank">
                 <ContentContainer>
                     <ContentTagList>
                         {content.contentTags.map((contentTag, idx) => {

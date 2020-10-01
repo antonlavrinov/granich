@@ -18,7 +18,7 @@ import {ContentWrapperExternalLink,
 
 const BehanceContent = ({content, behanceIcon, behanceLinkIcon, contentExternalLink}) => {
     return (
-        <ContentWrapperExternalLink className="content" behance rel="noopener noreferrer" href={contentExternalLink} target="_blank">
+        <ContentWrapperExternalLink className="content" behance="true" rel="noopener noreferrer" href={contentExternalLink} target="_blank">
                 <ContentContainer>
                     <ContentTagList>
                         {content.contentTags.map((contentTag, idx) => {
