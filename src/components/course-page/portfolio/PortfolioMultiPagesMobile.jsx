@@ -69,7 +69,9 @@ const Slider = ({slider}) => {
     return (
         <SliderWrapper>
             <Carousel arrows 
-                      infinite >
+                      infinite
+                      arrowLeft={(<div addArrowClickHandler={true}>left</div>)}
+                      arrowRight={(<div addArrowClickHandler={true}>right</div>)}>
                 {slider.node.portfolioMedia.map((item, idx) => {
                     
                     return (

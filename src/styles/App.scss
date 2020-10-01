@@ -610,18 +610,18 @@ div[data-accordion-component="AccordionItemHeading"] {
 .BrainhubCarousel__arrowLeft {
     // position: absolute !important;
     // z-index: 2;
-    // left: 0;
+    left: 0;
     // transform: translateX(120%);
-    display: none;
+    // display: none;
     // left: 0px;
 
 }
 
 .BrainhubCarousel__arrowRight {
     // position: absolute !important;
-    display: none;
+    // display: none;
     // z-index: 2;
-    // right: 0;
+    right: 0;
     // transform: translateX(-120%);
 
 

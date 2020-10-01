@@ -131,6 +131,8 @@ export const contentfulQuery = graphql`
 `
 
 
+// const authorText = (<>«Я отыскала всё самое интересное и полезное про графдизайн VHS-кассет: почему он появился, какие графсистемы с ним связаны, кто использует его в своей айдентике и как самостоятельно создавать VHS-макеты. Вдобавок, в <a href="https://www.pinterest.ru/vadim_granich/vhs/" target="_blank" rel="noopener noreferrer">Энциклопедии графдизайна</a> на Пинтересте есть примеры работ в графсистеме VHS»</>)
+
 
 const GraphicSystemVhsPage = ({data}) => (
   <Layout>
@@ -143,7 +145,9 @@ const GraphicSystemVhsPage = ({data}) => (
          url="https://granich.design/graphic-system-vhs" />
     <CourseOffer data={data.VHSoffer}/>
     <CourseExplanations data={data.VHSexplanations}/>
-    <CourseAuthors data={data.VHSteam}/>
+    <CourseAuthors quote="Мастер-класс создан соавторами. Исследование, запись видеолекции и инструкции — Елизавета Черникова. Дизайн-система, рекомендации и забота — Вадим Гранич." 
+                   text={(<>«Я отыскала всё самое интересное и полезное про графдизайн VHS-кассет: почему он появился, какие графсистемы с ним связаны, кто использует его в своей айдентике и как самостоятельно создавать VHS-макеты. Вдобавок, в <a href="https://www.pinterest.ru/vadim_granich/vhs/" target="_blank" rel="noopener noreferrer">Энциклопедии графдизайна</a> на Пинтересте есть примеры работ в графсистеме VHS»</>)} 
+                   data={data.VHSteam}/>
     <MasterClassExample/>
     <CoursePortfolio dataHeader={data.VHSportfolioHeader} masterClass posters={data.VHSportfolioPosters}/>
     {/* <CourseReviews dataHeader={data.VHSreviewsHeader} data={data.VHSreviews} masterClass/> */}

@@ -17,6 +17,7 @@ import {graphql} from 'gatsby';
 import CourseAnswers from "../components/course-page/CourseAnswers";
 import Mailing from '../components/Mailing';
 import ogImage from '../assets/images/seo/osoznanny-graph-design.jpg';
+import CourseIndividualSupport from "../components/course-page/CourseIndividualSupport";
 
 
 export const contentfulQuery = graphql`
@@ -247,6 +248,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
     ) : (
       <Mailing/>
     )}
+    <CourseIndividualSupport/>
     <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/>
     
     

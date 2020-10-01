@@ -138,6 +138,9 @@ const TeacherWrapper = styled.div`
     ${props => props.masterclass && `
         min-height: 16.1vw;
     `}
+    ${props => props.masterClassNumber === 3 && `
+        padding: 1.5vw 1vw 1.5vw 2.5vw; 
+    `}
 `
 
 const TeacherHeader = styled.div`
@@ -163,6 +166,10 @@ const TeacherImage = styled(props => <BackgroundImage {...props}></BackgroundIma
             height: 16.5vw;
         `}
     }
+    ${props => props.masterClassNumber === 3 && `
+        width: 4vw;
+        height: 4vw;
+    `}
 `
 const TeacherSocials = styled.div`
     display: flex;
@@ -447,7 +454,7 @@ const OurTeam = ({data}) => {
     )
 }
 
-export const TeacherBlock = ({teacher, masterClass}) => {
+export const TeacherBlock = ({teacher, masterClass, masterClassNumber}) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
 
     const data = useStaticQuery(graphql`
@@ -498,9 +505,9 @@ export const TeacherBlock = ({teacher, masterClass}) => {
         const behanceIcon = data.behance.childImageSharp.fluid
 
     return (
-        <TeacherWrapper masterclass={masterClass ? 1 : 0}>
+        <TeacherWrapper masterClassNumber={masterClassNumber} masterclass={masterClass ? 1 : 0}>
             <TeacherHeader>
-                <TeacherImage masterclass={masterClass ? 1 : 0} fluid={teacher.teacherImage.fluid}></TeacherImage>
+                <TeacherImage masterClassNumber={masterClassNumber} masterclass={masterClass ? 1 : 0} fluid={teacher.teacherImage.fluid}></TeacherImage>
                 <TeacherSocials>
                     <TeacherSocialIcons>                          
                             {teacher.teacherSocialTelegram && <SocialLink  href={teacher.teacherSocialTelegram} target="_blank"><SocialIcon fluid={telegramIcon}/></SocialLink>}

@@ -124,7 +124,7 @@ const AuthorsDescr = styled.div`
     }
 `
 
-const CourseAuthors = ({data}) => {
+const CourseAuthors = ({data, masterClassNumber, quote, text}) => {
     return (
         <AuthorsSection>
             <Container>
@@ -133,8 +133,8 @@ const CourseAuthors = ({data}) => {
                     <AuthorsTeachers>
                         {data.edges.map((teacher) => {
                             return (
-                                <TeacherWrapper key={teacher.node.id}>
-                                    <TeacherBlock masterClass teacher={teacher.node}/>
+                                <TeacherWrapper courseName={masterClassNumber} key={teacher.node.id}>
+                                    <TeacherBlock masterClassNumber={masterClassNumber} masterClass teacher={teacher.node}/>
                                 </TeacherWrapper>
 
                             )
@@ -142,9 +142,9 @@ const CourseAuthors = ({data}) => {
                     </AuthorsTeachers>
                     <AuthorsText>
                         <AuthorsQuote>
-                            Мастер-класс создан соавторами. Исследование, запись видеолекции и инструкции — Елизавета Черникова. Дизайн-система, рекомендации и забота — Вадим Гранич.
+                            {quote}
                         </AuthorsQuote>
-                        <AuthorsDescr>«Я отыскала всё самое интересное и полезное про графдизайн VHS-кассет: почему он появился, какие графсистемы с ним связаны, кто использует его в своей айдентике и как самостоятельно создавать VHS-макеты. Вдобавок, в <a href="https://www.pinterest.ru/vadim_granich/vhs/" target="_blank" rel="noopener noreferrer">Энциклопедии графдизайна</a> на Пинтересте есть примеры работ в графсистеме VHS»</AuthorsDescr>
+                        <AuthorsDescr>{text}</AuthorsDescr>
                     </AuthorsText>
 
                     
