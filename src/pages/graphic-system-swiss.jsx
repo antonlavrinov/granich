@@ -143,7 +143,7 @@ const GraphicSystemSwissPage = ({data}) => (
          url="https://granich.design/graphic-system-swiss" />
     <CourseOffer courseName={'Swiss'} data={data.SwissOffer}/>
     <CourseExplanations data={data.SwissExplanations}/>
-    <CourseAuthors masterClassNumber={3} 
+    <CourseAuthors numberOfTeachers={'3'} 
                    data={data.SwissTeam}
                    quote="Основное исследование — Андрей Павлушин. Дополнения, запись видеолекции и видеоинструкции — Елизавета Черникова. Дизайн-система, рекомендации и забота — Вадим Гранич."
                    text={(<>Швейцарский стиль — графсистема вне времени. Она не привязана к трендам, не имеет национальности. Её принципы можно использовать в любой отрасли дизайна, для любой аудитории. Поэтому она так важна. Многим Swiss кажется слишком сложной. Мы постарались разложить все по полочкам и сделать её понятнее.</>)}/>
