@@ -599,4 +599,49 @@ div[data-accordion-component="AccordionItemHeading"] {
     }
 }
 
+.BrainhubCarousel__arrows {
+    background: rgba(0,0,0,0.3) !important;
+    border-radius: 100px;
+
+
+}
+
+
+.BrainhubCarousel__arrowLeft {
+    // position: absolute !important;
+    // z-index: 2;
+    // left: 0;
+    // transform: translateX(120%);
+    display: none;
+    // left: 0px;
+
+}
+
+.BrainhubCarousel__arrowRight {
+    // position: absolute !important;
+    display: none;
+    // z-index: 2;
+    // right: 0;
+    // transform: translateX(-120%);
+
+
+}
+
+.BrainhubCarouselItem {
+    width: 330px !important;
+    max-width: 330px !important;
+    min-width: 330px !important;
+}
+
+.BrainhubCarousel__trackContainer {
+    // width: 100% !important;
+    // min-width: 90vw !important;
+    // max-width: 90vw !important;
+    // li {
+    //     width: 90vw !important;
+    //     min-width: 90vw !important;
+    //     max-width: 90vw !important;
+    // }
+}
+
 @import './base/_media';

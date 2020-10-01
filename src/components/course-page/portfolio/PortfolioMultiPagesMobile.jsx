@@ -15,8 +15,9 @@ const SliderWrapper = styled.div`
 `
 
 const SliderImage = styled(props => <Img {...props}/>)`
-    height: 45vw;
+    // height: auto;
     width: 100%;
+    height: 60vw;
 `
 
 
@@ -39,37 +40,38 @@ const PortfolioMultiPagesMobile = ({multiPages}) => {
 
 
 const Slider = ({slider}) => {
-    const [index, setIndex] = useState(0);
-    useEffect(() => {
-        slider.node.portfolioMedia.forEach(src => {
-            new Promise((resolve, reject) => {
-                const img = new Image();
+    // const [index, setIndex] = useState(0);
+    // useEffect(() => {
+    //     slider.node.portfolioMedia.forEach(src => {
+    //         new Promise((resolve, reject) => {
+    //             const img = new Image();
     
-                img.src = src;
-                img.onLoad = resolve();
-                img.onError = reject();
-            })
-        })
-    }, [])
+    //             img.src = src;
+    //             img.onLoad = resolve();
+    //             img.onError = reject();
+    //         })
+    //     })
+    // }, [])
 
-    const slideLeft = () => {
-        const nextIndex = index - 1;
-        if (nextIndex < 0) {
-            setIndex(slider.node.portfolioMedia.length - 1);
-        } else {
-            setIndex(nextIndex)
-        }
-    }
+    // const slideLeft = () => {
+    //     const nextIndex = index - 1;
+    //     if (nextIndex < 0) {
+    //         setIndex(slider.node.portfolioMedia.length - 1);
+    //     } else {
+    //         setIndex(nextIndex)
+    //     }
+    // }
 
-    const slideRight = () => {
-        setIndex((index + 1) % slider.node.portfolioMedia.length)
-    }
+    // const slideRight = () => {
+    //     setIndex((index + 1) % slider.node.portfolioMedia.length)
+    // }
 
     return (
         <SliderWrapper>
-            <Carousel arrows>
+            <Carousel arrows 
+                      infinite >
                 {slider.node.portfolioMedia.map((item, idx) => {
-                    console.log(item)
+                    
                     return (
                         <SliderImage key={idx} fluid={item.fluid}/>
                     )
