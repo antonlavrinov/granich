@@ -12,7 +12,7 @@ import EducationQuestions from "../components/EducationQuestions";
 import CourseAuthors from "../components/course-page/CourseAuthors";
 import MasterClassExample from '../components/course-page/MasterClassExample';
 import Mailing from '../components/Mailing';
-import ogImage from '../assets/images/seo/graphic-system-vhs.jpg';
+import ogImage from '../assets/images/seo/graphic-system-swiss-min.jpg';
 
 
 export const contentfulQuery = graphql`

@@ -18,7 +18,7 @@ const SupportWrapper = styled.div`
     padding: 4vw 4vw;
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
-        padding: 11vw 5vw 11vw 8vw;
+        padding: 11vw 8vw 11vw 8vw;
         border-radius: 2.5vw;
     }
 `
@@ -117,8 +117,7 @@ const SupportInfoText = styled.div`
     border: 2px solid var(--granich-black);
     border-radius: 100vw;
     padding: 0.5vw 1vw;
-    // border-color: var(--granich-red);
-    // color: var(--granich-red);
+
     
     display: inline-block;
     font-size: 1.3vw;
@@ -225,13 +224,14 @@ const SupportPriceText = styled.div`
         line-height: 1;
         margin-top: -0.4vw;
         letter-spacing: -0.1vw;
+        white-space: nowrap;
     }
     @media only screen and (max-width: 575px) {
         font-size: 4vw;
         margin-bottom: 3vw;
         margin-top: 5vw;
         span {
-            font-size: 11vw;
+            font-size: 10.5vw;
             font-style: italic;
             margin-left: 5vw;
             line-height: 1;

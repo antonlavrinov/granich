@@ -84,9 +84,7 @@ const SliderWrapper = styled.div`
 `
 
 const Slider = styled(props => <BackgroundImage {...props}/>)`
-    // :before {
-    //     background-size: cover !important;
-    // }
+
 ` 
     // :focus {
     //     border: none;
@@ -194,27 +192,24 @@ const PortfolioImageGallery = ({images}) => {
 
                 .image-gallery-thumbnail {
                     transition: none;
-                    // border: 0.2vw solid rgba(0,0,0,0);
-                    // box-sizing: content-box;
                     
                 }
                 .image-gallery-thumbnail:hover {
                     border-color: var(--granich-red);
-                    // box-sizing: content-box;
+
                     
                 }
 
                 .image-gallery-thumbnail:active {
                     border-color: rgba(0,0,0,0);
-                    // box-sizing: content-box;
+
                 }
                 .image-gallery-thumbnail:focus {
                     border-color: rgba(0,0,0,0);
-                    // box-sizing: content-box;
+
                 }
                 .image-gallery-thumbnail.active, .image-gallery-thumbnail:hover {
                     border-color: var(--granich-red);
-                    // box-sizing: content-box;
                     cursor: pointer;
                 }
                 
