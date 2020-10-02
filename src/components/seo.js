@@ -24,7 +24,7 @@ const SEO = ({ description, lang, meta, title, keywords, ogImage, url, ogImageVk
             author
             keywords
             ogImage
-            OgImageVk
+            ogImageVk
             siteUrl
           }
         }

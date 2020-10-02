@@ -182,10 +182,11 @@ const LegalDocumentText = styled.div`
         position: absolute;
         top: 0;
         left: -19.6vw;
-        width: 18vw;
+        width: 19vw;
         color: var(--granich-red);
         font-style: normal;
         font-weight: 500;
+        font-size: 1.05vw;
     }
     blockquote {
         p {
@@ -226,8 +227,8 @@ const LegalDocumentText = styled.div`
             border-radius: 1.5vw;
             margin: 1vw 0;
             display: block;
-            color: var(--granich-black);
             color: var(--granich-red);
+            font-size: 3.7vw;
         }
         blockquote {
             p {
