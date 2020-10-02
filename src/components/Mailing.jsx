@@ -70,15 +70,15 @@ const MailingContainer = styled.div`
 `
 
 const MailingText = styled.div`
-    font-size: 1.5vw;
+    font-size: 1.7vw;
     font-weight: 400;
-    width: 32vw;
+    width: 36vw;
     line-height: 1.3;
     color: white;
     span {
         font-style: italic;
         color: inherit;
-        font-size: 2vw;
+        font-size: 2.3vw;
         line-height: 0.5;
         font-weight: 500;
         font-family: EB Garamond;
@@ -112,7 +112,7 @@ const MailingInput = styled.input`
     border-radius: 0.6vw;
     box-shadow: 0 0 0.5vw rgba(0,0,0,0.5) inset;
     padding: 1vw 1.1vw;
-    width: 30vw;
+    width: 26vw;
     font-size: 1.55vw;
     margin-right: 1.1vw;
     ${props => props.errorStyle && `
@@ -277,13 +277,13 @@ const MailingButton = styled.button`
 
 const FormPolitikaLabel = styled.div`
     color: white;
-    margin-top: 0.9vw;
-    font-size: 1.15vw;
+    margin-top: 0.5vw;
+    font-size: 1.1vw;
+    width: 27vw;
     a {
         color: white;
         font-weight: 500;
         display: inline-block;
-        margin: 0 0.4vw;
         position: relative;
         font-weight: 400;
         
@@ -308,6 +308,7 @@ const FormPolitikaLabel = styled.div`
         font-size: 3.6vw;
         margin-top: 2vw;
         line-height: 1.3;
+        width: 100%;
         a {
             margin: 0;
         }
@@ -458,7 +459,7 @@ const Mailing = ({popup}) => {
                                                         
                                                     </MailingWrapperInputAndButton>
                                                     <FormPolitikaLabel>
-                                                        Нажимая кнопку, принимаю<PrivacyPopupLink href="/privacy"> политику конфиденциальности</PrivacyPopupLink>
+                                                        Нажимая на кнопку в этой форме, я принимаю условия <PrivacyPopupLink href="/privacy"> политики конфиденциальности</PrivacyPopupLink>
                                                     </FormPolitikaLabel>
                                                     {/* <FormCheckbox 
                                                             type="checkbox"

@@ -509,7 +509,7 @@ const ParticipationForm = ({data}) => {
                                             />  */}
                                            
                                             {/* <FormPolitikaLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">Принять <Link to="/public-offer"> оферту </Link> и <Link to="/privacy"> политику конфиденциальности</Link></FormPolitikaLabel> */}
-                                            <FormPolitikaLabel> Нажимая на кнопку, принимаю условия <Link to="/public-offer"> оферты </Link> <br style={{display: 'block'}}/>и <Link to="/privacy"> политики конфиденциальности</Link></FormPolitikaLabel>
+                                            <FormPolitikaLabel> Нажимая на кнопку в этой форме, я принимаю условия <Link to="/public-offer"> оферты </Link> и <Link to="/privacy"> политики конфиденциальности</Link></FormPolitikaLabel>
 {/*                                             
                                             {errors.politikaCheckbox && touched.politikaCheckbox && (
                                                 <ErrorMessage>{errors.politikaCheckbox}</ErrorMessage>

@@ -16,8 +16,8 @@ const NotFoundWrapper = styled.div`
   border-radius: 0.6vw;
   padding: 4.2vw 3.3vw;
   position: relative;
-  min-height: 36.5vw;
-  height: 36.5vw;
+  min-height: 38vw;
+
   @media only screen and (max-width: 575px) {
     border-radius: 2.5vw;
     padding: 7vw 6vw 38vw;
@@ -64,13 +64,13 @@ const NotFoundLinksWrapper = styled.div`
   z-index: 2;
   ul {
     li {
-      margin-bottom: 0.5vw;
+      margin-bottom: 1.2vw;
     }
   }
   @media only screen and (max-width: 575px) {
     ul {
       li {
-        margin-bottom: 1.8vw;
+        margin-bottom: 5vw;
       }
     }
   }
@@ -134,11 +134,22 @@ const NotFoundPage = () => (
           <NotFoundLinksWrapper>
             <ul>
               <li>
-              <NotFoundLink to="/osoznanny-graph-design">Осознанный графдизайн</NotFoundLink>
+                <NotFoundLink to="/conscious-graphic-design-compilation">Осознанная подборка по графдизайну</NotFoundLink>
               </li>
               <li>
-              <NotFoundLink to="/graphic-system-vhs">Графсистема VHS</NotFoundLink>
+                <NotFoundLink to="/conscious-freelance-compilation">Осознанная подборка по фрилансу</NotFoundLink>
               </li>
+
+              <li>
+              <NotFoundLink to="/Poster-from-scratch-in-neo-geo-style">Графсистема Нео Гео. Пошаговая верстка макета.</NotFoundLink>
+              </li>
+              <li>
+              <NotFoundLink to="/Poster-from-scratch-in-techno-style">Графсистема Техно. Пошаговая верстка макета</NotFoundLink>
+              </li>
+              <li>
+              <NotFoundLink to="/Poster-in-5-minutes">Как за 5 минут сделать плакат, чтобы клиент его утвердил</NotFoundLink>
+              </li>
+
             </ul>
             
 

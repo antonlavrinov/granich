@@ -437,6 +437,13 @@ const FormSubTextEmail = styled.span`
 `
 
 
+const CustomBr = styled(props => <br {...props}/>)`
+    display: none !important;
+    @media only screen and (max-width: 575px) {
+        display: block !important;
+    }
+`
+
 
 
 
@@ -680,7 +687,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                             {errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email && (
                                                 <ErrorMessage>{errors.formParams.email}</ErrorMessage>
                                             )}
-                                            <FormPolitikaLabel>Нажимая на кнопку, принимаю условия<a target="_blank" href="/privacy" > политики конфиденциальности</a> и <a target="_blank" href="/public-offer" > учебного договора</a></FormPolitikaLabel>
+                                            <FormPolitikaLabel>Нажимая на кнопку в этой форме, я принимаю условия <a target="_blank" href="/privacy" > политики конфиденциальности</a> <CustomBr/>и <a target="_blank" href="/public-offer" > учебного договора</a></FormPolitikaLabel>
 
                                             {/* <FormCheckbox 
                                                 type="checkbox"

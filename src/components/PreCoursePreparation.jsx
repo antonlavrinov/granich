@@ -49,12 +49,11 @@ const PreparationMobileWrapper = styled.div`
 
 const PreparationTitle = styled.h2`
     color: var(--granich-black);
-    font-size: 6vw;
+    font-size: 5.5vw;
     letter-spacing: -0.2vw;
     font-weight: 700;
-    line-height: 1.05;
-    // margin-right: 12vw;
-    min-width: 45%;
+    line-height: 0.9;
+    min-width: 40%;
     @media only screen and (max-width: 575px) {
         font-size: 11.9vw;
         letter-spacing: -0.7vw;
@@ -67,6 +66,8 @@ const PreparationTitle = styled.h2`
 
 const PreparationText = styled.div`
     margin-top: 1.5vw;
+    display: flex;
+    align-items: flex-start;
 
     p {
         color: var(--granich-black);
@@ -74,18 +75,41 @@ const PreparationText = styled.div`
         letter-spacing: 0;
         font-weight: 500;
         line-height: 1.35;
-        border: 1px solid var(--granich-light-grey);
-        border-radius: 0.5vw;
-        padding: 0.9vw 1.5vw;
         margin-bottom: 1vw;
+        margin-right: 2.5vw;
+        max-width: 20vw;
+        padding-left: 1vw;
+        position: relative;
+        :last-child {
+            margin-right: 0;
+            :before {
+                content: '2';
+            }
+        }
+        :before {
+            content: '1';
+            position: absolute;
+            top: -0.8vw;
+            left: -1.3vw;
+            font-family: EB Garamond;
+            font-style: italic;
+            font-size: 2.6vw;
+        }
+
     }
     @media only screen and (max-width: 575px) {
+        flex-direction: column;
         p {
             font-size: 3.9vw;
             letter-spacing: -0.08vw;
-            padding: 3vw 4vw;
             margin-bottom: 3vw;
-            border-radius: 2vw;
+            max-width: 100%;
+            padding-left: 8vw;
+            :before {
+                top: -1.5vw;
+                left: 1vw;
+                font-size: 6vw;
+            }
         }
 
     }
@@ -459,7 +483,7 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
                                 Контент <br/>школы
                             </PreparationTitle>
                             <PreparationText>
-                                <p>Оцените качество нашего подхода к обучению </p>
+                                <p>Оцените качество нашего подхода на примере бесплатных материалов </p>
                                 <p>Потренируйтесь сами, если еще не можете записаться на курс</p>
                             </PreparationText>
                         </PreparationHeader>

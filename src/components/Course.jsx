@@ -21,15 +21,8 @@ const CourseLinkWrapper = styled.a`
 `
 
 const CourseLinkModal = styled.div`
-    transition: all 0.2s ease;
     :hover {
         cursor: pointer;
-        transform: scale(1.03);
-    }
-    @media only screen and (max-width: 575px) {
-        :hover {
-            transform: none;
-        }
     }
 `
 

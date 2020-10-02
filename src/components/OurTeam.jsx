@@ -129,18 +129,8 @@ const TeacherWrapper = styled.div`
     @media only screen and (max-width: 575px) {
         border-radius: 2.5vw;
         padding: 6.5vw 8vw 8vw 10vw; 
-        ${props => props.masterclass && `
-            padding: 5.5vw 7.5vw 6vw 7.5vw; 
-            margin: 4.5vw 0;
-            min-height: auto;
-        `}
     }
-    ${props => props.masterclass && `
-        min-height: 16.1vw;
-    `}
-    ${props => props.masterClassNumber === 3 && `
-        padding: 1.5vw 1vw 1.5vw 2.5vw; 
-    `}
+
 `
 
 const TeacherHeader = styled.div`
@@ -161,15 +151,9 @@ const TeacherImage = styled(props => <BackgroundImage {...props}></BackgroundIma
     @media only screen and (max-width: 575px) {
         width: 19.5vw;
         height: 19.5vw;
-        ${props => props.masterclass && `
-            width: 16.5vw;
-            height: 16.5vw;
-        `}
+
     }
-    ${props => props.masterClassNumber === 3 && `
-        width: 4vw;
-        height: 4vw;
-    `}
+
 `
 const TeacherSocials = styled.div`
     display: flex;
@@ -288,28 +272,15 @@ const TeacherEmail = styled.span`
                 border-top: 2vw solid var(--granich-red);
             `}
         }
-        ${props => props.masterclass && `
-            font-size: 2.8vw;
-            :hover {
-                font-size: 2.8vw;
-    
-            }
-        `}
+
         
 
 `
 const TeacherInfo = styled.div`
-
-    // border-left: 1.5px solid #D7D7D7;
-    // padding-left: 1.4vw;
-    // margin-left: -0.4vw;
     min-height: 5.8vw;
     line-height: 1.35;
 
     @media only screen and (max-width: 575px) {
-        // border-left: 0.5vw solid #D7D7D7;
-        // padding-left: 4.5vw;
-        // margin-left: -0.5vw;
         min-height: 21vw;
     }
 `
@@ -324,9 +295,6 @@ const TeacherInfoName = styled.div`
         line-height: 1.3;
         width: 67vw;
         padding-bottom: 1.5vw;
-        ${props => props.masterclass && `
-            font-size: 3.8vw;
-        `}
     }
 `
 
@@ -352,7 +320,6 @@ const TeacherDescription = styled.div`
             color: rgba(0,0,0,0.2);
 
         }
-        // border-bottom: 1px solid var(--granich-light-grey);
     }
     @media only screen and (max-width: 575px) {
         font-size: 4.3vw;
@@ -372,11 +339,8 @@ const TeacherDescription = styled.div`
                 color: rgba(0,0,0,0.2);
     
             }
-            // border-bottom: 1px solid var(--granich-light-grey);
         }
-        ${props => props.masterclass && `
-            font-size: 3.8vw;
-        `}
+
     }
 `
 
@@ -454,7 +418,7 @@ const OurTeam = ({data}) => {
     )
 }
 
-export const TeacherBlock = ({teacher, masterClass, masterClassNumber}) => {
+export const TeacherBlock = ({teacher}) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
 
     const data = useStaticQuery(graphql`
@@ -505,9 +469,9 @@ export const TeacherBlock = ({teacher, masterClass, masterClassNumber}) => {
         const behanceIcon = data.behance.childImageSharp.fluid
 
     return (
-        <TeacherWrapper masterClassNumber={masterClassNumber} masterclass={masterClass ? 1 : 0}>
+        <TeacherWrapper >
             <TeacherHeader>
-                <TeacherImage masterClassNumber={masterClassNumber} masterclass={masterClass ? 1 : 0} fluid={teacher.teacherImage.fluid}></TeacherImage>
+                <TeacherImage fluid={teacher.teacherImage.fluid}></TeacherImage>
                 <TeacherSocials>
                     <TeacherSocialIcons>                          
                             {teacher.teacherSocialTelegram && <SocialLink  href={teacher.teacherSocialTelegram} target="_blank"><SocialIcon fluid={telegramIcon}/></SocialLink>}
@@ -518,7 +482,7 @@ export const TeacherBlock = ({teacher, masterClass, masterClassNumber}) => {
                     </TeacherSocialIcons>
                     {teacher.teacherEmail && (
                         <CopyToClipboard text={teacher.teacherEmail}> 
-                            <TeacherEmail masterclass={masterClass ? 1 : 0} content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
+                            <TeacherEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
                                 {teacher.teacherEmail}
                             </TeacherEmail>
                         </CopyToClipboard>
@@ -527,9 +491,9 @@ export const TeacherBlock = ({teacher, masterClass, masterClassNumber}) => {
                 </TeacherSocials>
 
             </TeacherHeader>
-            <TeacherInfo masterclass={masterClass ? 1 : 0}>
-                    <TeacherInfoName masterclass={masterClass ? 1 : 0}>{teacher.teacherName}</TeacherInfoName>
-                    <TeacherDescription masterclass={masterClass ? 1 : 0}>
+            <TeacherInfo >
+                    <TeacherInfoName >{teacher.teacherName}</TeacherInfoName>
+                    <TeacherDescription >
                         {documentToReactComponents(teacher.teacherDescr.json)}
                     </TeacherDescription>
             </TeacherInfo>
