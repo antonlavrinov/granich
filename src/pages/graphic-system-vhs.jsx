@@ -13,6 +13,7 @@ import CourseAuthors from "../components/course-page/CourseAuthors";
 import MasterClassExample from '../components/course-page/MasterClassExample';
 import Mailing from '../components/Mailing';
 import ogImage from '../assets/images/seo/graphic-system-vhs-min.jpg';
+import ogImageVK from '../assets/images/seo/vk/graphic-system-vhs.jpg';
 
 
 export const contentfulQuery = graphql`
@@ -142,6 +143,7 @@ const GraphicSystemVhsPage = ({data}) => (
          description="Мастер-класс по графической системе VHS"
          keywords={['vhs', 'графсистема']}
          ogImage={ogImage}
+         ogImageVk={ogImageVK}
          url="https://granich.design/graphic-system-vhs" />
     <CourseOffer data={data.VHSoffer}/>
     <CourseExplanations data={data.VHSexplanations}/>

@@ -17,6 +17,7 @@ import {graphql} from 'gatsby';
 import CourseAnswers from "../components/course-page/CourseAnswers";
 import Mailing from '../components/Mailing';
 import ogImage from '../assets/images/seo/conscious-graphic-design-min.jpg';
+import ogImageVK from '../assets/images/seo/vk/conscious-graphic-design.jpg';
 import CourseIndividualSupport from "../components/course-page/CourseIndividualSupport";
 
 
@@ -229,6 +230,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
          description="Осознанный курс по графическому дизайну от Вадима Гранича (Granich). За 2 месяца вы получите упорядоченные знания о графическом дизайне и создадите свое портфолио. А еще изучите Adobe InDesign"
          keywords={['vhs', 'графсистема']}
          ogImage={ogImage}
+         ogImageVk={ogImageVK}
          url="https://granich.design/conscious-graphic-design" />
     <div className="section-top-block"></div>
     <CourseOffer data={data.offer}/>

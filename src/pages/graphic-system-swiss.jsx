@@ -13,6 +13,7 @@ import CourseAuthors from "../components/course-page/CourseAuthors";
 import MasterClassExample from '../components/course-page/MasterClassExample';
 import Mailing from '../components/Mailing';
 import ogImage from '../assets/images/seo/graphic-system-swiss-min.jpg';
+import ogImageVK from '../assets/images/seo/vk/graphic-system-swiss.jpg';
 
 
 export const contentfulQuery = graphql`
@@ -140,6 +141,7 @@ const GraphicSystemSwissPage = ({data}) => (
          description="Мастер-класс по графической системе Swiss"
          keywords={['vhs', 'графсистема']}
          ogImage={ogImage}
+         ogImageVk={ogImageVK}
          url="https://granich.design/graphic-system-swiss" />
     <CourseOffer courseName={'Swiss'} data={data.SwissOffer}/>
     <CourseExplanations data={data.SwissExplanations}/>

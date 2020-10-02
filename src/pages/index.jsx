@@ -10,7 +10,7 @@ import Manifest from "../components/Manifest";
 import Header from '../components/Header';
 import PreCoursePreparation from "../components/PreCoursePreparation"
 import OurTeam from "../components/OurTeam"
-import ogImage from '../assets/images/seo/index.jpg';
+// import ogImage from '../assets/images/seo/index.jpg';
 
 
 
@@ -168,7 +168,6 @@ const IndexPage = ({data}) => {
       <SEO title="Онлайн-школа Granich"
           description="Онлайн-школа Granich"
           keywords={['vhs', 'графсистема']}
-          ogImage={ogImage}
           url="https://granich.design/" />
       <Offer data={data.header}/>
       <Courses data={data.courseCards} toggleMailingActive={toggleMailingActive} />
