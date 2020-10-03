@@ -14,6 +14,8 @@ const GalleryMobileWrapper = styled.div`
 
 const SliderWrapper = styled.div`
  margin-bottom: 3vw;
+ width: 100%;
+ min-width: 100%;
 `
 
 const SliderImage = styled(props => <Img {...props}/>)`
@@ -81,7 +83,7 @@ const Slider = ({slider}) => {
 
     return (
         <SliderWrapper>
-            dssddssd
+            
             <Carousel showThumbs={false} 
                       infiniteLoop={true} 
                       showIndicators={false} 
