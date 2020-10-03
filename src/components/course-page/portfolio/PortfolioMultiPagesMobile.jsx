@@ -5,6 +5,9 @@ import Img from 'gatsby-image';
 // import '@brainhubeu/react-carousel/lib/style.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import SliderLeftIcon from '../../../assets/svgs/graph-design/graph-design-slider-left.svg';
+import SliderRightIcon from '../../../assets/svgs/graph-design/graph-design-slider-right.svg';
+
 
 const GalleryMobileWrapper = styled.div`
 
@@ -12,7 +15,7 @@ const GalleryMobileWrapper = styled.div`
 `
 
 const SliderWrapper = styled.div`
-
+ margin-bottom: 3vw;
 `
 
 const SliderImage = styled(props => <Img {...props}/>)`
@@ -65,6 +68,75 @@ const Slider = ({slider}) => {
     // const slideRight = () => {
     //     setIndex((index + 1) % slider.node.portfolioMedia.length)
     // }
+    const SliderLeft = styled(props => <SliderLeftIcon {...props}/>)`
+        width: 1.8vw;
+        height: 1.8vw;
+        position: absolute;
+        top: 50%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        fill: white;
+        transition: opacity 0.3s ease;
+        :hover {
+            opacity: 0.7;
+        }
+        @media only screen and (max-width: 575px) {
+            width: 5vw;
+            height: 5vw;
+        }
+    `
+
+    const SliderRight = styled(props => <SliderRightIcon {...props}/>)`
+        width: 1.8vw;
+        height: 1.8vw;
+        position: absolute;
+        top: 50%;
+        right: 45%;
+        fill: white;
+        transform: translate(50%, -50%);
+        transition: opacity 0.3s ease;
+        :hover {
+            opacity: 0.7;
+        }
+        @media only screen and (max-width: 575px) {
+            width: 5vw;
+            height: 5vw;
+        }
+    `
+
+    const Button = styled.button`
+        position: absolute;
+        top: 50%;
+        right: 0.9vw;
+        z-index: 4;
+        transform: translateY(-50%);
+        background: rgba(40,40,40,.4);
+        width: 10vw;
+        height: 10vw;
+        border-radius: 100vw;
+        svg {
+            width: 5vw;
+            height: 5vw;
+            position: absolute;
+            top: 50%;
+            right: 45%;
+            fill: white;
+            transform: translate(50%, -50%);
+            transition: opacity 0.3s ease;
+        }
+        :hover {
+            cursor: pointer;
+        }
+        ${props => props.type === 'left' && `
+            left: 0.9vw;
+            svg {
+                left: 45%;
+                transform: translate(-50%, -50%);
+            }
+        `}
+    
+    `
+
 
     return (
         <SliderWrapper>
@@ -72,18 +144,22 @@ const Slider = ({slider}) => {
                       infiniteLoop={true} 
                       showIndicators={false} 
                       showStatus={false} 
+                      style={{position: 'relative'}}
                       renderArrowPrev={(onClickHandler) => {
                         return (
-                            <button type="button" onClick={onClickHandler}>
-                                -
-                            </button>
+                            <Button type="left"
+                                onClick={onClickHandler}>
+                                <SliderLeftIcon />
+                            </Button>
+                            
                         )
                     }}
                     renderArrowNext={(onClickHandler) => {
                         return (
-                            <button type="button" onClick={onClickHandler}>
-                                +
-                            </button>
+                            <Button
+                                onClick={onClickHandler}>
+                                <SliderRightIcon />
+                            </Button>
                         )
                     }}
                     
