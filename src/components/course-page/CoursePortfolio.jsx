@@ -227,6 +227,7 @@ const PortfolioMiltiPagesWrapper = styled.div`
 
 const PortfolioLinks = styled.div`
     display: flex;
+    margin-top: 1.8vw;
     justify-content: center;
     @media only screen and (max-width: 575px) {
         margin-top: 5vw;
@@ -433,10 +434,13 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                             <PortfolioLinkIcon fluid={pinterestIcon}/>
                             <PortfolioLinkText>Больше плакатов учеников на Pinterest</PortfolioLinkText>
                         </PortfolioLink>
-                        <PortfolioLink rel="noopener noreferrer" target="_blank" href="https://www.behance.net/granich">
-                            <PortfolioLinkIcon fluid={behanceIcon}/>
-                            <PortfolioLinkText>Больше журналов учеников на Behance</PortfolioLinkText>
-                        </PortfolioLink>
+                        {!masterClass && (
+                            <PortfolioLink rel="noopener noreferrer" target="_blank" href="https://www.behance.net/granich">
+                                <PortfolioLinkIcon fluid={behanceIcon}/>
+                                <PortfolioLinkText>Больше журналов учеников на Behance</PortfolioLinkText>
+                            </PortfolioLink>
+                        )}
+
                     </PortfolioLinks>
 
 
