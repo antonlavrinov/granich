@@ -111,11 +111,12 @@ const PodborkaOfferTitle = styled.h1`
         margin-bottom: 5vw;
         margin-left: 0vw;
         margin-top: -1vw;
-        line-height: 0.8;
+        line-height: 0.9;
         padding: 0 5vw;
         p {
-            font-size: 15vw;
-            letter-spacing: 0.5vw;
+            font-size: 13.5vw;
+            letter-spacing: 0.1vw;
+            width: 100%;
             i { 
                 letter-spacing: -0.2vw;
                 font-size: 14vw;

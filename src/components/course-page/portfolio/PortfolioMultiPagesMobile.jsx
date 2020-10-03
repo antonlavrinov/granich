@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import Carousel from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
-
+// import Carousel from '@brainhubeu/react-carousel';
+// import '@brainhubeu/react-carousel/lib/style.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const GalleryMobileWrapper = styled.div`
 
@@ -15,7 +16,6 @@ const SliderWrapper = styled.div`
 `
 
 const SliderImage = styled(props => <Img {...props}/>)`
-    // height: auto;
     width: 100%;
     height: 60vw;
 `
@@ -68,10 +68,26 @@ const Slider = ({slider}) => {
 
     return (
         <SliderWrapper>
-            <Carousel arrows 
-                      infinite
-                      arrowLeft={(<div addArrowClickHandler={true}>left</div>)}
-                      arrowRight={(<div addArrowClickHandler={true}>right</div>)}>
+            <Carousel showThumbs={false} 
+                      infiniteLoop={true} 
+                      showIndicators={false} 
+                      showStatus={false} 
+                      renderArrowPrev={(onClickHandler) => {
+                        return (
+                            <button type="button" onClick={onClickHandler}>
+                                -
+                            </button>
+                        )
+                    }}
+                    renderArrowNext={(onClickHandler) => {
+                        return (
+                            <button type="button" onClick={onClickHandler}>
+                                +
+                            </button>
+                        )
+                    }}
+                    
+                    >
                 {slider.node.portfolioMedia.map((item, idx) => {
                     
                     return (

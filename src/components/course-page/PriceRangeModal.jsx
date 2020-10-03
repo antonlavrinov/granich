@@ -107,7 +107,7 @@ const ShakeForm = posed.div({
       max-width: 7vw;
       display: inline-block;
       position: relative;
-      top: 0.3vw;
+      top: 0.7vw;
   
       @media only screen and (max-width: 575px) {
           font-size: 3vw;
@@ -447,7 +447,7 @@ const CustomBr = styled(props => <br {...props}/>)`
 
 
 
-const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}) => {
+const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data, formPostUrl, formId, valueInput1, valueInput2, valueInput3, valueInput4}) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
     const formEl = useRef(null)
 
@@ -518,7 +518,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                         touched,
                                         handleBlur,
                                         setFieldValue,
-                                        setFieldTouched,
+                                        // setFieldTouched,
                                         
 
                                     } = props;
@@ -533,7 +533,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                 setShakeTrigger(shakeTrigger + 1);
                                                 
                                             }
-                                        }}  id="ltForm862509"  action="https://granich.ru/pl/lite/block-public/process-html?id=855570200" method="post" data-open-new-window="0" >
+                                        }}  id={formId} action={formPostUrl} method="post" data-open-new-window="0" >
                                     <FormWrapper>
                                         <FormCross onClick={closeModal}><Cross/></FormCross>
                                        
@@ -550,7 +550,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                 data-qty-value="1"
                                                 type="radio"
                                                 name="formParams[offer_id]"
-                                                value="1164222"
+                                                value={valueInput1}
                                                 checked={values.formParams.offer_id === `${data.edges[0].node.pricesPrice}`}
                                                 
                                                 onChange={() => {
@@ -581,7 +581,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                 data-qty-value="1"
                                                 type="radio"
                                                 name="formParams[offer_id]"
-                                                value="1164224"
+                                                value={valueInput2}
                                                 checked={values.formParams.offer_id === `${data.edges[1].node.pricesPrice}`}
                                                 onChange={() => {
                                                     setFieldValue("formParams[offer_id]", `${data.edges[1].node.pricesPrice}`);
@@ -611,7 +611,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                 data-qty-value="1"
                                                 type="radio"
                                                 name="formParams[offer_id]"
-                                                value="1164226"
+                                                value={valueInput3}
                                                 checked={values.formParams.offer_id === `${data.edges[2].node.pricesPrice}`}
                                                 onChange={() => {
                                                     setFieldValue("formParams[offer_id]", `${data.edges[2].node.pricesPrice}`);
@@ -640,7 +640,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                                 data-qty-value="1"
                                                 type="radio"
                                                 name="formParams[offer_id]"
-                                                value="1164228"
+                                                value={valueInput4}
                                                 checked={values.formParams.offer_id === `${data.edges[3].node.pricesPrice}`}
                                                 onChange={() => {
                                                     setFieldValue("formParams[offer_id]", `${data.edges[3].node.pricesPrice}`);
@@ -681,8 +681,8 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data}
                                             
                                             />
                                             
-                                            <FormInputLabel htmlFor="formParams[email]">чтобы выслать код для входа</FormInputLabel>
-                                            <FormInputLabelMobile htmlFor="formParams[email]">чтобы выслать код для входа</FormInputLabelMobile>
+                                            <FormInputLabel htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabel>
+                                            <FormInputLabelMobile htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabelMobile>
                                             <br/>
                                             {errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email && (
                                                 <ErrorMessage>{errors.formParams.email}</ErrorMessage>

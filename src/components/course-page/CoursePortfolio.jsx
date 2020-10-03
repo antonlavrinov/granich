@@ -10,6 +10,7 @@ import PortfolioMultiPagesMobile from './portfolio/PortfolioMultiPagesMobile';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import { INLINES } from '@contentful/rich-text-types'
 import { useMediaQuery } from 'react-responsive'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const PortfolioSection = styled.section`
 
@@ -223,6 +224,71 @@ const PortfolioMiltiPagesWrapper = styled.div`
     }
 `
 
+
+const PortfolioLinks = styled.div`
+    display: flex;
+    justify-content: center;
+    @media only screen and (max-width: 575px) {
+        margin-top: 5vw;
+        flex-direction: column;
+        align-items: center;
+    }
+`
+
+const PortfolioLink = styled.a`
+    background: #f2f2f2;
+    border-radius: 0.5vw;
+    padding: 1.3vw;
+    display: flex;
+    margin: 0 0.5vw;
+    align-items: center;
+    transition: transform 0.2s ease;
+
+    :hover {
+        cursor: pointer;
+        transform: scale(1.03)
+    }
+    @media only screen and (max-width: 575px) {
+        margin: 0;
+        margin-bottom: 2.5vw;
+        border-radius: 1.5vw;
+        padding: 3.5vw;
+        display: inline-flex;
+        width: 80%;
+        :last-child {
+            margin-bottom: 0;
+        }
+        :hover {
+            transform: none
+        }
+    }
+`
+
+const PortfolioLinkText = styled.div`
+    font-size: 1.25vw;
+    line-height: 1.2;
+    width: 14vw;
+    color: var(--granich-grey);
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+        width: auto;
+    }
+`
+const PortfolioLinkIcon = styled(props => <Img {...props}/>)`
+    min-width: 3.3vw;
+    min-height: 3.3vw;
+    width: 3.3vw;
+    height: 3.3vw;
+    margin-right: 0.5vw;
+    @media only screen and (max-width: 575px) {
+        min-width: 9vw;
+        min-height: 9vw;
+        width: 9vw;
+        height: 9vw;
+        margin-right: 1.3vw;
+    }
+`
+
 const options = {
     renderNode: {
         [INLINES.HYPERLINK]: (node) => {
@@ -266,6 +332,31 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
         return;
 
     }, [multiPages])
+
+
+    const dataIcons = useStaticQuery(graphql`
+        query portfolioExternalLinkIcons {
+            pinterest: file(relativePath: { eq: "pinterest-icon.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            behance: file(relativePath: { eq: "behance-icon.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+        }
+    `)
+
+    const pinterestIcon = dataIcons.pinterest.childImageSharp.fluid;
+    const behanceIcon = dataIcons.behance.childImageSharp.fluid;
+
     return (
         <PortfolioSection>
             <Container>
@@ -337,6 +428,16 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                             )}
                         </>
                     )}
+                    <PortfolioLinks>
+                        <PortfolioLink rel="noopener noreferrer" target="_blank" href="https://www.pinterest.ru/vadim_granich/granich-graphic-design-course/">
+                            <PortfolioLinkIcon fluid={pinterestIcon}/>
+                            <PortfolioLinkText>Больше плакатов учеников на Pinterest</PortfolioLinkText>
+                        </PortfolioLink>
+                        <PortfolioLink rel="noopener noreferrer" target="_blank" href="https://www.behance.net/granich">
+                            <PortfolioLinkIcon fluid={behanceIcon}/>
+                            <PortfolioLinkText>Больше журналов учеников на Behance</PortfolioLinkText>
+                        </PortfolioLink>
+                    </PortfolioLinks>
 
 
 

@@ -325,7 +325,7 @@ const PriceCategoryPackage = styled.div`
 
 
 
-const CoursePriceRange = ({data}) => {
+const CoursePriceRange = ({data, formPostUrl, formId, valueInput1, valueInput2, valueInput3, valueInput4}) => {
     const [modalIsOpen, setIsOpen] = useState(false);
     const [chosenPrice, setChosenPrice] = useState('');
 
@@ -352,7 +352,17 @@ const CoursePriceRange = ({data}) => {
                                 overlay: 'customOverlay',
                                 modal: 'customModal',
                             }}>
-                        <PriceRangeModal data={data} chosenPrice={chosenPrice} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpen}/>
+                        <PriceRangeModal valueInput1={valueInput1} 
+                                         valueInput2={valueInput2} 
+                                         valueInput3={valueInput3} 
+                                         valueInput4={valueInput4}
+                                         formId={formId} 
+                                         formPostUrl={formPostUrl}  
+                                         data={data} 
+                                         chosenPrice={chosenPrice} 
+                                         openModal={openModal} 
+                                         closeModal={closeModal} 
+                                         modalIsOpen={modalIsOpen}/>
                       </Modal>
                 
                 <PriceRangeWrapper>

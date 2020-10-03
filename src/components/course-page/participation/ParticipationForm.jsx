@@ -31,7 +31,7 @@ const FormWrapper = styled.div`
 `
 
 const FormContainer = styled.div`
-    padding: 2vw 2vw 1vw 2.7vw;
+    padding: 2vw 0vw 1vw 2.7vw;
     @media only screen and (max-width: 575px) {
         padding: 5vw;
     }
@@ -104,7 +104,7 @@ const FormInput = styled.input`
     padding: 0.7vw 1.4vw;
     margin-top: 0.7vw;
     margin-bottom: 0.7vw;
-    margin-right: 1vw;
+    margin-right: 0.7vw;
     margin-left: 0.3vw;
     font-size: 1.35vw;
     border: 1px solid #dedede;
@@ -134,7 +134,7 @@ const FormInput = styled.input`
 const FormInputLabel = styled.label`
     font-size: 0.9vw;
     color: var(--granich-light-grey);
-    max-width: 7vw;
+    max-width: 9vw;
     display: inline-block;
     position: relative;
     top: 0.3vw;
@@ -469,13 +469,13 @@ const ParticipationForm = ({data}) => {
                                                 errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
                                             
                                             />
-                                            <FormInputLabel htmlFor="formParams[email]">чтобы выслать код для входа</FormInputLabel>
+                                            <FormInputLabel htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabel>
                                             <br/>
                                             
                                             {errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email && (
                                                 <ErrorMessage>{errors.formParams.email}</ErrorMessage>
                                             )}
-                                            <FormInputLabelMobile htmlFor="formParams[email]">чтобы выслать код для входа</FormInputLabelMobile>
+                                            <FormInputLabelMobile htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabelMobile>
                                             <FormInput 
                                                 type="text" 
                                                 maxLength="60"  
