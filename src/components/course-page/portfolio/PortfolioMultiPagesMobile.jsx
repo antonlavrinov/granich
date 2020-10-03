@@ -12,6 +12,7 @@ const GalleryMobileWrapper = styled.div`
 
 `
 
+
 const SliderWrapper = styled.div`
  margin-bottom: 3vw;
  width: 100%;
