@@ -81,6 +81,7 @@ const Slider = ({slider}) => {
 
     return (
         <SliderWrapper>
+            dssddssd
             <Carousel showThumbs={false} 
                       infiniteLoop={true} 
                       showIndicators={false} 
