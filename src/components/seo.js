@@ -38,7 +38,7 @@ const SEO = ({ description, lang, meta, title, keywords, ogImage, url, ogImageVk
   const metaTitle = title ||  site.siteMetadata.title
   const metaOgUrl = url || site.siteMetadata.siteUrl
   const metaOgImageVk = ogImageVk || site.siteMetadata.ogImageVk
-
+      
   return (
     <Helmet
       htmlAttributes={{
