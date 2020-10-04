@@ -98,6 +98,10 @@ const SEO = ({ description, lang, meta, title, keywords, ogImage, url, ogImageVk
           content: metaDescription,
         },
         {
+          name: `twitter:card`,
+          content: `summary_large_image`
+        }, 
+        {
           name: `keywords`,
           content: metaKeywords
         }
