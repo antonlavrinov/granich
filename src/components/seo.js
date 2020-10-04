@@ -85,18 +85,18 @@ const SEO = ({ description, lang, meta, title, keywords, ogImage, url, ogImageVk
           property: `og:url`,
           content: metaOgUrl,
         },
-        // {
-        //   name: `twitter:title`,
-        //   content: metaTitle,
-        // },
-        // {
-        //   name: `twitter:image`,
-        //   content: metaOgImage,
-        // },
-        // {
-        //   name: `twitter:description`,
-        //   content: metaDescription,
-        // },
+        {
+          name: `twitter:title`,
+          content: metaTitle,
+        },
+        {
+          name: `twitter:image`,
+          content: metaOgImage,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
         {
           name: `keywords`,
           content: metaKeywords
