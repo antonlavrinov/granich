@@ -34,10 +34,10 @@ const SEO = ({ description, lang, meta, title, keywords, ogImage, url, ogImageVk
 
   const metaDescription = description || site.siteMetadata.description
   const metaKeywords = keywords || site.siteMetadata.keywords
-  const metaOgImage = ogImage || site.siteMetadata.OgImage
+  const metaOgImage = ogImage || site.siteMetadata.ogImage
   const metaTitle = title ||  site.siteMetadata.title
   const metaOgUrl = url || site.siteMetadata.siteUrl
-  const metaOgImageVk = ogImageVk || site.siteMetadata.OgImageVk
+  const metaOgImageVk = ogImageVk || site.siteMetadata.ogImageVk
 
   return (
     <Helmet

@@ -622,7 +622,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data,
                                                 errorStyle={errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id ? 1 : 0}
                                                 
                                             /> 
-                                            {console.log(values.formParams.offer_id)}
+            
                                            
                                             <FormCheckboxLabel line className={`course-form-label ${errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && 'course-form-label_error'}`} htmlFor={`${data.edges[2].node.pricesPrice}`}>
                                                   <FormLabelText>

@@ -10,7 +10,10 @@ import Tools from '../components/content-page/Tools'
 import Video from '../components/content-page/Video'
 import Wishes from '../components/content-page/Wishes'
 import PodborkaOffer from '../components/content-page/PodborkaOffer';
-
+import ogImageGraphDesign from '../assets/images/seo/conscious-graphic-design-compilation-min.jpg';
+import ogImageVKGraphDesign from '../assets/images/seo/vk/conscious-graphic-design-compilation.jpg';
+import ogImageFreelance from '../assets/images/seo/conscious-freelance-compilation-min.jpg';
+import ogImageVKFreelance from '../assets/images/seo/vk/conscious-freelance-compilation.jpg';
 
 
 export const podborkaPageQuery = graphql`
@@ -205,12 +208,32 @@ export const podborkaPageQuery = graphql`
 `
 
 const PodborkaPage = ({data}) => {
-    console.log(data.coursePodborkaBanner)
+
     return (
         <Layout>
             <Header type="dark"/>
-            <SEO title={`${data.contentfulPodborka.contentTitle}`}
-                 url={`https://granich.design/${data.contentfulPodborka.contentSlug}`} />
+            {data.contentfulPodborka.contentSlug === 'conscious-graphic-design-compilation' && (
+                <>
+                    <SEO title={`${data.contentfulPodborka.contentTitle}`} 
+                         ogImageVk={ogImageVKGraphDesign}
+                         ogImage={ogImageGraphDesign}
+                         description={data.offerPodborkaGraphDesign.collectionOfferDescr}
+                         url={`https://granich.design/${data.contentfulPodborka.contentSlug}`} />
+                </>
+
+            )}
+            {data.contentfulPodborka.contentSlug === 'conscious-freelance-compilation' && (
+                <>
+                    <SEO 
+                        title={`${data.contentfulPodborka.contentTitle}`} 
+                        ogImageVk={ogImageVKFreelance}
+                        ogImage={ogImageFreelance}
+                        description={data.offerPodborkaFreelance.collectionOfferDescr}
+                        url={`https://granich.design/${data.contentfulPodborka.contentSlug}`} />
+                </>
+
+            )}
+            
             <div className="section-top-block"></div>
             {data.contentfulPodborka.contentBannerSwitch && data.coursePodborkaBanner && <Banner data={data.coursePodborkaBanner}/>}
             {data.contentfulPodborka.contentSlug === 'conscious-graphic-design-compilation' && (

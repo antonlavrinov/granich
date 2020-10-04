@@ -184,7 +184,7 @@ export const  ContentContainer = styled.div`
 
 export const  ContentTagList = styled.div`
     display: flex;
-    margin-bottom: 0.7vw;
+    margin-bottom: 0.4vw;
     margin-left: -0.2vw;
     margin-right: -0.2vw;
     margin-top: 0.3vw;
@@ -208,6 +208,7 @@ export const  ContentTag = styled.div`
     display: inline-block;
     letter-spacing: -0.03vw;
     margin-right: 0.3vw;
+    margin-bottom: 0.3vw;
     :last-child {
         margin-right: 0;
     }

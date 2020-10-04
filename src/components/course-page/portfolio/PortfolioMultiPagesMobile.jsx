@@ -64,7 +64,7 @@ const PortfolioMultiPagesMobile = ({multiPages}) => {
     return (
         <GalleryMobileWrapper>
             {multiPages.edges.slice(0,5).map((slider, idx) => {
-                {console.log('SLIDER', slider)}
+       
                 return (
                     <Slider key={idx} slider={slider}/>
                 )

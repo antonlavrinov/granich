@@ -205,7 +205,6 @@ const ToolsItem = ({text, image, links}) => {
                 <ToolsItemInfoDetails>
                     <ToolsItemImage fluid={image}/>
                     <ToolsItemInfoLinks className="collection_link">{documentToReactComponents(links.json, options)}</ToolsItemInfoLinks>
-                    {console.log(links.json)}
                 </ToolsItemInfoDetails>
                 <ToolsItemInfoText>
                  {documentToReactComponents(text, options)}

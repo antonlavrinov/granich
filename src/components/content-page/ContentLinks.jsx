@@ -200,7 +200,7 @@ const ContentLink = ({link, type, text, title}) => {
  
 
 const ContentLinks = ({data}) => {
-    console.log('CONTENTFUL CONTENT', data)
+
     return (
         <ContentLinksSection>
             <Container>

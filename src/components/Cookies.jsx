@@ -110,12 +110,12 @@ const Cookies = () => {
     const [cookies, setCookies] = useState(false);
     useEffect(() => {
         if(localStorage.getItem('cookiesGranich')) {
-            // console.log('COOKIES', localStorage.getItem('cookiesGranich'))           
+        
         } else {
-            // localStorage.setItem('cookiesGranich', 1)
+
             setCookies(true)  
         }
-        // localStorage.removeItem('cookiesGranich')
+
     }, [])
 
 
