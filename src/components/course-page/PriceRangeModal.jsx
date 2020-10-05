@@ -470,7 +470,7 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data,
             }
             //Кодировка формы для Геткурса
             const secondGetcourseFormScript = () => {
-                let statUrl = "https://granich.ru/stat/counter?ref=" + encodeURIComponent(document.referrer) + "&loc=" + encodeURIComponent(document.location.href);
+                let statUrl = "https://school.granich.design/stat/counter?ref=" + encodeURIComponent(document.referrer) + "&loc=" + encodeURIComponent(document.location.href);
                 document.getElementById('gccounterImgContainer').innerHTML = "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
             }
             firstGetcourseFormScript()

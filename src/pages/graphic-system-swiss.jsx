@@ -154,12 +154,12 @@ const GraphicSystemSwissPage = ({data}) => (
     {/* <CourseReviews dataHeader={data.VHSreviewsHeader} data={data.VHSreviews} masterClass/> */}
     <div id="prices-range-section"></div>
     {data.SwissOffer.courseStatus ? (
-      <CoursePriceRange formId={`ltForm7026306`}  
+      <CoursePriceRange formId={`ltForm3153227`}  
                         valueInput1={`1372632`}
                         valueInput2={`1372669`}
                         valueInput3={`1372671`}
                         valueInput4={`1372674`}
-                        formPostUrl={`https://granich.ru/pl/lite/block-public/process-html?id=863550509`} 
+                        formPostUrl={`https://school.granich.design/pl/lite/block-public/process-html?id=863550509`} 
                         data={data.SwissPricesRange}/>
     ) : (
       <Mailing/>

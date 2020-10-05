@@ -248,8 +248,8 @@ const OsoznannyGraphDesignPage = ({data}) => (
     {data.offer.courseStatus ? (
       <CourseParticipation 
                     data={data.offer}
-                    formId={`ltForm8828045`}
-                    formAction={`https://granich.ru/pl/lite/block-public/process-html?id=855573236`}/>
+                    formId={`ltForm6865073`}
+                    formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}/>
     ) : (
       <Mailing/>
     )}

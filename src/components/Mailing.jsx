@@ -339,7 +339,7 @@ const Mailing = ({popup}) => {
         }
         //Кодировка формы для Геткурса
         const secondGetcourseFormScript = () => {
-            let statUrl = "https://granich.ru/stat/counter?ref=" + encodeURIComponent(document.referrer) + "&loc=" + encodeURIComponent(document.location.href);
+            let statUrl = "https://school.granich.design/stat/counter?ref=" + encodeURIComponent(document.referrer) + "&loc=" + encodeURIComponent(document.location.href);
             document.getElementById('gccounterImgContainer').innerHTML = "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
         }
 
@@ -407,14 +407,15 @@ const Mailing = ({popup}) => {
                                         handleSubmit,
                                         isValid,
                                         touched,
-                                        setFieldTouched,
-                                        setFieldValue
+                                        // setFieldTouched,
+                                        // setFieldValue
                                     } = props;
                                     return (
-                                        <MailingForm className="main-page-form" action="https://granich.ru/pl/lite/block-public/process-html?id=855578433" 
+                                        <MailingForm className="main-page-form" action="https://school.granich.design/pl/lite/block-public/process-html?id=855578433" 
                                                     method="post" 
                                                     data-open-new-window="0"
                                                     ref={formEl} 
+                                                    id="ltForm4927084"
                                                     onSubmit={ (e) => {
                                                         if(isValid) {
                                                             handleSubmit(e);
