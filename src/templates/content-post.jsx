@@ -24,6 +24,7 @@ export const pageQuery = graphql`
                   url 
                 }
               }
+            contentZIPLink
             contentBannerSwitch
             contentTags
             contentType

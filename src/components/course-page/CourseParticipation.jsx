@@ -27,13 +27,13 @@ const ParticipationWrapper = styled.div`
 
 
 
-const CourseParticipation = ({data}) => {
+const CourseParticipation = ({data, formId, formAction}) => {
 
     return (
         <ParticipationSection>
             <Container>
                 <ParticipationWrapper>
-                    <ParticipationForm data={data}/>
+                    <ParticipationForm formId={formId} formAction={formAction} data={data}/>
                     <ParticipationPolicy data={data}/>
                 </ParticipationWrapper>
 

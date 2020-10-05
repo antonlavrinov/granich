@@ -5,9 +5,9 @@
 module.exports = {
   siteMetadata: {
     title: `Онлайн-школа Granich`,
-    description: `Осознанный курс по графическому дизайну от Вадима Гранича (Granich). За 2 месяца вы получите упорядоченные знания о графическом дизайне и создадите свое портфолио. А еще изучите Adobe InDesign`,
+    description: `Делаем из любви, а не страха. Курсы с осознанным подходом. Выточенно. Интенсивно. С дедлайнами.`,
     author: `Вадим Гранич`,
-    keywords: `курс, осознанный, индизайн, indesign, графический, дизайн, granich, гранич, графдизайн`,
+    keywords: `школа, осознанность, фриланс, графический, дизайн, granich, гранич, графдизайн, курсы`,
     ogImage: `images/index.jpg`,
     ogImageVk: `images/index-vk.jpg`,
     siteUrl: `https://granich.design`

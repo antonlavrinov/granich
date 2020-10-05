@@ -102,7 +102,7 @@ const CourseCard = ({courseData, empty, calendar, arrowWhite, arrowBlack}) => {
                                         <CourseButtonText>
                                             Узнать <br/>о наборе
                                         </CourseButtonText>
-                                        <ArrowIcon fluid={arrowWhite}/>
+                                        <ArrowIcon fluid={arrowBlack}/>
                                     </>
                                 )}                            
                             </>

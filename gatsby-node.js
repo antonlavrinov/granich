@@ -92,6 +92,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         contentBannerSwitch: Boolean
         contentBanner: String
         contentAiFileLink: String
+        contentZIPLink: String
       }
 
 

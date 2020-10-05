@@ -327,7 +327,7 @@ const FormFooterContainer = styled.div`
 
 
 
-const ParticipationForm = ({data}) => {
+const ParticipationForm = ({data, formId, formAction}) => {
     const formEl = useRef(null)
     // const myPhoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{2})\s?-?\s?(\d{2}\)?)$/;
 
@@ -417,7 +417,7 @@ const ParticipationForm = ({data}) => {
                                                 setShakeTrigger(shakeTrigger + 1);
                                                 
                                             }
-                                        }}  id="ltForm8828045"  action="https://granich.ru/pl/lite/block-public/process-html?id=855573236" method="post" data-open-new-window="0" >
+                                        }}  id={formId}  action={formAction} method="post" data-open-new-window="0" >
                                     <FormWrapper>
                                        
                                         <FormContainer>

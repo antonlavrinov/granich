@@ -227,7 +227,7 @@ const OsoznannyGraphDesignPage = ({data}) => (
   <Layout>
     <Header type={'dark'}/>
     <SEO title="Осознанный Графдизайн"
-         description="Осознанный курс по графическому дизайну от Вадима Гранича (Granich). За 2 месяца вы получите упорядоченные знания о графическом дизайне и создадите свое портфолио. А еще изучите Adobe InDesign"
+         description="Осознанный курс по графическому дизайну от Вадима Гранича. Вы овладеете дизайн-системой (6 элементов, 3 принципа) которая упорядочит ваши знания и даст твёрдую базу. Вдобавок, вы получите уйму обратной связи от кураторов и создадите портфолио"
          keywords={['vhs', 'графсистема']}
          ogImage={ogImage}
          ogImageVk={ogImageVK}
@@ -246,7 +246,10 @@ const OsoznannyGraphDesignPage = ({data}) => (
     <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
     <div id="participation-section"></div>
     {data.offer.courseStatus ? (
-      <CourseParticipation data={data.offer}/>
+      <CourseParticipation 
+                    data={data.offer}
+                    formId={`ltForm8828045`}
+                    formAction={`https://granich.ru/pl/lite/block-public/process-html?id=855573236`}/>
     ) : (
       <Mailing/>
     )}

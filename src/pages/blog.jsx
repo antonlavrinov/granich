@@ -108,7 +108,7 @@ const NotFoundSocial = styled.div`
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="Страница не найдена" />
+    <SEO title="Блог в разработке" />
     <Header type={'dark'}/>
     <div className="section-top-block"></div>
     <NotFoundSection>

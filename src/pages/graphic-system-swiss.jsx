@@ -138,8 +138,8 @@ const GraphicSystemSwissPage = ({data}) => (
     <Header type={'dark'}/>
     <div className="section-top-block"></div>
     <SEO title="Графсистема Swiss"
-         description="Мастер-класс по графической системе Swiss"
-         keywords={['vhs', 'графсистема']}
+         description="Мастер-класс по графической системе Swiss. В него входят: PDF-презентация, Закрытый телеграм-чат, Видеолекция, Видеоинструкция, Домашнее задание, индивидуальный разбор ДЗ, Вводный урок по InDesign, Макет в портфолио, Бонусный урок."
+         keywords={['swiss', 'графсистема', 'гранич', 'granich', 'швейцария', 'типографика', 'сетка', 'воздух']}
          ogImage={ogImage}
          ogImageVk={ogImageVK}
          url="https://granich.design/graphic-system-swiss" />

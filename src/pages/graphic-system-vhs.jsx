@@ -140,8 +140,8 @@ const GraphicSystemVhsPage = ({data}) => (
     <Header type={'dark'}/>
     <div className="section-top-block"></div>
     <SEO title="Графсистема VHS"
-         description="Мастер-класс по графической системе VHS"
-         keywords={['vhs', 'графсистема']}
+         description="Мастер-класс по графической системе VHS. В него входят: PDF-презентация, Закрытый телеграм-чат, Видеолекция, Видеоинструкция, Домашнее задание, индивидуальный разбор ДЗ, Вводный урок по InDesign, Макет в портфолио, Бонусный урок."
+         keywords={['vhs', 'графсистема', 'гранич', 'granich', 'видеокассеты', 'аудиокассеты']}
          ogImage={ogImage}
          ogImageVk={ogImageVK}
          url="https://granich.design/graphic-system-vhs" />

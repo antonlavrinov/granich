@@ -166,7 +166,7 @@ const IndexPage = ({data}) => {
       
       <Header/>
       <SEO title="Онлайн-школа Granich"
-          description="Онлайн-школа Granich"
+          description="Делаем из любви, а не страха. Курсы с осознанным подходом. Выточенно. Интенсивно. С дедлайнами."
           keywords={['vhs', 'графсистема']}
           url="https://granich.design/" />
       <Offer data={data.header}/>

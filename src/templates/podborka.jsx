@@ -217,7 +217,8 @@ const PodborkaPage = ({data}) => {
                     <SEO title={`${data.contentfulPodborka.contentTitle}`} 
                          ogImageVk={ogImageVKGraphDesign}
                          ogImage={ogImageGraphDesign}
-                         description={data.offerPodborkaGraphDesign.collectionOfferDescr}
+                         keywords={['подборка', 'осознанный', 'гранич', 'granich', 'графдизайн', 'книги', 'лекции', 'инструменты', 'материал', 'презентации']}
+                         description="Осознанная подборка книг и лекций для старта в графическом дизайне. В ней по крупицам собран самый толковый материал."
                          url={`https://granich.design/${data.contentfulPodborka.contentSlug}`} />
                 </>
 
@@ -228,7 +229,8 @@ const PodborkaPage = ({data}) => {
                         title={`${data.contentfulPodborka.contentTitle}`} 
                         ogImageVk={ogImageVKFreelance}
                         ogImage={ogImageFreelance}
-                        description={data.offerPodborkaFreelance.collectionOfferDescr}
+                        keywords={['подборка', 'осознанный', 'гранич', 'granich', 'фриланс', 'книги', 'лекции', 'материал']}
+                        description="Осознанная подборка книг и лекций для старта во фрилансе. В ней по крупицам собран самый толковый материал."
                         url={`https://granich.design/${data.contentfulPodborka.contentSlug}`} />
                 </>
 

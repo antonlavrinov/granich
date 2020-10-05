@@ -8,8 +8,10 @@ import ArrowLongRightIcon from '../../assets/svgs/arrow-long-right.svg';
 
 const SupportSection = styled.section`
     margin-bottom: 4vw;
+    margin-top: 4vw;
     @media only screen and (max-width: 575px) {
         margin-bottom: 5vw;
+        margin-top: 5vw;
     }
 
 `

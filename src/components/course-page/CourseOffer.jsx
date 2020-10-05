@@ -109,9 +109,11 @@ const CourseOfferTags = styled.div`
     align-items: flex-start;
     flex-wrap: wrap;
     position: relative;
+    max-width: 58%;
     z-index: 1;
     @media only screen and (max-width: 575px) {
         padding: 0 3.5vw;
+        max-width: 100%;
     }
 `
 const CourseOfferTag = styled.div`
@@ -122,6 +124,7 @@ const CourseOfferTag = styled.div`
     padding: 0.3vw 0.8vw;
     border-radius: 100vw;
     margin-right: 1vw;
+    margin-bottom: 1vw;
     font-weight: 500;
     align-items: center;
     @media only screen and (max-width: 575px) {
