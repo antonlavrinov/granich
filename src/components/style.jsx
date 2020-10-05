@@ -28,6 +28,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background: var(--granich-background-color);
 
+
     }
 
     u {
