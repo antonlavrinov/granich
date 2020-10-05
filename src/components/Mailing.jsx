@@ -8,6 +8,8 @@ import posed from "react-pose";
 // import Link from 'gatsby-link';
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
+
 
 const ShakeForm = posed.div({
     shake: {
@@ -323,6 +325,7 @@ const MailingWrapperInputAndButton = styled.div`
 
 
 
+
 const Mailing = ({popup}) => {
     const [shakeTrigger, setShakeTrigger] = useState(3);
 
@@ -386,8 +389,12 @@ const Mailing = ({popup}) => {
                                 }}}
                                 
                                 onSubmit={(values, {setSubmitting}, e) => {
-                        
+                                    
                                     formEl.current.submit();
+                                    trackCustomEvent({
+                                        category: 'Подписка на рассылку',
+                                        action: 'Click',
+                                    })
                                 }}
                                 validationSchema={Yup.object().shape({
                                     // politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
