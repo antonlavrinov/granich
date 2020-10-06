@@ -6,6 +6,9 @@ import styled from 'styled-components';
 import { Container } from '../components/style';
 import Header from "../components/Header";
 import { Link } from "gatsby";
+import ogImage from '../assets/images/seo/index-main.jpg';
+import ogImageVK from '../assets/images/seo/vk/index-main.jpg';
+
 
 const NotFoundSection = styled.section`
 
@@ -118,7 +121,7 @@ const NotFoundSymbol = styled.div`
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="Страница не найдена" />
+    <SEO title="Страница не найдена" ogImage={ogImage} ogImageVk={ogImageVK}/>
     <Header type={'dark'}/>
     <div className="section-top-block"></div>
     <NotFoundSection>

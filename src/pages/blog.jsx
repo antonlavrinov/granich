@@ -8,6 +8,8 @@ import Header from "../components/Header";
 import VKIcon from '../assets/svgs/granich-main-team/vk.svg';
 import InstagramIcon from '../assets/svgs/granich-main-team/instagram.svg';
 import TelegramIcon from '../assets/svgs/granich-main-team/telegram.svg';
+import ogImage from '../assets/images/seo/index-main.jpg';
+import ogImageVK from '../assets/images/seo/vk/index-main.jpg';
 
 
 
@@ -108,7 +110,7 @@ const NotFoundSocial = styled.div`
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="Блог в разработке" />
+    <SEO title="Блог в разработке" ogImage={ogImage} ogImageVk={ogImageVK}/>
     <Header type={'dark'}/>
     <div className="section-top-block"></div>
     <NotFoundSection>
