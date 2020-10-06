@@ -21,6 +21,8 @@ import {ContentWrapperLink,
     } from './styles';
 
 
+
+
 const YoutubeMixedContent = ({content, youtubePng, mediumIcon, behanceIcon}) => {
     return (
         <ContentWrapperLink className="content" href={`/${content.contentSlug}`}  target="_blank" type={content.contentType} >

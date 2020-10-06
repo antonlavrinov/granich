@@ -505,10 +505,10 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
                             })}
                         </PreparationTags>
                     </PreparationMobileWrapper>
-                            <PreparationContents>
+                            <PreparationContents >
                                 {filteredContents.slice(0, contentPagination).map((content, idx) => {
                                     return (
-                                        <PreparationContent  key={idx} content={content}/>
+                                        <PreparationContent onClick={() => trackCustomEvent({category: `Главная: контент "${content.contentTitle}"`, action: 'click'})} key={idx} content={content}/>
                                     )
                                 })}
                             </PreparationContents>
