@@ -393,7 +393,7 @@ const Mailing = ({popup}) => {
                                     formEl.current.submit();
                                     trackCustomEvent({
                                         category: 'Подписка на рассылку',
-                                        action: 'Click',
+                                        action: 'click',
                                     })
                                 }}
                                 validationSchema={Yup.object().shape({
