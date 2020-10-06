@@ -15,6 +15,7 @@ import ForGraduates from "../components/ForGraduates";
 
 
 
+
 export const contentfulQuery = graphql`
     query contentfulQuery {
         header:   allContentfulGranichMainHeader {
