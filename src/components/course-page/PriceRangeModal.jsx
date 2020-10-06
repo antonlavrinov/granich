@@ -498,7 +498,7 @@ const PriceRangeModal = ({googleAnaliticsCategory, modalIsOpen, openModal, close
                                 onSubmit={(values, {setSubmitting}, e) => {
                                     formEl.current.submit();
                                     trackCustomEvent({
-                                        category: `${googleAnaliticsCategory} ${values.formParams.offer_id}`,
+                                        category: `${googleAnaliticsCategory} "пакет ${values.formParams.offer_id}"`,
                                         action: 'click',
                                     })
                                 }}

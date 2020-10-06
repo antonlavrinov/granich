@@ -333,10 +333,12 @@ export const CourseDuration = styled.div`
     font-size: inherit;
     font-weight: 500;
     color: var(--granich-light-grey);
+    max-width: 9.2vw;
     span {
         font-weight: inherit;
         font-size: inherit;
         color: black;
+        max-width: 20.2vw;
 
     }
     

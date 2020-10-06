@@ -3,6 +3,7 @@ import { Container } from './style';
 import styled from 'styled-components';
 import PreparationContent from './PreparationContent';
 import TagCross from '../assets/svgs/tag-cross-icon-01.svg';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 
 const PreparationSection = styled.section`
