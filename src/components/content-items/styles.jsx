@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-image';
 import Img from 'gatsby-image';
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+// import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 export const PodborkaOut = styled(props => <Img {...props}/>)`
     width: 2.3vw;
@@ -139,7 +139,7 @@ export const  ContentWrapperLink = styled.a`
 
 `
 
-export const  ContentWrapperExternalLink = styled(props => <OutboundLink {...props}/>)`
+export const  ContentWrapperExternalLink = styled.a`
     background: red;
     border-radius: 0.5vw;
     display: flex;
