@@ -10,6 +10,7 @@ import Manifest from "../components/Manifest";
 import Header from '../components/Header';
 import PreCoursePreparation from "../components/PreCoursePreparation"
 import OurTeam from "../components/OurTeam"
+import ForGraduates from "../components/ForGraduates";
 // import ogImage from '../assets/images/seo/index.jpg';
 
 
@@ -167,7 +168,7 @@ const IndexPage = ({data}) => {
       <Header/>
       <SEO title="Онлайн-школа Granich"
           description="Делаем из любви, а не страха. Курсы с осознанным подходом. Выточенно. Интенсивно. С дедлайнами."
-          keywords={['vhs', 'графсистема']}
+          keywords={['школа', 'осознанность', 'фриланс', 'графический', 'дизайн', 'granich', 'гранич', 'графдизайн', 'курсы']}
           url="https://granich.design/" />
       <Offer data={data.header}/>
       <Courses data={data.courseCards} toggleMailingActive={toggleMailingActive} />
@@ -176,6 +177,7 @@ const IndexPage = ({data}) => {
       {mailingActive && <Mailing/>}
       <div style={{height: '0.2vw', marginTop: '0.5vw'}} id="content"></div>
       <PreCoursePreparation dataRecommended={data.contentCardsRecommended.nodes} dataNew={data.contentCardsNew.nodes}/>
+      <ForGraduates/>
       <OurTeam data={data.team}/>
 
     </Layout>

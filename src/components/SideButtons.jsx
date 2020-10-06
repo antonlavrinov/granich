@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import EmailIcon from '../assets/svgs/social-side-icons/social-side-icon-email_noshadow.svg';
 import TelegramIcon from '../assets/svgs/social-side-icons/social-side-icon-telegram_noshadow.svg';
 import VKIcon from '../assets/svgs/social-side-icons/social-side-icon-vk_noshadow.svg';
+import InstagramIcon from '../assets/svgs/social-side-icons/social-side-icon-instagram.svg';
 import WhatsupIcon from '../assets/svgs/social-side-icons/social-side-icon-whatsup_noshadow.svg';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { CSSTransition } from 'react-transition-group';
@@ -52,6 +53,9 @@ const IconLink = styled.a`
         ${props => props.content === 'Написать в Телеграме' && `
             border-left: 0.55vw solid #2098CA;
         `}
+        ${props => props.content === 'Написать в Директ' && `
+            border-left: 0.55vw solid #7544CF;
+        `}
     }
 
     &:after {
@@ -80,6 +84,9 @@ const IconLink = styled.a`
         ${props => props.content === 'Написать в Телеграме' && `
             background: #2098CA;
         `}
+        ${props => props.content === 'Написать в Директ' && `
+            background: #7544CF;
+        `}
     }    
 
     @media only screen and (max-width: 575px) {
@@ -93,6 +100,26 @@ const IconLink = styled.a`
     }
 `
 const VK = styled(props => <VKIcon {...props}/>)`
+    width: 3.6vw;
+    height: 3.6vw;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    // margin-bottom: 0.5vw;
+    :hover {
+        cursor: pointer;
+        transform: translateY(0) scale(1.1)
+
+    }
+    @media only screen and (max-width: 575px) {
+        width: 11vw;
+        height: 11vw;
+        // margin-bottom: 1.5vw;
+
+    }
+
+`
+
+const Instagram = styled(props => <InstagramIcon {...props}/>)`
     width: 3.6vw;
     height: 3.6vw;
     transition: all 0.3s ease;
@@ -337,9 +364,13 @@ const SideButtons = () => {
                                 <Telegram />
 
                         </IconLink>
+                        <IconLink content="Написать в Директ" target="_blank" href="https://www.instagram.com/granichgram">
+                            <Instagram/>
+                        </IconLink>
+
                         <IconLink content="Написать в WhatsApp" target="_blank" href="https://wa.me/79046434682">
 
-                                <Whatsup/>
+                        <Whatsup/>
 
                         </IconLink>
                         <IconLink content="Написать в ВК" target="_blank" href="https://vk.com/write-164662407">
