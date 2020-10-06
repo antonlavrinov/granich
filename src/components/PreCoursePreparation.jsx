@@ -3,7 +3,6 @@ import { Container } from './style';
 import styled from 'styled-components';
 import PreparationContent from './PreparationContent';
 import TagCross from '../assets/svgs/tag-cross-icon-01.svg';
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 
 const PreparationSection = styled.section`
@@ -509,7 +508,7 @@ const PreCoursePreparation = ({dataRecommended, dataNew, dataTest}) => {
                             <PreparationContents >
                                 {filteredContents.slice(0, contentPagination).map((content, idx) => {
                                     return (
-                                        <PreparationContent onClick={() => trackCustomEvent({category: `Главная: контент "${content.contentTitle}"`, action: 'click'})} key={idx} content={content}/>
+                                        <PreparationContent key={idx} content={content}/>
                                     )
                                 })}
                             </PreparationContents>

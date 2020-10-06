@@ -7,6 +7,7 @@ import BehanceContent from './content-items/BehanceContent';
 import MediumContent from './content-items/MediumContent';
 import PinterestContent from './content-items/PinterestContent';
 import PodborkaContent from './content-items/PodborkaContent';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 
 
@@ -98,7 +99,7 @@ const PreparationContent = ({content}) => {
 
 
     return (
-        <>
+        <div onClick={() => trackCustomEvent({category: `Главная: контент "${content.contentTitle}"`, action: 'click'})}>
             {content.contentType === mixed && <YoutubeMixedContent content={content} behanceIcon={behanceIcon} youtubePng={youtubePng} mediumIcon={mediumIcon}/>}
             {content.contentType === youtube && <YoutubeContent pinterestLinkIcon={pinterestLinkIcon} content={content} youtubePng={youtubePng}/>}
             {content.contentType === behance && <BehanceContent contentExternalLink={contentExternalLink} behanceLinkIcon={behanceLinkIcon} content={content} behanceIcon={behanceIcon}/>}
@@ -106,7 +107,7 @@ const PreparationContent = ({content}) => {
             {content.contentType === medium && <MediumContent  contentExternalLink={contentExternalLink} mediumLinkIcon={mediumLinkIcon} content={content} mediumIcon={mediumIcon}/>}
             {content.contentType === podborka && <PodborkaContent  podborkaLinkIcon={podborkaLinkIcon} content={content}/>}
             {content.contentType === mixedPinterest && <YoutubeMixedPinterestContent content={content}  youtubePng={youtubePng} pinterestIcon={pinterestIcon}/>}
-        </>
+        </div >
 
     )
 }
