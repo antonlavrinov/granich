@@ -165,7 +165,7 @@ const BooksItemInfoText = styled.div`
     }
     b {
         color: var(--granich-black);  
-        font-size: 1.17vw;
+        font-size: inherit;
         font-weight: 500;
     }
     a {

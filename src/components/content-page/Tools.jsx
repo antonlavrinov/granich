@@ -118,7 +118,7 @@ const ToolsItemInfoText = styled.div`
     }
     b {
         color: var(--granich-black);   
-        font-size: 1.17vw;
+        font-size: inherit;
         font-weight: 500;
     }
     a {
@@ -144,7 +144,7 @@ const ToolsItemInfoText = styled.div`
 
 
 const ToolsItemInfoLinks = styled.div`
-    width: 4vw;
+    width: 4.5vw;
     margin-bottom: 0.5vw;
     p {
         margin-top: 0.5vw;
