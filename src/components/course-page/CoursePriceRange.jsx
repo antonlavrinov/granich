@@ -325,7 +325,7 @@ const PriceCategoryPackage = styled.div`
 
 
 
-const CoursePriceRange = ({data, formPostUrl, formId, valueInput1, valueInput2, valueInput3, valueInput4}) => {
+const CoursePriceRange = ({data, formPostUrl, formId, valueInput1, valueInput2, valueInput3, valueInput4, googleAnaliticsCategory}) => {
     const [modalIsOpen, setIsOpen] = useState(false);
     const [chosenPrice, setChosenPrice] = useState('');
 
@@ -356,6 +356,7 @@ const CoursePriceRange = ({data, formPostUrl, formId, valueInput1, valueInput2, 
                                          valueInput2={valueInput2} 
                                          valueInput3={valueInput3} 
                                          valueInput4={valueInput4}
+                                         googleAnaliticsCategory={googleAnaliticsCategory}
                                          formId={formId} 
                                          formPostUrl={formPostUrl}  
                                          data={data} 

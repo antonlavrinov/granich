@@ -5,6 +5,8 @@ import * as Yup from 'yup';
 import posed from "react-pose";
 import Cross from '../../assets/svgs/cross.svg';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
+
 
 const ShakeForm = posed.div({
     shake: {
@@ -447,7 +449,7 @@ const CustomBr = styled(props => <br {...props}/>)`
 
 
 
-const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data, formPostUrl, formId, valueInput1, valueInput2, valueInput3, valueInput4}) => {
+const PriceRangeModal = ({googleAnaliticsCategory, modalIsOpen, openModal, closeModal, chosenPrice, data, formPostUrl, formId, valueInput1, valueInput2, valueInput3, valueInput4}) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
     const formEl = useRef(null)
 
@@ -495,6 +497,10 @@ const PriceRangeModal = ({modalIsOpen, openModal, closeModal, chosenPrice, data,
                                 }}}
                                 onSubmit={(values, {setSubmitting}, e) => {
                                     formEl.current.submit();
+                                    trackCustomEvent({
+                                        category: `${googleAnaliticsCategory}`,
+                                        action: 'click',
+                                    })
                                 }}
                                 validationSchema={Yup.object().shape({
                                     // politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),

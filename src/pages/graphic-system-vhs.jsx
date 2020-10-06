@@ -160,6 +160,7 @@ const GraphicSystemVhsPage = ({data}) => (
                         valueInput2={`1164224`}
                         valueInput3={`1164226`}
                         valueInput4={`1164228`}
+                        googleAnaliticsCategory={`Отправка формы Графсистема VHS`}
                         formPostUrl={`https://school.granich.design/pl/lite/block-public/process-html?id=855570200`} 
                         data={data.VHSPricesRange}/>
     ) : (

@@ -159,6 +159,7 @@ const GraphicSystemSwissPage = ({data}) => (
                         valueInput2={`1372669`}
                         valueInput3={`1372671`}
                         valueInput4={`1372674`}
+                        googleAnaliticsCategory={`Отправка формы Графсистема Swiss`}
                         formPostUrl={`https://school.granich.design/pl/lite/block-public/process-html?id=863550509`} 
                         data={data.SwissPricesRange}/>
     ) : (
