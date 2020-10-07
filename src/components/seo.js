@@ -104,10 +104,15 @@ const SEO = ({ description, lang, meta, title, keywords, ogImage, url, ogImageVk
         {
           name: `keywords`,
           content: metaKeywords
+        },
+        {
+          name: `p:domain_verify`,
+          content: `7110133d060664b8d775d9aed52f11c2`
         }
       ].concat(meta)}
     >
       {url && <link rel="canonical" href={metaOgUrl}/>}
+
 
     </Helmet>
   )
