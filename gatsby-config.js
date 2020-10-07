@@ -56,7 +56,14 @@ module.exports = {
     `gatsby-plugin-smoothscroll`,
     `gatsby-background-image`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-robots-txt`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://granich.design',
+        sitemap: 'https://granich.design/sitemap.xml',
+        policy: [{ userAgent: '*' }, {userAgent: 'Yandex'}, {userAgent: 'Googlebot'}]
+      }
+    },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
