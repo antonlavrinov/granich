@@ -1,4 +1,7 @@
 User-agent: *
-Allow: /
+
+User-agent: Yandex
+
+User-agent: Googlebot
 Sitemap: https://granich.design/sitemap.xml
 Host: https://granich.design
