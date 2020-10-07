@@ -59,9 +59,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://granich.design',
-        sitemap: 'https://granich.design/sitemap.xml',
-        policy: [{ userAgent: '*' }, {userAgent: 'Yandex'}, {userAgent: 'Googlebot'}]
+        policy: [{ userAgent: '*', host: 'https://granich.design', sitemap: 'https://granich.design/sitemap.xml' }, 
+        {userAgent: 'Yandex',  host: 'https://granich.design', sitemap: 'https://granich.design/sitemap.xml'}, 
+        {userAgent: 'Googlebot',  host: 'https://granich.design', sitemap: 'https://granich.design/sitemap.xml'}]
       }
     },
     {
