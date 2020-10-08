@@ -221,7 +221,7 @@ const ContentLinks = ({data}) => {
         <ContentLinksSection>
             <Container>
                 <ContentLinksWrapper exists={data.contentfulContent.contentPDF || data.contentfulContent.contentLinkMedium || data.contentfulContent.contentLinkBehance || data.contentfulContent.contentLinkPinterest || data.contentfulContent.contentAiFileLink || data.contentfulContent.contentZIPLink}>
-                    {data.contentfulContent.contentPDF && <ContentLink  type="PDF" text={'Скачайте и читайте урок оффлайн в любое время'} title={'Скачать PDF'} link={data.contentfulContent.contentPDF.file.url}/> }
+                    {data.contentfulContent.contentPDF && <ContentLink  type="PDF" text={'Скачайте и изучайте урок оффлайн в любое время'} title={'Скачать PDF'} link={data.contentfulContent.contentPDF.file.url}/> }
                     {data.contentfulContent.contentZIPLink && <ContentLink  type="ZIP" text={'В нём все необходимые материалы урока'} title={'Скачать ZIP-архив'} link={data.contentfulContent.contentZIPLink}/> }
                     {data.contentfulContent.contentLinkMedium && <ContentLink  type="Medium" text={'Читайте урок в формате статьи на Медиуме '} title={'Читать на Медиуме'} link={data.contentfulContent.contentLinkMedium}/> }
                     {data.contentfulContent.contentLinkBehance && <ContentLink  type="Behance" text={'Смотрите и добавьте материал себе на Биханс'} title={'Смотреть на Бихансе'} link={data.contentfulContent.contentLinkBehance}/> }

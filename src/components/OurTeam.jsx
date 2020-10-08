@@ -7,6 +7,8 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image';
+import ArrowOut from '../assets/svgs/header-arrow-icon-out.svg';
+import { INLINES } from '@contentful/rich-text-types'
 
 
 const SocialIcon = styled(props => <Img {...props}/>)`
@@ -306,6 +308,7 @@ const TeacherDescription = styled.div`
         display: none; 
     }
 
+
     p {
         color: var(--granich-grey);
         padding-bottom: 0.4vw;
@@ -320,6 +323,13 @@ const TeacherDescription = styled.div`
             color: rgba(0,0,0,0.2);
 
         }
+    }
+    a {
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        :hover {
+            border-bottom: 1px solid var(--granich-grey);
+        }
+
     }
     @media only screen and (max-width: 575px) {
         font-size: 4.3vw;
@@ -359,7 +369,13 @@ const OurTeamCategoryTitle = styled.div`
     }
 `
 
-
+const options = {
+    renderNode: {
+      [INLINES.HYPERLINK]: (node) => {
+        return <a href={node.data.uri} rel="noopener noreferrer" target='_blank' >{node.content[0].value}</a>;
+      }
+    },   
+  }
 
 
 
@@ -493,8 +509,8 @@ export const TeacherBlock = ({teacher}) => {
             </TeacherHeader>
             <TeacherInfo >
                     <TeacherInfoName >{teacher.teacherName}</TeacherInfoName>
-                    <TeacherDescription >
-                        {documentToReactComponents(teacher.teacherDescr.json)}
+                    <TeacherDescription className="our-team_link">
+                        {documentToReactComponents(teacher.teacherDescr.json, options)}
                     </TeacherDescription>
             </TeacherInfo>
         </TeacherWrapper>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
@@ -272,6 +272,17 @@ const BooksItem = ({text, number, image, links}) => {
 }
 
 const Books = ({data, categoryTwo, categoryThree}) => {
+    const [firstCategory, setFirstCategory] = useState([]);
+    const [secondCategory, setSecondCategory] = useState([]);
+
+    useEffect(() => {
+
+        const firstCategoryItems = data.filter((booksItem => booksItem.node.booksCategory === '1'));
+        const secondCategoryItems = data.filter((booksItem => booksItem.node.booksCategory === '2'));
+        setFirstCategory(firstCategoryItems)
+        setSecondCategory(secondCategoryItems)
+
+    }, [])
     return (
         <BooksSection>
             <Container>
@@ -286,14 +297,14 @@ const Books = ({data, categoryTwo, categoryThree}) => {
                                 breakpointCols={breakpointColumnsObj}
                                 className="my-masonry-grid"
                                 columnClassName="my-masonry-grid_column">
-                                    {data.map((booksItem, idx) => {
+                                    {firstCategory.map((booksItem) => {
                                         return (
-                                            <React.Fragment key={booksItem.node.id}>{booksItem.node.booksCategory === '1' && <BooksItem
+                                            <React.Fragment key={booksItem.node.id}><BooksItem
                                                                                                              image={booksItem.node.booksImage.fluid} 
                                                                                                            
                                                                                                              number={booksItem.node.booksOrderNumber} 
                                                                                                              links={booksItem.node.childContentfulGranichCollectionBooksBooksLinksRichTextNode} 
-                                                                                                             text={booksItem.node.booksText.json}/>}</React.Fragment> 
+                                                                                                             text={booksItem.node.booksText.json}/></React.Fragment> 
                                         )
                                     })}
                             </Masonry>
@@ -305,20 +316,20 @@ const Books = ({data, categoryTwo, categoryThree}) => {
                                     breakpointCols={breakpointColumnsObj}
                                     className="my-masonry-grid"
                                     columnClassName="my-masonry-grid_column">
-                                        {data.map((booksItem, idx) => {
+                                        {secondCategory.map((booksItem, idx) => {
                                             return (
-                                                <React.Fragment key={booksItem.node.id}>{booksItem.node.booksCategory === '2' && <BooksItem
+                                                <React.Fragment key={booksItem.node.id}><BooksItem
                                                                                                                 image={booksItem.node.booksImage.fluid} 
                                                                                                             
                                                                                                                 number={booksItem.node.booksOrderNumber} 
                                                                                                                 links={booksItem.node.childContentfulGranichCollectionBooksBooksLinksRichTextNode} 
-                                                                                                                text={booksItem.node.booksText.json}/>}</React.Fragment> 
+                                                                                                                text={booksItem.node.booksText.json}/></React.Fragment> 
                                             )
                                         })}
                                 </Masonry>
                             </BooksList>
                         )}
-                        {categoryThree && (
+                        {/* {categoryThree && (
                             <BooksList>
                                     <BooksListDescr style={{width: '33vw'}}>{categoryThree}</BooksListDescr>
                                 <Masonry
@@ -337,7 +348,7 @@ const Books = ({data, categoryTwo, categoryThree}) => {
                                         })}
                                 </Masonry>
                             </BooksList>
-                        )}
+                        )} */}
                         
 
                 </BooksWrapper>

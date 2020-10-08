@@ -599,6 +599,30 @@ div[data-accordion-component="AccordionItemHeading"] {
     }
 }
 
+.our-team_link {
+
+    a {
+        position: relative;
+    }
+    a:after {
+        content: '';
+        background: url(../assets/images/arrow_out_black.png);
+        width: 0.8vw;
+        height: 0.8vw;
+        background-size: cover;
+        border-radius: 100vw;
+        position: absolute;
+        margin-left: 0.3vw;
+        margin-top: 0.4vw;
+    }
+}
+.our-team_link_master-class {
+    a:after {
+        margin-left: 0.3vw;
+        margin-top: 0.25vw;
+    }
+}
+
 .BrainhubCarousel__arrows {
     background: rgba(0,0,0,0.3) !important;
     border-radius: 100px;
@@ -633,16 +657,16 @@ div[data-accordion-component="AccordionItemHeading"] {
     min-width: 330px !important;
 }
 
-.BrainhubCarousel__trackContainer {
-    // width: 100% !important;
-    // min-width: 90vw !important;
-    // max-width: 90vw !important;
-    // li {
-    //     width: 90vw !important;
-    //     min-width: 90vw !important;
-    //     max-width: 90vw !important;
-    // }
-}
+// .BrainhubCarousel__trackContainer {
+//     // width: 100% !important;
+//     // min-width: 90vw !important;
+//     // max-width: 90vw !important;
+//     // li {
+//     //     width: 90vw !important;
+//     //     min-width: 90vw !important;
+//     //     max-width: 90vw !important;
+//     // }
+// }
 
 .spring-div-wrapper {
     position: absolute;
