@@ -234,9 +234,9 @@ const OsoznannyGraphDesignPage = ({data}) => (
          url="https://granich.design/conscious-graphic-design" />
     <div className="section-top-block"></div>
     <CourseOffer data={data.offer}/>
-    <CourseExplanations data={data.explanations}/>
+    {/* <CourseExplanations data={data.explanations}/> */}
     <CourseExample/>
-    <CourseForWhom data={data.forWhom}/>
+    {/* <CourseForWhom data={data.forWhom}/> */}
     <CourseCommitment/>
     <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
     

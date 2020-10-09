@@ -17,7 +17,7 @@ const CourseExampleWrapper = styled.div`
     flex-direction: column;
     background: white;
     justify-content: space-between;
-    padding: 4vw 4.7vw;
+    padding: 4vw 4.7vw 4vw 4.7vw;
     border-radius: 0.6vw;
     
     @media only screen and (max-width: 575px) {
@@ -250,8 +250,11 @@ const CourseExample = () => {
                             </CourseExampleAuthorName>
                             <CourseExampleAuthorText>автор курса</CourseExampleAuthorText>
                         </CourseExampleAuthor>
-                        <CourseExampleTitle>
+                        {/* <CourseExampleTitle>
                             На курсе мы разложим знания по полочкам
+                        </CourseExampleTitle> */}
+                        <CourseExampleTitle>
+                            Что за авторская дизайн-система?
                         </CourseExampleTitle>
                     </CourseExampleHeader>
                     <CourseExampleInfoWrapper>
@@ -268,7 +271,7 @@ const CourseExample = () => {
                         <CourseExampleInfoBlock>
                                 <CourseExampleImage fluid={data.example2.childImageSharp.fluid}/>
                                 <CourseExampleInfoText>
-                                    После курса вы сможете уверенно аргументировать свои решения. Будете понимать как работает графический дизайн. Ваши знания станут упорядочены, чтобы быстро достать с нужной полки необходимое.
+                                    И вот здесь вы по-настоящему оцените дизайн-систему курса Осознанный Графдизайн. Это 6 элементов дизайна и 3 принципа верстки. Благодаря им вы будете точно понимать из чего состоят и как устроены ваши макеты. Вы почувствуете уверенность в себе и ваши клиенты это оценят.
                                 </CourseExampleInfoText>
 
                         </CourseExampleInfoBlock>

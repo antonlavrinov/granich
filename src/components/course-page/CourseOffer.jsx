@@ -65,7 +65,7 @@ const CourseOfferSection = styled.section`
 const CourseOfferWrapper = styled.div`
     background: white;
     border-radius: 0.6vw;
-    padding: 2.5vw 2.7vw 4.4vw;
+    padding: 2.5vw 2.7vw 3vw;
     position: relative;
     box-shadow: 0.25vw 0.15vw 0.4vw rgba(0,0,0,0.1);
     background-size: auto auto;
@@ -109,7 +109,7 @@ const CourseOfferTags = styled.div`
     align-items: flex-start;
     flex-wrap: wrap;
     position: relative;
-    max-width: 58%;
+    max-width: 65%;
     z-index: 1;
     @media only screen and (max-width: 575px) {
         padding: 0 3.5vw;
@@ -123,7 +123,7 @@ const CourseOfferTag = styled.div`
     border: 1.5px solid var(--granich-red);
     padding: 0.3vw 0.8vw;
     border-radius: 100vw;
-    margin-right: 1vw;
+    margin-right: 0.5vw;
     margin-bottom: 1vw;
     font-weight: 500;
     align-items: center;
@@ -144,7 +144,7 @@ const CourseOfferMainTag = styled.div`
     border: 1.5px solid var(--granich-red);
     padding: 0.3vw 0.8vw;
     border-radius: 100vw;
-    margin-right: 1vw;
+    margin-right: 0.5vw;
     font-weight: 500;
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
@@ -159,7 +159,7 @@ const CourseOfferTitle = styled.h1`
     line-height: 0.8;
     margin-left: -0.3vw;
     margin: 0;
-    margin-bottom: 4.25vw;
+    margin-bottom: 4vw;
     position: relative;
     z-index: 1;
     p {
@@ -242,9 +242,9 @@ const CourseOfferTitle = styled.h1`
     `}
 `
 const CourseOfferDescr = styled.div`
-    width: 33vw;
+    width: 35vw;
     font-size: 1.55vw;
-    margin-bottom: 2vw;
+    margin-bottom: 1.5vw;
     margin-left: 0.8vw;
     line-height: 1.47;
     font-weight: 500;
@@ -297,6 +297,7 @@ const CourseOfferButton = styled(props => <Link {...props}/>)`
   letter-spacing: 0.05vw;
   position: relative;
   z-index: 1;
+  margin-bottom: 1vw;
   svg {
     width: 1.4vw;
     height: 1.4vw;
@@ -312,6 +313,7 @@ const CourseOfferButton = styled(props => <Link {...props}/>)`
   }
   ${props => props.type === 'Мастер-класс' && `
     padding: 1vw 3vw 1.2vw 4.2vw;
+    
     svg {
         margin-left: 0.4vw;
         

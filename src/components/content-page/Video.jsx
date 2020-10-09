@@ -386,7 +386,7 @@ const options = {
 }
 
 
-const VideoItem = ({text, number, image, links, timing, videoPageLink, videoIcons, mediumIcon, behanceIcon, pdfIcon}) => {
+const VideoItem = ({text, number, image, links, timing, videoPageLink, videoIcons, mediumIcon, behanceIcon, pdfIcon, zipIcon}) => {
     return (
         <VideoItemWrapper >
             <VideoItemWrapperLink target="_blank" href={videoPageLink} rel="noopener noreferrer">
@@ -404,6 +404,8 @@ const VideoItem = ({text, number, image, links, timing, videoPageLink, videoIcon
                                             {item === 'PDF' && <VideoIconImg fluid={pdfIcon}/>}
                                             {item === 'Behance' && <VideoIconImg fluid={behanceIcon}/>}
                                             {item === 'Medium' && <VideoIconImg fluid={mediumIcon}/>}
+                                            {item === 'Zip' && <VideoIconImg fluid={zipIcon}/>}
+
                                         </React.Fragment>
                                     
                                     )
@@ -460,6 +462,13 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                     }
                 }
             }
+            videoContentZipIcon: file(relativePath: { eq: "zip-icon.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 90) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
 
 
         }
@@ -468,6 +477,7 @@ const Video = ({data, categoryTwo, categoryThree}) => {
     const pdf = videoImageData.videoContentIconPDFImg.childImageSharp.fluid;
     const behance = videoImageData.videoContentIconBehance.childImageSharp.fluid;
     const medium = videoImageData.videoContentIconMedium.childImageSharp.fluid;
+    const zip = videoImageData.videoContentZipIcon.childImageSharp.fluid;
     // const [modalIsOpen, setIsOpen] = useState(false);
     // const [videoLink, setvideoLink] = useState('');
     
@@ -529,6 +539,7 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                                                                                                             pdfIcon={pdf}
                                                                                                             behanceIcon={behance}
                                                                                                             mediumIcon={medium}
+                                                                                                            zipIcon={zip}
                                                                                                             //  videoLink={videoItem.node.videoLink}
                                                                                                             videoIcons={videoItem.node.videoContentIcons}
                                                                                                              number={videoItem.node.videoOrderNumber} 
