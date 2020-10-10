@@ -416,7 +416,7 @@ const OfferCardItem = styled(animated.div)`
     // max-height: 570px;
     will-change: transform;
     border-radius: 0.2vw;
-    box-shadow: 0 0vw 2vw rgba(0,0,0, 0.2);
+    box-shadow: 0 0vw 1vw rgba(0,0,0, 0.2);
 
 
     :hover {
@@ -442,7 +442,7 @@ const cards = [
   ]
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
-const to = i => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
+const to = i => ({ x: 0, y: i * 0, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
 const from = i => ({ x: 1500, rot: 0, scale: 1.5, y: 0 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r, s) => `  rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
