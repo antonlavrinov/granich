@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import CourseOffer from '../components/course-page/CourseOffer';
@@ -223,43 +223,55 @@ export const contentfulQuery = graphql`
 
 
 
-const OsoznannyGraphDesignPage = ({data}) => (
+const OsoznannyGraphDesignPage = ({data}) => {
+  const [deckVisibility, setDeckVisibility] = useState(false)
+  useEffect(() => {
+    setTimeout(() => {
+      setDeckVisibility(true)
+    }, 1000)
+      
+  }, [])
+  return (
   <Layout>
-    <Header type={'dark'}/>
-    <SEO title="Осознанный Графдизайн"
-         description="Осознанный курс по графическому дизайну от Вадима Гранича. Вы овладеете дизайн-системой (6 элементов, 3 принципа) которая упорядочит ваши знания и даст твёрдую базу. Вдобавок, вы получите уйму обратной связи от кураторов и создадите портфолио"
-         keywords={['vhs', 'графсистема']}
-         ogImage={ogImage}
-         ogImageVk={ogImageVK}
-         url="https://granich.design/conscious-graphic-design" />
-    <div className="section-top-block"></div>
-    <CourseOffer data={data.offer}/>
-    {/* <CourseExplanations data={data.explanations}/> */}
-    <CourseExample/>
-    {/* <CourseForWhom data={data.forWhom}/> */}
-    <CourseCommitment/>
-    <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
-    
-    <CourseTrainingPath data={data.trainingPath}/>
-    <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
-    <CourseFeatures data={data.features}/>
-    <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
-    <div id="participation-section"></div>
-    {data.offer.courseStatus ? (
-      <CourseParticipation 
-                    data={data.offer}
-                    formId={`ltForm6865073`}
-                    formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}/>
-    ) : (
-      <Mailing/>
-    )}
-    <CourseIndividualSupport/>
-    <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/>
-    
-    
+      <Header type={'dark'}/>
+      <SEO title="Осознанный Графдизайн"
+          description="Осознанный курс по графическому дизайну от Вадима Гранича. Вы овладеете дизайн-системой (6 элементов, 3 принципа) которая упорядочит ваши знания и даст твёрдую базу. Вдобавок, вы получите уйму обратной связи от кураторов и создадите портфолио"
+          keywords={['vhs', 'графсистема']}
+          ogImage={ogImage}
+          ogImageVk={ogImageVK}
+          url="https://granich.design/conscious-graphic-design" />
+      <div className="section-top-block"></div>
+      <CourseOffer data={data.offer} deckVisibility={deckVisibility}/>
+      {/* <CourseExplanations data={data.explanations}/> */}
+      <CourseExample/>
+      {/* <CourseForWhom data={data.forWhom}/> */}
+      <CourseCommitment/>
+      <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
+      
+      <CourseTrainingPath data={data.trainingPath}/>
+      <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
+      <CourseFeatures data={data.features}/>
+      <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
+      <div id="participation-section"></div>
+      {data.offer.courseStatus ? (
+        <CourseParticipation 
+                      data={data.offer}
+                      formId={`ltForm6865073`}
+                      formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}/>
+      ) : (
+        <Mailing/>
+      )}
+      <CourseIndividualSupport/>
+      <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/>
+      
+      
 
 
-  </Layout>
-)
+    </Layout>
+  )
+}
+
+  
+
 
 export default OsoznannyGraphDesignPage

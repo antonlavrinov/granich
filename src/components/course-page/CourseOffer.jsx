@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import CourseArrowDown from '../../assets/svgs/course-arrow-down-27.svg';
@@ -8,9 +8,8 @@ import DateIcon from '../../assets/svgs/graph-design/graph-design-date-icon.svg'
 import Img from 'gatsby-image';
 // import scrollTo from 'gatsby-plugin-smoothscroll';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
-// import { useSprings, animated, to as interpolate } from 'react-spring';
-// import { useDrag } from 'react-use-gesture';
-// import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
+import { useSprings, animated, to as interpolate } from 'react-spring';
+import { useDrag } from 'react-use-gesture'
 import { Link } from 'gatsby';
 
 
@@ -55,6 +54,7 @@ const Date = styled(props => <DateIcon {...props}/>)`
 
 const CourseOfferSection = styled.section`
     margin-bottom: 4vw;
+    position: relative;
     @media only screen and (max-width: 575px) {
         margin-bottom: 5vw;
     }
@@ -376,104 +376,120 @@ const CourseOfferInfo = styled.div`
 //     // overflow-x: hidden;
 // `
 
-// const OfferRootWrapper = styled.div`
-//     // background: lightblue;
-//     position: absolute;
-//     top: 11vw;
-//     right: 14vw;
-//     // overflow: hidden;
-//     width: 30vw;
-//     height: 36vw;
-//     z-index: 998;
-// `
+const OfferRootWrapper = styled.div`
+    // background: lightblue;
+    position: absolute;
+    top: 0;
+    right: 12vw;
+    // top: 11vw;
+    // right: 14vw;
+    // overflow: hidden;
+    width: 30vw;
+    height: 36vw;
+    height: 100%;
+    z-index: 998;
+`
 
-// const OfferCardItemWrapper = styled(animated.div)`
-//     position: absolute;
-//     // z-index: 999;
-//     width: 100%;
-//     height: 100%;
-//     will-change: transform;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     // background: black;
-// `
+const OfferCardItemWrapper = styled(animated.div)`
+    position: absolute;
+    // z-index: 999;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background: black;
+`
 
-// const OfferCardItem = styled(animated.div)`
-//     background-color: white;
-//     background-size: auto 95%;
-//     background-repeat: no-repeat;
-//     background-position: center center;
-//     width: 22vw;
-//     max-width: 22vw;
-//     // max-width: 300px;
-//     height: 37vw;
-//     max-height: 37vw;
-//     // max-height: 570px;
-//     will-change: transform;
-//     border-radius: 0.2vw;
-//     box-shadow: 0 0vw 2vw rgba(0,0,0, 0.2);
-
-
-//     :hover {
-//         cursor: pointer;
-//     }
-//     `
-
-// const cards = [
-//     'https://upload.wikimedia.org/wikipedia/en/f/f5/RWS_Tarot_08_Strength.jpg',
-//     'https://upload.wikimedia.org/wikipedia/en/5/53/RWS_Tarot_16_Tower.jpg',
-//     'https://upload.wikimedia.org/wikipedia/en/9/9b/RWS_Tarot_07_Chariot.jpg',
-//     'https://upload.wikimedia.org/wikipedia/en/d/db/RWS_Tarot_06_Lovers.jpg',
-//     'https://upload.wikimedia.org/wikipedia/en/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
-//     'https://upload.wikimedia.org/wikipedia/en/d/de/RWS_Tarot_01_Magician.jpg'
-//   ]
-
-// // These two are just helpers, they curate spring data, values that are later being interpolated into css
-// const to = i => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
-// const from = i => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
-// // This is being used down there in the view, it interpolates rotation and scale into a css transform
-// const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
-
-// function Deck() {
-//   const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
-//   const [props, set] = useSprings(cards.length, i => ({ ...to(i), from: from(i) })) // Create a bunch of springs using the helpers above
-//   // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
-//   const bind = useDrag(({ args: [index], down, movement: [mx], distance, direction: [xDir], velocity }) => {
-//     const trigger = velocity > 0.2 // If you flick hard enough it should trigger the card to fly out
-//     const dir = xDir < 0 ? -1 : 1 // Direction should either point left or right
-//     if (!down && trigger) gone.add(index) // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
-//     set(i => {
-//       if (index !== i) return // We're only interested in changing spring-data for the current spring
-//       const isGone = gone.has(index)
-//       const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0 // When a card is gone it flys out left or right, otherwise goes back to zero
-//       const rot = mx / 100 + (isGone ? dir * 10 * velocity : 0) // How much the card tilts, flicking it harder makes it rotate faster
-//       const scale = down ? 1.1 : 1 // Active cards lift up a bit
-//       return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } }
-//     })
-//     if (!down && gone.size === cards.length) setTimeout(() => gone.clear() || set(i => to(i)), 600)
-//   })
-//   // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
-//   return props.map(({ x, y, rot, scale }, i) => (
-//     <OfferCardItemWrapper className="spring-div-wrapper" key={i} style={{ x, y }}>
-//       {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
-//       <OfferCardItem className="spring-div-inside" {...bind(i)} style={{ transform: interpolate([rot, scale], trans), backgroundImage: `url(${cards[i]})` }} />
-//     </OfferCardItemWrapper>
-//   ))
-// }
+const OfferCardItem = styled(animated.div)`
+    background-color: white;
+    background-size: auto 95%;
+    // background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 22vw;
+    max-width: 22vw;
+    // max-width: 300px;
+    height: 31vw;
+    max-height: 31vw;
+    // max-height: 570px;
+    will-change: transform;
+    border-radius: 0.2vw;
+    box-shadow: 0 0vw 2vw rgba(0,0,0, 0.2);
 
 
+    :hover {
+        cursor: pointer;
+    }
+    `
+
+const cards = [
+    'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
+    'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
+    'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
+    'https://images.ctfassets.net/yej6fivg4hs3/7kYzs8i27RTKDkRmk70dCE/a7fe074445b9c18ef13dcf8ff2d33388/16-5-__________-____________-____.jpg?h=250',
+    'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
+    'https://images.ctfassets.net/yej6fivg4hs3/3CtHnBkVBQKsJu2P4iUBgP/9dd612463632a1928100f8f174c4a062/16-8-__________-________________-____.jpg?h=250',
+    'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
+    'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
+    'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
+    'https://images.ctfassets.net/yej6fivg4hs3/7kYzs8i27RTKDkRmk70dCE/a7fe074445b9c18ef13dcf8ff2d33388/16-5-__________-____________-____.jpg?h=250',
+    'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
+    'https://images.ctfassets.net/yej6fivg4hs3/3CtHnBkVBQKsJu2P4iUBgP/9dd612463632a1928100f8f174c4a062/16-8-__________-________________-____.jpg?h=250',
+
+
+  ]
+
+// These two are just helpers, they curate spring data, values that are later being interpolated into css
+const to = i => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
+const from = i => ({ x: 1500, rot: 0, scale: 1.5, y: 0 })
+// This is being used down there in the view, it interpolates rotation and scale into a css transform
+const trans = (r, s) => `  rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
+
+function Deck() {
+    const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
+  const [props, set] = useSprings(cards.length, i => ({ ...to(i), from: from(i) })) // Create a bunch of springs using the helpers above
+  // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
+  const bind = useDrag(({ args: [index], down, movement: [mx], distance, direction: [xDir], velocity }) => {
+    const trigger = velocity > 0.2 // If you flick hard enough it should trigger the card to fly out
+    const dir = xDir < 0 ? -1 : 1 // Direction should either point left or right
+    if (!down && trigger) gone.add(index) // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
+    set(i => {
+      if (index !== i) return // We're only interested in changing spring-data for the current spring
+      const isGone = gone.has(index)
+      const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0 // When a card is gone it flys out left or right, otherwise goes back to zero
+      const rot = mx / 100 + (isGone ? dir * 10 * velocity : 0) // How much the card tilts, flicking it harder makes it rotate faster
+      const scale = down ? 1.1 : 1 // Active cards lift up a bit
+      return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } }
+    })
+    if (!down && gone.size === cards.length) setTimeout(() => gone.clear() || set(i => to(i)), 600)
+  })
+  // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
+  return props.map(({ x, y, rot, scale }, i) => (
+    <OfferCardItemWrapper className="spring-div-wrapper" key={i} style={{ x, y }}>
+      {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
+      <OfferCardItem className="spring-div-inside" {...bind(i)} style={{ transform: interpolate([rot, scale], trans), backgroundImage: `url(${cards[i]})` }} />
+    </OfferCardItemWrapper>
+  ))
+}
 
 
 
-const CourseOffer = ({data, courseName}) => {
+
+
+const CourseOffer = ({data, courseName, deckVisibility}) => {
+
 
     return (
         <CourseOfferSection>
-            {/* <OfferRootWrapper>
-                <Deck/>
-            </OfferRootWrapper> */}
-            <Container>
+                {deckVisibility && (
+                    <OfferRootWrapper>
+                        <Deck/>
+                    </OfferRootWrapper>
+                )}
+                
+                <Container>
                     <CourseOfferWrapper>
                         <CourseOfferInfo>
                         <CourseOfferTags>
@@ -498,7 +514,7 @@ const CourseOffer = ({data, courseName}) => {
                         </CourseOfferTitle>
 
                         
-                        <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/>
+                        {/* <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/> */}
 
                         
                         <CourseOfferDescr courseName={courseName} type={data.courseType}>
@@ -515,6 +531,9 @@ const CourseOffer = ({data, courseName}) => {
                
               
             </Container>
+
+            
+            
 
         </CourseOfferSection>
     )
