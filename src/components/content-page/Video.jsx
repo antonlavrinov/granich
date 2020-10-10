@@ -542,7 +542,7 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                                                                                                             zipIcon={zip}
                                                                                                             //  videoLink={videoItem.node.videoLink}
                                                                                                             videoIcons={videoItem.node.videoContentIcons}
-                                                                                                             number={videoItem.node.videoOrderNumber} 
+                                                                                                             number={idx + 1} 
                                                                                                              links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
                                                                                                              text={videoItem.node.videoText.json}/></React.Fragment> 
                                         )
@@ -573,7 +573,7 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                                                                                                             mediumIcon={medium}
                                                                                                             //  videoLink={videoItem.node.videoLink}
                                                                                                             videoIcons={videoItem.node.videoContentIcons}
-                                                                                                             number={videoItem.node.videoOrderNumber} 
+                                                                                                             number={firstCategory.length + idx + 1} 
                                                                                                              links={videoItem.node.childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode} 
                                                                                                              text={videoItem.node.videoText.json}/></React.Fragment> 
                                         )

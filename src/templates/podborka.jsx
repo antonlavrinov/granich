@@ -51,7 +51,7 @@ export const podborkaPageQuery = graphql`
             courseTags
             courseTypeEmpty
         }
-        videoPodborkaGraphDesign: allContentfulGranichCollectionVideo(filter: {videoAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [videoOrderNumber], order: ASC}) {
+        videoPodborkaGraphDesign: allContentfulGranichCollectionVideo(filter: {videoAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [videoOrderDecimalNumber], order: ASC}) {
             edges {
                 node {
                     id
@@ -68,7 +68,7 @@ export const podborkaPageQuery = graphql`
                     childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode {
                         json
                     }
-                    videoOrderNumber
+                    
                     videoCategory
                     videoPageLink
                     videoContentIcons
@@ -76,7 +76,7 @@ export const podborkaPageQuery = graphql`
                 }
             }
         }
-        videoPodborkaFreelance: allContentfulGranichCollectionVideo(filter: {videoAttachmentTo: {eq: "Осознанный фриланс"}}, sort: {fields: [videoOrderNumber], order: ASC}) {
+        videoPodborkaFreelance: allContentfulGranichCollectionVideo(filter: {videoAttachmentTo: {eq: "Осознанный фриланс"}}, sort: {fields: [videoOrderDecimalNumber], order: ASC}) {
             edges {
                 node {
                     id
@@ -92,7 +92,7 @@ export const podborkaPageQuery = graphql`
                     childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode {
                         json
                     }
-                    videoOrderNumber
+                    
                     videoCategory
                     videoPageLink
                     videoContentIcons
@@ -101,7 +101,7 @@ export const podborkaPageQuery = graphql`
                 }
             }
         }
-        booksPodborkaGraphDesign: allContentfulGranichCollectionBooks(filter: {booksAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [booksOrderNumber], order: ASC}) {
+        booksPodborkaGraphDesign: allContentfulGranichCollectionBooks(filter: {booksAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [booksOrderDecimalNumber], order: ASC}) {
             edges {
                 node {
                     id
@@ -116,13 +116,13 @@ export const podborkaPageQuery = graphql`
                     childContentfulGranichCollectionBooksBooksLinksRichTextNode {
                         json
                     }
-                    booksOrderNumber
+                    
                     booksCategory
 
                 }
             }
         }
-        booksPodborkaFreelance: allContentfulGranichCollectionBooks(filter: {booksAttachmentTo: {eq: "Осознанный фриланс"}}, sort: {fields: [booksOrderNumber], order: ASC}) {
+        booksPodborkaFreelance: allContentfulGranichCollectionBooks(filter: {booksAttachmentTo: {eq: "Осознанный фриланс"}}, sort: {fields: [booksOrderDecimalNumber], order: ASC}) {
             edges {
                 node {
                     id
@@ -137,13 +137,13 @@ export const podborkaPageQuery = graphql`
                     childContentfulGranichCollectionBooksBooksLinksRichTextNode {
                         json
                     }
-                    booksOrderNumber
+                    
                     booksCategory
 
                 }
             }
         }
-        toolsPodborkaGraphDesign: allContentfulGranichCollectionTools(filter: {toolsAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [toolsOrderNumber], order: ASC}) {
+        toolsPodborkaGraphDesign: allContentfulGranichCollectionTools(filter: {toolsAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [toolsOrderDecimalNumber], order: ASC}) {
             edges {
                 node {
                     id
@@ -162,7 +162,7 @@ export const podborkaPageQuery = graphql`
                 }
             }
         }
-        toolsPodborkaFreelance: allContentfulGranichCollectionTools(filter: {toolsAttachmentTo: {eq: "Осознанный фриланс"}}, sort: {fields: [toolsOrderNumber], order: ASC}) {
+        toolsPodborkaFreelance: allContentfulGranichCollectionTools(filter: {toolsAttachmentTo: {eq: "Осознанный фриланс"}}, sort: {fields: [toolsOrderDecimalNumber], order: ASC}) {
             edges {
                 node {
                     id

@@ -282,7 +282,7 @@ const Books = ({data, categoryTwo, categoryThree}) => {
         setFirstCategory(firstCategoryItems)
         setSecondCategory(secondCategoryItems)
 
-    }, [])
+    }, [data])
     return (
         <BooksSection>
             <Container>
@@ -297,12 +297,12 @@ const Books = ({data, categoryTwo, categoryThree}) => {
                                 breakpointCols={breakpointColumnsObj}
                                 className="my-masonry-grid"
                                 columnClassName="my-masonry-grid_column">
-                                    {firstCategory.map((booksItem) => {
+                                    {firstCategory.map((booksItem, idx) => {
                                         return (
                                             <React.Fragment key={booksItem.node.id}><BooksItem
                                                                                                              image={booksItem.node.booksImage.fluid} 
                                                                                                            
-                                                                                                             number={booksItem.node.booksOrderNumber} 
+                                                                                                             number={idx + 1} 
                                                                                                              links={booksItem.node.childContentfulGranichCollectionBooksBooksLinksRichTextNode} 
                                                                                                              text={booksItem.node.booksText.json}/></React.Fragment> 
                                         )
@@ -321,7 +321,7 @@ const Books = ({data, categoryTwo, categoryThree}) => {
                                                 <React.Fragment key={booksItem.node.id}><BooksItem
                                                                                                                 image={booksItem.node.booksImage.fluid} 
                                                                                                             
-                                                                                                                number={booksItem.node.booksOrderNumber} 
+                                                                                                                number={firstCategory.length + idx + 1} 
                                                                                                                 links={booksItem.node.childContentfulGranichCollectionBooksBooksLinksRichTextNode} 
                                                                                                                 text={booksItem.node.booksText.json}/></React.Fragment> 
                                             )
@@ -341,7 +341,7 @@ const Books = ({data, categoryTwo, categoryThree}) => {
                                                 <React.Fragment key={booksItem.node.id}>{booksItem.node.booksCategory === '3' && <BooksItem
                                                                                                                 image={booksItem.node.booksImage.fluid} 
                                                                                                             
-                                                                                                                number={booksItem.node.booksOrderNumber} 
+                                                                                                                number={secondCategory.length + idx + 1} 
                                                                                                                 links={booksItem.node.childContentfulGranichCollectionBooksBooksLinksRichTextNode} 
                                                                                                                 text={booksItem.node.booksText.json}/>}</React.Fragment> 
                                             )
