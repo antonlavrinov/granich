@@ -72,7 +72,7 @@ export const contentfulQuery = graphql`
             }
           }
         },
-        contentCardsNew: allContentfulGranichMainContentCard(sort: {fields: [contentOrderNumberNew], order: DESC}) {
+        contentCardsNew: allContentfulGranichMainContentCard(sort: {fields: [contentOrderDecimalNumberNew], order: DESC}) {
             nodes {
               contentDescription {
                 json
@@ -99,7 +99,7 @@ export const contentfulQuery = graphql`
             }
         },
         
-        contentCardsRecommended: allContentfulGranichMainContentCard(sort: {fields: [contentOrderNumber], order: DESC}) {
+        contentCardsRecommended: allContentfulGranichMainContentCard(sort: {fields: [contentOrderDecimalNumber], order: DESC}) {
             nodes {
               contentDescription {
                 json
