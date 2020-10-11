@@ -74,7 +74,7 @@ const CourseOfferWrapper = styled.div`
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: right;
-    overflow: hidden;
+    
     display: flex;
     flex-direction: column;
     @media only screen and (max-width: 575px) {
