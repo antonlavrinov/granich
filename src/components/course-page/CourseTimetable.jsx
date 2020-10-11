@@ -2,8 +2,11 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 // import TimetableVideo from '../../assets/images/graph-design/Timetable/ezgif.com-gif-to-mp4.mp4';
-import TimetableGif from '../../assets/images/graph-design/commitment/commitment.gif';
+import TimetableImageGif from '../../assets/images/graph-design/commitment/commitment.gif';
 import LazyLoad from 'react-lazyload';
+import Img from 'gatsby-image';
+import { graphql, useStaticQuery } from 'gatsby'
+
 
 const TimetableSection = styled.section`
     margin-bottom: 4vw;
@@ -38,7 +41,7 @@ const TimetableWrapper = styled.div`
     }
 `
 
-const TimetableImage = styled.img`
+const TimetableGif = styled.img`
     min-width: 36.3vw;
     width: 36.3vw;
     margin-right: 3vw;
@@ -53,7 +56,7 @@ const TimetableImage = styled.img`
 
     }
 `
-const TimetableImageWrapper = styled.div`
+const TimetableGifWrapper = styled.div`
     min-width: 36.3vw;
     width: 36.3vw;
     margin-right: 3vw;
@@ -109,6 +112,16 @@ const TimetableTitle = styled.h2`
 
 `
 
+const TimetableImageWrapper = styled.div`
+    min-width: 50%;
+    height: auto;
+`
+
+const TimetableImage = styled(props => <Img {...props}/>)`
+
+
+`
+
 
 
 
@@ -117,13 +130,29 @@ const TimetableTitle = styled.h2`
 
 const CourseTimetable = () => {
 
+    const data = useStaticQuery(graphql`
+        query timetableImage {
+            imageTimetable: file(relativePath: { eq: "graph-design/timetable/timetable-image.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 500, quality: 90) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
 
+        }
+    `)
+
+    const imageData = data.imageTimetable.childImageSharp.fluid
 
     return (
         <TimetableSection>
             <Container>
                 <TimetableWrapper>
                     <TimetableTitle>Курс можно <br/>совмещать с работой <span>Но расслабиться не получится!</span></TimetableTitle>
+                    <TimetableImageWrapper>
+                        <TimetableImage fluid={imageData}/>
+                    </TimetableImageWrapper>
                 </TimetableWrapper>
             </Container>
         </TimetableSection>

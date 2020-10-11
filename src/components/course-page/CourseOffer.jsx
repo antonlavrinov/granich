@@ -493,7 +493,7 @@ const OfferCardItem = styled(animated.div)`
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = i => ({ x: 0, y: i * 0, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
-const from = i => ({ x: 500, rot: 0, scale: 1, y: 0 })
+const from = i => ({ x: 1500, rot: 0, scale: 1, y: 0 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r, s) => `  rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
@@ -590,13 +590,13 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                             <CourseOfferPlaceholder>
                                 {isMobile && (
                                     <>
-                                    {/* {!deckVisibility && (
+                                    {!deckVisibility && (
                                         <div className="loadingio-spinner-rolling-ta5f1nqy5p">
                                             <div className="ldio-6b142d04hhl">
                                                 <div></div>
                                             </div>
                                         </div>
-                                    )} */}
+                                    )}
                                     
                                     {/* {deckVisibility && ( */}
                                         <OfferRootWrapper>
