@@ -590,7 +590,9 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                             <CourseOfferPlaceholder>
                                 {isMobile && (
                                     <>
-                                    {!deckVisibility && (
+                                    {deckVisibility ? (
+                                        null
+                                    ) : (
                                         <div className="loadingio-spinner-rolling-ta5f1nqy5p">
                                             <div className="ldio-6b142d04hhl">
                                                 <div></div>
