@@ -586,7 +586,7 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                             <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/>
                         )}
                         {/* <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/> */}
-                        <CourseOfferPlaceholder>
+                        {/* <CourseOfferPlaceholder>
                             {isMobile && (
                                 <>
                                 {!deckVisibility && (
@@ -608,7 +608,7 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                           
                             )}
                             
-                        </CourseOfferPlaceholder>
+                        </CourseOfferPlaceholder> */}
 
                         {/* {!deckVisibility && isDesktop && (
                             <OfferSpinnerWrapper>

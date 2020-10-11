@@ -46,7 +46,7 @@ const TrainingPathSection = styled.section`
 const TrainingPathWrapper = styled.div`
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 1.5vw;
     grid-row-gap: 1.5vw;
     @media only screen and (max-width: 575px) {
@@ -65,11 +65,12 @@ const TrainingPathBlockWrapper = styled.div`
     position: relative;
     :before {
         content: '';
-        width: 10.8vw;
-        height: 10.8vw;
-        background: var(--granich-red);
+        width: 23vw;
+        height: 23vw;
+        // background: var(--granich-red);
+        background: #f2f2f2;
         position: absolute;
-        bottom: 1.25vw;;
+        top: 1.25vw;;
         left: 50%;
         transform: translateX(-50%);
         border-radius: 100vw;
@@ -78,11 +79,11 @@ const TrainingPathBlockWrapper = styled.div`
         border-radius: 2.5vw;
         :before {
             content: '';
-            width: 52vw;
-            height: 52vw;
+            width: 50vw;
+            height: 50vw;
             background: var(--granich-red);
             position: absolute;
-            bottom: 4vw;;
+            top: 4vw;;
             left: 50%;
             transform: translateX(-50%);
             border-radius: 100vw;
@@ -91,7 +92,7 @@ const TrainingPathBlockWrapper = styled.div`
 
 `
 const TrainingPathBlockContainer = styled.div`
-    padding: 0.8vw 1.5vw 1.5vw;
+    padding: 2.7vw 2vw 2vw;
     margin-bottom: 1vw;
 
 
@@ -153,7 +154,7 @@ const TrainingPathBlockText = styled.div`
 `
 
 const TrainingPathBlockImage = styled.div`
-    width: 14.7vw;
+    width: 100%;
     height: auto;
     transition: transform 0.3s ease;
     margin-top: auto;
@@ -164,6 +165,7 @@ const TrainingPathBlockImage = styled.div`
 
     div {
         width: 100%;
+        height: 20vw;
     }
 
 
@@ -196,8 +198,12 @@ const TrainingPathSectionTitle = styled.h2`
     font-size: 4.55vw;
     letter-spacing: -0.2vw;
     font-weight: 700;
-    line-height: 0.87;
+    line-height: 1;
     margin-bottom: 2.5vw;
+    span {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
     @media only screen and (max-width: 575px) {
         font-size: 11vw;
         letter-spacing: -0.7vw;
@@ -212,21 +218,22 @@ const CourseTrainingPath = ({data}) => {
     return (
         <TrainingPathSection>
             <Container>
-                <TrainingPathSectionTitle>Как проходит обучение</TrainingPathSectionTitle>
+                <TrainingPathSectionTitle>Особенность курса — <span>много</span> обратной связи</TrainingPathSectionTitle>
                 <TrainingPathWrapper>
                     {data.edges.map((block, idx) => {
                         return ( 
                             <TrainingPathBlockWrapper key={block.node.id}>
                                 <TrainingPathBlockContainer>
-                                    <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber>
-                                    <TrainingPathBlockText>{documentToReactComponents(block.node.trainingPathText.json)}</TrainingPathBlockText>
-                                </TrainingPathBlockContainer>
-                                {/* <TrainingPathImageContainer> */}
-                                    <TrainingPathBlockImage>
+                                <TrainingPathBlockImage>
                                         <Zoom>
                                             <TrainingPathImage fluid={block.node.trainingPathImage.fluid}></TrainingPathImage>
                                         </Zoom>
                                     </TrainingPathBlockImage>
+                                    {/* <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber> */}
+                                    <TrainingPathBlockText>{documentToReactComponents(block.node.trainingPathText.json)}</TrainingPathBlockText>
+                                </TrainingPathBlockContainer>
+                                {/* <TrainingPathImageContainer> */}
+                                    
 {/* 
                                 </TrainingPathImageContainer> */}
                             </TrainingPathBlockWrapper>

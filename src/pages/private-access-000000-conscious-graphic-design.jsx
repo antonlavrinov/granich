@@ -16,6 +16,7 @@ import CourseCommitment from "../components/course-page/CourseCommitment"
 import {graphql} from 'gatsby';
 import CourseAnswers from "../components/course-page/CourseAnswers";
 import Mailing from '../components/Mailing';
+import CourseExplain from '../components/course-page/CourseExplain'
 import ogImage from '../assets/images/seo/conscious-graphic-design-min.jpg';
 import ogImageVK from '../assets/images/seo/vk/conscious-graphic-design.jpg';
 import CourseIndividualSupport from "../components/course-page/CourseIndividualSupport";
@@ -248,6 +249,7 @@ const OsoznannyGraphDesignPage = ({data}) => {
       <div className="section-top-block"></div>
       <CourseOffer data={data.offer} deckVisibility={deckVisibility}/>
       {/* <CourseExplanations data={data.explanations}/> */}
+      <CourseExplain/>
       <CourseExample/>
       {/* <CourseForWhom data={data.forWhom}/> */}
       <CourseCommitment/>
