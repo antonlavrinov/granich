@@ -586,29 +586,32 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                             <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/>
                         )}
                         {/* <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/> */}
-                        {/* <CourseOfferPlaceholder>
-                            {isMobile && (
-                                <>
-                                {!deckVisibility && (
-                                     <div className="loadingio-spinner-rolling-ta5f1nqy5p">
-                                        <div className="ldio-6b142d04hhl">
-                                            <div></div>
+                        {data.courseType === 'Курс' && (
+                            <CourseOfferPlaceholder>
+                                {isMobile && (
+                                    <>
+                                    {/* {!deckVisibility && (
+                                        <div className="loadingio-spinner-rolling-ta5f1nqy5p">
+                                            <div className="ldio-6b142d04hhl">
+                                                <div></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
-                                   
-                                {deckVisibility && (
-                                    <OfferRootWrapper>
-                                        <Deck postersCollectionUrls={postersCollectionUrls}/>
-                                    </OfferRootWrapper>
-                                )}
+                                    )} */}
                                     
-                                    
-                                </>
-                          
-                            )}
+                                    {/* {deckVisibility && ( */}
+                                        <OfferRootWrapper>
+                                            <Deck postersCollectionUrls={postersCollectionUrls}/>
+                                        </OfferRootWrapper>
+                                    {/* )} */}
+                                        
+                                        
+                                    </>
                             
-                        </CourseOfferPlaceholder> */}
+                                )}
+                                
+                            </CourseOfferPlaceholder>
+                        ) }
+                        
 
                         {/* {!deckVisibility && isDesktop && (
                             <OfferSpinnerWrapper>
