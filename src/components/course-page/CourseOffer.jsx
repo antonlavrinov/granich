@@ -11,6 +11,7 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import { useSprings, animated, to as interpolate } from 'react-spring';
 import { useDrag } from 'react-use-gesture'
 import { Link } from 'gatsby';
+import { useMediaQuery } from 'react-responsive'
 
 
 
@@ -55,6 +56,7 @@ const Date = styled(props => <DateIcon {...props}/>)`
 const CourseOfferSection = styled.section`
     margin-bottom: 4vw;
     position: relative;
+    overflow-x: hidden;
     @media only screen and (max-width: 575px) {
         margin-bottom: 5vw;
     }
@@ -88,20 +90,20 @@ const CourseOfferWrapper = styled.div`
 
 
 
-const CourseOfferMainImage = styled(props => <Img {...props} />)`
-    position: absolute !important;
-    width: 100% !important;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    user-select: none;
-    @media only screen and (max-width: 575px) {
-        margin-bottom: 5vw;
-        position: relative !important;
-        width: 100% !important;
-    }
-`
+// const CourseOfferMainImage = styled(props => <Img {...props} />)`
+//     position: absolute !important;
+//     width: 100% !important;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     z-index: 0;
+//     user-select: none;
+//     @media only screen and (max-width: 575px) {
+//         margin-bottom: 5vw;
+//         position: relative !important;
+//         width: 100% !important;
+//     }
+// `
 
 const CourseOfferTags = styled.div`
     display: flex;
@@ -181,7 +183,7 @@ const CourseOfferTitle = styled.h1`
     
 
     @media only screen and (max-width: 575px) {
-        margin-bottom: 5vw;
+        margin-bottom: 7vw;
         margin-left: 0vw;
         margin-top: -1vw;
         line-height: 0.8;
@@ -253,7 +255,7 @@ const CourseOfferDescr = styled.div`
     z-index: 1;
     @media only screen and (max-width: 575px) {
         width: 95%;
-        font-size: 5vw;
+        font-size: 4.6vw;
         padding: 0 5vw;
         margin-bottom: 5vw;
         margin-left: 0;
@@ -335,6 +337,7 @@ const CourseOfferButton = styled(props => <Link {...props}/>)`
     margin: 0 5vw;
     padding: 3vw 5vw 4vw 5vw;
     border-radius: 1.5vw;
+    margin-bottom: 2vw;
     box-shadow: 0.7vw 0.7vw 1.5vw rgba(0,0,0,0.3);
     :hover {
         font-size: 5.5vw;
@@ -352,6 +355,25 @@ const CourseOfferButton = styled(props => <Link {...props}/>)`
 const CourseOfferInfo = styled.div`
 
 
+`
+
+const CourseOfferPlaceholder = styled.div`
+    position: absolute !important;
+    height: 100%;
+    width: 30vw;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    user-select: none;
+    display: none;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+        position: relative !important;
+        width: 100% !important;
+        height: 85vw;
+        display: block;
+
+    }
 `
 
 // const CoursePortfolioDeck = styled.div`
@@ -381,13 +403,18 @@ const OfferRootWrapper = styled.div`
     position: absolute;
     top: 0;
     right: 12vw;
-    // top: 11vw;
-    // right: 14vw;
-    // overflow: hidden;
     width: 30vw;
     height: 36vw;
     height: 100%;
     z-index: 998;
+    
+    @media only screen and (max-width: 575px) {
+        // background: lightblue;
+        width: 100%;
+        right: 0;
+
+        
+    }
 `
 
 const OfferCardItemWrapper = styled(animated.div)`
@@ -408,8 +435,8 @@ const OfferCardItem = styled(animated.div)`
     // background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center center;
-    width: 22vw;
-    max-width: 22vw;
+    width: 22.4vw;
+    max-width: 22.4vw;
     // max-width: 300px;
     height: 31vw;
     max-height: 31vw;
@@ -422,34 +449,57 @@ const OfferCardItem = styled(animated.div)`
     :hover {
         cursor: pointer;
     }
+    @media only screen and (max-width: 575px) {
+        width: 55vw;
+        max-width: 55vw;
+        height: 76vw;
+        max-height: 76vw;
+    }
+
     `
 
-const cards = [
-    'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
-    'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
-    'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
-    'https://images.ctfassets.net/yej6fivg4hs3/7kYzs8i27RTKDkRmk70dCE/a7fe074445b9c18ef13dcf8ff2d33388/16-5-__________-____________-____.jpg?h=250',
-    'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
-    'https://images.ctfassets.net/yej6fivg4hs3/3CtHnBkVBQKsJu2P4iUBgP/9dd612463632a1928100f8f174c4a062/16-8-__________-________________-____.jpg?h=250',
-    'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
-    'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
-    'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
-    'https://images.ctfassets.net/yej6fivg4hs3/7kYzs8i27RTKDkRmk70dCE/a7fe074445b9c18ef13dcf8ff2d33388/16-5-__________-____________-____.jpg?h=250',
-    'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
-    'https://images.ctfassets.net/yej6fivg4hs3/3CtHnBkVBQKsJu2P4iUBgP/9dd612463632a1928100f8f174c4a062/16-8-__________-________________-____.jpg?h=250',
+// const OfferSpinnerWrapper = styled.div`
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     width: 30vw;
+//     height: 100%;
+//     z-index: 998;
+//     div {
+//         width: 2vw;
+//         height: 2vw;
+//     }
+//     @media only screen and (max-width: 575px) {
+//         display: none;
+//     }
+// `
+
+// const cards = [
+//     'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
+//     'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
+//     'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
+//     'https://images.ctfassets.net/yej6fivg4hs3/7kYzs8i27RTKDkRmk70dCE/a7fe074445b9c18ef13dcf8ff2d33388/16-5-__________-____________-____.jpg?h=250',
+//     'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
+//     'https://images.ctfassets.net/yej6fivg4hs3/3CtHnBkVBQKsJu2P4iUBgP/9dd612463632a1928100f8f174c4a062/16-8-__________-________________-____.jpg?h=250',
+//     'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
+//     'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
+//     'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
+//     'https://images.ctfassets.net/yej6fivg4hs3/7kYzs8i27RTKDkRmk70dCE/a7fe074445b9c18ef13dcf8ff2d33388/16-5-__________-____________-____.jpg?h=250',
+//     'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
+//     'https://images.ctfassets.net/yej6fivg4hs3/3CtHnBkVBQKsJu2P4iUBgP/9dd612463632a1928100f8f174c4a062/16-8-__________-________________-____.jpg?h=250',
 
 
-  ]
+//   ]
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = i => ({ x: 0, y: i * 0, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
-const from = i => ({ x: 1500, rot: 0, scale: 1.5, y: 0 })
+const from = i => ({ x: 1500, rot: 0, scale: 1, y: 0 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r, s) => `  rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
-function Deck() {
+function Deck({postersCollectionUrls}) {
     const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
-  const [props, set] = useSprings(cards.length, i => ({ ...to(i), from: from(i) })) // Create a bunch of springs using the helpers above
+  const [props, set] = useSprings(postersCollectionUrls.length, i => ({ ...to(i), from: from(i) })) // Create a bunch of springs using the helpers above
   // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
   const bind = useDrag(({ args: [index], down, movement: [mx], distance, direction: [xDir], velocity }) => {
     const trigger = velocity > 0.2 // If you flick hard enough it should trigger the card to fly out
@@ -463,13 +513,13 @@ function Deck() {
       const scale = down ? 1.1 : 1 // Active cards lift up a bit
       return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } }
     })
-    if (!down && gone.size === cards.length) setTimeout(() => gone.clear() || set(i => to(i)), 600)
+    if (!down && gone.size === postersCollectionUrls.length) setTimeout(() => gone.clear() || set(i => to(i)), 600)
   })
   // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
   return props.map(({ x, y, rot, scale }, i) => (
-    <OfferCardItemWrapper className="spring-div-wrapper" key={i} style={{ x, y }}>
+    <OfferCardItemWrapper className="spring-div-wrapper noselect" key={i} style={{ x, y }}>
       {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
-      <OfferCardItem className="spring-div-inside" {...bind(i)} style={{ transform: interpolate([rot, scale], trans), backgroundImage: `url(${cards[i]})` }} />
+      <OfferCardItem className="spring-div-inside noselect" {...bind(i)} style={{ transform: interpolate([rot, scale], trans), backgroundImage: `url(https:${postersCollectionUrls[i]})` }} />
     </OfferCardItemWrapper>
   ))
 }
@@ -479,20 +529,35 @@ function Deck() {
 
 
 const CourseOffer = ({data, courseName, deckVisibility}) => {
+    const [postersCollectionUrls, setPostersCollectionUrls ] = useState([])
+    useEffect(() => {
+        let cardsArray = [];
+        data.coursePostersCollection.forEach((poster) => {
+            cardsArray.push(poster.resize.src)
+        })
+        setPostersCollectionUrls(cardsArray)
+    }, [])
+
+    const isMobile = useMediaQuery({
+        query: '(max-width: 575px)'
+    })
+    const isDesktop = useMediaQuery({
+        query: '(min-width: 575px)'
+    })
 
 
     return (
         <CourseOfferSection>
-                {deckVisibility && (
+                {deckVisibility && isDesktop && (
                     <OfferRootWrapper>
-                        <Deck/>
+                        <Deck postersCollectionUrls={postersCollectionUrls}/>
                     </OfferRootWrapper>
                 )}
                 
                 <Container>
                     <CourseOfferWrapper>
                         <CourseOfferInfo>
-                        <CourseOfferTags>
+                        <CourseOfferTags className="noselect">
                             {data.courseType === 'Курс' ? (
                                 <>
                                     {data.courseStream && <CourseOfferMainTag><Potok/>{data.courseStream} поток</CourseOfferMainTag>}
@@ -509,15 +574,50 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                                 </>
                             )}
                         </CourseOfferTags>
-                        <CourseOfferTitle courseName={courseName} type={data.courseType}>
+                        <CourseOfferTitle className="noselect" courseName={courseName} type={data.courseType}>
                             {documentToReactComponents(data.courseMainTitle.json)}
                         </CourseOfferTitle>
 
                         
+                        
                         {/* <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/> */}
+                        <CourseOfferPlaceholder>
+                            {isMobile && (
+                                <>
+                                {!deckVisibility && (
+                                     <div className="loadingio-spinner-rolling-ta5f1nqy5p">
+                                        <div className="ldio-6b142d04hhl">
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                )}
+                                   
+                                {deckVisibility && (
+                                    <OfferRootWrapper>
+                                        <Deck postersCollectionUrls={postersCollectionUrls}/>
+                                    </OfferRootWrapper>
+                                )}
+                                    
+                                    
+                                </>
+                          
+                            )}
+                            
+                        </CourseOfferPlaceholder>
+
+                        {/* {!deckVisibility && isDesktop && (
+                            <OfferSpinnerWrapper>
+                                <div className="loadingio-spinner-rolling-ta5f1nqy5p">
+                                    <div className="ldio-6b142d04hhl">
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </OfferSpinnerWrapper>
+                           
+                        )} */}
 
                         
-                        <CourseOfferDescr courseName={courseName} type={data.courseType}>
+                        <CourseOfferDescr className="noselect" courseName={courseName} type={data.courseType}>
                             {data.courseDescr}
                         </CourseOfferDescr>
                         {data.courseType === 'Курс' ? (

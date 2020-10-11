@@ -40,6 +40,11 @@ export const contentfulQuery = graphql`
           courseStatus
           courseType
           coursePrice
+          coursePostersCollection {
+            resize(width: 600, quality: 100) {
+              src
+            }
+          }
           childContentfulGranichCourseCoursePolicyRichTextNode {
             json
           }
@@ -253,14 +258,18 @@ const OsoznannyGraphDesignPage = ({data}) => {
       <CourseFeatures data={data.features}/>
       <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
       <div id="participation-section"></div>
-      {data.offer.courseStatus ? (
+      {/* {data.offer.courseStatus ? (
         <CourseParticipation 
                       data={data.offer}
                       formId={`ltForm6865073`}
                       formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}/>
       ) : (
         <Mailing/>
-      )}
+      )} */}
+      <CourseParticipation 
+              data={data.offer}
+              formId={`ltForm6865073`}
+              formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}/>
       <CourseIndividualSupport/>
       <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/>
       
