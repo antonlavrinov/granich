@@ -90,20 +90,20 @@ const CourseOfferWrapper = styled.div`
 
 
 
-// const CourseOfferMainImage = styled(props => <Img {...props} />)`
-//     position: absolute !important;
-//     width: 100% !important;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     z-index: 0;
-//     user-select: none;
-//     @media only screen and (max-width: 575px) {
-//         margin-bottom: 5vw;
-//         position: relative !important;
-//         width: 100% !important;
-//     }
-// `
+const CourseOfferMainImage = styled(props => <Img {...props} />)`
+    position: absolute !important;
+    width: 100% !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    user-select: none;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+        position: relative !important;
+        width: 100% !important;
+    }
+`
 
 const CourseOfferTags = styled.div`
     display: flex;
@@ -532,10 +532,13 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
     const [postersCollectionUrls, setPostersCollectionUrls ] = useState([])
     useEffect(() => {
         let cardsArray = [];
-        data.coursePostersCollection.forEach((poster) => {
-            cardsArray.push(poster.resize.src)
-        })
-        setPostersCollectionUrls(cardsArray)
+        if (data.coursePostersCollection) {
+            data.coursePostersCollection.forEach((poster) => {
+                cardsArray.push(poster.resize.src)
+            })
+            setPostersCollectionUrls(cardsArray)
+        }
+
     }, [])
 
     const isMobile = useMediaQuery({
@@ -579,7 +582,9 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                         </CourseOfferTitle>
 
                         
-                        
+                        {data.courseType === 'Мастер-класс' && (
+                            <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/>
+                        )}
                         {/* <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/> */}
                         <CourseOfferPlaceholder>
                             {isMobile && (

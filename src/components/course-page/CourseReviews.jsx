@@ -48,7 +48,7 @@ const ReviewsSection = styled.section`
 
 const ReviewsWrapper = styled.div`
     background: #E8E8E8;
-    padding: 4.6vw 3vw 3vw;
+    padding: 3vw 3vw 3vw;
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
         border-radius: 2.5vw;
@@ -62,7 +62,7 @@ const ReviewsTitle = styled.h2`
     letter-spacing: -0.2vw;
     font-weight: 700;
     line-height: 1;
-    margin-bottom: 3vw;
+    margin-bottom: 2.7vw;
     @media only screen and (max-width: 575px) {
         font-size: 11vw;
         letter-spacing: -0.7vw;
@@ -160,9 +160,9 @@ const ReviewImage = styled(props => <BackgroundImage {...props}></BackgroundImag
 const ReviewsFooter = styled.div`
     display: flex;
     align-items: center;
-    background: #dedede;
+    // background: #dedede;
     border-radius: 0.5vw;
-    padding: 1vw 3vw;
+    // padding: 1vw 3vw;
     @media only screen and (max-width: 575px) {
         border-radius: 1.5vw;
         padding: 5vw 3vw 10vw;
@@ -173,42 +173,52 @@ const ReviewsFooter = styled.div`
     }
 `
 
-const ReviewsFooterTitle = styled.div`
-    font-style: italic;
-    font-family: EB Garamond;
-    font-size: 2.37vw;
-    font-weight: 500;
-    line-height: 1;
-    margin-top: -0.5vw;
-    @media only screen and (max-width: 575px) {
-        font-size: 8vw;
-        margin-top: 0;
-        margin-bottom: 4vw;
+// const ReviewsFooterTitle = styled.div`
+//     font-style: italic;
+//     font-family: EB Garamond;
+//     font-size: 2.37vw;
+//     font-weight: 500;
+//     line-height: 1;
+//     margin-top: -0.5vw;
+//     @media only screen and (max-width: 575px) {
+//         font-size: 8vw;
+//         margin-top: 0;
+//         margin-bottom: 4vw;
 
 
-    }
-`
+//     }
+// `
 
 const ReviewsLinks = styled.div`
     display: flex;
-    margin-left: auto;
+    // margin-left: auto;
     @media only screen and (max-width: 575px) {
-        margin-left: 0;
+        // margin-left: 0;
         flex-direction: column;
         align-items: center;
     }
 `
+const ReviewsText = styled.div`
+    font-size: 1.2vw;
+    max-width: 48%;
+    margin-left: 1.5vw;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+`
+
 const ReviewsLinkTelegram = styled.a`
     display: flex;
     align-items: center;
     font-size: 1.25vw;
     background: var(--granich-telegram-gradient);
     border-radius: 0.3vw;
-    padding: 0.7vw 2.2vw;
+    padding: 1.3vw 1.6vw;
     color: white;
-    margin-right: 2vw;
+    margin-right: 1vw;
     transition: transform 0.2s ease;
     box-shadow: .15vw .15vw .4vw rgba(0,0,0,0.25);
+    white-space: nowrap;
     :hover {
         font-size: 1.25vw;
         transform: scale(1.05);
@@ -249,10 +259,11 @@ const ReviewsLinkVk = styled.a`
     font-size: 1.25vw;
     background: var(--granich-vk-gradient);
     border-radius: 0.3vw;
-    padding: 0.7vw 2.5vw;
+    padding: 0.7vw 1.8vw;
     color: white;
     transition: transform 0.2s ease;
     box-shadow: .15vw .15vw .4vw rgba(0,0,0,0.25);
+    white-space: nowrap;
     div {
         color: inherit;
         :last-child {
@@ -337,21 +348,22 @@ const CourseReviews = ({data, dataHeader, masterClass}) => {
                         <ReviewsTitle masterClass>{dataHeader.reviewsHeaderTitle}</ReviewsTitle>
                     )}
                     
-                    <ReviewsList>
+                    {/* <ReviewsList>
                         {data.edges.map((review) => {
                             return (
                                 <Review telegramIcon={telegramIcon} telegramIconOut={telegramIconOut} key={review.node.id} image={review.node.reviewsImage.fluid} link={review.node.reviewsLink}/>
                             )
                         })}
-                    </ReviewsList>
+                    </ReviewsList> */}
                     <ReviewsFooter masterClass={masterClass}>
                         {!masterClass ? (
                             <>
-                                <ReviewsFooterTitle>Все отзывы о курсе:</ReviewsFooterTitle>
+                                {/* <ReviewsFooterTitle>Все отзывы о курсе:</ReviewsFooterTitle> */}
                                 <ReviewsLinks>
                                     <ReviewsLinkTelegram target="_blank" href={dataHeader.reviewsHeaderLinkTelegram}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
                                     {dataHeader.reviewsHeaderLinkVk && <ReviewsLinkVk target="_blank" href={dataHeader.reviewsHeaderLinkVk}><div>Архив отзывов<Arrow/>ВК</div><div>На стене Вадима Гранича</div></ReviewsLinkVk>}
                                 </ReviewsLinks>
+                                <ReviewsText>Не стесняйтесь написать выпускникам предыдущих потоков и спросить об их опыте на курсе</ReviewsText>
                             </>
                           
                         ) : (

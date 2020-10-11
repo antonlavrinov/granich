@@ -45,7 +45,7 @@ const FeaturesSectionTitle = styled.h2`
 const FeaturesWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-column-gap: 1.5vw;
     grid-row-gap: 1.5vw;
     @media only screen and (max-width: 575px) {
@@ -66,8 +66,7 @@ const FeatureWrapper = styled.div`
         content: '';
         position: absolute;
         background: #f2f2f2;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 0.95;
         left: 0.95vw;
         width: 5.2vw;
         height: 5.2vw;
@@ -79,6 +78,7 @@ const FeatureWrapper = styled.div`
         border-radius: 2.5vw;
         :after {
             left: 4.3vw;
+            top: 4.3vw;
             width: 21vw;
             height: 21vw;
         }
@@ -151,7 +151,7 @@ const CourseFeatures = ({data}) => {
         <FeaturesSection>
             <Container>
                 <FeaturesSectionTitle>
-                    Особенности курса
+                    Еще пара бонусов
                 </FeaturesSectionTitle>
                 <FeaturesWrapper>
                     {data.edges.map(feature => {
