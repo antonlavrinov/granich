@@ -100,6 +100,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       type ContentfulGranichCourse implements Node {
         courseStart: String
         courseDuration: String
+        courseStartAndEnd: String
         courseStream: String
         coursePrice: String
         courseBannerSubtext: String   

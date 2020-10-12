@@ -100,6 +100,7 @@ const TimetableInfoGifBlock = styled.div`
     padding: 1.8vw 1.8vw 2.3vw;
     border-radius: 0.6vw;
     background: #2A2A2A;
+    background: #f2f2f2;
     display: block;
     @media only screen and (max-width: 575px) {
         padding: 4vw 4vw 7vw;
@@ -145,14 +146,17 @@ const TimetableGif = styled.img`
 
 const TimetableGifText = styled.div`
     color: white;
+    color: var(--granich-black);
+    font-weight: 500;
     margin-bottom: 1vw;
+    line-height: 1.35;
 
 
 `
 
 const TimetableGifTextWrapper = styled.div`
     margin-top: 2vw;
-    font-size: 1.15vw;
+    font-size: 1.25vw;
 
 `
 
@@ -161,6 +165,7 @@ const TimetableGifPS = styled.div`
     color: white;
     border-left: 2px solid var(--granich-red);
     color: var(--granich-grey);
+    line-height: 1.35;
 `
 
 

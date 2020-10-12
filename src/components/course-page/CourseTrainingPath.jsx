@@ -2,34 +2,34 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+// import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import Zoom from 'react-medium-image-zoom'
-import ArrowIcon from '../../assets/svgs/graph-design/graph-design-training-path-arrow.svg';
-import CheckIcon from '../../assets/svgs/graph-design/graph-design-training-path-check.svg';
+// import ArrowIcon from '../../assets/svgs/graph-design/graph-design-training-path-arrow.svg';
+// import CheckIcon from '../../assets/svgs/graph-design/graph-design-training-path-check.svg';
 import { graphql, useStaticQuery } from 'gatsby'
 
-const Arrow = styled(props => <ArrowIcon {...props}/>)`
-    width: 3vw;
-    margin-left: 1.5vw;
-    fill: var(--granich-red);
-    @media only screen and (max-width: 575px) {
-        transform: rotate(90deg);
-        width: 7vw;
-        margin-left: 0;
-        margin-top: 1vw;
-    }
-`
+// const Arrow = styled(props => <ArrowIcon {...props}/>)`
+//     width: 3vw;
+//     margin-left: 1.5vw;
+//     fill: var(--granich-red);
+//     @media only screen and (max-width: 575px) {
+//         transform: rotate(90deg);
+//         width: 7vw;
+//         margin-left: 0;
+//         margin-top: 1vw;
+//     }
+// `
 
-const Check = styled(props => <CheckIcon {...props}/>)`
-    width: 3vw;
-    margin-left: 1.5vw;
-    fill: var(--granich-red);
-    @media only screen and (max-width: 575px) {
-        width: 7vw;
-        margin-left: 0.5vw;
-        margin-top: 1.5vw;
-    }
-`
+// const Check = styled(props => <CheckIcon {...props}/>)`
+//     width: 3vw;
+//     margin-left: 1.5vw;
+//     fill: var(--granich-red);
+//     @media only screen and (max-width: 575px) {
+//         width: 7vw;
+//         margin-left: 0.5vw;
+//         margin-top: 1.5vw;
+//     }
+// `
 
 
 const TrainingPathSection = styled.section`
@@ -65,8 +65,8 @@ const TrainingPathBlockWrapper = styled.div`
     position: relative;
     :before {
         content: '';
-        width: 23vw;
-        height: 23vw;
+        width: 21vw;
+        height: 21vw;
         // background: var(--granich-red);
         background: #f2f2f2;
         position: absolute;
@@ -92,15 +92,13 @@ const TrainingPathBlockWrapper = styled.div`
 
 `
 const TrainingPathBlockContainer = styled.div`
-    padding: 2.7vw 2vw 2vw;
-    margin-bottom: 1vw;
+    padding: 2.7vw 2vw 1vw;
     display: flex;
 
 
     @media only screen and (max-width: 575px) {
         padding: 5vw 5vw 5vw;
         display: flex;
-        margin-bottom: 2vw;
     }
 `
 
@@ -128,9 +126,8 @@ const TrainingPathBlockContainer = styled.div`
 // `
 
 const TrainingPathBlockText = styled.div`
-
+    padding: 2vw;
     line-height: 1.35;
-    p {
         color: var(--granich-grey);
         font-size: 1.15vw;
         letter-spacing: -0.01vw;
@@ -140,7 +137,6 @@ const TrainingPathBlockText = styled.div`
             color: var(--granich-black);
             margin-bottom: 0.35vw;
         }
-    }
     @media only screen and (max-width: 575px) {
         p {
             font-size: 3.7vw;
@@ -161,18 +157,17 @@ const TrainingPathBlockImage = styled.div`
     margin-top: auto;
     margin: 0 auto;
     margin-top: auto;
-    margin-bottom: 2vw;
+
 
 
     div {
         width: 100%;
-        height: 20vw;
+        height: 18vw;
     }
 
 
     @media only screen and (max-width: 575px) {
         width: 82%;
-        margin-bottom: 7vw;
         :hover {
             transform: none;
     
@@ -187,7 +182,6 @@ const TrainingPathBlockImage = styled.div`
 
 const TrainingPathImage = styled(props => <Img {...props}/>)`
     width: 100%;
-    height: 5vw;
     background-size: cover;
     box-shadow: 0 0 0.4vw rgba(0,0,0,0.4);
     @media only screen and (max-width: 575px) {
@@ -271,7 +265,7 @@ const CourseTrainingPath = () => {
                                     {/* <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber> */}
                                     
                                 </TrainingPathBlockContainer>
-                                <TrainingPathBlockText>cxcxxcxc</TrainingPathBlockText>
+                                <TrainingPathBlockText>Мы прекрасно знаем, как важен человеческий контакт во время обучения. Поэтому мы подготовились к тому, чтобы вы чувствовали нашу заботу. Наши кураторы будут записывать для вас подробные видеоразборы по каждому ДЗ (до получаса запросто)</TrainingPathBlockText>
 
                             </TrainingPathBlockWrapper>
                             <TrainingPathBlockWrapper>
@@ -284,7 +278,7 @@ const CourseTrainingPath = () => {
                                     {/* <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber> */}
                                     
                                 </TrainingPathBlockContainer>
-                                <TrainingPathBlockText>cxcxxcxc</TrainingPathBlockText>
+                                <TrainingPathBlockText>Но на этом мы не остановимся! С кураторами курса вы еще будете создавать портфолио из творческих макетов и многостраничного экзамена. И по ним вы будете получать отдельную обратную связь. Уверяем вас, к финалу вы уже устанете от обратной связи, а мы всё будем и будем давать вам её :)</TrainingPathBlockText>
 
                             </TrainingPathBlockWrapper>
                         

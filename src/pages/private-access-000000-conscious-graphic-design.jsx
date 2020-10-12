@@ -39,10 +39,12 @@ export const contentfulQuery = graphql`
           courseDescr
           courseStart
           courseDuration
+          courseStartAndEnd
           courseStream
           courseStatus
           courseType
           coursePrice
+          courseTags
           coursePostersCollection {
             resize(width: 600, quality: 100) {
               src

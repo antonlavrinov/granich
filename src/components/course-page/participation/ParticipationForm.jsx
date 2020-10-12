@@ -50,7 +50,7 @@ const FormTag = styled.div`
     border-radius: 100vw;
     padding: 0.15vw 0.7vw;
     font-size: 0.9vw;
-    margin-right: 1vw;
+    margin-right: 0.5vw;
     color: var(--granich-red);
     letter-spacing: 0;
     :last-child {
@@ -424,8 +424,13 @@ const ParticipationForm = ({data, formId, formAction}) => {
 
                                         <FormTags>
                                             {data.courseStream && <FormTag important>{data.courseStream} поток</FormTag>}
-                                            {data.courseStart && <FormTag>Старт {data.courseStart}</FormTag>}
-                                            {data.courseDuration && <FormTag>{data.courseDuration} интенсива</FormTag>}  
+                                            {data.courseStartAndEnd && <FormTag>{data.courseStartAndEnd}</FormTag>}
+                                            {data.courseTags.map((tag, idx) => {
+                                                return (
+                                                    <FormTag key={idx}>{tag}</FormTag>
+                                                )
+                                            })} 
+                                            
                                         </FormTags>
                                         <FormTitle>Участвовать <br/>в курсе</FormTitle>
                                         <input  type="hidden" name="formParams[setted_offer_id]" /><br/>

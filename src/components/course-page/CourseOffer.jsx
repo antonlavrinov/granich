@@ -564,8 +564,13 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                             {data.courseType === 'Курс' ? (
                                 <>
                                     {data.courseStream && <CourseOfferMainTag><Potok/>{data.courseStream} поток</CourseOfferMainTag>}
-                                    {data.courseStart && <CourseOfferTag><Date/>Старт {data.courseStart}</CourseOfferTag>}
-                                    {data.courseDuration && <CourseOfferTag><Duration/>{data.courseDuration} интенсива</CourseOfferTag>}
+                                    {data.courseStartAndEnd && <CourseOfferTag><Date/>{data.courseStartAndEnd}</CourseOfferTag>}
+                                    {data.courseTags.map((tag, idx) => {
+                                        return (
+                                            <CourseOfferTag key={idx}>{tag}</CourseOfferTag>
+                                        )
+                                    })} 
+                                    {/* {data.courseTags && <CourseOfferTag>{data.courseTags[1]}</CourseOfferTag>}  */}
                                 </>
                             ) : (
                                 <>

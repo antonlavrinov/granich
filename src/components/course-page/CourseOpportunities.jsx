@@ -19,6 +19,7 @@ const OpportunitiesSection = styled.section`
 
 const OpportunitiesWrapper = styled.div`
     background: #E8E8E8;
+    background: white;
     padding: 3vw 3vw 3vw;
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
@@ -71,10 +72,12 @@ const OpportunitiesList = styled.div`
 
 const OpportunityWrapper = styled.div`
     background: white;
+    background: #f2f2f2;
     border-radius: 0.5vw;
-    box-shadow: 0.1vw 0 0.5vw rgba(0,0,0,0.15);
+    // box-shadow: 0.1vw 0 0.5vw rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
+    padding: 1.5vw;
     @media only screen and (max-width: 575px) {
         border-radius: 1.5vw;
         box-shadow: 0.4vw 0.4vw 1.5vw rgba(0,0,0,0.15);
@@ -118,13 +121,27 @@ const OpportunityWrapper = styled.div`
 
 const OpportunityText = styled.div`
     margin-left: auto;
+    
     display: flex;
-    padding: 2vw;
+    padding: 1.2vw 0 1.5vw;
     background: #f2f2f2;
+
     margin-top: auto;
     width: 100%;
-    min-height: 7vw;
-    height: 7vw;
+    min-height: 5vw;
+    height: 5vw;
+    font-weight: 500;
+    // border-top: 2px solid var(--granich-red);
+    
+    span {
+
+        font-size: 1.3vw;
+        // padding-left: 0.5vw;
+        color: var(--granich-grey);
+        // color: var(--granich-black);
+        line-height: 1.3;
+    }
+
 
 
     @media only screen and (max-width: 575px) {
@@ -136,32 +153,31 @@ const OpportunityImage = styled(props => <BackgroundImage {...props}></Backgroun
     height: 23vw;
     min-height: 23vw;
     overflow: hidden;
-    border-radius: 0.5vw 0.5vw 0 0;
-    background-size: 90%;
+    background-size: 85%;
+    background-color: white;
     @media only screen and (max-width: 575px) {
         height: 58.5vw;
         min-height: 58.5vw;
-        border-radius: 1.5vw 1.5vw 0 0;
     }
 `
 
 
 
-const OpportunitiesFooter = styled.div`
-    display: flex;
-    align-items: center;
-    // background: #dedede;
-    border-radius: 0.5vw;
-    // padding: 1vw 3vw;
-    @media only screen and (max-width: 575px) {
-        border-radius: 1.5vw;
-        padding: 5vw 3vw 10vw;
-        flex-direction: column;
-        ${props => props.masterClass && `
-            padding: 5vw;
-        `}
-    }
-`
+// const OpportunitiesFooter = styled.div`
+//     display: flex;
+//     align-items: center;
+//     // background: #dedede;
+//     border-radius: 0.5vw;
+//     // padding: 1vw 3vw;
+//     @media only screen and (max-width: 575px) {
+//         border-radius: 1.5vw;
+//         padding: 5vw 3vw 10vw;
+//         flex-direction: column;
+//         ${props => props.masterClass && `
+//             padding: 5vw;
+//         `}
+//     }
+// `
 
 
 
@@ -169,7 +185,7 @@ const OpportunitiesFooter = styled.div`
 const OpportunitiesSubtitle = styled.div`
     font-size: 1.55vw;
     font-weight: 500;
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
 `
 
 
@@ -179,7 +195,7 @@ const Opportunity = ({image, text}) => {
         <OpportunityWrapper>
             <OpportunityImage fluid={image}></OpportunityImage>
             <OpportunityText>
-                {text}
+                <span>{text}</span>
             </OpportunityText> 
         </OpportunityWrapper>
     )
@@ -251,7 +267,7 @@ const CourseOpportunities = () => {
                     <OpportunitiesTitle>После курса вы сможете <span>брать заказы</span> на дизайн и вёрстку:</OpportunitiesTitle>
                     <OpportunitiesSubtitle>Одностраничные макеты:</OpportunitiesSubtitle>
                     <OpportunitiesList>
-                        <Opportunity text={'Плакаты . Афиши Флаеры . Евробуклеты'} image={image1}/>
+                        <Opportunity text={'Плакаты / Афиши Флаеры / Евробуклеты'} image={image1}/>
                         <Opportunity text={'Сторис и обложки постов'} image={image2}/>
                         <Opportunity text={'Баннеры и оформление соцсетей'} image={image3}/>
                     </OpportunitiesList>
