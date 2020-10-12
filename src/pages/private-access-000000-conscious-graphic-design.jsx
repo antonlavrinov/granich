@@ -5,7 +5,7 @@ import CourseOffer from '../components/course-page/CourseOffer';
 import Header from "../components/Header"
 import CourseExplanations from "../components/course-page/CourseExplanations"
 import CourseExample from "../components/course-page/CourseExample"
-import CourseForWhom from "../components/course-page/CourseForWhom"
+// import CourseForWhom from "../components/course-page/CourseForWhom"
 import CoursePortfolio from "../components/course-page/CoursePortfolio"
 import CourseTrainingPath from "../components/course-page/CourseTrainingPath"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
@@ -21,7 +21,8 @@ import ogImage from '../assets/images/seo/conscious-graphic-design-min.jpg';
 import ogImageVK from '../assets/images/seo/vk/conscious-graphic-design.jpg';
 import CourseIndividualSupport from "../components/course-page/CourseIndividualSupport";
 import CourseTimetable from "../components/course-page/CourseTimetable";
-
+import CourseAftermath from "../components/course-page/CourseAftermath"
+import CourseOpportunities from "../components/course-page/CourseOpportunities";
 
 export const contentfulQuery = graphql`
 
@@ -250,14 +251,20 @@ const OsoznannyGraphDesignPage = ({data}) => {
       <div className="section-top-block"></div>
       <CourseOffer data={data.offer} deckVisibility={deckVisibility}/>
       {/* <CourseExplanations data={data.explanations}/> */}
+      <CourseExample/> 
       <CourseExplain/>
-      <CourseExample/>
+      <CourseOpportunities/>
+      <CourseAftermath/>
+      
+
       {/* <CourseForWhom data={data.forWhom}/> */}
       {/* <CourseCommitment/> */}
       <CourseTimetable/>
+      <CourseTrainingPath data={data.trainingPath}/>
+      
       <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
       
-      <CourseTrainingPath data={data.trainingPath}/>
+      
       <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
       <CourseFeatures data={data.features}/>
       <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>

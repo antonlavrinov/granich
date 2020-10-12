@@ -214,6 +214,9 @@ export const CourseImage = styled(props => <BackgroundImage {...props}></Backgro
         max-height: 38vw;
         height: 38vw;
     }
+    ${props => props.empty && `
+        filter: grayscale(100%);
+    `}
 `
 
 export const CourseImageWrapper = styled.div`

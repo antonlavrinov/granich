@@ -16,84 +16,40 @@ const TimetableSection = styled.section`
 `
 const TimetableWrapper = styled.div`
     display: flex;
+    flex-direction: column;
     background: white;
     padding: 3.3vw 3.3vw;
     border-radius: 0.6vw;
-    video {
-        min-width: 36.3vw;
-        width: 36.3vw;
-        margin-right: 3vw;
-        height: 19vw;
-        border-radius: 0.5vw;
-    }
     @media only screen and (max-width: 575px) {
         flex-direction: column;
         padding: 6vw 6vw 7vw;
         border-radius: 2.5vw;
-        video {
-            min-width: 100%;
-            width: 100%;
-            margin-right: 3vw;
-            height: 40.8vw;
-            border-radius: 3vw;
-            margin-bottom: 5vw;
-        }
     }
 `
 
-const TimetableGif = styled.img`
-    min-width: 36.3vw;
-    width: 36.3vw;
-    margin-right: 3vw;
-    border-radius: 0.5vw;
-    @media only screen and (max-width: 575px) {
-        min-width: 100%;
-        width: 100%;
-        margin-right: 3vw;
-        // height: 40.8vw;
-        border-radius: 2vw;
-        margin-bottom: 5vw;
 
-    }
-`
-const TimetableGifWrapper = styled.div`
-    min-width: 36.3vw;
-    width: 36.3vw;
-    margin-right: 3vw;
-    border-radius: 0.5vw;
-    background: #f2f2f2;
-    min-height: 20.5vw;
-    height: 20.5vw;
-    @media only screen and (max-width: 575px) {
-        min-width: 100%;
-        width: 100%;
-        border-radius: 2vw;
-        margin-bottom: 5vw;
-        min-height: 44vw;
-        height: 44vw;
 
-    }
-`
 
 const TimetableTitle = styled.h2`
     color: var(--granich-black);
-    font-size: 4.55vw;
+    font-size: 4.2vw;
     letter-spacing: -0.2vw;
     font-weight: 700;
-    line-height: 0.87;
+    line-height: 1;
     margin-top: -0.6vw;
-    margin-bottom: 4.5vw;
+    margin-bottom: 4vw;
     line-height: 1.1;
+    white-space: nowrap;
     span {
         font-family: EB Garamond;
         font-style: italic;
         font-weight: 500;
         font-size: 5.4vw;
-        line-height: 0.75;
+        line-height: 1;
         position: relative;
-        margin-bottom: 2.9vw;
-        margin-left: 0.5vw;
-        white-space: nowrap;
+        margin-left: -0.2vw;
+        white-space: normal;
+        display: block;
         letter-spacing: -0.115vw;
     }
 
@@ -113,13 +69,98 @@ const TimetableTitle = styled.h2`
 `
 
 const TimetableImageWrapper = styled.div`
-    min-width: 50%;
+    min-width: 48%;
+    width: 48%;
+    margin-right: 4%;
     height: auto;
 `
 
 const TimetableImage = styled(props => <Img {...props}/>)`
+    width: 100%;
+
+`
+
+const TimetableInfoWrapper = styled.div`
+    display: flex;
+    align-items: flex-start;
+
+`
+const TimetableInfoTextWrapper = styled.div`
+    min-width: 48%;
+    width: 48%;
+`
+const TimetableInfoText = styled.div`
+    font-size: 1.55vw;
+    line-height: 1.45;
+    margin-bottom: 2vw;
+    font-weight: 500;
+`
+
+const TimetableInfoGifBlock = styled.div`
+    padding: 1.8vw 1.8vw 2.3vw;
+    border-radius: 0.6vw;
+    background: #2A2A2A;
+    display: block;
+    @media only screen and (max-width: 575px) {
+        padding: 4vw 4vw 7vw;
+        border-radius: 1.7vw;
+    }
+`
 
 
+const TimetableGifWrapper = styled.div`
+    min-width: 100%;
+    width: 100%;
+    margin-right: 3vw;
+    border-radius: 0.5vw;
+    // background: #f2f2f2;
+    min-height: 16vw;
+    height: 16vw;
+    @media only screen and (max-width: 575px) {
+        min-width: 100%;
+        width: 100%;
+        border-radius: 2vw;
+        margin-bottom: 5vw;
+        min-height: 44vw;
+        height: 44vw;
+
+    }
+`
+
+const TimetableGif = styled.img`
+    min-width: 100%;
+    width: 100%;
+    margin-right: 3vw;
+    border-radius: 0.5vw;
+    @media only screen and (max-width: 575px) {
+        min-width: 100%;
+        width: 100%;
+        margin-right: 3vw;
+        // height: 40.8vw;
+        border-radius: 2vw;
+        margin-bottom: 5vw;
+
+    }
+`
+
+const TimetableGifText = styled.div`
+    color: white;
+    margin-bottom: 1vw;
+
+
+`
+
+const TimetableGifTextWrapper = styled.div`
+    margin-top: 2vw;
+    font-size: 1.15vw;
+
+`
+
+const TimetableGifPS = styled.div`
+    padding-left: 1vw;
+    color: white;
+    border-left: 2px solid var(--granich-red);
+    color: var(--granich-grey);
 `
 
 
@@ -149,10 +190,31 @@ const CourseTimetable = () => {
         <TimetableSection>
             <Container>
                 <TimetableWrapper>
-                    <TimetableTitle>Курс можно <br/>совмещать с работой <span>Но расслабиться не получится!</span></TimetableTitle>
-                    <TimetableImageWrapper>
-                        <TimetableImage fluid={imageData}/>
-                    </TimetableImageWrapper>
+                    <TimetableTitle>Курс можно совмещать с работой <span>Но расслабиться не получится!</span></TimetableTitle>
+                    <TimetableInfoWrapper>
+                        <TimetableImageWrapper>
+                            <TimetableImage fluid={imageData}/>
+                        </TimetableImageWrapper>
+                        <TimetableInfoTextWrapper>
+                            <TimetableInfoText>
+                                Программа обучения выстроена так, что на каждый из уроков даётся 1 неделя. С понедельника по воскресенье. В день необходимо инвестировать в своё обучение хотя бы пару часов. Уроки крайне насыщенные. При этом домашнее задание по уроку необходимо выполнить ровно за эту неделю. Это строгий дедлайн. Иначе вы будете отстранены от обучения.
+                            </TimetableInfoText>
+                            <TimetableInfoGifBlock>
+                                <TimetableGifWrapper>
+                                    {/* <LazyLoad once> */}
+                                        <TimetableGif src={TimetableImageGif} alt="commitment"/>
+                                        
+                                </TimetableGifWrapper>
+                                <TimetableGifTextWrapper>
+                                    <TimetableGifText>Примерно с таким настроем нужно будет погрузиться в курс. Вы придёте сюда чтобы развивать твёрдые навыки</TimetableGifText>
+                                    <TimetableGifPS>P.S. Сцена из фильма Одержимость. Философия всего курса</TimetableGifPS>
+                                </TimetableGifTextWrapper>
+                                
+                            {/* </LazyLoad> */}
+                            </TimetableInfoGifBlock>
+                        </TimetableInfoTextWrapper>
+                    </TimetableInfoWrapper>
+
                 </TimetableWrapper>
             </Container>
         </TimetableSection>

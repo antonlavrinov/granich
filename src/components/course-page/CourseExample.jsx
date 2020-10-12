@@ -57,7 +57,7 @@ const CourseExampleHeader = styled.div`
     }
 `
 const CourseExampleAuthor = styled.div`
-    width: 15vw;
+    width: 20vw;
     margin-right: 5vw;
     line-height: 1.4;
     @media only screen and (max-width: 575px) {
@@ -72,10 +72,10 @@ const CourseExampleAuthor = styled.div`
 `
 
 const CourseExampleAuthorImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-    width: 7.1vw;
-    height: 7.1vw;
+    width: 11vw;
+    height: 11vw;
     border-radius: 100vw;
-    margin-bottom: 0.3vw;
+    margin-bottom: 1vw;
     overflow: hidden;
     @media only screen and (max-width: 575px) {
         width: 15vw;
@@ -87,7 +87,7 @@ const CourseExampleAuthorImage = styled(props => <BackgroundImage {...props}></B
 `
 const CourseExampleAuthorName = styled.div`
     font-size: 1.15vw;
-    margin-left: -0.1vw;
+    margin-left: 1.2vw;
     font-weight: 500;
     @media only screen and (max-width: 575px) {
         font-size: 5vw;
@@ -100,7 +100,7 @@ const CourseExampleAuthorName = styled.div`
 const CourseExampleAuthorText = styled.div`
     font-size: 1.15vw;
     color: var(--granich-grey);
-    margin-left: -0.1vw;
+    margin-left: 1.2vw;
     @media only screen and (max-width: 575px) {
         font-size: 5vw;
         margin-left: 0;
@@ -112,10 +112,11 @@ const CourseExampleTitle = styled.h2`
     font-family: EB Garamond;
     font-style: italic;
     font-weight: 500;
-    font-size: 5.2vw;
+    font-size: 5.4vw;
     // width: 600px;
     line-height: 1.04;
     position: relative;
+    margin-top: 0.5vw;
     // margin-bottom: 50px;
     // margin-left: 15px;
     :after {

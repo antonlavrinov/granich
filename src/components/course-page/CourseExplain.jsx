@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Container } from '../style';
-
+import Exclamation from '../../assets/svgs/exclamation-mark.svg';
 
 const ExplainSection = styled.section`
     margin-bottom: 4vw;
@@ -26,13 +26,13 @@ const ExplainTitle = styled.h2`
     font-family: EB Garamond;
     font-style: italic;
     font-weight: 500;
-    font-size: 4.9vw;
+    font-size: 5.4vw;
     line-height: 0.75;
     position: relative;
     margin-bottom: 4vw;
     margin-left: 0vw;
     white-space: nowrap;
-    letter-spacing: -0.05vw;
+    letter-spacing: -0.01vw;
     @media only screen and (max-width: 575px) {
         white-space: normal;
         font-size: 10.4vw;
@@ -49,7 +49,7 @@ const ExplainItems = styled.div`
 const ExplainItem = styled.div`
     display: flex;
     align-items: center;
-    margin-right: 3vw;
+    margin-right: 7.5vw;
 `
 const ExplainItemNumber = styled.div`
 
@@ -68,7 +68,7 @@ const ExplainItemNumber = styled.div`
         letter-spacing: -0.4vw;
         padding-left: 0.8vw;
         margin-bottom: 0.6vw;
-        margin-right: 1vw;
+        margin-right: 1.5vw;
 
 
     @media only screen and (max-width: 575px) {
@@ -94,19 +94,29 @@ const ExplainInfoWrapper = styled.div`
 const ExplainInfoText = styled.div`
     font-size: 1.55vw;
     line-height: 1.4;
-    max-width: 75%;
+    max-width: 70%;
+    width: 70%;
     font-weight: 500;
+    margin-right: 2vw;
 `
 const ExplainInfoBonus = styled.div`
     display: flex;
     background: #f2f2f2;
     align-items: center;
-    padding: 1vw 1.5vw;
+    padding: 1.5vw 1.5vw;
     border-radius: 0.5vw;
+    svg {
+        width: 3.5vw;
+        height: 3.5vw;
+        fill: rgba(0,0,0,0.3);
+        margin-right: 0.7vw;
+    }
 
 `
 const ExplainInfoBonusText = styled.div`
-
+    font-size: 1.55vw;
+    max-width: 14vw;
+    color: var(--granich-grey);
 `
 
 
@@ -134,7 +144,8 @@ const CourseExplain = () => {
                     <ExplainInfoWrapper>
                         <ExplainInfoText>Овладев графдизайном вы станете визуальным голосом ваших клиентов. Через макеты вы дадите возможность их бизнесу оповещать, обучать, убеждать. </ExplainInfoText>
                         <ExplainInfoBonus>
-                            <ExplainInfoBonusText>Это востребовано на рынке</ExplainInfoBonusText>
+                            <Exclamation/>
+                            <ExplainInfoBonusText>Это востребовано на рынке</ExplainInfoBonusText>
                         </ExplainInfoBonus>
                     </ExplainInfoWrapper>
 
