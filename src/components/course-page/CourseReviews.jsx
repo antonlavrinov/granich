@@ -165,8 +165,9 @@ const ReviewsFooter = styled.div`
     // padding: 1vw 3vw;
     @media only screen and (max-width: 575px) {
         border-radius: 1.5vw;
-        padding: 5vw 3vw 10vw;
+        padding: 5vw 5vw 5vw;
         flex-direction: column;
+        background: #dedede;
         ${props => props.masterClass && `
             padding: 5vw;
         `}
@@ -196,6 +197,7 @@ const ReviewsLinks = styled.div`
         // margin-left: 0;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 `
 const ReviewsText = styled.div`
@@ -205,6 +207,12 @@ const ReviewsText = styled.div`
     line-height: 1.4;
     font-weight: 500;
     letter-spacing: -0.01em;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+        max-width: 100%;
+        margin-top: 3vw;
+        margin-left: 0;
+    }
 `
 
 const ReviewsLinkTelegram = styled.a`
@@ -219,6 +227,7 @@ const ReviewsLinkTelegram = styled.a`
     transition: transform 0.2s ease;
     box-shadow: .15vw .15vw .4vw rgba(0,0,0,0.25);
     white-space: nowrap;
+    
     :hover {
         font-size: 1.25vw;
         transform: scale(1.05);
@@ -235,8 +244,10 @@ const ReviewsLinkTelegram = styled.a`
             font-size: 3.9vw;
         }
         margin-bottom: 4vw;
+        min-width: 100%;
         width: 100%;
         margin-right: 0;
+        justify-content: center;
     }
     ${props => props.masterClass && `
         padding: 1vw 1vw;
@@ -280,14 +291,17 @@ const ReviewsLinkVk = styled.a`
     @media only screen and (max-width: 575px) {
         font-size: 3.9vw;
         border-radius: 1.3vw;
-        padding: 1.7vw 7.5vw 2vw;
+        padding: 1.7vw 14vw 2vw;
         width: 100%;
         text-align: center;
         box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
+        justify-content: center;
         :hover {
             font-size: 3.9vw;
+            text-align: center;
         }
         div {
+
             :last-child {
                 font-size: 2.5vw;
                 text-align: left;
@@ -299,19 +313,19 @@ const ReviewsLinkVk = styled.a`
 
 
 
-const Review = ({image, link, telegramIcon, telegramIconOut}) => {
-    return (
-        <ReviewWrapper>
-            <ReviewImage fluid={image}></ReviewImage>
-            <ReviewButton href={link} target="_blank">
-                <span>Показать полностью</span>
-                <ReviewButtonIcons>
-                    <TelegramOut fluid={telegramIconOut}/><Telegram fluid={telegramIcon}/>
-                </ReviewButtonIcons> 
-            </ReviewButton>
-        </ReviewWrapper>
-    )
-}
+// const Review = ({image, link, telegramIcon, telegramIconOut}) => {
+//     return (
+//         <ReviewWrapper>
+//             <ReviewImage fluid={image}></ReviewImage>
+//             <ReviewButton href={link} target="_blank">
+//                 <span>Показать полностью</span>
+//                 <ReviewButtonIcons>
+//                     <TelegramOut fluid={telegramIconOut}/><Telegram fluid={telegramIcon}/>
+//                 </ReviewButtonIcons> 
+//             </ReviewButton>
+//         </ReviewWrapper>
+//     )
+// }
 
 
 const CourseReviews = ({data, dataHeader, masterClass}) => {
@@ -363,7 +377,7 @@ const CourseReviews = ({data, dataHeader, masterClass}) => {
                                     <ReviewsLinkTelegram target="_blank" href={dataHeader.reviewsHeaderLinkTelegram}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
                                     {dataHeader.reviewsHeaderLinkVk && <ReviewsLinkVk target="_blank" href={dataHeader.reviewsHeaderLinkVk}><div>Архив отзывов<Arrow/>ВК</div><div>На стене Вадима Гранича</div></ReviewsLinkVk>}
                                 </ReviewsLinks>
-                                <ReviewsText>Не стесняйтесь написать выпускникам предыдущих потоков и спросить об их опыте на курсе</ReviewsText>
+                                <ReviewsText>Не стесняйтесь написать выпускникам предыдущих потоков и спросить об их опыте на курсе</ReviewsText>
                             </>
                           
                         ) : (

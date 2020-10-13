@@ -83,6 +83,12 @@ const CourseOfferWrapper = styled.div`
         padding: 7vw 1vw 6vw;
         box-shadow: 0 0 1.8vw rgba(0,0,0,0.15);
     }
+    ${props => props.type === 'Курс' && `
+
+        :before {
+
+        }
+    `}
 
 
 
@@ -458,6 +464,39 @@ const OfferCardItem = styled(animated.div)`
 
     `
 
+const CourseCircle = styled.div`
+    width: 25vw;
+    height: 25vw;
+    background: #f2f2f2;
+    border-radius: 100vw;
+    position: absolute;
+    right: 4vw;
+    top: 50%;
+    transform: translateY(-50%);
+    @media only screen and (max-width: 575px) {
+        display: none;
+    }
+`
+
+const CourseCircleMobile = styled.div`
+
+    display: none;
+    width: 100vw;
+    height: 100vw;
+    background: #f2f2f2;
+    background: red;
+    border-radius: 100vw;
+    z-index: 999;
+    @media only screen and (max-width: 575px) {
+        width: 100vw;
+        height: 100vw;
+        background: #f2f2f2;
+        background: red;
+        border-radius: 100vw;
+        z-index: 999;
+    }
+`
+
 // const OfferSpinnerWrapper = styled.div`
 //     position: absolute;
 //     top: 0;
@@ -558,7 +597,7 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                 )}
                 
                 <Container>
-                    <CourseOfferWrapper>
+                    <CourseOfferWrapper type={data.courseType}>
                         <CourseOfferInfo>
                         <CourseOfferTags className="noselect">
                             {data.courseType === 'Курс' ? (
@@ -592,31 +631,38 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                         )}
                         {/* <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/> */}
                         {data.courseType === 'Курс' && (
-                            <CourseOfferPlaceholder>
-                                {isMobile && (
-                                    <>
-                                    {deckVisibility ? (
-                                        null
-                                    ) : (
-                                        <div className="loadingio-spinner-rolling-ta5f1nqy5p">
-                                            <div className="ldio-6b142d04hhl">
-                                                <div></div>
+                            <>
+                                <CourseCircle></CourseCircle>
+                                
+                                <CourseOfferPlaceholder>
+                                    {/* <CourseCircleMobile>dsds</CourseCircleMobile> */}
+                                    
+                                    {isMobile && (
+                                        <>
+                                        {deckVisibility ? (
+                                            null
+                                        ) : (
+                                            <div className="loadingio-spinner-rolling-ta5f1nqy5p">
+                                                <div className="ldio-6b142d04hhl">
+                                                    <div></div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        )}
+                                        
+                                        {/* {deckVisibility && ( */}
+                                            <OfferRootWrapper>
+                                                <Deck postersCollectionUrls={postersCollectionUrls}/>
+                                            </OfferRootWrapper>
+                                        {/* )} */}
+                                            
+                                            
+                                        </>
+                                
                                     )}
                                     
-                                    {/* {deckVisibility && ( */}
-                                        <OfferRootWrapper>
-                                            <Deck postersCollectionUrls={postersCollectionUrls}/>
-                                        </OfferRootWrapper>
-                                    {/* )} */}
-                                        
-                                        
-                                    </>
+                                </CourseOfferPlaceholder>
+                            </>
                             
-                                )}
-                                
-                            </CourseOfferPlaceholder>
                         ) }
                         
 

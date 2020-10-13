@@ -23,6 +23,7 @@ import CourseIndividualSupport from "../components/course-page/CourseIndividualS
 import CourseTimetable from "../components/course-page/CourseTimetable";
 import CourseAftermath from "../components/course-page/CourseAftermath"
 import CourseOpportunities from "../components/course-page/CourseOpportunities";
+import CourseHardWork from "../components/course-page/CourseHardWork";
 
 export const contentfulQuery = graphql`
 
@@ -279,6 +280,7 @@ const OsoznannyGraphDesignPage = ({data}) => {
       ) : (
         <Mailing/>
       )} */}
+      <CourseHardWork/>
       <CourseParticipation 
               data={data.offer}
               formId={`ltForm6865073`}

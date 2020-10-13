@@ -33,6 +33,9 @@ const AftermathSectionTitle = styled.h2`
     @media only screen and (max-width: 575px) {
         font-size: 11vw;
         margin-bottom: 4vw;
+        span {
+            font-size: 13vw;
+        }
     }
 `
 
@@ -42,8 +45,9 @@ const AftermathWrapper = styled.div`
     grid-column-gap: 1vw;
     grid-row-gap: 1.5vw;
     @media only screen and (max-width: 575px) {
-        grid-template-columns: 1fr;
-        grid-row-gap: 4vw;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 3vw;
+        grid-column-gap: 3vw;
     }
 
 `
@@ -53,49 +57,12 @@ const AftermathBlockWrapper = styled.div`
     padding: 1.8vw;
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
-        border-radius: 2.5vw;
-        padding: 14vw 4vw 7vw;
+        border-radius: 2vw;
+        padding: 3vw 3vw 4vw;
     }
 
 `
-// const AftermathBlockTitle = styled.h3`
-//     font-size: 1.5vw;
-//     line-height: 0.8;
-//     text-align: center;
-//     font-family: EB Garamond;
-//     font-weight: 500;
-//     text-transform: uppercase;
-//     letter-spacing: 0.6vw;
-//     margin-top: 3.6vw;
-//     width: 100%;
-//     position: relative;
-//     margin-bottom: 2.15vw;
-//     :before {
-//         content: '';
-//         background: var(--granich-red);
-//         position: absolute;
-//         top: -2.8vw;
-//         left: 10vw;
-//         width: 0.68vw;
-//         height: 0.68vw;
-//         border-radius: 100vw;
-//         transform: translateX(-50%);
-//         font-size: 1vw;
-//         // line-height: 0.5;
 
-//     }
-//     @media only screen and (max-width: 575px) {
-//         font-size: 5.1vw;
-//         letter-spacing: 1.9vw;
-//         margin-bottom: 6.5vw;
-//         :before {
-//             top: -8.6vw;
-//             left: 50%;
-//             width: 2.3vw;
-//             height: 2.3vw;
-//         }
-//     }
-// `
 const AftermathBlockImage = styled(props => <BackgroundImage {...props}/>)`
     background: url(${props => props.image}) center center no-repeat;
     // background-size: 90%;
@@ -104,7 +71,7 @@ const AftermathBlockImage = styled(props => <BackgroundImage {...props}/>)`
     border-radius: 0.2vw;
     margin-bottom: 1vw;
     @media only screen and (max-width: 575px) {
-        height: 75.4vw;
+        height: 35vw;
         border-radius: 1.5vw;
         margin-bottom: 5vw;
     }
@@ -129,9 +96,9 @@ const AftermathBlockTextBlock = styled.div`
     }
     @media only screen and (max-width: 575px) {
         margin-left: 0;
-        p {
-            font-size: 3.7vw;
-        }
+        font-size: 3.7vw;
+        max-width: 100%;
+        line-height: 1.25;
     }
 `
 
@@ -196,8 +163,11 @@ const CourseAftermath = ({data}) => {
     return (
         <AftermathSection>
             <Container>
+                {/* <AftermathSectionTitle>
+                После курса вы получите <span>твёрдую базу</span> для дальнейшего изучения:
+                </AftermathSectionTitle> */}
                 <AftermathSectionTitle>
-                После курса вы получите <span>твёрдую базу</span> для дальнейшего изучения:
+                Вы получите <span>твёрдую базу</span> для дальнейшего изучения:
                 </AftermathSectionTitle>
                 <AftermathWrapper>
                     {/* {data.edges.map(Aftermath => {

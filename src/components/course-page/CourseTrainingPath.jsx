@@ -63,31 +63,30 @@ const TrainingPathBlockWrapper = styled.div`
 
     border-radius: 0.6vw;
     position: relative;
-    :before {
-        content: '';
-        width: 21vw;
-        height: 21vw;
-        // background: var(--granich-red);
-        background: #f2f2f2;
-        position: absolute;
-        top: 1.25vw;;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 100vw;
-    }
+    // :before {
+    //     content: '';
+    //     width: 21vw;
+    //     height: 21vw;
+    //     // background: var(--granich-red);
+    //     background: #f2f2f2;
+    //     position: absolute;
+    //     top: 1.25vw;;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     border-radius: 100vw;
+    // }
     @media only screen and (max-width: 575px) {
         border-radius: 2.5vw;
-        :before {
-            content: '';
-            width: 50vw;
-            height: 50vw;
-            background: var(--granich-red);
-            position: absolute;
-            top: 4vw;;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 100vw;
-        }
+        // :before {
+        //     content: '';
+        //     width: 50vw;
+        //     height: 50vw;
+        //     position: absolute;
+        //     top: 4vw;;
+        //     left: 50%;
+        //     transform: translateX(-50%);
+        //     border-radius: 100vw;
+        // }
     }
 
 `
@@ -97,7 +96,7 @@ const TrainingPathBlockContainer = styled.div`
 
 
     @media only screen and (max-width: 575px) {
-        padding: 5vw 5vw 5vw;
+        padding: 5vw 5vw 2vw;
         display: flex;
     }
 `
@@ -128,22 +127,22 @@ const TrainingPathBlockContainer = styled.div`
 const TrainingPathBlockText = styled.div`
     padding: 2vw;
     line-height: 1.35;
-        color: var(--granich-grey);
-        font-size: 1.15vw;
-        letter-spacing: -0.01vw;
-        b {
-            display: block;
-            font-weight: 600;
-            color: var(--granich-black);
-            margin-bottom: 0.35vw;
-        }
+    color: var(--granich-grey);
+    font-size: 1.15vw;
+    letter-spacing: -0.01vw;
+    b {
+        display: block;
+        font-weight: 600;
+        color: var(--granich-black);
+        margin-bottom: 0.35vw;
+    }
     @media only screen and (max-width: 575px) {
-        p {
-            font-size: 3.7vw;
-            b {
-                margin-bottom: 1vw;
-            }
+        padding: 0 5vw 5vw;
+        font-size: 3.7vw;
+        b {
+            margin-bottom: 1vw;
         }
+
         margin-top: 2vw;
     }
 
@@ -156,7 +155,7 @@ const TrainingPathBlockImage = styled.div`
     transition: transform 0.3s ease;
     margin-top: auto;
     margin: 0 auto;
-    margin-top: auto;
+
 
 
 
@@ -167,14 +166,26 @@ const TrainingPathBlockImage = styled.div`
 
 
     @media only screen and (max-width: 575px) {
-        width: 82%;
+        width: 100%;
+        div {
+            height: 45vw;
+        }
         :hover {
             transform: none;
     
         }
     }
+
     ${props => props.half && `
         width: 46%;
+        
+        :last-child {
+            margin-right: 0;
+        }
+        @media only screen and (max-width: 575px) {
+            margin-right: 4%;
+        }
+
     `}
 `
 
@@ -200,13 +211,17 @@ const TrainingPathSectionTitle = styled.h2`
     margin-bottom: 2.5vw;
     span {
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: 900;
     }
     @media only screen and (max-width: 575px) {
         font-size: 11vw;
         letter-spacing: -0.7vw;
         line-height: 1;
         margin-bottom: 4vw;
+        br {
+            display: none;
+        }
+        
     }
 `
 
@@ -248,7 +263,7 @@ const CourseTrainingPath = () => {
     return (
         <TrainingPathSection>
             <Container>
-                <TrainingPathSectionTitle>Особенность курса — <span>много</span> обратной связи</TrainingPathSectionTitle>
+                <TrainingPathSectionTitle>Особенность курса — <br/><span>много</span> обратной связи</TrainingPathSectionTitle>
                 <TrainingPathWrapper>
                             <TrainingPathBlockWrapper>
                                 <TrainingPathBlockContainer>

@@ -41,9 +41,10 @@ const LongArrowMobile = styled(props => <LongArrowMobileIcon {...props}/>)`
     display: none; 
     @media only screen and (max-width: 575px) {
         display: block;
-        height: 140vw !important;
+        height: 50vw !important;
         fill: var(--granich-black);
-        margin-bottom: 3vw;
+        margin-bottom: 2vw;
+        margin-top: 2vw;
     }
 `
 
@@ -132,7 +133,7 @@ const CourseExampleTitle = styled.h2`
         position: absolute;
         font-size: 5vw;
         top: 0.2vw;
-        left: -3.5vw;
+        left: -3vw;
     }
     @media only screen and (max-width: 575px) {
         font-size: 7.4vw;
@@ -147,9 +148,10 @@ const CourseExampleTitle = styled.h2`
     
         }
         :before {
+            position: relative;
             font-size: 5vw;
             top: 0.2vw;
-            left: 0;
+            left: -0.5vw;
             font-size: 7.4vw;
         }
     }
@@ -262,7 +264,7 @@ const CourseExample = () => {
                         <CourseExampleInfoBlock>
                                 <CourseExampleImage fluid={data.example1.childImageSharp.fluid}/>
                                 <CourseExampleInfoText>
-                                    Вы кое-что слышали о шрифтах. Знакомы с цветом. Пользовались jpeg. Возможно, даже делали свои макеты. Но упорядочены ли ваши знания? Неважно, начинаете вы с нуля или у вас уже есть какой-то опыт — знания требуют структурности.
+                                    Вы кое-что слышали о шрифтах. Знакомы с цветом. Пользовались jpeg. Возможно, даже делали свои макеты. Но упорядочены ли ваши знания? Не важно, начинаете вы с нуля или у вас уже есть какой-то опыт — знания требуют структурности.
                                 </CourseExampleInfoText>
                                 
                         </CourseExampleInfoBlock>

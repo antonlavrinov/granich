@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Container } from '../style';
-import Exclamation from '../../assets/svgs/exclamation-mark.svg';
+// import Exclamation from '../../assets/svgs/exclamation-mark.svg';
+import CurrencyIcon from '../../assets/svgs/graph-design/graph-design-currency.svg';
+
 
 const ExplainSection = styled.section`
     margin-bottom: 4vw;
@@ -17,7 +19,7 @@ const ExplainWrapper = styled.div`
     padding: 4vw 4vw;
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
-        padding: 11vw 8vw 11vw 8vw;
+        padding: 6vw 6vw 6vw 6vw;
         border-radius: 2.5vw;
     }
 `
@@ -37,19 +39,25 @@ const ExplainTitle = styled.h2`
         white-space: normal;
         font-size: 10.4vw;
         margin-left: 0;
-        letter-spacing: -0.4vw;
+        letter-spacing: -0.1vw;
         margin-bottom: 6.8vw;
         line-height: 0.9;
     }
 `
 const ExplainItems = styled.div`
     display: flex;
-    margin-bottom: 3vw;
+    margin-bottom: 1vw;
+    @media only screen and (max-width: 575px) {
+        flex-direction: column;
+        margin-bottom: 1vw;
+    }
 `
 const ExplainItem = styled.div`
     display: flex;
     align-items: center;
     margin-right: 7.5vw;
+    font-size: 2vw;
+    margin-bottom: 2vw;
 `
 const ExplainItemNumber = styled.div`
 
@@ -72,32 +80,46 @@ const ExplainItemNumber = styled.div`
 
 
     @media only screen and (max-width: 575px) {
-        height: 14.5vw;
-        width: 14.5vw;
-        min-height: 14.5vw;
-        min-width: 14.5vw;
-        font-size: 17vw;
-        line-height: 0.8;
-        padding-left: 3.2vw;
-        margin-bottom: 3.3vw;
+        height: 10vw;
+        width: 10vw;
+        min-height: 10vw;
+        min-width: 10vw;
+        font-size: 10vw;
+        line-height: 0.9;
+        padding-left: 2.5vw;
+        margin-bottom: 3vw;
         background: #f2f2f2;
+        margin-right: 3.5vw;
     }
 `
 const ExplainItemText = styled.div`
     font-size: 2vw;
     font-weight: 500;
+    @media only screen and (max-width: 575px) {
+        font-size: 5vw;
+        margin-top: -2vw;
+    }
 `
 const ExplainInfoWrapper = styled.div`
     display: flex;
     align-items: flex-start;
+    @media only screen and (max-width: 575px) {
+        flex-direction: column;
+    }
 `
 const ExplainInfoText = styled.div`
     font-size: 1.55vw;
     line-height: 1.4;
-    max-width: 70%;
-    width: 70%;
+    max-width: 60%;
+    width: 60%;
     font-weight: 500;
     margin-right: 2vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+        margin-bottom: 3vw;
+        max-width: 100%;
+        width: 100%;
+    }
 `
 const ExplainInfoBonus = styled.div`
     display: flex;
@@ -106,10 +128,20 @@ const ExplainInfoBonus = styled.div`
     padding: 1.5vw 1.5vw;
     border-radius: 0.5vw;
     svg {
-        width: 3.5vw;
-        height: 3.5vw;
-        fill: rgba(0,0,0,0.3);
-        margin-right: 0.7vw;
+        width: 7vw;
+        fill: rgba(0,0,0,0.35);
+        margin-right: 1vw;
+    }
+    @media only screen and (max-width: 575px) {
+        padding: 2vw 0 3vw 5vw;
+        width: 100%;
+        border-radius: 1.5vw;
+        svg {
+            width: 11vw;
+            height: auto;
+            fill: rgba(0,0,0,0.35);
+            margin-right: 0vw;
+        }
     }
 
 `
@@ -117,6 +149,12 @@ const ExplainInfoBonusText = styled.div`
     font-size: 1.55vw;
     max-width: 14vw;
     color: var(--granich-grey);
+    @media only screen and (max-width: 575px) {
+        padding: 3vw;
+        font-size: 3.7vw;
+        max-width: 100%;
+        margin-left: -1vw;
+    }
 `
 
 
@@ -142,9 +180,9 @@ const CourseExplain = () => {
                         </ExplainItem>
                     </ExplainItems>
                     <ExplainInfoWrapper>
-                        <ExplainInfoText>Овладев графдизайном вы станете визуальным голосом ваших клиентов. Через макеты вы дадите возможность их бизнесу оповещать, обучать, убеждать. </ExplainInfoText>
+                        <ExplainInfoText>Овладев графдизайном вы станете визуальным голосом ваших клиентов. Через макеты вы дадите возможность их бизнесу оповещать, обучать, убеждать. </ExplainInfoText>
                         <ExplainInfoBonus>
-                            <Exclamation/>
+                            <CurrencyIcon/>
                             <ExplainInfoBonusText>Это востребовано на рынке</ExplainInfoBonusText>
                         </ExplainInfoBonus>
                     </ExplainInfoWrapper>

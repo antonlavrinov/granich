@@ -55,6 +55,9 @@ const TimetableTitle = styled.h2`
 
 
     @media only screen and (max-width: 575px) {
+        font-size: 11vw;
+        white-space: normal;
+        margin-bottom: 0vw;
         span {
             white-space: normal;
             font-size: 10.4vw;
@@ -69,10 +72,16 @@ const TimetableTitle = styled.h2`
 `
 
 const TimetableImageWrapper = styled.div`
-    min-width: 48%;
-    width: 48%;
+
     margin-right: 4%;
     height: auto;
+    min-width: 48%;
+    width: 48%;
+    @media only screen and (max-width: 575px) {
+        min-width: 100%;
+        width: 100%;
+        margin-right: 0;
+    }
 `
 
 const TimetableImage = styled(props => <Img {...props}/>)`
@@ -83,17 +92,40 @@ const TimetableImage = styled(props => <Img {...props}/>)`
 const TimetableInfoWrapper = styled.div`
     display: flex;
     align-items: flex-start;
+    @media only screen and (max-width: 575px) {
+        flex-direction: column;
+    }
 
 `
 const TimetableInfoTextWrapper = styled.div`
     min-width: 48%;
     width: 48%;
+    @media only screen and (max-width: 575px) {
+        min-width: 100%;
+        width: 100%;
+        margin-top: 4vw;
+    }
 `
 const TimetableInfoText = styled.div`
     font-size: 1.55vw;
     line-height: 1.45;
     margin-bottom: 2vw;
     font-weight: 500;
+    @media only screen and (max-width: 575px) {
+        display: none;
+    }
+`
+
+const TimetableInfoTextMobile = styled.div`
+
+    display: none;
+    @media only screen and (max-width: 575px) {
+        display: block;
+        font-size: 3.7vw;
+        line-height: 1.45;
+        margin-bottom: 6vw;
+        font-weight: 500;
+    }
 `
 
 const TimetableInfoGifBlock = styled.div`
@@ -103,8 +135,9 @@ const TimetableInfoGifBlock = styled.div`
     background: #f2f2f2;
     display: block;
     @media only screen and (max-width: 575px) {
-        padding: 4vw 4vw 7vw;
+        padding: 4vw 4vw 5vw;
         border-radius: 1.7vw;
+        width: 100%;
     }
 `
 
@@ -121,9 +154,9 @@ const TimetableGifWrapper = styled.div`
         min-width: 100%;
         width: 100%;
         border-radius: 2vw;
-        margin-bottom: 5vw;
-        min-height: 44vw;
-        height: 44vw;
+        margin-bottom: 0;
+        min-height: 40vw;
+        height: 40vw;
 
     }
 `
@@ -136,10 +169,10 @@ const TimetableGif = styled.img`
     @media only screen and (max-width: 575px) {
         min-width: 100%;
         width: 100%;
-        margin-right: 3vw;
+        margin-right: 0;
         // height: 40.8vw;
         border-radius: 2vw;
-        margin-bottom: 5vw;
+        margin-bottom: 0;
 
     }
 `
@@ -157,6 +190,9 @@ const TimetableGifText = styled.div`
 const TimetableGifTextWrapper = styled.div`
     margin-top: 2vw;
     font-size: 1.25vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+    }
 
 `
 
@@ -166,6 +202,11 @@ const TimetableGifPS = styled.div`
     border-left: 2px solid var(--granich-red);
     color: var(--granich-grey);
     line-height: 1.35;
+    @media only screen and (max-width: 575px) {
+        padding-left: 3vw;
+        font-size: 3vw;
+        margin-top: 2vw;
+    }
 `
 
 
@@ -190,19 +231,24 @@ const CourseTimetable = () => {
     `)
 
     const imageData = data.imageTimetable.childImageSharp.fluid
+    const text = "Программа обучения выстроена так, что на каждый из уроков даётся 1 неделя. С понедельника по воскресенье. В день необходимо инвестировать в своё обучение хотя бы пару часов. Уроки крайне насыщенные. При этом домашнее задание по уроку необходимо выполнить ровно за эту неделю. Это строгий дедлайн. Иначе вы будете отстранены от обучения.";
 
     return (
         <TimetableSection>
             <Container>
                 <TimetableWrapper>
-                    <TimetableTitle>Курс можно совмещать с работой <span>Но расслабиться не получится!</span></TimetableTitle>
+                    <TimetableTitle>Курс можно совмещать с работой <span>Но расслабиться не получится!</span></TimetableTitle>
                     <TimetableInfoWrapper>
+                        <TimetableInfoTextMobile>
+                                {text}
+                        </TimetableInfoTextMobile>
                         <TimetableImageWrapper>
                             <TimetableImage fluid={imageData}/>
                         </TimetableImageWrapper>
+
                         <TimetableInfoTextWrapper>
                             <TimetableInfoText>
-                                Программа обучения выстроена так, что на каждый из уроков даётся 1 неделя. С понедельника по воскресенье. В день необходимо инвестировать в своё обучение хотя бы пару часов. Уроки крайне насыщенные. При этом домашнее задание по уроку необходимо выполнить ровно за эту неделю. Это строгий дедлайн. Иначе вы будете отстранены от обучения.
+                                {text}
                             </TimetableInfoText>
                             <TimetableInfoGifBlock>
                                 <TimetableGifWrapper>

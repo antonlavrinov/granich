@@ -299,6 +299,32 @@ const SupportArrow = styled(props => <ArrowLongRightIcon {...props}/>)`
 
 `
 
+const SupportInfoTagList = styled.div`
+    display: flex;
+`
+
+const SupportInfoTag = styled.div`
+    font-weight: 500;
+    font-size: 1.15vw;
+    line-height: 1.5;
+    margin-bottom: 3vw;
+    border: 1px solid var(--granich-black);
+    border-radius: 100vw;
+    padding: 0.2vw 0.8vw;
+    display: inline-block;
+    margin-right: 1vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 4.3vw;
+        margin-bottom: 4.8vw;
+        padding: 2vw 4vw;
+    }
+`
+
+const SupportTagsWrapper = styled.div`
+    display: flex;
+    align-items: flex-start;
+`
+
 
 const CourseIndividualSupport = () => {
     const data = useStaticQuery(graphql`
@@ -332,13 +358,29 @@ const CourseIndividualSupport = () => {
                            
                         </SupportAuthor>
                         <SupportInfo>
+                            <SupportTagsWrapper>
+                                <SupportInfoText>
+                                    С Вадимом Граничем
+                                </SupportInfoText>
+                                {/* <SupportInfoTagList>
+                                    <SupportInfoTag>
+                                        С Вадимом Граничем
+                                    </SupportInfoTag>
+                                    <SupportInfoTag>
+                                        С Вадимом Граничем
+                                    </SupportInfoTag>
+                                    <SupportInfoTag>
+                                        С Вадимом Граничем
+                                    </SupportInfoTag>
+                                    
+                                </SupportInfoTagList> */}
+                            </SupportTagsWrapper>
 
-                            <SupportInfoText>
-                                С Вадимом Граничем
-                            </SupportInfoText>
+                            
+                       
                             <SupportInfoRules>
                                 <SupportRule title={``}
-                                            text={`Я беру только одного ученика за раз, с возможностью личного общения по поводу графдизайна, фриланса, и многого другого`}
+                                            text={`Даю 3 поблажки по дедлайнам + 1 неделя к дедлайну`}
                                             number={1}
                                 />
                                 <SupportRule title={``}

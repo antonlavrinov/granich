@@ -18,15 +18,14 @@ const OpportunitiesSection = styled.section`
 
 
 const OpportunitiesWrapper = styled.div`
-    background: #E8E8E8;
-    background: white;
-    padding: 3vw 3vw 3vw;
     border-radius: 0.6vw;
+    
     @media only screen and (max-width: 575px) {
         border-radius: 2.5vw;
-        padding: 5vw 6vw 6vw;
     }
 `
+
+
 
 const OpportunitiesTitle = styled.h2`
     color: var(--granich-black);
@@ -49,7 +48,10 @@ const OpportunitiesTitle = styled.h2`
         letter-spacing: -0.7vw;
         line-height: 1;
         margin-bottom: 7vw;
-        width: 60%;
+        width: 100%;
+        span {
+            font-size: 13vw;
+        }
         ${props => props.masterClass && `
             width: 100%;
         `}
@@ -61,11 +63,23 @@ const OpportunitiesList = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 1.65vw;
     grid-row-gap: 1.65vw;
-    margin-bottom: 3vw;
+
     @media only screen and (max-width: 575px) {
-        grid-template-columns: 1fr;
-        grid-column-gap: 5vw;
-        grid-row-gap: 5vw;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 3vw;
+        grid-row-gap: 3vw;
+        margin-bottom: 3vw;
+    }
+`
+
+const OpportunitiesSectionWrapper = styled.div`
+    // background: #dedede;
+    
+    // padding: 3vw;
+    margin-bottom: 2vw;
+    border-radius: 0.6vw;
+    @media only screen and (max-width: 575px) {
+        // padding: 6vw;
         margin-bottom: 5vw;
     }
 `
@@ -77,12 +91,43 @@ const OpportunityWrapper = styled.div`
     // box-shadow: 0.1vw 0 0.5vw rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
-    padding: 1.5vw;
+    background: white;
+    // padding: 1.5vw;
     @media only screen and (max-width: 575px) {
         border-radius: 1.5vw;
-        box-shadow: 0.4vw 0.4vw 1.5vw rgba(0,0,0,0.15);
+        // box-shadow: 0.4vw 0.4vw 1.5vw rgba(0,0,0,0.15);
+        display: flex;
     }
 
+`
+
+const OpportunityTag = styled.div`
+    border: 1px solid  var(--granich-black);
+    border-radius: 100vw;
+    transition: all 0.2s ease;
+    font-size: 1.1vw;
+    padding: 0.15vw 0.7vw 0.15vw;
+    margin-right: 0.5vw;
+    margin-bottom: 0.5vw;
+    color: var(--granich-light-grey);
+    color: var(--granich-black);
+
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    font-weight: 500;
+    :last-child {
+        margin-right: 0;
+    }
+
+    @media only screen and (max-width: 575px) {
+        font-size: 3vw;
+        padding: 0.3vw 1.7vw;
+        margin-right: 1.5vw;
+        margin-bottom: 1.5vw;
+        letter-spacing: -0.05vw;
+
+    }
 `
 
 // const OpportunityButton = styled.a`
@@ -123,15 +168,18 @@ const OpportunityText = styled.div`
     margin-left: auto;
     
     display: flex;
-    padding: 1.2vw 0 1.5vw;
-    background: #f2f2f2;
+    padding: 1.2vw 0 0vw;
+    // background: #f2f2f2;
+    border-radius: 0 0 0.5vw 0.5vw;
+    padding: 1.5vw;
 
-    margin-top: auto;
+
     width: 100%;
-    min-height: 5vw;
-    height: 5vw;
     font-weight: 500;
-    // border-top: 2px solid var(--granich-red);
+    // margin-top: auto;
+    height: 100%;
+    // background: white;
+
     
     span {
 
@@ -146,6 +194,7 @@ const OpportunityText = styled.div`
 
     @media only screen and (max-width: 575px) {
         margin-top: 1vw;
+        padding: 1.5vw 2.5vw;
     }
 `
 
@@ -153,11 +202,15 @@ const OpportunityImage = styled(props => <BackgroundImage {...props}></Backgroun
     height: 23vw;
     min-height: 23vw;
     overflow: hidden;
-    background-size: 85%;
+    background-size: 80%;
     background-color: white;
+    border-radius: 0.5vw;
+    overflow: hidden;
     @media only screen and (max-width: 575px) {
-        height: 58.5vw;
-        min-height: 58.5vw;
+        height: 45vw;
+        min-height: 45vw;
+        border-radius: 1.5vw;
+        background-size: 90% !important;
     }
 `
 
@@ -184,8 +237,12 @@ const OpportunityImage = styled(props => <BackgroundImage {...props}></Backgroun
 
 const OpportunitiesSubtitle = styled.div`
     font-size: 1.55vw;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 1.5vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 4.5vw;
+        margin-bottom: 3vw;
+    }
 `
 
 
@@ -264,19 +321,25 @@ const CourseOpportunities = () => {
             <Container>
                 <OpportunitiesWrapper>
 
-                    <OpportunitiesTitle>После курса вы сможете <span>брать заказы</span> на дизайн и вёрстку:</OpportunitiesTitle>
-                    <OpportunitiesSubtitle>Одностраничные макеты:</OpportunitiesSubtitle>
-                    <OpportunitiesList>
-                        <Opportunity text={'Плакаты / Афиши Флаеры / Евробуклеты'} image={image1}/>
-                        <Opportunity text={'Сторис и обложки постов'} image={image2}/>
-                        <Opportunity text={'Баннеры и оформление соцсетей'} image={image3}/>
-                    </OpportunitiesList>
-                    <OpportunitiesSubtitle>Многостраничные макеты:</OpportunitiesSubtitle>
-                    <OpportunitiesList>
-                        <Opportunity text={'Журналы и книги'} image={image4}/>
-                        <Opportunity text={'Презентации'} image={image5}/>
-                        <Opportunity text={'Карусели'} image={image6}/>
-                    </OpportunitiesList>
+                    <OpportunitiesTitle>После курса вы сможете <span>брать заказы</span> на дизайн и вёрстку:</OpportunitiesTitle>
+                    <OpportunitiesSectionWrapper>
+                        <OpportunitiesSubtitle>Одностраничные макеты:</OpportunitiesSubtitle>
+                        <OpportunitiesList>
+                            <Opportunity text={(<><OpportunityTag>Плакаты</OpportunityTag><OpportunityTag>Афиши</OpportunityTag><OpportunityTag>Флаеры</OpportunityTag><OpportunityTag>Буклеты</OpportunityTag></>)} image={image1}/>
+                            <Opportunity text={(<><OpportunityTag>Сторис</OpportunityTag><OpportunityTag>Обложки постов</OpportunityTag></>)} image={image2}/>
+                            <Opportunity text={(<><OpportunityTag>Баннеры на сайты</OpportunityTag><OpportunityTag>Оформление соцсетей</OpportunityTag></>)} image={image3}/>
+                        </OpportunitiesList>
+                    </OpportunitiesSectionWrapper>
+                    <OpportunitiesSectionWrapper>
+                        <OpportunitiesSubtitle>Многостраничные макеты:</OpportunitiesSubtitle>
+                        <OpportunitiesList>
+                            <Opportunity text={(<><OpportunityTag>Журналы</OpportunityTag><OpportunityTag>Книги</OpportunityTag></>)} image={image4}/>
+                            <Opportunity text={(<><OpportunityTag>Презентации</OpportunityTag></>)} image={image5}/>
+                            <Opportunity text={(<><OpportunityTag>Карусели</OpportunityTag></>)} image={image6}/>
+                        </OpportunitiesList>
+                    </OpportunitiesSectionWrapper>
+                    
+
                 </OpportunitiesWrapper>
             </Container>
         </OpportunitiesSection>
