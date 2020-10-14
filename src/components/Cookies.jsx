@@ -11,7 +11,7 @@ const CookiesWrapper = styled.div`
     left: 50%;
     box-shadow: 0 0 1vw rgba(0,0,0,0.3);
     transform: translateX(-50%);
-    z-index: 900;
+    z-index: 1000;
     display: flex;
     align-items: center;
     @media only screen and (max-width: 575px) {
