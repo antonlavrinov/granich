@@ -181,7 +181,7 @@ const CourseAftermath = ({data}) => {
                     })} */}
                     <AftermathBlock 
                         image={imageData1}
-                        text={(<><span>Медиадизайна</span>промосайты и интерактивные лонгриды</>)}
+                        text={(<><span>Медиадизайна</span>промосайты и интерактивные лонгриды. (Медиадизайн — это подраздел веб-дизайна)</>)}
     
                     />
                     <AftermathBlock 

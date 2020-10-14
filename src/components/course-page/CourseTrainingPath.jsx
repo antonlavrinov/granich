@@ -177,14 +177,13 @@ const TrainingPathBlockImage = styled.div`
     }
 
     ${props => props.half && `
-        width: 46%;
+        width: 48%;
+        margin-right: 4%;
         
         :last-child {
             margin-right: 0;
         }
-        @media only screen and (max-width: 575px) {
-            margin-right: 4%;
-        }
+
 
     `}
 `

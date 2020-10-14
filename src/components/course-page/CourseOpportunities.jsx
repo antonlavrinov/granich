@@ -321,7 +321,7 @@ const CourseOpportunities = () => {
             <Container>
                 <OpportunitiesWrapper>
 
-                    <OpportunitiesTitle>После курса вы сможете <span>брать заказы</span> на дизайн и вёрстку:</OpportunitiesTitle>
+                    <OpportunitiesTitle>После курса вы сможете <span>выполнять заказы</span> на дизайн и вёрстку:</OpportunitiesTitle>
                     <OpportunitiesSectionWrapper>
                         <OpportunitiesSubtitle>Одностраничные макеты:</OpportunitiesSubtitle>
                         <OpportunitiesList>

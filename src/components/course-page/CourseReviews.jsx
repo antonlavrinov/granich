@@ -48,7 +48,7 @@ const ReviewsSection = styled.section`
 
 const ReviewsWrapper = styled.div`
     background: #E8E8E8;
-    padding: 3vw 3vw 3vw;
+    padding: 3vw 1vw 3vw 3vw;
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
         border-radius: 2.5vw;
@@ -203,7 +203,7 @@ const ReviewsLinks = styled.div`
 const ReviewsText = styled.div`
     font-size: 1.2vw;
     max-width: 48%;
-    margin-left: 1.5vw;
+    margin-left: 1.2vw;
     line-height: 1.4;
     font-weight: 500;
     letter-spacing: -0.01em;
@@ -221,7 +221,7 @@ const ReviewsLinkTelegram = styled.a`
     font-size: 1.25vw;
     background: var(--granich-telegram-gradient);
     border-radius: 0.3vw;
-    padding: 1.3vw 1.6vw;
+    padding: 1.3vw 1.3vw;
     color: white;
     margin-right: 1vw;
     transition: transform 0.2s ease;
@@ -270,7 +270,7 @@ const ReviewsLinkVk = styled.a`
     font-size: 1.25vw;
     background: var(--granich-vk-gradient);
     border-radius: 0.3vw;
-    padding: 0.7vw 1.8vw;
+    padding: 0.7vw 1.5vw;
     color: white;
     transition: transform 0.2s ease;
     box-shadow: .15vw .15vw .4vw rgba(0,0,0,0.25);
@@ -377,7 +377,7 @@ const CourseReviews = ({data, dataHeader, masterClass}) => {
                                     <ReviewsLinkTelegram target="_blank" href={dataHeader.reviewsHeaderLinkTelegram}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
                                     {dataHeader.reviewsHeaderLinkVk && <ReviewsLinkVk target="_blank" href={dataHeader.reviewsHeaderLinkVk}><div>Архив отзывов<Arrow/>ВК</div><div>На стене Вадима Гранича</div></ReviewsLinkVk>}
                                 </ReviewsLinks>
-                                <ReviewsText>Не стесняйтесь написать выпускникам предыдущих потоков и спросить об их опыте на курсе</ReviewsText>
+                                <ReviewsText>Напишите выпускникам прошлых потоков, они с радостью поделятся эмоциями от прохождения курса</ReviewsText>
                             </>
                           
                         ) : (
