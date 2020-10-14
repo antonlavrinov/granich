@@ -380,7 +380,7 @@ const CourseIndividualSupport = () => {
                        
                             <SupportInfoRules>
                                 <SupportRule title={``}
-                                            text={`Даю 3 поблажки по дедлайнам + 1 неделя к дедлайну`}
+                                            text={`Даю 3 поблажки по дедлайнам (каждая поблажка это +1 неделя к дедлайну)`}
                                             number={1}
                                 />
                                 <SupportRule title={``}

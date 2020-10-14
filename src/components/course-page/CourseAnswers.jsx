@@ -216,8 +216,8 @@ const ArrowLinkTop = styled(props => <ArrowTop {...props}/>)`
 const ArrowLinkTopMobile = styled(props => <ArrowTopMobile {...props}/>)`
   position: absolute;
   @media only screen and (max-width: 575px) {
-    top: -1.6vw;
-    right: -3.7vw;
+    top: 0.5vw;
+    right: -4.5vw;
     width: 3.1vw;
     height: 3.1vw;
   }
@@ -266,7 +266,7 @@ const AnswersHeader = styled.div`
 const AnswersSectionTitle = styled.h2`
     color: var(--granich-black);
     font-size: 4.55vw;
-    letter-spacing: -0.2vw;
+    letter-spacing: -0.1vw;
     font-weight: 700;
     line-height: 0.85;
     margin-right: 2vw;
@@ -516,7 +516,7 @@ const CourseAnswers = ({data, courseStatus}) => {
                     <AnswersWrapper>
                         <AnswersHeader>
                             <AnswersSectionTitle>Точечные ответы о курсе</AnswersSectionTitle>
-                            <AnswersSectionText>Тут мы собрали ответы на самые популярные вопросы о курсе Осознанный графдизайн</AnswersSectionText>
+                            <AnswersSectionText>Тут мы собрали ответы на самые популярные вопросы о курсе Осознанный Графдизайн</AnswersSectionText>
                         </AnswersHeader>
                         {isDesktop && (
                             <AnswersAccordeon>
@@ -571,26 +571,12 @@ const CourseAnswers = ({data, courseStatus}) => {
 
                     </AnswersWrapper>
                     <AnswersFooterContainer>
-                        {courseStatus ? (
-                            <>
-                                <AnswersFooterWrapper>
-                                    <AnswersFooterLink onClick={() => scrollTo('#participation-section')}>Вернуться к оплате Курса!<ArrowLinkTop/></AnswersFooterLink>
-                                </AnswersFooterWrapper>
-                                <AnswersFooterWrapperMobile>
-                                    Вернуться <br/>к оплате <AnswersFooterLink onClick={() => scrollTo('#participation-section')}>Курса!<ArrowLinkTopMobile/></AnswersFooterLink>
-                                </AnswersFooterWrapperMobile>            
-                            </>
-
-                        ) : (
-                            <>
-                                <AnswersFooterWrapper>
-                                    <AnswersFooterLink  onClick={() => scrollTo('#participation-section')}>Узнать о следующем наборе<ArrowLinkTop/></AnswersFooterLink>
-                                </AnswersFooterWrapper>
-                                <AnswersFooterWrapperMobile>
-                                    <AnswersFooterLink disabled onClick={() => scrollTo('#participation-section')}>Узнать о следующем наборе<ArrowLinkTopMobile/></AnswersFooterLink>
-                                </AnswersFooterWrapperMobile>            
-                            </>
-                        )}
+                        <AnswersFooterWrapper>
+                            <AnswersFooterLink onClick={() => scrollTo('#participation-section')}>Вернуться к форме оплаты Курса!<ArrowLinkTop/></AnswersFooterLink>
+                        </AnswersFooterWrapper>
+                        <AnswersFooterWrapperMobile>
+                            Вернуться к форме оплаты <AnswersFooterLink onClick={() => scrollTo('#participation-section')}>Курса!<ArrowLinkTopMobile/></AnswersFooterLink>
+                        </AnswersFooterWrapperMobile>    
 
                     </AnswersFooterContainer>
 

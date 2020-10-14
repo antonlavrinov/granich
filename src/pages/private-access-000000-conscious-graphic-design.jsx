@@ -246,7 +246,7 @@ const OsoznannyGraphDesignPage = ({data}) => {
   <Layout>
       <Header type={'dark'}/>
       <SEO title="Осознанный Графдизайн"
-          description="Осознанный курс по графическому дизайну от Вадима Гранича. Вы овладеете дизайн-системой (6 элементов, 3 принципа) которая упорядочит ваши знания и даст твёрдую базу. Вдобавок, вы получите уйму обратной связи от кураторов и создадите портфолио"
+          description="Курс по графическому дизайну, построенный на авторской дизайн-системе. Вы получите твёрдую базу и научитесь аргументировать свои макеты"
           keywords={['vhs', 'графсистема']}
           ogImage={ogImage}
           ogImageVk={ogImageVK}
@@ -271,7 +271,7 @@ const OsoznannyGraphDesignPage = ({data}) => {
       <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
       <CourseFeatures data={data.features}/>
       <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
-      <div id="participation-section"></div>
+      
       {/* {data.offer.courseStatus ? (
         <CourseParticipation 
                       data={data.offer}
@@ -281,6 +281,7 @@ const OsoznannyGraphDesignPage = ({data}) => {
         <Mailing/>
       )} */}
       <CourseHardWork/>
+      <div id="participation-section"></div>
       <CourseParticipation 
               data={data.offer}
               formId={`ltForm6865073`}

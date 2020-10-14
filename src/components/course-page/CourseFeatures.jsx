@@ -31,7 +31,7 @@ const FeaturesSection = styled.section`
 const FeaturesSectionTitle = styled.h2`
     font-size: 4.55vw;
     font-weight: 700;
-    letter-spacing: -0.2vw;
+    letter-spacing: -0.1vw;
     margin-bottom: 2.4vw;
     @media only screen and (max-width: 575px) {
         font-size: 11vw;
@@ -151,7 +151,7 @@ const CourseFeatures = ({data}) => {
         <FeaturesSection>
             <Container>
                 <FeaturesSectionTitle>
-                    Еще пара бонусов
+                    Ещё пара бонусов
                 </FeaturesSectionTitle>
                 <FeaturesWrapper>
                     {data.edges.map(feature => {

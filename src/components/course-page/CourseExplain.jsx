@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components';
 import { Container } from '../style';
 // import Exclamation from '../../assets/svgs/exclamation-mark.svg';
-import CurrencyIcon from '../../assets/svgs/graph-design/graph-design-currency.svg';
+// import CurrencyIcon from '../../assets/svgs/graph-design/graph-design-currency.svg';
+import Img from 'gatsby-image';
+import { graphql, useStaticQuery } from 'gatsby'
 
 
 const ExplainSection = styled.section`
@@ -55,7 +57,7 @@ const ExplainItems = styled.div`
 const ExplainItem = styled.div`
     display: flex;
     align-items: center;
-    margin-right: 7.5vw;
+    margin-right: 6.2vw;
     font-size: 2vw;
     margin-bottom: 2vw;
 `
@@ -108,12 +110,12 @@ const ExplainInfoWrapper = styled.div`
     }
 `
 const ExplainInfoText = styled.div`
-    font-size: 1.55vw;
+    font-size: 1.45vw;
     line-height: 1.4;
-    max-width: 60%;
-    width: 60%;
+    max-width: 70%;
+    width: 70%;
     font-weight: 500;
-    margin-right: 2vw;
+    margin-right: 1vw;
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
         margin-bottom: 3vw;
@@ -125,15 +127,17 @@ const ExplainInfoBonus = styled.div`
     display: flex;
     background: #f2f2f2;
     align-items: center;
-    padding: 1.5vw 1.5vw;
+    padding: 1.3vw 9vw 1.3vw 1.8vw;
     border-radius: 0.5vw;
+    position: relative;
+    margin-left: auto;
     svg {
         width: 7vw;
         fill: rgba(0,0,0,0.35);
         margin-right: 1vw;
     }
     @media only screen and (max-width: 575px) {
-        padding: 2vw 0 3vw 5vw;
+        padding: 4vw 0 4vw 5vw;
         width: 100%;
         border-radius: 1.5vw;
         svg {
@@ -145,20 +149,49 @@ const ExplainInfoBonus = styled.div`
     }
 
 `
+// const ExplainBonusWrapper = styled.div`
+//     padding: 1.5vw;
+// `
+
 const ExplainInfoBonusText = styled.div`
-    font-size: 1.55vw;
+    font-size: 1.45vw;
     max-width: 14vw;
-    color: var(--granich-grey);
+    color: rgba(0,0,0,0.5);
+    font-weight: 500;
+    
     @media only screen and (max-width: 575px) {
-        padding: 3vw;
         font-size: 3.7vw;
         max-width: 100%;
         margin-left: -1vw;
     }
 `
 
+const ExplainImage = styled(props => <Img {...props}/>)`
+    width: 8vw;
+    bottom: 0;
+    right: 0;
+    @media only screen and (max-width: 575px) {
+        width: 20vw;
+    }
+
+`
+
 
 const CourseExplain = () => {
+    const data = useStaticQuery(graphql`
+        query explainImage {
+            explainImageFry: file(relativePath: { eq: "graph-design/explain/shut-up-and-take-my-money.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300 , quality: 90) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+        }
+    `)
+
+    const imageData = data.explainImageFry.childImageSharp.fluid
 
     return (
         <ExplainSection id="individual-Explain">
@@ -182,8 +215,13 @@ const CourseExplain = () => {
                     <ExplainInfoWrapper>
                         <ExplainInfoText>Овладев графдизайном вы станете визуальным голосом ваших клиентов. Через макеты вы дадите возможность их бизнесу оповещать, обучать, убеждать. </ExplainInfoText>
                         <ExplainInfoBonus>
-                            <CurrencyIcon/>
-                            <ExplainInfoBonusText>Это востребовано на рынке</ExplainInfoBonusText>
+                            
+                            {/* <ExplainBonusWrapper> */}
+                                <ExplainInfoBonusText>Это востребовано на рынке</ExplainInfoBonusText>
+                            {/* </ExplainBonusWrapper> */}
+                            <ExplainImage style={{ position: 'absolute'}} fluid={imageData}/>
+                            
+                            
                         </ExplainInfoBonus>
                     </ExplainInfoWrapper>
 

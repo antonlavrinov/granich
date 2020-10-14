@@ -78,7 +78,7 @@ module.exports = {
       options: {
         fonts: [
           `inter\:400,500,600,700,900`,
-          `EB Garamond\:400,500i,500`// you can also specify font weights and styles
+          `EB Garamond\:400,500i,500,600i`// you can also specify font weights and styles
         ],
         display: 'swap'
       }

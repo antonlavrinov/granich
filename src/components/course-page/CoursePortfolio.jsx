@@ -51,7 +51,7 @@ const PortfolioHeader = styled.div`
 const PortfolioHeaderTitle = styled.h2`
     color: var(--granich-black);
     font-size: 4.55vw;
-    letter-spacing: -0.2vw;
+    letter-spacing: -0.1vw;
     font-weight: 700;
     line-height: 0.87;
     margin-top: -0.6vw;

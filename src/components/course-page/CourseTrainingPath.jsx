@@ -125,7 +125,7 @@ const TrainingPathBlockContainer = styled.div`
 // `
 
 const TrainingPathBlockText = styled.div`
-    padding: 2vw;
+    padding: 0.5vw 2vw 2vw;
     line-height: 1.35;
     color: var(--granich-grey);
     font-size: 1.15vw;
@@ -205,7 +205,7 @@ const TrainingPathImage = styled(props => <Img {...props}/>)`
 const TrainingPathSectionTitle = styled.h2`
     color: var(--granich-black);
     font-size: 4.55vw;
-    letter-spacing: -0.2vw;
+    letter-spacing: -0.1vw;
     font-weight: 700;
     line-height: 1;
     margin-bottom: 2.5vw;
@@ -280,7 +280,7 @@ const CourseTrainingPath = () => {
                                     {/* <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber> */}
                                     
                                 </TrainingPathBlockContainer>
-                                <TrainingPathBlockText>Мы прекрасно знаем, как важен человеческий контакт во время обучения. Поэтому мы подготовились к тому, чтобы вы чувствовали нашу заботу. Наши кураторы будут записывать для вас подробные видеоразборы по каждому ДЗ (до получаса запросто)</TrainingPathBlockText>
+                                <TrainingPathBlockText>Я прекрасно знаю, как важен человеческий контакт во время обучения. Поэтому я я кураторами подготовились к тому, чтобы вы чувствовали нашу заботу. Кураторы будут записывать для вас подробные видеоразборы по каждому ДЗ (до получаса запросто)</TrainingPathBlockText>
 
                             </TrainingPathBlockWrapper>
                             <TrainingPathBlockWrapper>
@@ -293,7 +293,7 @@ const CourseTrainingPath = () => {
                                     {/* <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber> */}
                                     
                                 </TrainingPathBlockContainer>
-                                <TrainingPathBlockText>Но на этом мы не остановимся! С кураторами курса вы еще будете создавать портфолио из творческих макетов и многостраничного экзамена. И по ним вы будете получать отдельную обратную связь. Уверяем вас, к финалу вы уже устанете от обратной связи, а мы всё будем и будем давать вам её :)</TrainingPathBlockText>
+                                <TrainingPathBlockText>Но на этом кураторы не остановятся! С ними вы еще будете создавать портфолио из творческих макетов и многостраничного экзамена. И по ним вы будете получать отдельную обратную связь. Уверяю вас, к финалу вы уже устанете от обратной связи, а кураторы всё будут и будут давать вам её :)</TrainingPathBlockText>
 
                             </TrainingPathBlockWrapper>
                         

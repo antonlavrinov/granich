@@ -74,7 +74,7 @@ const FormTag = styled.div`
 const FormTitle = styled.h2`
     font-size: 4vw;
     font-weight: 600;
-    letter-spacing: -0.25vw;
+    letter-spacing: -0.15vw;
     line-height: 0.85;
     @media only screen and (max-width: 575px) {
         font-size: 11vw;

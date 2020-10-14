@@ -17,9 +17,9 @@ const AftermathSection = styled.section`
 const AftermathSectionTitle = styled.h2`
     font-size: 4.5vw;
     font-weight: 700;
-    letter-spacing: -0.25vw;
+    letter-spacing: -0.1vw;
     margin-bottom: 2.4vw;
-    line-height: 0.9;
+    line-height: 1;
     
     span {
         font-weight: inherit;
@@ -167,7 +167,7 @@ const CourseAftermath = ({data}) => {
                 После курса вы получите <span>твёрдую базу</span> для дальнейшего изучения:
                 </AftermathSectionTitle> */}
                 <AftermathSectionTitle>
-                Вы получите <span>твёрдую базу</span> для дальнейшего изучения:
+                Вы получите <span>твёрдую базу</span> для дальнейшего изучения:
                 </AftermathSectionTitle>
                 <AftermathWrapper>
                     {/* {data.edges.map(Aftermath => {

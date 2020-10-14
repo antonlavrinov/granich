@@ -32,7 +32,7 @@ const OpportunitiesTitle = styled.h2`
     font-size: 4.5vw;
     letter-spacing: -0.2vw;
     font-weight: 700;
-    line-height: 0.9;
+    line-height: 0.8;
     margin-bottom: 2.7vw;
     span {
         font-weight: inherit;
@@ -105,11 +105,11 @@ const OpportunityTag = styled.div`
     border: 1px solid  var(--granich-black);
     border-radius: 100vw;
     transition: all 0.2s ease;
-    font-size: 1.1vw;
+    font-size: 1.37vw;
     padding: 0.15vw 0.7vw 0.15vw;
     margin-right: 0.5vw;
     margin-bottom: 0.5vw;
-    color: var(--granich-light-grey);
+    // color: var(--granich-light-grey);
     color: var(--granich-black);
 
     display: inline-flex;
@@ -168,10 +168,10 @@ const OpportunityText = styled.div`
     margin-left: auto;
     
     display: flex;
-    padding: 1.2vw 0 0vw;
+    // padding: 1.2vw 0 0vw;
     // background: #f2f2f2;
     border-radius: 0 0 0.5vw 0.5vw;
-    padding: 1.5vw;
+    padding: 0.5vw 2vw 2vw;
 
 
     width: 100%;
@@ -194,21 +194,21 @@ const OpportunityText = styled.div`
 
     @media only screen and (max-width: 575px) {
         margin-top: 1vw;
-        padding: 1.5vw 2.5vw;
+        padding: 0.5vw 2.5vw 2vw;
     }
 `
 
 const OpportunityImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-    height: 23vw;
-    min-height: 23vw;
+    height: 26vw;
+    min-height: 26vw;
     overflow: hidden;
-    background-size: 80%;
+    background-size: 95%;
     background-color: white;
     border-radius: 0.5vw;
     overflow: hidden;
     @media only screen and (max-width: 575px) {
-        height: 45vw;
-        min-height: 45vw;
+        height: 48vw;
+        min-height: 48vw;
         border-radius: 1.5vw;
         background-size: 90% !important;
     }
@@ -333,7 +333,7 @@ const CourseOpportunities = () => {
                     <OpportunitiesSectionWrapper>
                         <OpportunitiesSubtitle>Многостраничные макеты:</OpportunitiesSubtitle>
                         <OpportunitiesList>
-                            <Opportunity text={(<><OpportunityTag>Журналы</OpportunityTag><OpportunityTag>Книги</OpportunityTag></>)} image={image4}/>
+                            <Opportunity text={(<><OpportunityTag>Журналы</OpportunityTag><OpportunityTag>Книги</OpportunityTag><OpportunityTag>Брошюры</OpportunityTag></>)} image={image4}/>
                             <Opportunity text={(<><OpportunityTag>Презентации</OpportunityTag></>)} image={image5}/>
                             <Opportunity text={(<><OpportunityTag>Карусели</OpportunityTag></>)} image={image6}/>
                         </OpportunitiesList>
