@@ -113,9 +113,7 @@ const SupportInfoTitle = styled.h2`
 
 const SupportInfoText = styled.div`
     font-weight: 500;
-    font-size: 1.55vw;
     line-height: 1.5;
-    margin-bottom: 3vw;
     border: 2px solid var(--granich-black);
     border-radius: 100vw;
     padding: 0.5vw 1vw;
@@ -123,11 +121,20 @@ const SupportInfoText = styled.div`
     
     display: inline-block;
     font-size: 1.3vw;
+    margin-right: 0.7vw;
     @media only screen and (max-width: 575px) {
-        font-size: 4.3vw;
-        margin-bottom: 4.8vw;
-        padding: 2vw 4vw;
+        font-size: 3.4vw;
+        padding: 1vw 2vw;
+        margin-right: 1.3vw;
     }
+    ${props => props.red && `
+        color: var(--granich-red);
+        border-color: var(--granich-red);
+        margin-right: 0;
+        @media only screen and (max-width: 575px) {
+            margin-right: 0vw;
+        }
+    `}
 
 
 `
@@ -299,32 +306,67 @@ const SupportArrow = styled(props => <ArrowLongRightIcon {...props}/>)`
 
 `
 
-const SupportInfoTagList = styled.div`
-    display: flex;
-`
+// const SupportInfoTagList = styled.div`
+//     display: flex;
+// `
 
-const SupportInfoTag = styled.div`
-    font-weight: 500;
-    font-size: 1.15vw;
-    line-height: 1.5;
-    margin-bottom: 3vw;
-    border: 1px solid var(--granich-black);
-    border-radius: 100vw;
-    padding: 0.2vw 0.8vw;
-    display: inline-block;
-    margin-right: 1vw;
-    @media only screen and (max-width: 575px) {
-        font-size: 4.3vw;
-        margin-bottom: 4.8vw;
-        padding: 2vw 4vw;
-    }
-`
+// const SupportInfoTag = styled.div`
+//     font-weight: 500;
+//     font-size: 1.15vw;
+//     line-height: 1.5;
+    
+//     border: 1px solid var(--granich-black);
+//     border-radius: 100vw;
+//     padding: 0.2vw 0.8vw;
+//     display: inline-block;
+//     margin-right: 1vw;
+//     @media only screen and (max-width: 575px) {
+//         font-size: 4.3vw;
+//         padding: 2vw 4vw;
+//     }
+// `
 
 const SupportTagsWrapper = styled.div`
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 3vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 4.8vw;
+    }
 `
-
+const SupportInfoAdditionalText = styled.div`
+    font-size: 1.15vw;
+    color: var(--granich-grey);
+    max-width: 24vw;
+    margin-left: 1vw;
+    line-height: 1.35;
+    position: relative;
+    padding-left: 1.5vw;
+    :before {
+        content: '+';
+        position: absolute;
+        top: 0;
+        left: -0.3vw;
+        font-size: 2vw;
+        color: var(--granich-light-grey);
+    }
+    @media only screen and (max-width: 575px) {
+        display: block;
+        margin-top: 4vw;
+        font-size: 3.7vw;
+        max-width: 100%;
+        padding-left: 4vw;
+        :before {
+            top: 45%;
+            transform: translateY(-50%);
+            left: -1.5vw;
+            line-height: 1;
+            font-size: 6vw;
+            color: var(--granich-light-grey);
+        }
+    }
+`
 
 const CourseIndividualSupport = () => {
     const data = useStaticQuery(graphql`
@@ -362,6 +404,13 @@ const CourseIndividualSupport = () => {
                                 <SupportInfoText>
                                     С Вадимом Граничем
                                 </SupportInfoText>
+                                <SupportInfoText red>
+                                    Графдизайн
+                                </SupportInfoText>
+                                <SupportInfoAdditionalText>
+                                    
+                                Возможно общение на другие темы. (Например, по фрилансу)
+                                </SupportInfoAdditionalText>
                                 {/* <SupportInfoTagList>
                                     <SupportInfoTag>
                                         С Вадимом Граничем

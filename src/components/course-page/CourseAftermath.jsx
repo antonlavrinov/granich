@@ -15,7 +15,7 @@ const AftermathSection = styled.section`
 `
 
 const AftermathSectionTitle = styled.h2`
-    font-size: 4.5vw;
+    font-size: 4vw;
     font-weight: 700;
     letter-spacing: -0.1vw;
     margin-bottom: 2.4vw;
@@ -27,12 +27,15 @@ const AftermathSectionTitle = styled.h2`
         font-family: EB Garamond;
         font-style: italic;
         font-weight: 500;
-        font-size: 6vw;
+        font-size: 5.5vw;
         letter-spacing: -0.2vw;
     }
     @media only screen and (max-width: 575px) {
         font-size: 11vw;
         margin-bottom: 4vw;
+        br {
+            display: none;
+        }
         span {
             font-size: 13vw;
         }
@@ -167,7 +170,7 @@ const CourseAftermath = ({data}) => {
                 После курса вы получите <span>твёрдую базу</span> для дальнейшего изучения:
                 </AftermathSectionTitle> */}
                 <AftermathSectionTitle>
-                Вы получите <span>твёрдую базу</span> для дальнейшего изучения:
+                Вы получите <span>твёрдую базу</span> <br/>для дальнейшего изучения:
                 </AftermathSectionTitle>
                 <AftermathWrapper>
                     {/* {data.edges.map(Aftermath => {
@@ -181,7 +184,7 @@ const CourseAftermath = ({data}) => {
                     })} */}
                     <AftermathBlock 
                         image={imageData1}
-                        text={(<><span>Медиадизайна</span>промосайты и интерактивные лонгриды. (Медиадизайн — это подраздел веб-дизайна)</>)}
+                        text={(<><span>Медиадизайна</span>промосайты и интерактивные лонгриды. (Медиадизайн — это подраздел веб-дизайна)</>)}
     
                     />
                     <AftermathBlock 

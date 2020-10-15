@@ -279,7 +279,7 @@ const CourseTrainingPath = () => {
                                     {/* <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber> */}
                                     
                                 </TrainingPathBlockContainer>
-                                <TrainingPathBlockText>Я прекрасно знаю, как важен человеческий контакт во время обучения. Поэтому я я кураторами подготовились к тому, чтобы вы чувствовали нашу заботу. Кураторы будут записывать для вас подробные видеоразборы по каждому ДЗ (до получаса запросто)</TrainingPathBlockText>
+                                <TrainingPathBlockText>Мы не оставляем вас наедине с огромным количеством новой информации. Наши кураторы заботливо ответят на ваши вопросы по материалу курса в чате. А также на каждое ваше ДЗ запишут подробный индивидуальный видеоразбор длительностью 25-30 минут.</TrainingPathBlockText>
 
                             </TrainingPathBlockWrapper>
                             <TrainingPathBlockWrapper>
@@ -292,7 +292,7 @@ const CourseTrainingPath = () => {
                                     {/* <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber> */}
                                     
                                 </TrainingPathBlockContainer>
-                                <TrainingPathBlockText>Но на этом кураторы не остановятся! С ними вы еще будете создавать портфолио из творческих макетов и многостраничного экзамена. И по ним вы будете получать отдельную обратную связь. Уверяю вас, к финалу вы уже устанете от обратной связи, а кураторы всё будут и будут давать вам её :)</TrainingPathBlockText>
+                                <TrainingPathBlockText>На этом личное общение с опытными кураторами не заканчивается. Для того, чтобы создать грамотное портфолио, вы будете в личной переписке с кураторами улучшать свои творческие макеты и многостраничный экзамен.</TrainingPathBlockText>
 
                             </TrainingPathBlockWrapper>
                         

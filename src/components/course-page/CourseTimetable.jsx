@@ -32,7 +32,7 @@ const TimetableWrapper = styled.div`
 
 const TimetableTitle = styled.h2`
     color: var(--granich-black);
-    font-size: 4.2vw;
+    font-size: 4vw;
     letter-spacing: -0.2vw;
     font-weight: 700;
     line-height: 1;

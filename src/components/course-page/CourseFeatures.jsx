@@ -29,7 +29,7 @@ const FeaturesSection = styled.section`
 `
 
 const FeaturesSectionTitle = styled.h2`
-    font-size: 4.55vw;
+    font-size: 4vw;
     font-weight: 700;
     letter-spacing: -0.1vw;
     margin-bottom: 2.4vw;

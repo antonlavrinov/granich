@@ -11,7 +11,7 @@ const HardWorkSection = styled.section`
 `
 
 const HardWorkWrapper = styled.section`
- padding: 2.3vw 3vw;
+ padding: 2.3vw 2.5vw;
  border-radius: 0.6vw;
  background: var(--granich-red);
  display: flex;
@@ -29,7 +29,9 @@ const HardWorkQuote = styled.div`
     font-size: 2.8vw;
     color: white;
     line-height: 1.05;
-    max-width: 70%;
+    min-width: 45%;
+    max-width: 45%;
+    letter-spacing: -0.01em;
     @media only screen and (max-width: 575px) {
         max-width: 100%;
         font-size: 7.5vw;
@@ -41,32 +43,45 @@ const HardWorkQuote = styled.div`
 const HardWorkTextWrapper = styled.div`
  
  background: #830404;
- padding: 1.5vw 2vw;
+ padding: 1.5vw 1.8vw;
  border-radius: 0.5vw;
  display: flex;
+ min-width: 55%;
+ max-width: 55%;
+ margin-left: auto;
  span {
     color: white;
     display: block;
-    max-width: 75%;
-    font-size: 1.35vw;
-    line-height: 1.15;
+    min-width: 85%;
+    max-width: 85%;
+
+    font-size: 1.15vw;
+    line-height: 1.45;
  }
  svg {
-     width: 4.8vw;
+     width: 5vw;
      margin-left: auto;
     //  fill: #4C0101;
+    margin-right: -0.5vw;
      fill: var(--granich-red);
  }
  @media only screen and (max-width: 575px) {
     padding: 3vw 4vw;
     border-radius: 1.5vw;
+    min-width: 100%;
+    max-width: 100%;
+    flex-direction: column;
     span {
-        max-width: 75%;
+        max-width: 100%;
+        min-width: 100%;
         font-size: 3.7vw;
         line-height: 1.35;
+        margin-bottom: 2vw;
     }
     svg {
-        width: 11.5vw;
+        width: 20vw;
+        margin: 0 auto;
+        transform: translateX(5%);
     }
  }
 `
@@ -78,11 +93,11 @@ const CourseHardWork = () => {
             <Container>
                 <HardWorkWrapper>
                     <HardWorkQuote>
-                        «Если вы идёте на этот курс, то обратного пути нет — вы будете пахать и развиваться»
+                        «Пожалуйста, примите осознанное решение об участии на этом курсе»
                     </HardWorkQuote>
                     <HardWorkTextWrapper>
                         <span>
-                            А учитывая мой осознанный подход, ваше развитие будет крайне быстрым
+                        Хоть я и создал на нём условия для быстрого развития твёрдых навыков, но это не произойдёт по волшебству. Вам понадобится прилагать много сил, чтобы дойти до конца.
                         </span>
                         <RunIcon/>
                         

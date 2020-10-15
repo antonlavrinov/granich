@@ -194,13 +194,14 @@ const PortfolioOnePagersWrapper = styled.div`
     grid-column-gap: 1.8vw;
     grid-row-gap: 1.8vw;
     padding: 0 1.5vw;
-    margin-bottom: 0.9vw;
+    margin-bottom: 2vw;
+    margin-top: 1.8vw;
     @media only screen and (max-width: 575px) {
         grid-template-columns: 1fr 1fr;
         padding: 0;
         grid-column-gap: 3vw;
         grid-row-gap: 3vw;
-        margin-bottom: 3vw;
+        margin-bottom: 5vw;
     }
 
 `
@@ -221,9 +222,11 @@ const PortfolioMiltiPagesWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     padding: 0 0.6vw 1.5vw;
+    margin-top: 0.5vw;
     // min-height: 55.1vw;
     @media only screen and (max-width: 575px) {
         margin-bottom: 0;
+
     }
 `
 
@@ -291,6 +294,18 @@ const PortfolioLinkIcon = styled(props => <Img {...props}/>)`
         height: 9vw;
         margin-right: 1.3vw;
     }
+`
+
+const PortfolioSubtitle = styled.div`
+    padding-left: 1.5vw;
+    font-size: 1.55vw;
+    font-weight: 500;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+        padding-left: 0;
+        margin-bottom: 3vw;
+    }
+
 `
 
 const options = {
@@ -396,8 +411,9 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                                     </PortfolioBonusBlock>
                                     </PortfolioHeader>
                             )}
-                    
+                    <PortfolioSubtitle>Одностраничные макеты:</PortfolioSubtitle>
                     <PortfolioOnePagersWrapper >
+                        
                         {posters.edges.map((poster, idx) => {
                             return (
                                 <Zoom key={idx}>
@@ -408,8 +424,10 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                         })}
 
                     </PortfolioOnePagersWrapper>
-                    {isDesktop && (
+                    
+                    {isDesktop && !masterClass && (
                         <>
+                            <PortfolioSubtitle>Многостраничные макеты:</PortfolioSubtitle>
                             {imageGallery.length > 0 && (
                                 <PortfolioMiltiPagesWrapper>
                                     
@@ -425,12 +443,13 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                             )}
                         </>
                     )}
-                    {!masterClass && (
+                    {!masterClass && isMobile && (
                         <>
-                            {isMobile && (
-                                <PortfolioMultiPagesMobile multiPages={multiPages}/>
-                            )}
+                            <PortfolioSubtitle>Многостраничные макеты:</PortfolioSubtitle>
+                            <PortfolioMultiPagesMobile multiPages={multiPages}/>
                         </>
+
+
                     )}
                     <PortfolioLinks>
                         <PortfolioLink rel="noopener noreferrer" target="_blank" href="https://www.pinterest.ru/vadim_granich/granich-graphic-design-course/">

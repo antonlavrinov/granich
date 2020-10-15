@@ -29,7 +29,7 @@ const OpportunitiesWrapper = styled.div`
 
 const OpportunitiesTitle = styled.h2`
     color: var(--granich-black);
-    font-size: 4.5vw;
+    font-size: 4vw;
     letter-spacing: -0.2vw;
     font-weight: 700;
     line-height: 0.8;
@@ -40,7 +40,7 @@ const OpportunitiesTitle = styled.h2`
         font-family: EB Garamond;
         font-style: italic;
         font-weight: 500;
-        font-size: 6vw;
+        font-size: 5.5vw;
         letter-spacing: -0.2vw;
     }
     @media only screen and (max-width: 575px) {
@@ -321,9 +321,9 @@ const CourseOpportunities = () => {
             <Container>
                 <OpportunitiesWrapper>
 
-                    <OpportunitiesTitle>После курса вы сможете <span>выполнять заказы</span> на дизайн и вёрстку:</OpportunitiesTitle>
+                    <OpportunitiesTitle>После курса вы сможете <span>выполнять заказы</span> на дизайн и вёрстку:</OpportunitiesTitle>
                     <OpportunitiesSectionWrapper>
-                        <OpportunitiesSubtitle>Одностраничные макеты:</OpportunitiesSubtitle>
+                        <OpportunitiesSubtitle>Одностраничных макетов:</OpportunitiesSubtitle>
                         <OpportunitiesList>
                             <Opportunity text={(<><OpportunityTag>Плакаты</OpportunityTag><OpportunityTag>Афиши</OpportunityTag><OpportunityTag>Флаеры</OpportunityTag><OpportunityTag>Буклеты</OpportunityTag></>)} image={image1}/>
                             <Opportunity text={(<><OpportunityTag>Сторис</OpportunityTag><OpportunityTag>Обложки постов</OpportunityTag></>)} image={image2}/>
@@ -331,7 +331,7 @@ const CourseOpportunities = () => {
                         </OpportunitiesList>
                     </OpportunitiesSectionWrapper>
                     <OpportunitiesSectionWrapper>
-                        <OpportunitiesSubtitle>Многостраничные макеты:</OpportunitiesSubtitle>
+                        <OpportunitiesSubtitle>Многостраничных макетов:</OpportunitiesSubtitle>
                         <OpportunitiesList>
                             <Opportunity text={(<><OpportunityTag>Журналы</OpportunityTag><OpportunityTag>Книги</OpportunityTag><OpportunityTag>Брошюры</OpportunityTag></>)} image={image4}/>
                             <Opportunity text={(<><OpportunityTag>Презентации</OpportunityTag></>)} image={image5}/>

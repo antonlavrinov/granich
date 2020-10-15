@@ -58,7 +58,7 @@ const ReviewsWrapper = styled.div`
 
 const ReviewsTitle = styled.h2`
     color: var(--granich-black);
-    font-size: 4.55vw;
+    font-size: 4vw;
     letter-spacing: -0.1vw;
     font-weight: 700;
     line-height: 1;
