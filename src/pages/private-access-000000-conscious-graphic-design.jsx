@@ -24,6 +24,7 @@ import CourseTimetable from "../components/course-page/CourseTimetable";
 import CourseAftermath from "../components/course-page/CourseAftermath"
 import CourseOpportunities from "../components/course-page/CourseOpportunities";
 import CourseHardWork from "../components/course-page/CourseHardWork";
+import CoursePaymentChoices from "../components/course-page/CoursePaymentChoices";
 
 export const contentfulQuery = graphql`
 
@@ -286,6 +287,7 @@ const OsoznannyGraphDesignPage = ({data}) => {
               data={data.offer}
               formId={`ltForm6865073`}
               formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}/>
+      <CoursePaymentChoices/>
       <CourseIndividualSupport/>
       <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/>
       

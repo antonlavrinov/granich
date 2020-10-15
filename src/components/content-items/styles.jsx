@@ -132,7 +132,6 @@ export const  ContentWrapperLink = styled.a`
         }
     }
     ${props => props.podborka && `
-        background: #CBA181;
         background: linear-gradient(90deg, rgba(203,161,129,1) 0%, rgba(181,141,110,1) 100%);
     `}
 
@@ -159,7 +158,7 @@ export const  ContentWrapperExternalLink = styled.a`
         background: #0E3983;
     ` }   
     ${props => props.medium && `
-        background: var(--granich-light-grey);
+
 
         background: linear-gradient(90deg, rgba(185,185,185,1) 0%, rgba(143,143,143,1) 100%);
     ` }

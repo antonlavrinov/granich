@@ -91,12 +91,17 @@ const FeatureText = styled.div`
     color: var(--granich-grey);
     position: relative;
     z-index: 1;
-    span {
+    b {
         font-weight: 500;
         color: var(--granich-black);
+        margin-bottom: 0.3vw;
+        display: block;
     }
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
+        b {
+            margin-bottom: 1vw;
+        }
     }
 `
 
@@ -135,10 +140,10 @@ const Feature = ({image, title, text, link}) => {
                 {link ? (
                     <FeatureLink href={link} target="_blank">{title}<ArrowLinkOut/></FeatureLink>
                 ) : (
-                    <span>{title}</span>
+                    <b>{title}</b>
                 )}
 
-                <br/> {text}
+                {text}
             </FeatureText>
         </FeatureWrapper>
     )

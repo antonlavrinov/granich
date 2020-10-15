@@ -20,7 +20,8 @@ export const GlobalStyle = createGlobalStyle`
         --granich-telegram-gradient: linear-gradient(90deg, #32A1CD 0%, #36ADE0 50%);
         --granich-vk-gradient: linear-gradient(90deg, #167CC2 0%, #0980C5 50%);
         --granich-red-gradient-horizontal: linear-gradient(90deg, rgba(230,25,51,1) 0%, rgba(213,12,34,1) 50%, rgba(189,3,27,1) 100%);
-
+        --granich-beige-gradient: linear-gradient(90deg, rgba(203,161,129,1) 0%, rgba(181,141,110,1) 100%);
+        --granich-silver-gradient: linear-gradient(90deg, rgba(185,185,185,1) 0%, rgba(143,143,143,1) 100%);
         letter-spacing: 0vw;
         font-weight: 400;
     }

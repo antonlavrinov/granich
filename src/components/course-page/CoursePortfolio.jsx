@@ -424,7 +424,7 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                         })}
 
                     </PortfolioOnePagersWrapper>
-                    {!masterClass && <PortfolioSubtitle>Многостраничные макеты:</PortfolioSubtitle>}
+                    {!masterClass && <PortfolioSubtitle>Многостраничные экзамены:</PortfolioSubtitle>}
                     
                     {isDesktop && !masterClass && (
                         <>

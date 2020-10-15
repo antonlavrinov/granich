@@ -60,6 +60,7 @@ const HardWorkTextWrapper = styled.div`
  }
  svg {
      width: 5vw;
+     height: 6.5vw;
      margin-left: auto;
     //  fill: #4C0101;
     margin-right: -0.5vw;
@@ -82,6 +83,7 @@ const HardWorkTextWrapper = styled.div`
         width: 20vw;
         margin: 0 auto;
         transform: translateX(5%);
+        height: 27vw;
     }
  }
 `
