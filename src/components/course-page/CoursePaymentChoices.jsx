@@ -269,7 +269,7 @@ const CoursePaymentChoices = () => {
                 <PaymentChoicesWrapper>
                     <PaymentChoice grey>
                         <PaymentChoiceTitle>Оплатить в рассрочку</PaymentChoiceTitle>
-                        <PaymentChoiceText>какой-нибудь текст какой-нибудь текст  какой-нибудь текст </PaymentChoiceText>
+                        <PaymentChoiceText>Рассрочка от Тинькофф <br/>на 4 месяца или полгода (0%)</PaymentChoiceText>
                         <PaymentChoiceImageIcon style={{position: 'absolute'}} fluid={tinkoff}/>
                         <PaymentChoiceButton>Оплатить</PaymentChoiceButton>
                         
