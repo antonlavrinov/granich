@@ -424,10 +424,11 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                         })}
 
                     </PortfolioOnePagersWrapper>
+                    {!masterClass && <PortfolioSubtitle>Многостраничные макеты:</PortfolioSubtitle>}
                     
                     {isDesktop && !masterClass && (
                         <>
-                            <PortfolioSubtitle>Многостраничные макеты:</PortfolioSubtitle>
+                            
                             {imageGallery.length > 0 && (
                                 <PortfolioMiltiPagesWrapper>
                                     
@@ -445,7 +446,6 @@ const CoursePortfolio = ({posters, multiPages, masterClass, dataHeader}) => {
                     )}
                     {!masterClass && isMobile && (
                         <>
-                            <PortfolioSubtitle>Многостраничные макеты:</PortfolioSubtitle>
                             <PortfolioMultiPagesMobile multiPages={multiPages}/>
                         </>
 
