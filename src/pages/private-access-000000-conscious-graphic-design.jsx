@@ -253,7 +253,7 @@ const OsoznannyGraphDesignPage = ({data}) => {
           ogImageVk={ogImageVK}
           url="https://granich.design/conscious-graphic-design" />
       <div className="section-top-block"></div>
-      {/* <CourseOffer data={data.offer} deckVisibility={deckVisibility}/> */}
+      <CourseOffer data={data.offer} deckVisibility={deckVisibility}/>
       {/* <CourseExplanations data={data.explanations}/> */}
       <CourseExample/> 
       <CourseExplain/>
