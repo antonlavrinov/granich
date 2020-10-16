@@ -252,8 +252,9 @@ const CourseTimetable = () => {
                             </TimetableInfoText>
                             <TimetableInfoGifBlock>
                                 <TimetableGifWrapper>
-                                    {/* <LazyLoad once> */}
+                                    <LazyLoad once>
                                         <TimetableGif src={TimetableImageGif} alt="commitment"/>
+                                    </LazyLoad>
                                         
                                 </TimetableGifWrapper>
                                 <TimetableGifTextWrapper>
@@ -261,7 +262,7 @@ const CourseTimetable = () => {
                                     <TimetableGifPS>P.S. Сцена из фильма Одержимость. Философия всего курса.</TimetableGifPS>
                                 </TimetableGifTextWrapper>
                                 
-                            {/* </LazyLoad> */}
+                            
                             </TimetableInfoGifBlock>
                         </TimetableInfoTextWrapper>
                     </TimetableInfoWrapper>
