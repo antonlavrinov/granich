@@ -279,7 +279,7 @@ const CourseTrainingPath = () => {
                                     {/* <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber> */}
                                     
                                 </TrainingPathBlockContainer>
-                                <TrainingPathBlockText><b>Проверка домашних заданий</b>Мы не оставляем вас наедине с огромным количеством новой информации. Наши кураторы заботливо ответят на ваши вопросы по материалу курса в чате. А также на каждое ваше ДЗ запишут подробный индивидуальный видеоразбор длительностью 25‑30 минут.</TrainingPathBlockText>
+                                <TrainingPathBlockText><b>Проверка домашних заданий</b>Мы не оставляем вас наедине с огромным количеством новой информации. Наши кураторы заботливо ответят на ваши вопросы по материалу курса в чате. А также на каждое ваше ДЗ запишут подробный индивидуальный видеоразбор длительностью 15‑30 минут (зависит от вашего уровня).</TrainingPathBlockText>
 
                             </TrainingPathBlockWrapper>
                             <TrainingPathBlockWrapper>
@@ -292,7 +292,7 @@ const CourseTrainingPath = () => {
                                     {/* <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber> */}
                                     
                                 </TrainingPathBlockContainer>
-                                <TrainingPathBlockText><b>Докрутка творческих макетов</b>На этом личное общение с опытными кураторами не заканчивается. Для того, чтобы создать грамотное портфолио, вы будете в личной переписке с кураторами улучшать свои творческие макеты и многостраничный экзамен.</TrainingPathBlockText>
+                                <TrainingPathBlockText><b>Докрутка творческих макетов</b>На этом личное общение с кураторами не заканчивается. Для того, чтобы создать грамотное портфолио, вы будете в личной переписке с кураторами улучшать свои творческие макеты и многостраничный экзамен.</TrainingPathBlockText>
 
                             </TrainingPathBlockWrapper>
                         
