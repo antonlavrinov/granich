@@ -151,7 +151,7 @@ const YoutubeVideo = ({data}) => {
                                 <div></div>
                             </div>
                         </div>
-                        {data.contentfulContent.contentYoutubeVideoLink && <iframe title="youtubeFrame" width="100%"  src={data.contentfulContent.contentYoutubeVideoLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>}
+                        {data.contentfulContent.contentYoutubeVideoLink && <iframe title="youtubeFrame" width="100%"  src={`${data.contentfulContent.contentYoutubeVideoLink}?vq=hd1080`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>}
                     </YoutubeBlock>
                     <ContentInfo>
                         <Youtube/>

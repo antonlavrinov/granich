@@ -6,6 +6,7 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import Img from 'gatsby-image';
 import Zoom from 'react-medium-image-zoom';
 import { INLINES } from '@contentful/rich-text-types'
+import { useMediaQuery } from 'react-responsive'
 
 
 const BooksSection = styled.section`
@@ -253,11 +254,20 @@ const breakpointColumnsObj = {
 
 
 const BooksItem = ({text, number, image, links}) => {
+    const isMobile = useMediaQuery({
+        query: '(max-width: 575px)'
+    })
+    const isDesktop = useMediaQuery({
+        query: '(min-width: 575px)'
+    })
     return (
         <BooksItemWrapper>
-            <Zoom>
-                <BooksItemImage fluid={image}></BooksItemImage>
-            </Zoom>
+            {isDesktop && (
+                <Zoom>
+                    <BooksItemImage fluid={image}></BooksItemImage>
+                </Zoom>
+            )}
+            {isMobile && <BooksItemImage fluid={image}></BooksItemImage>}
             <BooksItemInfo>
                 <BooksItemInfoDetails>
                     <BooksItemNumber>{`№${number}`}</BooksItemNumber>

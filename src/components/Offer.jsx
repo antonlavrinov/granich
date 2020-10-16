@@ -47,7 +47,7 @@ const OfferTitle = styled.h1`
         
     }
 `
-const OfferDescr = styled.h2`
+const OfferDescr = styled.div`
     margin-left: -.3vw;
     color: white;
     letter-spacing: .01vw;
@@ -87,6 +87,15 @@ const OfferDescr = styled.h2`
    
     }
 `
+
+// const OfferSeo = styled.h2`
+//     font-size: 1.15vw;
+//     color: #f2f2f2;
+//     user-select: none;
+//     z-index: 10;
+//     position: relative;
+//     z-index: 0;
+// `
 
 const OfferUnderlineIcon = styled(props => <UnderlineLinkIcon {...props}/>)`
     width: 20.8vw;
@@ -200,6 +209,7 @@ const Offer = ({data}) => {
                         <OfferDescr>
                             {headerSubtitle_01} <OfferFlagsImg alt="flags" fluid={headerSubtitleImage} /> <br/> {headerSubtitle_02} <span tabIndex={0} role="button" onKeyDown={() => scrollTo('#manifest')} onClick={() => scrollTo('#manifest')}>{headerSubtitle_03} <OfferUnderlineIcon/></span>
                         </OfferDescr>
+                        {/* <OfferSeo>Делаем из любви, а не страха. Курсы с осознанным подходом. Выточенно. Интенсивно. С дедлайнами.</OfferSeo> */}
                     </OfferWrapper>
                     
 
