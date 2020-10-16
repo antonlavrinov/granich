@@ -287,7 +287,7 @@ const OsoznannyGraphDesignPage = ({data}) => {
               data={data.offer}
               formId={`ltForm6865073`}
               formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}/>
-      {/* <CoursePaymentChoices/> */}
+      <CoursePaymentChoices/>
       <CourseIndividualSupport/>
       <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/>
       
