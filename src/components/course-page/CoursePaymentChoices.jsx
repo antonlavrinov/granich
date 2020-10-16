@@ -271,7 +271,7 @@ const CoursePaymentChoices = () => {
                 <PaymentChoicesWrapper>
                     <PaymentChoice grey>
                         <PaymentChoiceTitle>Можно оплатить в рассрочку</PaymentChoiceTitle>
-                        <PaymentChoiceText>Беспроцентный кредит от Тинькофф на 4 месяца или полгода</PaymentChoiceText>
+                        <PaymentChoiceText>Рассрочка 0% от Тинькофф на 4 месяца или полгода. Для получения рассрочки перейдите к заполнению обычной формы ↑</PaymentChoiceText>
                         <PaymentChoiceImageIcon style={{position: 'absolute'}} fluid={tinkoff}/>
                         {/* <PaymentChoiceButton>Оплатить</PaymentChoiceButton> */}
                         
