@@ -47,7 +47,7 @@ const MasterCard = ({courseData, empty, calendar, arrowWhite, arrowBlack}) => {
                             <>
                                 {courseData.node.courseTeachers.map((teacher, idx) => {
                                     return (
-                                        <CourseTeacher several={true} key={idx} fluid={teacher.fluid}/>
+                                        <CourseTeacher empty={empty} several={true} key={idx} fluid={teacher.fluid}/>
                                     )
                                 })}
                             </>

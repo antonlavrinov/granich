@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import BackgroundImage from "gatsby-image";
-import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+// import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import { graphql, useStaticQuery } from 'gatsby'
 
 

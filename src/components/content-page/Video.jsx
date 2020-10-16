@@ -258,41 +258,7 @@ const VideoItemInfoTiming = styled.div`
     }
 `
 
-// const VideoItemInfoLinks = styled.div`
-//     width: 4vw;
-//     margin-bottom: 0.5vw;
-//     p {
-//         margin-top: 0.2vw;
-//         line-height: 1.3;
-//         font-size: 0.8vw;
 
-
-//     }
-//     p:empty { 
-//         display: none; 
-
-//     }
-//     a {
-//         color: white; 
-//         font-size: 0.8vw;
-//         position: relative;
-//         display: inline;
-//         border-bottom: 1px solid var(--granich-grey);
-//         :hover {
-//             border-bottom: 1px solid white;
-//         }
-//     } 
-//     @media only screen and (max-width: 575px) {
-//         width: 16vw;
-//         margin-bottom: 2vw;
-//         p {
-//             margin-top: 1vw;
-//         }
-//         a { 
-//             font-size: 2.5vw;
-//         } 
-//     }
-// `
 
 const VideoIcons = styled.div`
 
@@ -551,12 +517,12 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                             </Masonry>
                         </VideoList>
                         
-                        {/* {categoryTwo && ( */}
+                      
                             <VideoList>
                                 <VideoListDescr>
                                     {categoryTwo}
                                 </VideoListDescr>
-                                {/* {console.log(data)} */}
+                               
                                 <Masonry
                                     breakpointCols={breakpointColumnsObj}
                                     className="my-masonry-grid"

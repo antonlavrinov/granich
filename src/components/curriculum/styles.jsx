@@ -15,8 +15,10 @@ import React from 'react'
 
 export const CurriculumSection = styled.section`
     margin-bottom: 4vw;
+    margin-top: 4vw;
     @media only screen and (max-width: 575px) {
         margin-bottom: 5vw;
+        margin-top: 5vw;
     }
 `
 export const CurriculumWrapper = styled.div`

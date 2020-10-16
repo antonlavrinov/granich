@@ -2,9 +2,9 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
-import ArrowIcon from '../../assets/svgs/white-arrow-inter.svg';
+// import ArrowIcon from '../../assets/svgs/white-arrow-inter.svg';
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 
 
 
@@ -264,42 +264,42 @@ const CourseOpportunities = () => {
         query opportunitiesImages {
             opportunitiesImage1: file(relativePath: { eq: "graph-design/opportunities/opportunities-01.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 600, quality: 90) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             opportunitiesImage2: file(relativePath: { eq: "graph-design/opportunities/opportunities-02.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 600, quality: 90) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             opportunitiesImage3: file(relativePath: { eq: "graph-design/opportunities/opportunities-03.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 600, quality: 90) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             opportunitiesImage4: file(relativePath: { eq: "graph-design/opportunities/opportunities-04.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 600, quality: 90) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             opportunitiesImage5: file(relativePath: { eq: "graph-design/opportunities/opportunities-05.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 600, quality: 90) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             opportunitiesImage6: file(relativePath: { eq: "graph-design/opportunities/opportunities-06.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 600, quality: 90) {
                         ...GatsbyImageSharpFluid
                     }
                 }

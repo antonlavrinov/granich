@@ -1,12 +1,11 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import CourseArrowDown from '../../assets/svgs/course-arrow-down-27.svg';
 import PotokIcon from '../../assets/svgs/graph-design/graph-design-potok-icon.svg';
-import DurationIcon from '../../assets/svgs/graph-design/graph-design-duration-icon.svg';
+// import DurationIcon from '../../assets/svgs/graph-design/graph-design-duration-icon.svg';
 import DateIcon from '../../assets/svgs/graph-design/graph-design-date-icon.svg';
 import Img from 'gatsby-image';
-// import scrollTo from 'gatsby-plugin-smoothscroll';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import { useSprings, animated, to as interpolate } from 'react-spring';
 import { useDrag } from 'react-use-gesture'
@@ -28,18 +27,18 @@ const Potok = styled(props => <PotokIcon {...props}/>)`
     }
 `
 
-const Duration = styled(props => <DurationIcon {...props}/>)`
-    width: 1.3vw;
-    height: 1.3vw;
-    fill: var(--granich-red);
-    margin-right: 0.3vw;
-    @media only screen and (max-width: 575px) {
-        width: 4.3vw;
-        height: 4vw;
-        margin-right: 1vw;
-        margin-top: -0.8vw;
-    }
-`
+// const Duration = styled(props => <DurationIcon {...props}/>)`
+//     width: 1.3vw;
+//     height: 1.3vw;
+//     fill: var(--granich-red);
+//     margin-right: 0.3vw;
+//     @media only screen and (max-width: 575px) {
+//         width: 4.3vw;
+//         height: 4vw;
+//         margin-right: 1vw;
+//         margin-top: -0.8vw;
+//     }
+// `
 const Date = styled(props => <DateIcon {...props}/>)`
     width: 1.3vw;
     height: 1.3vw;
@@ -382,30 +381,8 @@ const CourseOfferPlaceholder = styled.div`
     }
 `
 
-// const CoursePortfolioDeck = styled.div`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-// `
-
-// const OfferBodyWrapper = styled.div`
-//     // overscroll-behavior-y: contain;
-//     // margin: 0;
-//     // padding: 0;
-//     // height: 40vw;
-//     // width: 40vw;
-//     user-select: none;
-//     font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial,
-//     sans-serif;
-//     // position: fixed;
-//     // top: 0;
-//     // left: 0;
-//     z-index: 999;
-//     // overflow-x: hidden;
-// `
 
 const OfferRootWrapper = styled.div`
-    // background: lightblue;
     position: absolute;
     top: 0;
     right: 12vw;
@@ -415,7 +392,6 @@ const OfferRootWrapper = styled.div`
     z-index: 998;
     
     @media only screen and (max-width: 575px) {
-        // background: lightblue;
         width: 100%;
         right: 0;
 
@@ -425,31 +401,29 @@ const OfferRootWrapper = styled.div`
 
 const OfferCardItemWrapper = styled(animated.div)`
     position: absolute;
-    // z-index: 999;
     width: 100%;
     height: 100%;
     will-change: transform;
     display: flex;
     align-items: center;
     justify-content: center;
-    // background: black;
 `
 
 const OfferCardItem = styled(animated.div)`
     background-color: white;
     background-size: auto 95%;
-    // background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center center;
     width: 22.4vw;
     max-width: 22.4vw;
-    // max-width: 300px;
     height: 31vw;
     max-height: 31vw;
-    // max-height: 570px;
     will-change: transform;
     border-radius: 0.2vw;
     box-shadow: 0 0vw 1vw rgba(0,0,0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 
     :hover {
@@ -479,56 +453,44 @@ const CourseCircle = styled.div`
 `
 
 const CourseCircleMobile = styled.div`
-
     display: none;
-    width: 100vw;
-    height: 100vw;
-    background: #f2f2f2;
-    background: red;
-    border-radius: 100vw;
-    z-index: 999;
     @media only screen and (max-width: 575px) {
-        width: 100vw;
-        height: 100vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70vw;
+        height: 70vw;
+        display: block;
         background: #f2f2f2;
-        background: red;
         border-radius: 100vw;
-        z-index: 999;
+        z-index: 1;
     }
 `
 
-// const OfferSpinnerWrapper = styled.div`
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     width: 30vw;
-//     height: 100%;
-//     z-index: 998;
-//     div {
-//         width: 2vw;
-//         height: 2vw;
-//     }
-//     @media only screen and (max-width: 575px) {
-//         display: none;
-//     }
-// `
+const OfferPoster = styled(props => <Img {...props}/>)`
+    user-select: none;
+    width: 95%; 
+    div {
+        user-select: none;
+    }
+`
 
-// const cards = [
-//     'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
-//     'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
-//     'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
-//     'https://images.ctfassets.net/yej6fivg4hs3/7kYzs8i27RTKDkRmk70dCE/a7fe074445b9c18ef13dcf8ff2d33388/16-5-__________-____________-____.jpg?h=250',
-//     'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
-//     'https://images.ctfassets.net/yej6fivg4hs3/3CtHnBkVBQKsJu2P4iUBgP/9dd612463632a1928100f8f174c4a062/16-8-__________-________________-____.jpg?h=250',
-//     'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
-//     'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
-//     'https://images.ctfassets.net/yej6fivg4hs3/9hIxeRwQTb3zbc7Fk2v2x/d5d5d41710b83e1827c702de31d11664/17-6-____________-______________-____.jpg?h=250',
-//     'https://images.ctfassets.net/yej6fivg4hs3/7kYzs8i27RTKDkRmk70dCE/a7fe074445b9c18ef13dcf8ff2d33388/16-5-__________-____________-____.jpg?h=250',
-//     'https://images.ctfassets.net/yej6fivg4hs3/pIvg0ZEfRESddackniI8L/6781774ceebb33dd28a8dfbc719e6a62/17-7-_________________________________-____.jpg?h=250',
-//     'https://images.ctfassets.net/yej6fivg4hs3/3CtHnBkVBQKsJu2P4iUBgP/9dd612463632a1928100f8f174c4a062/16-8-__________-________________-____.jpg?h=250',
-
-
-//   ]
+const CourseMobileSpinner = styled.div`
+    display: none;
+    @media only screen and (max-width: 575px) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70vw;
+        height: 70vw;
+        display: block;
+        background: #f2f2f2;
+        border-radius: 100vw;
+        z-index: 1;
+    }
+`
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = i => ({ x: 0, y: i * 0, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
@@ -536,9 +498,9 @@ const from = i => ({ x: 1500, rot: 0, scale: 1, y: 0 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r, s) => `  rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
-function Deck({postersCollectionUrls}) {
+function Deck({postersCollection}) {
     const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
-  const [props, set] = useSprings(postersCollectionUrls.length, i => ({ ...to(i), from: from(i) })) // Create a bunch of springs using the helpers above
+  const [props, set] = useSprings(postersCollection.length, i => ({ ...to(i), from: from(i) })) // Create a bunch of springs using the helpers above
   // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
   const bind = useDrag(({ args: [index], down, movement: [mx], distance, direction: [xDir], velocity }) => {
     const trigger = velocity > 0.1 // If you flick hard enough it should trigger the card to fly out default: 0.2
@@ -552,13 +514,15 @@ function Deck({postersCollectionUrls}) {
       const scale = down ? 1.1 : 1 // Active cards lift up a bit
       return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } }
     })
-    if (!down && gone.size === postersCollectionUrls.length) setTimeout(() => gone.clear() || set(i => to(i)), 600)
+    if (!down && gone.size === postersCollection.length) setTimeout(() => gone.clear() || set(i => to(i)), 600)
   })
   // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
   return props.map(({ x, y, rot, scale }, i) => (
     <OfferCardItemWrapper className="spring-div-wrapper noselect" key={i} style={{ x, y }}>
       {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
-      <OfferCardItem className="spring-div-inside noselect" {...bind(i)} style={{ transform: interpolate([rot, scale], trans), backgroundImage: `url(https:${postersCollectionUrls[i]})` }} />
+      <OfferCardItem className="spring-div-inside noselect" {...bind(i)} style={{ transform: interpolate([rot, scale], trans)  }} >
+          <OfferPoster  draggable={false} className="noselect" fluid={postersCollection[i].fluid}/>
+      </OfferCardItem>
     </OfferCardItemWrapper>
   ))
 }
@@ -568,17 +532,8 @@ function Deck({postersCollectionUrls}) {
 
 
 const CourseOffer = ({data, courseName, deckVisibility}) => {
-    const [postersCollectionUrls, setPostersCollectionUrls ] = useState([])
-    useEffect(() => {
-        let cardsArray = [];
-        if (data.coursePostersCollection) {
-            data.coursePostersCollection.forEach((poster) => {
-                cardsArray.push(poster.resize.src)
-            })
-            setPostersCollectionUrls(cardsArray)
-        }
 
-    }, [])
+
 
     const isMobile = useMediaQuery({
         query: '(max-width: 575px)'
@@ -592,7 +547,7 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
         <CourseOfferSection>
                 {deckVisibility && isDesktop && (
                     <OfferRootWrapper>
-                        <Deck postersCollectionUrls={postersCollectionUrls}/>
+                        <Deck postersCollection={data.coursePostersCollection}/>
                     </OfferRootWrapper>
                 )}
                 
@@ -609,7 +564,7 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                                             <CourseOfferTag key={idx}>{tag}</CourseOfferTag>
                                         )
                                     })} 
-                                    {/* {data.courseTags && <CourseOfferTag>{data.courseTags[1]}</CourseOfferTag>}  */}
+
                                 </>
                             ) : (
                                 <>
@@ -629,33 +584,28 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                         {data.courseType === 'Мастер-класс' && (
                             <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/>
                         )}
-                        {/* <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/> */}
+                      
                         {data.courseType === 'Курс' && (
                             <>
                                 <CourseCircle></CourseCircle>
                                 
                                 <CourseOfferPlaceholder>
-                                    {/* <CourseCircleMobile>dsds</CourseCircleMobile> */}
+                                    <CourseCircleMobile></CourseCircleMobile>
+                                    <CourseMobileSpinner style={{display: `${deckVisibility ? "none" : "block"}`}}>
+                                    
+                                        <div className="loadingio-spinner-rolling-ta5f1nqy5p">
+                                            <div className="ldio-6b142d04hhl">
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </CourseMobileSpinner>
+                                   
                                     
                                     {isMobile && (
                                         <>
-                                        {deckVisibility ? (
-                                            null
-                                        ) : (
-                                            <div className="loadingio-spinner-rolling-ta5f1nqy5p">
-                                                <div className="ldio-6b142d04hhl">
-                                                    <div></div>
-                                                </div>
-                                            </div>
-                                        )}
-                                        
-                                        {/* {deckVisibility && ( */}
                                             <OfferRootWrapper>
-                                                <Deck postersCollectionUrls={postersCollectionUrls}/>
+                                                <Deck postersCollection={data.coursePostersCollection}/>
                                             </OfferRootWrapper>
-                                        {/* )} */}
-                                            
-                                            
                                         </>
                                 
                                     )}
@@ -665,17 +615,6 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                             
                         ) }
                         
-
-                        {/* {!deckVisibility && isDesktop && (
-                            <OfferSpinnerWrapper>
-                                <div className="loadingio-spinner-rolling-ta5f1nqy5p">
-                                    <div className="ldio-6b142d04hhl">
-                                        <div></div>
-                                    </div>
-                                </div>
-                            </OfferSpinnerWrapper>
-                           
-                        )} */}
 
                         
                         <CourseOfferDescr className="noselect" courseName={courseName} type={data.courseType}>

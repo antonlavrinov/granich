@@ -7,7 +7,7 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image';
-import ArrowOut from '../assets/svgs/header-arrow-icon-out.svg';
+// import ArrowOut from '../assets/svgs/header-arrow-icon-out.svg';
 import { INLINES } from '@contentful/rich-text-types'
 
 

@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import CourseOffer from '../components/course-page/CourseOffer';
 import Header from "../components/Header"
-import CourseExplanations from "../components/course-page/CourseExplanations"
+// import CourseExplanations from "../components/course-page/CourseExplanations"
 import CourseExample from "../components/course-page/CourseExample"
 // import CourseForWhom from "../components/course-page/CourseForWhom"
 import CoursePortfolio from "../components/course-page/CoursePortfolio"
@@ -12,10 +12,10 @@ import CourseCurriculum from "../components/course-page/CourseCurriculum"
 import CourseFeatures from "../components/course-page/CourseFeatures"
 import CourseReviews from "../components/course-page/CourseReviews"
 import CourseParticipation from "../components/course-page/CourseParticipation"
-import CourseCommitment from "../components/course-page/CourseCommitment"
+// import CourseCommitment from "../components/course-page/CourseCommitment"
 import {graphql} from 'gatsby';
 import CourseAnswers from "../components/course-page/CourseAnswers";
-import Mailing from '../components/Mailing';
+// import Mailing from '../components/Mailing';
 import CourseExplain from '../components/course-page/CourseExplain'
 import ogImage from '../assets/images/seo/conscious-graphic-design-min.jpg';
 import ogImageVK from '../assets/images/seo/vk/conscious-graphic-design.jpg';
@@ -48,6 +48,9 @@ export const contentfulQuery = graphql`
           coursePrice
           courseTags
           coursePostersCollection {
+            fluid(maxWidth: 600, quality: 100) {
+              ...GatsbyContentfulFluid_withWebp
+            }
             resize(width: 600, quality: 100) {
               src
             }
@@ -238,9 +241,10 @@ export const contentfulQuery = graphql`
 const OsoznannyGraphDesignPage = ({data}) => {
   const [deckVisibility, setDeckVisibility] = useState(false)
   useEffect(() => {
-    setTimeout(() => {
-      setDeckVisibility(true)
-    }, 1000)
+      let timer1 = setTimeout(() => setDeckVisibility(true), 800)
+      return () => {
+        clearTimeout(timer1)
+      }
       
   }, [])
   return (

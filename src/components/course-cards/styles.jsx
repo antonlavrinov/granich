@@ -373,6 +373,10 @@ export const CourseTeacher = styled(props => <BackgroundImage {...props}></Backg
     border: 1px solid var(--granich-black);
     box-shadow: 0.15vw 0.12vw 0.2vw rgba(0,0,0,0.25);
     background: var(--granich-grey);
+    @media only screen and (max-width: 575px) {
+        height: 5.8vw;
+        width: 5.8vw;
+    }
     ${props => props.several && `
         margin-right: -0.2vw;
         :last-child {
@@ -386,10 +390,10 @@ export const CourseTeacher = styled(props => <BackgroundImage {...props}></Backg
             }
         }
     `}
-    @media only screen and (max-width: 575px) {
-        height: 5.8vw;
-        width: 5.8vw;
-    }
+
+    ${props => props.empty && `
+        filter: grayscale(100%);
+    `}
 
 `
 

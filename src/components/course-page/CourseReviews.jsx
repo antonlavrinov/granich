@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
-import BackgroundImage from 'gatsby-background-image';
+// import BackgroundImage from 'gatsby-background-image';
 import ArrowIcon from '../../assets/svgs/white-arrow-inter.svg';
 // import { graphql, useStaticQuery } from 'gatsby'
 // import Img from 'gatsby-image';

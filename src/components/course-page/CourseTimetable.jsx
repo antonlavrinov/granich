@@ -221,7 +221,7 @@ const CourseTimetable = () => {
         query timetableImage {
             imageTimetable: file(relativePath: { eq: "graph-design/timetable/timetable-image.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 500, quality: 90) {
+                    fluid(maxWidth: 700, quality: 100) {
                         ...GatsbyImageSharpFluid
                     }
                 }

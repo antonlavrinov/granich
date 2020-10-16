@@ -108,40 +108,42 @@ const PaymentChoiceText = styled.div`
     max-width: 80%;
     margin-top: auto;
 
+
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+        max-width: 70%;
+    }
     ${props => props.mail && `
         margin-top: auto;
         max-width: 55%;
     `}
-    @media only screen and (max-width: 575px) {
-        font-size: 3.7vw;
-    }
 `
 
-const PaymentChoiceButton = styled.span`
-    background: var(--granich-black-gradient);
-    color: white;
-    padding: 0.8vw 1.5vw;
-    border-radius: 0.3vw;
-    font-size: 1.15vw;
-    transition: transform 0.3s ease;
-    display: inline-flex;
-    margin-top: auto;
-    box-shadow: 0.2vw 0.2vw 0.4vw rgba(0,0,0,0.4);
-    :hover {
-        color: white;
-        cursor: pointer;
-        transform: scale(1.03);
-    }
-    @media only screen and (max-width: 575px) {
-        font-size: 4.4vw;
-        padding: 3vw 8vw;
-        border-radius: 1.5vw;
-        box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
-        :hover {
-            transform: none;
-        }
-    }
-`
+// const PaymentChoiceButton = styled.span`
+//     background: var(--granich-black-gradient);
+//     color: white;
+//     padding: 0.8vw 1.5vw;
+//     border-radius: 0.3vw;
+//     font-size: 1.15vw;
+//     transition: transform 0.3s ease;
+//     display: inline-flex;
+//     margin-top: auto;
+//     box-shadow: 0.2vw 0.2vw 0.4vw rgba(0,0,0,0.4);
+//     :hover {
+//         color: white;
+//         cursor: pointer;
+//         transform: scale(1.03);
+//     }
+//     @media only screen and (max-width: 575px) {
+//         font-size: 4.4vw;
+//         padding: 3vw 8vw;
+//         border-radius: 1.5vw;
+//         box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
+//         :hover {
+//             transform: none;
+//         }
+//     }
+// `
 
 
 
@@ -209,7 +211,7 @@ const PaymentChoiceEmail = styled.span`
         padding-bottom: 0;
         :hover {
             font-size: 3.8vw;
-            border-bottom: solid 1.5px var(--granich-black);
+            border-bottom: solid 1.5px white;
 
         }
         &:after {
@@ -271,21 +273,21 @@ const CoursePaymentChoices = () => {
                 <PaymentChoicesWrapper>
                     <PaymentChoice grey>
                         <PaymentChoiceTitle>Можно оплатить в рассрочку</PaymentChoiceTitle>
-                        <PaymentChoiceText>Рассрочка 0% от Тинькофф на 4 месяца или полгода. Для получения рассрочки перейдите к заполнению обычной формы ↑</PaymentChoiceText>
+                        <PaymentChoiceText>Рассрочка 0% от Тинькофф на 4 месяца или полгода. Для получения рассрочки перейдите к заполнению обычной формы ↑</PaymentChoiceText>
                         <PaymentChoiceImageIcon style={{position: 'absolute'}} fluid={tinkoff}/>
                         {/* <PaymentChoiceButton>Оплатить</PaymentChoiceButton> */}
                         
                     </PaymentChoice>
                     <PaymentChoice gold>
                         <PaymentChoiceTitle>Оформить корпоративное обучение</PaymentChoiceTitle>
-                        <PaymentChoiceText mail>Для этого напишите нам на почту <CopyToClipboard text={'hello@granich.design'}><PaymentChoiceEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PaymentChoiceEmail></CopyToClipboard></PaymentChoiceText>
+                        <PaymentChoiceText mail>Для этого напишите нам на почту <CopyToClipboard text={'hello@granich.design'}><PaymentChoiceEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PaymentChoiceEmail></CopyToClipboard></PaymentChoiceText>
                         <CorporateWrapper>
                             <CorporateIcon/>
                         </CorporateWrapper>
                     </PaymentChoice>
                     <PaymentChoice blue>
                         <PaymentChoiceTitle>Оплата <br/>из-за рубежа</PaymentChoiceTitle>
-                        <PaymentChoiceText mail>Для этого напишите нам на почту <CopyToClipboard text={'hello@granich.design'}><PaymentChoiceEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PaymentChoiceEmail></CopyToClipboard></PaymentChoiceText>
+                        <PaymentChoiceText mail>Для этого напишите нам на почту <CopyToClipboard text={'hello@granich.design'}><PaymentChoiceEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PaymentChoiceEmail></CopyToClipboard></PaymentChoiceText>
                         <Paypal/>
                     </PaymentChoice>
                 </PaymentChoicesWrapper>
