@@ -105,6 +105,8 @@ const PaymentChoiceText = styled.div`
     font-size: 1.1vw;
     line-height: 1.25;
     color: white;
+    max-width: 80%;
+    margin-top: auto;
 
     ${props => props.mail && `
         margin-top: auto;
@@ -268,10 +270,10 @@ const CoursePaymentChoices = () => {
             <Container>
                 <PaymentChoicesWrapper>
                     <PaymentChoice grey>
-                        <PaymentChoiceTitle>Оплатить в рассрочку</PaymentChoiceTitle>
-                        <PaymentChoiceText>Рассрочка от Тинькофф <br/>на 4 месяца или полгода (0%)</PaymentChoiceText>
+                        <PaymentChoiceTitle>Можно оплатить в рассрочку</PaymentChoiceTitle>
+                        <PaymentChoiceText>Беспроцентный кредит от Тинькофф на 4 месяца или полгода</PaymentChoiceText>
                         <PaymentChoiceImageIcon style={{position: 'absolute'}} fluid={tinkoff}/>
-                        <PaymentChoiceButton>Оплатить</PaymentChoiceButton>
+                        {/* <PaymentChoiceButton>Оплатить</PaymentChoiceButton> */}
                         
                     </PaymentChoice>
                     <PaymentChoice gold>

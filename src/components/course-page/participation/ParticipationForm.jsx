@@ -241,25 +241,19 @@ const FormButtonBlock = styled.div`
 const FormButton = styled.button`
     background: var(--granich-black-gradient);
     color: white;
-    padding: 0.7vw 3vw;
+    padding: 1vw 3vw;
     border-radius: 0.5vw;
     font-size: 1.65vw;
     transition: transform 0.3s ease;
     box-shadow: 0.2vw 0.2vw 0.4vw rgba(0,0,0,0.4);
-    span {
-        color: white;
-        font-size: 0.9vw;
-        text-align: left;
-        display: block;
-        margin-top: -0.1vw;
-    }
+
     :hover {
         cursor: pointer;
         transform: scale(1.05);
     }
     @media only screen and (max-width: 575px) {
         font-size: 4.4vw;
-        padding: 2vw 8vw;
+        padding: 3vw 8vw;
         border-radius: 1.5vw;
         box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
         span {
@@ -549,7 +543,7 @@ const ParticipationForm = ({data, formId, formAction}) => {
                                                         setTimeout(function(){
                                                             window['btnprs5f64b8d772769']=false},6000);
                                                             return true;}}
-                                                    >Оплатить<span>сразу с карты</span></FormButton>
+                                                    >Оплатить</FormButton>
                                                         {data.coursePrice && (
                                                             <FormPrice><i>→ </i>{data.coursePrice}<span>₽</span></FormPrice>
                                                         )}
