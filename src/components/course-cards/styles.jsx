@@ -391,9 +391,6 @@ export const CourseTeacher = styled(props => <BackgroundImage {...props}></Backg
         }
     `}
 
-    ${props => props.empty && `
-        filter: grayscale(100%);
-    `}
 
 `
 

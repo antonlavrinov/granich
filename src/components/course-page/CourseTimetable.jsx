@@ -86,6 +86,7 @@ const TimetableImageWrapper = styled.div`
 
 const TimetableImage = styled(props => <Img {...props}/>)`
     width: 100%;
+    border: 2px solid rgba(0,0,0,0.15);
 
 `
 
