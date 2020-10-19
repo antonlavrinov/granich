@@ -107,16 +107,21 @@ const PaymentChoiceText = styled.div`
     color: white;
     max-width: 80%;
     margin-top: auto;
+    ${props => props.mail && `
+        margin-top: auto;
+        max-width: 55%;
+    `}
 
 
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
         max-width: 70%;
+        ${props => props.mail && `
+            margin-top: auto;
+            max-width: 55%;
+        `}
     }
-    ${props => props.mail && `
-        margin-top: auto;
-        max-width: 55%;
-    `}
+
 `
 
 // const PaymentChoiceButton = styled.span`

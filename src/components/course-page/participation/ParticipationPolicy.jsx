@@ -34,6 +34,11 @@ const PolicyText = styled.div`
         color: var(--granich-black);
         font-weight: 500;
     }
+    i {
+        font-style: normal;
+        color: var(--granich-red);
+        font-weight: 500;
+    }
     @media only screen and (max-width: 575px) {
         p {
             font-size: 3.7vw;

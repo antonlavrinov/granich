@@ -599,6 +599,26 @@ div[data-accordion-component="AccordionItemHeading"] {
     }
 }
 
+.link_out {
+    a {
+        position: relative;
+    }
+    a:after {
+        content: '';
+        background: url(../assets/images/arrow_out.png);
+        width: 0.8vw;
+        height: 0.8vw;
+        background-size: cover;
+        border-radius: 100vw;
+        position: absolute;
+        margin-left: 0.2vw;
+        margin-top: 0.25vw;
+    }
+
+}
+
+
+
 .our-team_link {
 
     a {
