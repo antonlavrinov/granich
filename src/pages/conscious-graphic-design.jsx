@@ -290,7 +290,8 @@ const OsoznannyGraphDesignPage = ({data}) => {
       <CourseParticipation 
               data={data.offer}
               formId={`ltForm6865073`}
-              formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}/>
+              formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}
+              googleAnaliticsCategory={`Отправка формы Осознанный Графдизайн`}/>
       <CoursePaymentChoices/>
       <CourseIndividualSupport/>
       <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/>

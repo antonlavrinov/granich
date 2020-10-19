@@ -4,6 +4,7 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import posed from "react-pose";
 import { Link } from "gatsby";
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 const ShakeForm = posed.div({
     shake: {
@@ -331,7 +332,7 @@ const FormFooterContainer = styled.div`
 
 
 
-const ParticipationForm = ({data, formId, formAction}) => {
+const ParticipationForm = ({data, formId, formAction, googleAnaliticsCategory}) => {
     const formEl = useRef(null)
     // const myPhoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{2})\s?-?\s?(\d{2}\)?)$/;
 
@@ -381,6 +382,10 @@ const ParticipationForm = ({data, formId, formAction}) => {
                                 }}}
                                 onSubmit={(values, {setSubmitting}, e) => {
                                     formEl.current.submit();
+                                    trackCustomEvent({
+                                        category: `${googleAnaliticsCategory}`,
+                                        action: 'click',
+                                    })
                                 }}
                                 validationSchema={Yup.object().shape({
                                     // politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на учебный договор и на обработку персональных данных'),
