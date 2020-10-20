@@ -2,34 +2,9 @@ import React from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-// import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import Zoom from 'react-medium-image-zoom'
-// import ArrowIcon from '../../assets/svgs/graph-design/graph-design-training-path-arrow.svg';
-// import CheckIcon from '../../assets/svgs/graph-design/graph-design-training-path-check.svg';
 import { graphql, useStaticQuery } from 'gatsby'
-
-// const Arrow = styled(props => <ArrowIcon {...props}/>)`
-//     width: 3vw;
-//     margin-left: 1.5vw;
-//     fill: var(--granich-red);
-//     @media only screen and (max-width: 575px) {
-//         transform: rotate(90deg);
-//         width: 7vw;
-//         margin-left: 0;
-//         margin-top: 1vw;
-//     }
-// `
-
-// const Check = styled(props => <CheckIcon {...props}/>)`
-//     width: 3vw;
-//     margin-left: 1.5vw;
-//     fill: var(--granich-red);
-//     @media only screen and (max-width: 575px) {
-//         width: 7vw;
-//         margin-left: 0.5vw;
-//         margin-top: 1.5vw;
-//     }
-// `
 
 
 const TrainingPathSection = styled.section`
@@ -63,30 +38,10 @@ const TrainingPathBlockWrapper = styled.div`
 
     border-radius: 0.6vw;
     position: relative;
-    // :before {
-    //     content: '';
-    //     width: 21vw;
-    //     height: 21vw;
-    //     // background: var(--granich-red);
-    //     background: #f2f2f2;
-    //     position: absolute;
-    //     top: 1.25vw;;
-    //     left: 50%;
-    //     transform: translateX(-50%);
-    //     border-radius: 100vw;
-    // }
+
     @media only screen and (max-width: 575px) {
         border-radius: 2.5vw;
-        // :before {
-        //     content: '';
-        //     width: 50vw;
-        //     height: 50vw;
-        //     position: absolute;
-        //     top: 4vw;;
-        //     left: 50%;
-        //     transform: translateX(-50%);
-        //     border-radius: 100vw;
-        // }
+
     }
 
 `
@@ -103,33 +58,16 @@ const TrainingPathBlockContainer = styled.div`
 
 
 
-// const TrainingPathBlockNumber = styled.div`
-//     font-family: EB Garamond;
-//     font-style: italic;
-//     font-size: 5.4vw;
-//     font-weight: 500;
-//     position: relative;
-//     letter-spacing: 0;
-//     line-height: 1;
-//     margin-left: -0.1vw;
-//     margin-bottom: 1vw;
-//     @media only screen and (max-width: 575px) {
-//         font-size: 13vw;
-//         margin-bottom: 4vw;
-//         margin-left: 0;
-//         display: flex;
-//         flex-direction: column;
-//         margin-right: 6vw;
-//         margin-top: -0.5vw;
-//     }
-// `
-
 const TrainingPathBlockText = styled.div`
     padding: 0.5vw 2vw 2vw;
     line-height: 1.35;
-    color: var(--granich-grey);
+    
     font-size: 1.15vw;
-    letter-spacing: -0.01vw;
+    
+    p {
+        color: var(--granich-grey);
+        letter-spacing: -0.01vw;
+    }
     b {
         display: block;
         font-weight: 600;
@@ -226,7 +164,7 @@ const TrainingPathSectionTitle = styled.h2`
 
 
 
-const CourseTrainingPath = () => {
+const CourseTrainingPath = ({data}) => {
     const dataImage = useStaticQuery(graphql`
         query trainingPathImages {
             trainingPathImage1: file(relativePath: { eq: "graph-design/training-path/training-path-01.png" }) {
@@ -264,39 +202,42 @@ const CourseTrainingPath = () => {
             <Container>
                 <TrainingPathSectionTitle>Особенность курса — <br/><span>много</span> обратной связи</TrainingPathSectionTitle>
                 <TrainingPathWrapper>
-                            <TrainingPathBlockWrapper>
+                    {data.edges.map((item) => {
+                        return (
+                            <TrainingPathBlockWrapper key={item.node.id}>
                                 <TrainingPathBlockContainer>
-                                    <TrainingPathBlockImage half>
-                                        <Zoom>
-                                            <TrainingPathImage fluid={image1}></TrainingPathImage>
-                                        </Zoom>
-                                    </TrainingPathBlockImage>
-                                    <TrainingPathBlockImage half>
-                                        <Zoom>
-                                            <TrainingPathImage fluid={image2}></TrainingPathImage>
-                                        </Zoom>
-                                    </TrainingPathBlockImage>
-                                    {/* <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber> */}
+                                    {/* {console.log(item.node.trainingPathImage)} */}
+                                    {item.node.trainingPathImage.length > 1 ? (
+                                        <>
+                                            {item.node.trainingPathImage.map((itemImage, idx) => {
+                                                return (
+                                                    <TrainingPathBlockImage key={idx} half>
+                                                        <Zoom>
+                                                            <TrainingPathImage fluid={itemImage.fluid}></TrainingPathImage>
+                                                        </Zoom>
+                                                    </TrainingPathBlockImage>
+                                                )
+                                            })}
+                                        
+                                        </>
+                                       
+                                    ) : (
+
+                                            <TrainingPathBlockImage>
+                                                <Zoom>
+                                                    <TrainingPathImage fluid={item.node.trainingPathImage[0].fluid}></TrainingPathImage>
+                                                </Zoom>
+                                            </TrainingPathBlockImage>
+                                        
+                                    )}
                                     
+                                 
                                 </TrainingPathBlockContainer>
-                                <TrainingPathBlockText><b>Проверка домашних заданий</b>Мы не оставляем вас наедине с огромным количеством новой информации. Наши кураторы заботливо ответят на ваши вопросы по материалу курса в чате. А также на каждое ваше ДЗ запишут подробный индивидуальный видеоразбор длительностью 15‑30 минут (зависит от вашего уровня).</TrainingPathBlockText>
+                                <TrainingPathBlockText>{documentToReactComponents(item.node.trainingPathText.json)}</TrainingPathBlockText>
 
                             </TrainingPathBlockWrapper>
-                            <TrainingPathBlockWrapper>
-                                <TrainingPathBlockContainer>
-                                    <TrainingPathBlockImage >
-                                        <Zoom>
-                                            <TrainingPathImage fluid={image3}></TrainingPathImage>
-                                        </Zoom>
-                                    </TrainingPathBlockImage>
-                                    {/* <TrainingPathBlockNumber >{block.node.trainingPathTitle}{idx === 3 ? <Check/> : <Arrow/>}</TrainingPathBlockNumber> */}
-                                    
-                                </TrainingPathBlockContainer>
-                                <TrainingPathBlockText><b>Докрутка творческих макетов</b>На этом личное общение с кураторами не заканчивается. Для того, чтобы создать грамотное портфолио, вы будете в личной переписке с кураторами улучшать свои творческие макеты и многостраничный экзамен.</TrainingPathBlockText>
-
-                            </TrainingPathBlockWrapper>
-                        
-
+                        )
+                    })}
 
                 </TrainingPathWrapper>
             </Container>
