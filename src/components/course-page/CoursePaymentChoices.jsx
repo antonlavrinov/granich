@@ -290,11 +290,11 @@ const CoursePaymentChoices = () => {
                             <CorporateIcon/>
                         </CorporateWrapper>
                     </PaymentChoice>
-                    <PaymentChoice blue>
+                    {/* <PaymentChoice blue>
                         <PaymentChoiceTitle>Оплата <br/>из-за рубежа</PaymentChoiceTitle>
                         <PaymentChoiceText mail>Для этого напишите нам на почту <CopyToClipboard text={'hello@granich.design'}><PaymentChoiceEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PaymentChoiceEmail></CopyToClipboard></PaymentChoiceText>
                         <Paypal/>
-                    </PaymentChoice>
+                    </PaymentChoice> */}
                 </PaymentChoicesWrapper>
             </Container>
         </PaymentChoicesSection>
