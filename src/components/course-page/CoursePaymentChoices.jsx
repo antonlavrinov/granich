@@ -3,19 +3,33 @@ import { Container } from '../style';
 import styled from 'styled-components';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import CorporateIcon from '../../assets/svgs/graph-design/graph-design-corporate.svg';
-import PaypalIcon from '../../assets/svgs/graph-design/graph-design-paypal.svg';
+// import PaypalIcon from '../../assets/svgs/graph-design/graph-design-paypal.svg';
+import AbroadIcon from '../../assets/svgs/graph-design/graph-design-abroad.svg';
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image';
 
-const Paypal = styled(props=> <PaypalIcon {...props}/>)`
-    width: 7.5vw;
+// const Paypal = styled(props=> <PaypalIcon {...props}/>)`
+//     width: 7.5vw;
+//     position: absolute;
+//     right: 1.5vw;
+//     bottom: 1vw;
+//     @media only screen and (max-width: 575px) {
+//         width: 25vw;
+//         right: 4vw;
+//         bottom: 4vw;
+//     }
+
+
+// `
+const Abroad = styled(props=> <AbroadIcon {...props}/>)`
+    width: 5vw;
     position: absolute;
-    right: 1.5vw;
-    bottom: 1vw;
+    right: 1.2vw;
+    bottom: 1.2vw;
     @media only screen and (max-width: 575px) {
-        width: 25vw;
+        width: 17vw;
         right: 4vw;
-        bottom: 4vw;
+        bottom: 3.5vw;
     }
 
 
@@ -290,11 +304,13 @@ const CoursePaymentChoices = () => {
                             <CorporateIcon/>
                         </CorporateWrapper>
                     </PaymentChoice>
-                    {/* <PaymentChoice blue>
-                        <PaymentChoiceTitle>Оплата <br/>из-за рубежа</PaymentChoiceTitle>
-                        <PaymentChoiceText mail>Для этого напишите нам на почту <CopyToClipboard text={'hello@granich.design'}><PaymentChoiceEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PaymentChoiceEmail></CopyToClipboard></PaymentChoiceText>
-                        <Paypal/>
-                    </PaymentChoice> */}
+                    <PaymentChoice blue>
+                        <PaymentChoiceTitle>Оплата из-за рубежа</PaymentChoiceTitle>
+                        <PaymentChoiceText>Также у нас есть прием платежей из-за рубежа. Чтобы начать оплату перейдите к заполнению обычной формы ↑</PaymentChoiceText>
+                        {/* <PaymentChoiceText mail>Для этого напишите нам на почту <CopyToClipboard text={'hello@granich.design'}><PaymentChoiceEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PaymentChoiceEmail></CopyToClipboard></PaymentChoiceText> */}
+                        {/* <Paypal/> */}
+                        <Abroad/>
+                    </PaymentChoice>
                 </PaymentChoicesWrapper>
             </Container>
         </PaymentChoicesSection>
