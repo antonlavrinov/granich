@@ -81,7 +81,7 @@ const Course = ({courseData, openModal}) => {
                             )}
                         </CourseLinkModal>
                     ) : (
-                        <CourseLinkWrapper onClick={() => trackCustomEvent({category: `Главная: карточка ${courseData.node.courseTitle}`, action: 'click'})} href={`/${courseData.node.courseSlug}`}>
+                        <CourseLinkWrapper onClick={() => trackCustomEvent({category: `Главная: карточка "${courseData.node.courseTitle}"`, action: 'click'})} href={`/${courseData.node.courseSlug}`}>
                             <>
                                 {courseData.node.courseType === 'Курс' ? (
                                     <CourseCard arrowBlack={arrowBlack} arrowWhite={arrowWhite} calendar={calendar} courseData={courseData} />
