@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import CorporateIcon from '../../assets/svgs/graph-design/graph-design-corporate.svg';
 // import PaypalIcon from '../../assets/svgs/graph-design/graph-design-paypal.svg';
-import AbroadIcon from '../../assets/svgs/graph-design/graph-design-abroad.svg';
+// import AbroadIcon from '../../assets/svgs/graph-design/graph-design-abroad.svg';
+import GlobeIcon from '../../assets/svgs/graph-design/graph-design-globe.svg';
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image';
 
@@ -21,7 +22,7 @@ import Img from 'gatsby-image';
 
 
 // `
-const Abroad = styled(props=> <AbroadIcon {...props}/>)`
+const Globe = styled(props=> <GlobeIcon {...props}/>)`
     width: 5vw;
     position: absolute;
     right: 1.2vw;
@@ -309,7 +310,7 @@ const CoursePaymentChoices = () => {
                         <PaymentChoiceText>Также у нас есть прием платежей из-за рубежа. Чтобы начать оплату перейдите к заполнению обычной формы ↑</PaymentChoiceText>
                         {/* <PaymentChoiceText mail>Для этого напишите нам на почту <CopyToClipboard text={'hello@granich.design'}><PaymentChoiceEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PaymentChoiceEmail></CopyToClipboard></PaymentChoiceText> */}
                         {/* <Paypal/> */}
-                        <Abroad/>
+                        <Globe/>
                     </PaymentChoice>
                 </PaymentChoicesWrapper>
             </Container>
