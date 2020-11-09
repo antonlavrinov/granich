@@ -128,17 +128,15 @@ const NavLinkExternal = styled.a`
   display: block;
   position: relative;
   color: white;
-  font-size: 1.2vw;
+  font-size: 1.15vw;
   text-transform: uppercase;
   font-weight: 700;
-  // font-weight: 400;
   margin-right: 3.2vw;
   padding-bottom: 0.4vw;
   border-bottom: solid 0.15vw rgba(0,0,0,0);
   :hover {
-    font-size: 1.2vw;
+    font-size: 1.15vw;
     font-weight: 700;
-    // font-weight: 400;
     color: white;
     cursor: pointer;
 
@@ -148,7 +146,7 @@ const NavLinkExternal = styled.a`
   ${(props) => props.propstyle && `
   color: var(--granich-black);
   :hover {
-    font-size: 1.2vw;
+    font-size: 1.15vw;
     font-weight: 700;
     color: var(--granich-black);
     cursor: pointer;
@@ -378,6 +376,7 @@ const Header = ({ siteTitle, type }) => (
   </HeaderSection>
 
 )
+
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
