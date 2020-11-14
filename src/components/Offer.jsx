@@ -204,6 +204,7 @@ const Offer = ({data}) => {
                 <OfferMainImage fluid={headerImage}/>
                 <OfferMainImageMobile fluid={headerImageMobile}/>
                 <Container>
+                    
                     <OfferWrapper>
                         <OfferTitle>{headerTitle}</OfferTitle>
                         <OfferDescr>
