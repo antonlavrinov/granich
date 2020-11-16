@@ -33,14 +33,14 @@ const ForGraduatesTitle = styled.h2`
     font-style: italic;
     font-size: 4.25vw;
     font-size: 5vw;
-    font-size: 5.5vw;
+    font-size: 5vw;
     min-width: 60%;
     line-height: 1;
     margin-bottom: 2vw;
+    letter-spacing: -0.1vw;
     @media only screen and (max-width: 575px) {
         white-space: normal;
-        font-size: 10.4vw;
-        letter-spacing: -0.4vw;
+        font-size: 11vw;
         margin-bottom: 6.8vw;
         line-height: 0.9;
     }
@@ -127,12 +127,12 @@ const ForGraduates = () => {
             <Container>
                 <ForGraduatesWrapper>
                     <ForGraduatesTitle>
-                        Ищете дизайнера на проект?
+                        Ищете специалистов на проект?
                     </ForGraduatesTitle>
                     <ForGraduatesInfoWrapper>
                     <ForGraduatesText>
 
-                        <span>Напишите нашему координатору выпускников.</span>Он поможет вам структурировать описание проекта, чтобы его можно было качественно передать на выполнение. После чего подберёт вам наиболее подходящего дизайнера.
+                        <span>Проведите бесплатную предпроектную подготовку с нашим координатором.</span>Наш координатор проектов поможет вам прояснить ценность проекта, его этапы, сроки, границы по бюджету и нюансы по рискам. Для вас это бесплатно. Такой проект будет гораздо легче передать на выполнение. После чего координатор сможет подобрать вам наиболее подходящих специалистов.
 
                     </ForGraduatesText>
                     <ForGraduatesButton rel="noopener noreferrer" href="https://t.me/granich_projects" target="_blank">Написать в Телеграм <TelegramIcon/></ForGraduatesButton>

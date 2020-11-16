@@ -268,6 +268,10 @@ const PodborkaPage = ({data}) => {
                 <>
                     <Video data={data.videoPodborkaFreelance.edges}/>
                     <Books data={data.booksPodborkaFreelance.edges}/>
+                    {data.toolsPodborkaFreelance && data.toolsPodborkaFreelance.edges && data.toolsPodborkaFreelance.edges.length > 0 && (
+                        <Tools data={data.toolsPodborkaFreelance.edges}/>
+                    )}
+                    
                 </>
 
             )}
