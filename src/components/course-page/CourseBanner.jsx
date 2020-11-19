@@ -202,6 +202,7 @@ const CourseBanner = () => {
                 <BannerWrapper>
                     <BannerImage style={{ position: 'absolute'}} fluid={box}/>
                     <BannerContentWrapper>
+                        
                         <BannerContentMain>
                             <BannerMainInfo>
                                 <BannerTitle>
