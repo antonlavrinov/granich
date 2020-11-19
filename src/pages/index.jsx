@@ -54,7 +54,7 @@ export const contentfulQuery = graphql`
               courseDuration
               coursePreviewImage {
                 fluid(maxWidth: 450) {
-                  ...GatsbyContentfulFluid_withWebp_noBase64
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               courseTags
@@ -81,7 +81,7 @@ export const contentfulQuery = graphql`
               contentTitle
               contentImage {
                 fluid(maxWidth: 350) {
-                  ...GatsbyContentfulFluid_withWebp_noBase64
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               contentType
@@ -108,7 +108,7 @@ export const contentfulQuery = graphql`
               contentTitle
               contentImage {
                 fluid(maxWidth: 350) {
-                  ...GatsbyContentfulFluid_withWebp_noBase64
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               contentType

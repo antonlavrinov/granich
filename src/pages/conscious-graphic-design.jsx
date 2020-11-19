@@ -25,6 +25,7 @@ import CourseAftermath from "../components/course-page/CourseAftermath"
 import CourseOpportunities from "../components/course-page/CourseOpportunities";
 import CourseHardWork from "../components/course-page/CourseHardWork";
 import CoursePaymentChoices from "../components/course-page/CoursePaymentChoices";
+import CourseBanner from "../components/course-page/CourseBanner";
 
 export const contentfulQuery = graphql`
 
@@ -294,6 +295,7 @@ const OsoznannyGraphDesignPage = ({data}) => {
               googleAnaliticsCategory={`Отправка формы Осознанный Графдизайн`}/>
       <CoursePaymentChoices/>
       <CourseIndividualSupport/>
+      <CourseBanner/>
       <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/>
       
       
