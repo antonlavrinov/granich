@@ -66,7 +66,7 @@ function useMeasure() {
     return [{ ref }, bounds]
   }
 
-const CurriculumItem = memo(({ type, children, title, tag, style, descr, defaultOpen = false }) => {
+const CurriculumItem = memo(({ type, children, title, tag, style, descr, defaultOpen = false, numberOfItems }) => {
     const [isOpen, setOpen] = useState(defaultOpen)
     const previous = usePrevious(isOpen)
     const [bind, { height: viewHeight }] = useMeasure()
@@ -76,7 +76,7 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
     })
     // const Icon = Icons[`${children ? (isOpen ? 'Minus' : 'Plus') : 'Close'}SquareO`]
     return (
-        <CurriculumItemFrame type={type ? 1 : 0}>
+        <CurriculumItemFrame numberOfItems={numberOfItems} type={type ? 1 : 0}>
 
             {/* <Icon style={{ ...toggle, opacity: children ? 1 : 0.3 }} onClick={() => setOpen(!isOpen)} /> */}
             <CurriculumContainer type={type ? 1 : 0} onClick={() => setOpen(!isOpen)}>
@@ -120,7 +120,7 @@ const options = {
 
 
 
-const CourseCurriculum = ({data, dataHeader}) => {
+const CourseCurriculum = ({data, dataHeader, numberOfItems}) => {
     const isMobile = useMediaQuery({
         query: '(max-width: 575px)'
     })
@@ -135,7 +135,7 @@ const CourseCurriculum = ({data, dataHeader}) => {
                         <CurriculumTitleAndContent>
                             <CurriculumHeaderTitle>{dataHeader.curriculumHeaderTitle}</CurriculumHeaderTitle>
                             {dataHeader.childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode && (
-                                <CurriculumContent>
+                                <CurriculumContent >
                                     {documentToReactComponents(dataHeader.childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode.json)}
                                 </CurriculumContent>
                             )}
@@ -195,7 +195,7 @@ const CourseCurriculum = ({data, dataHeader}) => {
                         <CurriculumAccordeon>
                             {data.edges.map((tab, idx) => {
                                 return (
-                                    <CurriculumItem descr={tab.node.curriculumImportantDescr} type={tab.node.curriculumType} key={idx} title={tab.node.curriculumTitle} tag={tab.node.curriculumTagName}>
+                                    <CurriculumItem numberOfItems={numberOfItems} descr={tab.node.curriculumImportantDescr} type={tab.node.curriculumType} key={idx} title={tab.node.curriculumTitle} tag={tab.node.curriculumTagName}>
                                         <CurriculumContentWrapper type={tab.node.curriculumType ? 1 : 0}>
                                             {tab.node.curriculumType ? (
                                                 <>

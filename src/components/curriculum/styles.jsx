@@ -94,6 +94,8 @@ export const CurriculumContent = styled.div`
         margin-right: 1.65vw;
         letter-spacing: -0.4vw;
         margin-left: -0.1vw;
+        text-align: center;
+
 
     }
     @media only screen and (max-width: 575px) {
@@ -116,6 +118,7 @@ export const CurriculumContent = styled.div`
             line-height: 1.45;
         }
     }
+
 
 `
 
@@ -323,6 +326,45 @@ export const CurriculumItemFrame = styled.div`
         border-radius: 0.5vw;
         border: none;
         margin: 0;
+
+    `}
+    ${props => !props.seven && `
+        :nth-child(1) {
+            :after {
+                width: 8.3%;  
+            }
+        }
+        :nth-child(2) {
+            :after {
+                width: 16.6%;  
+            }
+        }
+        :nth-child(3) {
+            :after {
+                width: 24.9%;  
+            }
+        }
+        :nth-child(4) {
+            :after {
+                width: 33.2%;  
+            }
+        }
+        :nth-child(5) {
+            :after {
+                width: 41.5%;  
+            }
+        }
+        :nth-child(6) {
+            :after {
+                width: 49.8%;  
+            }
+        }
+        :nth-child(7) {
+            :after {
+                width: 58.1%;  
+            }
+        }
+
 
     `}
 `

@@ -155,7 +155,7 @@ const GraphicSystemVhsPage = ({data}) => (
     {/* <CourseReviews dataHeader={data.VHSreviewsHeader} data={data.VHSreviews} masterClass/> */}
     <div id="prices-range-section"></div>
     {data.VHSoffer.courseStatus ? (
-      <CoursePriceRange formId={`ltForm9187777`} 
+      <CoursePriceRange formId={`ltForm2774650`} 
                         valueInput1={`1164222`}
                         valueInput2={`1164224`}
                         valueInput3={`1164226`}

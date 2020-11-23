@@ -531,7 +531,7 @@ function Deck({postersCollection}) {
 
 
 
-const CourseOffer = ({data, courseName, deckVisibility}) => {
+const CourseOffer = ({data, courseName, deckVisibility, allowDeck}) => {
 
 
 
@@ -581,11 +581,11 @@ const CourseOffer = ({data, courseName, deckVisibility}) => {
                         </CourseOfferTitle>
 
                         
-                        {data.courseType === 'Мастер-класс' && (
+                        {(data.courseType === 'Мастер-класс' || !allowDeck ) && (
                             <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/>
                         )}
                       
-                        {data.courseType === 'Курс' && (
+                        {data.courseType === 'Курс' && allowDeck && (
                             <>
                                 <CourseCircle></CourseCircle>
                                 

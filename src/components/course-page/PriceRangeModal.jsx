@@ -463,9 +463,9 @@ const PriceRangeModal = ({googleAnaliticsCategory, modalIsOpen, openModal, close
             // Кодировка формы для Геткурса
             const firstGetcourseFormScript = () => {
                 //этот код тупо добавляет url нашего сайта в value прозрачных инпутов
-                let loc = document.getElementById("2588285f64b2eccc844");
+                let loc = document.getElementById("2588285fbbbc4915557");
                 loc.value = window.location.href;
-                let ref = document.getElementById("2588285f64b2eccc844ref");
+                let ref = document.getElementById("2588285fbbbc4915557ref");
                 ref.value = document.referrer;
 
 
@@ -776,13 +776,16 @@ const PriceRangeModal = ({googleAnaliticsCategory, modalIsOpen, openModal, close
 
 
                                         
-                                    <input type="hidden" id="2588285f64b2eccc844" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value=""/>
+                                    <input type="hidden" id="2588285fbbbc4915557" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value=""/>
                                     
-                                    <input type="hidden" id="2588285f64b2eccc844ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value=""/>
+                                    <input type="hidden" id="2588285fbbbc4915557ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value=""/>
+                                    {/* Value поменялось, стало короче. Из-за этого геткурс
+                                     форму не смог обработать. Если выпадет ошибка 
+                                     Не получилось обработать форму. Обратитесь к администратору. 
+                                     То просто обнови value из html формы */}
+                                    <input type="hidden" name="requestTime" value="1606138953"/>
                                     
-                                    <input type="hidden" name="requestTime" value="15916004349241131571"/>
-                                    
-                                    <input type="hidden" name="requestSimpleSign" value="4f4c23141b98ff45a0730993668fc117"/>
+                                    <input type="hidden" name="requestSimpleSign" value="c9053cad472435748de642c5ffebb7c2"/>
                                     
                                     <input type="hidden" name="isHtmlWidget" value="1"/>
 
