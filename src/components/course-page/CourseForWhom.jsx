@@ -39,8 +39,8 @@ const CourseExampleHeader = styled.div`
     }
 `
 const CourseExampleAuthor = styled.div`
-    width: 10vw;
-    margin-right: 5vw;
+    width: 9.5vw;
+    margin-right: 3.5vw;
     line-height: 1.4;
     @media only screen and (max-width: 575px) {
         margin-right: 0;
@@ -93,9 +93,10 @@ const CourseExampleTitle = styled.h2`
     font-style: italic;
     font-weight: 500;
     font-size: 5.4vw;
+    font-size: 6vw;
     line-height: 1.04;
     position: relative;
-    margin-top: 0.5vw;
+    margin-top: 1vw;
     :after {
         content: '»';
         margin-left: 0.2vw;
