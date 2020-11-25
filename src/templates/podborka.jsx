@@ -14,6 +14,7 @@ import ogImageGraphDesign from '../assets/images/seo/conscious-graphic-design-co
 import ogImageVKGraphDesign from '../assets/images/seo/vk/conscious-graphic-design-compilation.jpg';
 import ogImageFreelance from '../assets/images/seo/conscious-freelance-compilation-min.jpg';
 import ogImageVKFreelance from '../assets/images/seo/vk/conscious-freelance-compilation.jpg';
+import ContentCourseBanner from '../components/content-page/ContentCourseBanner'
 
 
 export const podborkaPageQuery = graphql`
@@ -250,13 +251,15 @@ const PodborkaPage = ({data}) => {
                 </>
 
             )}
+            {/* <ContentCourseBanner/> */}
 
-            <Mailing/>
+            
             {data.contentfulPodborka.contentSlug === 'conscious-graphic-design-compilation' && (
                 <> 
                     <Video categoryTwo="Далее, лекции, которые не имеют прямого отношения к курсу. 
                                         Но если у вас есть время, то для большего охвата материала полезны ↓" 
                            data={data.videoPodborkaGraphDesign.edges}/>
+                    <Mailing/>
                     <Books categoryTwo="Далее книги более общие. Уже не столь практичные. Но толково расширяют кругозор в дизайне ↓" 
                            
                            data={data.booksPodborkaGraphDesign.edges}/>
@@ -267,6 +270,7 @@ const PodborkaPage = ({data}) => {
             {data.contentfulPodborka.contentSlug === 'conscious-freelance-compilation' && (
                 <>
                     <Video data={data.videoPodborkaFreelance.edges}/>
+                    <Mailing/>
                     <Books data={data.booksPodborkaFreelance.edges}/>
                     {data.toolsPodborkaFreelance && data.toolsPodborkaFreelance.edges && data.toolsPodborkaFreelance.edges.length > 0 && (
                         <Tools data={data.toolsPodborkaFreelance.edges}/>

@@ -378,6 +378,51 @@ export const CurriculumItemFrame = styled.div`
 
 
     `}
+    ${props => props.numberOfLessons === 8 && `
+        :nth-child(1) {
+            :after {
+                width: 12.5%;  
+            }
+        }
+        :nth-child(2) {
+            :after {
+                width: 25%;  
+            }
+        }
+        :nth-child(3) {
+            :after {
+                width: 37.5%;  
+            }
+        }
+        :nth-child(4) {
+            :after {
+                width: 50%;  
+            }
+        }
+        :nth-child(5) {
+            :after {
+                width: 62.5%;  
+            }
+        }
+        :nth-child(6) {
+            :after {
+                width: 75%;  
+            }
+        }
+        :nth-child(7) {
+            :after {
+                width: 87.5%;  
+            }
+        }
+        :nth-child(8) {
+            :after {
+                width: 100%;  
+            }
+        }
+
+
+
+    `}
 `
 
 export const CurriculumItemTitle = styled('h3')`
@@ -403,8 +448,8 @@ export const CurriculumItemImportantDescr = styled.span`
     user-select: none;
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
-        background: #f2f2f2;
-        border-radius: 2.5vw;
+        // background: #f2f2f2;
+        // border-radius: 2.5vw;
         display: block;
         padding: 3vw 4vw;
         margin-bottom: 2vw;
@@ -548,6 +593,47 @@ export const CurriculumContentColumn = styled.div`
         p {
             min-width: 100%;
             margin-bottom: 3vw;
+        }
+    }
+`
+
+export const CurriculumContentText = styled.div`
+    padding: 1vw;
+    font-size: 1.15vw;
+    line-height: 2;
+    width: 100%;
+    b {
+        font-weight: 500;
+        display: block;
+        color: var(--granich-black);
+        line-height: 1.5;
+    }
+    p {
+        // color: var(--granich-grey);
+        color: var(--granich-black);
+        display: block;
+        white-space: normal;
+        margin-bottom: 0.4vw;
+    }
+    a {
+        border-bottom: 1px solid var(--granich-light-grey);
+        color: var(--granich-black);
+        :hover {
+            border-color: var(--granich-black);
+        }
+    }
+    @media only screen and (max-width: 575px) {
+        margin-bottom: -5vw;
+        width: 100%;
+   
+        p {
+            color: var(--granich-grey);
+            display: block;
+            white-space: normal;
+            margin-bottom: 0;
+        }
+        b {
+            line-height: 1.45;
         }
     }
 `

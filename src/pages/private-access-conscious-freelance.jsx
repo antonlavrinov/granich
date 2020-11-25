@@ -81,6 +81,7 @@ export const contentfulQuery = graphql`
               curriculumTagName
               curriculumType
               curriculumImportantDescr
+              curriculumColumnsType
               childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode {
                 json
               }

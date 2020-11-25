@@ -32,6 +32,7 @@ import {
     CurriculumAccordionMobile,
     CurriculumAccordionItem,
     CurriculumAccordionHeading,
+    CurriculumContentText
 } from '../curriculum/styles';
 import PlusImage from '../../assets/images/plus.png';
 import MinusImage from '../../assets/images/minus.png';
@@ -113,7 +114,7 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
 const options = {
     renderNode: {
         [INLINES.HYPERLINK]: (node) => {
-        return <a href={node.data.uri}  rel="noopener noreferrer" target='_blank' >{node.content[0].value}</a>;
+            return <a href={node.data.uri}  rel="noopener noreferrer" target='_blank' >{node.content[0].value}</a>;
         }
     },   
 }
@@ -169,6 +170,8 @@ const CourseCurriculum = ({data, dataHeader}) => {
                                                 </AccordionItemButton>
                                             </CurriculumAccordionHeading>
                                             <AccordionItemPanel>
+                                               
+
                                                     {tab.node.curriculumType ? (
                                                         <>
                                                         {tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && <CurriculumContentColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode.json)}</CurriculumContentColumn>}
@@ -201,9 +204,9 @@ const CourseCurriculum = ({data, dataHeader}) => {
                                 return (
                                     <CurriculumItem numberOfLessons={numberOfLessons}  descr={tab.node.curriculumImportantDescr} type={tab.node.curriculumType} key={idx} title={tab.node.curriculumTitle} tag={tab.node.curriculumTagName}>
                                         <CurriculumContentWrapper type={tab.node.curriculumType ? 1 : 0}>
-                                            {tab.node.curriculumType ? (
+                                            {tab.node.curriculumColumnsType ? (
                                                 <>
-                                                {tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && <CurriculumContentColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode.json)}</CurriculumContentColumn>}
+                                                    {tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && <CurriculumContentColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode.json)}</CurriculumContentColumn>}
                                                     {tab.node.childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode && <CurriculumContentColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode.json)}</CurriculumContentColumn>}
                                                     {tab.node.childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode && <CurriculumContentColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode.json)}</CurriculumContentColumn>}
                                                     {tab.node.childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode && <CurriculumContentColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode.json)}</CurriculumContentColumn>}
@@ -211,9 +214,16 @@ const CourseCurriculum = ({data, dataHeader}) => {
                                             
                                             ) : (
                                                 <>
-                                                    {tab.node.childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode && <CurriculumImportantText className="link_out"><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode.json, options)}</CurriculumImportantText>}
+                                                    {tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && <CurriculumContentText className="link_out"><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode.json, options)}</CurriculumContentText>}
                                                 </>
                                             )}
+                                                {/* <CurriculumContentText>
+                                                    <p>dffddf</p>
+                                                    <p>fffdfdfd</p>
+                                                    <p>dfdffdf</p>
+                                                    <p>ddfdfdfd</p>
+
+                                                </CurriculumContentText> */}
 
                                     
                                         </CurriculumContentWrapper>

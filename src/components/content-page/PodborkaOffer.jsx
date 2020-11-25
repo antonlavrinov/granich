@@ -48,7 +48,8 @@ const PodborkaOfferWrapperMobile = styled.section`
 
 const PodborkaOfferMainImage = styled(props => <Img {...props} />)`
     @media only screen and (max-width: 575px) {
-        margin-bottom: 5vw;
+        // margin-bottom: 5vw;
+        height: 80vw;
     }
 `
 
@@ -108,7 +109,7 @@ const PodborkaOfferTitle = styled.h1`
     
 
     @media only screen and (max-width: 575px) {
-        margin-bottom: 5vw;
+        // margin-bottom: 5vw;
         margin-left: 0vw;
         margin-top: -1vw;
         line-height: 0.9;
