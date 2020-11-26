@@ -205,7 +205,7 @@ export const podborkaPageQuery = graphql`
             collectionOfferDescr
             collectionOfferMainImage {
                 fluid(maxWidth: 850) {
-                    ...GatsbyContentfulFluid_withWebp_noBase64
+                    ...GatsbyContentfulFluid_withWebp
                 }
             }
         }
@@ -216,7 +216,7 @@ export const podborkaPageQuery = graphql`
             collectionOfferDescr
             collectionOfferMainImage {
                 fluid(maxWidth: 850) {
-                    ...GatsbyContentfulFluid_withWebp_noBase64
+                    ...GatsbyContentfulFluid_withWebp
                 }
             }
         }
