@@ -43,7 +43,9 @@ const BannerImage = styled(props => <Img {...props} />)`
     bottom: 0;
     left: 3.1vw;
     @media only screen and (max-width: 575px) {
-        display: none;
+        left: auto;
+        right: 7vw;
+        width: 20vw;
     }
 
 `

@@ -258,7 +258,7 @@ const PodborkaPage = ({data}) => {
             {data.contentfulPodborka.contentSlug === 'conscious-graphic-design-compilation' && (
                 <>
                     <PodborkaOffer tags={data.contentfulPodborka.contentTags} dataContentPodborka={data.offerPodborkaGraphDesign}/>
-                    <ContentCourseBanner text={(<>Это материалы, использованные при создании <i>Осознанного Графдизайна</i>. Их необязательно изучать, вы можете сразу же записаться на курс<span>→</span><div>↓</div></>)} data={data.graphicDesignBannerInfo}/>
+                    <ContentCourseBanner text={(<>Это материалы, использованные при создании <i>Осознанного Графдизайна</i>. Их необязательно изучать, вы можете сразу же записаться на курс<span>→</span></>)} data={data.graphicDesignBannerInfo}/>
                 </>
 
             )}

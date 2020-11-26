@@ -461,7 +461,7 @@ export const CurriculumItemTitle = styled('h3')`
         min-width: 5vw;
         height: 6vw;
         left: 3vw;
-        top: 1.5vw;
+        top: 1vw;
     }
   }
 
@@ -652,6 +652,24 @@ export const CurriculumContentText = styled.div`
         width: 55vw;
         height: 31vw;
     }
+    ul {
+        display: flex;
+        margin-bottom: 2vw;
+        li {
+            margin-right: 2vw;
+        }
+        ul {
+            display: block;
+            margin-bottom: 0;
+            li {
+                margin-right: 0;
+            }
+        }
+        p {
+            display: block;
+            padding: 0;
+        }
+    }
     @media only screen and (max-width: 575px) {
         margin-bottom: -5vw;
         width: 100%;
@@ -663,12 +681,27 @@ export const CurriculumContentText = styled.div`
             margin-bottom: 0;
             padding-right: 0;
         }
+        
         b {
             line-height: 1.45;
         }
         iframe {
             width: 100%;
             height: 43vw;
+        }
+        ul {
+            display: block;
+            margin-bottom: 5vw;
+            li {
+                margin-right: 0;
+            }
+            ul {
+                display: block;
+                margin-bottom: 0;
+                li {
+                    margin-bottom: 2vw;
+                }
+            }
         }
     }
 `
