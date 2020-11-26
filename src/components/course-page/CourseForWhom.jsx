@@ -31,7 +31,7 @@ const CourseExampleWrapper = styled.div`
 
 const CourseExampleHeader = styled.div`
     display: flex;
-    margin-bottom: 2.5vw;
+    margin-bottom: 1.2vw;
     @media only screen and (max-width: 575px) {
         flex-direction: column;
         align-items: center;
@@ -42,6 +42,7 @@ const CourseExampleAuthor = styled.div`
     width: 9.5vw;
     margin-right: 3.5vw;
     line-height: 1.4;
+    margin-top: -0.3vw;
     @media only screen and (max-width: 575px) {
         margin-right: 0;
         min-width: 100%;
@@ -57,7 +58,7 @@ const CourseExampleAuthorImage = styled(props => <BackgroundImage {...props}></B
     width: 7.5vw;
     height: 7.5vw;
     border-radius: 100vw;
-    margin-bottom: 1vw;
+    margin-bottom: 0.5vw;
     overflow: hidden;
     @media only screen and (max-width: 575px) {
         width: 15vw;
@@ -160,19 +161,20 @@ const CourseExampleInfoBlock = styled.div`
 `
 const CourseExampleInfoText = styled.div`
     color: var(--granich-black);
-    font-size: 1.25vw;
+    font-size: 1.3vw;
     line-height: 1.45;
+    margin-left: -0.5vw;
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
     }
 `
 
 const ForWhomLeft = styled.div`
-    max-width: 45%;
+    max-width: 44%;
     span {
         font-weight: 600;
         display: block;
-        margin-bottom: 1.5vw;
+        margin-bottom: 1.2vw;
         font-size: 1.45vw;
         line-height: 1.45;
     }
@@ -198,7 +200,7 @@ const ForWhomTag = styled.div`
     box-shadow: 0 0.5vw 0.9vw rgba(0,0,0,0.1);
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 100vw;
-    margin-right: 1.5vw;
+    margin-right: 1vw;
     margin-bottom: 1.5vw;
     font-size: 1.25vw;
     align-items: center;

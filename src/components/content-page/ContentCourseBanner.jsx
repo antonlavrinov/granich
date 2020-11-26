@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import { Container } from '../style';
 import Img from 'gatsby-image';
 import CourseArrowOut from '../../assets/svgs/course-arrow-out.svg';
-import { graphql, useStaticQuery } from 'gatsby'
-
-
 
 const BannerSection = styled.div`
     margin-bottom: 1.7vw;
@@ -17,14 +14,13 @@ const BannerSection = styled.div`
 const BannerWrapper = styled.div`
     background: white;
     border-radius: 0.6vw;
-    padding: 1.8vw 2.5vw 1.8vw 15.8vw;
+    padding: 1.5vw 2.5vw 1.5vw 15.8vw;
     position: relative;
     display: flex;
-    box-shadow: .25vw .25vw .5vw rgba(0,0,0,0.15);
+    box-shadow: 0.25vw 0.15vw 0.4vw rgba(0,0,0,0.1);
     @media only screen and (max-width: 575px) {
         padding: 6vw 6.6vw 6.6vw;
         border-radius: 2.5vw;
-        box-shadow: .6vw .6vw 1.8vw rgba(0,0,0,0.23);
         box-shadow: 0 0 1.8vw rgba(0,0,0,0.15);
     }
 `
@@ -43,51 +39,29 @@ const BannerContentWrapper = styled.div`
 
 
 const BannerImage = styled(props => <Img {...props} />)`
-    width: 12vw;
-    bottom: 0.1vw;
-    left: 2vw;
+    width: 9.8vw;
+    bottom: 0;
+    left: 3.1vw;
     @media only screen and (max-width: 575px) {
         display: none;
     }
 
 `
 
-const BannerSubtext = styled.div`
-    font-size: 1.15vw;
-    font-weight: 400;
-    line-height: 1.4;
-    margin-right: 1.5vw;
-    color: var(--granich-grey);
-    @media only screen and (max-width: 575px) {
-        font-size: 3.35vw;
-        letter-spacing: -0.05vw;
-        width: 100%;
-        margin-bottom: 4vw;
-    }
 
-`
-const BannerMainInfo = styled.div`
-    font-size: 1.15vw;
-    margin-top: -0.5vw;
-    @media only screen and (max-width: 575px) {
-        display: flex;
-        align-items: center;
-    }
 
-`
-const BannerTitle = styled.div`
-    font-size: 2.5vw;
-    font-family: EB Garamond;
-    font-style: italic;
+
+const BannerCourseMobileStart = styled.div`
+    display: none;
+    margin-right: 0.8vw;
+    letter-spacing: -0.01vw;
     font-weight: 500;
-    margin-bottom: 0.4vw;
     @media only screen and (max-width: 575px) {
-        font-size: 7vw;
-        margin-left: -0.8vw;
-        letter-spacing: -0.05vw;
-        margin-bottom: 3.5vw;
+        font-size: 3.7vw;
+        line-height: 1.4;
+        display: block;
     }
-    
+
 `
 
 const BannerCourseButton = styled.a`
@@ -95,8 +69,7 @@ const BannerCourseButton = styled.a`
     display: inline-flex;
     align-items: center;
     color: white;
-    background: var(--granich-beige-gradient);
-    
+    background: var(--granich-red-gradient-horizontal);
     margin-left: auto;
     padding: 0.8vw 1.4vw 1vw 1.4vw;
     letter-spacing: 0.06vw;
@@ -159,10 +132,62 @@ const BannerCourseButton = styled.a`
 
 `
 
+const BannerCourseButtonDevelopment = styled.div`
+    display: inline-flex;
+    color: white;
+    background: var(--granich-black-gradient);
+    padding: 0.8vw 1.4vw 1vw 1.4vw;
+    border-radius: 0.3vw;
+    font-size: 1.5vw;
+    font-weight: 400;
+    user-select: none;
+    box-shadow: .25vw .25vw .4vw rgba(0,0,0,0.25);
+    letter-spacing: 0.05vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 4.3vw;
+        padding: 3vw 5vw;
+        border-radius: 1.5vw;
+        margin-right: 4.5vw;
+        box-shadow: 0.7vw 0.7vw 1.5vw rgba(0,0,0,0.3);
+    }
 
+`
 
 const BannerContentMain = styled.div`
-
+        padding-right: 1vw;
+        line-height: 1.45;
+        font-size: 1.4vw;
+        font-weight: 500;
+        i {
+            font-size: 2vw;
+            line-height: 0;
+            font-family: EB Garamond;
+        }
+        span {
+            display: inline;
+            color: var(--granich-red);
+            position: relative;
+            left: 0.5vw;
+        }
+        div {
+            display: none;
+        }
+        @media only screen and (max-width: 575px) {
+            font-size: 3.7vw;
+            i {
+                font-size: 5vw;
+            }
+            span {
+                display: none;
+            }
+            div {
+                display: inline;
+                position: relative;
+                left: 1vw;
+                color: var(--granich-red);
+            }
+            margin-bottom: 3vw;
+        }
 `
 
 const BannerContentButton = styled.div`
@@ -175,43 +200,30 @@ const BannerContentButton = styled.div`
 `
 
 
-const ContentCourseBanner = () => {
-
-    // const imageData = useStaticQuery(graphql`
-    //     query contentBannerGraphDesignImage {
-    //         contentgraphDesignImageBanner: file(relativePath: { eq: "graph-design/course-banner/course-banner.png" }) {
-    //             childImageSharp {
-    //                 fluid(maxWidth: 250, quality: 100) {
-    //                     ...GatsbyImageSharpFluid
-    //                 }
-    //             }
-    //         }
-
-    //     }
-    // `)
-
-    // const box = imageData.graphDesignImageBanner.childImageSharp.fluid;
+const Banner = ({data, text}) => {
     
     return (
         <BannerSection>
             <Container>
                 <BannerWrapper>
-                    {/* <BannerImage style={{ position: 'absolute'}} fluid={box}/> */}
+                    {data.courseBannerImage && <BannerImage style={{ position: 'absolute'}} fluid={data.courseBannerImage.fluid}/>}
                     <BannerContentWrapper>
-                        
                         <BannerContentMain>
-                            <BannerMainInfo>
-                                <BannerTitle>
-                                    Осознанная подборка по Графдизайну
-                                </BannerTitle>                          
-                            </BannerMainInfo>
-                            <BannerSubtext>
-                                Это специальная подборка материалов для старта в графическом дизайне. Её необязательно изучать, чтобы пройти курс. Но если у вас есть время, то рекомендую. Это повысит качество вашего обучения на курсе.
-                            </BannerSubtext>
-
+                            {text}
                         </BannerContentMain>
                         <BannerContentButton>
-                            <BannerCourseButton  target="_blank" href={'https://granich.design/conscious-graphic-design-compilation'}>Изучить<CourseArrowOut/></BannerCourseButton>
+                            {data.courseTypeEmpty ? (
+                                <BannerCourseButtonDevelopment>В разработке</BannerCourseButtonDevelopment>
+                            ) : (
+                                <>
+                                    {data.courseType === 'Курс' ? (
+                                        <BannerCourseButton status={!data.courseStatus} target="_blank" href={data.courseSlug}>{data.courseStatus ? 'Участвовать' : 'Узнать о наборе'} <CourseArrowOut/></BannerCourseButton>
+                                    ) : (
+                                        <BannerCourseButton status={!data.courseStatus} target="_blank" href={data.courseSlug} type={data.courseType}>{data.courseStatus ? 'Купить' : 'Предзаказ'} <CourseArrowOut/></BannerCourseButton>
+                                    )}
+                                </>
+                            )}
+
                         </BannerContentButton>
                        
                         
@@ -224,4 +236,4 @@ const ContentCourseBanner = () => {
     )
 }
 
-export default ContentCourseBanner
+export default Banner

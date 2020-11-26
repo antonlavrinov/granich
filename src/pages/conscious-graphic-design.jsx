@@ -109,7 +109,9 @@ export const contentfulQuery = graphql`
               id
               curriculumAttachmentTo
               curriculumImportantDescr
-              curriculumTitle
+              childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode {
+                json
+              }
               curriculumTagName
               curriculumType
               curriculumImportantDescr
@@ -276,7 +278,7 @@ const OsoznannyGraphDesignPage = ({data}) => {
       
       
       <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
-      <CourseFeatures data={data.features}/>
+      <CourseFeatures title="Еще пара бонусов" data={data.features}/>
       <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
       
       {/* {data.offer.courseStatus ? (

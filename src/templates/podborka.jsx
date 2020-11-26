@@ -52,6 +52,22 @@ export const podborkaPageQuery = graphql`
             courseTags
             courseTypeEmpty
         }
+        graphicDesignBannerInfo: contentfulGranichCourse(courseTitle: {eq: "Осознанный Графдизайн"}) {
+            courseTitle
+            courseStart
+            courseDuration
+            courseStatus
+            courseType
+            courseBannerImage {
+                fluid(maxWidth: 120) {
+                    ...GatsbyContentfulFluid_withWebp
+                  }
+            }
+            courseBannerSubtext
+            courseSlug
+            courseTags
+            courseTypeEmpty
+        }
         videoPodborkaGraphDesign: allContentfulGranichCollectionVideo(filter: {videoAttachmentTo: {eq: "Осознанный графдизайн"}}, sort: {fields: [videoOrderDecimalNumber], order: ASC}) {
             edges {
                 node {
@@ -242,6 +258,7 @@ const PodborkaPage = ({data}) => {
             {data.contentfulPodborka.contentSlug === 'conscious-graphic-design-compilation' && (
                 <>
                     <PodborkaOffer tags={data.contentfulPodborka.contentTags} dataContentPodborka={data.offerPodborkaGraphDesign}/>
+                    <ContentCourseBanner text={(<>Это материалы, использованные при создании <i>Осознанного Графдизайна</i>. Их необязательно изучать, вы можете сразу же записаться на курс<span>→</span><div>↓</div></>)} data={data.graphicDesignBannerInfo}/>
                 </>
 
             )}
@@ -251,7 +268,7 @@ const PodborkaPage = ({data}) => {
                 </>
 
             )}
-            {/* <ContentCourseBanner/> */}
+            
 
             
             {data.contentfulPodborka.contentSlug === 'conscious-graphic-design-compilation' && (

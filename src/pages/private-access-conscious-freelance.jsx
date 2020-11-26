@@ -27,6 +27,7 @@ import ogImageVK from '../assets/images/seo/vk/conscious-graphic-design.jpg';
 // import CoursePaymentChoices from "../components/course-page/CoursePaymentChoices";
 // import CourseBanner from "../components/course-page/CourseBanner";
 import CourseForWhom from "../components/course-page/CourseForWhom";
+import CourseFeatures from "../components/course-page/CourseFeatures";
 
 export const contentfulQuery = graphql`
 
@@ -77,7 +78,9 @@ export const contentfulQuery = graphql`
               id
               curriculumAttachmentTo
               curriculumImportantDescr
-              curriculumTitle
+              childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode {
+                json
+              }
               curriculumTagName
               curriculumType
               curriculumImportantDescr
@@ -97,6 +100,22 @@ export const contentfulQuery = graphql`
               childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode {
                 json
               }
+            }
+          }
+        }
+        features: allContentfulGranichCourseFeatures(filter: {featuresAttachmentTo: {eq: "Осознанный Фриланс"}}, sort: {fields: [featuresOrderNumber], order: ASC}) {
+          edges {
+            node {
+              id
+              featuresImage {
+                fluid(maxWidth: 120) {
+                  ...GatsbyContentfulFluid_withWebp
+                }
+              }
+              featuresText
+              featuresTitle
+              featuresLink
+
             }
           }
         }
@@ -125,6 +144,7 @@ const OsoznannyFreelancePage = ({data}) => {
       <CourseForWhom/>
 
       <CourseCurriculum  dataHeader={data.curriculumHeader} data={data.curriculum}/>
+      <CourseFeatures title="Особенности курса" data={data.features}/>
 
     </Layout>
   )

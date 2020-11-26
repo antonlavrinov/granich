@@ -55,7 +55,7 @@ const Date = styled(props => <DateIcon {...props}/>)`
 const CourseOfferSection = styled.section`
     margin-bottom: 4vw;
     position: relative;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     @media only screen and (max-width: 575px) {
         margin-bottom: 5vw;
     }
@@ -76,7 +76,9 @@ const CourseOfferWrapper = styled.div`
     
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     @media only screen and (max-width: 575px) {
+        overflow: visible;
         background: white;
         border-radius: 2.5vw;
         padding: 7vw 1vw 6vw;

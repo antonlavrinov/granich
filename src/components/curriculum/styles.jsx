@@ -426,18 +426,43 @@ export const CurriculumItemFrame = styled.div`
 `
 
 export const CurriculumItemTitle = styled('h3')`
-  vertical-align: middle;
-  font-family: EB Garamond;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 2.3vw;
+  
   user-select: none;
   margin-top: -0.3vw;
   margin-right: 1vw;
+  display: flex;
+  align-items: center;
+  img {
+      display: block;
+    //   width: 3vw;
+    //   min-width: auto;
+    //   min-height: 3vw;
+    // min-height: 100%;
+    min-width: 3.5vw;
+    top: 0.4vw;
+      left: 1vw;
+      position: relative;
+  }
+  p {
+    vertical-align: middle;
+    font-family: EB Garamond;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 2.3vw;
+  }
   @media only screen and (max-width: 575px) {
-    font-size: 6.2vw;
+
     margin-top: -0.8vw;
     width: 50vw;
+    p {
+        font-size: 6.2vw;
+    }
+    img {
+        min-width: 5vw;
+        height: 6vw;
+        left: 3vw;
+        top: 1.5vw;
+    }
   }
 
 `
@@ -600,7 +625,7 @@ export const CurriculumContentColumn = styled.div`
 export const CurriculumContentText = styled.div`
     padding: 1vw;
     font-size: 1.15vw;
-    line-height: 2;
+    line-height: 1.45;
     width: 100%;
     b {
         font-weight: 500;
@@ -614,6 +639,7 @@ export const CurriculumContentText = styled.div`
         display: block;
         white-space: normal;
         margin-bottom: 0.4vw;
+        padding-right: 6vw;
     }
     a {
         border-bottom: 1px solid var(--granich-light-grey);
@@ -621,6 +647,10 @@ export const CurriculumContentText = styled.div`
         :hover {
             border-color: var(--granich-black);
         }
+    }
+    iframe {
+        width: 55vw;
+        height: 31vw;
     }
     @media only screen and (max-width: 575px) {
         margin-bottom: -5vw;
@@ -631,9 +661,14 @@ export const CurriculumContentText = styled.div`
             display: block;
             white-space: normal;
             margin-bottom: 0;
+            padding-right: 0;
         }
         b {
             line-height: 1.45;
+        }
+        iframe {
+            width: 100%;
+            height: 43vw;
         }
     }
 `

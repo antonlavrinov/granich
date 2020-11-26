@@ -150,13 +150,13 @@ const Feature = ({image, title, text, link}) => {
 }
 
 
-const CourseFeatures = ({data}) => {
+const CourseFeatures = ({data, title}) => {
 
     return (
         <FeaturesSection>
             <Container>
                 <FeaturesSectionTitle>
-                    Ещё пара бонусов
+                    {title}
                 </FeaturesSectionTitle>
                 <FeaturesWrapper>
                     {data.edges.map(feature => {
