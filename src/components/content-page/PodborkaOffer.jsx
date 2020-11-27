@@ -4,8 +4,20 @@ import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types'
 
 
+const options = {
+    renderNode: {
+        [BLOCKS.EMBEDDED_ASSET]: (node) => {
+            return <img
+                //   title={ title ? title['en-US'] : null}
+                //   alt={description ?  description['en-US'] : null}
+                  src={node.data.target.fields.file['en-US'].url}
+                />
+          },
+    },   
+}
 
 const PodborkaOfferSection = styled.section`
     margin-bottom: 1.7vw;
@@ -128,18 +140,38 @@ const PodborkaOfferTitle = styled.h1`
 `
 const PodborkaOfferDescr = styled.div`
     width: 35vw;
-    font-size: 1.55vw;
     margin-bottom: 2vw;
     margin-left: 0.8vw;
     line-height: 1.47;
-    font-weight: 500;
-    letter-spacing: -0.01vw;
+    
+    p {
+        display: inline;
+        font-size: 1.55vw;
+        font-weight: 500;
+        letter-spacing: -0.01vw;
+    }
+    img {
+        display: inline;
+        width: 1.5vw;
+        margin-bottom: -0.3vw;
+        position: relative;
+        left: 0.2vw;
+
+    }
     @media only screen and (max-width: 575px) {
         width: 95%;
-        font-size: 5vw;
         padding: 0 5vw;
         margin-bottom: 5vw;
         margin-left: 0;
+        p {
+            font-size: 5vw;
+        }
+        img {
+            width: 7vw;
+            margin-bottom: -0.8vw;
+            left: 0.5vw;
+    
+        }
     }
 
 `
@@ -164,8 +196,9 @@ const PodborkaOffer = ({tags, dataContentPodborka}) => {
                         {documentToReactComponents(dataContentPodborka.collectionOfferTitle.json)}
                     </PodborkaOfferTitle>
                     <PodborkaOfferDescr>
-                        {dataContentPodborka.collectionOfferDescr}
+                        {documentToReactComponents(dataContentPodborka.childContentfulGranichCollectionOfferCollectionOfferDescrWithAssetRichTextNode.json, options)}
                     </PodborkaOfferDescr>
+
                 </PodborkaOfferWrapper>
                 <PodborkaOfferWrapperMobile>
                     <PodborkaOfferTags>
@@ -180,7 +213,7 @@ const PodborkaOffer = ({tags, dataContentPodborka}) => {
                     </PodborkaOfferTitle>
                     <PodborkaOfferMainImage loading="eager" fadeIn={false} fluid={dataContentPodborka.collectionOfferMainImage.fluid}/>
                     <PodborkaOfferDescr>
-                        {dataContentPodborka.collectionOfferDescr}
+                        {documentToReactComponents(dataContentPodborka.childContentfulGranichCollectionOfferCollectionOfferDescrWithAssetRichTextNode.json, options)}
                     </PodborkaOfferDescr>
                 </PodborkaOfferWrapperMobile>
             </Container>

@@ -202,22 +202,26 @@ export const podborkaPageQuery = graphql`
             collectionOfferTitle {
                 json
             }
-            collectionOfferDescr
             collectionOfferMainImage {
                 fluid(maxWidth: 850) {
                     ...GatsbyContentfulFluid_withWebp
                 }
+            }
+            childContentfulGranichCollectionOfferCollectionOfferDescrWithAssetRichTextNode {
+                json
             }
         }
         offerPodborkaFreelance: contentfulGranichCollectionOffer(collectionOfferAttachmentTo: {eq: "Осознанный фриланс"}) {
             collectionOfferTitle {
                 json
             }
-            collectionOfferDescr
             collectionOfferMainImage {
                 fluid(maxWidth: 850) {
                     ...GatsbyContentfulFluid_withWebp
                 }
+            }
+            childContentfulGranichCollectionOfferCollectionOfferDescrWithAssetRichTextNode {
+                json
             }
         }
 
