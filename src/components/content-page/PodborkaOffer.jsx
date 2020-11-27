@@ -167,8 +167,8 @@ const PodborkaOfferDescr = styled.div`
             font-size: 5vw;
         }
         img {
-            width: 7vw;
-            margin-bottom: -0.8vw;
+            width: 5vw;
+            margin-bottom: -1.2vw;
             left: 0.5vw;
     
         }
