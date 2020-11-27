@@ -273,7 +273,7 @@ const PodborkaPage = ({data}) => {
             
             {data.contentfulPodborka.contentSlug === 'conscious-graphic-design-compilation' && (
                 <> 
-                    <Video categoryTwo="Далее, лекции, которые не имеют прямого отношения к курсу. 
+                    <Video topDescription="Осознанный Графдизайн — интенсивный. Чтобы успеть на курсе как можно больше, вы можете уже сейчас подготовиться, посмотрев эти видео." categoryTwo="Далее, лекции, которые не имеют прямого отношения к курсу. 
                                         Но если у вас есть время, то для большего охвата материала полезны ↓" 
                            data={data.videoPodborkaGraphDesign.edges}/>
                     <Mailing/>
@@ -286,7 +286,7 @@ const PodborkaPage = ({data}) => {
             )}
             {data.contentfulPodborka.contentSlug === 'conscious-freelance-compilation' && (
                 <>
-                    <Video data={data.videoPodborkaFreelance.edges}/>
+                    <Video topDescription="Осознанный Фриланс — интенсивный. Чтобы успеть на курсе как можно больше, вы можете уже сейчас подготовиться, посмотрев эти видео." data={data.videoPodborkaFreelance.edges}/>
                     <Mailing/>
                     <Books data={data.booksPodborkaFreelance.edges}/>
                     {data.toolsPodborkaFreelance && data.toolsPodborkaFreelance.edges && data.toolsPodborkaFreelance.edges.length > 0 && (

@@ -392,7 +392,7 @@ const VideoItem = ({text, number, image, links, timing, videoPageLink, videoIcon
     )
 }
 
-const Video = ({data, categoryTwo, categoryThree}) => {
+const Video = ({data, topDescription, categoryTwo, categoryThree}) => {
     const [firstCategory, setFirstCategory] = useState([]);
     const [secondCategory, setSecondCategory] = useState([]);
 
@@ -487,7 +487,7 @@ const Video = ({data, categoryTwo, categoryThree}) => {
                 <VideoWrapper>
                     <VideoHeader>
                         <VideoSectionTitle>Ценные видеолекции</VideoSectionTitle>
-                        <VideoSectionText>Осознанный Графдизайн — интенсивный. Чтобы успеть на курсе как можно больше, вы можете уже сейчас подготовиться, посмотрев эти видео.</VideoSectionText>
+                        <VideoSectionText>{topDescription}</VideoSectionText>
                     </VideoHeader>
 
 
