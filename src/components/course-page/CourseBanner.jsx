@@ -20,12 +20,14 @@ const BannerWrapper = styled.div`
     padding: 1.8vw 2.5vw 1.8vw 15.8vw;
     position: relative;
     display: flex;
-    box-shadow: .25vw .25vw .5vw rgba(0,0,0,0.15);
+    // box-shadow: .25vw .25vw .5vw rgba(0,0,0,0.15);
+    box-shadow: 0.25vw 0.15vw 0.4vw rgba(0,0,0,0.1);
     @media only screen and (max-width: 575px) {
         padding: 6vw 6.6vw 6.6vw;
         border-radius: 2.5vw;
-        box-shadow: .6vw .6vw 1.8vw rgba(0,0,0,0.23);
+        // box-shadow: .6vw .6vw 1.8vw rgba(0,0,0,0.23);
         box-shadow: 0 0 1.8vw rgba(0,0,0,0.15);
+        
     }
 `
 
