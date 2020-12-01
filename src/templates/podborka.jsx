@@ -290,9 +290,9 @@ const PodborkaPage = ({data}) => {
             )}
             {data.contentfulPodborka.contentSlug === 'conscious-freelance-compilation' && (
                 <>
-                    <Video topDescription="Осознанный Фриланс — интенсивный. Чтобы успеть на курсе как можно больше, вы можете уже сейчас подготовиться, посмотрев эти видео." data={data.videoPodborkaFreelance.edges}/>
+                    <Video categoryTwo="Далее, лекции, которые не имеют прямого отношения к курсу. Но если у вас есть время, то для большего охвата материала полезны ↓" topDescription="Осознанный Фриланс — интенсивный. Чтобы успеть на курсе как можно больше, вы можете уже сейчас подготовиться, посмотрев эти видео." data={data.videoPodborkaFreelance.edges}/>
                     <Mailing/>
-                    <Books data={data.booksPodborkaFreelance.edges}/>
+                    <Books  data={data.booksPodborkaFreelance.edges}/>
                     {data.toolsPodborkaFreelance && data.toolsPodborkaFreelance.edges && data.toolsPodborkaFreelance.edges.length > 0 && (
                         <Tools data={data.toolsPodborkaFreelance.edges}/>
                     )}
