@@ -1,7 +1,7 @@
 import React from 'react'
-import { Container } from '../style';
+import { Container } from '../../style';
 import styled from 'styled-components';
-import RunIcon from '../../assets/svgs/graph-design/graph-design-mountain.svg';
+import LoneFreelancer from '../../../assets/svgs/freelance/hard-work/freelance-hard-work.svg';
 
 const HardWorkSection = styled.section`
     // margin-bottom: 4vw;
@@ -27,15 +27,20 @@ const HardWorkQuote = styled.div`
     font-family: EB Garamond;
     font-style: italic;
     font-size: 2.8vw;
+    font-size: 4.5vw;
     color: white;
     line-height: 1.05;
     min-width: 45%;
     max-width: 45%;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
+    position: relative;
+    left: 1vw;
     @media only screen and (max-width: 575px) {
         max-width: 100%;
-        font-size: 7.5vw;
-        margin-bottom: 5vw;
+        font-size: 11vw;
+        margin-bottom: 7vw;
+        // text-align: center;
+        margin-left: 2vw;
     }
 
 `
@@ -49,11 +54,12 @@ const HardWorkTextWrapper = styled.div`
  min-width: 55%;
  max-width: 55%;
  margin-left: auto;
+ align-items: center;
  span {
     color: white;
     display: block;
-    min-width: 85%;
-    max-width: 85%;
+    min-width: 80%;
+    max-width: 80%;
 
     font-size: 1.15vw;
     line-height: 1.45;
@@ -63,7 +69,7 @@ const HardWorkTextWrapper = styled.div`
      height: 6.5vw;
      margin-left: auto;
     //  fill: #4C0101;
-    margin-right: -0.5vw;
+    // margin-right: -0.5vw;
      fill: var(--granich-red);
  }
  @media only screen and (max-width: 575px) {
@@ -82,6 +88,7 @@ const HardWorkTextWrapper = styled.div`
     svg {
         width: 20vw;
         margin: 0 auto;
+        margin-top: 1vw;
         transform: translateX(5%);
         height: 27vw;
     }
@@ -89,19 +96,19 @@ const HardWorkTextWrapper = styled.div`
 `
 
 
-const CourseHardWork = ({title, text}) => {
+const FreelanceHardWork = () => {
     return (
         <HardWorkSection>
             <Container>
                 <HardWorkWrapper>
                     <HardWorkQuote>
-                        {title}
+                        «А ты точно фрилансер?»
                     </HardWorkQuote>
                     <HardWorkTextWrapper>
                         <span>
-                            {text}
+                            Для участия на Осознанном Фрилансе в приоритете специалисты, которые полностью перешли на фриланс. Если вы работаете в найме в какой-то компании или в дизайн-студии, то вам скорее всего на этот курс не нужно. 
                         </span>
-                        <RunIcon/>
+                        <LoneFreelancer/>
                         
                     </HardWorkTextWrapper>
 
@@ -113,5 +120,5 @@ const CourseHardWork = ({title, text}) => {
     )
 }
 
-export default CourseHardWork
+export default FreelanceHardWork
 

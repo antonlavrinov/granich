@@ -23,11 +23,11 @@ import ogImageVK from '../assets/images/seo/vk/conscious-graphic-design.jpg';
 // import CourseTimetable from "../components/course-page/CourseTimetable";
 // import CourseAftermath from "../components/course-page/CourseAftermath"
 // import CourseOpportunities from "../components/course-page/CourseOpportunities";
-// import CourseHardWork from "../components/course-page/CourseHardWork";
 // import CoursePaymentChoices from "../components/course-page/CoursePaymentChoices";
 // import CourseBanner from "../components/course-page/CourseBanner";
-import CourseForWhom from "../components/course-page/CourseForWhom";
+import CourseForWhom from "../components/course-page/freelance/ForWhom";
 import CourseFeatures from "../components/course-page/CourseFeatures";
+import FreelanceHardWork from "../components/course-page/freelance/FreelanceHardWork";
 
 export const contentfulQuery = graphql`
 
@@ -145,6 +145,8 @@ const OsoznannyFreelancePage = ({data}) => {
 
       <CourseCurriculum  dataHeader={data.curriculumHeader} data={data.curriculum}/>
       <CourseFeatures title="Особенности курса" data={data.features}/>
+      <FreelanceHardWork/>
+
 
     </Layout>
   )

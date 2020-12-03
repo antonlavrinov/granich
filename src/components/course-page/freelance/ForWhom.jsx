@@ -1,10 +1,26 @@
 import React from 'react'
-import { Container } from '../style';
+import { Container } from '../../style';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
+import ExclamationMarkThick from '../../../assets/svgs/exclamation-mark_thick.svg';
+import TwoLines from '../../../assets/svgs/two-lines-border.svg';
+import WavyLine from '../../../assets/svgs/wavy-line.svg';
 
+
+const ExclamationMarkThickIcon = styled(props => <ExclamationMarkThick {...props}/>)`
+    width: 1.4vw;
+    fill: var(--granich-red);
+    position: relative;
+    top: 0.3vw;
+    left: 0.1vw;
+    @media only screen and (max-width: 575px) {
+        width: 3.6vw;
+        top: 0.6vw;
+        left: 0.4vw;
+    }
+`
 
 const CourseExampleSection = styled.section`
     margin-bottom: 4vw;
@@ -225,6 +241,50 @@ const ForWhomCheckIcon = styled(props => <Img {...props}/>)`
     }
 `
 
+const ForWhomRedText = styled.span`
+    color: var(--granich-red);
+    font-weight: 500;
+
+`
+
+const ForWhomGreenText = styled.span`
+    color: green;
+    display: inline-block;
+    font-weight: 500;
+    position: relative;
+    svg {
+        position: absolute;
+        bottom: -1vw;
+        fill: green;
+        left: 0;
+        width: 100%;
+    }
+    @media only screen and (max-width: 575px) {
+        svg {
+            bottom: -2.8vw;
+        }
+    }
+`
+
+const ForWhomWavyText = styled.span`
+    color: var(--granich-red);
+    font-weight: 500;
+    display: inline-block;
+    position: relative;
+    svg {
+        position: absolute;
+        bottom: -0.9vw;
+        fill: var(--granich-red);
+        left: 0;
+        width: 100%;
+    }
+    @media only screen and (max-width: 575px) {
+        svg {
+            bottom: -2.6vw;
+        }
+    }
+`
+
 const tags = ['Дизайнерам','Видеомейкерам','Фотографам','Иллюстраторам','3d-моделлерам']
 
 
@@ -291,7 +351,7 @@ const CourseForWhom = () => {
                         
                         <CourseExampleInfoBlock>
                                 <CourseExampleInfoText>
-                                    Я создал этот курс специально для визуальных творцов. Дело в том, что я сам являлся, и являюсь, графическим дизайнером. И со временем заметил серьёзную проблему — визуальные творцы плохо понимают бизнес. То есть, они не видят полной картины коммерческой ценности того, что создают. Из-за этого обесценивают свой труд. Поэтому Курс направлен на то, чтобы вы поняли, как влияете на прибыль своих клиентов и почему вы им действительно нужны. Это лейтмотив всего Осознанного Фриланса.
+                                    Я создал этот курс специально для визуальных творцов. Будучи графическим дизайнером, со временем заметил серьёзную проблему — <ForWhomRedText>визуальные творцы плохо понимают бизнес</ForWhomRedText><ExclamationMarkThickIcon/> То есть, они не видят полной картины коммерческой ценности того, что создают. Из-за этого <ForWhomWavyText>обесценивают<WavyLine/></ForWhomWavyText> свой труд. Поэтому Курс направлен на то, чтобы вы поняли, как влияете на прибыль своих клиентов и почему вы им <ForWhomGreenText>действительно<TwoLines/></ForWhomGreenText> нужны. Это лейтмотив всего Осознанного Фриланса.
                                 </CourseExampleInfoText>
 
                         </CourseExampleInfoBlock>

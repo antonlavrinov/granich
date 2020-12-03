@@ -431,17 +431,15 @@ export const CurriculumItemTitle = styled('h3')`
   margin-top: -0.3vw;
   margin-right: 1vw;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   img {
-      display: block;
-    //   width: 3vw;
-    //   min-width: auto;
-    //   min-height: 3vw;
-    // min-height: 100%;
-    min-width: 3.5vw;
+    display: inline-block;
+    width: auto !important;
+    min-width: auto;
     top: 0.4vw;
-      left: 1vw;
-      position: relative;
+    left: 1vw;
+    position: relative;
+
   }
   p {
     vertical-align: middle;
@@ -460,7 +458,7 @@ export const CurriculumItemTitle = styled('h3')`
     img {
         min-width: 5vw;
         height: 6vw;
-        left: 3vw;
+        left: 2vw;
         top: 1vw;
     }
   }
@@ -625,6 +623,7 @@ export const CurriculumContentColumn = styled.div`
 export const CurriculumContentText = styled.div`
     padding: 1vw;
     font-size: 1.15vw;
+    font-size: 1.25vw;
     line-height: 1.45;
     width: 100%;
     b {
@@ -636,11 +635,16 @@ export const CurriculumContentText = styled.div`
     p {
         // color: var(--granich-grey);
         color: var(--granich-black);
-        display: block;
+        // display: inline-block;
         white-space: normal;
-        margin-bottom: 0.4vw;
+        margin-bottom: 2vw;
         padding-right: 6vw;
+        // display: inline;
     }
+    // img {
+    //     display: inline;
+    //     height: 1vw;
+    // }
     a {
         border-bottom: 1px solid var(--granich-light-grey);
         color: var(--granich-black);
@@ -651,6 +655,7 @@ export const CurriculumContentText = styled.div`
     iframe {
         width: 55vw;
         height: 31vw;
+        // margin: 2vw 0;
     }
     ul {
         display: flex;
@@ -673,6 +678,7 @@ export const CurriculumContentText = styled.div`
     @media only screen and (max-width: 575px) {
         margin-bottom: -5vw;
         width: 100%;
+        padding-bottom: 5vw;
    
         p {
             color: var(--granich-grey);
@@ -688,6 +694,7 @@ export const CurriculumContentText = styled.div`
         iframe {
             width: 100%;
             height: 43vw;
+            margin: 4vw 0;
         }
         ul {
             display: block;

@@ -289,7 +289,7 @@ const OsoznannyGraphDesignPage = ({data}) => {
       ) : (
         <Mailing/>
       )} */}
-      <CourseHardWork/>
+      <CourseHardWork title="«Пожалуйста, примите осознанное решение об участии на этом курсе»" text="Хоть я и создал на нём условия для быстрого развития твёрдых навыков, но это не произойдёт по волшебству. Вам понадобится прилагать много сил, чтобы дойти до конца."/>
       <div id="participation-section"></div>
       <CourseParticipation 
               data={data.offer}
