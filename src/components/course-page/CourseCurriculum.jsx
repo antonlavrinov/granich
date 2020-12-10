@@ -13,7 +13,7 @@ import {
     CurriculumItemFrame,
     CurriculumItemTitle,
     CurriculumItemImportantDescr,
-    CurriculumImportantText,
+    // CurriculumImportantText,
     CurriculumItemContent,
     CurriculumLessonColumn,
     CurriculumLesson,
@@ -22,11 +22,11 @@ import {
     CurriculumContentColumn,
     CurriculumSection,
     CurriculumWrapper,
-    CurriculumHeader,
-    CurriculumHeaderTitle,
-    CurriculumTitleAndContent,
-    CurriculumBonusBlock,
-    CurriculumContent,
+    // CurriculumHeader,
+    // CurriculumHeaderTitle,
+    // CurriculumTitleAndContent,
+    // CurriculumBonusBlock,
+    // CurriculumContent,
     CurriculumAccordeon,
     EmptyText,
     CurriculumAccordionMobile,
@@ -37,6 +37,7 @@ import {
 import PlusImage from '../../assets/images/plus.png';
 import MinusImage from '../../assets/images/minus.png';
 import { useMediaQuery } from 'react-responsive'
+import CurriculumHead from '../curriculum/CurriculumHead';
 
 // import LazyLoad from 'react-lazyload';
 
@@ -155,7 +156,7 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
 
 
 
-const CourseCurriculum = ({data, dataHeader}) => {
+const CourseCurriculum = ({data, dataHeader, compressedHeader}) => {
     const isMobile = useMediaQuery({
         query: '(max-width: 575px)'
     })
@@ -167,20 +168,8 @@ const CourseCurriculum = ({data, dataHeader}) => {
         <CurriculumSection>
             <Container>
                 <CurriculumWrapper>
-                    <CurriculumHeader>
-                        <CurriculumTitleAndContent>
-                            <CurriculumHeaderTitle>{dataHeader.curriculumHeaderTitle}</CurriculumHeaderTitle>
-                            {dataHeader.childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode && (
-                                <CurriculumContent >
-                                    {documentToReactComponents(dataHeader.childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode.json)}
-                                </CurriculumContent>
-                            )}
+                    <CurriculumHead compressedHeader={compressedHeader ? true : false} dataHeader={dataHeader}/>
 
-                        </CurriculumTitleAndContent>
-                        <CurriculumBonusBlock>
-                            {documentToReactComponents(dataHeader.curriculumHeaderInfo.json, options)}
-                        </CurriculumBonusBlock>
-                    </CurriculumHeader>
                     {isMobile && (
                         <CurriculumAccordionMobile allowMultipleExpanded allowZeroExpanded>
                             {/* <LazyLoad once> */}

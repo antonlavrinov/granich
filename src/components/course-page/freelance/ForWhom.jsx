@@ -5,20 +5,18 @@ import { graphql, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 import ExclamationMarkThick from '../../../assets/svgs/exclamation-mark_thick.svg';
-import TwoLines from '../../../assets/svgs/two-lines-border.svg';
+// import TwoLines from '../../../assets/svgs/two-lines-border.svg';
 import WavyLine from '../../../assets/svgs/wavy-line.svg';
 
 
-const ExclamationMarkThickIcon = styled(props => <ExclamationMarkThick {...props}/>)`
+const ExclamationMarkThickIcon = styled(props => <ExclamationMarkThick {...props} />)`
     width: 1.4vw;
-    fill: var(--granich-red);
+    fill: var(--granich-black);
     position: relative;
-    top: 0.3vw;
-    left: 0.1vw;
+    top: 0.22vw;
     @media only screen and (max-width: 575px) {
         width: 3.6vw;
         top: 0.6vw;
-        left: 0.4vw;
     }
 `
 
@@ -230,7 +228,7 @@ const ForWhomTag = styled.div`
 
 `
 
-const ForWhomCheckIcon = styled(props => <Img {...props}/>)`
+const ForWhomCheckIcon = styled(props => <Img {...props} />)`
     width: 1.1vw;
     height: 1.1vw;
     margin-right: 0.5vw;
@@ -242,8 +240,8 @@ const ForWhomCheckIcon = styled(props => <Img {...props}/>)`
 `
 
 const ForWhomRedText = styled.span`
-    color: var(--granich-red);
     font-weight: 500;
+    background: rgba(0,0,0,0.1);
 
 `
 
@@ -252,17 +250,17 @@ const ForWhomGreenText = styled.span`
     display: inline-block;
     font-weight: 500;
     position: relative;
-    svg {
-        position: absolute;
-        bottom: -1vw;
-        fill: green;
-        left: 0;
-        width: 100%;
-    }
+    // svg {
+    //     position: absolute;
+    //     bottom: -1vw;
+    //     fill: green;
+    //     left: 0;
+    //     width: 100%;
+    // }
     @media only screen and (max-width: 575px) {
-        svg {
-            bottom: -2.8vw;
-        }
+        // svg {
+        //     bottom: -2.8vw;
+        // }
     }
 `
 
@@ -273,23 +271,24 @@ const ForWhomWavyText = styled.span`
     position: relative;
     svg {
         position: absolute;
-        bottom: -0.9vw;
+        bottom: -1.8vw;
         fill: var(--granich-red);
+        fill:red;
         left: 0;
         width: 100%;
     }
     @media only screen and (max-width: 575px) {
         svg {
-            bottom: -2.6vw;
+            bottom: -5vw;
         }
     }
 `
 
-const tags = ['Дизайнерам','Видеомейкерам','Фотографам','Иллюстраторам','3d-моделлерам']
+const tags = ['Дизайнерам', 'Видеомейкерам', 'Фотографам', 'Иллюстраторам', '3d-моделлерам']
 
 
 const CourseForWhom = () => {
-    
+
 
     const data = useStaticQuery(graphql`
         query ForWhomSectionQuery {
@@ -313,7 +312,7 @@ const CourseForWhom = () => {
     const imageData = data.forWhomAuthor.childImageSharp.fluid
     const checkIcon = data.forWhomCheckIcon.childImageSharp.fluid
 
-    
+
 
     return (
         <CourseExampleSection>
@@ -321,7 +320,7 @@ const CourseForWhom = () => {
                 <CourseExampleWrapper>
                     <CourseExampleHeader>
                         <CourseExampleAuthor>
-                            <CourseExampleAuthorImage style={{backgroundSize: 'cover'}} fluid={imageData}/>
+                            <CourseExampleAuthorImage style={{ backgroundSize: 'cover' }} fluid={imageData} />
                             <CourseExampleAuthorName>
                                 Вадим Гранич
                             </CourseExampleAuthorName>
@@ -337,27 +336,27 @@ const CourseForWhom = () => {
                             <ForWhomTags>
                                 {tags.map((tag, idx) => (
 
-                                        <ForWhomTag key={`${tag}-${idx}`}>
-                                            <ForWhomCheckIcon fluid={checkIcon}/>
-                                            {tag}
-                                        </ForWhomTag>          
+                                    <ForWhomTag key={`${tag}-${idx}`}>
+                                        <ForWhomCheckIcon fluid={checkIcon} />
+                                        {tag}
+                                    </ForWhomTag>
 
                                 ))}
                             </ForWhomTags>
                         </ForWhomLeft>
-                       
-                        
-                       
-                        
+
+
+
+
                         <CourseExampleInfoBlock>
-                                <CourseExampleInfoText>
-                                    Я создал этот курс специально для визуальных творцов. Будучи графическим дизайнером, со временем заметил серьёзную проблему — <ForWhomRedText>визуальные творцы плохо понимают бизнес</ForWhomRedText><ExclamationMarkThickIcon/> То есть, они не видят полной картины коммерческой ценности того, что создают. Из-за этого <ForWhomWavyText>обесценивают<WavyLine/></ForWhomWavyText> свой труд. Поэтому Курс направлен на то, чтобы вы поняли, как влияете на прибыль своих клиентов и почему вы им <ForWhomGreenText>действительно<TwoLines/></ForWhomGreenText> нужны. Это лейтмотив всего Осознанного Фриланса.
+                            <CourseExampleInfoText>
+                                Я создал этот курс специально для визуальных творцов. Будучи графическим дизайнером, со временем заметил серьёзную проблему — <ForWhomRedText>визуальные творцы плохо понимают бизнес <ExclamationMarkThickIcon /></ForWhomRedText> То есть, они не видят полной картины коммерческой ценности того, что создают. Из‑за этого <ForWhomWavyText>обесценивают свой труд<WavyLine /></ForWhomWavyText>. Поэтому Курс направлен на то, чтобы вы поняли, как влияете на прибыль своих клиентов и почему вы им <ForWhomGreenText>действительно</ForWhomGreenText> нужны. Это лейтмотив всего Осознанного Фриланса.
                                 </CourseExampleInfoText>
 
                         </CourseExampleInfoBlock>
                     </CourseExampleInfoWrapper>
-                    
-                    
+
+
                 </CourseExampleWrapper>
             </Container>
         </CourseExampleSection>

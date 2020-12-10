@@ -39,6 +39,9 @@ export const CurriculumHeader = styled.div`
         margin-bottom: 0;
         flex-direction: column;
     }
+    ${props => props.compressedHeader && `
+        justify-content: space-between;
+    `}
     
 `
 export const CurriculumTitleAndContent = styled.div`
@@ -47,7 +50,10 @@ export const CurriculumTitleAndContent = styled.div`
     @media only screen and (max-width: 575px) {
         min-width: 100%;
     }
-` 
+    ${props => props.compressedHeader && `
+        min-width: auto;
+    `}
+`
 export const CurriculumHeaderTitle = styled.h2`
     color: var(--granich-black);
     font-size: 4.55vw;
@@ -66,21 +72,33 @@ export const CurriculumHeaderTitle = styled.h2`
         padding: 0 1.5vw;
 
     }
+    ${props => props.compressedHeader && `
+        margin-bottom: 2vw;
+        max-width: 80%;
+    `}
     
 `
+
+
+export const CurriculumInfoWrapper = styled.div`
+    display: flex;
+    align-items: flex-start;
+    @media only screen and (max-width: 575px) {
+        flex-direction: column;
+    }
+
+`
+
 export const CurriculumContent = styled.div`
     display: flex;
     align-items: center;
     p {
         font-size: 1.15vw;
         width: 9vw;
-        line-height: 1.45vw;
+        line-height: 1.45;
         font-weight: 500;
         display: flex;
         align-items: center;
-       
-
-
     }
     i {
         font-family: EB Garamond;
@@ -122,6 +140,20 @@ export const CurriculumContent = styled.div`
             line-height: 1.45;
         }
     }
+    ${props => props.compressedHeader && `
+        margin-right: 2vw;
+        p {
+            width: auto;
+        }
+        i {
+            margin-right: 1vw;
+        }
+        @media only screen and (max-width: 575px) {
+            i {
+                margin-right: 5vw;
+            }
+        }
+    `}
 
 
 `
@@ -165,6 +197,55 @@ export const CurriculumBonusBlock = styled.div`
             }
         }
     }
+    ${props => props.compressedHeader && `
+        display: flex;
+        padding: 1.4vw 1.4vw;
+        margin-bottom: 1.3vw;
+
+        background: #f2f2f2;
+        border-radius: 0.5vw;
+        align-items: center;
+        img {
+            width: 5vw;
+            margin-right: 0.7vw;
+        }
+        p {
+            background: none;
+            padding: 0;
+            font-size: 1.15vw;
+            line-height: 1.3;
+            max-width: 15vw; 
+            width: 15vw;
+            b {
+                color: var(--granich-black);
+                font-size: inherit;
+                font-weight: 500;
+                display: block;
+            }
+            
+
+        }
+
+        @media only screen and (max-width: 575px) {
+            max-width: 100%;
+            width: 100%;
+            padding: 4vw 4vw;
+            img {
+                width: 16vw;
+                margin-right: 2vw;
+            }
+            p {
+                border-radius: 1.5vw;
+                padding: 0;
+                font-size: 3.7vw;
+                max-width: 100%;
+                width: 100%;
+                :first-child {
+                    margin-bottom: 4vw;
+                }
+            }
+        }
+    `}
 `
 
 
@@ -177,21 +258,21 @@ export const CurriculumBonusBlock = styled.div`
 
 // ACCORDION MOBILE
 
-export const CurriculumAccordionMobile = styled(props => <Accordion {...props}/>)`
+export const CurriculumAccordionMobile = styled(props => <Accordion {...props} />)`
     display: none;  
     @media only screen and (max-width: 575px) {
         display: block;
         margin-top: 5vw;
     }
 `
-export const CurriculumAccordionItem = styled(props => <AccordionItem {...props}/>)`
+export const CurriculumAccordionItem = styled(props => <AccordionItem {...props} />)`
 
 `
 
-export const CurriculumAccordionHeading = styled(props => <AccordionItemHeading {...props}/>)`
+export const CurriculumAccordionHeading = styled(props => <AccordionItemHeading {...props} />)`
     position: relative;
 `
-export const CurriculumAccordionButton = styled(props => <AccordionItemButton {...props}/>)`
+export const CurriculumAccordionButton = styled(props => <AccordionItemButton {...props} />)`
     padding: 3vw 2vw;
     user-select: none;
     position: relative;
@@ -524,7 +605,7 @@ export const CurriculumItemContent = styled(animated.div)`
     will-change: transform, opacity, height;
     overflow: hidden;
 `
- 
+
 export const CurriculumLesson = styled.div`
     font-size: 1.15vw;
     border: 1.5px solid var(--granich-red);
@@ -749,6 +830,6 @@ export const CurriculumTitleAndButton = styled.div`
 `
 
 
-export const CurriculumAccordionItemPanel = styled(props => <AccordionItemPanel {...props}/>)`
+export const CurriculumAccordionItemPanel = styled(props => <AccordionItemPanel {...props} />)`
     padding: 2vw;
 `

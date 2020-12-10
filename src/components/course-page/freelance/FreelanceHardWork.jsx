@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import LoneFreelancer from '../../../assets/svgs/freelance/hard-work/freelance-hard-work.svg';
 
 const HardWorkSection = styled.section`
-    // margin-bottom: 4vw;
+    margin-bottom: 4vw;
     @media only screen and (max-width: 575px) {
-        // margin-bottom: 5vw;
+        margin-bottom: 5vw;
     }
 `
 
@@ -15,7 +15,7 @@ const HardWorkWrapper = styled.section`
  border-radius: 0.6vw;
  background: var(--granich-red);
  display: flex;
- align-items: flex-start;
+ align-items: center;
  @media only screen and (max-width: 575px) {
     padding: 6vw;
     border-radius: 2.5vw;
@@ -26,7 +26,6 @@ const HardWorkWrapper = styled.section`
 const HardWorkQuote = styled.div`
     font-family: EB Garamond;
     font-style: italic;
-    font-size: 2.8vw;
     font-size: 4.5vw;
     color: white;
     line-height: 1.05;
@@ -34,13 +33,43 @@ const HardWorkQuote = styled.div`
     max-width: 45%;
     letter-spacing: 0.01em;
     position: relative;
-    left: 1vw;
+    left: 3vw;
+    top: -0.5vw;
+
+    :after {
+        content: '»';
+        position: absolute;
+        font-size: 4.5vw;
+
+    }
+    :before {
+        content: '«';
+        position: absolute;
+        font-size: 4.5vw;
+        top: 0;
+        left: -3.2vw;
+    }
+
+
     @media only screen and (max-width: 575px) {
         max-width: 100%;
         font-size: 11vw;
         margin-bottom: 7vw;
-        // text-align: center;
         margin-left: 2vw;
+        :after {
+            content: '»';
+            position: relative;
+            font-size: 11vw;
+    
+        }
+        :before {
+            content: '«';
+            position: relative;
+            font-size: 11vw;
+            // top: -1vw;
+            left: -1vw;
+            // margin-right: 1vw;
+        }
     }
 
 `
@@ -65,11 +94,10 @@ const HardWorkTextWrapper = styled.div`
     line-height: 1.45;
  }
  svg {
-     width: 5vw;
-     height: 6.5vw;
+     width: 6.5vw;
+     height: 8.5vw;
      margin-left: auto;
-    //  fill: #4C0101;
-    // margin-right: -0.5vw;
+     margin-right: -0.5vw;
      fill: var(--granich-red);
  }
  @media only screen and (max-width: 575px) {
@@ -102,11 +130,11 @@ const FreelanceHardWork = () => {
             <Container>
                 <HardWorkWrapper>
                     <HardWorkQuote>
-                        «А ты точно фрилансер?»
+                        А ты точно фрилансер?
                     </HardWorkQuote>
                     <HardWorkTextWrapper>
                         <span>
-                            Для участия на Осознанном Фрилансе в приоритете специалисты, которые полностью перешли на фриланс. Если вы работаете в найме в какой-то компании или в дизайн-студии, то вам скорее всего на этот курс не нужно. 
+                            Для участия на Осознанном Фрилансе в приоритете специалисты, которые полностью перешли на фриланс. Если вы работаете в найме в какой-то компании или в дизайн-студии, то вам, скорее всего, на этот курс не нужно — у вас недостаточный уровень ответственности. Как минимум половину своего рабочего времени вы должны будете уделять фрилансу.
                         </span>
                         <LoneFreelancer/>
                         

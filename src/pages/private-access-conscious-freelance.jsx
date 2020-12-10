@@ -11,7 +11,7 @@ import Header from "../components/Header"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
 // import CourseFeatures from "../components/course-page/CourseFeatures"
 // import CourseReviews from "../components/course-page/CourseReviews"
-// import CourseParticipation from "../components/course-page/CourseParticipation"
+import CourseParticipation from "../components/course-page/CourseParticipation"
 // import CourseCommitment from "../components/course-page/CourseCommitment"
 import {graphql} from 'gatsby';
 // import CourseAnswers from "../components/course-page/CourseAnswers";
@@ -143,9 +143,15 @@ const OsoznannyFreelancePage = ({data}) => {
 
       <CourseForWhom/>
 
-      <CourseCurriculum  dataHeader={data.curriculumHeader} data={data.curriculum}/>
+      <CourseCurriculum compressedHeader  dataHeader={data.curriculumHeader} data={data.curriculum}/>
       <CourseFeatures title="Особенности курса" data={data.features}/>
       <FreelanceHardWork/>
+      <CourseParticipation 
+              data={data.offer}
+              formId={`ltForm6865073`}
+              formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}
+              googleAnaliticsCategory={`Отправка формы Осознанный Фриланс`}
+      />
 
 
     </Layout>
