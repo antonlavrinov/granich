@@ -13,7 +13,7 @@ import CourseCurriculum from "../components/course-page/CourseCurriculum"
 // import CourseReviews from "../components/course-page/CourseReviews"
 import CourseParticipation from "../components/course-page/CourseParticipation"
 // import CourseCommitment from "../components/course-page/CourseCommitment"
-import {graphql} from 'gatsby';
+import { graphql } from 'gatsby';
 // import CourseAnswers from "../components/course-page/CourseAnswers";
 // import Mailing from '../components/Mailing';
 // import CourseExplain from '../components/course-page/CourseExplain'
@@ -28,6 +28,7 @@ import ogImageVK from '../assets/images/seo/vk/conscious-graphic-design.jpg';
 import CourseForWhom from "../components/course-page/freelance/ForWhom";
 import CourseFeatures from "../components/course-page/CourseFeatures";
 import FreelanceHardWork from "../components/course-page/freelance/FreelanceHardWork";
+import CourseFreelanceBanner from "../components/course-page/freelance/CourseFreelanceBanner";
 
 export const contentfulQuery = graphql`
 
@@ -127,38 +128,39 @@ export const contentfulQuery = graphql`
 
 
 
-const OsoznannyFreelancePage = ({data}) => {
+const OsoznannyFreelancePage = ({ data }) => {
 
   return (
-  <Layout>
-      <Header type={'dark'}/>
+    <Layout>
+      <Header type={'dark'} />
       <SEO title="Осознанный Фриланс"
-          description="Курс по фрилансу, построенный на авторской дизайн-системе. Вы получите твёрдую базу и научитесь аргументировать свои макеты"
-          keywords={['vhs', 'графсистема']}
-          ogImage={ogImage}
-          ogImageVk={ogImageVK}
-          url="https://granich.design/conscious-graphic-design" />
+        description="Курс по фрилансу, построенный на авторской дизайн-системе. Вы получите твёрдую базу и научитесь аргументировать свои макеты"
+        keywords={['vhs', 'графсистема']}
+        ogImage={ogImage}
+        ogImageVk={ogImageVK}
+        url="https://granich.design/conscious-graphic-design" />
       <div className="section-top-block"></div>
-      <CourseOffer data={data.offer}/>
+      <CourseOffer data={data.offer} />
 
-      <CourseForWhom/>
+      <CourseForWhom />
 
-      <CourseCurriculum compressedHeader  dataHeader={data.curriculumHeader} data={data.curriculum}/>
-      <CourseFeatures title="Особенности курса" data={data.features}/>
-      <FreelanceHardWork/>
-      <CourseParticipation 
-              data={data.offer}
-              formId={`ltForm6865073`}
-              formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}
-              googleAnaliticsCategory={`Отправка формы Осознанный Фриланс`}
+      <CourseCurriculum compressedHeader dataHeader={data.curriculumHeader} data={data.curriculum} />
+      <CourseFeatures title="Особенности курса" data={data.features} />
+      <FreelanceHardWork />
+      <CourseParticipation
+        data={data.offer}
+        formId={`ltForm6865073`}
+        formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}
+        googleAnaliticsCategory={`Отправка формы Осознанный Фриланс`}
       />
+      <CourseFreelanceBanner />
 
 
     </Layout>
   )
 }
 
-  
+
 
 
 export default OsoznannyFreelancePage
