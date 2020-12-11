@@ -27,14 +27,14 @@ const ParticipationWrapper = styled.div`
 
 
 
-const CourseParticipation = ({data, formId, formAction, googleAnaliticsCategory}) => {
+const CourseParticipation = ({ data, formId, formAction, googleAnaliticsCategory, additionalTags }) => {
 
     return (
         <ParticipationSection>
             <Container>
                 <ParticipationWrapper>
-                    <ParticipationForm googleAnaliticsCategory={googleAnaliticsCategory} formId={formId} formAction={formAction} data={data}/>
-                    <ParticipationPolicy  data={data}/>
+                    <ParticipationForm additionalTags={additionalTags} googleAnaliticsCategory={googleAnaliticsCategory} formId={formId} formAction={formAction} data={data} />
+                    <ParticipationPolicy data={data} />
                 </ParticipationWrapper>
 
             </Container>

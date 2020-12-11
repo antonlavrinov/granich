@@ -1,6 +1,6 @@
-import React, {useRef, useState, useEffect} from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import styled from 'styled-components';
-import {Formik} from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import posed from "react-pose";
 import { Link } from "gatsby";
@@ -8,15 +8,15 @@ import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 const ShakeForm = posed.div({
     shake: {
-      applyAtEnd: { x: 0 },
-      applyAtStart: { x: -10 },
-      x: 0,
-      transition: {
-        type: "spring",
-        stiffness: 1000,
-        damping: 10,
-        duration: 4
-      }
+        applyAtEnd: { x: 0 },
+        applyAtStart: { x: -10 },
+        x: 0,
+        transition: {
+            type: "spring",
+            stiffness: 1000,
+            damping: 10,
+            duration: 4
+        }
     }
 });
 
@@ -130,7 +130,7 @@ const FormInput = styled.input`
     `}
 
 
-`   
+`
 
 const FormInputLabel = styled.label`
     font-size: 0.9vw;
@@ -171,7 +171,7 @@ const FormInputLabelMobile = styled.label`
 // const FormCheckbox = styled.input`
 //     margin-left: 0.3vw;
 //     @media only screen and (max-width: 575px) {
-        
+
 //     }
 
 
@@ -332,7 +332,7 @@ const FormFooterContainer = styled.div`
 
 
 
-const ParticipationForm = ({data, formId, formAction, googleAnaliticsCategory}) => {
+const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, additionalTags }) => {
     const formEl = useRef(null)
     // const myPhoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{2})\s?-?\s?(\d{2}\)?)$/;
 
@@ -348,7 +348,7 @@ const ParticipationForm = ({data, formId, formAction, googleAnaliticsCategory}) 
     }
 
     useEffect(() => {
-    //Кодировка формы для Геткурса
+        //Кодировка формы для Геткурса
         const firstGetcourseFormScript = () => {
             //этот код тупо добавляет url нашего сайта в value прозрачных инпутов
             let loc = document.getElementById("2588385f64b8d766d50");
@@ -367,148 +367,155 @@ const ParticipationForm = ({data, formId, formAction, googleAnaliticsCategory}) 
     }, [])
     // isInitialValid={isInitialValid}
     return (
-        
+
         <FormMainWrapper>
-        <ShakeForm style={{height: '100%'}} pose={["shake"]} poseKey={shakeTrigger}>
+            <ShakeForm style={{ height: '100%' }} pose={["shake"]} poseKey={shakeTrigger}>
 
-                <Formik isInitialValid={isInitialValid} 
-                                initialValues={{
-                                    // politikaCheckbox: true, 
-                                    formParams: {
-                                        first_name: '',
-                                        last_name: '',
-                                        email: '',
-                                        phone: ''
-                                }}}
-                                onSubmit={(values, {setSubmitting}, e) => {
-                                    formEl.current.submit();
-                                    trackCustomEvent({
-                                        category: `${googleAnaliticsCategory}`,
-                                        action: 'click',
-                                    })
-                                }}
-                                validationSchema={Yup.object().shape({
-                                    // politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на учебный договор и на обработку персональных данных'),
-                                    formParams: Yup.object().shape({
-                                        first_name: Yup.string().trim('Уберите пробелы в начале и в конце строки').strict().matches(myNameNewRegExp, 'Неверные символы в Имени').required('Сперва впишите Имя'),
-                                        // first_name: Yup.string().email('Неверный формат электронного адреса').required('Заполните поле Емейл'),
-                                        last_name: Yup.string().trim('Уберите пробелы в начале и в конце строки').strict().matches(myNameNewRegExp, 'Неверные символы в Фамилии').required('Сперва впишите Фамилию'),
-                                        email: Yup.string().email('Это не Электропочта').required('Сперва впишите Электропочту'),
-                                        phone: Yup.string().matches(myPhoneNewRegExp, 'Это не Телефон').required('Сперва впишите Телефон'),
+                <Formik isInitialValid={isInitialValid}
+                    initialValues={{
+                        // politikaCheckbox: true, 
+                        formParams: {
+                            first_name: '',
+                            last_name: '',
+                            email: '',
+                            phone: ''
+                        }
+                    }}
+                    onSubmit={(values, { setSubmitting }, e) => {
+                        formEl.current.submit();
+                        trackCustomEvent({
+                            category: `${googleAnaliticsCategory}`,
+                            action: 'click',
+                        })
+                    }}
+                    validationSchema={Yup.object().shape({
+                        // politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на учебный договор и на обработку персональных данных'),
+                        formParams: Yup.object().shape({
+                            first_name: Yup.string().trim('Уберите пробелы в начале и в конце строки').strict().matches(myNameNewRegExp, 'Неверные символы в Имени').required('Сперва впишите Имя'),
+                            // first_name: Yup.string().email('Неверный формат электронного адреса').required('Заполните поле Емейл'),
+                            last_name: Yup.string().trim('Уберите пробелы в начале и в конце строки').strict().matches(myNameNewRegExp, 'Неверные символы в Фамилии').required('Сперва впишите Фамилию'),
+                            email: Yup.string().email('Это не Электропочта').required('Сперва впишите Электропочту'),
+                            phone: Yup.string().matches(myPhoneNewRegExp, 'Это не Телефон').required('Сперва впишите Телефон'),
 
-                                    })
-                                })}
-                            >
+                        })
+                    })}
+                >
 
-                                {props => {
-                                    const {
-                                        values, 
-                                        errors, 
-                                        isSubmitting, 
-                                        handleChange,
-                                        handleSubmit,
-                                        isValid,
-                                        touched,
-                                        handleBlur,
-                                        // setFieldValue,
-                                        // setFieldTouched,
-                                        
+                    {props => {
+                        const {
+                            values,
+                            errors,
+                            isSubmitting,
+                            handleChange,
+                            handleSubmit,
+                            isValid,
+                            touched,
+                            handleBlur,
+                            // setFieldValue,
+                            // setFieldTouched,
 
-                                    } = props;
-                                    return (
-                                        
-                                        <Form ref={formEl} onSubmit={ (e) => {
-                                            if(isValid) {
-                                                handleSubmit(e);
-                                            
-                                            } else {
-                                                handleSubmit(e);
-                                                setShakeTrigger(shakeTrigger + 1);
-                                                
-                                            }
-                                        }}  id={formId}  action={formAction} method="post" data-open-new-window="0" >
-                                    <FormWrapper>
-                                       
-                                        <FormContainer>
+
+                        } = props;
+                        return (
+
+                            <Form ref={formEl} onSubmit={(e) => {
+                                if (isValid) {
+                                    handleSubmit(e);
+
+                                } else {
+                                    handleSubmit(e);
+                                    setShakeTrigger(shakeTrigger + 1);
+
+                                }
+                            }} id={formId} action={formAction} method="post" data-open-new-window="0" >
+                                <FormWrapper>
+
+                                    <FormContainer>
 
                                         <FormTags>
                                             {data.courseStream && <FormTag important>{data.courseStream} поток</FormTag>}
                                             {data.courseStartAndEnd && <FormTag>{data.courseStartAndEnd}</FormTag>}
-                                            {data.courseTags.map((tag, idx) => {
+                                            {/* {data.courseTags.map((tag, idx) => {
                                                 return (
                                                     <FormTag key={idx}>{tag}</FormTag>
                                                 )
-                                            })} 
-                                            
-                                        </FormTags>
-                                        <FormTitle>Участвовать <br/>в курсе</FormTitle>
-                                        <input  type="hidden" name="formParams[setted_offer_id]" /><br/>
-                                            <FormInput 
-                                                type="text" 
-                                                maxLength="60"  
-                                                placeholder="Имя" 
-                                                name="formParams[first_name]"
-                                                value={values.formParams.first_name}
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                errorStyle={errors.formParams && errors.formParams.first_name && touched.formParams && touched.formParams.first_name ? 1 : 0}
+                                            })}  */}
+                                            {additionalTags && additionalTags.map((tag, idx) => {
+                                                return (
+                                                    <FormTag key={idx}>{tag}</FormTag>
+                                                )
+                                            })}
 
-                                            /> <br/>
-                                            {errors.formParams && errors.formParams.first_name && touched.formParams && touched.formParams.first_name && (
-                                                <ErrorMessage>{errors.formParams.first_name}</ErrorMessage>
-                                            )}
-                                            <FormInput 
-                                                type="text" 
-                                                maxLength="60"  
-                                                placeholder="Фамилия" 
-                                                name="formParams[last_name]"
-                                                value={values.formParams.last_name}
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                errorStyle={errors.formParams && errors.formParams.last_name && touched.formParams && touched.formParams.last_name ? 1 : 0}
-                                            
-                                            /> <br/>
-                                            {errors.formParams && errors.formParams.last_name && touched.formParams && touched.formParams.last_name && (
-                                                <ErrorMessage>{errors.formParams.last_name}</ErrorMessage>
-                                            )}
-                                            <FormInput 
-                                                type="text" 
-                                                maxLength="60"  
-                                                placeholder="Электропочта"
-                                                name="formParams[email]"
-                                                value={values.formParams.email}
-                                                onChange={handleChange}
-                                                id="formParams[email]"
-                                                onBlur={handleBlur}
-                                                errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
-                                            
-                                            />
-                                            <FormInputLabel htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabel>
-                                            <br/>
-                                            
-                                            {errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email && (
-                                                <ErrorMessage>{errors.formParams.email}</ErrorMessage>
-                                            )}
-                                            <FormInputLabelMobile htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabelMobile>
-                                            <FormInput 
-                                                type="text" 
-                                                maxLength="60"  
-                                                placeholder="Телефон"
-                                                name="formParams[phone]"
-                                                value={values.formParams.phone}
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                id="formParams[phone]"
-                                                errorStyle={errors.formParams && errors.formParams.phone && touched.formParams && touched.formParams.phone ? 1 : 0}
-                                            /> 
-                                            <FormInputLabel htmlFor="formParams[phone]">для экстренной связи</FormInputLabel>
-                                            <br/>
-                                            
-                                            {errors.formParams && errors.formParams.phone && touched.formParams && touched.formParams.phone && (
-                                                <ErrorMessage>{errors.formParams.phone}</ErrorMessage>
-                                            )}
-                                            <FormInputLabelMobile htmlFor="formParams[phone]">для экстренной связи</FormInputLabelMobile>
-                                            {/* <FormCheckbox 
+
+                                        </FormTags>
+                                        <FormTitle>Участвовать <br />в курсе</FormTitle>
+                                        <input type="hidden" name="formParams[setted_offer_id]" /><br />
+                                        <FormInput
+                                            type="text"
+                                            maxLength="60"
+                                            placeholder="Имя"
+                                            name="formParams[first_name]"
+                                            value={values.formParams.first_name}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            errorStyle={errors.formParams && errors.formParams.first_name && touched.formParams && touched.formParams.first_name ? 1 : 0}
+
+                                        /> <br />
+                                        {errors.formParams && errors.formParams.first_name && touched.formParams && touched.formParams.first_name && (
+                                            <ErrorMessage>{errors.formParams.first_name}</ErrorMessage>
+                                        )}
+                                        <FormInput
+                                            type="text"
+                                            maxLength="60"
+                                            placeholder="Фамилия"
+                                            name="formParams[last_name]"
+                                            value={values.formParams.last_name}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            errorStyle={errors.formParams && errors.formParams.last_name && touched.formParams && touched.formParams.last_name ? 1 : 0}
+
+                                        /> <br />
+                                        {errors.formParams && errors.formParams.last_name && touched.formParams && touched.formParams.last_name && (
+                                            <ErrorMessage>{errors.formParams.last_name}</ErrorMessage>
+                                        )}
+                                        <FormInput
+                                            type="text"
+                                            maxLength="60"
+                                            placeholder="Электропочта"
+                                            name="formParams[email]"
+                                            value={values.formParams.email}
+                                            onChange={handleChange}
+                                            id="formParams[email]"
+                                            onBlur={handleBlur}
+                                            errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
+
+                                        />
+                                        <FormInputLabel htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabel>
+                                        <br />
+
+                                        {errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email && (
+                                            <ErrorMessage>{errors.formParams.email}</ErrorMessage>
+                                        )}
+                                        <FormInputLabelMobile htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabelMobile>
+                                        <FormInput
+                                            type="text"
+                                            maxLength="60"
+                                            placeholder="Телефон"
+                                            name="formParams[phone]"
+                                            value={values.formParams.phone}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            id="formParams[phone]"
+                                            errorStyle={errors.formParams && errors.formParams.phone && touched.formParams && touched.formParams.phone ? 1 : 0}
+                                        />
+                                        <FormInputLabel htmlFor="formParams[phone]">для экстренной связи</FormInputLabel>
+                                        <br />
+
+                                        {errors.formParams && errors.formParams.phone && touched.formParams && touched.formParams.phone && (
+                                            <ErrorMessage>{errors.formParams.phone}</ErrorMessage>
+                                        )}
+                                        <FormInputLabelMobile htmlFor="formParams[phone]">для экстренной связи</FormInputLabelMobile>
+                                        {/* <FormCheckbox 
                                                 type="checkbox"
                                                 name="politikaCheckbox"
                                                 value={values.politikaCheckbox}
@@ -521,68 +528,71 @@ const ParticipationForm = ({data, formId, formAction, googleAnaliticsCategory}) 
                                                 className={`course-form-checkbox`}
                                                 
                                             />  */}
-                                           
-                                            {/* <FormPolitikaLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">Принять <Link to="/public-offer"> оферту </Link> и <Link to="/privacy"> политику конфиденциальности</Link></FormPolitikaLabel> */}
-                                            <FormPolitikaLabel> Нажимая на кнопку в этой форме, я принимаю условия <Link to="/privacy"> политики конфиденциальности</Link> и <Link to="/public-offer"> учебного договора </Link></FormPolitikaLabel>
-{/*                                             
+
+                                        {/* <FormPolitikaLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">Принять <Link to="/public-offer"> оферту </Link> и <Link to="/privacy"> политику конфиденциальности</Link></FormPolitikaLabel> */}
+                                        <FormPolitikaLabel> Нажимая на кнопку в этой форме, я принимаю условия <Link to="/privacy"> политики конфиденциальности</Link> и <Link to="/public-offer"> учебного договора </Link></FormPolitikaLabel>
+                                        {/*                                             
                                             {errors.politikaCheckbox && touched.politikaCheckbox && (
                                                 <ErrorMessage>{errors.politikaCheckbox}</ErrorMessage>
                                             )} */}
-                                        </FormContainer>
-
-
-                                        
-                                    </FormWrapper>
-                                    <FormFooterWrapper>
-
-                                        <FormFooterContainer>
-                                            <FormButtonBlock>
-                                                <FormButton 
-                                                        disabled={isSubmitting} 
-                                                        type="submit"
-                                                        id="button970916"
-                                                        onClick={() => {if(window['btnprs5f64b8d772769']){
-                                                            return false;
-                                                        }
-                                                        window['btnprs5f64b8d772769']=true;
-                                                        setTimeout(function(){
-                                                            window['btnprs5f64b8d772769']=false},6000);
-                                                            return true;}}
-                                                    >Оплатить</FormButton>
-                                                        {data.coursePrice && (
-                                                            <FormPrice><i>→ </i>{data.coursePrice}<span>₽</span></FormPrice>
-                                                        )}
-
-
-                                            </FormButtonBlock>
-
-                                            <FormSubText>Количество мест ограничено. Стоимость будет расти↑</FormSubText>
-                                        </FormFooterContainer>
-                                    </FormFooterWrapper>
-                                            
+                                    </FormContainer>
 
 
 
-                                        
-                                            <input type="hidden" id="2588385f64b8d766d50" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value=""/>
-                                         
-                                            <input type="hidden" id="2588385f64b8d766d50ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value=""/>
-                                            
-                                            <input type="hidden" name="requestTime" value="1600436439"/>
-                                           
-                                            <input type="hidden" name="requestSimpleSign" value="49b52db9d0d0c2186e4a47c281ae23ca"/>
-                                           
-                                            <input type="hidden" name="isHtmlWidget" value="1"/>
+                                </FormWrapper>
+                                <FormFooterWrapper>
 
-                                        </Form>
-                                        
-                                    )
-                                }}
-                            </Formik>
-                            <span id="gccounterImgContainer"></span>
-                            
+                                    <FormFooterContainer>
+                                        <FormButtonBlock>
+                                            <FormButton
+                                                disabled={isSubmitting}
+                                                type="submit"
+                                                id="button970916"
+                                                onClick={() => {
+                                                    if (window['btnprs5f64b8d772769']) {
+                                                        return false;
+                                                    }
+                                                    window['btnprs5f64b8d772769'] = true;
+                                                    setTimeout(function () {
+                                                        window['btnprs5f64b8d772769'] = false
+                                                    }, 6000);
+                                                    return true;
+                                                }}
+                                            >Оплатить</FormButton>
+                                            {data.coursePrice && (
+                                                <FormPrice><i>→ </i>{data.coursePrice}<span>₽</span></FormPrice>
+                                            )}
 
-        </ShakeForm>
+
+                                        </FormButtonBlock>
+
+                                        <FormSubText>Количество мест ограничено. Стоимость будет расти↑</FormSubText>
+                                    </FormFooterContainer>
+                                </FormFooterWrapper>
+
+
+
+
+
+                                <input type="hidden" id="2588385f64b8d766d50" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value="" />
+
+                                <input type="hidden" id="2588385f64b8d766d50ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value="" />
+
+                                <input type="hidden" name="requestTime" value="1600436439" />
+
+                                <input type="hidden" name="requestSimpleSign" value="49b52db9d0d0c2186e4a47c281ae23ca" />
+
+                                <input type="hidden" name="isHtmlWidget" value="1" />
+
+                            </Form>
+
+                        )
+                    }}
+                </Formik>
+                <span id="gccounterImgContainer"></span>
+
+
+            </ShakeForm>
         </FormMainWrapper>
     )
 }

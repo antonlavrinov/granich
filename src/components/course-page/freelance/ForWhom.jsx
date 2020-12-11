@@ -31,7 +31,7 @@ const CourseExampleWrapper = styled.div`
     flex-direction: column;
     background: white;
     justify-content: space-between;
-    padding: 4vw 4.7vw 4vw 4.7vw;
+    padding: 4vw 4vw 4vw 4.7vw;
     border-radius: 0.6vw;
     
     @media only screen and (max-width: 575px) {
@@ -184,7 +184,7 @@ const CourseExampleInfoText = styled.div`
 `
 
 const ForWhomLeft = styled.div`
-    max-width: 44%;
+    max-width: 46%;
     span {
         font-weight: 600;
         display: block;
@@ -284,7 +284,7 @@ const ForWhomWavyText = styled.span`
     }
 `
 
-const tags = ['Дизайнерам', 'Видеомейкерам', 'Фотографам', 'Иллюстраторам', '3d-моделлерам']
+const tags = ['Дизайнерам', 'Фотографам', 'Иллюстраторам', 'Видеомейкерам', '3d-моделлерам']
 
 
 const CourseForWhom = () => {

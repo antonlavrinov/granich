@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import CourseOffer from '../components/course-page/CourseOffer';
@@ -13,7 +13,7 @@ import CourseFeatures from "../components/course-page/CourseFeatures"
 import CourseReviews from "../components/course-page/CourseReviews"
 import CourseParticipation from "../components/course-page/CourseParticipation"
 // import CourseCommitment from "../components/course-page/CourseCommitment"
-import {graphql} from 'gatsby';
+import { graphql } from 'gatsby';
 import CourseAnswers from "../components/course-page/CourseAnswers";
 // import Mailing from '../components/Mailing';
 import CourseExplain from '../components/course-page/CourseExplain'
@@ -242,45 +242,45 @@ export const contentfulQuery = graphql`
 
 
 
-const OsoznannyGraphDesignPage = ({data}) => {
+const OsoznannyGraphDesignPage = ({ data }) => {
   const [deckVisibility, setDeckVisibility] = useState(false)
   useEffect(() => {
-      let timer1 = setTimeout(() => setDeckVisibility(true), 800)
-      return () => {
-        clearTimeout(timer1)
-      }
-      
+    let timer1 = setTimeout(() => setDeckVisibility(true), 800)
+    return () => {
+      clearTimeout(timer1)
+    }
+
   }, [])
   return (
-  <Layout>
-      <Header type={'dark'}/>
+    <Layout>
+      <Header type={'dark'} />
       <SEO title="Осознанный Графдизайн"
-          description="Курс по графическому дизайну, построенный на авторской дизайн-системе. Вы получите твёрдую базу и научитесь аргументировать свои макеты"
-          keywords={['vhs', 'графсистема']}
-          ogImage={ogImage}
-          ogImageVk={ogImageVK}
-          url="https://granich.design/conscious-graphic-design" />
+        description="Курс по графическому дизайну, построенный на авторской дизайн-системе. Вы получите твёрдую базу и научитесь аргументировать свои макеты"
+        keywords={['vhs', 'графсистема']}
+        ogImage={ogImage}
+        ogImageVk={ogImageVK}
+        url="https://granich.design/conscious-graphic-design" />
       <div className="section-top-block"></div>
-      <CourseOffer allowDeck={true} data={data.offer} deckVisibility={deckVisibility}/>
+      <CourseOffer allowDeck={true} data={data.offer} deckVisibility={deckVisibility} />
       {/* <CourseExplanations data={data.explanations}/> */}
-      <CourseExample title={`Для кого этот курс?`}/> 
-      <CourseExplain/>
-      <CourseOpportunities/>
-      <CourseAftermath/>
-      
+      <CourseExample title={`Для кого этот курс?`} />
+      <CourseExplain />
+      <CourseOpportunities />
+      <CourseAftermath />
+
 
       {/* <CourseForWhom data={data.forWhom}/> */}
       {/* <CourseCommitment/> */}
-      <CourseTimetable/>
-      <CourseTrainingPath data={data.trainingPath}/>
-      
-      <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage}/>
-      
-      
-      <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum}/>
-      <CourseFeatures title="Еще пара бонусов" data={data.features}/>
-      <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews}/>
-      
+      <CourseTimetable />
+      <CourseTrainingPath data={data.trainingPath} />
+
+      <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage} />
+
+
+      <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum} />
+      <CourseFeatures title="Еще пара бонусов" data={data.features} />
+      <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews} />
+
       {/* {data.offer.courseStatus ? (
         <CourseParticipation 
                       data={data.offer}
@@ -289,26 +289,27 @@ const OsoznannyGraphDesignPage = ({data}) => {
       ) : (
         <Mailing/>
       )} */}
-      <CourseHardWork title="«Пожалуйста, примите осознанное решение об участии на этом курсе»" text="Хоть я и создал на нём условия для быстрого развития твёрдых навыков, но это не произойдёт по волшебству. Вам понадобится прилагать много сил, чтобы дойти до конца."/>
+      <CourseHardWork title="«Пожалуйста, примите осознанное решение об участии на этом курсе»" text="Хоть я и создал на нём условия для быстрого развития твёрдых навыков, но это не произойдёт по волшебству. Вам понадобится прилагать много сил, чтобы дойти до конца." />
       <div id="participation-section"></div>
-      <CourseParticipation 
-              data={data.offer}
-              formId={`ltForm6865073`}
-              formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}
-              googleAnaliticsCategory={`Отправка формы Осознанный Графдизайн`}/>
-      <CoursePaymentChoices/>
-      <CourseIndividualSupport/>
-      <CourseBanner/>
-      <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus}/>
-      
-      
+      <CourseParticipation
+        data={data.offer}
+        formId={`ltForm6865073`}
+        formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}
+        googleAnaliticsCategory={`Отправка формы Осознанный Графдизайн`}
+        additionalTags={['Интенсивный', 'С нуля']} />
+      <CoursePaymentChoices />
+      <CourseIndividualSupport />
+      <CourseBanner />
+      <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus} />
+
+
 
 
     </Layout>
   )
 }
 
-  
+
 
 
 export default OsoznannyGraphDesignPage
