@@ -1,9 +1,9 @@
-import React, {memo, useState, useRef, useEffect } from 'react'
+import React, { memo, useState, useRef, useEffect } from 'react'
 import { Container } from '../style';
 import { useSpring, a } from 'react-spring';
 import ResizeObserver from 'resize-observer-polyfill'
 import { INLINES, BLOCKS } from '@contentful/rich-text-types'
-import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import {
     AccordionItemButton,
     AccordionItemPanel,
@@ -45,29 +45,30 @@ import CurriculumHead from '../curriculum/CurriculumHead';
 const options = {
     renderNode: {
         [INLINES.HYPERLINK]: (node) => {
-            if(node.data.uri.indexOf('youtube.com') !== -1) {
+            if (node.data.uri.indexOf('youtube.com') !== -1) {
                 return (
                     <iframe src={node.data.uri} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 )
             } else {
-                return <a href={node.data.uri}  rel="noopener noreferrer" target='_blank' >{node.content[0].value}</a>;
+                return <a href={node.data.uri} rel="noopener noreferrer" target='_blank' >{node.content[0].value}</a>;
             }
-            
+
         },
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
+            const { title, file } = node.data.target.fields;
             // const {file} = node.data.target.fields;
-            console.log('NODE',node)
+            // console.log('NODE',node)
             // const mimeType = file['en-US'].contentType
             // const mimeGroup = mimeType.split('/')[0]
             return <img
                 //   title={ title ? title['en-US'] : null}
-                //   alt={description ?  description['en-US'] : null}
-                  src={node.data.target.fields.file['en-US'].url}
-                />
-      
+                alt={title ? title['en-US'] : null}
+                src={file['en-US'].url}
+            />
+
             // switch (mimeGroup) {
             //   case 'image':
-                
+
             //   case 'application':
             //     return <a
             //       alt={description ?  description['en-US'] : null}
@@ -77,9 +78,9 @@ const options = {
             //   default:
             //     return <span style={{backgroundColor: 'red', color: 'white'}}> {mimeType} embedded asset </span>
             // }
-            
-          },
-    },   
+
+        },
+    },
 }
 
 
@@ -95,18 +96,18 @@ function usePrevious(value) {
     const ref = useRef()
     useEffect(() => void (ref.current = value), [value])
     return ref.current
-  }
-  
+}
+
 function useMeasure() {
     const ref = useRef()
     const [bounds, set] = useState({ left: 0, top: 0, width: 0, height: 0 })
     const [ro] = useState(() => new ResizeObserver(([entry]) => set(entry.contentRect)))
     useEffect(() => {
-      if (ref.current) ro.observe(ref.current)
-      return () => ro.disconnect()
+        if (ref.current) ro.observe(ref.current)
+        return () => ro.disconnect()
     }, [])
     return [{ ref }, bounds]
-  }
+}
 
 const CurriculumItem = memo(({ type, children, title, tag, style, descr, defaultOpen = false, numberOfLessons }) => {
     const [isOpen, setOpen] = useState(defaultOpen)
@@ -118,7 +119,7 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
     })
     // const Icon = Icons[`${children ? (isOpen ? 'Minus' : 'Plus') : 'Close'}SquareO`]
     return (
-        <CurriculumItemFrame numberOfLessons={numberOfLessons}  type={type ? 1 : 0}>
+        <CurriculumItemFrame numberOfLessons={numberOfLessons} type={type ? 1 : 0}>
 
             {/* <Icon style={{ ...toggle, opacity: children ? 1 : 0.3 }} onClick={() => setOpen(!isOpen)} /> */}
             <CurriculumContainer type={type ? 1 : 0} onClick={() => setOpen(!isOpen)}>
@@ -128,19 +129,19 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
 
                 <CurriculumItemTitle style={style}>{documentToReactComponents(title, options)}</CurriculumItemTitle>
                 {!type && descr && <CurriculumItemImportantDescr style={style}>{descr}</CurriculumItemImportantDescr>}
-                
+
                 {!isOpen ? (
                     // <Plus style={{ ...toggle, opacity: children ? 1 : 0.3 }} />
-                    <img style={{ ...toggle, opacity: children ? 1 : 0.3 }} src={PlusImage} alt="plus"/>
+                    <img style={{ ...toggle, opacity: children ? 1 : 0.3 }} src={PlusImage} alt="plus" />
                 ) : (
-                    <img style={{ ...toggle, opacity: children ? 1 : 0.3 }} src={MinusImage} alt="minus"/>
-                    // <Minus style={{ ...toggle, opacity: children ? 1 : 0.3 }}/>
-                )}
+                        <img style={{ ...toggle, opacity: children ? 1 : 0.3 }} src={MinusImage} alt="minus" />
+                        // <Minus style={{ ...toggle, opacity: children ? 1 : 0.3 }}/>
+                    )}
             </CurriculumContainer>
 
             <CurriculumItemContent style={{ opacity, height: isOpen && previous === isOpen ? 'auto' : height }}>
                 <a.div style={{ transform }} {...bind} children={children} />
-                
+
             </CurriculumItemContent>
 
         </CurriculumItemFrame>
@@ -156,78 +157,78 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
 
 
 
-const CourseCurriculum = ({data, dataHeader, compressedHeader}) => {
+const CourseCurriculum = ({ data, dataHeader, compressedHeader }) => {
     const isMobile = useMediaQuery({
         query: '(max-width: 575px)'
     })
     const isDesktop = useMediaQuery({
         query: '(min-width: 575px)'
     })
-    const numberOfLessons =  data.edges.filter((item) => {return item.node.curriculumType === true}).length
+    const numberOfLessons = data.edges.filter((item) => { return item.node.curriculumType === true }).length
     return (
         <CurriculumSection>
             <Container>
                 <CurriculumWrapper>
-                    <CurriculumHead compressedHeader={compressedHeader ? true : false} dataHeader={dataHeader}/>
+                    <CurriculumHead compressedHeader={compressedHeader ? true : false} dataHeader={dataHeader} />
 
                     {isMobile && (
                         <CurriculumAccordionMobile allowMultipleExpanded allowZeroExpanded>
                             {/* <LazyLoad once> */}
-                                {data.edges.map((tab, idx) => {
-                                    const type = tab.node.curriculumType;
-                                    const tag = tab.node.curriculumTagName;
-                                    const descr = tab.node.curriculumImportantDescr;
-                                    // const title = tab.node.curriculumTitle;
-                                    const title = tab.node.childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode.json;
-                                    
-                                    return (
-                                        <CurriculumAccordionItem key={tab.node.id}>
-                                            <CurriculumAccordionHeading>
-                                                <AccordionItemButton className="accordion-curriculum-button">
-                                                        <CurriculumLessonColumn>
-                                                            <CurriculumLesson type={type ? 1 : 0}>{tag}</CurriculumLesson>
-                                                        </CurriculumLessonColumn>
-                                                        <CurriculumItemTitle >{documentToReactComponents(title, options)}</CurriculumItemTitle>
+                            {data.edges.map((tab, idx) => {
+                                const type = tab.node.curriculumType;
+                                const tag = tab.node.curriculumTagName;
+                                const descr = tab.node.curriculumImportantDescr;
+                                // const title = tab.node.curriculumTitle;
+                                const title = tab.node.childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode.json;
+
+                                return (
+                                    <CurriculumAccordionItem key={tab.node.id}>
+                                        <CurriculumAccordionHeading>
+                                            <AccordionItemButton className="accordion-curriculum-button">
+                                                <CurriculumLessonColumn>
+                                                    <CurriculumLesson type={type ? 1 : 0}>{tag}</CurriculumLesson>
+                                                </CurriculumLessonColumn>
+                                                <CurriculumItemTitle >{documentToReactComponents(title, options)}</CurriculumItemTitle>
 
 
-                                                    
-                                                    
-                                                </AccordionItemButton>
-                                            </CurriculumAccordionHeading>
-                                            <AccordionItemPanel>
-                                               
 
-                                                    {tab.node.curriculumColumnsType ? (
-                                                        <>
-                                                        {tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && <CurriculumContentColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode.json)}</CurriculumContentColumn>}
-                                                            {tab.node.childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode && <CurriculumContentColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode.json)}</CurriculumContentColumn>}
-                                                            {tab.node.childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode && <CurriculumContentColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode.json)}</CurriculumContentColumn>}
-                                                            {tab.node.childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode && <CurriculumContentColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode.json)}</CurriculumContentColumn>}
-                                                        </>
-                                                    
-                                                    ) : (
-                                                        <>
-                                                            {!type && descr && <CurriculumItemImportantDescr>{descr}</CurriculumItemImportantDescr>}
-                                                            {tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && <CurriculumContentText className="link_out"><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode.json, options)}</CurriculumContentText>}
-                                                        </>
-                                                    )}
-                                            </AccordionItemPanel>
-                                        </CurriculumAccordionItem>
-                                    )
-                                } )}
+
+                                            </AccordionItemButton>
+                                        </CurriculumAccordionHeading>
+                                        <AccordionItemPanel>
+
+
+                                            {tab.node.curriculumColumnsType ? (
+                                                <>
+                                                    {tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && <CurriculumContentColumn><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode.json)}</CurriculumContentColumn>}
+                                                    {tab.node.childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode && <CurriculumContentColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode.json)}</CurriculumContentColumn>}
+                                                    {tab.node.childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode && <CurriculumContentColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode.json)}</CurriculumContentColumn>}
+                                                    {tab.node.childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode && <CurriculumContentColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode.json)}</CurriculumContentColumn>}
+                                                </>
+
+                                            ) : (
+                                                    <>
+                                                        {!type && descr && <CurriculumItemImportantDescr>{descr}</CurriculumItemImportantDescr>}
+                                                        {tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && <CurriculumContentText className="link_out"><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode.json, options)}</CurriculumContentText>}
+                                                    </>
+                                                )}
+                                        </AccordionItemPanel>
+                                    </CurriculumAccordionItem>
+                                )
+                            })}
                             {/* </LazyLoad> */}
-                        
+
 
                         </CurriculumAccordionMobile>
                     )}
                     {isDesktop && (
                         <CurriculumAccordeon>
-                            
+
                             {data.edges.map((tab, idx) => {
-                               
+
                                 // console.log('LENGTH', data.edges.filter((item) => {return item.node.curriculumType === true}).length)
                                 return (
-                                    <CurriculumItem numberOfLessons={numberOfLessons}  descr={tab.node.curriculumImportantDescr} type={tab.node.curriculumType} key={idx} title={tab.node.childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode.json} tag={tab.node.curriculumTagName}>
+                                    <CurriculumItem numberOfLessons={numberOfLessons} descr={tab.node.curriculumImportantDescr} type={tab.node.curriculumType} key={idx} title={tab.node.childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode.json} tag={tab.node.curriculumTagName}>
                                         <CurriculumContentWrapper type={tab.node.curriculumType ? 1 : 0}>
                                             {tab.node.curriculumColumnsType ? (
                                                 <>
@@ -236,24 +237,24 @@ const CourseCurriculum = ({data, dataHeader, compressedHeader}) => {
                                                     {tab.node.childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode && <CurriculumContentColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode.json)}</CurriculumContentColumn>}
                                                     {tab.node.childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode && <CurriculumContentColumn>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode.json)}</CurriculumContentColumn>}
                                                 </>
-                                            
+
                                             ) : (
-                                                <>
-                                                    {tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && <CurriculumContentText className="link_out"><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode.json, options)}</CurriculumContentText>}
-                                                </>
-                                            )}
+                                                    <>
+                                                        {tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && <CurriculumContentText className="link_out"><EmptyText>sometext</EmptyText>{documentToReactComponents(tab.node.childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode.json, options)}</CurriculumContentText>}
+                                                    </>
+                                                )}
 
 
-                                    
+
                                         </CurriculumContentWrapper>
                                     </CurriculumItem>
                                 )
                             })}
                         </CurriculumAccordeon>
                     )}
-                    
-                    
-                    
+
+
+
 
                 </CurriculumWrapper>
             </Container>

@@ -165,8 +165,9 @@ const CourseExampleInfoBlock = styled.div`
     @media only screen and (max-width: 575px) {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 98%;
         position: relative;
+        
         :first-child {
             flex-direction: column-reverse;
 
@@ -180,6 +181,7 @@ const CourseExampleInfoText = styled.div`
     margin-left: -0.5vw;
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
+        
     }
 `
 
