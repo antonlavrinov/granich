@@ -256,7 +256,7 @@ const OsoznannyGraphDesignPage = ({ data }) => {
       <Header type={'dark'} />
       <SEO title="Осознанный Графдизайн"
         description="Курс по графическому дизайну, построенный на авторской дизайн-системе. Вы получите твёрдую базу и научитесь аргументировать свои макеты"
-        keywords={['vhs', 'графсистема']}
+        keywords={['графдизайн', 'indesign', 'индизайн', 'осознанный', 'гранич', 'graphdesign', 'granich', 'conscious']}
         ogImage={ogImage}
         ogImageVk={ogImageVK}
         url="https://granich.design/conscious-graphic-design" />

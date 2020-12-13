@@ -17,8 +17,8 @@ import { graphql } from 'gatsby';
 // import CourseAnswers from "../components/course-page/CourseAnswers";
 // import Mailing from '../components/Mailing';
 // import CourseExplain from '../components/course-page/CourseExplain'
-import ogImage from '../assets/images/seo/conscious-graphic-design-min.jpg';
-import ogImageVK from '../assets/images/seo/vk/conscious-graphic-design.jpg';
+import ogImage from '../assets/images/seo/conscious-freelance.jpg';
+import ogImageVK from '../assets/images/seo/vk/conscious-freelance.jpg';
 // import CourseIndividualSupport from "../components/course-page/CourseIndividualSupport";
 // import CourseTimetable from "../components/course-page/CourseTimetable";
 // import CourseAftermath from "../components/course-page/CourseAftermath"
@@ -136,7 +136,7 @@ const OsoznannyFreelancePage = ({ data }) => {
       <Header type={'dark'} />
       <SEO title="Осознанный Фриланс"
         description="Курс по фрилансу, построенный на авторской дизайн-системе. Вы получите твёрдую базу и научитесь аргументировать свои макеты"
-        keywords={['vhs', 'графсистема']}
+        keywords={['фриланс', 'осознанный', 'гранич', 'freelance', 'granich', 'conscious']}
         ogImage={ogImage}
         ogImageVk={ogImageVK}
         url="https://granich.design/conscious-graphic-design" />
