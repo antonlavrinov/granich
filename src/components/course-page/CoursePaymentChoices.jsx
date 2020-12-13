@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import CorporateIcon from '../../assets/svgs/graph-design/graph-design-corporate.svg';
 // import PaypalIcon from '../../assets/svgs/graph-design/graph-design-paypal.svg';
 // import AbroadIcon from '../../assets/svgs/graph-design/graph-design-abroad.svg';
@@ -22,7 +22,7 @@ import Img from 'gatsby-image';
 
 
 // `
-const Globe = styled(props=> <GlobeIcon {...props}/>)`
+const Globe = styled(props => <GlobeIcon {...props} />)`
     width: 5vw;
     position: absolute;
     right: 1.2vw;
@@ -255,7 +255,7 @@ const PaymentChoiceEmail = styled.span`
 
 `
 
-const PaymentChoiceImageIcon = styled(props => <Img {...props}/>)`
+const PaymentChoiceImageIcon = styled(props => <Img {...props} />)`
     width: 5vw;
     right: 1vw;
     bottom: 1vw;
@@ -267,9 +267,9 @@ const PaymentChoiceImageIcon = styled(props => <Img {...props}/>)`
 `
 
 
-const CoursePaymentChoices = () => {
+const CoursePaymentChoices = ({ paymentsAvailable }) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать');
-    
+
     const data = useStaticQuery(graphql`
         query paymentChoicesImages {
             tinkoffImage: file(relativePath: { eq: "graph-design/payment-choices/tinkoff.png" }) {
@@ -291,27 +291,33 @@ const CoursePaymentChoices = () => {
         <PaymentChoicesSection>
             <Container>
                 <PaymentChoicesWrapper>
-                    <PaymentChoice grey>
-                        <PaymentChoiceTitle>Можно оплатить в рассрочку</PaymentChoiceTitle>
-                        <PaymentChoiceText>Рассрочка 0% от Тинькофф на 4 месяца или полгода. Для получения рассрочки перейдите к заполнению обычной формы ↑</PaymentChoiceText>
-                        <PaymentChoiceImageIcon style={{position: 'absolute'}} fluid={tinkoff}/>
-                        {/* <PaymentChoiceButton>Оплатить</PaymentChoiceButton> */}
-                        
-                    </PaymentChoice>
-                    <PaymentChoice gold>
-                        <PaymentChoiceTitle>Оформить корпоративное обучение</PaymentChoiceTitle>
-                        <PaymentChoiceText mail>Для этого напишите нам на почту <CopyToClipboard text={'hello@granich.design'}><PaymentChoiceEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PaymentChoiceEmail></CopyToClipboard></PaymentChoiceText>
-                        <CorporateWrapper>
-                            <CorporateIcon/>
-                        </CorporateWrapper>
-                    </PaymentChoice>
-                    <PaymentChoice blue>
-                        <PaymentChoiceTitle>Оплата из-за рубежа</PaymentChoiceTitle>
-                        <PaymentChoiceText>Также у нас есть прием платежей из-за рубежа. Чтобы начать оплату перейдите к заполнению обычной формы ↑</PaymentChoiceText>
-                        {/* <PaymentChoiceText mail>Для этого напишите нам на почту <CopyToClipboard text={'hello@granich.design'}><PaymentChoiceEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PaymentChoiceEmail></CopyToClipboard></PaymentChoiceText> */}
-                        {/* <Paypal/> */}
-                        <Globe/>
-                    </PaymentChoice>
+                    {paymentsAvailable['credit'] && (
+                        <PaymentChoice grey>
+                            <PaymentChoiceTitle>Можно оплатить в рассрочку</PaymentChoiceTitle>
+                            <PaymentChoiceText>Рассрочка 0% от Тинькофф на 4 месяца или полгода. Для получения рассрочки перейдите к заполнению обычной формы ↑</PaymentChoiceText>
+                            <PaymentChoiceImageIcon style={{ position: 'absolute' }} fluid={tinkoff} />
+                            {/* <PaymentChoiceButton>Оплатить</PaymentChoiceButton> */}
+
+                        </PaymentChoice>
+                    )}
+                    {paymentsAvailable['corporate'] && (
+                        <PaymentChoice gold>
+                            <PaymentChoiceTitle>Оформить корпоративное обучение</PaymentChoiceTitle>
+                            <PaymentChoiceText mail>Для этого напишите нам на почту <CopyToClipboard text={'hello@granich.design'}><PaymentChoiceEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PaymentChoiceEmail></CopyToClipboard></PaymentChoiceText>
+                            <CorporateWrapper>
+                                <CorporateIcon />
+                            </CorporateWrapper>
+                        </PaymentChoice>
+                    )}
+                    {paymentsAvailable['abroad'] && (
+                        <PaymentChoice blue>
+                            <PaymentChoiceTitle>Оплата из-за рубежа</PaymentChoiceTitle>
+                            <PaymentChoiceText>Также у нас есть прием платежей из-за рубежа. Чтобы начать оплату перейдите к заполнению обычной формы ↑</PaymentChoiceText>
+                            {/* <PaymentChoiceText mail>Для этого напишите нам на почту <CopyToClipboard text={'hello@granich.design'}><PaymentChoiceEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PaymentChoiceEmail></CopyToClipboard></PaymentChoiceText> */}
+                            {/* <Paypal/> */}
+                            <Globe />
+                        </PaymentChoice>
+                    )}
                 </PaymentChoicesWrapper>
             </Container>
         </PaymentChoicesSection>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Container } from '../style';
 import styled from 'styled-components';
 import CourseArrowDown from '../../assets/svgs/course-arrow-down-27.svg';
@@ -6,7 +6,7 @@ import PotokIcon from '../../assets/svgs/graph-design/graph-design-potok-icon.sv
 // import DurationIcon from '../../assets/svgs/graph-design/graph-design-duration-icon.svg';
 import DateIcon from '../../assets/svgs/graph-design/graph-design-date-icon.svg';
 import Img from 'gatsby-image';
-import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useSprings, animated, to as interpolate } from 'react-spring';
 import { useDrag } from 'react-use-gesture'
 import { Link } from 'gatsby';
@@ -14,7 +14,7 @@ import { useMediaQuery } from 'react-responsive'
 
 
 
-const Potok = styled(props => <PotokIcon {...props}/>)`
+const Potok = styled(props => <PotokIcon {...props} />)`
     width: 1.3vw;
     height: 1.3vw;
     margin-right: 0.3vw;
@@ -39,7 +39,7 @@ const Potok = styled(props => <PotokIcon {...props}/>)`
 //         margin-top: -0.8vw;
 //     }
 // `
-const Date = styled(props => <DateIcon {...props}/>)`
+const Date = styled(props => <DateIcon {...props} />)`
     width: 1.3vw;
     height: 1.3vw;
     fill: var(--granich-red);
@@ -84,12 +84,7 @@ const CourseOfferWrapper = styled.div`
         padding: 7vw 1vw 6vw;
         box-shadow: 0 0 1.8vw rgba(0,0,0,0.15);
     }
-    ${props => props.type === 'Курс' && `
 
-        :before {
-
-        }
-    `}
 
 
 
@@ -196,11 +191,11 @@ const CourseOfferTitle = styled.h1`
         line-height: 0.8;
         padding: 0 5vw;
         p {
-            font-size: 15vw;
+            font-size: 14vw;
             letter-spacing: 0.5vw;
             i { 
                 letter-spacing: -0.2vw;
-                font-size: 14vw;
+                font-size: 15vw;
                 margin-top: 2vw;
             }
         }
@@ -289,7 +284,7 @@ const CourseOfferDescr = styled.div`
 
 `
 
-const CourseOfferButton = styled(props => <Link {...props}/>)`
+const CourseOfferButton = styled(props => <Link {...props} />)`
   display: inline-flex;
   align-items: center;
   color: white;
@@ -470,7 +465,7 @@ const CourseCircleMobile = styled.div`
     }
 `
 
-const OfferPoster = styled(props => <Img {...props}/>)`
+const OfferPoster = styled(props => <Img {...props} />)`
     user-select: none;
     width: 95%; 
     div {
@@ -500,40 +495,40 @@ const from = i => ({ x: 1500, rot: 0, scale: 1, y: 0 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r, s) => `  rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
-function Deck({postersCollection}) {
+function Deck({ postersCollection }) {
     const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
-  const [props, set] = useSprings(postersCollection.length, i => ({ ...to(i), from: from(i) })) // Create a bunch of springs using the helpers above
-  // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
-  const bind = useDrag(({ args: [index], down, movement: [mx], distance, direction: [xDir], velocity }) => {
-    const trigger = velocity > 0.1 // If you flick hard enough it should trigger the card to fly out default: 0.2
-    const dir = xDir < 0 ? -1 : 1 // Direction should either point left or right
-    if (!down && trigger) gone.add(index) // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
-    set(i => {
-      if (index !== i) return // We're only interested in changing spring-data for the current spring
-      const isGone = gone.has(index)
-      const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0 // When a card is gone it flys out left or right, otherwise goes back to zero
-      const rot = mx / 100 + (isGone ? dir * 10 * velocity : 0) // How much the card tilts, flicking it harder makes it rotate faster
-      const scale = down ? 1.1 : 1 // Active cards lift up a bit
-      return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } }
+    const [props, set] = useSprings(postersCollection.length, i => ({ ...to(i), from: from(i) })) // Create a bunch of springs using the helpers above
+    // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
+    const bind = useDrag(({ args: [index], down, movement: [mx], distance, direction: [xDir], velocity }) => {
+        const trigger = velocity > 0.1 // If you flick hard enough it should trigger the card to fly out default: 0.2
+        const dir = xDir < 0 ? -1 : 1 // Direction should either point left or right
+        if (!down && trigger) gone.add(index) // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
+        set(i => {
+            if (index !== i) return // We're only interested in changing spring-data for the current spring
+            const isGone = gone.has(index)
+            const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0 // When a card is gone it flys out left or right, otherwise goes back to zero
+            const rot = mx / 100 + (isGone ? dir * 10 * velocity : 0) // How much the card tilts, flicking it harder makes it rotate faster
+            const scale = down ? 1.1 : 1 // Active cards lift up a bit
+            return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } }
+        })
+        if (!down && gone.size === postersCollection.length) setTimeout(() => gone.clear() || set(i => to(i)), 600)
     })
-    if (!down && gone.size === postersCollection.length) setTimeout(() => gone.clear() || set(i => to(i)), 600)
-  })
-  // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
-  return props.map(({ x, y, rot, scale }, i) => (
-    <OfferCardItemWrapper className="spring-div-wrapper noselect" key={i} style={{ x, y }}>
-      {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
-      <OfferCardItem className="spring-div-inside noselect" {...bind(i)} style={{ transform: interpolate([rot, scale], trans)  }} >
-          <OfferPoster  draggable={false} className="noselect" fluid={postersCollection[i].fluid}/>
-      </OfferCardItem>
-    </OfferCardItemWrapper>
-  ))
+    // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
+    return props.map(({ x, y, rot, scale }, i) => (
+        <OfferCardItemWrapper className="spring-div-wrapper noselect" key={i} style={{ x, y }}>
+            {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
+            <OfferCardItem className="spring-div-inside noselect" {...bind(i)} style={{ transform: interpolate([rot, scale], trans) }} >
+                <OfferPoster draggable={false} className="noselect" fluid={postersCollection[i].fluid} />
+            </OfferCardItem>
+        </OfferCardItemWrapper>
+    ))
 }
 
 
 
 
 
-const CourseOffer = ({data, courseName, deckVisibility, allowDeck}) => {
+const CourseOffer = ({ data, courseName, deckVisibility, allowDeck }) => {
 
 
 
@@ -547,95 +542,95 @@ const CourseOffer = ({data, courseName, deckVisibility, allowDeck}) => {
 
     return (
         <CourseOfferSection>
-                {deckVisibility && isDesktop && (
-                    <OfferRootWrapper>
-                        <Deck postersCollection={data.coursePostersCollection}/>
-                    </OfferRootWrapper>
-                )}
-                
-                <Container>
-                    <CourseOfferWrapper type={data.courseType}>
-                        <CourseOfferInfo>
+            {deckVisibility && isDesktop && (
+                <OfferRootWrapper>
+                    <Deck postersCollection={data.coursePostersCollection} />
+                </OfferRootWrapper>
+            )}
+
+            <Container>
+                <CourseOfferWrapper type={data.courseType}>
+                    <CourseOfferInfo>
                         <CourseOfferTags className="noselect">
                             {data.courseType === 'Курс' ? (
                                 <>
-                                    {data.courseStream && <CourseOfferMainTag><Potok/>{data.courseStream} поток</CourseOfferMainTag>}
-                                    {data.courseStartAndEnd && <CourseOfferTag><Date/>{data.courseStartAndEnd}</CourseOfferTag>}
-                                    {data.courseTags.map((tag, idx) => {
-                                        return (
-                                            <CourseOfferTag key={idx}>{tag}</CourseOfferTag>
-                                        )
-                                    })} 
-
-                                </>
-                            ) : (
-                                <>
+                                    {data.courseStream && <CourseOfferMainTag><Potok />{data.courseStream} поток</CourseOfferMainTag>}
+                                    {data.courseStartAndEnd && <CourseOfferTag><Date />{data.courseStartAndEnd}</CourseOfferTag>}
                                     {data.courseTags.map((tag, idx) => {
                                         return (
                                             <CourseOfferTag key={idx}>{tag}</CourseOfferTag>
                                         )
                                     })}
+
                                 </>
-                            )}
+                            ) : (
+                                    <>
+                                        {data.courseTags.map((tag, idx) => {
+                                            return (
+                                                <CourseOfferTag key={idx}>{tag}</CourseOfferTag>
+                                            )
+                                        })}
+                                    </>
+                                )}
                         </CourseOfferTags>
                         <CourseOfferTitle className="noselect" courseName={courseName} type={data.courseType}>
                             {documentToReactComponents(data.courseMainTitle.json)}
                         </CourseOfferTitle>
 
-                        
-                        {(data.courseType === 'Мастер-класс' || !allowDeck ) && (
-                            <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid}/>
+
+                        {(data.courseType === 'Мастер-класс' || !allowDeck) && (
+                            <CourseOfferMainImage imgStyle={{ objectFit: 'contain', objectPosition: 'right center' }} fluid={data.courseMainImage.fluid} />
                         )}
-                      
+
                         {data.courseType === 'Курс' && allowDeck && (
                             <>
                                 <CourseCircle></CourseCircle>
-                                
+
                                 <CourseOfferPlaceholder>
                                     <CourseCircleMobile></CourseCircleMobile>
-                                    <CourseMobileSpinner style={{display: `${deckVisibility ? "none" : "block"}`}}>
-                                    
+                                    <CourseMobileSpinner style={{ display: `${deckVisibility ? "none" : "block"}` }}>
+
                                         <div className="loadingio-spinner-rolling-ta5f1nqy5p">
                                             <div className="ldio-6b142d04hhl">
                                                 <div></div>
                                             </div>
                                         </div>
                                     </CourseMobileSpinner>
-                                   
-                                    
+
+
                                     {isMobile && (
                                         <>
                                             <OfferRootWrapper>
-                                                <Deck postersCollection={data.coursePostersCollection}/>
+                                                <Deck postersCollection={data.coursePostersCollection} />
                                             </OfferRootWrapper>
                                         </>
-                                
+
                                     )}
-                                    
+
                                 </CourseOfferPlaceholder>
                             </>
-                            
-                        ) }
-                        
 
-                        
+                        )}
+
+
+
                         <CourseOfferDescr className="noselect" courseName={courseName} type={data.courseType}>
                             {data.courseDescr}
                         </CourseOfferDescr>
                         {data.courseType === 'Курс' ? (
-                            <CourseOfferButton to='#participation-section'><CourseArrowDown/>Участвовать</CourseOfferButton>
+                            <CourseOfferButton to='#participation-section'><CourseArrowDown />Участвовать</CourseOfferButton>
                         ) : (
-                            <CourseOfferButton to='#prices-range-section'  type={data.courseType}>Купить<CourseArrowDown/></CourseOfferButton>
-                        )}
-                        </CourseOfferInfo>
-                        
-                    </CourseOfferWrapper>
-               
-              
+                                <CourseOfferButton to='#prices-range-section' type={data.courseType}>Купить<CourseArrowDown /></CourseOfferButton>
+                            )}
+                    </CourseOfferInfo>
+
+                </CourseOfferWrapper>
+
+
             </Container>
 
-            
-            
+
+
 
         </CourseOfferSection>
     )

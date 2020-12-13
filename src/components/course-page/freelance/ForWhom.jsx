@@ -219,9 +219,9 @@ const ForWhomTag = styled.div`
     font-size: 1.25vw;
     align-items: center;
     @media only screen and (max-width: 575px) {
-        padding: 1.5vw 2.5vw;
-        font-size: 3.7vw;
-        margin-right: 3vw;
+        padding: 1.5vw 2.1vw;
+        font-size: 3.45vw;
+        margin-right: 2vw;
         margin-bottom: 3vw;
         box-shadow: 0 1vw 1.5vw rgba(0,0,0,0.1);
     }

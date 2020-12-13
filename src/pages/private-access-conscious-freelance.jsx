@@ -29,6 +29,7 @@ import CourseForWhom from "../components/course-page/freelance/ForWhom";
 import CourseFeatures from "../components/course-page/CourseFeatures";
 import FreelanceHardWork from "../components/course-page/freelance/FreelanceHardWork";
 import CourseFreelanceBanner from "../components/course-page/freelance/CourseFreelanceBanner";
+import CoursePaymentChoices from "../components/course-page/CoursePaymentChoices";
 
 export const contentfulQuery = graphql`
 
@@ -154,6 +155,7 @@ const OsoznannyFreelancePage = ({ data }) => {
         googleAnaliticsCategory={`Отправка формы Осознанный Фриланс`}
         additionalTags={['Только 6 учеников']}
       />
+      <CoursePaymentChoices paymentsAvailable={{ 'credit': true, 'corporate': false, 'abroad': false }} />
       <CourseFreelanceBanner />
 
 

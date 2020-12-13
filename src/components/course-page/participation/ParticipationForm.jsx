@@ -435,16 +435,16 @@ const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, 
                                         <FormTags>
                                             {data.courseStream && <FormTag important>{data.courseStream} поток</FormTag>}
                                             {data.courseStartAndEnd && <FormTag>{data.courseStartAndEnd}</FormTag>}
-                                            {/* {data.courseTags.map((tag, idx) => {
-                                                return (
-                                                    <FormTag key={idx}>{tag}</FormTag>
-                                                )
-                                            })}  */}
-                                            {additionalTags && additionalTags.map((tag, idx) => {
+                                            {data.courseTags.map((tag, idx) => {
                                                 return (
                                                     <FormTag key={idx}>{tag}</FormTag>
                                                 )
                                             })}
+                                            {/* {additionalTags && additionalTags.map((tag, idx) => {
+                                                return (
+                                                    <FormTag key={idx}>{tag}</FormTag>
+                                                )
+                                            })} */}
 
 
                                         </FormTags>

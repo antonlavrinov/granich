@@ -703,29 +703,28 @@ export const CurriculumContentColumn = styled.div`
 
 export const CurriculumContentText = styled.div`
     padding: 1vw;
-    font-size: 1.15vw;
     font-size: 1.25vw;
     line-height: 1.45;
     width: 100%;
     b {
         font-weight: 500;
-        display: block;
-        color: var(--granich-black);
-        line-height: 1.5;
+        color: green;
+        text-decoration: underline;
+        text-decoration-style: double;
+    }
+    i {
+        font-style: normal;
+        color: var(--granich-red);
+        font-weight: 500;
+        text-decoration: underline;
+        text-decoration-style: wavy;
     }
     p {
-        // color: var(--granich-grey);
         color: var(--granich-black);
-        // display: inline-block;
         white-space: normal;
         margin-bottom: 2vw;
         padding-right: 6vw;
-        // display: inline;
     }
-    // img {
-    //     display: inline;
-    //     height: 1vw;
-    // }
     a {
         border-bottom: 1px solid var(--granich-light-grey);
         color: var(--granich-black);
@@ -736,7 +735,6 @@ export const CurriculumContentText = styled.div`
     iframe {
         width: 55vw;
         height: 31vw;
-        // margin: 2vw 0;
     }
     ul {
         display: flex;
