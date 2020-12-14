@@ -9,7 +9,7 @@ import CogwheelIcon from '../../assets/svgs/cogwheels.svg';
 import Img from 'gatsby-image';
 
 
-export const Cogwheel = styled(props => <CogwheelIcon {...props}/>)`
+export const Cogwheel = styled(props => <CogwheelIcon {...props} />)`
     width: 5vw;
     height: 5vw;
     position: absolute;
@@ -19,7 +19,7 @@ export const Cogwheel = styled(props => <CogwheelIcon {...props}/>)`
 
 `
 
-export const ArrowIcon = styled(props => <Img {...props}/>)`
+export const ArrowIcon = styled(props => <Img {...props} />)`
     width: 3.1vw; 
     @media only screen and (max-width: 575px) {
         width: 7.5vw; 
@@ -116,6 +116,13 @@ export const CourseTagList = styled.div`
         margin-top: 0;
         margin-left: -0.2vw;
     }
+    ${(props) => props.empty && `
+        div {
+            color: var(--granich-grey);
+            border-color: var(--granich-grey);
+        }
+    `}
+
 `
 
 export const CourseMainTag = styled.div`
@@ -145,6 +152,10 @@ export const CourseMainTag = styled.div`
         bottom: 1vw;
         left: 1vw;
     }
+    ${(props) => props.empty && `
+        background: var(--granich-black);
+        border-color: var(--granich-black);
+    `}
 
 `
 

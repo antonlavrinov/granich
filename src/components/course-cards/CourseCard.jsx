@@ -24,53 +24,53 @@ import {
 
 
 
-const CourseCard = ({courseData, empty, calendar, arrowWhite, arrowBlack}) => {
-    
+const CourseCard = ({ courseData, empty, calendar, arrowWhite, arrowBlack }) => {
+
     return (
         <CourseWrapper>
             <CourseContainer>
-                <CourseTagList>
+                <CourseTagList empty={empty}>
                     <>
                         {courseData.node.courseTags.map((courseTag, idx) => {
                             return (
                                 <CourseTag key={idx} active={courseData.node.courseStatus}>{courseTag}</CourseTag>
                             )
                         })}
-                        
+
                     </>
 
-                    
+
                 </CourseTagList>
 
                 <CourseImageWrapper>
                     <CourseImage empty={empty} fluid={courseData.node.coursePreviewImage.fluid}>
                     </CourseImage>
-                    <CourseMainTag active={courseData.node.courseStatus}>Курс</CourseMainTag>
+                    <CourseMainTag empty={empty} active={courseData.node.courseStatus}>Курс</CourseMainTag>
                     <CourseTeachers>
                         {courseData.node.courseTeachers.length > 1 ? (
                             <>
                                 {courseData.node.courseTeachers.map((teacher, idx) => {
                                     return (
-                                        <CourseTeacher several={true} key={idx} fluid={teacher.fluid}/>
+                                        <CourseTeacher several={true} key={idx} fluid={teacher.fluid} />
                                     )
                                 })}
                             </>
 
                         ) : (
-                            <CourseTeacher fluid={courseData.node.courseTeachers[0].fluid}/>
-                        )}
+                                <CourseTeacher fluid={courseData.node.courseTeachers[0].fluid} />
+                            )}
                     </CourseTeachers>
                 </CourseImageWrapper>
                 <CourseTitle active={courseData.node.courseStatus}>{courseData.node.courseTitle}</CourseTitle>
                 <CourseInfo active={courseData.node.courseStatus}>
                     {courseData.node.courseStart && (
                         <CourseStart active={courseData.node.courseStatus}>
-                            Стартуем <br/> <span>{courseData.node.courseStart}</span>
+                            Стартуем <br /> <span>{courseData.node.courseStart}</span>
                         </CourseStart>
                     )}
                     {courseData.node.courseDuration && (
                         <CourseDuration active={courseData.node.courseStatus}>
-                            Учимся <br/> <span>{courseData.node.courseDuration}</span>
+                            Учимся <br /> <span>{courseData.node.courseDuration}</span>
                         </CourseDuration>
                     )}
                 </CourseInfo>
@@ -82,38 +82,38 @@ const CourseCard = ({courseData, empty, calendar, arrowWhite, arrowBlack}) => {
                         {empty ? (
                             <>
                                 <CourseButtonText empty>
-                                    Узнать <br/>об открытии
+                                    Узнать <br />об открытии
                                 </CourseButtonText>
-                                <ArrowIcon fluid={calendar}/>
+                                <ArrowIcon fluid={calendar} />
                             </>
                         ) : (
-                            <>
-                                {courseData.node.courseStatus ? (
-                                    <>  
-                                        
-                                        <CourseButtonText>
-                                            Участвовать
+                                <>
+                                    {courseData.node.courseStatus ? (
+                                        <>
+
+                                            <CourseButtonText>
+                                                Участвовать
                                         </CourseButtonText>
-                                        <ArrowIcon fluid={arrowWhite}/>
-                                        
-                                    </>
-                                ) : (
-                                    <>
-                                        <CourseButtonText>
-                                            Узнать <br/>о наборе
+                                            <ArrowIcon fluid={arrowWhite} />
+
+                                        </>
+                                    ) : (
+                                            <>
+                                                <CourseButtonText>
+                                                    Узнать <br />о наборе
                                         </CourseButtonText>
-                                        <ArrowIcon fluid={arrowBlack}/>
-                                    </>
-                                )}                            
-                            </>
-                        )}
-                        
+                                                <ArrowIcon fluid={arrowBlack} />
+                                            </>
+                                        )}
+                                </>
+                            )}
+
 
                     </CourseButtonWrapper>
 
                 </CourseButtonContainer>
             </CourseButton>
-        </CourseWrapper> 
+        </CourseWrapper>
     )
 }
 
