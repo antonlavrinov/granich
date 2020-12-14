@@ -140,7 +140,7 @@ const OsoznannyFreelancePage = ({ data }) => {
         keywords={['фриланс', 'осознанный', 'гранич', 'freelance', 'granich', 'conscious']}
         ogImage={ogImage}
         ogImageVk={ogImageVK}
-        url="https://granich.design/conscious-graphic-design" />
+        url="https://granich.design/conscious-freelance" />
       <div className="section-top-block"></div>
       <CourseOffer data={data.offer} />
 
@@ -151,8 +151,8 @@ const OsoznannyFreelancePage = ({ data }) => {
       <FreelanceHardWork />
       <CourseParticipation
         data={data.offer}
-        formId={`ltForm6865073`}
-        formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}
+        formId={`ltForm5127304`}
+        formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=935677483`}
         googleAnaliticsCategory={`Отправка формы Осознанный Фриланс`}
         additionalTags={['Только 6 учеников']}
       />
