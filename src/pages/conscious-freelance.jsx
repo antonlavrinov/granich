@@ -149,6 +149,7 @@ const OsoznannyFreelancePage = ({ data }) => {
       <CourseCurriculum compressedHeader dataHeader={data.curriculumHeader} data={data.curriculum} />
       <CourseFeatures title="Особенности курса" data={data.features} />
       <FreelanceHardWork />
+      <div id="participation-section"></div>
       <CourseParticipation
         data={data.offer}
         formId={`ltForm5127304`}
