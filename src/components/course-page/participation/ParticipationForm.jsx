@@ -45,6 +45,12 @@ const FormTags = styled.div`
     @media only screen and (max-width: 575px) {
         margin-bottom: 4vw;
     }
+    ${props => props.formDisabled && `
+        div {
+            color: var(--granich-grey);
+            border-color: color: var(--granich-grey);
+        }
+    `}
 `
 const FormTag = styled.div`
     border: 1px solid var(--granich-red);
@@ -77,6 +83,7 @@ const FormTitle = styled.h2`
     font-weight: 600;
     letter-spacing: -0.15vw;
     line-height: 0.85;
+
     @media only screen and (max-width: 575px) {
         font-size: 11vw;
         width: 90%;
@@ -213,6 +220,20 @@ const FormPolitikaLabel = styled.div`
         font-size: 3vw;
         margin-top: 5vw;
     }
+    ${props => props.formDisabled && `
+        a {
+            color: var(--granich-grey);
+            :after {
+                background: rgba(0,0,0, 0.2);
+            }
+            :hover {
+                :after {
+                    background: var(--granich-grey);
+                }
+                
+            }
+        }
+    `}
 `
 
 const ErrorMessage = styled.div`
@@ -243,6 +264,7 @@ const FormButton = styled.button`
     background: var(--granich-black-gradient);
     color: white;
     padding: 1vw 3vw;
+    text-align: center;
     border-radius: 0.5vw;
     font-size: 1.65vw;
     transition: transform 0.3s ease;
@@ -264,6 +286,25 @@ const FormButton = styled.button`
             transform: none;
         }
     }
+    ${props => props.formDisabled && `
+        background: var(--granich-grey);
+        padding: 1vw 1.3vw;
+        font-size: 1.4vw;
+        :hover {
+            transform: none;
+            cursor: default;
+        }
+        @media only screen and (max-width: 575px) {
+            font-size: 3.6vw;
+            padding: 3vw 3.5vw;
+            span {
+                font-size: 2.5vw;
+            }
+            :hover {
+                transform: none;
+            }
+        }
+    `}
 `
 
 const FormPrice = styled.div`
@@ -314,6 +355,9 @@ const FormFooterWrapper = styled.div`
     @media only screen and (max-width: 575px) {
         border-radius: 0 0 2.5vw 2.5vw;
     }
+    ${props => props.formDisabled && `
+        background: var(--granich-light-grey);
+    `}
 
 `
 
@@ -432,9 +476,9 @@ const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, 
 
                                     <FormContainer>
 
-                                        <FormTags>
-                                            {data.courseStream && <FormTag important>{data.courseStream} поток</FormTag>}
-                                            {data.courseStartAndEnd && <FormTag>{data.courseStartAndEnd}</FormTag>}
+                                        <FormTags formDisabled={!data.courseStatus}>
+                                            {data.courseStream && data.courseStatus && <FormTag important>{data.courseStream} поток</FormTag>}
+                                            {data.courseStartAndEnd && data.courseStatus && <FormTag>{data.courseStartAndEnd}</FormTag>}
                                             {data.courseTags.map((tag, idx) => {
                                                 return (
                                                     <FormTag key={idx}>{tag}</FormTag>
@@ -458,6 +502,7 @@ const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, 
                                             value={values.formParams.first_name}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
+                                            disabled={!data.courseStatus}
                                             errorStyle={errors.formParams && errors.formParams.first_name && touched.formParams && touched.formParams.first_name ? 1 : 0}
 
                                         /> <br />
@@ -472,6 +517,7 @@ const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, 
                                             value={values.formParams.last_name}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
+                                            disabled={!data.courseStatus}
                                             errorStyle={errors.formParams && errors.formParams.last_name && touched.formParams && touched.formParams.last_name ? 1 : 0}
 
                                         /> <br />
@@ -487,6 +533,7 @@ const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, 
                                             onChange={handleChange}
                                             id="formParams[email]"
                                             onBlur={handleBlur}
+                                            disabled={!data.courseStatus}
                                             errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
 
                                         />
@@ -506,6 +553,7 @@ const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, 
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             id="formParams[phone]"
+                                            disabled={!data.courseStatus}
                                             errorStyle={errors.formParams && errors.formParams.phone && touched.formParams && touched.formParams.phone ? 1 : 0}
                                         />
                                         <FormInputLabel htmlFor="formParams[phone]">для экстренной связи</FormInputLabel>
@@ -530,7 +578,7 @@ const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, 
                                             />  */}
 
                                         {/* <FormPolitikaLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">Принять <Link to="/public-offer"> оферту </Link> и <Link to="/privacy"> политику конфиденциальности</Link></FormPolitikaLabel> */}
-                                        <FormPolitikaLabel> Нажимая на кнопку в этой форме, я принимаю условия <Link to="/privacy"> политики конфиденциальности</Link> и <Link to="/public-offer"> учебного договора </Link></FormPolitikaLabel>
+                                        <FormPolitikaLabel formDisabled={!data.courseStatus}> Нажимая на кнопку в этой форме, я принимаю условия <Link to="/privacy"> политики конфиденциальности</Link> и <Link to="/public-offer"> учебного договора </Link></FormPolitikaLabel>
                                         {/*                                             
                                             {errors.politikaCheckbox && touched.politikaCheckbox && (
                                                 <ErrorMessage>{errors.politikaCheckbox}</ErrorMessage>
@@ -540,12 +588,13 @@ const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, 
 
 
                                 </FormWrapper>
-                                <FormFooterWrapper>
+                                <FormFooterWrapper formDisabled={!data.courseStatus}>
 
                                     <FormFooterContainer>
                                         <FormButtonBlock>
                                             <FormButton
-                                                disabled={isSubmitting}
+                                                formDisabled={!data.courseStatus}
+                                                disabled={isSubmitting || !data.courseStatus}
                                                 type="submit"
                                                 id="button970916"
                                                 onClick={() => {
@@ -558,7 +607,9 @@ const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, 
                                                     }, 6000);
                                                     return true;
                                                 }}
-                                            >Оплатить</FormButton>
+                                            >
+                                                {!data.courseStatus ? 'Набор завершён' : 'Оплатить'}
+                                            </FormButton>
                                             {data.coursePrice && (
                                                 <FormPrice><i>→ </i>{data.coursePrice}<span>₽</span></FormPrice>
                                             )}

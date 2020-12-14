@@ -135,7 +135,8 @@ const OsoznannyFreelancePage = ({ data }) => {
     <Layout>
       <Header type={'dark'} />
       <SEO title="Осознанный Фриланс"
-        description="Курс по фрилансу, построенный на авторской дизайн-системе. Вы получите твёрдую базу и научитесь аргументировать свои макеты"
+        description="Курс Осознанный Фриланс от Вадима Гранича. Онлайн-школа Granich."
+        socialDescription="Курс для творцов, которые хотят преуспеть на фрилансе"
         keywords={['фриланс', 'осознанный', 'гранич', 'freelance', 'granich', 'conscious']}
         ogImage={ogImage}
         ogImageVk={ogImageVK}
