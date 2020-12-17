@@ -1,7 +1,7 @@
-import React, {useRef, useState, useEffect} from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import styled from 'styled-components';
 // import BlackArrowRight from '../assets/svgs/arrow-black-right.svg';
-import {Formik} from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Container } from './style';
 import posed from "react-pose";
@@ -13,19 +13,19 @@ import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 const ShakeForm = posed.div({
     shake: {
-      applyAtEnd: { x: 0 },
-      applyAtStart: { x: -10 },
-      x: 0,
-      transition: {
-        type: "spring",
-        stiffness: 1000,
-        damping: 10,
-        duration: 4
-      }
+        applyAtEnd: { x: 0 },
+        applyAtStart: { x: -10 },
+        x: 0,
+        transition: {
+            type: "spring",
+            stiffness: 1000,
+            damping: 10,
+            duration: 4
+        }
     }
-  });
+});
 
-const ArrowRightButton = styled(props => <Img {...props}/>)`
+const ArrowRightButton = styled(props => <Img {...props} />)`
     width: 3.6vw;
     transition: all 0.2s ease;
     :hover {
@@ -186,8 +186,8 @@ const MailingButton = styled.button`
 //         margin: 0 0.4vw;
 //         position: relative;
 //         font-weight: 400;
-        
-       
+
+
 //         :after {
 //             content: '';
 //             height: 1px;
@@ -198,7 +198,7 @@ const MailingButton = styled.button`
 //             left: 0;
 
 //         }
-        
+
 //         :hover {
 //             :after {
 //                 background: white;
@@ -262,7 +262,7 @@ const MailingButton = styled.button`
 //                 border-radius: 0.2vw;
 //                 padding: 3vw;
 //                 font-size: 3.7vw;
-    
+
 //             }
 //             :before {
 //                 top: 4.5vw;
@@ -326,7 +326,7 @@ const MailingWrapperInputAndButton = styled.div`
 
 
 
-const Mailing = ({popup}) => {
+const Mailing = ({ popup }) => {
     const [shakeTrigger, setShakeTrigger] = useState(3);
 
     const formEl = useRef(null)
@@ -339,11 +339,14 @@ const Mailing = ({popup}) => {
             loc.value = window.location.href;
             let ref = document.getElementById("2588475f67e38dc85f8ref");
             ref.value = document.referrer;
+            console.log('LOCATION', window.location.href)
+            console.log('VALUE', document.referrer)
         }
         //Кодировка формы для Геткурса
         const secondGetcourseFormScript = () => {
             let statUrl = "https://school.granich.design/stat/counter?ref=" + encodeURIComponent(document.referrer) + "&loc=" + encodeURIComponent(document.location.href);
             document.getElementById('gccounterImgContainer').innerHTML = "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
+            console.log('ELEM', document.getElementById('gccounterImgContainer'))
         }
 
         firstGetcourseFormScript()
@@ -354,9 +357,9 @@ const Mailing = ({popup}) => {
     function isInitialValid(props) {
         if (!props.validationSchema) return true;
         return props.validationSchema.isValidSync(props.initialValues);
-      }
-    
-      const data = useStaticQuery(graphql`
+    }
+
+    const data = useStaticQuery(graphql`
         query mailingIcon {
             arrowBlackRight: file(relativePath: { eq: "arrow-black-right-01.png" }) {
                 childImageSharp {
@@ -379,17 +382,19 @@ const Mailing = ({popup}) => {
                 <ShakeForm pose={["shake"]} poseKey={shakeTrigger}>
                     <MailingWrapper>
                         <MailingContainer>
-                            
+
                             <MailingText>
                                 <span>Оставьте почту,</span> чтобы узнать о наборах на курсы, мастер-классы и новом бесплатном контенте. Без спама.
                             </MailingText>
-                            
-                                <Formik isInitialValid={isInitialValid}  initialValues={{politikaCheckbox: true, formParams: {
-                                            email: ''
-                                }}}
-                                
-                                onSubmit={(values, {setSubmitting}, e) => {
-                                    
+
+                            <Formik isInitialValid={isInitialValid} initialValues={{
+                                politikaCheckbox: true, formParams: {
+                                    email: ''
+                                }
+                            }}
+
+                                onSubmit={(values, { setSubmitting }, e) => {
+
                                     formEl.current.submit();
                                     trackCustomEvent({
                                         category: 'Подписка на рассылку',
@@ -402,15 +407,15 @@ const Mailing = ({popup}) => {
                                         email: Yup.string().email('Это не электропочта  >__<').required('Сперва впишите почту :)'),
                                     })
                                 })}
-                                
-                                >
+
+                            >
 
                                 {props => {
                                     const {
-                                        values, 
-                                        errors, 
-                                        isSubmitting, 
-                                        handleChange, 
+                                        values,
+                                        errors,
+                                        isSubmitting,
+                                        handleChange,
                                         handleSubmit,
                                         isValid,
                                         touched,
@@ -418,58 +423,60 @@ const Mailing = ({popup}) => {
                                         // setFieldValue
                                     } = props;
                                     return (
-                                        <MailingForm className="main-page-form" action="https://school.granich.design/pl/lite/block-public/process-html?id=855578433" 
-                                                    method="post" 
-                                                    data-open-new-window="0"
-                                                    ref={formEl} 
-                                                    id="ltForm4927084"
-                                                    onSubmit={ (e) => {
-                                                        if(isValid) {
-                                                            handleSubmit(e);
-                                                        } else {
-                                                            handleSubmit(e);
-                                                            setShakeTrigger(shakeTrigger + 1)
-                                                            if (errors.formParams && errors.formParams.email) {
-                                                                values.formParams.email = '';
-                                                            }
-                                                            
-
-                                                        }
+                                        <MailingForm className="main-page-form" action="https://school.granich.design/pl/lite/block-public/process-html?id=855578433"
+                                            method="post"
+                                            data-open-new-window="0"
+                                            ref={formEl}
+                                            id="ltForm4927084"
+                                            onSubmit={(e) => {
+                                                if (isValid) {
+                                                    handleSubmit(e);
+                                                } else {
+                                                    handleSubmit(e);
+                                                    setShakeTrigger(shakeTrigger + 1)
+                                                    if (errors.formParams && errors.formParams.email) {
+                                                        values.formParams.email = '';
                                                     }
 
+
+                                                }
+                                            }
+
                                             }>
-                                                    <input type="hidden" name="formParams[setted_offer_id]"/>
-                                                    <MailingWrapperInputAndButton>
-                                                        <MailingInput 
-                                                                type="text" 
-                                                                maxLength="60"  
-                                                                placeholder={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? errors.formParams.email : 'Электропочта'} 
-                                                                name="formParams[email]"
-                                                                value={values.formParams.email}
-                                                                onChange={handleChange}
-                                                                errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
-                                                            />
-                                                             <MailingButton aria-label="Submit" 
-                                                                            type="submit"
-                                                                            id="button7568304"
-                                                                            onClick={() => {if(window['btnprs5f67e38dd2018']){
-                                                                                return false;
-                                                                            }
-                                                                                window['btnprs5f67e38dd2018']=true;
-                                                                                setTimeout(function(){
-                                                                                    window['btnprs5f67e38dd2018']=false},6000);
-                                                                                    return true;
-                                                                            }}
-                                                                            disabled={isSubmitting}>
-                                                                                <ArrowRightButton fluid={arrowRight}/>
-                                                                                </MailingButton>
-                                                            
-                                                        
-                                                    </MailingWrapperInputAndButton>
-                                                    <FormPolitikaLabel>
-                                                        Нажимая на кнопку в этой форме, я принимаю условия <PrivacyPopupLink href="/privacy"> политики конфиденциальности</PrivacyPopupLink>
-                                                    </FormPolitikaLabel>
-                                                    {/* <FormCheckbox 
+                                            <input type="hidden" name="formParams[setted_offer_id]" />
+                                            <MailingWrapperInputAndButton>
+                                                <MailingInput
+                                                    type="text"
+                                                    maxLength="60"
+                                                    placeholder={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? errors.formParams.email : 'Электропочта'}
+                                                    name="formParams[email]"
+                                                    value={values.formParams.email}
+                                                    onChange={handleChange}
+                                                    errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
+                                                />
+                                                <MailingButton aria-label="Submit"
+                                                    type="submit"
+                                                    id="button7568304"
+                                                    onClick={() => {
+                                                        if (window['btnprs5f67e38dd2018']) {
+                                                            return false;
+                                                        }
+                                                        window['btnprs5f67e38dd2018'] = true;
+                                                        setTimeout(function () {
+                                                            window['btnprs5f67e38dd2018'] = false
+                                                        }, 6000);
+                                                        return true;
+                                                    }}
+                                                    disabled={isSubmitting}>
+                                                    <ArrowRightButton fluid={arrowRight} />
+                                                </MailingButton>
+
+
+                                            </MailingWrapperInputAndButton>
+                                            <FormPolitikaLabel>
+                                                Нажимая на кнопку в этой форме, я принимаю условия <PrivacyPopupLink href="/privacy"> политики конфиденциальности</PrivacyPopupLink>
+                                            </FormPolitikaLabel>
+                                            {/* <FormCheckbox 
                                                             type="checkbox"
                                                             name="politikaCheckbox"
                                                             value={values.politikaCheckbox}
@@ -481,34 +488,37 @@ const Mailing = ({popup}) => {
                                                             id="politikaCheckbox"
                                                             className={`course-form-checkbox_black`}
                                                             />  */}
-{/* 
+                                            {/* 
                                                             <FormCheckboxLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">
                                                                 <FormCheckboxLabelText errorMessage={errors.politikaCheckbox && touched.politikaCheckbox ? errors.politikaCheckbox : 0}>
                                                                     Принять<PrivacyPopupLink href="/privacy"> политику конфиденциальности</PrivacyPopupLink>
                                                                 </FormCheckboxLabelText>
                                                             </FormCheckboxLabel>  */}
-                                                            <input type="hidden" id="2588475f67e38dc85f8" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value=""/>
-                                                            <input type="hidden" id="2588475f67e38dc85f8ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value=""/>
-                                                            <input type="hidden" name="requestTime" value="1600643981"/>
-                                                            <input type="hidden" name="requestSimpleSign" value="b034133ec813412fc5a260bab9fab587"/>
-                                                            <input type="hidden" name="isHtmlWidget" value="1"/>
+                                            <input type="hidden" id="2588475f67e38dc85f8" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value="" />
+                                            <input type="hidden" id="2588475f67e38dc85f8ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value="" />
+                                            <input type="hidden" name="requestTime" value="1600643981" />
+                                            <input type="hidden" name="requestSimpleSign" value="b034133ec813412fc5a260bab9fab587" />
+                                            <input type="hidden" name="isHtmlWidget" value="1" />
 
-                                                   
-    
+                                            <span id="gccounterImgContainer"></span>
+
+
+
                                         </MailingForm>
-                                        
-                                    )}}
 
-                                </Formik>
-                                
+                                    )
+                                }}
 
-                            
+                            </Formik>
+
+
+
 
 
                         </MailingContainer>
-                        <span id="gccounterImgContainer"></span>
 
-                        
+
+
                     </MailingWrapper>
                 </ShakeForm>
             </Container>

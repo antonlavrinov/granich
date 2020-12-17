@@ -3,19 +3,16 @@ import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import CourseOffer from '../components/course-page/CourseOffer';
 import Header from "../components/Header"
-// import CourseExplanations from "../components/course-page/CourseExplanations"
 import CourseExample from "../components/course-page/CourseExample"
-// import CourseForWhom from "../components/course-page/CourseForWhom"
 import CoursePortfolio from "../components/course-page/CoursePortfolio"
 import CourseTrainingPath from "../components/course-page/CourseTrainingPath"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
 import CourseFeatures from "../components/course-page/CourseFeatures"
 import CourseReviews from "../components/course-page/CourseReviews"
 import CourseParticipation from "../components/course-page/CourseParticipation"
-// import CourseCommitment from "../components/course-page/CourseCommitment"
 import { graphql } from 'gatsby';
 import CourseAnswers from "../components/course-page/CourseAnswers";
-// import Mailing from '../components/Mailing';
+import Mailing from '../components/Mailing';
 import CourseExplain from '../components/course-page/CourseExplain'
 import ogImage from '../assets/images/seo/conscious-graphic-design-min.jpg';
 import ogImageVK from '../assets/images/seo/vk/conscious-graphic-design.jpg';
@@ -262,33 +259,16 @@ const OsoznannyGraphDesignPage = ({ data }) => {
         url="https://granich.design/conscious-graphic-design" />
       <div className="section-top-block"></div>
       <CourseOffer allowDeck={true} data={data.offer} deckVisibility={deckVisibility} />
-      {/* <CourseExplanations data={data.explanations}/> */}
       <CourseExample title={`Для кого этот курс?`} />
       <CourseExplain />
       <CourseOpportunities />
       <CourseAftermath />
-
-
-      {/* <CourseForWhom data={data.forWhom}/> */}
-      {/* <CourseCommitment/> */}
       <CourseTimetable />
       <CourseTrainingPath data={data.trainingPath} />
-
       <CoursePortfolio dataHeader={data.portfolioHeader} posters={data.portfolioPosters} multiPages={data.portfolioMultipage} />
-
-
       <CourseCurriculum dataHeader={data.curriculumHeader} data={data.curriculum} />
       <CourseFeatures title="Еще пара бонусов" data={data.features} />
       <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews} />
-
-      {/* {data.offer.courseStatus ? (
-        <CourseParticipation 
-                      data={data.offer}
-                      formId={`ltForm6865073`}
-                      formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}/>
-      ) : (
-        <Mailing/>
-      )} */}
       <CourseHardWork title="«Пожалуйста, примите осознанное решение об участии на этом курсе»" text="Хоть я и создал на нём условия для быстрого развития твёрдых навыков, но это не произойдёт по волшебству. Вам понадобится прилагать много сил, чтобы дойти до конца." />
       <div id="participation-section"></div>
       <CourseParticipation
@@ -298,13 +278,10 @@ const OsoznannyGraphDesignPage = ({ data }) => {
         googleAnaliticsCategory={`Отправка формы Осознанный Графдизайн`}
         additionalTags={['Интенсивный', 'С нуля']} />
       <CoursePaymentChoices paymentsAvailable={{ 'credit': true, 'corporate': true, 'abroad': true }} />
+      {data.offer.courseStatus && <Mailing />}
       <CourseIndividualSupport />
       <CourseBanner />
       <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus} />
-
-
-
-
     </Layout>
   )
 }
