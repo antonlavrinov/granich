@@ -278,7 +278,7 @@ const OsoznannyGraphDesignPage = ({ data }) => {
         googleAnaliticsCategory={`Отправка формы Осознанный Графдизайн`}
         additionalTags={['Интенсивный', 'С нуля']} />
       <CoursePaymentChoices paymentsAvailable={{ 'credit': true, 'corporate': true, 'abroad': true }} />
-      {data.offer.courseStatus && <Mailing />}
+      {!data.offer.courseStatus && <Mailing />}
       <CourseIndividualSupport />
       <CourseBanner />
       <CourseAnswers data={data.answers} courseStatus={data.offer.courseStatus} />
