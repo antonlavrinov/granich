@@ -225,7 +225,7 @@ export const CourseImage = styled(props => <BackgroundImage {...props}></Backgro
         max-height: 38vw;
         height: 38vw;
     }
-    ${props => props.empty && `
+    ${props => (props.empty || !props.active) && `
         filter: grayscale(100%);
     `}
 `

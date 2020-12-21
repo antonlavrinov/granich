@@ -21,7 +21,7 @@ import {
 } from './styles';
 
 
-const MasterCard = ({courseData, empty, calendar, arrowWhite, arrowBlack}) => {
+const MasterCard = ({ courseData, empty, calendar, arrowWhite, arrowBlack }) => {
     return (
         <CourseWrapper>
             <CourseContainer>
@@ -32,14 +32,14 @@ const MasterCard = ({courseData, empty, calendar, arrowWhite, arrowBlack}) => {
                                 <CourseTag key={idx} active={courseData.node.courseStatus}>{courseTag}</CourseTag>
                             )
                         })}
-                        
+
                     </>
 
-                    
+
                 </CourseTagList>
 
                 <CourseImageWrapper>
-                    <CourseImage empty={empty} fluid={courseData.node.coursePreviewImage.fluid}>
+                    <CourseImage active={courseData.node.courseStatus} empty={empty} fluid={courseData.node.coursePreviewImage.fluid}>
                     </CourseImage>
                     <CourseMainTag active={courseData.node.courseStatus}>Мастер-класс</CourseMainTag>
                     <CourseTeachers>
@@ -47,14 +47,14 @@ const MasterCard = ({courseData, empty, calendar, arrowWhite, arrowBlack}) => {
                             <>
                                 {courseData.node.courseTeachers.map((teacher, idx) => {
                                     return (
-                                        <CourseTeacher several={true} key={idx} fluid={teacher.fluid}/>
+                                        <CourseTeacher several={true} key={idx} fluid={teacher.fluid} />
                                     )
                                 })}
                             </>
 
                         ) : (
-                            <CourseTeacher  fluid={courseData.node.courseTeachers[0].fluid}/>
-                        )}
+                                <CourseTeacher fluid={courseData.node.courseTeachers[0].fluid} />
+                            )}
                     </CourseTeachers>
                 </CourseImageWrapper>
 
@@ -72,39 +72,39 @@ const MasterCard = ({courseData, empty, calendar, arrowWhite, arrowBlack}) => {
                         {empty ? (
                             <>
                                 <CourseButtonText empty>
-                                    Узнать <br/>об открытии
+                                    Узнать <br />об открытии
                                 </CourseButtonText>
-                                <ArrowIcon fluid={calendar}/>
+                                <ArrowIcon fluid={calendar} />
                             </>
                         ) : (
 
-                            <>
-                                {courseData.node.courseStatus ? (
-                                    <>  
-                                        <CourseButtonText>
-                                            Купить
+                                <>
+                                    {courseData.node.courseStatus ? (
+                                        <>
+                                            <CourseButtonText>
+                                                Купить
                                         </CourseButtonText>
-                                        <ArrowIcon fluid={arrowWhite}/>
-                                    </>
-                                ) : (
-                                    <>
-                                        <CourseButtonText>
-                                            Предзаказ
+                                            <ArrowIcon fluid={arrowWhite} />
+                                        </>
+                                    ) : (
+                                            <>
+                                                <CourseButtonText>
+                                                    Предзаказ
                                         </CourseButtonText>
-                                        <ArrowIcon fluid={arrowBlack}/>
-                                    </>
-                                )}                            
-                            
-                            </>
+                                                <ArrowIcon fluid={arrowBlack} />
+                                            </>
+                                        )}
 
-                        )}
-                        
+                                </>
+
+                            )}
+
 
                     </CourseButtonWrapper>
 
                 </CourseButtonContainer>
             </CourseButton>
-        </CourseWrapper> 
+        </CourseWrapper>
     )
 }
 

@@ -43,7 +43,7 @@ const CourseCard = ({ courseData, empty, calendar, arrowWhite, arrowBlack }) => 
                 </CourseTagList>
 
                 <CourseImageWrapper>
-                    <CourseImage empty={empty} fluid={courseData.node.coursePreviewImage.fluid}>
+                    <CourseImage empty={empty} active={courseData.node.courseStatus} fluid={courseData.node.coursePreviewImage.fluid}>
                     </CourseImage>
                     <CourseMainTag empty={empty} active={courseData.node.courseStatus}>Курс</CourseMainTag>
                     <CourseTeachers>

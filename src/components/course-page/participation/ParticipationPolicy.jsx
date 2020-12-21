@@ -71,14 +71,15 @@ const PolicyFooter = styled.div`
         position: relative;
         svg {
             position: relative;
-            top: 0.2vw;
+            top: 0.1vw;
             width: 1vw;
-            fill: var(--granich-grey);
+            fill: #2DA2D4;
             margin-right: 0.3vw;
         }
         span {
             position: relative;
             color: var(--granich-black);
+            color: #2DA2D4;
             font-weight: 500;
             &:before {
                 content: '';
@@ -86,12 +87,16 @@ const PolicyFooter = styled.div`
                 bottom: -0.2vw;
                 left: 0;
                 background: var(--granich-light-grey);
+                background: #2DA2D4;
+                opacity: 0.5;
                 height: 1px;
                 width: 100%;
             }
             &:hover {
                 &:before {
                     background: var(--granich-grey);
+                    background: #2DA2D4;
+                    opacity: 1;
                 }
             }
         }
