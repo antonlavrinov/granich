@@ -116,7 +116,6 @@ const PolicyFooter = styled.div`
             top: 0.5vw;
             svg {
                 width: 4vw;
-                fill: var(--granich-grey);
                 margin-right: 1vw;
                 top: 0.5vw;
             }
