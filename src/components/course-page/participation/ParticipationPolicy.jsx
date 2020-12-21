@@ -1,7 +1,9 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
-import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import TelegramIcon from '../../../assets/svgs/telegram-plane-brands.svg'
+
 
 const PolicyWrapper = styled.div`
     height: 100%;
@@ -57,10 +59,44 @@ const PolicyFooter = styled.div`
     color: var(--granich-grey);
     color: #666666;
     font-weight: 500;
+    text-align: center;
     span {
         position: relative;
     }
     white-space: nowrap;
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        svg {
+            position: relative;
+            top: 0.2vw;
+            width: 1vw;
+            fill: var(--granich-grey);
+            margin-right: 0.3vw;
+        }
+        span {
+            position: relative;
+            color: var(--granich-black);
+            font-weight: 500;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: -0.2vw;
+                left: 0;
+                background: var(--granich-light-grey);
+                height: 1px;
+                width: 100%;
+            }
+            &:hover {
+                &:before {
+                    background: var(--granich-grey);
+                }
+            }
+        }
+
+    }
     @media only screen and (max-width: 575px) {
         border-radius: 1.5vw;
         padding: 3vw 3vw;
@@ -68,8 +104,19 @@ const PolicyFooter = styled.div`
         text-align: center;
         margin-top: 4vw;
         margin-bottom: 1vw;
-        line-height: 1.5;
+        line-height: 1.3;
         white-space: normal;
+        a {
+            display: inline-flex;
+            top: 0.5vw;
+            svg {
+                width: 4vw;
+                fill: var(--granich-grey);
+                margin-right: 1vw;
+                top: 0.5vw;
+            }
+        }
+
     }
 `
 
@@ -165,14 +212,20 @@ const PolicyFooterEmail = styled.span`
 
 `
 
-const ParticipationPolicy = ({data}) => {
+const ParticipationPolicy = ({ data, telegram }) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
     return (
         <PolicyWrapper>
             {data.childContentfulGranichCourseCoursePolicyRichTextNode && <PolicyText>{documentToReactComponents(data.childContentfulGranichCourseCoursePolicyRichTextNode.json)}</PolicyText>}
-            <PolicyFooter>
-                Вопросы по обучению пишите: <CopyToClipboard text={'hello@granich.design'}><PolicyFooterEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PolicyFooterEmail></CopyToClipboard>
-            </PolicyFooter>
+            {telegram ? (
+                <PolicyFooter>
+                    Вопросы по обучению пишите мне в телеграме: <a rel="noopener" rel="noreferrer" target="_blank" href="https://t.me/vadim_granich" ><TelegramIcon /> <span>@vadim_granich</span></a>
+                </PolicyFooter>
+            ) : (
+                    <PolicyFooter>
+                        Вопросы по обучению пишите: <CopyToClipboard text={'hello@granich.design'}><PolicyFooterEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>hello@granich.design</PolicyFooterEmail></CopyToClipboard>
+                    </PolicyFooter>
+                )}
         </PolicyWrapper>
     )
 }

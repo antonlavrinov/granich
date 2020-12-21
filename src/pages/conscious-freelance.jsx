@@ -158,6 +158,7 @@ const OsoznannyFreelancePage = ({ data }) => {
         formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=935677483`}
         googleAnaliticsCategory={`Отправка формы Осознанный Фриланс`}
         additionalTags={['Только 6 учеников']}
+        telegram
       />
       <CoursePaymentChoices paymentsAvailable={{ 'credit': true, 'corporate': false, 'abroad': false }} />
       <CourseFreelanceBanner />
