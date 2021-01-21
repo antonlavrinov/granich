@@ -53,15 +53,23 @@ const Date = styled(props => <DateIcon {...props} />)`
 `
 
 const CourseOfferSection = styled.section`
-    margin-bottom: 4vw;
-    position: relative;
-    // overflow-x: hidden;
+    margin-bottom: 2vw;
+    position: relative; 
     @media only screen and (max-width: 575px) {
-        margin-bottom: 5vw;
+        margin-bottom: 3vw;
+        margin-top: -1vw;
+        padding-bottom: 2vw;
+        padding-top: 1vw;
     }
 
 
 `
+
+// const CourseOfferOverflow = styled.div`
+//     overflow: hidden;
+// `
+
+
 
 const CourseOfferWrapper = styled.div`
     background: white;
@@ -387,6 +395,7 @@ const OfferRootWrapper = styled.div`
     height: 36vw;
     height: 100%;
     z-index: 998;
+
     
     @media only screen and (max-width: 575px) {
         width: 100%;
@@ -542,6 +551,7 @@ const CourseOffer = ({ data, courseName, deckVisibility, allowDeck }) => {
 
     return (
         <CourseOfferSection>
+            {/* <CourseOfferOverflow> */}
             {deckVisibility && isDesktop && (
                 <OfferRootWrapper>
                     <Deck postersCollection={data.coursePostersCollection} />
@@ -628,6 +638,8 @@ const CourseOffer = ({ data, courseName, deckVisibility, allowDeck }) => {
 
 
             </Container>
+
+            {/* </CourseOfferOverflow> */}
 
 
 
