@@ -60,6 +60,7 @@ const CourseOfferSection = styled.section`
         margin-top: -1vw;
         padding-bottom: 2vw;
         padding-top: 1vw;
+        overflow: hidden;
     }
 
 
@@ -81,7 +82,8 @@ const CourseOfferWrapper = styled.div`
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: right;
-    
+
+
     display: flex;
     flex-direction: column;
     overflow: hidden;
