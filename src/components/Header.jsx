@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components';
-import {Container} from './style';
+import { Container } from './style';
 import Logo from '../assets/svgs/granich-logo.svg';
 import ArrowDown from '../assets/svgs/header-arrow-icon-down.svg';
 import ArrowOut from '../assets/svgs/header-arrow-icon-out.svg';
@@ -10,7 +10,7 @@ import LoginButtonIcon from '../assets/svgs/login-button-icon.svg';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import Link from 'gatsby-link';
 
-const WhiteLogo = styled(props => <Logo {...props}/>)`
+const WhiteLogo = styled(props => <Logo {...props} />)`
   width: 4.8vw;
   min-width: 4.8vw;
   height: 3vw;
@@ -81,7 +81,7 @@ const NavLinks = styled.nav`
   }
 `
 
-const NavLink = styled(props => <Link {...props}/>)`
+const NavLink = styled(props => <Link {...props} />)`
   display: block;
   position: relative;
   color: white;
@@ -99,6 +99,7 @@ const NavLink = styled(props => <Link {...props}/>)`
     border-bottom: solid 0.15vw white;
 
   }
+
   ${(props) => props.propstyle && `
   color: var(--granich-black);
   :hover {
@@ -143,6 +144,9 @@ const NavLinkExternal = styled.a`
     border-bottom: solid 0.15vw white;
 
   }
+  :focus {
+
+  }
   ${(props) => props.propstyle && `
   color: var(--granich-black);
   :hover {
@@ -172,7 +176,7 @@ const NavLinkExternal = styled.a`
   }
 `
 
-const ArrowLinkDown = styled(props => <ArrowDown {...props}/>)`
+const ArrowLinkDown = styled(props => <ArrowDown {...props} />)`
   position: absolute;
   top: -0.5vw;
   right: -1.4vw;
@@ -192,7 +196,7 @@ const ArrowLinkDown = styled(props => <ArrowDown {...props}/>)`
 
 `
 
-const ArrowLinkOut = styled(props => <ArrowOut {...props}/>)`
+const ArrowLinkOut = styled(props => <ArrowOut {...props} />)`
   position: absolute;
   top: -0.5vw;
   right: -1.4vw;
@@ -207,7 +211,7 @@ const ArrowLinkOut = styled(props => <ArrowOut {...props}/>)`
 
 
 `
-const ArrowLinkBack = styled(props => <ArrowBack {...props}/>)`
+const ArrowLinkBack = styled(props => <ArrowBack {...props} />)`
   position: absolute;
   top: -0.5vw;
   right: -1.4vw;
@@ -268,7 +272,7 @@ const LogoMobileWrapper = styled.a`
       `}
     }
   `
-  
+
 
 const LogoAndLoginButtonWrapper = styled.div`
   display: none;
@@ -315,64 +319,63 @@ const LoginMobileButton = styled.a`
 
 const Header = ({ siteTitle, type }) => (
   <HeaderSection id="header">
-      <Container>
-        <HeaderWrapper>
-
-          <LogoWrapper href="/" propstyle={type}>
-            <WhiteLogo  />
-          </LogoWrapper>
-          <LogoAndLoginButtonWrapper>
-            <LogoMobileWrapper href="/" propstyle={type}>
-              <WhiteLogo  />
-            </LogoMobileWrapper>
-            <LoginMobileButton rel="noopener noreferrer" href="https://school.granich.design/cms/system/login" target="_blank">
-              <LoginButtonIcon/>Войти
+    <Container>
+      <HeaderWrapper>
+        <LogoWrapper href="/" propstyle={type}>
+          <WhiteLogo />
+        </LogoWrapper>
+        <LogoAndLoginButtonWrapper>
+          <LogoMobileWrapper href="/" propstyle={type}>
+            <WhiteLogo />
+          </LogoMobileWrapper>
+          <LoginMobileButton rel="noopener noreferrer" href="https://school.granich.design/cms/system/login" target="_blank">
+            <LoginButtonIcon />Войти
             </LoginMobileButton>
-          </LogoAndLoginButtonWrapper>
-          <NavLinks >
-            <ul >
-              <li>
-                {type === 'dark' ? (
-                    <NavLink to="/#courses" propstyle={type}>
-                      Курсы
-                      {type === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
-                    </NavLink>
-                  ) : (
-                    <NavLinkExternal onClick={() => scrollTo('#courses')} propstyle={type}>
-                      Курсы
-                      {type === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
-                    </NavLinkExternal>
+        </LogoAndLoginButtonWrapper>
+        <NavLinks >
+          <ul >
+            <li>
+              {type === 'dark' ? (
+                <NavLink to="/#courses" propstyle={type}>
+                  Курсы
+                  {type === 'dark' ? <ArrowLinkBack /> : <ArrowLinkDown />}
+                </NavLink>
+              ) : (
+                  <NavLinkExternal tabIndex={0} onClick={() => scrollTo('#courses')} propstyle={type}>
+                    Курсы
+                    {type === 'dark' ? <ArrowLinkBack /> : <ArrowLinkDown />}
+                  </NavLinkExternal>
                 )}
-              </li>  
-              <li>
-                {type === 'dark' ? (
-                  <NavLink to="/#content" propstyle={type}>
+            </li>
+            <li>
+              {type === 'dark' ? (
+                <NavLink to="/#content" propstyle={type}>
+                  Контент
+                  {type === 'dark' ? <ArrowLinkBack /> : <ArrowLinkDown />}
+                </NavLink>
+              ) : (
+                  <NavLinkExternal tabIndex={0} onClick={() => scrollTo('#content')} propstyle={type}>
                     Контент
-                    {type === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
-                  </NavLink>
-                ) : (
-                  <NavLinkExternal onClick={() => scrollTo('#content')} propstyle={type}>
-                    Контент
-                    {type === 'dark' ? <ArrowLinkBack/> : <ArrowLinkDown/>}
+                    {type === 'dark' ? <ArrowLinkBack /> : <ArrowLinkDown />}
                   </NavLinkExternal>
                 )}
 
-              </li>  
-              <li>
-                <NavLinkExternal rel="noopener noreferrer" href="/blog" target="_blank" propstyle={type}>
-                  Блог
-                  <ArrowLinkOut/>
-                </NavLinkExternal>
-              </li>  
+            </li>
+            <li>
+              <NavLinkExternal rel="noopener noreferrer" href="/blog" target="_blank" propstyle={type}>
+                Блог
+                  <ArrowLinkOut />
+              </NavLinkExternal>
+            </li>
 
-            </ul>
-          </NavLinks>
-          <LoginButton rel="noopener noreferrer" href="https://school.granich.design/cms/system/login" target="_blank">
-            <LoginButtonIcon/>Войти
+          </ul>
+        </NavLinks>
+        <LoginButton rel="noopener noreferrer" href="https://school.granich.design/cms/system/login" target="_blank">
+          <LoginButtonIcon />Войти
           </LoginButton>
 
-        </HeaderWrapper>
-      </Container>
+      </HeaderWrapper>
+    </Container>
   </HeaderSection>
 
 )

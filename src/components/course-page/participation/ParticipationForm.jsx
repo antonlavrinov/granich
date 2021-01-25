@@ -525,7 +525,7 @@ const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, 
                                             <ErrorMessage>{errors.formParams.last_name}</ErrorMessage>
                                         )}
                                         <FormInput
-                                            type="text"
+                                            type="email"
                                             maxLength="60"
                                             placeholder="Электропочта"
                                             name="formParams[email]"
@@ -545,7 +545,7 @@ const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, 
                                         )}
                                         <FormInputLabelMobile htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabelMobile>
                                         <FormInput
-                                            type="text"
+                                            type="tel"
                                             maxLength="60"
                                             placeholder="Телефон"
                                             name="formParams[phone]"

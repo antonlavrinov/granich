@@ -1,46 +1,46 @@
-import React,{useRef, useState, useEffect} from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import styled from 'styled-components';
-import {Formik} from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import posed from "react-pose";
 import Cross from '../../assets/svgs/cross.svg';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 
 const ShakeForm = posed.div({
     shake: {
-      applyAtEnd: { x: 0 },
-      applyAtStart: { x: -10 },
-      x: 0,
-      transition: {
-        type: "spring",
-        stiffness: 1000,
-        damping: 10,
-        duration: 4
-      }
+        applyAtEnd: { x: 0 },
+        applyAtStart: { x: -10 },
+        x: 0,
+        transition: {
+            type: "spring",
+            stiffness: 1000,
+            damping: 10,
+            duration: 4
+        }
     }
 });
 
 
 
-  
-  const FormWrapper = styled.div`
+
+const FormWrapper = styled.div`
 
   `
-  
-  const FormContainer = styled.div`
+
+const FormContainer = styled.div`
       padding: 2.8vw 2vw 1vw 2.7vw;
       @media only screen and (max-width: 575px) {
           padding: 5vw 5vw 3vw;
       }
   `
-  
 
-  
-  
-  
-  const FormTitle = styled.h2`
+
+
+
+
+const FormTitle = styled.h2`
       font-size: 4vw;
       font-weight: 600;
       letter-spacing: -0.25vw;
@@ -51,7 +51,7 @@ const ShakeForm = posed.div({
           margin-bottom: 8vw;
       }
   `
-  const Form = styled.form`
+const Form = styled.form`
       background: white;
       border-radius: 0.6vw;
       display: flex;
@@ -68,7 +68,7 @@ const ShakeForm = posed.div({
           }
       }
   `
-  const FormInput = styled.input`
+const FormInput = styled.input`
       border-radius: 0.8vw;
       border: none;
       width: 25vw;
@@ -101,9 +101,9 @@ const ShakeForm = posed.div({
       `}
   
   
-  `   
-  
-  const FormInputLabel = styled.label`
+  `
+
+const FormInputLabel = styled.label`
       font-size: 0.9vw;
       color: var(--granich-light-grey);
       max-width: 7vw;
@@ -120,8 +120,8 @@ const ShakeForm = posed.div({
   
       }
   `
-  
-  const FormInputLabelMobile = styled.label`
+
+const FormInputLabelMobile = styled.label`
       font-size: 0.9vw;
       color: var(--granich-light-grey);
       max-width: 7vw;
@@ -138,8 +138,8 @@ const ShakeForm = posed.div({
   
       }
   `
-  
-  const FormCheckbox = styled.input`
+
+const FormCheckbox = styled.input`
       margin-left: 0.3vw;
       @media only screen and (max-width: 575px) {
           
@@ -147,8 +147,8 @@ const ShakeForm = posed.div({
   
   
   `
-  
-  const FormPolitikaLabel = styled.div`
+
+const FormPolitikaLabel = styled.div`
       font-size: 1.2vw;
       letter-spacing: -0.02vw;
       margin-top: 1vw;
@@ -197,7 +197,7 @@ const ShakeForm = posed.div({
       `}
   `
 
-  const FormCheckboxLabel = styled.label`
+const FormCheckboxLabel = styled.label`
   font-size: 1.2vw;
   user-select: none;
   letter-spacing: -0.02vw;
@@ -267,8 +267,8 @@ const FormLabelText = styled.div`
         width: 56vw;
     }
 `
-  
-  const ErrorMessage = styled.div`
+
+const ErrorMessage = styled.div`
       font-size: 1vw;
       color: var(--granich-red);
       margin-left: 0.4vw;
@@ -279,8 +279,8 @@ const FormLabelText = styled.div`
   
       }
   `
-  
-  const FormButtonBlock = styled.div`
+
+const FormButtonBlock = styled.div`
       display: flex;
       margin-bottom: 1vw;
       align-items: center;
@@ -289,8 +289,8 @@ const FormLabelText = styled.div`
           
       }
   `
-  
-  const FormButton = styled.button`
+
+const FormButton = styled.button`
       background: var(--granich-black-gradient);
       color: white;
       padding: 1vw 3vw;
@@ -313,10 +313,10 @@ const FormLabelText = styled.div`
         }
       }
   `
-  
 
-  
-  const FormSubText = styled.div`
+
+
+const FormSubText = styled.div`
       color: white;
       font-size: 1.17vw;
       line-height: 1.4;
@@ -325,8 +325,8 @@ const FormLabelText = styled.div`
   
       }
   `
-  
-  const FormFooterWrapper = styled.div`
+
+const FormFooterWrapper = styled.div`
       background: var(--granich-red);
       border-radius: 0 0 0.6vw 0.6vw;
       margin-top: auto;
@@ -335,10 +335,10 @@ const FormLabelText = styled.div`
       }
   
   `
-  
-  
-  
-  const FormFooterContainer = styled.div`
+
+
+
+const FormFooterContainer = styled.div`
       padding: 1.3vw 3vw 2vw;
       display: flex;
       flex-direction: column;
@@ -439,7 +439,7 @@ const FormSubTextEmail = styled.span`
 `
 
 
-const CustomBr = styled(props => <br {...props}/>)`
+const CustomBr = styled(props => <br {...props} />)`
     display: none !important;
     @media only screen and (max-width: 575px) {
         display: block !important;
@@ -449,7 +449,7 @@ const CustomBr = styled(props => <br {...props}/>)`
 
 
 
-const PriceRangeModal = ({googleAnaliticsCategory, modalIsOpen, openModal, closeModal, chosenPrice, data, formPostUrl, formId, valueInput1, valueInput2, valueInput3, valueInput4}) => {
+const PriceRangeModal = ({ googleAnaliticsCategory, modalIsOpen, openModal, closeModal, chosenPrice, data, formPostUrl, formId, valueInput1, valueInput2, valueInput3, valueInput4 }) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
     const formEl = useRef(null)
 
@@ -460,23 +460,23 @@ const PriceRangeModal = ({googleAnaliticsCategory, modalIsOpen, openModal, close
     }
 
     useEffect(() => {
-            // Кодировка формы для Геткурса
-            const firstGetcourseFormScript = () => {
-                //этот код тупо добавляет url нашего сайта в value прозрачных инпутов
-                let loc = document.getElementById("2588285fbbbc4915557");
-                loc.value = window.location.href;
-                let ref = document.getElementById("2588285fbbbc4915557ref");
-                ref.value = document.referrer;
+        // Кодировка формы для Геткурса
+        const firstGetcourseFormScript = () => {
+            //этот код тупо добавляет url нашего сайта в value прозрачных инпутов
+            let loc = document.getElementById("2588285fbbbc4915557");
+            loc.value = window.location.href;
+            let ref = document.getElementById("2588285fbbbc4915557ref");
+            ref.value = document.referrer;
 
 
-            }
-            //Кодировка формы для Геткурса
-            const secondGetcourseFormScript = () => {
-                let statUrl = "https://school.granich.design/stat/counter?ref=" + encodeURIComponent(document.referrer) + "&loc=" + encodeURIComponent(document.location.href);
-                document.getElementById('gccounterImgContainer').innerHTML = "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
-            }
-            firstGetcourseFormScript()
-            secondGetcourseFormScript()
+        }
+        //Кодировка формы для Геткурса
+        const secondGetcourseFormScript = () => {
+            let statUrl = "https://school.granich.design/stat/counter?ref=" + encodeURIComponent(document.referrer) + "&loc=" + encodeURIComponent(document.location.href);
+            document.getElementById('gccounterImgContainer').innerHTML = "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
+        }
+        firstGetcourseFormScript()
+        secondGetcourseFormScript()
 
     }, [])
 
@@ -485,217 +485,218 @@ const PriceRangeModal = ({googleAnaliticsCategory, modalIsOpen, openModal, close
     return (
 
         <>
-                <ShakeForm  pose={["shake"]} poseKey={shakeTrigger}>
-                    <Formik isInitialValid={isInitialValid} 
-                                initialValues={{
-                                    // politikaCheckbox: true,
-                                    // offerCheckbox: true, 
-                                    formParams: {
-                                    offer_id: `${chosenPrice}`,
-                                    email: '',
-                                    
-                                }}}
-                                onSubmit={(values, {setSubmitting}, e) => {
-                                    formEl.current.submit();
-                                    trackCustomEvent({
-                                        category: `${googleAnaliticsCategory}`,
-                                        action: 'click',
-                                    })
-                                }}
-                                validationSchema={Yup.object().shape({
-                                    // politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
-                                    // offerCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на учебный договор'),
-                                    formParams: Yup.object().shape({
-                                        offer_id: Yup.string().required('Выберите один из пакетов'),
-                                        email: Yup.string().email('Это не Электропочта').required('Сперва впишите Электропочту'),
+            <ShakeForm pose={["shake"]} poseKey={shakeTrigger}>
+                <Formik isInitialValid={isInitialValid}
+                    initialValues={{
+                        // politikaCheckbox: true,
+                        // offerCheckbox: true, 
+                        formParams: {
+                            offer_id: `${chosenPrice}`,
+                            email: '',
 
-                                    })
-                                })}
-                            >
+                        }
+                    }}
+                    onSubmit={(values, { setSubmitting }, e) => {
+                        formEl.current.submit();
+                        trackCustomEvent({
+                            category: `${googleAnaliticsCategory}`,
+                            action: 'click',
+                        })
+                    }}
+                    validationSchema={Yup.object().shape({
+                        // politikaCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на обработку персональных данных'),
+                        // offerCheckbox: Yup.bool().oneOf([true], 'Нам нужно ваше согласие на учебный договор'),
+                        formParams: Yup.object().shape({
+                            offer_id: Yup.string().required('Выберите один из пакетов'),
+                            email: Yup.string().email('Это не Электропочта').required('Сперва впишите Электропочту'),
 
-                                {props => {
-                                    const {
-                                        values, 
-                                        errors, 
-                                        isSubmitting, 
-                                        handleChange,
-                                        handleSubmit,
-                                        isValid,
-                                        touched,
-                                        handleBlur,
-                                        setFieldValue,
-                                        // setFieldTouched,
-                                        
+                        })
+                    })}
+                >
 
-                                    } = props;
-                                    return (
-                                        
-                                        <Form  ref={formEl} onSubmit={ (e) => {
-                                            if(isValid) {
-                                                handleSubmit(e);
-                                            
-                                            } else {
-                                                handleSubmit(e);
-                                                setShakeTrigger(shakeTrigger + 1);
-                                                
-                                            }
-                                        }}  id={formId} action={formPostUrl} method="post" data-open-new-window="0" >
-                                    <FormWrapper>
-                                        <FormCross onClick={closeModal}><Cross/></FormCross>
-                                       
+                    {props => {
+                        const {
+                            values,
+                            errors,
+                            isSubmitting,
+                            handleChange,
+                            handleSubmit,
+                            isValid,
+                            touched,
+                            handleBlur,
+                            setFieldValue,
+                            // setFieldTouched,
+
+
+                        } = props;
+                        return (
+
+                            <Form ref={formEl} onSubmit={(e) => {
+                                if (isValid) {
+                                    handleSubmit(e);
+
+                                } else {
+                                    handleSubmit(e);
+                                    setShakeTrigger(shakeTrigger + 1);
+
+                                }
+                            }} id={formId} action={formPostUrl} method="post" data-open-new-window="0" >
+                                <FormWrapper>
+                                    <FormCross onClick={closeModal}><Cross /></FormCross>
+
                                     <FormContainer>
-                                        <FormTitle>Выберите <br/>нужный пакет</FormTitle>
-                                        <input  type="hidden" name="formParams[setted_offer_id]" />
+                                        <FormTitle>Выберите <br />нужный пакет</FormTitle>
+                                        <input type="hidden" name="formParams[setted_offer_id]" />
                                         <input id="input-formPosition9651352" name='formParams[need_offer]' type='hidden' value="" />
-                                        <br/>
+                                        <br />
                                         {/* <input id={`${data.edges[0].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" /> */}
-                                        <FormCheckbox 
-                                                data-price-value={`${data.edges[0].node.pricesPrice}`}
-                                                data-old-price-value={`${data.edges[0].node.pricesPrice}`}
-                                                data-price-currency="руб."
-                                                data-qty-value="1"
-                                                type="radio"
-                                                name="formParams[offer_id]"
-                                                value={valueInput1}
-                                                checked={values.formParams.offer_id === `${data.edges[0].node.pricesPrice}`}
-                                                
-                                                onChange={() => {
-                                                    setFieldValue("formParams[offer_id]", `${data.edges[0].node.pricesPrice}`);
-                                                    
-                                                    // setFieldTouched("formParams[offer_id]", true)
-                                                }}
-                                                id={`${data.edges[0].node.pricesPrice}`}
-                                                className={`course-form-checkbox`}
-                                                errorStyle={errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id ? 1 : 0}
-                                                
-                                            /> 
-                                            <FormCheckboxLabel line 
-                                                               className={`course-form-label ${errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && 'course-form-label_error'}`} 
-                                                               htmlFor={`${data.edges[0].node.pricesPrice}`}>
-                                                        <FormLabelText>
-                                                            пакет Презентация
+                                        <FormCheckbox
+                                            data-price-value={`${data.edges[0].node.pricesPrice}`}
+                                            data-old-price-value={`${data.edges[0].node.pricesPrice}`}
+                                            data-price-currency="руб."
+                                            data-qty-value="1"
+                                            type="radio"
+                                            name="formParams[offer_id]"
+                                            value={valueInput1}
+                                            checked={values.formParams.offer_id === `${data.edges[0].node.pricesPrice}`}
+
+                                            onChange={() => {
+                                                setFieldValue("formParams[offer_id]", `${data.edges[0].node.pricesPrice}`);
+
+                                                // setFieldTouched("formParams[offer_id]", true)
+                                            }}
+                                            id={`${data.edges[0].node.pricesPrice}`}
+                                            className={`course-form-checkbox`}
+                                            errorStyle={errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id ? 1 : 0}
+
+                                        />
+                                        <FormCheckboxLabel line
+                                            className={`course-form-label ${errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && 'course-form-label_error'}`}
+                                            htmlFor={`${data.edges[0].node.pricesPrice}`}>
+                                            <FormLabelText>
+                                                пакет Презентация
                                                         </FormLabelText>
-                                                        <FormLabelPrice>
-                                                            {`${data.edges[0].node.pricesPrice}`} ₽
+                                            <FormLabelPrice>
+                                                {`${data.edges[0].node.pricesPrice}`} ₽
                                                         </FormLabelPrice>
-                                            </FormCheckboxLabel>
-                                            {/* <input id={`${data.edges[1].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" /> */}
-                                            <FormCheckbox 
-                                                data-price-value={`${data.edges[1].node.pricesPrice}`}
-                                                data-old-price-value={`${data.edges[1].node.pricesPrice}`}
-                                                data-price-currency="руб."
-                                                data-qty-value="1"
-                                                type="radio"
-                                                name="formParams[offer_id]"
-                                                value={valueInput2}
-                                                checked={values.formParams.offer_id === `${data.edges[1].node.pricesPrice}`}
-                                                onChange={() => {
-                                                    setFieldValue("formParams[offer_id]", `${data.edges[1].node.pricesPrice}`);
-                                                    // setFieldTouched("formParams[offer_id]", true)
-                                                }}
-                                                id={`${data.edges[1].node.pricesPrice}`}
-                                                className={`course-form-checkbox`}
-                                                errorStyle={errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id ? 1 : 0}
-                                                
-                                            /> 
-                                           
-                                            <FormCheckboxLabel line 
-                                                               className={`course-form-label ${errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && 'course-form-label_error'}`} 
-                                                               htmlFor={`${data.edges[1].node.pricesPrice}`}>
-                                                                <FormLabelText>
-                                                                    пакет Видеоформат
+                                        </FormCheckboxLabel>
+                                        {/* <input id={`${data.edges[1].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" /> */}
+                                        <FormCheckbox
+                                            data-price-value={`${data.edges[1].node.pricesPrice}`}
+                                            data-old-price-value={`${data.edges[1].node.pricesPrice}`}
+                                            data-price-currency="руб."
+                                            data-qty-value="1"
+                                            type="radio"
+                                            name="formParams[offer_id]"
+                                            value={valueInput2}
+                                            checked={values.formParams.offer_id === `${data.edges[1].node.pricesPrice}`}
+                                            onChange={() => {
+                                                setFieldValue("formParams[offer_id]", `${data.edges[1].node.pricesPrice}`);
+                                                // setFieldTouched("formParams[offer_id]", true)
+                                            }}
+                                            id={`${data.edges[1].node.pricesPrice}`}
+                                            className={`course-form-checkbox`}
+                                            errorStyle={errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id ? 1 : 0}
+
+                                        />
+
+                                        <FormCheckboxLabel line
+                                            className={`course-form-label ${errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && 'course-form-label_error'}`}
+                                            htmlFor={`${data.edges[1].node.pricesPrice}`}>
+                                            <FormLabelText>
+                                                пакет Видеоформат
                                                                 </FormLabelText>
-                                                                <FormLabelPrice>
-                                                                    {`${data.edges[1].node.pricesPrice}`} ₽
+                                            <FormLabelPrice>
+                                                {`${data.edges[1].node.pricesPrice}`} ₽
                                                                 </FormLabelPrice>
-                                                            </FormCheckboxLabel>
-                                            {/* <input id={`${data.edges[2].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" />                 */}
-                                            <FormCheckbox 
-                                                data-price-value={`${data.edges[2].node.pricesPrice}`}
-                                                data-old-price-value={`${data.edges[2].node.pricesPrice}`}
-                                                data-price-currency="руб."
-                                                data-qty-value="1"
-                                                type="radio"
-                                                name="formParams[offer_id]"
-                                                value={valueInput3}
-                                                checked={values.formParams.offer_id === `${data.edges[2].node.pricesPrice}`}
-                                                onChange={() => {
-                                                    setFieldValue("formParams[offer_id]", `${data.edges[2].node.pricesPrice}`);
-                                                    // setFieldTouched("formParams[offer_id]", true)
-                                                }}
-                                                id={`${data.edges[2].node.pricesPrice}`}
-                                                className={`course-form-checkbox`}
-                                                errorStyle={errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id ? 1 : 0}
-                                                
-                                            /> 
-            
-                                           
-                                            <FormCheckboxLabel line className={`course-form-label ${errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && 'course-form-label_error'}`} htmlFor={`${data.edges[2].node.pricesPrice}`}>
-                                                  <FormLabelText>
-                                                    пакет Домашнее Задание
+                                        </FormCheckboxLabel>
+                                        {/* <input id={`${data.edges[2].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" />                 */}
+                                        <FormCheckbox
+                                            data-price-value={`${data.edges[2].node.pricesPrice}`}
+                                            data-old-price-value={`${data.edges[2].node.pricesPrice}`}
+                                            data-price-currency="руб."
+                                            data-qty-value="1"
+                                            type="radio"
+                                            name="formParams[offer_id]"
+                                            value={valueInput3}
+                                            checked={values.formParams.offer_id === `${data.edges[2].node.pricesPrice}`}
+                                            onChange={() => {
+                                                setFieldValue("formParams[offer_id]", `${data.edges[2].node.pricesPrice}`);
+                                                // setFieldTouched("formParams[offer_id]", true)
+                                            }}
+                                            id={`${data.edges[2].node.pricesPrice}`}
+                                            className={`course-form-checkbox`}
+                                            errorStyle={errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id ? 1 : 0}
+
+                                        />
+
+
+                                        <FormCheckboxLabel line className={`course-form-label ${errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && 'course-form-label_error'}`} htmlFor={`${data.edges[2].node.pricesPrice}`}>
+                                            <FormLabelText>
+                                                пакет Домашнее Задание
                                                   </FormLabelText>
-                                                  <FormLabelPrice>
-                                                      {`${data.edges[2].node.pricesPrice}`} ₽
+                                            <FormLabelPrice>
+                                                {`${data.edges[2].node.pricesPrice}`} ₽
                                                   </FormLabelPrice>
-                                            </FormCheckboxLabel>
-                                            {/* <input id={`${data.edges[3].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" /> */}
-                                            <FormCheckbox 
-                                                data-price-value={`${data.edges[3].node.pricesPrice}`}
-                                                data-old-price-value={`${data.edges[3].node.pricesPrice}`}
-                                                data-price-currency="руб."
-                                                data-qty-value="1"
-                                                type="radio"
-                                                name="formParams[offer_id]"
-                                                value={valueInput4}
-                                                checked={values.formParams.offer_id === `${data.edges[3].node.pricesPrice}`}
-                                                onChange={() => {
-                                                    setFieldValue("formParams[offer_id]", `${data.edges[3].node.pricesPrice}`);
-                                                    // setFieldTouched("formParams[offer_id]", true)
-                                                }}
-                                                id={`${data.edges[3].node.pricesPrice}`}
-                                                className={`course-form-checkbox`}
-                                                errorStyle={errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id ? 1 : 0}
-                                                
-                                            /> 
+                                        </FormCheckboxLabel>
+                                        {/* <input id={`${data.edges[3].node.pricesPrice}`} name='formParams[need_offer]' type='hidden' value="1" /> */}
+                                        <FormCheckbox
+                                            data-price-value={`${data.edges[3].node.pricesPrice}`}
+                                            data-old-price-value={`${data.edges[3].node.pricesPrice}`}
+                                            data-price-currency="руб."
+                                            data-qty-value="1"
+                                            type="radio"
+                                            name="formParams[offer_id]"
+                                            value={valueInput4}
+                                            checked={values.formParams.offer_id === `${data.edges[3].node.pricesPrice}`}
+                                            onChange={() => {
+                                                setFieldValue("formParams[offer_id]", `${data.edges[3].node.pricesPrice}`);
+                                                // setFieldTouched("formParams[offer_id]", true)
+                                            }}
+                                            id={`${data.edges[3].node.pricesPrice}`}
+                                            className={`course-form-checkbox`}
+                                            errorStyle={errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id ? 1 : 0}
 
-                                           
-                                            <FormCheckboxLabel  
-                                                               className={`course-form-label ${errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && 'course-form-label_error'}`} 
-                                                               htmlFor={`${data.edges[3].node.pricesPrice}`}>
-                                                  <FormLabelText>
-                                                    пакет Макет с нуля
+                                        />
+
+
+                                        <FormCheckboxLabel
+                                            className={`course-form-label ${errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && 'course-form-label_error'}`}
+                                            htmlFor={`${data.edges[3].node.pricesPrice}`}>
+                                            <FormLabelText>
+                                                пакет Макет с нуля
                                                   </FormLabelText>
-                                                  <FormLabelPrice>
-                                                      {`${data.edges[3].node.pricesPrice}`} ₽
+                                            <FormLabelPrice>
+                                                {`${data.edges[3].node.pricesPrice}`} ₽
                                                   </FormLabelPrice>
 
-                                            </FormCheckboxLabel>
-                                            {errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && (
-                                                <ErrorMessage>{errors.formParams.offer_id}</ErrorMessage>
-                                            )}
+                                        </FormCheckboxLabel>
+                                        {errors.formParams && errors.formParams.offer_id && touched.formParams && touched.formParams.offer_id && (
+                                            <ErrorMessage>{errors.formParams.offer_id}</ErrorMessage>
+                                        )}
 
-                                            <FormInput 
-                                                type="text" 
-                                                maxLength="60"  
-                                                placeholder="Электропочта"
-                                                name="formParams[email]"
-                                                value={values.formParams.email}
-                                                onChange={handleChange}
-                                                id="formParams[email]"
-                                                onBlur={handleBlur}
-                                                errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
-                                            
-                                            />
-                                            
-                                            <FormInputLabel htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabel>
-                                            <FormInputLabelMobile htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabelMobile>
-                                            <br/>
-                                            {errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email && (
-                                                <ErrorMessage>{errors.formParams.email}</ErrorMessage>
-                                            )}
-                                            <FormPolitikaLabel>Нажимая на кнопку в этой форме, я принимаю условия <a target="_blank" href="/privacy" > политики конфиденциальности</a> <CustomBr/>и <a target="_blank" href="/public-offer" > учебного договора</a></FormPolitikaLabel>
+                                        <FormInput
+                                            type="email"
+                                            maxLength="60"
+                                            placeholder="Электропочта"
+                                            name="formParams[email]"
+                                            value={values.formParams.email}
+                                            onChange={handleChange}
+                                            id="formParams[email]"
+                                            onBlur={handleBlur}
+                                            errorStyle={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? 1 : 0}
 
-                                            {/* <FormCheckbox 
+                                        />
+
+                                        <FormInputLabel htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabel>
+                                        <FormInputLabelMobile htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabelMobile>
+                                        <br />
+                                        {errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email && (
+                                            <ErrorMessage>{errors.formParams.email}</ErrorMessage>
+                                        )}
+                                        <FormPolitikaLabel>Нажимая на кнопку в этой форме, я принимаю условия <a target="_blank" href="/privacy" > политики конфиденциальности</a> <CustomBr />и <a target="_blank" href="/public-offer" > учебного договора</a></FormPolitikaLabel>
+
+                                        {/* <FormCheckbox 
                                                 type="checkbox"
                                                 name="politikaCheckbox"
                                                 value={values.politikaCheckbox}
@@ -708,8 +709,8 @@ const PriceRangeModal = ({googleAnaliticsCategory, modalIsOpen, openModal, close
                                                 className={`course-form-checkbox`}
                                                 
                                             />  */}
-                                          
-                                            {/* <FormCheckboxLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">Принять <a target="_blank" href="/privacy" > политику конфиденциальности</a></FormCheckboxLabel>
+
+                                        {/* <FormCheckboxLabel className={`course-form-label ${errors.politikaCheckbox && touched.politikaCheckbox && 'course-form-label_error'}`} htmlFor="politikaCheckbox">Принять <a target="_blank" href="/privacy" > политику конфиденциальности</a></FormCheckboxLabel>
                                             
                                             
                                             {errors.politikaCheckbox && touched.politikaCheckbox && (
@@ -736,68 +737,71 @@ const PriceRangeModal = ({googleAnaliticsCategory, modalIsOpen, openModal, close
                                             {errors.offerCheckbox && touched.offerCheckbox && (
                                                 <ErrorMessage>{errors.offerCheckbox}</ErrorMessage>
                                             )} */}
-                                        </FormContainer>
+                                    </FormContainer>
 
 
-                                        
-                                    </FormWrapper>
-                                    <FormFooterWrapper>
 
-                                        <FormFooterContainer>
-                                            <FormButtonBlock>
-                                                <FormButton 
-                                                        disabled={isSubmitting} 
-                                                        type="submit"
-                                                        id="button1106661"
-                                                        onClick={() => {if(window['btnprs5f64b2ecda34e']){
-                                                            return false;
-                                                        }
-                                                        window['btnprs5f64b2ecda34e']=true;
-                                                        setTimeout(function(){
-                                                            window['btnprs5f64b2ecda34e']=false},6000);
-                                                            return true;}}
-                                                    >Купить</FormButton>
+                                </FormWrapper>
+                                <FormFooterWrapper>
 
-                                            </FormButtonBlock>
+                                    <FormFooterContainer>
+                                        <FormButtonBlock>
+                                            <FormButton
+                                                disabled={isSubmitting}
+                                                type="submit"
+                                                id="button1106661"
+                                                onClick={() => {
+                                                    if (window['btnprs5f64b2ecda34e']) {
+                                                        return false;
+                                                    }
+                                                    window['btnprs5f64b2ecda34e'] = true;
+                                                    setTimeout(function () {
+                                                        window['btnprs5f64b2ecda34e'] = false
+                                                    }, 6000);
+                                                    return true;
+                                                }}
+                                            >Купить</FormButton>
 
-                                            <FormSubText>Вы всегда можете докупить более дорогой пакет. В нем уже будет учтена сумма, 
-                                                         которую вы оплатили за более дешевый пакет. Для этого напишите координатору 
-                                                         школы на 
+                                        </FormButtonBlock>
+
+                                        <FormSubText>Вы всегда можете докупить более дорогой пакет. В нем уже будет учтена сумма,
+                                        которую вы оплатили за более дешевый пакет. Для этого напишите координатору
+                                        школы на
                                                          <CopyToClipboard text={'hello@granich.design'}>
-                                                            <FormSubTextEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
-                                                                hello@granich.design
+                                                <FormSubTextEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
+                                                    hello@granich.design
                                                             </FormSubTextEmail>
-                                                        </CopyToClipboard>
-                                            </FormSubText>
-                                        </FormFooterContainer>
-                                    </FormFooterWrapper>
-                                            
+                                            </CopyToClipboard>
+                                        </FormSubText>
+                                    </FormFooterContainer>
+                                </FormFooterWrapper>
 
 
 
-                                        
-                                    <input type="hidden" id="2588285fbbbc4915557" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value=""/>
-                                    
-                                    <input type="hidden" id="2588285fbbbc4915557ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value=""/>
-                                    {/* Value поменялось, стало короче. Из-за этого геткурс
+
+
+                                <input type="hidden" id="2588285fbbbc4915557" name="__gc__internal__form__helper" className="__gc__internal__form__helper" value="" />
+
+                                <input type="hidden" id="2588285fbbbc4915557ref" name="__gc__internal__form__helper_ref" className="__gc__internal__form__helper_ref" value="" />
+                                {/* Value поменялось, стало короче. Из-за этого геткурс
                                      форму не смог обработать. Если выпадет ошибка 
                                      Не получилось обработать форму. Обратитесь к администратору. 
                                      То просто обнови value из html формы */}
-                                    <input type="hidden" name="requestTime" value="1606138953"/>
-                                    
-                                    <input type="hidden" name="requestSimpleSign" value="c9053cad472435748de642c5ffebb7c2"/>
-                                    
-                                    <input type="hidden" name="isHtmlWidget" value="1"/>
+                                <input type="hidden" name="requestTime" value="1606138953" />
 
-                                        </Form>
-                                        
-                                    )
-                                }}
-                            </Formik>
-                            <span id="gccounterImgContainer"></span>
+                                <input type="hidden" name="requestSimpleSign" value="c9053cad472435748de642c5ffebb7c2" />
+
+                                <input type="hidden" name="isHtmlWidget" value="1" />
+
+                            </Form>
+
+                        )
+                    }}
+                </Formik>
+                <span id="gccounterImgContainer"></span>
 
 
-                </ShakeForm>
+            </ShakeForm>
 
 
         </>

@@ -19,7 +19,7 @@ const OfferSection = styled.div`
     @media only screen and (max-width: 575px) {
         height: 134vw;
     }
-`  
+`
 
 
 
@@ -97,7 +97,7 @@ const OfferDescr = styled.div`
 //     z-index: 0;
 // `
 
-const OfferUnderlineIcon = styled(props => <UnderlineLinkIcon {...props}/>)`
+const OfferUnderlineIcon = styled(props => <UnderlineLinkIcon {...props} />)`
     width: 20.8vw;
     position: absolute;
     bottom: -1.1vw;
@@ -110,7 +110,7 @@ const OfferUnderlineIcon = styled(props => <UnderlineLinkIcon {...props}/>)`
     
 `
 
-const OfferSvgClip = styled(props => <BackgroundClip {...props}/>)`
+const OfferSvgClip = styled(props => <BackgroundClip {...props} />)`
 
     // padding: 10vw;
     position: relative;
@@ -135,7 +135,7 @@ const OfferFlagsImg = styled(props => <Img {...props} />)`
         width: 6vw;
         margin-left: 1.5vw;
     }
-` 
+`
 
 const OfferMainImage = styled(props => <Img {...props} />)`
     position: absolute !important;
@@ -186,40 +186,40 @@ const OfferWrapper = styled.div`
 
 
 
-const Offer = ({data}) => {
+const Offer = ({ data }) => {
 
 
 
-        const headerImage = data.edges[0].node.headerImage.fluid
-        const headerImageMobile = data.edges[0].node.headerImageMobile.fluid       
-        const headerSubtitleImage = data.edges[0].node.headerSubtitleImage.fluid
-        const headerSubtitle_01 = data.edges[0].node.headerSubtitle_01
-        const headerSubtitle_02 = data.edges[0].node.headerSubtitle_02
-        const headerSubtitle_03 = data.edges[0].node.headerSubtitle_03
-        const headerTitle = data.edges[0].node.headerTitle
+    const headerImage = data.edges[0].node.headerImage.fluid
+    const headerImageMobile = data.edges[0].node.headerImageMobile.fluid
+    const headerSubtitleImage = data.edges[0].node.headerSubtitleImage.fluid
+    const headerSubtitle_01 = data.edges[0].node.headerSubtitle_01
+    const headerSubtitle_02 = data.edges[0].node.headerSubtitle_02
+    const headerSubtitle_03 = data.edges[0].node.headerSubtitle_03
+    const headerTitle = data.edges[0].node.headerTitle
 
     return (
         <>
             <OfferSection id="offer" >
-                <OfferMainImage fluid={headerImage}/>
-                <OfferMainImageMobile fluid={headerImageMobile}/>
+                <OfferMainImage fluid={headerImage} />
+                <OfferMainImageMobile fluid={headerImageMobile} />
                 <Container>
-                    
+
                     <OfferWrapper>
                         <OfferTitle>{headerTitle}</OfferTitle>
                         <OfferDescr>
-                            {headerSubtitle_01} <OfferFlagsImg alt="flags" fluid={headerSubtitleImage} /> <br/> {headerSubtitle_02} <span tabIndex={0} role="button" onKeyDown={() => scrollTo('#manifest')} onClick={() => scrollTo('#manifest')}>{headerSubtitle_03} <OfferUnderlineIcon/></span>
+                            {headerSubtitle_01} <OfferFlagsImg alt="flags" fluid={headerSubtitleImage} /> <br /> {headerSubtitle_02} <span role="button" onKeyDown={() => scrollTo('#manifest')} onClick={() => scrollTo('#manifest')}>{headerSubtitle_03} <OfferUnderlineIcon /></span>
                         </OfferDescr>
 
-                        
+
                         {/* <OfferSeo>Делаем из любви, а не страха. Курсы с осознанным подходом. Выточенно. Интенсивно. С дедлайнами.</OfferSeo> */}
                     </OfferWrapper>
-                    
+
 
                 </Container>
 
             </OfferSection>
-            <OfferSvgClip/>
+            <OfferSvgClip />
 
         </>
 

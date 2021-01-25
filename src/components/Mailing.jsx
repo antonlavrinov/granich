@@ -446,7 +446,7 @@ const Mailing = ({ popup }) => {
                                             <input type="hidden" name="formParams[setted_offer_id]" />
                                             <MailingWrapperInputAndButton>
                                                 <MailingInput
-                                                    type="text"
+                                                    type="email"
                                                     maxLength="60"
                                                     placeholder={errors.formParams && errors.formParams.email && touched.formParams && touched.formParams.email ? errors.formParams.email : 'Электропочта'}
                                                     name="formParams[email]"
