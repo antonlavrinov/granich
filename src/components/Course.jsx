@@ -23,6 +23,7 @@ const CourseLinkWrapper = styled.a`
 
 const CourseLinkModal = styled.button`
     text-align: left;
+    background: none;
     :hover {
         cursor: pointer;
     }
