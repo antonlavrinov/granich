@@ -67,7 +67,11 @@ const Course = ({ courseData, openModal }) => {
     const arrowBlack = data.courseArrowBlack.childImageSharp.fluid;
 
 
+    if (courseData.node.courseTitle === 'Графсистемы Брутализм и Антидизайн') {
+        return null
+    }
 
+    console.log('COURSE TITLE', courseData.node.courseTitle)
 
     return (
         <>
