@@ -25,7 +25,7 @@ const MasterCard = ({ courseData, empty, calendar, arrowWhite, arrowBlack }) => 
     return (
         <CourseWrapper>
             <CourseContainer>
-                <CourseTagList>
+                <CourseTagList empty={empty}>
                     <>
                         {courseData.node.courseTags.map((courseTag, idx) => {
                             return (
@@ -41,7 +41,7 @@ const MasterCard = ({ courseData, empty, calendar, arrowWhite, arrowBlack }) => 
                 <CourseImageWrapper>
                     <CourseImage active={courseData.node.courseStatus} empty={empty} fluid={courseData.node.coursePreviewImage.fluid}>
                     </CourseImage>
-                    <CourseMainTag active={courseData.node.courseStatus}>Мастер-класс</CourseMainTag>
+                    <CourseMainTag active={courseData.node.courseStatus} empty={empty}>Мастер-класс</CourseMainTag>
                     <CourseTeachers>
                         {courseData.node.courseTeachers.length > 1 ? (
                             <>

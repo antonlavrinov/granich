@@ -10,14 +10,19 @@ import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 const CourseLinkWrapper = styled.a`
     transition: all 0.2s ease;
+    border-radius: 0.6vw;
+    box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
     :hover {
         cursor: pointer;
         transform: scale(1.03);
     }
     @media only screen and (max-width: 575px) {
+        border-radius: 1.5vw;
+        box-shadow: 0 0 1.5vw rgba(0,0,0,0.25);
         :hover {
             transform: none;
         }
+        
     }
 `
 
@@ -25,11 +30,14 @@ const CourseLinkModal = styled.div`
     text-align: left;
     background: none;
     border-radius: 0.6vw;
+    box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
+
     :hover {
         cursor: pointer;
     }
     @media only screen and (max-width: 575px) {
         border-radius: 1.5vw;
+        box-shadow: 0 0 1.5vw rgba(0,0,0,0.25);
     }
 
 `
@@ -71,11 +79,11 @@ const Course = ({ courseData, openModal }) => {
     const arrowBlack = data.courseArrowBlack.childImageSharp.fluid;
 
 
-    if (courseData.node.courseTitle === 'Графсистемы Брутализм и Антидизайн') {
-        return null
-    }
+    // if (courseData.node.courseTitle === 'Графсистемы Брутализм и Антидизайн') {
+    //     return null
+    // }
 
-    console.log('COURSE TITLE', courseData.node.courseTitle)
+
 
     return (
         <>
