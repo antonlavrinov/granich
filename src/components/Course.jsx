@@ -24,8 +24,12 @@ const CourseLinkWrapper = styled.a`
 const CourseLinkModal = styled.div`
     text-align: left;
     background: none;
+    border-radius: 0.6vw;
     :hover {
         cursor: pointer;
+    }
+    @media only screen and (max-width: 575px) {
+        border-radius: 1.5vw;
     }
 
 `

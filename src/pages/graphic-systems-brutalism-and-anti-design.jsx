@@ -127,39 +127,39 @@ export const contentfulQuery = graphql`
 
 
 const GraphicSystemBrutalismAntiPage = ({ data }) => (
-    <Layout>
-        <Header type={'dark'} />
-        <div className="section-top-block"></div>
-        <SEO title="Графсистемы Брутализм и Антидизайн"
-            description="Мастер-класс по графическим системам Брутализм и Антидизайн. В него входят: PDF-презентация, Закрытый телеграм-чат, Видеолекция, Видеоинструкция, Домашнее задание, индивидуальный разбор ДЗ, Вводный урок по InDesign, Макет в портфолио, Бонусный урок."
-            keywords={['брутализм', 'антидизайн', 'графсистема', 'гранич', 'granich', 'видеокассеты', 'аудиокассеты']}
-            ogImage={ogImage}
-            ogImageVk={ogImageVK}
-            url="https://granich.design/graphic-systems-brutalism-and-anti-design" />
-        <CourseOffer data={data.BrutalismAntiOffer} />
-        <CourseExplanations data={data.BrutalismAntiExplanations} />
-        <CourseAuthors quote="Исследование, видеолекции, домашнее задание — Елизавета Черникова. Дизайн-система — Вадим Гранич"
-            text={(<>Графический Брутализм связан с послевоенным архитектурным движением. Он борется с шаблонным дизайном и декоративностью. Антидизайн — это движение графдизайнеров против удобства, функциональности и скуки «идеальных» коммерческих макетов</>)}
-            data={data.BrutalismAntiTeam} />
-        <MasterClassExample />
-        <CoursePortfolio dataHeader={data.BrutalismAntiPortfolioHeader} masterClass posters={data.BrutalismAntiPortfolioPosters} />
-        {/* <CourseReviews dataHeader={data.BrutalismAntiReviewsHeader} data={data.BrutalismAntiReviews} masterClass/> */}
-        <div id="prices-range-section"></div>
-        {data.BrutalismAntiOffer.courseStatus ? (
-            <CoursePriceRange formId={`ltForm2774650`}
-                valueInput1={`1164222`}
-                valueInput2={`1164224`}
-                valueInput3={`1164226`}
-                valueInput4={`1164228`}
-                googleAnaliticsCategory={`Отправка формы Графсистема VHS`}
-                formPostUrl={`https://school.granich.design/pl/lite/block-public/process-html?id=855570200`}
-                data={data.BrutalismAntiPricesRange} />
-        ) : (
+  <Layout>
+    <Header type={'dark'} />
+    <div className="section-top-block"></div>
+    <SEO title="Графсистемы Брутализм и Антидизайн"
+      description="Мастер-класс по графическим системам Брутализм и Антидизайн. В него входят: PDF-презентация, Закрытый телеграм-чат, Видеолекция, Видеоинструкция, Домашнее задание, индивидуальный разбор ДЗ, Вводный урок по InDesign, Макет в портфолио, Бонусный урок."
+      keywords={['брутализм', 'антидизайн', 'графсистема', 'гранич', 'granich', 'видеокассеты', 'аудиокассеты']}
+      ogImage={ogImage}
+      ogImageVk={ogImageVK}
+      url="https://granich.design/graphic-systems-brutalism-and-anti-design" />
+    <CourseOffer data={data.BrutalismAntiOffer} />
+    <CourseExplanations data={data.BrutalismAntiExplanations} />
+    <CourseAuthors quote="Исследование, видеолекции, домашнее задание — Елизавета Черникова. Дизайн-система — Вадим Гранич"
+      text={(<>Графический Брутализм связан с послевоенным архитектурным движением. Он борется с шаблонным дизайном и декоративностью. Антидизайн — это движение графдизайнеров против удобства, функциональности и скуки «идеальных» коммерческих макетов</>)}
+      data={data.BrutalismAntiTeam} />
+    <MasterClassExample />
+    <CoursePortfolio dataHeader={data.BrutalismAntiPortfolioHeader} masterClass posters={data.BrutalismAntiPortfolioPosters} />
+    {/* <CourseReviews dataHeader={data.BrutalismAntiReviewsHeader} data={data.BrutalismAntiReviews} masterClass/> */}
+    <div id="prices-range-section"></div>
+    {/* {data.BrutalismAntiOffer.courseStatus ? ( */}
+    <CoursePriceRange formId={`ltForm2774650`}
+      valueInput1={`1164222`}
+      valueInput2={`1164224`}
+      valueInput3={`1164226`}
+      valueInput4={`1164228`}
+      googleAnaliticsCategory={`Отправка формы Графсистема VHS`}
+      formPostUrl={`https://school.granich.design/pl/lite/block-public/process-html?id=855570200`}
+      data={data.BrutalismAntiPricesRange} />
+    {/* ) : (
                 <Mailing />
-            )}
-        <EducationQuestions />
+            )} */}
+    <EducationQuestions />
 
-    </Layout>
+  </Layout>
 )
 
 export default GraphicSystemBrutalismAntiPage
