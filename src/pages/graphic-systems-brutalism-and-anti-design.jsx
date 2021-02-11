@@ -136,7 +136,7 @@ const GraphicSystemBrutalismAntiPage = ({ data }) => (
       ogImage={ogImage}
       ogImageVk={ogImageVK}
       url="https://granich.design/graphic-systems-brutalism-and-anti-design" />
-    <CourseOffer data={data.BrutalismAntiOffer} />
+    <CourseOffer courseName="Графсистемы Брутализм и Антидизайн" data={data.BrutalismAntiOffer} />
     <CourseExplanations data={data.BrutalismAntiExplanations} />
     <CourseAuthors quote="Исследование, видеолекции, домашнее задание — Елизавета Черникова. Дизайн-система — Вадим Гранич"
       text={(<>Графический Брутализм связан с послевоенным архитектурным движением. Он борется с шаблонным дизайном и декоративностью. Антидизайн — это движение графдизайнеров против удобства, функциональности и скуки «идеальных» коммерческих макетов</>)}

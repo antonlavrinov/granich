@@ -251,8 +251,26 @@ const CourseOfferTitle = styled.h1`
                 font-size: 15vw;
             }
         }
-        
+    `}
+    ${props => props.courseName === 'Графсистемы Брутализм и Антидизайн' && `
+        p {
+            letter-spacing: 0 !important;
+            font-size: 7vw;
+            line-height: 0.95;
+            i {
+                font-size: 6.8vw;
+                line-height: 1.2;
+            }
 
+        }
+        @media only screen and (max-width: 575px) {
+            p {
+                font-size: 14vw;
+                i {
+                    font-size: 13.5vw;
+                }
+            }
+        }
     `}
 `
 const CourseOfferDescr = styled.div`
@@ -287,6 +305,15 @@ const CourseOfferDescr = styled.div`
         margin-bottom: 2vw;
         @media only screen and (max-width: 575px) {
             margin-bottom: 4vw;
+            
+        }
+    `}
+    ${props => props.courseName === 'Графсистемы Брутализм и Антидизайн' && `
+        width: 30vw;
+        margin-bottom: 2vw;
+        @media only screen and (max-width: 575px) {
+            margin-bottom: 4vw;
+            font-size: 4.3vw;
             
         }
     `}
