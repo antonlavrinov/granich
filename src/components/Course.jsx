@@ -21,7 +21,7 @@ const CourseLinkWrapper = styled.a`
     }
 `
 
-const CourseLinkModal = styled.button`
+const CourseLinkModal = styled.div`
     text-align: left;
     background: none;
     :hover {
