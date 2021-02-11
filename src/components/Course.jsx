@@ -21,11 +21,10 @@ const CourseLinkWrapper = styled.a`
     }
 `
 
-const CourseLinkModal = styled.button`
+const CourseLinkModal = styled.div`
     text-align: left;
     background: none;
     border-radius: 0.6vw;
-    display: block;
     :hover {
         cursor: pointer;
     }
