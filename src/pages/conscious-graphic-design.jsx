@@ -27,7 +27,7 @@ import CourseBanner from "../components/course-page/CourseBanner";
 export const contentfulQuery = graphql`
 
     query graphDesignQuery {
-        offer:   contentfulGranichCourse(courseTitle: {eq: "Осознанный Графдизайн"}) {
+        offer: contentfulGranichCourse(courseTitle: {eq: "Осознанный Графдизайн"}) {
           courseMainImage {
             fluid(maxWidth: 850, quality: 90) {
               ...GatsbyContentfulFluid_withWebp
@@ -250,6 +250,7 @@ const OsoznannyGraphDesignPage = ({ data }) => {
   }, [])
   return (
     <Layout>
+      {console.log('GRAPH DESIGN OFFER', data.offer)}
       <Header type={'dark'} />
       <SEO title="Осознанный Графдизайн"
         description="Курс по графическому дизайну, построенный на авторской дизайн-системе. Вы получите твёрдую базу и научитесь аргументировать свои макеты"
