@@ -11,9 +11,9 @@ import { graphql } from 'gatsby';
 import EducationQuestions from "../components/EducationQuestions";
 import CourseAuthors from "../components/course-page/CourseAuthors";
 import MasterClassExample from '../components/course-page/MasterClassExample';
-import Mailing from '../components/Mailing';
-import ogImage from '../assets/images/seo/graphic-system-vhs-min.jpg';
-import ogImageVK from '../assets/images/seo/vk/graphic-system-vhs.jpg';
+// import Mailing from '../components/Mailing';
+import ogImage from '../assets/images/seo/graphic-systems-brutalism-and-anti-design.jpg';
+import ogImageVK from '../assets/images/seo/vk/graphic-systems-brutalism-and-anti-design.jpg';
 
 
 
@@ -131,8 +131,8 @@ const GraphicSystemBrutalismAntiPage = ({ data }) => (
     <Header type={'dark'} />
     <div className="section-top-block"></div>
     <SEO title="Графсистемы Брутализм и Антидизайн"
-      description="Мастер-класс по графическим системам Брутализм и Антидизайн. В него входят: PDF-презентация, Закрытый телеграм-чат, Видеолекция, Видеоинструкция, Домашнее задание, индивидуальный разбор ДЗ, Вводный урок по InDesign, Макет в портфолио, Бонусный урок."
-      keywords={['брутализм', 'антидизайн', 'графсистема', 'гранич', 'granich', 'видеокассеты', 'аудиокассеты']}
+      description="Мастер-класс по графическим системам Брутализм и Антидизайн. В него входят: PDF-презентация, Закрытый телеграм-чат, Лекция, Домашнее задание, индивидуальный разбор ДЗ, Вводный урок по InDesign, Макет в портфолио, Бонусный урок."
+      keywords={['брутализм', 'антидизайн', 'графсистема', 'гранич', 'granich']}
       ogImage={ogImage}
       ogImageVk={ogImageVK}
       url="https://granich.design/graphic-systems-brutalism-and-anti-design" />
@@ -146,13 +146,13 @@ const GraphicSystemBrutalismAntiPage = ({ data }) => (
     {/* <CourseReviews dataHeader={data.BrutalismAntiReviewsHeader} data={data.BrutalismAntiReviews} masterClass/> */}
     <div id="prices-range-section"></div>
     {/* {data.BrutalismAntiOffer.courseStatus ? ( */}
-    <CoursePriceRange formId={`ltForm2774650`}
-      valueInput1={`1164222`}
-      valueInput2={`1164224`}
-      valueInput3={`1164226`}
-      valueInput4={`1164228`}
-      googleAnaliticsCategory={`Отправка формы Графсистема VHS`}
-      formPostUrl={`https://school.granich.design/pl/lite/block-public/process-html?id=855570200`}
+    <CoursePriceRange formId={`ltForm1609092`}
+      valueInput1={`1728715`}
+      valueInput2={`1728729`}
+      valueInput3={`1728733`}
+      valueInput4={`1728741`}
+      googleAnaliticsCategory={`Отправка формы Графсистемы Брутализм и Антидизайн`}
+      formPostUrl={`https://school.granich.design/pl/lite/block-public/process-html?id=988002262`}
       data={data.BrutalismAntiPricesRange} />
     {/* ) : (
                 <Mailing />

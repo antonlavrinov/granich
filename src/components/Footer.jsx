@@ -1,14 +1,19 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Container } from './style';
 import styled from 'styled-components';
 import Logo from '../assets/svgs/granich-logo.svg';
 import VisaIcon from '../assets/svgs/Visa.svg';
 import MastercardIcon from '../assets/svgs/Mastercard.svg';
-import RobokassaIcon from '../assets/svgs/Robokassa.svg';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
-import Link from 'gatsby-link';
+import CloudPaymentsIcon from '../assets/svgs/CloudPayments.svg';
 
-const BlackLogo = styled(props => <Logo {...props}/>)`
+// import RobokassaIcon from '../assets/svgs/Robokassa.svg';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Link from 'gatsby-link';
+// import Img from "gatsby-image"
+// import { graphql, useStaticQuery } from 'gatsby'
+
+
+const BlackLogo = styled(props => <Logo {...props} />)`
     width: 4.8vw;
     height: 3vw;
     min-width: 4.8vw;
@@ -24,7 +29,7 @@ const BlackLogo = styled(props => <Logo {...props}/>)`
 `
 
 
-const Visa = styled(props => <VisaIcon {...props}/>)`
+const Visa = styled(props => <VisaIcon {...props} />)`
     width: 5.5vw;
     height: 3vw;
     @media only screen and (max-width: 575px) {
@@ -32,7 +37,7 @@ const Visa = styled(props => <VisaIcon {...props}/>)`
         height: 7.9vw;
     }
 `
-const Mastercard = styled(props => <MastercardIcon {...props}/>)`
+const Mastercard = styled(props => <MastercardIcon {...props} />)`
     width: 4.8vw;
     height: 3vw;
     @media only screen and (max-width: 575px) {
@@ -40,11 +45,21 @@ const Mastercard = styled(props => <MastercardIcon {...props}/>)`
         height: 7.9vw;
     }
 `
-const Robokassa = styled(props => <RobokassaIcon {...props}/>)`
-    width: 5vw;
-    height: 3.4vw;
+// const Robokassa = styled(props => <RobokassaIcon {...props} />)`
+//     width: 5vw;
+//     height: 3.4vw;
+//     @media only screen and (max-width: 575px) {
+//         width: 14vw;
+//         height: 7.9vw;
+//     }
+// `
+
+const CloudPayments = styled(props => <CloudPaymentsIcon {...props} />)`
+    width: 4.5vw;
+    height: 3vw;
+    transform: scale(1.2);
     @media only screen and (max-width: 575px) {
-        width: 14vw;
+        width: 12.5vw;
         height: 7.9vw;
     }
 `
@@ -189,7 +204,7 @@ const FooterInfoMail = styled.div`
 
     }
 `
-const FooterLink = styled(props => <Link {...props}/>)`
+const FooterLink = styled(props => <Link {...props} />)`
     line-height: 1.4;
     color: var(--granich-light-grey);
     font-size: 1.16vw;
@@ -305,17 +320,33 @@ const EmptyText = styled.div`
 
 const Footer = () => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
+
+    // const imageData = useStaticQuery(graphql`
+    //     query cloudPayments {
+    //         placeholderImage: file(relativePath: { eq: "cloud-payments.png" }) {
+    //             childImageSharp {
+    //                 fluid(maxWidth: 200, quality: 100) {
+    //                     ...GatsbyImageSharpFluid
+    //                 }
+    //             }
+    //         }
+
+    //     }
+    // `)
+
+    // const cloudPayments = imageData.placeholderImage.childImageSharp.fluid
+
     return (
         <FooterSection>
             <Container>
                 <FooterWrapper>
                     <FooterLogoAndInfo>
                         <LogoWrapper href="/">
-                            <BlackLogo/>
+                            <BlackLogo />
                         </LogoWrapper>
-                        
+
                         <FooterInfo>
-                        <EmptyText>sometext</EmptyText>
+                            <EmptyText>sometext</EmptyText>
                             <FooterInfoYear>© {new Date().getFullYear()}</FooterInfoYear>
                             {/* <CopyToClipboard text={'hello@granich.design'}>
                                 <StyledTooltip unmountHTMLWhenHide={true} theme="red" open={tooltipEmail === 'Скопировано :)' ? 1 : 0} duration={0} animateFill={false} animation="none" trigger={'mouseenter'} title={tooltipEmail} hideOnClick="false"
@@ -326,27 +357,28 @@ const Footer = () => {
                             </CopyToClipboard> */}
                             <CopyToClipboard text={'hello@granich.design'}>
 
-                                    <FooterInfoMail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')} >hello@granich.design</FooterInfoMail>
-                                
+                                <FooterInfoMail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')} >hello@granich.design</FooterInfoMail>
+
                             </CopyToClipboard>
 
 
                         </FooterInfo>
                     </FooterLogoAndInfo>
                     <FooterLinks>
-                        <FooterLink to="/public-offer"><span>Пользовательское <br/>соглашение</span></FooterLink>
-                        <FooterLink to="/privacy"><span>Политика <br/>конфиденциальности</span></FooterLink>
+                        <FooterLink to="/public-offer"><span>Пользовательское <br />соглашение</span></FooterLink>
+                        <FooterLink to="/privacy"><span>Политика <br />конфиденциальности</span></FooterLink>
                     </FooterLinks>
                     <FooterCredentialsAndPayment>
                         <FooterCredentials>
-                        ИП Гранич Вадим Владимирович <br/>
-                        ОГРНИП 319784700098871 <br/>
-                        ИНН 470320212730 <br/>
+                            ИП Гранич Вадим Владимирович <br />
+                        ОГРНИП 319784700098871 <br />
+                        ИНН 470320212730 <br />
                         </FooterCredentials>
                         <FooterPayment>
-                            <Robokassa/>
-                            <Visa/>
-                            <Mastercard/>
+                            <CloudPayments />
+                            {/* <Robokassa /> */}
+                            <Visa />
+                            <Mastercard />
                         </FooterPayment>
                     </FooterCredentialsAndPayment>
 
