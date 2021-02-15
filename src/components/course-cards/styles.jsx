@@ -47,7 +47,7 @@ export const ArrowIcon = styled(props => <Img {...props} />)`
 export const CourseWrapper = styled.div`
     background: white;
     border-radius: 0.6vw;
-    // box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
+    box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
     display: flex;
     flex-direction: column;
     height: 100%; 

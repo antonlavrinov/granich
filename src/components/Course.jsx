@@ -11,14 +11,14 @@ import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 const CourseLinkWrapper = styled.a`
     transition: all 0.2s ease;
     border-radius: 0.6vw;
-    box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
+    // box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
     :hover {
         cursor: pointer;
         transform: scale(1.03);
     }
     @media only screen and (max-width: 575px) {
         border-radius: 1.5vw;
-        box-shadow: 0 0 1.5vw rgba(0,0,0,0.25);
+        // box-shadow: 0 0 1.5vw rgba(0,0,0,0.25);
         :hover {
             transform: none;
         }
@@ -27,18 +27,17 @@ const CourseLinkWrapper = styled.a`
 `
 
 const CourseLinkModal = styled.div`
-    text-align: left;
-    background: none;
-    border-radius: 0.6vw;
-    box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
-
+    // text-align: left;
+    // background: none;
+    // border-radius: 0.6vw;
+    // box-shadow: 0 0 0.9vw rgba(0,0,0,0.25);
     :hover {
         cursor: pointer;
     }
-    @media only screen and (max-width: 575px) {
-        border-radius: 1.5vw;
-        box-shadow: 0 0 1.5vw rgba(0,0,0,0.25);
-    }
+    // @media only screen and (max-width: 575px) {
+    //     // border-radius: 1.5vw;
+    //     // box-shadow: 0 0 1.5vw rgba(0,0,0,0.25);
+    // }
 
 `
 
@@ -92,7 +91,7 @@ const Course = ({ courseData, openModal }) => {
             ) : (
                     <>
                         {courseData.node.courseTypeEmpty ? (
-                            <CourseLinkModal type="button" onClick={() => { openModal(); trackCustomEvent({ category: `Главная: карточка "${courseData.node.courseTitle}"`, action: 'click' }) }} >
+                            <CourseLinkModal onClick={() => { openModal(); trackCustomEvent({ category: `Главная: карточка "${courseData.node.courseTitle}"`, action: 'click' }) }} >
                                 {courseData.node.courseType === 'Курс' ? (
                                     <CourseCard arrowBlack={arrowBlack} arrowWhite={arrowWhite} calendar={calendar} empty courseData={courseData} />
                                 ) : (
