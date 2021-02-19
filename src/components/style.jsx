@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 
 export const GlobalStyle = createGlobalStyle`
@@ -22,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
         --granich-red-gradient-horizontal: linear-gradient(90deg, rgba(230,25,51,1) 0%, rgba(213,12,34,1) 50%, rgba(189,3,27,1) 100%);
         --granich-beige-gradient: linear-gradient(90deg, rgba(203,161,129,1) 0%, rgba(181,141,110,1) 100%);
         --granich-silver-gradient: linear-gradient(90deg, rgba(185,185,185,1) 0%, rgba(143,143,143,1) 100%);
+        --granich-dark-beige: #946C4F;
         letter-spacing: 0vw;
         font-weight: 400;
     }

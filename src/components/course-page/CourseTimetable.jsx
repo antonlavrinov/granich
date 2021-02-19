@@ -6,6 +6,7 @@ import TimetableImageGif from '../../assets/images/graph-design/commitment/commi
 import LazyLoad from 'react-lazyload';
 import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby'
+import CourseDontWorry from './CourseDontWorry';
 
 
 const TimetableSection = styled.section`
@@ -84,7 +85,7 @@ const TimetableImageWrapper = styled.div`
     }
 `
 
-const TimetableImage = styled(props => <Img {...props}/>)`
+const TimetableImage = styled(props => <Img {...props} />)`
     width: 100%;
     border: 2px solid rgba(0,0,0,0.15);
 
@@ -93,8 +94,10 @@ const TimetableImage = styled(props => <Img {...props}/>)`
 const TimetableInfoWrapper = styled.div`
     display: flex;
     align-items: flex-start;
+    margin-bottom: 2vw;
     @media only screen and (max-width: 575px) {
         flex-direction: column;
+        margin-bottom: 4vw;
     }
 
 `
@@ -241,10 +244,10 @@ const CourseTimetable = () => {
                     <TimetableTitle>Курс можно совмещать с работой. <span>Но расслабиться не получится!</span></TimetableTitle>
                     <TimetableInfoWrapper>
                         <TimetableInfoTextMobile>
-                                {text}
+                            {text}
                         </TimetableInfoTextMobile>
                         <TimetableImageWrapper>
-                            <TimetableImage fluid={imageData}/>
+                            <TimetableImage fluid={imageData} />
                         </TimetableImageWrapper>
 
                         <TimetableInfoTextWrapper>
@@ -254,19 +257,20 @@ const CourseTimetable = () => {
                             <TimetableInfoGifBlock>
                                 <TimetableGifWrapper>
                                     <LazyLoad once>
-                                        <TimetableGif src={TimetableImageGif} alt="commitment"/>
+                                        <TimetableGif src={TimetableImageGif} alt="commitment" />
                                     </LazyLoad>
-                                        
+
                                 </TimetableGifWrapper>
                                 <TimetableGifTextWrapper>
                                     <TimetableGifText>Примерно с таким настроем нужно будет погрузиться в курс. Вы придёте сюда чтобы развивать твёрдые навыки.</TimetableGifText>
                                     <TimetableGifPS>P.S. Сцена из фильма Одержимость. Философия всего курса.</TimetableGifPS>
                                 </TimetableGifTextWrapper>
-                                
-                            
+
+
                             </TimetableInfoGifBlock>
                         </TimetableInfoTextWrapper>
                     </TimetableInfoWrapper>
+                    <CourseDontWorry />
 
                 </TimetableWrapper>
             </Container>

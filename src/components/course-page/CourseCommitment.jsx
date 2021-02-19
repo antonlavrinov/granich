@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import CommitmentGif from '../../assets/images/graph-design/commitment/commitment.gif';
 import LazyLoad from 'react-lazyload';
 
+
 const CommitmentSection = styled.section`
     margin-bottom: 4vw;
     @media only screen and (max-width: 575px) {
@@ -148,7 +149,7 @@ const CourseCommitment = () => {
                 <CommitmentWrapper>
                     <CommitmentImageWrapper>
                         <LazyLoad once>
-                            <CommitmentImage src={CommitmentGif} alt="commitment"/>
+                            <CommitmentImage src={CommitmentGif} alt="commitment" />
                         </LazyLoad>
                     </CommitmentImageWrapper>
 
@@ -160,11 +161,12 @@ const CourseCommitment = () => {
                         <CommitmentTitle>С правильным настроем можно с нуля!</CommitmentTitle>
                         <CommitmentText>Да, у меня интенсивный курс. Он требует осознанных усилий и времени. Однако, участвовать в нем могут даже те, кто никогда с графическим дизайном не сталкивался. Но в таком случае лучше возьмите отпуск.</CommitmentText>
                         <CommitmentNote>
-                            Примерно с таким настроем нужно будет делать ДЗ. <br/>
-                            Это интенсивно-суровый курс.<br/>
-                            P.S. Сцена из фильма Одержимость. Моя философия. 
+                            Примерно с таким настроем нужно будет делать ДЗ. <br />
+                            Это интенсивно-суровый курс.<br />
+                            P.S. Сцена из фильма Одержимость. Моя философия.
                         </CommitmentNote>
                     </CommitmentInfo>
+
                 </CommitmentWrapper>
             </Container>
         </CommitmentSection>
