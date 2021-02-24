@@ -252,6 +252,7 @@ const CourseOfferTitle = styled.h1`
             }
         }
     `}
+    
     ${props => props.courseName === 'Графсистемы Брутализм и Антидизайн' && `
         p {
             letter-spacing: 0 !important;
@@ -315,6 +316,20 @@ const CourseOfferDescr = styled.div`
             margin-bottom: 4vw;
             font-size: 4.3vw;
             
+        }
+    `}
+    ${props => props.courseTitle === 'Осознанный Фриланс' && `
+        width: 38vw;
+        p {
+            letter-spacing: 0 !important;
+            font-size: 7vw;
+            line-height: 1.05;
+
+        }
+        @media only screen and (max-width: 575px) {
+            p {
+                font-size: 15vw;
+            }
         }
     `}
 
@@ -652,8 +667,8 @@ const CourseOffer = ({ data, courseName, deckVisibility, allowDeck }) => {
                         )}
 
 
-
-                        <CourseOfferDescr className="noselect" courseName={courseName} type={data.courseType}>
+                        {console.log(data.courseTitle)}
+                        <CourseOfferDescr className="noselect" courseTitle={data.courseTitle} courseName={courseName} type={data.courseType}>
                             {data.courseDescr}
                         </CourseOfferDescr>
                         {data.courseType === 'Курс' ? (

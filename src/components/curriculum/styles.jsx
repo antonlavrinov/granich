@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-// import PlusSign from '../../assets/svgs/plus-sign.svg';
-// import MinusSign from '../../assets/svgs/minus-sign.svg';
 import { animated } from 'react-spring';
 import {
     Accordion,
@@ -41,6 +39,7 @@ export const CurriculumHeader = styled.div`
     }
     ${props => props.compressedHeader && `
         justify-content: space-between;
+        flex-direction: column;
     `}
     
 `
@@ -52,6 +51,7 @@ export const CurriculumTitleAndContent = styled.div`
     }
     ${props => props.compressedHeader && `
         min-width: auto;
+        margin-bottom: 1.5vw;
     `}
 `
 export const CurriculumHeaderTitle = styled.h2`
@@ -178,8 +178,6 @@ export const CurriculumBonusBlock = styled.div`
             font-weight: 500;
             display: block;
         }
-        
-
     }
     a {
         border-bottom: 1px solid var(--granich-light-grey);
@@ -199,23 +197,42 @@ export const CurriculumBonusBlock = styled.div`
     }
     ${props => props.compressedHeader && `
         display: flex;
-        padding: 1.4vw 1.4vw;
-        margin-bottom: 1.3vw;
-
-        background: #f2f2f2;
-        border-radius: 0.5vw;
         align-items: center;
-        img {
-            width: 5vw;
-            margin-right: 0.7vw;
-        }
         p {
             background: none;
+            border-radius: 0;
             padding: 0;
             font-size: 1.15vw;
             line-height: 1.3;
-            max-width: 15vw; 
-            width: 15vw;
+            color: var(--granich-light-grey);
+            margin-bottom: 0;
+            :last-child {
+                margin-bottom: 0;
+            }
+            b {
+                color: var(--granich-black);
+                font-size: inherit;
+                font-weight: 500;
+                display: block;
+            }
+        }
+        ul {
+            border-radius: 0.5vw;
+            background: #f2f2f2;
+            margin-bottom: 1.3vw;
+            margin-right: 1.3vw;
+            padding: 1vw 1.4vw;
+            max-width: 25vw; 
+            width: 25vw;
+            display: flex;
+            align-items: center;
+            :last-child {
+                margin-right: 0;
+            }
+            img {
+                width: 5vw;
+                margin-right: 0.7vw;
+            }
             b {
                 color: var(--granich-black);
                 font-size: inherit;
@@ -227,22 +244,23 @@ export const CurriculumBonusBlock = styled.div`
         }
 
         @media only screen and (max-width: 575px) {
-            max-width: 100%;
-            width: 100%;
-            padding: 4vw 4vw;
-            img {
-                width: 16vw;
-                margin-right: 2vw;
-            }
-            p {
-                border-radius: 1.5vw;
-                padding: 0;
-                font-size: 3.7vw;
+            flex-direction: column;
+            ul {
+                padding: 4vw 4vw;
                 max-width: 100%;
                 width: 100%;
+                align-items: center;
+                border-radius: 1.5vw;
+                img {
+                    width: 16vw;
+                    margin-right: 2vw;
+                }
                 :first-child {
                     margin-bottom: 4vw;
                 }
+            }
+            p {
+                font-size: 3.7vw;
             }
         }
     `}

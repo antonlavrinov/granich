@@ -157,7 +157,7 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
 
 
 
-const CourseCurriculum = ({ data, dataHeader, compressedHeader }) => {
+const CourseCurriculum = ({ data, dataHeader, compressedHeader = { compressedHeader } }) => {
     const isMobile = useMediaQuery({
         query: '(max-width: 575px)'
     })
@@ -169,7 +169,7 @@ const CourseCurriculum = ({ data, dataHeader, compressedHeader }) => {
         <CurriculumSection>
             <Container>
                 <CurriculumWrapper>
-                    <CurriculumHead compressedHeader={compressedHeader ? true : false} dataHeader={dataHeader} />
+                    <CurriculumHead compressedHeader={compressedHeader} dataHeader={dataHeader} />
 
                     {isMobile && (
                         <CurriculumAccordionMobile allowMultipleExpanded allowZeroExpanded>

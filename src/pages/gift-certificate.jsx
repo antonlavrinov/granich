@@ -43,11 +43,19 @@ const GiftCertificatePage = ({ data }) => {
     const additionalInfo = data.giftCertificate.edges[0].node.legalDocAdditionalInfo.json;
     return (
         <Layout>
-            <SEO title="Подарочный сертификат"
-                url="https://granich.design/gift-сertificate" ogImage={ogImage} ogImageVk={ogImageVK} />
+            <SEO
+                title="Подарочный сертификат"
+                url="https://granich.design/gift-сertificate"
+                ogImage={ogImage}
+                ogImageVk={ogImageVK} />
             <Header type={'dark'} />
             <div className="section-top-block"></div>
-            <LegalDocument additionalInfo={additionalInfo} type={docType} mainText={mainText} dataPdf={dataPdf} date={date} />
+            <LegalDocument
+                additionalInfo={additionalInfo}
+                type={docType}
+                mainText={mainText}
+                dataPdf={dataPdf}
+                date={date} />
         </Layout>
     )
 }

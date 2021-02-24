@@ -31,6 +31,7 @@ import FreelanceHardWork from "../components/course-page/freelance/FreelanceHard
 import CourseFreelanceBanner from "../components/course-page/freelance/CourseFreelanceBanner";
 import CoursePaymentChoices from "../components/course-page/CoursePaymentChoices";
 import CourseTimetableFreelance from "../components/course-page/freelance/CourseTimetableFreelance";
+import Combination from "../components/course-page/freelance/Combination";
 
 export const contentfulQuery = graphql`
 
@@ -41,6 +42,7 @@ export const contentfulQuery = graphql`
               ...GatsbyContentfulFluid_withWebp
             }
           }
+          courseTitle
           courseMainTitle {
             json
           }
@@ -146,9 +148,12 @@ const OsoznannyFreelancePage = ({ data }) => {
       <CourseOffer data={data.offer} />
 
       <CourseForWhom />
-
-      <CourseCurriculum compressedHeader dataHeader={data.curriculumHeader} data={data.curriculum} />
-      <CourseTimetableFreelance />
+      <Combination />
+      <CourseCurriculum
+        compressedHeader
+        dataHeader={data.curriculumHeader}
+        data={data.curriculum} />
+      {/* <CourseTimetableFreelance /> */}
       <CourseFeatures title="Особенности курса" data={data.features} />
       <FreelanceHardWork />
       <div id="participation-section"></div>

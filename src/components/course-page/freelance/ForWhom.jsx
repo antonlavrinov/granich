@@ -45,7 +45,7 @@ const CourseExampleWrapper = styled.div`
 
 const CourseExampleHeader = styled.div`
     display: flex;
-    margin-bottom: 1.2vw;
+    margin-bottom: 2.5vw;
     @media only screen and (max-width: 575px) {
         flex-direction: column;
         align-items: center;
@@ -54,7 +54,7 @@ const CourseExampleHeader = styled.div`
 `
 const CourseExampleAuthor = styled.div`
     width: 9.5vw;
-    margin-right: 3.5vw;
+    margin-right: 6vw;
     line-height: 1.4;
     margin-top: -0.3vw;
     @media only screen and (max-width: 575px) {
@@ -69,8 +69,8 @@ const CourseExampleAuthor = styled.div`
 `
 
 const CourseExampleAuthorImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-    width: 7.5vw;
-    height: 7.5vw;
+    width: 8vw;
+    height: 8vw;
     border-radius: 100vw;
     margin-bottom: 0.5vw;
     overflow: hidden;
@@ -107,29 +107,26 @@ const CourseExampleTitle = styled.h2`
     font-family: EB Garamond;
     font-style: italic;
     font-weight: 500;
-    font-size: 5.4vw;
-    font-size: 6vw;
+    font-size: 4.3vw;
     line-height: 1.04;
     position: relative;
-    margin-top: 1vw;
     :after {
         content: '»';
         margin-left: 0.2vw;
         margin-top: 0.1vw;
         position: absolute;
-        font-size: 5vw;
+        font-size: 4vw;
 
     }
     :before {
         content: '«';
         position: absolute;
-        font-size: 5vw;
+        font-size: 4vw;
         top: 0.2vw;
         left: -3vw;
     }
     @media only screen and (max-width: 575px) {
         font-size: 8vw;
-        margin-top: 0;
         margin-left: -4vw;
         letter-spacing: -0.1vw;
         text-align: center;
@@ -247,24 +244,13 @@ const ForWhomRedText = styled.span`
 
 `
 
-const ForWhomGreenText = styled.span`
-    color: green;
-    display: inline-block;
-    font-weight: 500;
-    position: relative;
-    // svg {
-    //     position: absolute;
-    //     bottom: -1vw;
-    //     fill: green;
-    //     left: 0;
-    //     width: 100%;
-    // }
-    @media only screen and (max-width: 575px) {
-        // svg {
-        //     bottom: -2.8vw;
-        // }
-    }
-`
+// const ForWhomGreenText = styled.span`
+//     color: green;
+//     display: inline-block;
+//     font-weight: 500;
+//     position: relative;
+
+// `
 
 const ForWhomWavyText = styled.span`
     color: var(--granich-red);
@@ -273,7 +259,7 @@ const ForWhomWavyText = styled.span`
     position: relative;
     svg {
         position: absolute;
-        bottom: -1.8vw;
+        bottom: -2.1vw;
         fill: var(--granich-red);
         fill:red;
         left: 0;
@@ -281,12 +267,12 @@ const ForWhomWavyText = styled.span`
     }
     @media only screen and (max-width: 575px) {
         svg {
-            bottom: -5vw;
+            bottom: -6vw;
         }
     }
 `
 
-const tags = ['Дизайнерам', 'Фотографам', 'Иллюстраторам', 'Видеомейкерам', '3d-моделлерам']
+const tags = ['Дизайнерам', 'Иллюстраторам', 'Фотографам', 'Видеомейкерам', '2D-аниматорам', '3D-моделлерам']
 
 
 const CourseForWhom = () => {
@@ -324,17 +310,17 @@ const CourseForWhom = () => {
                         <CourseExampleAuthor>
                             <CourseExampleAuthorImage style={{ backgroundSize: 'cover' }} fluid={imageData} />
                             <CourseExampleAuthorName>
-                                Вадим Гранич
+                                Вадим Гранич
                             </CourseExampleAuthorName>
-                            <CourseExampleAuthorText>автор курса</CourseExampleAuthorText>
+                            <CourseExampleAuthorText>автор курса</CourseExampleAuthorText>
                         </CourseExampleAuthor>
                         <CourseExampleTitle>
-                            Для кого этот курс?
+                            Наставник по фрилансу для творческих специалистов
                         </CourseExampleTitle>
                     </CourseExampleHeader>
                     <CourseExampleInfoWrapper>
                         <ForWhomLeft>
-                            <span>Этот курс подходит визуальным специалистам:</span>
+                            <span>Этот курс-наставничество подходит следующим специалистам:</span>
                             <ForWhomTags>
                                 {tags.map((tag, idx) => (
 
@@ -346,14 +332,10 @@ const CourseForWhom = () => {
                                 ))}
                             </ForWhomTags>
                         </ForWhomLeft>
-
-
-
-
                         <CourseExampleInfoBlock>
                             <CourseExampleInfoText>
-                                Я создал этот курс специально для визуальных творцов. Будучи графическим дизайнером, со временем заметил серьёзную проблему — <ForWhomRedText>визуальные творцы плохо понимают бизнес <ExclamationMarkThickIcon /></ForWhomRedText> То есть, они не видят полной картины коммерческой ценности того, что создают. Из‑за этого <ForWhomWavyText>обесценивают свой труд.<WavyLine /></ForWhomWavyText> Поэтому Курс направлен на то, чтобы вы поняли, как влияете на прибыль своих клиентов и почему вы им действительно нужны. Это лейтмотив всего Осознанного Фриланса.
-                                </CourseExampleInfoText>
+                                Этот курс-наставничество я разработал специально для вас — творческих специалистов. Будучи графическим дизайнером с бизнес-образованием, я заметил на рынке фриланса серьёзную проблему — <ForWhomRedText>творцы плохо понимают бизнес <ExclamationMarkThickIcon /></ForWhomRedText> <ForWhomWavyText>Вы не видите полной картины<WavyLine /></ForWhomWavyText> того, как ваше творчество помогает реализовать бизнес-стратегию заказчиков, и какие выгоды это приносит. Поэтому Курс направлен на то, чтобы вы соединили своё творческое мышление с бизнесом. Это сделает вас востребованными на фрилансе.
+                            </CourseExampleInfoText>
 
                         </CourseExampleInfoBlock>
                     </CourseExampleInfoWrapper>

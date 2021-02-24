@@ -27,6 +27,7 @@ export const contentfulQuery = graphql`
             courseMainTitle {
                 json
             }
+            courseTitle
             courseDescr
             courseStatus
             courseType

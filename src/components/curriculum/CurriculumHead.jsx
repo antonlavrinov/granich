@@ -54,6 +54,27 @@ const CurriculumHead = ({ dataHeader, compressedHeader }) => {
     )
 }
 
+// const CurriculumHead = ({ dataHeader, withImage }) => {
+//     return (
+//         <CurriculumHeader>
+//             <CurriculumTitleAndContent>
+//                 <CurriculumHeaderTitle>{dataHeader.curriculumHeaderTitle}</CurriculumHeaderTitle>
+//                 {dataHeader.childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode && (
+//                     <CurriculumContent >
+//                         {documentToReactComponents(dataHeader.childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode.json)}
+//                     </CurriculumContent>
+//                 )}
+//             </CurriculumTitleAndContent>
+//             <CurriculumInfoWrapper>
+//                 <CurriculumBonusBlock withImage={withImage}>
+//                     {documentToReactComponents(dataHeader.curriculumHeaderInfo.json, options)}
+//                 </CurriculumBonusBlock>
+//             </CurriculumInfoWrapper>
+
+//         </CurriculumHeader>
+//     )
+// }
+
 export default CurriculumHead
 
 
@@ -69,7 +90,7 @@ const CurriculumNormalHead = ({ dataHeader }) => {
                 )}
             </CurriculumTitleAndContent>
             <CurriculumInfoWrapper>
-                <CurriculumBonusBlock>
+                <CurriculumBonusBlock compressedHeader>
                     {documentToReactComponents(dataHeader.curriculumHeaderInfo.json, options)}
                 </CurriculumBonusBlock>
             </CurriculumInfoWrapper>
@@ -85,12 +106,7 @@ const CurriculumCompressedHead = ({ dataHeader }) => {
             <CurriculumTitleAndContent compressedHeader>
                 <CurriculumHeaderTitle compressedHeader>{dataHeader.curriculumHeaderTitle}</CurriculumHeaderTitle>
             </CurriculumTitleAndContent>
-            <CurriculumInfoWrapper>
-                {dataHeader.childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode && (
-                    <CurriculumContent compressedHeader>
-                        {documentToReactComponents(dataHeader.childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode.json)}
-                    </CurriculumContent>
-                )}
+            <CurriculumInfoWrapper >
                 <CurriculumBonusBlock compressedHeader>
                     {documentToReactComponents(dataHeader.curriculumHeaderInfo.json, options)}
                 </CurriculumBonusBlock>
