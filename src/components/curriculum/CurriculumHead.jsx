@@ -90,7 +90,7 @@ const CurriculumNormalHead = ({ dataHeader }) => {
                 )}
             </CurriculumTitleAndContent>
             <CurriculumInfoWrapper>
-                <CurriculumBonusBlock compressedHeader>
+                <CurriculumBonusBlock>
                     {documentToReactComponents(dataHeader.curriculumHeaderInfo.json, options)}
                 </CurriculumBonusBlock>
             </CurriculumInfoWrapper>
