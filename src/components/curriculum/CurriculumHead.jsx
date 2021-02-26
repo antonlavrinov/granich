@@ -106,11 +106,11 @@ const CurriculumCompressedHead = ({ dataHeader }) => {
             <CurriculumTitleAndContent compressedHeader>
                 <CurriculumHeaderTitle compressedHeader>{dataHeader.curriculumHeaderTitle}</CurriculumHeaderTitle>
             </CurriculumTitleAndContent>
-            <CurriculumInfoWrapper >
+            {/* <CurriculumInfoWrapper >
                 <CurriculumBonusBlock compressedHeader>
                     {documentToReactComponents(dataHeader.curriculumHeaderInfo.json, options)}
                 </CurriculumBonusBlock>
-            </CurriculumInfoWrapper>
+            </CurriculumInfoWrapper> */}
 
         </CurriculumHeader>
     )

@@ -666,8 +666,6 @@ const CourseOffer = ({ data, courseName, deckVisibility, allowDeck }) => {
 
                         )}
 
-
-                        {console.log(data.courseTitle)}
                         <CourseOfferDescr className="noselect" courseTitle={data.courseTitle} courseName={courseName} type={data.courseType}>
                             {data.courseDescr}
                         </CourseOfferDescr>
@@ -682,10 +680,6 @@ const CourseOffer = ({ data, courseName, deckVisibility, allowDeck }) => {
 
 
             </Container>
-
-            {/* </CourseOfferOverflow> */}
-
-
 
 
         </CourseOfferSection>

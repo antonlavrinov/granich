@@ -210,9 +210,6 @@ const Offer = ({ data }) => {
                         <OfferDescr>
                             {headerSubtitle_01} <OfferFlagsImg alt="flags" fluid={headerSubtitleImage} /> <br /> {headerSubtitle_02} <span role="button" onKeyDown={() => scrollTo('#manifest')} onClick={() => scrollTo('#manifest')}>{headerSubtitle_03} <OfferUnderlineIcon /></span>
                         </OfferDescr>
-
-
-                        {/* <OfferSeo>Делаем из любви, а не страха. Курсы с осознанным подходом. Выточенно. Интенсивно. С дедлайнами.</OfferSeo> */}
                     </OfferWrapper>
 
 

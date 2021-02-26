@@ -1,37 +1,23 @@
 import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import CourseOffer from '../components/course-page/CourseOffer';
+// import CourseOffer from '../components/course-page/CourseOffer';
 import Header from "../components/Header"
-// import CourseExplanations from "../components/course-page/CourseExplanations"
-// import CourseExample from "../components/course-page/CourseExample"
-// // import CourseForWhom from "../components/course-page/CourseForWhom"
-// import CoursePortfolio from "../components/course-page/CoursePortfolio"
-// import CourseTrainingPath from "../components/course-page/CourseTrainingPath"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
-// import CourseFeatures from "../components/course-page/CourseFeatures"
-// import CourseReviews from "../components/course-page/CourseReviews"
 import CourseParticipation from "../components/course-page/CourseParticipation"
-// import CourseCommitment from "../components/course-page/CourseCommitment"
 import { graphql } from 'gatsby';
-// import CourseAnswers from "../components/course-page/CourseAnswers";
-// import Mailing from '../components/Mailing';
-// import CourseExplain from '../components/course-page/CourseExplain'
 import ogImage from '../assets/images/seo/conscious-freelance.jpg';
 import ogImageVK from '../assets/images/seo/vk/conscious-freelance.jpg';
-// import CourseIndividualSupport from "../components/course-page/CourseIndividualSupport";
-// import CourseTimetable from "../components/course-page/CourseTimetable";
-// import CourseAftermath from "../components/course-page/CourseAftermath"
-// import CourseOpportunities from "../components/course-page/CourseOpportunities";
-// import CoursePaymentChoices from "../components/course-page/CoursePaymentChoices";
-// import CourseBanner from "../components/course-page/CourseBanner";
 import CourseForWhom from "../components/course-page/freelance/ForWhom";
 import CourseFeatures from "../components/course-page/CourseFeatures";
 import FreelanceHardWork from "../components/course-page/freelance/FreelanceHardWork";
 import CourseFreelanceBanner from "../components/course-page/freelance/CourseFreelanceBanner";
 import CoursePaymentChoices from "../components/course-page/CoursePaymentChoices";
-import CourseTimetableFreelance from "../components/course-page/freelance/CourseTimetableFreelance";
 import Combination from "../components/course-page/freelance/Combination";
+import FreelanceOffer from "../components/course-page/freelance/FreelanceOffer";
+import FreelanceBefore from "../components/course-page/freelance/FreelanceBefore"
+import FreelanceAfter from "../components/course-page/freelance/FreelanceAfter"
+import FreelanceProblem from "../components/course-page/freelance/FreelanceProblem"
 
 export const contentfulQuery = graphql`
 
@@ -145,9 +131,12 @@ const OsoznannyFreelancePage = ({ data }) => {
         ogImageVk={ogImageVK}
         url="https://granich.design/conscious-freelance" />
       <div className="section-top-block"></div>
-      <CourseOffer data={data.offer} />
-
-      <CourseForWhom />
+      {/* <CourseOffer data={data.offer} /> */}
+      <FreelanceOffer />
+      <FreelanceBefore />
+      <FreelanceAfter />
+      <FreelanceProblem />
+      {/* <CourseForWhom /> */}
       <Combination />
       <CourseCurriculum
         compressedHeader

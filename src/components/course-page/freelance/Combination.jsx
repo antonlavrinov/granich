@@ -1,6 +1,17 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Container } from '../../style';
+import FreelancePresentationLabel from './FreelancePresentationLabel';
+import CombinationHandsIcon from '../../../assets/svgs/freelance/combination-hands.svg';
+
+
+const CombinationHands = styled(props => <CombinationHandsIcon {...props} />)`
+    width: 21vw;
+    position: relative;
+    margin-bottom: 3.1vw;
+    // left: 50%;
+    // transform: translateX(-50%);
+`
 
 const CombinationSection = styled.div`
     margin-bottom: 4vw;
@@ -13,17 +24,32 @@ const CombinationSection = styled.div`
 const CombinationWrapper = styled.div`
     margin-bottom: 4vw;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 3vw 0 7vw;
+    border-radius: 0 0 0.6vw 0.6vw;
     @media only screen and (max-width: 575px) {
         margin-bottom: 5vw;
         flex-direction: column;
     }
 `
 
+const CombinationLabelWrapper = styled.div`
+    padding-left: 5.3vw;
+    margin-bottom: 2.5vw;
+`
+
 const CombinationSectionTitle = styled.h2`
-    font-size: 3.85vw;
-    font-weight: 700;
-    letter-spacing: -0.1vw;
+    font-size: 4.8vw;
+    font-family: EB Garamond;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.11vw;
     margin-bottom: 2.4vw;
+    padding-left: 6.7vw;
+
+    line-height: 1;
     @media only screen and (max-width: 575px) {
         font-size: 11vw;
         margin-bottom: 4vw;
@@ -33,23 +59,33 @@ const CombinationSectionTitle = styled.h2`
 `
 
 const CombinationBlock = styled.div`
-    display: flex;
+    color: var(--granich-grey);
+    font-size: 1.8vw;
+    line-height: 1.4;
+    font-weight: 200;
+    letter-spacing: -0.02vw;
     align-items: flex-start;
     background: white;
-    padding: 1.8vw;
-    width: 48%;
+    width: 23vw;
     border-radius: 0.6vw;
-    margin-right: 4%;
+    margin-right: 14.5vw;
     position: relative;
+    span {
+        font-size: 1.8vw;
+        display: block;
+        font-weight: 500;
+        margin-bottom: 0.8vw;
+    }
     :after {
         content: '+';
         position: absolute;
         color: var(--granich-black);
-        font-weight: 600;
-        top: 50%;
+        font-weight: 400;
+        font-family: EB Garamond;
+        top: 40%;
         transform: translateY(-50%);
-        right: -2.5vw;
-        font-size: 3vw;
+        right: -8.4vw;
+        font-size: 8.5vw;
     }
     :last-child {
         margin-right: 0;
@@ -66,6 +102,8 @@ const CombinationBlock = styled.div`
         margin-right: 0;
         margin-bottom: 11vw;
         width: 100%;
+        font-size: 3.7vw;
+
         :last-child {
             margin-bottom: 0;
         }
@@ -81,52 +119,23 @@ const CombinationBlock = styled.div`
     }
 `
 
-const CombinationInfo = styled.div`
-    color: var(--granich-grey);
-    font-size: 1.3vw;
-    line-height: 1.35;
-    span {
-        font-weight: bold;
-    }
-    @media only screen and (max-width: 575px) {
-        font-size: 3.7vw;
-    }
 
-
-`
-
-const CombinationNumber = styled.div`
-    font-family: EB Garamond;
-    font-style: italic;
-    font-size: 4vw;
-    font-weight: 500;
-    background: #e2e2e2;
-    border-radius: 100vw;
-    min-height: 4vw;
-    min-width: 4vw;
-    line-height: 0.9;
-    margin-right: 1vw;
-    letter-spacing: 0;
-    margin-left: -0.1vw;
-    text-align: center;
-    @media only screen and (max-width: 575px) {
-        font-size: 10vw;
-        min-height: 10vw;
-        min-width: 10vw;
-        margin-right: 3vw;
-    }
+const CombinationList = styled.div`
+    display: flex;
+    align-items: flex-start;
+    padding-left: 2.5vw;
 `
 
 const combinationsObj = [
     {
-        number: 1,
-        title: 'Курс ',
-        text: '— идёте по спланированной учебной программе, с лекциями, презентациями и ДЗ к ним.'
+        id: 1,
+        title: 'Курс',
+        text: 'идёте по спланированной учебной программе — с лекциями, презентациями и ДЗ к ним.'
     },
     {
-        number: 2,
-        title: 'Наставничество ',
-        text: '— я делаю по каждому ученику личные разборы, чтобы повысить качество усвоения материала.'
+        id: 2,
+        title: 'Наставничество',
+        text: 'я делаю по каждому ученику личные разборы, чтобы повысить качество усвоения материала.'
     },
 ]
 
@@ -134,22 +143,26 @@ const Combination = () => {
     return (
         <CombinationSection>
             <Container>
-                <CombinationSectionTitle>
-                    Курс-наставничество это комбинация:
-                </CombinationSectionTitle>
+
+
                 <CombinationWrapper>
-                    {combinationsObj.map((el) => (
-                        <CombinationBlock key={el.number}>
-                            <CombinationNumber>
-                                {el.number}
-                            </CombinationNumber>
-                            <CombinationInfo>
+                    <CombinationLabelWrapper>
+                        <FreelancePresentationLabel />
+                    </CombinationLabelWrapper>
+
+                    <CombinationSectionTitle>
+                        Курс-наставничество это эффективная модель обучения
+                    </CombinationSectionTitle>
+                    <CombinationHands />
+                    <CombinationList>
+                        {combinationsObj.map((el) => (
+                            <CombinationBlock key={el.id}>
                                 <span>{el.title}</span>
                                 {el.text}
-                            </CombinationInfo>
+                            </CombinationBlock>
+                        ))}
+                    </CombinationList>
 
-                        </CombinationBlock>
-                    ))}
                 </CombinationWrapper>
             </Container>
         </CombinationSection>
