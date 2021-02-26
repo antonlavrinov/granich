@@ -5,6 +5,7 @@ import FreelanceBackgroundClip from '../../../assets/svgs/freelance/freelance-ba
 import FreelancePresentationLabel from './FreelancePresentationLabel';
 import ArrowDown from '../../../assets/svgs/course-arrow-down-27.svg';
 import { Link } from 'gatsby';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 
 const FreelanceOfferSection = styled.section`
@@ -66,7 +67,7 @@ const FreelanceOfferSvgClip = styled(props => <FreelanceBackgroundClip {...props
     }
 `
 
-const FreelanceOfferButton = styled(props => <Link {...props} />)`
+const FreelanceOfferButton = styled.button`
   display: inline-flex;
   align-items: center;
   color: white;
@@ -129,7 +130,7 @@ const FreelanceOffer = () => {
                         <FreelanceOfferTitle>
                             Ваше творчество станет <span>коммерчески востребованным</span>
                         </FreelanceOfferTitle>
-                        <FreelanceOfferButton to='#participation-section'>
+                        <FreelanceOfferButton onClick={() => scrollTo('#participation-section')}>
                             <ArrowDown />Участвовать
                         </FreelanceOfferButton>
                     </FreelanceOfferWrapper>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Support from './Support'
 import PageTop from './PageTop';
 import styled from 'styled-components';
@@ -7,7 +7,7 @@ import TelegramIcon from '../assets/svgs/social-side-icons/social-side-icon-tele
 import VKIcon from '../assets/svgs/social-side-icons/social-side-icon-vk_noshadow.svg';
 import InstagramIcon from '../assets/svgs/social-side-icons/social-side-icon-instagram.svg';
 import WhatsupIcon from '../assets/svgs/social-side-icons/social-side-icon-whatsup_noshadow.svg';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { CSSTransition } from 'react-transition-group';
 
 
@@ -99,7 +99,7 @@ const IconLink = styled.a`
         }
     }
 `
-const VK = styled(props => <VKIcon {...props}/>)`
+const VK = styled(props => <VKIcon {...props} />)`
     width: 3.6vw;
     height: 3.6vw;
     transition: all 0.3s ease;
@@ -119,7 +119,7 @@ const VK = styled(props => <VKIcon {...props}/>)`
 
 `
 
-const Instagram = styled(props => <InstagramIcon {...props}/>)`
+const Instagram = styled(props => <InstagramIcon {...props} />)`
     width: 3.6vw;
     height: 3.6vw;
     transition: all 0.3s ease;
@@ -139,7 +139,7 @@ const Instagram = styled(props => <InstagramIcon {...props}/>)`
 
 `
 
-const Telegram = styled(props => <TelegramIcon {...props}/>)`
+const Telegram = styled(props => <TelegramIcon {...props} />)`
     width: 3.6vw;
     height: 3.6vw;
     transition: all 0.3s ease;
@@ -156,7 +156,7 @@ const Telegram = styled(props => <TelegramIcon {...props}/>)`
     }
 
 `
-const Whatsup = styled(props => <WhatsupIcon {...props}/>)`
+const Whatsup = styled(props => <WhatsupIcon {...props} />)`
     width: 3.6vw;
     height: 3.6vw;
     transition: all 0.3s ease;
@@ -361,21 +361,21 @@ const SideButtons = () => {
 
                         <IconLink content="Написать в Телеграме" target="_blank" href="https://t.me/granich_school">
 
-                                <Telegram />
+                            <Telegram />
 
                         </IconLink>
                         <IconLink content="Написать в Директ" target="_blank" href="https://www.instagram.com/granichgram">
-                            <Instagram/>
+                            <Instagram />
                         </IconLink>
 
                         <IconLink content="Написать в WhatsApp" target="_blank" href="https://wa.me/79046434682">
 
-                        <Whatsup/>
+                            <Whatsup />
 
                         </IconLink>
                         <IconLink content="Написать в ВК" target="_blank" href="https://vk.com/write-164662407">
 
-                                <VK/>
+                            <VK />
 
                         </IconLink>
 
@@ -385,7 +385,7 @@ const SideButtons = () => {
                 </CSSTransition>
                 <Support toggleChatOpen={toggleChatOpen} chatOpen={chatOpen} />
 
-                <PageTop/>
+                <PageTop />
 
 
             </SideButtonsWrapper>
