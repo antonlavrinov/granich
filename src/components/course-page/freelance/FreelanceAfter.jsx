@@ -67,7 +67,7 @@ const FreelanceAfter = () => {
         query FreelanceAfterSectionQuery {
             freelanceAfterBanzai: file(relativePath: { eq: "freelance/freelance-banzai.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 600, quality: 100) {
+                    fluid(maxWidth: 450, quality: 100) {
                         ...GatsbyImageSharpFluid
                     }
                 }

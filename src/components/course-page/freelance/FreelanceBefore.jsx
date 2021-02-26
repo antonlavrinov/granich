@@ -78,7 +78,7 @@ const FreelanceBefore = () => {
         query FreelanceBeforeSectionQuery {
             freelanceBeforeSpider: file(relativePath: { eq: "freelance/spider.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 600, quality: 100) {
+                    fluid(maxWidth: 450, quality: 100) {
                         ...GatsbyImageSharpFluid
                     }
                 }
