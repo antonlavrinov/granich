@@ -18,6 +18,7 @@ const FreelanceBeforeWrapper = styled.div`
     justify-content: space-between;
     padding: 1vw 12vw 2.5vw 19.5vw;
     position: relative;   
+    margin-top: -0.5vw;
     @media only screen and (max-width: 575px) {
         padding: 6vw 6vw 85vw;
 
