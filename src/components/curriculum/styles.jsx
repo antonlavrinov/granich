@@ -41,6 +41,11 @@ export const CurriculumHeader = styled.div`
         justify-content: space-between;
         flex-direction: column;
         margin-bottom: 2vw;
+        @media only screen and (max-width: 575px) {
+            padding: 2vw 2vw 0;
+
+        }
+
     `}
     
 `
@@ -52,7 +57,8 @@ export const CurriculumTitleAndContent = styled.div`
     }
     ${props => props.compressedHeader && `
         min-width: auto;
-        margin-bottom: 1.5vw;
+        margin-bottom: 1vw;
+
     `}
 `
 export const CurriculumHeaderTitle = styled.h2`
@@ -60,7 +66,7 @@ export const CurriculumHeaderTitle = styled.h2`
     font-size: 4.55vw;
     letter-spacing: -0.1vw;
     font-weight: 700;
-    line-height: 0.87;
+    line-height: 1;
     margin-top: -0.6vw;
     margin-bottom: 6.4vw;
 
@@ -75,7 +81,12 @@ export const CurriculumHeaderTitle = styled.h2`
     }
     ${props => props.compressedHeader && `
         margin-bottom: 2vw;
-        max-width: 80%;
+        max-width: 78%;
+        @media only screen and (max-width: 575px) {
+            padding: 0;
+            margin-bottom: 0vw;
+        }
+
     `}
     
 `

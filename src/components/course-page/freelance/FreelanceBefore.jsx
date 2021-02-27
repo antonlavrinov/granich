@@ -2,6 +2,7 @@ import React from 'react'
 import { Container } from '../../style';
 import styled from 'styled-components';
 import FreelanceBeforeClip from '../../../assets/svgs/freelance/freelance-background-before-clip.svg';
+import FreelanceBeforeClipMobile from '../../../assets/svgs/freelance/freelance-background-before-clip-mobile.svg';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -31,8 +32,22 @@ const FreelanceBeforeSvgClip = styled(props => <FreelanceBeforeClip {...props} /
     z-index: 0;
     background-size: 'cover';
     background-repeat: 'no-repeat';
+    margin-top: -1vw;
     @media only screen and (max-width: 575px) {
-        width: 100%;
+        display: none;
+    }
+`
+
+const FreelanceBeforeSvgClipMobile = styled(props => <FreelanceBeforeClipMobile {...props} />)`
+    position: relative;
+    display: none;
+    width: 100%;
+    z-index: 0;
+    background-size: 'cover';
+    background-repeat: 'no-repeat';
+    margin-top: -1vw;
+    @media only screen and (max-width: 575px) {
+        display: block;
     }
 `
 
@@ -63,7 +78,7 @@ const FreelanceBeforeTitle = styled.div`
     letter-spacing: -0.1vw;
     margin-bottom: 1vw;
     @media only screen and (max-width: 575px) {
-        font-size: 8vw;
+        font-size: 6vw;
     }
 `
 const FreelanceBeforeDescr = styled.div`
@@ -74,7 +89,7 @@ const FreelanceBeforeDescr = styled.div`
     padding-right: 1vw;
     // letter-spacing: 0.05vw;
     @media only screen and (max-width: 575px) {
-        font-size: 5vw;
+        font-size: 4.5vw;
     }
 `
 
@@ -105,11 +120,12 @@ const FreelanceBefore = () => {
                             До Осознанного Фриланса
                         </FreelanceBeforeTitle>
                         <FreelanceBeforeDescr>
-                            Клиенты это странные люди — у них невнятные запросы, необоснованные правки, отсутствует чувство прекрасного. А ведь ещё и новых клиентов тяжело искать. Ну нафиг, проще в найм пойти.
+                            Клиенты это странные люди — у них невнятные запросы, необоснованные правки, отсутствует чувство прекрасного. А ведь ещё и новых клиентов тяжело искать. Ну нафиг, проще в найм пойти.
                         </FreelanceBeforeDescr>
                     </FreelanceBeforeInfo>
                 </FreelanceBeforeWrapper>
                 <FreelanceBeforeSvgClip />
+                <FreelanceBeforeSvgClipMobile />
             </Container>
         </FreelanceBeforeSection>
     )

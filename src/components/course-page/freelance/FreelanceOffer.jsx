@@ -85,8 +85,10 @@ const FreelanceOfferSvgClip = styled(props => <FreelanceBackgroundClip {...props
     z-index: 0;
     background-size: 'cover';
     background-repeat: 'no-repeat';
-    
+    display: block;
 `
+
+
 
 const FreelanceOfferButton = styled.button`
   display: inline-flex;

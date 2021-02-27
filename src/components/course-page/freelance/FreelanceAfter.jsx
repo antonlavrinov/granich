@@ -18,7 +18,8 @@ const FreelanceAfterWrapper = styled.div`
     margin-top: -1.6vw;
     
     @media only screen and (max-width: 575px) {
-        padding: 6vw 6vw 85vw;
+        padding: 10vw 6vw 85vw;
+        margin-top: -6vw;
 
     }
 `
@@ -52,7 +53,7 @@ const FreelanceAfterTitle = styled.div`
     letter-spacing: -0.1vw;
     margin-bottom: 1vw;
     @media only screen and (max-width: 575px) {
-        font-size: 8vw;
+        font-size: 7vw;
     }
 `
 const FreelanceAfterDescr = styled.div`
@@ -63,7 +64,7 @@ const FreelanceAfterDescr = styled.div`
     font-weight: 200;
     // letter-spacing: 0.04vw;
     @media only screen and (max-width: 575px) {
-        font-size: 5vw;
+        font-size: 4.5vw;
     }
 
 `

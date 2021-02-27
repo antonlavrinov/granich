@@ -66,6 +66,10 @@ const PolicyText = styled.div`
             margin-bottom: 2vw;
             letter-spacing: -0.08vw;
         }
+        ul {
+            padding: 0.4vw 2vw;
+            border-radius: 1.8vw;
+        }
     }
 
 `

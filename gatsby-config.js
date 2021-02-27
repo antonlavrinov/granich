@@ -16,7 +16,11 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
+    DEV_SSR: false,
+    FAST_REFRESH: true,
   },
+
+
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,

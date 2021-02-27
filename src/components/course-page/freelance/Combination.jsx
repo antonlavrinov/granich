@@ -21,8 +21,10 @@ const CombinationHands = styled(props => <CombinationHandsIcon {...props} />)`
     width: 21vw;
     position: relative;
     margin-bottom: 3.1vw;
-    // left: 50%;
-    // transform: translateX(-50%);
+    @media only screen and (max-width: 575px) {
+        width: 40vw;
+        margin-bottom: 5vw;
+    }
 `
 
 const CombinationSection = styled.div`
@@ -44,12 +46,18 @@ const CombinationWrapper = styled.div`
     @media only screen and (max-width: 575px) {
         margin-bottom: 5vw;
         flex-direction: column;
+        padding-bottom: 5vw;
+        border-radius: 2.5vw;
     }
 `
 
 const CombinationLabelWrapper = styled.div`
     padding-left: 5.3vw;
     margin-bottom: 2.5vw;
+    display: block;
+    @media only screen and (max-width: 575px) {
+        display: none;
+    }
 `
 
 const CombinationSectionTitle = styled.h2`
@@ -63,9 +71,9 @@ const CombinationSectionTitle = styled.h2`
 
     line-height: 1;
     @media only screen and (max-width: 575px) {
-        font-size: 11vw;
-        margin-bottom: 4vw;
-        letter-spacing: -0.7vw;
+        font-size: 8.5vw;
+        margin-bottom: 8vw;
+        letter-spacing: -0.1vw;
         line-height: 1;
     }
 `
@@ -107,15 +115,18 @@ const CombinationBlock = styled.div`
     }
 
 
+
     @media only screen and (max-width: 575px) {
         border-radius: 2.5vw;
         padding: 4vw; 
         min-height: auto;
         margin-right: 0;
-        margin-bottom: 11vw;
+        margin-bottom: 20vw;
         width: 100%;
-        font-size: 3.7vw;
-
+        font-size: 4.5vw;
+        span {
+            font-size: 4.5vw;
+        }
         :last-child {
             margin-bottom: 0;
         }
@@ -123,9 +134,9 @@ const CombinationBlock = styled.div`
             right: auto;
             transform: translate(-50%, 0);
             left: 50%;
-            bottom: -11vw;
+            bottom: -19vw;
             top: auto;
-            font-size: 11vw;
+            font-size: 14vw;
 
         }
     }
@@ -136,6 +147,10 @@ const CombinationList = styled.div`
     display: flex;
     align-items: flex-start;
     padding-left: 2.5vw;
+    @media only screen and (max-width: 575px) {
+        flex-direction: column;
+
+    }
 `
 
 const combinationsObj = [
