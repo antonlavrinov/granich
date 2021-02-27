@@ -93,7 +93,7 @@ const FreelancePresentationLabel = ({ logo }) => {
     `)
 
     const checkIcon = data.freelancePresentationCheckIcon.childImageSharp.fluid
-    const freelanceLogo = data.freelanceLogo.childImageSharp.fluid
+    // const freelanceLogo = data.freelanceLogo.childImageSharp.fluid
 
     const tags = ['Дизайнерам', 'Фотографам', '2D-аниматорам', 'Иллюстраторам', 'Видеомейкерам', '3D-моделлерам']
 

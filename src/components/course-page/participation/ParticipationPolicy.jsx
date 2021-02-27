@@ -22,9 +22,12 @@ const PolicyWrapper = styled.div`
 const PolicyText = styled.div`
     line-height: 1.45;
     margin-bottom: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     ul {
         background: var(--granich-red);
-        display: inline-block;
+        display: block;
         padding: 0.4vw 1vw;
         border-radius: 0.6vw;
         margin-bottom: 1vw;

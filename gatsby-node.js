@@ -67,7 +67,23 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         },
       })
     }
+
+    //to remove error when opening lessons in freelance page (react spring error with webpack bundling) 
+    if (stage.startsWith("build-javascript")) {
+      actions.setWebpackConfig({
+        module: {
+          rules: [
+            {
+              test: /react-spring/,
+              sideEffects: true
+            }
+          ]
+        }
+      })
+    }
   }
+
+
 
 exports.createSchemaCustomization = ({ actions }) => {
     const { createTypes } = actions
