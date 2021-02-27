@@ -55,13 +55,11 @@ const options = {
 
         },
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
-            const { title, file } = node.data.target.fields;
-            // const {file} = node.data.target.fields;
-            // console.log('NODE',node)
+            const { file, title } = node.data.target.fields;
             // const mimeType = file['en-US'].contentType
             // const mimeGroup = mimeType.split('/')[0]
             return <img
-                //   title={ title ? title['en-US'] : null}
+                title={title ? title['en-US'] : null}
                 alt={title ? title['en-US'] : null}
                 src={file['en-US'].url}
             />

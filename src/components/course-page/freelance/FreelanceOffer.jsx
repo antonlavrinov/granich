@@ -4,9 +4,20 @@ import styled from 'styled-components';
 import FreelanceBackgroundClip from '../../../assets/svgs/freelance/freelance-background-offer-clip.svg';
 import FreelancePresentationLabel from './FreelancePresentationLabel';
 import ArrowDown from '../../../assets/svgs/course-arrow-down-27.svg';
-import { Link } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
+import FreelanceOfferLogoIcon from '../../../assets/svgs/freelance/freelance-offer-logo.svg';
 
+
+const FreelanceOfferLogo = styled(props => <FreelanceOfferLogoIcon {...props} />)`
+    width: 12vw;
+    min-width: 12vw;
+    margin-right: 1.6vw;
+    @media only screen and (max-width: 575px) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 5vw;
+    }
+`
 
 const FreelanceOfferSection = styled.section`
 
@@ -17,18 +28,21 @@ const FreelanceOfferWrapper = styled.div`
     align-items: center;
     background: white;
     justify-content: space-between;
-    padding: 3vw 0.5vw 3vw 2.5vw;
+    padding: 4.5vw 0.5vw 3vw 2.5vw;
     border-radius: 0.6vw;
     
     @media only screen and (max-width: 575px) {
         border-radius: 2.5vw;
-        padding: 6vw 6vw 6vw;
+        padding: 8vw 6vw 6vw 6vw;
 
     }
 `
 
 const FreelanceOfferLabelWrapper = styled.div`
     padding-left: 1vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 5vw;
+    }
 `
 
 
@@ -50,6 +64,15 @@ const FreelanceOfferTitle = styled.h1`
         display: block;
         letter-spacing: -0.01vw;
     }
+    @media only screen and (max-width: 575px) {
+        font-size: 10vw;
+        line-height: 0.9;
+        margin-bottom: 10vw;
+        span {
+            font-size: 8.5vw;
+            line-height: 1;
+        }
+    }
 
 `
 
@@ -62,9 +85,7 @@ const FreelanceOfferSvgClip = styled(props => <FreelanceBackgroundClip {...props
     z-index: 0;
     background-size: 'cover';
     background-repeat: 'no-repeat';
-    @media only screen and (max-width: 575px) {
-        width: 100%;
-    }
+    
 `
 
 const FreelanceOfferButton = styled.button`
@@ -100,10 +121,10 @@ const FreelanceOfferButton = styled.button`
   }
   @media only screen and (max-width: 575px) {
     font-size: 5.5vw;
-    margin: 0 5vw;
+    margin: 0;
     padding: 3vw 5vw 4vw 5vw;
     border-radius: 1.5vw;
-    margin-bottom: 2vw;
+    margin-bottom: 10vw;
     box-shadow: 0.7vw 0.7vw 1.5vw rgba(0,0,0,0.3);
     :hover {
         font-size: 5.5vw;
@@ -125,7 +146,7 @@ const FreelanceOffer = () => {
                 <Container>
                     <FreelanceOfferWrapper>
                         <FreelanceOfferLabelWrapper>
-                            <FreelancePresentationLabel />
+                            <FreelancePresentationLabel logo={(<FreelanceOfferLogo />)} />
                         </FreelanceOfferLabelWrapper>
                         <FreelanceOfferTitle>
                             Ваше творчество станет <span>коммерчески востребованным</span>

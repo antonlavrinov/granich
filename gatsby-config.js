@@ -1,6 +1,8 @@
 // require('dotenv').config({
 //   path: `.env`
 // })
+const { BLOCKS } = require('@contentful/rich-text-types')
+
 
 module.exports = {
   siteMetadata: {
@@ -11,6 +13,9 @@ module.exports = {
     ogImage: `images/index.jpg`,
     ogImageVk: `images/index-vk.jpg`,
     siteUrl: `https://granich.design`
+  },
+  flags: {
+    FAST_DEV: true,
   },
   plugins: [
     {
@@ -55,7 +60,22 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-smoothscroll`,
     `gatsby-background-image`,
+
     `gatsby-plugin-styled-components`,
+    {
+      resolve: '@contentful/gatsby-transformer-contentful-richtext',
+      options: {
+        renderOptions: {
+          renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: node => {
+              return `<img class='custom-asset' src="${
+                node.data.target.fields.file['en-US'].url
+              }"/>`
+            }
+          }
+        }
+      }
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {

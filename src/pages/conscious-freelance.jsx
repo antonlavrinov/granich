@@ -8,11 +8,11 @@ import CourseParticipation from "../components/course-page/CourseParticipation"
 import { graphql } from 'gatsby';
 import ogImage from '../assets/images/seo/conscious-freelance.jpg';
 import ogImageVK from '../assets/images/seo/vk/conscious-freelance.jpg';
-import CourseForWhom from "../components/course-page/freelance/ForWhom";
+// import CourseForWhom from "../components/course-page/freelance/ForWhom";
 import CourseFeatures from "../components/course-page/CourseFeatures";
 import FreelanceHardWork from "../components/course-page/freelance/FreelanceHardWork";
 import CourseFreelanceBanner from "../components/course-page/freelance/CourseFreelanceBanner";
-import CoursePaymentChoices from "../components/course-page/CoursePaymentChoices";
+import CoursePaymentChoices from "../components/course-page/payment-choices/CoursePaymentChoices";
 import Combination from "../components/course-page/freelance/Combination";
 import FreelanceOffer from "../components/course-page/freelance/FreelanceOffer";
 import FreelanceBefore from "../components/course-page/freelance/FreelanceBefore"
@@ -153,8 +153,9 @@ const OsoznannyFreelancePage = ({ data }) => {
         googleAnaliticsCategory={`Отправка формы Осознанный Фриланс`}
         additionalTags={['Только 6 учеников']}
         telegram
+        additionalComponent
       />
-      <CoursePaymentChoices paymentsAvailable={{ 'credit': true, 'corporate': false, 'abroad': false }} />
+      {/* <CoursePaymentChoices paymentsAvailable={{ 'credit': true, 'corporate': false, 'abroad': false }} /> */}
       <CourseFreelanceBanner />
 
 

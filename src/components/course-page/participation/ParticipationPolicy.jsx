@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import TelegramIcon from '../../../assets/svgs/telegram-plane-brands.svg'
+import Tinkoff from '../payment-choices/Tinkoff';
 
 
 const PolicyWrapper = styled.div`
@@ -20,6 +21,20 @@ const PolicyWrapper = styled.div`
 
 const PolicyText = styled.div`
     line-height: 1.45;
+    margin-bottom: 1vw;
+    ul {
+        background: var(--granich-red);
+        display: inline-block;
+        padding: 0.4vw 1vw;
+        border-radius: 0.6vw;
+        margin-bottom: 1vw;
+        li {
+            p {
+                color: white;
+            }
+        }
+
+    }
     p {
         font-size: 1.05vw;
         color: var(--granich-grey);
@@ -42,6 +57,7 @@ const PolicyText = styled.div`
         font-weight: 500;
     }
     @media only screen and (max-width: 575px) {
+        margin-bottom: 2vw;
         p {
             font-size: 3.7vw;
             margin-bottom: 2vw;
@@ -216,11 +232,16 @@ const PolicyFooterEmail = styled.span`
 
 `
 
-const ParticipationPolicy = ({ data, telegram }) => {
+const ParticipationPolicy = ({ data, telegram, additionalComponent }) => {
     const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
     return (
         <PolicyWrapper>
             {data.childContentfulGranichCourseCoursePolicyRichTextNode && <PolicyText>{documentToReactComponents(data.childContentfulGranichCourseCoursePolicyRichTextNode.json)}</PolicyText>}
+            {additionalComponent && (
+                <Tinkoff inbuilt />
+
+            )}
+
             {telegram ? (
                 <PolicyFooter>
                     Вопросы по обучению пишите мне в телеграме: <a rel="noopener" rel="noreferrer" target="_blank" href="https://t.me/vadim_granich" ><TelegramIcon /> <span>@vadim_granich</span></a>

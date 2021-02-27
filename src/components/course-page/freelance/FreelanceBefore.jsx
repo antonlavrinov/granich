@@ -16,12 +16,9 @@ const FreelanceBeforeWrapper = styled.div`
     background: black;
     justify-content: space-between;
     padding: 1vw 12vw 2.5vw 19.5vw;
-    position: relative;
-
-    
+    position: relative;   
     @media only screen and (max-width: 575px) {
-
-        padding: 6vw 6vw 6vw;
+        padding: 6vw 6vw 85vw;
 
     }
 `
@@ -48,9 +45,11 @@ const FreelanceBeforeImage = styled(props => <Img {...props} />)`
     transform: rotate(15deg);
     margin-right: 0.5vw;
     @media only screen and (max-width: 575px) {
-        width: 2.8vw;
-        height: 2.8vw;
-        margin-right: 1.5vw;
+        width: 60vw;
+        top: auto;
+        bottom: 5vw;
+        left: 50%;
+        transform: translateX(-50%);
     }
 `
 
@@ -63,13 +62,20 @@ const FreelanceBeforeTitle = styled.div`
     font-weight: 200;
     letter-spacing: -0.1vw;
     margin-bottom: 1vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 8vw;
+    }
 `
 const FreelanceBeforeDescr = styled.div`
     color: var(--granich-grey);
     font-size: 2vw;
     line-height: 1.3;
     font-weight: 200;
-    letter-spacing: 0.05vw;
+    padding-right: 1vw;
+    // letter-spacing: 0.05vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 5vw;
+    }
 `
 
 const FreelanceBefore = () => {
@@ -99,7 +105,7 @@ const FreelanceBefore = () => {
                             До Осознанного Фриланса
                         </FreelanceBeforeTitle>
                         <FreelanceBeforeDescr>
-                            Клиенты это странные люди — у них невнятные запросы, необоснованные правки, отсутствует чувство прекрасного. А ведь ещё и новых клиентов тяжело искать. Ну нафиг, проще в найм пойти.
+                            Клиенты это странные люди — у них невнятные запросы, необоснованные правки, отсутствует чувство прекрасного. А ведь ещё и новых клиентов тяжело искать. Ну нафиг, проще в найм пойти.
                         </FreelanceBeforeDescr>
                     </FreelanceBeforeInfo>
                 </FreelanceBeforeWrapper>

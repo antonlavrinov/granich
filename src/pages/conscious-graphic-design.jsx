@@ -21,7 +21,7 @@ import CourseTimetable from "../components/course-page/CourseTimetable";
 import CourseAftermath from "../components/course-page/CourseAftermath"
 import CourseOpportunities from "../components/course-page/CourseOpportunities";
 import CourseHardWork from "../components/course-page/CourseHardWork";
-import CoursePaymentChoices from "../components/course-page/CoursePaymentChoices";
+import CoursePaymentChoices from "../components/course-page/payment-choices/CoursePaymentChoices";
 import CourseBanner from "../components/course-page/CourseBanner";
 
 export const contentfulQuery = graphql`

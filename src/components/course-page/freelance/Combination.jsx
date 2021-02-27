@@ -3,6 +3,18 @@ import styled from 'styled-components';
 import { Container } from '../../style';
 import FreelancePresentationLabel from './FreelancePresentationLabel';
 import CombinationHandsIcon from '../../../assets/svgs/freelance/combination-hands.svg';
+import FreelanceCombinationLogoIcon from '../../../assets/svgs/freelance/freelance-combination-logo.svg';
+
+const FreelanceCombinationLogo = styled(props => <FreelanceCombinationLogoIcon {...props} />)`
+    width: 12vw;
+    min-width: 12vw;
+    margin-right: 1.6vw;
+    @media only screen and (max-width: 575px) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 5vw;
+    }
+`
 
 
 const CombinationHands = styled(props => <CombinationHandsIcon {...props} />)`
@@ -66,7 +78,7 @@ const CombinationBlock = styled.div`
     letter-spacing: -0.02vw;
     align-items: flex-start;
     background: white;
-    width: 23vw;
+    width: 25vw;
     border-radius: 0.6vw;
     margin-right: 14.5vw;
     position: relative;
@@ -130,12 +142,12 @@ const combinationsObj = [
     {
         id: 1,
         title: 'Курс',
-        text: 'идёте по спланированной учебной программе — с лекциями, презентациями и ДЗ к ним.'
+        text: 'идёте по спланированной учебной программе — с лекциями, презентациями и ДЗ к ним.'
     },
     {
         id: 2,
         title: 'Наставничество',
-        text: 'я делаю по каждому ученику личные разборы, чтобы повысить качество усвоения материала.'
+        text: 'я делаю по каждому ученику личные разборы, чтобы повысить качество усвоения материала.'
     },
 ]
 
@@ -147,7 +159,7 @@ const Combination = () => {
 
                 <CombinationWrapper>
                     <CombinationLabelWrapper>
-                        <FreelancePresentationLabel />
+                        <FreelancePresentationLabel logo={(<FreelanceCombinationLogo />)} />
                     </CombinationLabelWrapper>
 
                     <CombinationSectionTitle>

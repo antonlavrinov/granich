@@ -1,37 +1,42 @@
 import React from 'react'
 import styled from 'styled-components';
-import FreelanceLogoIcon from '../../../assets/svgs/freelance/freelance-logo.svg';
+
 import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
 
-const FreelanceLogo = styled(props => <FreelanceLogoIcon {...props} />)`
-    max-width: 12vw;
-    margin-right: 1.6vw;
-`
+
+
 
 
 const LabelWrapper = styled.div`
-    // padding: 1vw;
     display: flex;
     align-items: center;
     margin-bottom: 0.7vw;
-    // justify-content: space-between;
-    // width: 10vw;
+    @media only screen and (max-width: 575px) {
+        flex-direction: column;
+    }
 `
 
 const LabelDescr = styled.div`
-    // width: 30vw;
     font-size: 1.75vw;
     font-weight: 200;
     letter-spacing: 0;
     margin-right: 2.7vw;
     margin-top: -0.3vw;
+    @media only screen and (max-width: 575px) {
+        margin: 0;
+        font-size: 5vw;
+        margin-bottom: 3vw;
+    }
 `
 
 const LabelTagsWrapper = styled.div`
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    @media only screen and (max-width: 575px) {
+        margin-left: -1vw;
+    }
 `
 
 const LabelTag = styled.div`
@@ -46,7 +51,7 @@ const LabelTag = styled.div`
     align-items: center;
     @media only screen and (max-width: 575px) {
         padding: 1.5vw 2.1vw;
-        font-size: 3.45vw;
+        font-size: 3.2vw;
         margin-right: 2vw;
         margin-bottom: 3vw;
         box-shadow: 0 1vw 1.5vw rgba(0,0,0,0.1);
@@ -64,7 +69,7 @@ const LabelCheckIcon = styled(props => <Img {...props} />)`
     }
 `
 
-const FreelancePresentationLabel = () => {
+const FreelancePresentationLabel = ({ logo }) => {
 
 
     const data = useStaticQuery(graphql`
@@ -76,16 +81,26 @@ const FreelancePresentationLabel = () => {
                     }
                 }
             }
+            freelanceLogo: file(relativePath: { eq: "freelance/freelance-logo.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300, quality: 100) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
         }
+
     `)
 
     const checkIcon = data.freelancePresentationCheckIcon.childImageSharp.fluid
+    const freelanceLogo = data.freelanceLogo.childImageSharp.fluid
 
     const tags = ['Дизайнерам', 'Фотографам', '2D-аниматорам', 'Иллюстраторам', 'Видеомейкерам', '3D-моделлерам']
 
     return (
         <LabelWrapper>
-            <FreelanceLogo />
+            {logo}
+            {/* <FreelanceLogo fluid={freelanceLogo} /> */}
             <LabelDescr>Курс-наставничество для творческих специалистов</LabelDescr>
             <LabelTagsWrapper>
                 {tags.map((tag, idx) => (

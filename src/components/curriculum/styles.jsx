@@ -40,6 +40,7 @@ export const CurriculumHeader = styled.div`
     ${props => props.compressedHeader && `
         justify-content: space-between;
         flex-direction: column;
+        margin-bottom: 2vw;
     `}
     
 `
@@ -522,6 +523,56 @@ export const CurriculumItemFrame = styled.div`
 
 
     `}
+    ${props => props.numberOfLessons === 9 && `
+        :nth-child(1) {
+            :after {
+                width: 11.1%;  
+            }
+        }
+        :nth-child(2) {
+            :after {
+                width: 22.2%;  
+            }
+        }
+        :nth-child(3) {
+            :after {
+                width: 33.3%;  
+            }
+        }
+        :nth-child(4) {
+            :after {
+                width: 44.4%;  
+            }
+        }
+        :nth-child(5) {
+            :after {
+                width: 55.5%;  
+            }
+        }
+        :nth-child(6) {
+            :after {
+                width: 66.6%;  
+            }
+        }
+        :nth-child(7) {
+            :after {
+                width: 77.7%;  
+            }
+        }
+        :nth-child(8) {
+            :after {
+                width: 88.8%;  
+            }
+        }
+        :nth-child(9) {
+            :after {
+                width: 100%;  
+            }
+        }
+
+
+
+    `}
 `
 
 export const CurriculumItemTitle = styled('h3')`
@@ -555,7 +606,9 @@ export const CurriculumItemTitle = styled('h3')`
         font-size: 6.2vw;
     }
     img {
-        min-width: 5vw;
+        // min-width: 9vw;
+        // width: 9vw;
+        // max-width: 9vw;
         height: 6vw;
         left: 2vw;
         top: 1vw;

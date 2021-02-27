@@ -16,6 +16,7 @@ const SectionSeparator = styled(props => <SectionSeparatorIcon {...props} />)`
 const Frame = styled(props => <FrameIcon {...props} />)`
     width: 13vw;
     margin-right: 3.5vw;
+    transform: translateY(-10%);
 `
 
 const Smile = styled(props => <SmileIcon {...props} />)`
@@ -76,13 +77,13 @@ const ProblemItem = styled.div`
 `
 
 const ProblemItemText = styled.div`
-    width: 44vw;
+    width: 42vw;
     color: var(--granich-grey);
     font-size: 2vw;
     line-height: 1.3;
     font-weight: 200;
     line-height: 1.35;
-    letter-spacing: 0.04vw;
+    // letter-spacing: 0.04vw;
 `
 
 const AuthorIntrodunction = styled.div`
@@ -186,7 +187,7 @@ const FreelanceProblem = () => {
                         <ProblemItem>
                             <Frame />
                             <ProblemItemText>
-                                Это ваша проблема ‒ вы не видите полной картины того, как ваше творчество помогает реализовать бизнес-стратегию заказчиков, и какие выгоды это приносит.
+                                Это ваша проблема — вы не видите полной картины того, как ваше творчество помогает реализовать бизнес-стратегию заказчиков, и какие выгоды это приносит.
                             </ProblemItemText>
                         </ProblemItem>
                         <ProblemItem>
