@@ -26,7 +26,8 @@ const ParticipationWrapper = styled.div`
     
     @media only screen and (max-width: 575px) {
         border-radius: 2.5vw;
-        padding: 8vw 6vw 6vw 6vw;
+        padding: 8vw 6vw 10vw 6vw;
+        align-items: flex-start;
 
     }
 `
@@ -41,9 +42,11 @@ const ParticipationSectionTitle = styled.h2`
     position: relative;
     margin-bottom: 7vw;
     @media only screen and (max-width: 575px) {
-        width: 95%;
-        font-size: 8vw;
-        line-height: 1.1;
+        font-size: 11vw;
+        text-align: left;
+        margin-bottom: 9vw;
+        letter-spacing: -0.07rem;
+        line-height: 1;
     }
 `
 
@@ -51,6 +54,12 @@ const ParticipationStepsWrapper = styled.div`
     display: flex;
     margin-bottom: 6vw;
     padding: 0 2vw 0 6vw;
+    @media only screen and (max-width: 575px) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        margin-bottom: 10vw;
+    }
 `
 
 const ParticipationStepWrapper = styled.div`
@@ -59,7 +68,6 @@ const ParticipationStepWrapper = styled.div`
     padding-right: 3vw;
     :first-child {
         padding-left: 0;
-        // margin-right: 1vw;
         :after {
             content: '';
             position: absolute;
@@ -71,11 +79,31 @@ const ParticipationStepWrapper = styled.div`
             background: var(--granich-black);
         }
     }
+    @media only screen and (max-width: 575px) {
+        padding: 0;
+        margin-bottom: 0;
+        :first-child {
+            margin-bottom: 20vw;
+            padding: 0;
+            :after {
+                top: auto;
+                bottom: -10vw;
+                right: 0;
+                width: 100%;
+                height: 0.5vw;
+                transform: none;
+
+            }
+        }
+    }
 `
 const ParticipationStepHeader = styled.div`
     display: flex;
     margin-bottom: 1.8vw;
     align-items: center;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 0;
+    }
 `
 
 const ParticipationStepNumber = styled.div`
@@ -89,6 +117,13 @@ const ParticipationStepNumber = styled.div`
     font-size: 5vw;
     font-weight: 800;
     margin-right: 1.5vw;
+    @media only screen and (max-width: 575px) {
+        border-width: 0.6vw;
+        width: 10vw;
+        height: 10vw;
+        font-size: 7vw;
+        margin-right: 3vw;
+    }
 `
 
 const ParticipationStepLogo = styled(props => <FreelanceParticipationLogoIcon {...props} />)`
@@ -96,7 +131,7 @@ const ParticipationStepLogo = styled(props => <FreelanceParticipationLogoIcon {.
     min-width: 16vw;
     margin-right: 1.6vw;
     @media only screen and (max-width: 575px) {
-        width: 100%;
+        width: 75%;
         margin-right: 0;
         margin-bottom: 5vw;
     }
@@ -114,12 +149,14 @@ const ParticipationStepImage = styled(props => <BackgroundImage {...props}></Bac
     overflow: hidden;
     margin-right: 2.2vw;
     @media only screen and (max-width: 575px) {
-        width: 30vw;
-        height: 30vw;
-        min-width: 30vw;
-        min-height: 30vw;
+        width: 25vw;
+        height: 25vw;
+        min-width: 25vw;
+        min-height: 25vw;
         margin-bottom: 3vw;
         margin-right: 0;
+        transform: none;
+        border-width: 0.7vw;
     }
 `
 
@@ -128,6 +165,10 @@ const ParticipationStepTitle = styled.div`
     font-size: 2.65vw;
     line-height: 1.4;
     margin-bottom: 1.5vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 5.5vw;
+        line-height: 1.2;
+    }
 `
 
 const ParticipationStepNotice = styled.div`
@@ -139,11 +180,21 @@ const ParticipationStepNotice = styled.div`
         width: 2.3vw;
         top: 0.45vw;
     }
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+        svg {
+            width: 4vw;
+            top: 0.7vw;
+        }
+    }
 `
 
 const ParticipationTelegramInstructions = styled.div`
     display: flex;
     width: 65%;
+    @media only screen and (max-width: 575px) {
+        width: 100%;
+    }
 
 `
 
@@ -152,6 +203,12 @@ const ParticipationTelegramIcon = styled(props => <FreelanceParticipationTelegra
     min-width: 7.5vw;
     margin-right: 1.5vw;
     transform: translateY(-15%);
+    @media only screen and (max-width: 575px) {
+        width: 8vw;
+        min-width: 8vw;
+        margin-right: 2vw;
+        transform: translateY(-30%);
+    }
 
 
 `
@@ -181,6 +238,12 @@ const ParticipationTelegramLink = styled.a`
             background: rgba(0,0,0,0.1);
         }
     }
+    @media only screen and (max-width: 575px) {
+        font-size: 6vw;
+        :hover {
+            font-size: 6vw;
+        }
+    }
 `
 
 const ParticipationTelegramDescr = styled.div`
@@ -189,6 +252,10 @@ const ParticipationTelegramDescr = styled.div`
     letter-spacing: -0.015rem;
     line-height: 1.25;
     padding-left: 0.5vw;
+    @media only screen and (max-width: 575px) {
+        font-size: 3.7vw;
+
+    }
 `
 
 
