@@ -73,7 +73,7 @@ const FreelanceAfter = () => {
 
     const data = useStaticQuery(graphql`
         query FreelanceAfterSectionQuery {
-            freelanceAfterBanzai: file(relativePath: { eq: "freelance/freelance-banzai.jpg" }) {
+            freelanceAfterBanzai: file(relativePath: { eq: "freelance/freelance-banzai_red.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 450, quality: 100) {
                         ...GatsbyImageSharpFluid

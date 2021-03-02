@@ -19,6 +19,7 @@ import FreelanceBefore from "../components/course-page/freelance/FreelanceBefore
 import FreelanceAfter from "../components/course-page/freelance/FreelanceAfter"
 import FreelanceProblem from "../components/course-page/freelance/FreelanceProblem"
 import FreelanceSkills from "../components/course-page/freelance/FreelanceSkills"
+import FreelanceParticipation from "../components/course-page/freelance/FreelanceParticipation"
 
 export const contentfulQuery = graphql`
 
@@ -147,7 +148,8 @@ const OsoznannyFreelancePage = ({ data }) => {
       <CourseFeatures title="Особенности курса" data={data.features} />
       <FreelanceHardWork />
       <FreelanceSkills />
-      <div id="participation-section"></div>
+      <FreelanceParticipation />
+      {/* <div id="participation-section"></div>
       <CourseParticipation
         data={data.offer}
         formId={`ltForm5127304`}
@@ -156,7 +158,7 @@ const OsoznannyFreelancePage = ({ data }) => {
         additionalTags={['Только 6 учеников']}
         telegram
         additionalComponent
-      />
+      /> */}
       {/* <CoursePaymentChoices paymentsAvailable={{ 'credit': true, 'corporate': false, 'abroad': false }} /> */}
       <CourseFreelanceBanner />
 
