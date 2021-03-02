@@ -28,7 +28,7 @@ const FreelanceOfferWrapper = styled.div`
     align-items: center;
     background: white;
     justify-content: space-between;
-    padding: 4.5vw 0.5vw 3vw 2.5vw;
+    padding: 5vw 0.5vw 6vw 2.5vw;
     border-radius: 0.6vw;
     
     @media only screen and (max-width: 575px) {
@@ -40,6 +40,7 @@ const FreelanceOfferWrapper = styled.div`
 
 const FreelanceOfferLabelWrapper = styled.div`
     padding-left: 1vw;
+    margin-bottom: 3vw;
     @media only screen and (max-width: 575px) {
         margin-bottom: 5vw;
     }
@@ -54,7 +55,7 @@ const FreelanceOfferTitle = styled.h1`
     margin: 0;
     margin-left: 0.3vw;
     letter-spacing: -0.15vw;
-    margin-bottom: 3vw;
+    margin-bottom: 5vw;
     align-self: start;
     span {
         font-style: normal;

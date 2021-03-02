@@ -36,7 +36,7 @@ const FreelanceAfterImage = styled(props => <Img {...props} />)`
     @media only screen and (max-width: 575px) {
         width: 60vw;
         top: auto;
-        bottom: 5vw;
+        bottom: 2vw;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -62,7 +62,7 @@ const FreelanceAfterDescr = styled.div`
     font-size: 2vw;
     line-height: 1.3;
     font-weight: 200;
-    // letter-spacing: 0.04vw;
+    letter-spacing: -0.015rem;
     @media only screen and (max-width: 575px) {
         font-size: 4.5vw;
     }

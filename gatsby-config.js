@@ -61,11 +61,17 @@ module.exports = {
 //   gtag('config', 'UA-179098660-1');
 // </script>
 
-    `gatsby-plugin-sass`,
+
     `gatsby-plugin-smoothscroll`,
     `gatsby-background-image`,
 
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+          implementation: require('sass')
+      },
+    },
     {
       resolve: '@contentful/gatsby-transformer-contentful-richtext',
       options: {

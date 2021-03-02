@@ -73,10 +73,10 @@ const FreelanceBeforeInfo = styled.div`
 
 `
 const FreelanceBeforeTitle = styled.div`
-    font-size: 3.45vw;
+    font-size: 3.4vw;
     color: var(--granich-red);
     font-weight: 200;
-    letter-spacing: -0.1vw;
+    letter-spacing: -0.015rem;
     margin-bottom: 1vw;
     @media only screen and (max-width: 575px) {
         font-size: 6vw;
@@ -88,7 +88,7 @@ const FreelanceBeforeDescr = styled.div`
     line-height: 1.3;
     font-weight: 200;
     padding-right: 1vw;
-    // letter-spacing: 0.05vw;
+    letter-spacing: -0.015rem;
     @media only screen and (max-width: 575px) {
         font-size: 4.5vw;
     }

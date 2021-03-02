@@ -18,6 +18,7 @@ import FreelanceOffer from "../components/course-page/freelance/FreelanceOffer";
 import FreelanceBefore from "../components/course-page/freelance/FreelanceBefore"
 import FreelanceAfter from "../components/course-page/freelance/FreelanceAfter"
 import FreelanceProblem from "../components/course-page/freelance/FreelanceProblem"
+import FreelanceSkills from "../components/course-page/freelance/FreelanceSkills"
 
 export const contentfulQuery = graphql`
 
@@ -145,6 +146,7 @@ const OsoznannyFreelancePage = ({ data }) => {
       {/* <CourseTimetableFreelance /> */}
       <CourseFeatures title="Особенности курса" data={data.features} />
       <FreelanceHardWork />
+      <FreelanceSkills />
       <div id="participation-section"></div>
       <CourseParticipation
         data={data.offer}

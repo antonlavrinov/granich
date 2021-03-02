@@ -1,19 +1,16 @@
 import React from 'react'
 import { Container } from '../../style';
 import styled from 'styled-components';
-import LoneFreelancer from '../../../assets/svgs/freelance/hard-work/freelance-hard-work.svg';
+import LoneFreelancer from '../../../assets/svgs/freelance/freelance-skills.svg';
 
-const HardWorkSection = styled.section`
-    margin-bottom: 1.5vw;
-    @media only screen and (max-width: 575px) {
-        margin-bottom: 5vw;
-    }
+const SkillsSection = styled.section`
+
 `
 
-const HardWorkWrapper = styled.section`
+const SkillsWrapper = styled.section`
  padding: 2.3vw 2.5vw;
  border-radius: 0.6vw;
- background: var(--granich-beige-gradient);
+ background: var(--granich-red);
  display: flex;
  align-items: center;
  @media only screen and (max-width: 575px) {
@@ -23,10 +20,10 @@ const HardWorkWrapper = styled.section`
  }
 `
 
-const HardWorkQuote = styled.div`
+const SkillsQuote = styled.div`
     font-family: EB Garamond;
     font-style: italic;
-    font-size: 4.5vw;
+    font-size: 4vw;
     font-weight: 500;
     color: white;
     line-height: 1.05;
@@ -40,23 +37,23 @@ const HardWorkQuote = styled.div`
     :after {
         content: '»';
         position: absolute;
-        font-size: 4.5vw;
+        font-size: 4vw;
 
     }
     :before {
         content: '«';
         position: absolute;
-        font-size: 4.5vw;
+        font-size: 4vw;
         top: 0;
-        left: -3.2vw;
+        left: -2.5vw;
     }
 
 
     @media only screen and (max-width: 575px) {
         max-width: 100%;
-        font-size: 11vw;
+        font-size: 10vw;
         margin-bottom: 7vw;
-        margin-left: 2vw;
+        margin-left: 0vw;
         :after {
             content: '»';
             position: relative;
@@ -67,17 +64,15 @@ const HardWorkQuote = styled.div`
             content: '«';
             position: relative;
             font-size: 11vw;
-            // top: -1vw;
-            left: -1vw;
-            // margin-right: 1vw;
+            left: 0;
         }
     }
 
 `
 
-const HardWorkTextWrapper = styled.div`
+const SkillsTextWrapper = styled.div`
  
- background: var(--granich-dark-beige);
+ background: #830404;
  padding: 1.5vw 1.8vw;
  border-radius: 0.5vw;
  display: flex;
@@ -95,11 +90,11 @@ const HardWorkTextWrapper = styled.div`
     line-height: 1.45;
  }
  svg {
-     width: 6.5vw;
+     width: 8vw;
      height: 8.5vw;
      margin-left: auto;
      margin-right: -0.5vw;
-     fill: #BC9474;
+     fill: var(--granich-red);
  }
  @media only screen and (max-width: 575px) {
     padding: 3vw 4vw;
@@ -115,7 +110,7 @@ const HardWorkTextWrapper = styled.div`
         margin-bottom: 2vw;
     }
     svg {
-        width: 20vw;
+        width: 26vw;
         margin: 0 auto;
         margin-top: 1vw;
         transform: translateX(5%);
@@ -125,31 +120,31 @@ const HardWorkTextWrapper = styled.div`
 `
 
 
-const FreelanceHardWork = () => {
+const FreelanceSkills = () => {
     return (
-        <HardWorkSection>
+        <SkillsSection>
             <Container>
-                <HardWorkWrapper>
-                    <HardWorkQuote>
-                        А ты точно фрилансер?
-                    </HardWorkQuote>
-                    <HardWorkTextWrapper>
+                <SkillsWrapper>
+                    <SkillsQuote>
+                        Твёрдые навыки обязательны
+                    </SkillsQuote>
+                    <SkillsTextWrapper>
                         <span>
-                            Для участия на Осознанном Фрилансе в приоритете специалисты, которые полностью перешли на фриланс. Если вы работаете в найме в какой‑то компании или в дизайн‑студии, то учтите, — это интенсивный курс. Как минимум, половина вашего рабочего времени должна быть уделена фрилансу.
+                            Чтобы качественно пройти Осознанный Фриланс, вам необходимо обладать развитыми твёрдыми навыками. Это значит, что если вы позавчера впервые открыли Фотошоп, то вам этот курс-наставничество не подойдет. Потому что мы, в том числе, будем оформлять ваши учебные или реальные коммерческие проекты.
                         </span>
                         <LoneFreelancer />
 
-                    </HardWorkTextWrapper>
+                    </SkillsTextWrapper>
 
 
-                </HardWorkWrapper>
+                </SkillsWrapper>
             </Container>
 
-        </HardWorkSection>
+        </SkillsSection>
     )
 }
 
-// вам, скорее всего, на этот курс не нужно — у вас недостаточный уровень ответственности. Как минимум половину своего рабочего времени вы должны будете уделять фрилансу.
 
-export default FreelanceHardWork
+
+export default FreelanceSkills
 

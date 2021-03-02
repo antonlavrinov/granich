@@ -46,11 +46,7 @@ const Smile = styled(props => <SmileIcon {...props} />)`
 `
 
 const ProblemSection = styled.div`
-    // margin-bottom: 4vw;
-    @media only screen and (max-width: 575px) {
-        // margin-bottom: 5vw;
-        // margin-bottom: 7vw;
-    }
+
 `
 
 const ProblemWrapper = styled.div`
@@ -61,7 +57,7 @@ const ProblemWrapper = styled.div`
     padding: 3vw 0vw;
     @media only screen and (max-width: 575px) {
         flex-direction: column;
-        padding: 6vw 0vw;
+        padding: 6vw 0vw 0;
     }
 `
 
@@ -118,7 +114,7 @@ const ProblemItemText = styled.div`
     line-height: 1.3;
     font-weight: 200;
     line-height: 1.35;
-    // letter-spacing: 0.04vw;
+    letter-spacing: -0.015rem;
     @media only screen and (max-width: 575px) {
         width: auto;
         font-size: 3.7vw;
