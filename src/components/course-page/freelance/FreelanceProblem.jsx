@@ -32,6 +32,7 @@ const Frame = styled(props => <FrameIcon {...props} />)`
     @media only screen and (max-width: 575px) {
         width: 18vw;
         min-width: 18vw;
+        transform: none;
     }
 `
 
@@ -104,6 +105,11 @@ const ProblemItem = styled.div`
     :last-child {
         margin-bottom: 0;
     }
+    @media only screen and (max-width: 575px) {
+        align-items: flex-start;
+    }
+
+
 
 `
 

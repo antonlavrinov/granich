@@ -23,6 +23,7 @@ export const GlobalStyle = createGlobalStyle`
         --granich-beige-gradient: linear-gradient(90deg, rgba(203,161,129,1) 0%, rgba(181,141,110,1) 100%);
         --granich-silver-gradient: linear-gradient(90deg, rgba(185,185,185,1) 0%, rgba(143,143,143,1) 100%);
         --granich-dark-beige: #946C4F;
+        --telegram: #229ED9;
         letter-spacing: 0vw;
         font-weight: 400;
     }
