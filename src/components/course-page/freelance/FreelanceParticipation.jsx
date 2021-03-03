@@ -7,7 +7,8 @@ import FreelanceParticipationLogoIcon from '../../../assets/svgs/freelance/freel
 import FreelanceParticipationTelegramIcon from '../../../assets/svgs/freelance/telegram-icon.svg';
 import CheckIcon from '../../../assets/svgs/freelance/freelance-participation-check-icon.svg';
 import arrowIcon from '../../../assets/images/freelance/telegram_arrow_out.png';
-import WarningIcon from '../../../assets/svgs/freelance/warning-icon.svg';
+
+import DisabledForm from './DisabledForm';
 
 const ParticipationSection = styled.section`
     margin-bottom: 4vw;
@@ -41,7 +42,7 @@ const ParticipationSectionTitle = styled.h2`
     width: 90%;
     line-height: 0.92;
     position: relative;
-    margin-bottom: 2vw;
+    margin-bottom: 4vw;
     @media only screen and (max-width: 575px) {
         font-size: 11vw;
         text-align: left;
@@ -176,16 +177,22 @@ const ParticipationStepNotice = styled.div`
     font-size: 1.65vw;
     line-height: 1.4;
     color: var(--granich-grey);
+    display: flex;
+    align-items: flex-start;
+
     svg {
         position: relative;
         width: 2.3vw;
-        top: 0.45vw;
+        min-width: 2.3vw;
+        margin-right: 0.6vw;
     }
     @media only screen and (max-width: 575px) {
         font-size: 3.7vw;
         svg {
             width: 4vw;
-            top: 0.7vw;
+            min-width: 4vw;
+            top: 0.3vw;
+            margin-right: 1vw;
         }
     }
 `
@@ -293,46 +300,11 @@ const ParticipationTelegramDescr = styled.div`
     }
 `
 
-const ParticipationWarning = styled.div`
-    display: flex;
-    align-items: center;
-    width: 70%;
-    background: var(--granich-red-gradient);
-    border-radius: 0.5vw;
-    padding: 1vw 1.3vw;
-    margin-bottom: 6vw;
-    svg {
-        fill: #830404;
-        width: 3.2vw;
-        min-width: 3.2vw;
-        margin-right: 0.7vw;
-    }
-    @media only screen and (max-width: 575px) {
-        width: 100%;
-        border-radius: 1.6vw;
-        padding: 2.5vw;
-        align-items: flex-start;
-        svg {
-            position: relative;
-            top: 0.5vw;
-            width: 8vw;
-            min-width: 8vw;
-            margin-right: 2vw;
-        }
-    }
-`
-const ParticipationWarningText = styled.div`
-    color: white;
-    @media only screen and (max-width: 575px) {
-        font-size: 3.7vw;
-    }
-`
 
 
 
 
-
-const FreelanceParticipation = () => {
+const FreelanceParticipation = ({ courseData }) => {
 
     const data = useStaticQuery(graphql`
         query FreelanceParticipationSectionQuery {
@@ -356,12 +328,8 @@ const FreelanceParticipation = () => {
                     <ParticipationSectionTitle>
                         Участвовать
                     </ParticipationSectionTitle>
-                    <ParticipationWarning>
-                        <WarningIcon />
-                        <ParticipationWarningText>
-                            Записаться можно только предварительно отправив мне своё портфолио для оценки вашей компетенции
-                        </ParticipationWarningText>
-                    </ParticipationWarning>
+                    <DisabledForm data={courseData} />
+
                     <ParticipationStepsWrapper>
                         <ParticipationStep
                             number="1"

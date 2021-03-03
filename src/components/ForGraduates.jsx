@@ -14,13 +14,14 @@ const ForGraduatesSection = styled.section`
 const ForGraduatesWrapper = styled.div`
     width: 100%;
     background: white;
+    background: var(--granich-dark-grey);
     border-radius: 0.6vw;
     position: relative;
     padding: 2vw 3vw;
     display: flex;
     align-items: center;
 
-    background: #e8e8e8;
+    // background: #e8e8e8;
     @media only screen and (max-width: 575px) {
         flex-direction: column;
         border-radius: 2.5vw;
@@ -38,6 +39,7 @@ const ForGraduatesTitle = styled.h2`
     line-height: 1.05;
     margin-top: -0.5vw;
     letter-spacing: 0;
+    color: white;
     @media only screen and (max-width: 575px) {
         white-space: normal;
         font-size: 11vw;
@@ -50,7 +52,7 @@ const ForGraduatesTitle = styled.h2`
 const ForGraduatesText = styled.div`
     font-size: 1.4vw;
     line-height: 1.35;
-    color: var(--granich-grey);
+    color: var(--granich-light-grey);
     // margin-bottom: 1vw;
     max-width: 65%;
     margin-right: 1vw;
@@ -125,12 +127,13 @@ const ForGraduatesText = styled.div`
 const ForGraduatesMail = styled.div`
     position: relative;
     color: var(--granich-black);
+    color: white;
     display: inline-block;
-    border-bottom: solid 1px var(--granich-light-grey);
+    border-bottom: solid 1px var(--granich-grey);
     user-select: none;
     :hover {
         cursor: pointer;
-        border-bottom: solid 1px var(--granich-black);
+        border-bottom: solid 1px var(--granich-light-grey);
         &:before, &:after {
             display: block;
         }
@@ -148,7 +151,7 @@ const ForGraduatesMail = styled.div`
         //bottom
         border-right: 0.55vw solid transparent;
         border-left: 0.55vw solid transparent;
-        border-top: 0.55vw solid var(--granich-black);
+        border-top: 0.55vw solid black;
         ${props => props.content === 'Скопировано :)' && `
             border-top: 0.55vw solid var(--granich-red);
         `}
@@ -170,7 +173,7 @@ const ForGraduatesMail = styled.div`
         text-align: center;
         border-radius: 0.2vw;
         white-space: nowrap;
-        background: var(--granich-black);
+        background: black;
         ${props => props.content === 'Скопировано :)' && `
             background: var(--granich-red);
         `}
@@ -193,7 +196,7 @@ const ForGraduatesMail = styled.div`
             top: -3.2vw;
             border-right: 2vw solid transparent;
             border-left: 2vw solid transparent;
-            border-top: 2vw solid var(--granich-black);
+            border-top: 2vw solid black;
             ${props => props.content === 'Скопировано :)' && `
                 border-top: 2vw solid var(--granich-red);
             `}
