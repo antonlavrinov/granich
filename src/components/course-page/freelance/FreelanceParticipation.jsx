@@ -10,7 +10,7 @@ import arrowIcon from '../../../assets/images/freelance/telegram_arrow_out.png';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import DisabledForm from './DisabledForm';
 import CopyIcon from '../../../assets/svgs/copy-icon.svg';
-
+import RubleIcon from '../../../assets/svgs/freelance/ruble-icon.svg';
 
 const Section = styled.section`
     margin-bottom: 4vw;
@@ -26,7 +26,7 @@ const MainWrapper = styled.div`
     align-items: center;
     background: white;
     justify-content: center;
-    padding: 6vw 4vw 6vw;
+    padding: 6vw 4vw 7vw;
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
         border-radius: 2.5vw;
@@ -312,27 +312,30 @@ const TelegramDescr = styled.div`
 
 const OptionTitle = styled.div`
     font-size: 4vw;
-    font-family: EB Garamond;
-    font-style: italic;
-    color: var(--granich-light-grey);
-    margin-bottom: 3vw;
-
+    font-family: Bebas Neue;
+    font-weight: normal;
+    color: rgba(0,0,0,0.2);
+    margin-bottom: 2.5vw;
+    svg {
+        width: 1.6vw;
+        fill: rgba(0,0,0,0.25);
+    }
     span {
-        font-size: 4vw;
-        color: rgba(0,0,0,0.3)
-        font-family: Inter;
-        font-style: normal;
-        font-weight: 700;
+        font-family: Bebas Neue;
+        font-weight: bold;
         letter-spacing: -0.05rem;
-        color: var(--granich-light-grey);
+        color: rgba(0,0,0,0.25);
     }
     @media only screen and (max-width: 575px) {
-        font-size: 6.5vw;
-        margin-bottom: 5vw;
+        font-size: 8vw;
+        margin-bottom: 3vw;
+        svg {
+            width: 4.6vw;
+        }
         span {
-            margin-top: 1vw;
+            margin-top: 0vw;
             display: block;
-            font-size: 10vw;
+            font-size: 12vw;
 
         }
     }
@@ -341,8 +344,8 @@ const OptionTitle = styled.div`
 
 const Option = styled.div`
     position: relative;
-    padding-bottom: 4.5vw;
-    margin-bottom: 2.5vw;
+    padding-bottom: 6.5vw;
+    margin-bottom: 5vw;
     :after {
         content: '';
         width: 100%;
@@ -361,8 +364,8 @@ const Option = styled.div`
         }
     }
     @media only screen and (max-width: 575px) {
-        margin-bottom: 5vw;
-        padding-bottom: 8vw;
+        margin-bottom: 10vw;
+        padding-bottom: 12vw;
         :after {
             height: 0.5vw;
         }
@@ -387,10 +390,11 @@ const OptionGeneralTitleWrapper = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 1.5vw;
+    margin-top: -1vw;
     width: 70%;
     @media only screen and (max-width: 575px) {
         width: 100%;
-
+        
     }
 `
 
@@ -577,7 +581,7 @@ const FreelanceParticipation = ({ courseData }) => {
                     </SectionTitle>
                     <Option>
                         <OptionTitle>
-                            1 вариант участия: <span>{courseData && formatPrice(courseData.coursePrice)} ₽</span>
+                            1 вариант участия: <span>{courseData && formatPrice(courseData.coursePrice)} <RubleIcon /></span>
                         </OptionTitle>
                         <OptionWrapperCourse>
                             <OptionGeneral half>
@@ -600,7 +604,7 @@ const FreelanceParticipation = ({ courseData }) => {
                     </Option>
                     <Option>
                         <OptionTitle>
-                            2 вариант участия: <span>{formatPrice(5000)} ₽</span>
+                            2 вариант участия: <span>{formatPrice(5000)} <RubleIcon /></span>
                         </OptionTitle>
                         <OptionWrapperMentor>
                             <OptionGeneral>

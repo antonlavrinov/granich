@@ -1,13 +1,22 @@
-// @font-face {
-// 	font-family: 'Inter';
-// 	src: url('../fonts/inter/Inter-Regular-slnt=0.eot');
-//     src: local('☺'), url('../fonts/inter/Inter-Regular.woff') format('woff'), 
-//     url('../fonts/inter/Inter-Regular.ttf') format('truetype'), 
-//     url('../fonts/inter/Inter-Regular.svg') format('svg');
-// 	font-weight: 400;
-//     font-style: normal;
-//     font-display: swap;
-// }
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../fonts/bebas/BebasNeueBold.eot');
+    src: local('Bebas Neue Bold'), url('../fonts/bebas/BebasNeueBold.woff') format('woff'),
+        url('../fonts/bebas/BebasNeueBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: bold;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../fonts/bebas/BebasNeueRegular.eot');
+    src: local('Bebas Neue Regular'), url('../fonts/bebas/BebasNeueRegular.woff') format('woff'),
+        url('../fonts/bebas/BebasNeueRegular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
 
 
 

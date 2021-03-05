@@ -148,6 +148,7 @@ const OsoznannyFreelancePage = ({ data }) => {
       <CourseFeatures title="Особенности курса" data={data.features} />
       <FreelanceHardWork />
       <FreelanceSkills />
+      <div id="participation-section"></div>
       <FreelanceParticipation courseData={data.offer} />
       {/* <div id="participation-section"></div>
       <CourseParticipation
