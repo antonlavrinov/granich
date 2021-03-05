@@ -795,11 +795,11 @@ export const CurriculumContentText = styled.div`
         text-decoration-style: double;
     }
     i {
-        font-style: normal;
+        font-style: italic;
         color: var(--granich-red);
         font-weight: 500;
-        text-decoration: underline;
-        text-decoration-style: double;
+        // text-decoration: underline;
+        // text-decoration-style: double;
     }
     p {
         color: var(--granich-black);
