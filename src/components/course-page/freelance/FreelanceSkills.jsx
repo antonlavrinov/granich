@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import LoneFreelancer from '../../../assets/svgs/freelance/freelance-skills.svg';
 
 const SkillsSection = styled.section`
-    margin-bottom: 4vw;
-    @media only screen and (max-width: 575px) {
-        margin-bottom: 5vw;
-    }
+    // margin-bottom: 4vw;
+    // @media only screen and (max-width: 575px) {
+    //     margin-bottom: 5vw;
+    // }
 `
 
 const SkillsWrapper = styled.section`
