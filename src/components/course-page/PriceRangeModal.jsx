@@ -501,6 +501,7 @@ const PriceRangeModal = ({ googleAnaliticsCategory, modalIsOpen, openModal, clos
                         trackCustomEvent({
                             category: `${googleAnaliticsCategory}`,
                             action: 'click',
+                            label: 'Форма'
                         })
                     }}
                     validationSchema={Yup.object().shape({

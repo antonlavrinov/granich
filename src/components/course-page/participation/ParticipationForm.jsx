@@ -430,6 +430,7 @@ const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, 
                         trackCustomEvent({
                             category: `${googleAnaliticsCategory}`,
                             action: 'click',
+                            label: 'Форма'
                         })
                     }}
                     validationSchema={Yup.object().shape({

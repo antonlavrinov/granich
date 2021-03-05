@@ -12,9 +12,9 @@ const FormFieldsWrapper = styled.div`
 `
 
 const FormContainer = styled.div`
-    padding: 2vw 0vw 1vw 2vw;
+    padding: 2vw 2vw 1vw 2vw;
     @media only screen and (max-width: 575px) {
-        padding: 5vw;
+        padding: 3.5vw;
     }
 `
 
@@ -66,9 +66,8 @@ const Form = styled.form`
     flex-direction: column;
     overflow: hidden;
     box-shadow: 0 0 1vw rgba(0,0,0,0.2);
-    margin-bottom: 7vw;
     @media only screen and (max-width: 575px) {
-        border-radius: 2.5vw;
+        border-radius: 1.5vw;
         width: 100%;
         br {
             display: none;
@@ -78,13 +77,14 @@ const Form = styled.form`
 const FormInput = styled.input`
     border-radius: 0.8vw;
     border: none;
-    width: 25vw;
+    // width: 25vw;
+    width: 100%;
     box-shadow: inset 0 0 0.5vw rgba(0,0,0,0.2);
     padding: 0.7vw 1.4vw;
     margin-top: 0.7vw;
     margin-bottom: 0.7vw;
-    margin-right: 0.7vw;
-    margin-left: 0.3vw;
+    // margin-right: 0.7vw;
+    // margin-left: 0.3vw;
     font-size: 1.35vw;
     border: 1px solid #dedede;
     background: #fafafa;
@@ -97,30 +97,30 @@ const FormInput = styled.input`
         margin-left: 0;
         margin-bottom: 1vw;
         margin-top: 3vw;
-        border-radius: 2.5vw;
+        border-radius: 1.5vw;
     }
 
 
 
 `
 
-const FormInputLabel = styled.label`
-    font-size: 0.9vw;
-    color: var(--granich-light-grey);
-    max-width: 9vw;
-    display: inline-block;
-    position: relative;
-    top: 0.3vw;
+// const FormInputLabel = styled.label`
+//     font-size: 0.9vw;
+//     color: var(--granich-light-grey);
+//     max-width: 9vw;
+//     display: inline-block;
+//     position: relative;
+//     top: 0.3vw;
 
-    @media only screen and (max-width: 575px) {
-        font-size: 3vw;
-        max-width: 100%;
-        top: 0vw;
-        margin-left: 0.4vw;
-        display: none;
+//     @media only screen and (max-width: 575px) {
+//         font-size: 3vw;
+//         max-width: 100%;
+//         top: 0vw;
+//         margin-left: 0.4vw;
+//         display: none;
 
-    }
-`
+//     }
+// `
 
 const FormInputLabelMobile = styled.label`
     font-size: 0.9vw;
@@ -146,10 +146,11 @@ const FormPolitikaLabel = styled.div`
     font-size: 1.2vw;
     user-select: none;
     letter-spacing: -0.02vw;
-    margin-top: 1.5vw;
-    margin-left: 0.4vw;
+    margin-top: 0.5vw;
+    // margin-left: 0.4vw;
     margin-bottom: 0.7vw;
     line-height: 1.4;
+
 
     a {
         color: var(--granich-grey);
@@ -185,10 +186,10 @@ const FormPolitikaLabel = styled.div`
 
 const FormButtonBlock = styled.div`
     display: flex;
-    margin-bottom: 0.2vw;
+    // margin-bottom: 0.2vw;
     align-items: center;
     @media only screen and (max-width: 575px) {
-        margin-bottom: 1vw;
+        // margin-bottom: 1vw;
         
     }
 `
@@ -196,7 +197,7 @@ const FormButtonBlock = styled.div`
 const FormButton = styled.button`
     background: var(--granich-grey);
     color: white;
-    padding: 1vw 3.3vw;
+    padding: 1vw 1.5vw;
     text-align: center;
     border-radius: 0.5vw;
     font-size: 1.5vw;
@@ -204,7 +205,7 @@ const FormButton = styled.button`
     box-shadow: 0.2vw 0.2vw 0.4vw rgba(0,0,0,0.4);
     @media only screen and (max-width: 575px) {
         font-size: 3.6vw;
-        padding: 3vw 3.5vw;
+        padding: 3vw 4.5vw;
         border-radius: 1.5vw;
         box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
         span {
@@ -245,23 +246,13 @@ const FormPrice = styled.div`
 
 `
 
-const FormSubText = styled.div`
-    color: white;
-    font-size: 1.17vw;
-    white-space: nowrap;
-    @media only screen and (max-width: 575px) {
-        font-size: 3vw;
-        white-space: normal;
-        line-height: 1.35;
-    }
-`
 
 const FormFooterWrapper = styled.div`
     background: var(--granich-light-grey);
     border-radius: 0 0 0.6vw 0.6vw;
     margin-top: auto;
     @media only screen and (max-width: 575px) {
-        border-radius: 0 0 2.5vw 2.5vw;
+        border-radius: 0 0 1.5vw 1.5vw;
     }
 
 
@@ -274,7 +265,7 @@ const FormFooterContainer = styled.div`
     display: flex;
     flex-direction: column;
     @media only screen and (max-width: 575px) {
-        padding: 4.5vw 5vw 7vw;
+        padding: 3.5vw;
     }
 `
 
@@ -342,7 +333,7 @@ const DisabledForm = ({ data }) => {
             </ParticipationWarning>
             <FormFieldsWrapper>
                 <FormContainer>
-                    <FormTags formDisabled={true}>
+                    <FormTags>
                         {data.courseStream && <FormTag important>{data.courseStream} поток</FormTag>}
                         {data.courseStartAndEnd && <FormTag>{data.courseStartAndEnd}</FormTag>}
                         {data.courseTags.map((tag, idx) => {
@@ -372,8 +363,8 @@ const DisabledForm = ({ data }) => {
                         disabled={true}
 
                     />
-                    <FormInputLabel htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabel>
-                    <br />
+                    {/* <FormInputLabel htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabel>
+                    <br /> */}
                     <FormInputLabelMobile htmlFor="formParams[email]">чтобы выслать ссылку для входа</FormInputLabelMobile>
                     <FormInput
                         type="tel"
@@ -384,18 +375,17 @@ const DisabledForm = ({ data }) => {
                         disabled={true}
 
                     />
-                    <FormInputLabel htmlFor="formParams[phone]">для экстренной связи</FormInputLabel>
-                    <br />
+                    {/* <FormInputLabel htmlFor="formParams[phone]">для экстренной связи</FormInputLabel>
+                    <br /> */}
 
                     <FormInputLabelMobile htmlFor="formParams[phone]">для экстренной связи</FormInputLabelMobile>
-                    <FormPolitikaLabel formDisabled={true}> Нажимая на кнопку в этой форме, я принимаю условия <Link to="/privacy"> политики конфиденциальности</Link> и <Link to="/public-offer"> учебного договора </Link></FormPolitikaLabel>
+                    <FormPolitikaLabel > Нажимая на кнопку в этой форме, я принимаю условия <Link to="/privacy"> политики конфиденциальности</Link> <br />и <Link to="/public-offer"> учебного договора </Link></FormPolitikaLabel>
                 </FormContainer>
             </FormFieldsWrapper>
-            <FormFooterWrapper formDisabled={true}>
+            <FormFooterWrapper>
                 <FormFooterContainer>
                     <FormButtonBlock>
                         <FormButton
-                            formDisabled={true}
                             disabled={true}
                             type="submit"
                             id="button970916"
@@ -406,7 +396,7 @@ const DisabledForm = ({ data }) => {
                             <FormPrice><i>→ </i>{data.coursePrice}<span>₽</span></FormPrice>
                         )}
                     </FormButtonBlock>
-                    <FormSubText>Количество мест ограничено. Стоимость будет расти↑</FormSubText>
+
                 </FormFooterContainer>
             </FormFooterWrapper>
 

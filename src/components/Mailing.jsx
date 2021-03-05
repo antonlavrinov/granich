@@ -399,6 +399,7 @@ const Mailing = ({ popup }) => {
                                     trackCustomEvent({
                                         category: 'Подписка на рассылку',
                                         action: 'click',
+                                        label: 'Рассылка'
                                     })
                                 }}
                                 validationSchema={Yup.object().shape({
