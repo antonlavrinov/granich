@@ -23,7 +23,7 @@ const FormTags = styled.div`
     align-items: flex-start;
     margin-bottom: 1vw;
     @media only screen and (max-width: 575px) {
-        margin-bottom: 1vw;
+        margin-bottom: 0;
         flex-wrap: wrap;
     }
 
@@ -177,7 +177,10 @@ const FormPolitikaLabel = styled.div`
     }
     @media only screen and (max-width: 575px) {
         font-size: 3vw;
-        margin-top: 5vw;
+        margin-top: 1vw;
+        br {
+            display: block;
+        }
     }
 
 `
@@ -219,7 +222,7 @@ const FormPrice = styled.div`
     color: white;
     margin-left: auto;
     font-family: EB Garamond;
-    font-size: 4vw;
+    font-size: 3.7vw;
     font-style: italic;
     font-weight: 500;
     span {
@@ -234,13 +237,17 @@ const FormPrice = styled.div`
         top: -0.3vw;
         right: 0.8vw;
         display: inline-block;
+        font-style: normal;
     }
     @media only screen and (max-width: 575px) {
-        font-size: 12.5vw;
+        font-size: 11vw;
         padding-right: 1vw;
         margin-top: -1vw;
         i {
             display: none;
+        }
+        span {
+            margin-left: 1.5vw;
         }
     }
 
@@ -322,6 +329,10 @@ const ParticipationWarningText = styled.div`
 const DisabledForm = ({ data }) => {
 
 
+    const formatPrice = (num) => {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+    }
+
 
     return (
         <Form action="#" method="post" >
@@ -378,7 +389,7 @@ const DisabledForm = ({ data }) => {
                     {/* <FormInputLabel htmlFor="formParams[phone]">для экстренной связи</FormInputLabel>
                     <br /> */}
 
-                    <FormInputLabelMobile htmlFor="formParams[phone]">для экстренной связи</FormInputLabelMobile>
+                    {/* <FormInputLabelMobile htmlFor="formParams[phone]">для экстренной связи</FormInputLabelMobile> */}
                     <FormPolitikaLabel > Нажимая на кнопку в этой форме, я принимаю условия <Link to="/privacy"> политики конфиденциальности</Link> <br />и <Link to="/public-offer"> учебного договора </Link></FormPolitikaLabel>
                 </FormContainer>
             </FormFieldsWrapper>
@@ -391,9 +402,9 @@ const DisabledForm = ({ data }) => {
                             id="button970916"
                         >
                             Оплатить
-                            </FormButton>
+                        </FormButton>
                         {data.coursePrice && (
-                            <FormPrice><i>→ </i>{data.coursePrice}<span>₽</span></FormPrice>
+                            <FormPrice><i>→ </i>{formatPrice(data.coursePrice)}<span>₽</span></FormPrice>
                         )}
                     </FormButtonBlock>
 

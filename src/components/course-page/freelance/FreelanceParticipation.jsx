@@ -314,29 +314,28 @@ const OptionTitle = styled.div`
     font-size: 4vw;
     font-family: Bebas Neue;
     font-weight: normal;
-    color: rgba(0,0,0,0.2);
+    color: rgba(0,0,0,0.25);
     margin-bottom: 2.5vw;
     svg {
-        width: 1.6vw;
+        width: 1.55vw;
         fill: rgba(0,0,0,0.25);
     }
     span {
-        font-family: Bebas Neue;
-        font-weight: bold;
-        letter-spacing: -0.05rem;
+        position: relative;
         color: rgba(0,0,0,0.25);
+        top: -0.3vw;
     }
     @media only screen and (max-width: 575px) {
-        font-size: 8vw;
-        margin-bottom: 3vw;
+        font-size: 7.2vw;
+        margin-bottom: 5vw;
         svg {
-            width: 4.6vw;
+            width: 2.8vw;
         }
         span {
             margin-top: 0vw;
-            display: block;
-            font-size: 12vw;
-
+            font-size: 6vw;
+            top: -1vw;
+            
         }
     }
 
@@ -581,7 +580,7 @@ const FreelanceParticipation = ({ courseData }) => {
                     </SectionTitle>
                     <Option>
                         <OptionTitle>
-                            1 вариант участия: <span>{courseData && formatPrice(courseData.coursePrice)} <RubleIcon /></span>
+                            1 вариант участия <span>→</span> {courseData && formatPrice(courseData.coursePrice)} <RubleIcon />
                         </OptionTitle>
                         <OptionWrapperCourse>
                             <OptionGeneral half>
@@ -604,7 +603,7 @@ const FreelanceParticipation = ({ courseData }) => {
                     </Option>
                     <Option>
                         <OptionTitle>
-                            2 вариант участия: <span>{formatPrice(5000)} <RubleIcon /></span>
+                            2 вариант участия <span>→</span> {formatPrice(5000)} <RubleIcon />
                         </OptionTitle>
                         <OptionWrapperMentor>
                             <OptionGeneral>

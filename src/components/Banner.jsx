@@ -47,6 +47,7 @@ const BannerImage = styled(props => <Img {...props} />)`
         left: auto;
         right: 7vw;
         width: 20vw;
+        display: none;
     }
 
 `
@@ -269,13 +270,13 @@ const BannerContentButton = styled.div`
 `
 
 
-const Banner = ({data}) => {
-    
+const Banner = ({ data }) => {
+
     return (
         <BannerSection>
             <Container>
                 <BannerWrapper>
-                    {data.courseBannerImage && <BannerImage style={{ position: 'absolute'}} fluid={data.courseBannerImage.fluid}/>}
+                    {data.courseBannerImage && <BannerImage style={{ position: 'absolute' }} fluid={data.courseBannerImage.fluid} />}
                     <BannerContentWrapper>
                         <BannerContentMain>
                             <BannerSubtext>
@@ -286,7 +287,7 @@ const Banner = ({data}) => {
                                     {data.courseTitle}
                                 </BannerTitle>
                                 <BannerInfoItems>
-                                    <BannerMainTag disabled={data.courseTypeEmpty  || !data.courseStatus}>{data.courseType}</BannerMainTag>
+                                    <BannerMainTag disabled={data.courseTypeEmpty || !data.courseStatus}>{data.courseType}</BannerMainTag>
                                     {data.courseType === 'Курс' ? (
                                         <>
                                             {data.courseStart && <BannerCourseStart>Стартуем {data.courseStart}</BannerCourseStart>}
@@ -297,14 +298,14 @@ const Banner = ({data}) => {
                                             <BannerTagList>
                                                 {data.courseTags.map((tag, idx) => {
                                                     return (
-                                                        <BannerTag disabled={data.courseTypeEmpty || !data.courseStatus}  key={idx}>{tag}</BannerTag>
+                                                        <BannerTag disabled={data.courseTypeEmpty || !data.courseStatus} key={idx}>{tag}</BannerTag>
                                                     )
                                                 })}
                                             </BannerTagList>
                                         </>
                                     )}
-                                    
-                                </BannerInfoItems>                            
+
+                                </BannerInfoItems>
                             </BannerMainInfo>
                         </BannerContentMain>
                         <BannerContentButton>
@@ -313,17 +314,17 @@ const Banner = ({data}) => {
                             ) : (
                                 <>
                                     {data.courseType === 'Курс' ? (
-                                        <BannerCourseButton status={!data.courseStatus} target="_blank" href={data.courseSlug}>{data.courseStatus ? 'Участвовать' : 'Узнать о наборе'} <CourseArrowOut/></BannerCourseButton>
+                                        <BannerCourseButton status={!data.courseStatus} target="_blank" href={data.courseSlug}>{data.courseStatus ? 'Участвовать' : 'Узнать о наборе'} <CourseArrowOut /></BannerCourseButton>
                                     ) : (
-                                        <BannerCourseButton status={!data.courseStatus} target="_blank" href={data.courseSlug} type={data.courseType}>{data.courseStatus ? 'Купить' : 'Предзаказ'} <CourseArrowOut/></BannerCourseButton>
+                                        <BannerCourseButton status={!data.courseStatus} target="_blank" href={data.courseSlug} type={data.courseType}>{data.courseStatus ? 'Купить' : 'Предзаказ'} <CourseArrowOut /></BannerCourseButton>
                                     )}
                                 </>
                             )}
-                            
-                            {data.courseStart && <BannerCourseMobileStart>Стартуем <br/>{data.courseStart}</BannerCourseMobileStart>}
+
+                            {data.courseStart && <BannerCourseMobileStart>Стартуем <br />{data.courseStart}</BannerCourseMobileStart>}
                         </BannerContentButton>
-                       
-                        
+
+
 
                     </BannerContentWrapper>
                 </BannerWrapper>
