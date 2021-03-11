@@ -11,6 +11,7 @@ import Header from '../components/Header';
 import PreCoursePreparation from "../components/PreCoursePreparation"
 import OurTeam from "../components/OurTeam"
 import ForGraduates from "../components/ForGraduates";
+import { TestHeader } from "../components/test-header/TestHeader.styles";
 // import ogImage from '../assets/images/seo/index.jpg';
 
 
@@ -167,6 +168,7 @@ const IndexPage = ({data}) => {
     <Layout>
       
       <Header/>
+      <TestHeader/>
       <SEO title="Онлайн-школа Granich"
           description="Делаем из любви, а не страха. Курсы с осознанным подходом. Выточенно. Интенсивно. С дедлайнами."
           keywords={['школа', 'осознанность', 'фриланс', 'графический', 'дизайн', 'granich', 'гранич', 'графдизайн', 'курсы']}

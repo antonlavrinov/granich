@@ -24,7 +24,7 @@ const WhiteLogo = styled(props => <Logo {...props} />)`
   }
 `
 
-const HeaderSection = styled.header`
+const StyledHeader = styled.header`
   position: absolute;
   top: 0;
   left: 0;
@@ -49,7 +49,7 @@ const LogoWrapper = styled.a`
   }
   `
 
-const HeaderWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 3.2vw 0;
@@ -318,9 +318,9 @@ const LoginMobileButton = styled.a`
 
 
 const Header = ({ siteTitle, type }) => (
-  <HeaderSection id="header">
+  <StyledHeader id="header">
     <Container>
-      <HeaderWrapper>
+      <Wrapper>
         <LogoWrapper href="/" propstyle={type}>
           <WhiteLogo />
         </LogoWrapper>
@@ -374,9 +374,9 @@ const Header = ({ siteTitle, type }) => (
           <LoginButtonIcon />Войти
           </LoginButton>
 
-      </HeaderWrapper>
+      </Wrapper>
     </Container>
-  </HeaderSection>
+  </StyledHeader>
 
 )
 

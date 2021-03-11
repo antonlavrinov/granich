@@ -26,6 +26,9 @@ import {
 
 const CourseCard = ({ courseData, empty, calendar, arrowWhite, arrowBlack }) => {
 
+    const mainTagMentorType = courseData.node.courseTitle === 'Осознанный Фриланс' ? '-наставничество' : ''
+
+
     return (
         <CourseWrapper>
             <CourseContainer>
@@ -45,7 +48,7 @@ const CourseCard = ({ courseData, empty, calendar, arrowWhite, arrowBlack }) => 
                 <CourseImageWrapper>
                     <CourseImage empty={empty} active={courseData.node.courseStatus} fluid={courseData.node.coursePreviewImage.fluid}>
                     </CourseImage>
-                    <CourseMainTag empty={empty} active={courseData.node.courseStatus}>Курс</CourseMainTag>
+                    <CourseMainTag empty={empty} active={courseData.node.courseStatus}>Курс{mainTagMentorType}</CourseMainTag>
                     <CourseTeachers>
                         {courseData.node.courseTeachers.length > 1 ? (
                             <>

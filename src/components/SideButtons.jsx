@@ -291,7 +291,7 @@ const Email = styled.div`
 
 `
 
-const SideButtonsSection = styled.div`
+const StyledSideButtons = styled.div`
     position: fixed;
     bottom: 3.95vw;
     right: 3.5vw;
@@ -313,7 +313,7 @@ const SideButtonsSection = styled.div`
 
 
 `
-const SideButtonsWrapper = styled.div`
+const Wrapper = styled.div`
     postition: relative;
     display: flex;
     flex-direction: column;
@@ -342,11 +342,8 @@ const SideButtons = () => {
 
 
     return (
-        <SideButtonsSection>
-            <SideButtonsWrapper>
-
-
-
+        <StyledSideButtons>
+            <Wrapper>
                 <CSSTransition in={chatOpen} timeout={300} unmountOnExit classNames="side-buttons-transition">
                     <Socials>
                         <IconLink>
@@ -388,9 +385,9 @@ const SideButtons = () => {
                 <PageTop />
 
 
-            </SideButtonsWrapper>
+            </Wrapper>
 
-        </SideButtonsSection>
+        </StyledSideButtons>
     )
 }
 
