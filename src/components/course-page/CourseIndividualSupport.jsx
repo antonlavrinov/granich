@@ -5,6 +5,19 @@ import BackgroundImage from 'gatsby-background-image'
 import { graphql, useStaticQuery } from 'gatsby'
 import TelegramIcon from '../../assets/svgs/telegram-plane-brands.svg';
 import ArrowLongRightIcon from '../../assets/svgs/arrow-long-right.svg';
+import FreelanceLogoIcon from '../../assets/svgs/freelance/freelance-offer-logo.svg';
+
+
+const FreelanceLogo = styled(props => <FreelanceLogoIcon {...props} />)`
+    width: 12vw;
+    min-width: 12vw;
+    margin-right: 1.6vw;
+    @media only screen and (max-width: 575px) {
+        width: 60%;
+        margin-right: 0;
+        margin-bottom: 5vw;
+    }
+`
 
 const SupportSection = styled.section`
     margin-bottom: 4vw;
@@ -31,11 +44,12 @@ const SupportSecondaryWrapper = styled.div`
     }
 `
 const SupportAuthor = styled.div`
-    margin-right: 4vw;
+    margin-right: 2vw;
     margin-left: 0.2vw;
     margin-top: -1vw;
     @media only screen and (max-width: 575px) {
         display: flex;
+        align-items: center;
     }
 `
 
@@ -53,6 +67,8 @@ const SupportAuthorImage = styled(props => <BackgroundImage {...props}></Backgro
     @media only screen and (max-width: 575px) {
         width: 20vw;
         height: 20vw;
+        min-width: 20vw;
+        min-height: 20vw;
         margin-right: 3vw;
     }
 `
@@ -60,10 +76,10 @@ const SupportAuthorImage = styled(props => <BackgroundImage {...props}></Backgro
 const SupportAuthorInfoWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    min-width: 11vw;
+    min-width: 14vw;
 
     @media only screen and (max-width: 575px) {
-        margin-top: 3vw;
+        // margin-top: 3vw;
     }
 
 `
@@ -93,7 +109,7 @@ const SupportInfoTitle = styled.h2`
     font-family: EB Garamond;
     font-style: italic;
     font-weight: 500;
-    font-size: 4.9vw;
+    font-size: 4.1vw;
     line-height: 0.75;
     position: relative;
     margin-bottom: 4vw;
@@ -102,11 +118,11 @@ const SupportInfoTitle = styled.h2`
     letter-spacing: -0.115vw;
     @media only screen and (max-width: 575px) {
         white-space: normal;
-        font-size: 10.4vw;
+        font-size: 8.9vw;
         margin-left: 0;
         letter-spacing: -0.4vw;
         margin-bottom: 6.8vw;
-        line-height: 0.9;
+        line-height: 1;
     }
 
 `
@@ -122,10 +138,34 @@ const SupportInfoText = styled.div`
     display: inline-block;
     font-size: 1.3vw;
     margin-right: 0.7vw;
+    :nth-child(2) {
+        margin-right: 1.7vw;
+        position: relative;
+        :after {
+            content: '+';
+            position: absolute;
+            top: 0;
+            right: -2vw;
+            font-size: 2vw;
+            color: var(--granich-light-grey);
+        }
+    }
     @media only screen and (max-width: 575px) {
         font-size: 3.4vw;
         padding: 1vw 2vw;
         margin-right: 1.3vw;
+        margin-bottom: 2vw;
+        :nth-child(2) {
+            margin-bottom: 8vw;
+            :after {
+                content: '+';
+                bottom: -8vw;
+                top: auto;
+                left: 5vw;
+                right: auto;
+                font-size: 5vw;
+            }
+        }
     }
     ${props => props.red && `
         color: var(--granich-red);
@@ -306,6 +346,15 @@ const SupportArrow = styled(props => <ArrowLongRightIcon {...props}/>)`
 
 `
 
+const SupportInfoDescr = styled.div`
+    line-height: 1.5;
+    font-size: 1.46vw;
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 8vw;
+        font-size: 4vw;
+    }
+`
+
 // const SupportInfoTagList = styled.div`
 //     display: flex;
 // `
@@ -330,43 +379,43 @@ const SupportTagsWrapper = styled.div`
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 3vw;
+    margin-bottom: 2.2vw;
     @media only screen and (max-width: 575px) {
-        margin-bottom: 4.8vw;
+        margin-bottom: 1vw;
     }
 `
-const SupportInfoAdditionalText = styled.div`
-    font-size: 1.15vw;
-    color: var(--granich-grey);
-    max-width: 24vw;
-    margin-left: 1vw;
-    line-height: 1.35;
-    position: relative;
-    padding-left: 1.5vw;
-    :before {
-        content: '+';
-        position: absolute;
-        top: 0;
-        left: -0.3vw;
-        font-size: 2vw;
-        color: var(--granich-light-grey);
-    }
-    @media only screen and (max-width: 575px) {
-        display: block;
-        margin-top: 4vw;
-        font-size: 3.7vw;
-        max-width: 100%;
-        padding-left: 4vw;
-        :before {
-            top: 45%;
-            transform: translateY(-50%);
-            left: -1.5vw;
-            line-height: 1;
-            font-size: 6vw;
-            color: var(--granich-light-grey);
-        }
-    }
-`
+// const SupportInfoAdditionalText = styled.div`
+//     font-size: 1.15vw;
+//     color: var(--granich-grey);
+//     max-width: 24vw;
+//     margin-left: 1vw;
+//     line-height: 1.35;
+//     position: relative;
+//     padding-left: 1.5vw;
+//     :before {
+//         content: '+';
+//         position: absolute;
+//         top: 0;
+//         left: -0.3vw;
+//         font-size: 2vw;
+//         color: var(--granich-light-grey);
+//     }
+//     @media only screen and (max-width: 575px) {
+//         display: block;
+//         margin-top: 4vw;
+//         font-size: 3.7vw;
+//         max-width: 100%;
+//         padding-left: 4vw;
+//         :before {
+//             top: 45%;
+//             transform: translateY(-50%);
+//             left: -1.5vw;
+//             line-height: 1;
+//             font-size: 6vw;
+//             color: var(--granich-light-grey);
+//         }
+//     }
+// `
 
 const CourseIndividualSupport = () => {
     const data = useStaticQuery(graphql`
@@ -388,14 +437,14 @@ const CourseIndividualSupport = () => {
             <Container>
                 <SupportWrapper>
                     <SupportInfoTitle>
-                        Индивидуальное прохождение курса
+                        Личное&nbsp;обучение&nbsp;— Графдизайн&nbsp;+&nbsp;Фриланс
                     </SupportInfoTitle>
                     <SupportSecondaryWrapper>
                         <SupportAuthor>
                             <SupportAuthorImage fluid={imageData} style={{backgroundSize: 'cover'}}/>
                             <SupportAuthorInfoWrapper>
                                 <SupportAuthorName>Вадим Гранич</SupportAuthorName>
-                                <SupportAuthorText>Создатель школы, <br/>автор курсов</SupportAuthorText>
+                                <SupportAuthorText>Основатель&nbsp;школы, <br/>автор курсов про графдизайн&nbsp;и&nbsp;фриланс</SupportAuthorText>
                             </SupportAuthorInfoWrapper>
                            
                         </SupportAuthor>
@@ -405,12 +454,13 @@ const CourseIndividualSupport = () => {
                                     С Вадимом Граничем
                                 </SupportInfoText>
                                 <SupportInfoText red>
-                                    Графдизайн
+                                    Осознанный Графдизайн
                                 </SupportInfoText>
-                                <SupportInfoAdditionalText>
+                                <FreelanceLogo/>
+                                {/* <SupportInfoAdditionalText>
                                     
                                 Возможно общение на другие темы. (Например, по фрилансу)
-                                </SupportInfoAdditionalText>
+                                </SupportInfoAdditionalText> */}
                                 {/* <SupportInfoTagList>
                                     <SupportInfoTag>
                                         С Вадимом Граничем
@@ -424,10 +474,13 @@ const CourseIndividualSupport = () => {
                                     
                                 </SupportInfoTagList> */}
                             </SupportTagsWrapper>
+                            <SupportInfoDescr>
+                                Я лично обучу вас графическому дизайну, после чего выведу вас на&nbsp;фриланс. Для этого я&nbsp;помогу вам создать учебное портфолио под&nbsp;запросы рынка, развить личный бренд и&nbsp;освоить инструменты маркетинга для&nbsp;графдизайнера на&nbsp;фрилансе. Подробные условия можно обсудить со&nbsp;мной лично.
+                            </SupportInfoDescr>
 
                             
                        
-                            <SupportInfoRules>
+                            {/* <SupportInfoRules>
                                 <SupportRule title={``}
                                             text={`Даю 3 поблажки по дедлайнам (каждая поблажка это +1 неделя к дедлайну)`}
                                             number={1}
@@ -440,7 +493,7 @@ const CourseIndividualSupport = () => {
                                             text={`Уроки будут не в записи, а лично проводиться мной. Чтобы мы могли остановиться на непонятных моментах и углубиться в интересную тему`}
                                             number={3}
                                 />
-                            </SupportInfoRules>
+                            </SupportInfoRules> */}
                         </SupportInfo>
                     </SupportSecondaryWrapper>
                     <SupportFooter>
@@ -461,12 +514,12 @@ const CourseIndividualSupport = () => {
 export default CourseIndividualSupport
 
 
-const SupportRule = ({title, text, number}) => {
-    return (
-        <SupportInfoRule>
-            <SupportRuleTitle>{title}</SupportRuleTitle>
-                {text}
-                <SupportRuleNumber>{number}</SupportRuleNumber>
-        </SupportInfoRule>
-    )
-}
+// const SupportRule = ({title, text, number}) => {
+//     return (
+//         <SupportInfoRule>
+//             <SupportRuleTitle>{title}</SupportRuleTitle>
+//                 {text}
+//                 <SupportRuleNumber>{number}</SupportRuleNumber>
+//         </SupportInfoRule>
+//     )
+// }

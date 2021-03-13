@@ -143,7 +143,8 @@ const OsoznannyFreelancePage = ({ data }) => {
       <CourseCurriculum
         compressedHeader
         dataHeader={data.curriculumHeader}
-        data={data.curriculum} />
+        data={data.curriculum}
+        courseTitle={data.offer.courseTitle} />
       {/* <CourseTimetableFreelance /> */}
       <CourseFeatures title="Особенности курса" data={data.features} />
       <FreelanceHardWork />

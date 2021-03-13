@@ -107,8 +107,9 @@ function useMeasure() {
     return [{ ref }, bounds]
 }
 
-const CurriculumItem = memo(({ type, children, title, tag, style, descr, defaultOpen = false, numberOfLessons }) => {
-    const [isOpen, setOpen] = useState(defaultOpen)
+const CurriculumItem = memo(({ type, children, title, tag, style, descr, courseTitle, open, defaultOpen = false, numberOfLessons }) => {
+    // const [isOpen, setOpen] = useState(defaultOpen)
+    const [isOpen, setOpen] = useState(open === 1 && courseTitle === 'Осознанный Фриланс' ? true : defaultOpen)
     const previous = usePrevious(isOpen)
     const [bind, { height: viewHeight }] = useMeasure()
     const { height, opacity, transform } = useSpring({
@@ -155,7 +156,7 @@ const CurriculumItem = memo(({ type, children, title, tag, style, descr, default
 
 
 
-const CourseCurriculum = ({ data, dataHeader, compressedHeader }) => {
+const CourseCurriculum = ({ data, dataHeader, compressedHeader, courseTitle }) => {
     const isMobile = useMediaQuery({
         query: '(max-width: 575px)'
     })
@@ -163,6 +164,9 @@ const CourseCurriculum = ({ data, dataHeader, compressedHeader }) => {
         query: '(min-width: 575px)'
     })
     const numberOfLessons = data.edges.filter((item) => { return item.node.curriculumType === true }).length
+    
+
+
     return (
         <CurriculumSection>
             <Container>
@@ -226,7 +230,7 @@ const CourseCurriculum = ({ data, dataHeader, compressedHeader }) => {
 
                                 // console.log('LENGTH', data.edges.filter((item) => {return item.node.curriculumType === true}).length)
                                 return (
-                                    <CurriculumItem numberOfLessons={numberOfLessons} descr={tab.node.curriculumImportantDescr} type={tab.node.curriculumType} key={idx} title={tab.node.childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode.json} tag={tab.node.curriculumTagName}>
+                                    <CurriculumItem open={idx} courseTitle={courseTitle} numberOfLessons={numberOfLessons} descr={tab.node.curriculumImportantDescr} type={tab.node.curriculumType} key={idx} title={tab.node.childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode.json} tag={tab.node.curriculumTagName}>
                                         <CurriculumContentWrapper type={tab.node.curriculumType ? 1 : 0}>
                                             {tab.node.curriculumColumnsType ? (
                                                 <>
