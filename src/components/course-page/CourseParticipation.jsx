@@ -33,8 +33,8 @@ const CourseParticipation = ({ data, formId, formAction, googleAnaliticsCategory
         <ParticipationSection>
             <Container>
                 <ParticipationWrapper>
-                    <ParticipationForm additionalTags={additionalTags} googleAnaliticsCategory={googleAnaliticsCategory} formId={formId} formAction={formAction} data={data} />
-                    <ParticipationPolicy additionalComponent={additionalComponent} telegram={telegram ? true : false} data={data} />
+                    {/* <ParticipationForm additionalTags={additionalTags} googleAnaliticsCategory={googleAnaliticsCategory} formId={formId} formAction={formAction} data={data} /> */}
+                    {/* <ParticipationPolicy additionalComponent={additionalComponent} telegram={telegram ? true : false} data={data} /> */}
                 </ParticipationWrapper>
 
             </Container>
