@@ -42,7 +42,7 @@ const VideoPresentationOfferWrapper = styled.div`
     padding: 4vw;
 
     @media only screen and (max-width: 575px) {
-
+        padding: 6vw;
         border-radius: 2.5vw;
     }
 `
@@ -63,7 +63,7 @@ const YoutubeBlock = styled.div`
         height: 100%;
     }
     @media only screen and (max-width: 575px) {
-        padding: 4vw 6.6vw;
+        padding: 0;
         height: auto;
         iframe {
             
@@ -96,6 +96,18 @@ const Title = styled.h1`
         font-size: 6.5vw;
         letter-spacing: -0.1rem;
         display: block;
+    }
+    @media only screen and (max-width: 575px) {
+        // text-align: left;
+        font-size: 12vw;
+        letter-spacing: -0.1rem;
+        margin-bottom: 6vw;
+        span {
+            font-size: 12vw;
+            letter-spacing: -0.05rem;
+            // white-space: nowrap;
+        }
+
     }
 `
 

@@ -85,9 +85,10 @@ const FormTitle = styled.h2`
     line-height: 0.85;
 
     @media only screen and (max-width: 575px) {
-        font-size: 11vw;
-        width: 90%;
+        font-size: 10vw;
+        width: 100%;
         margin-bottom: 5vw;
+        letter-spacing: -0.1rem;
     }
 `
 const Form = styled.form`
@@ -493,7 +494,8 @@ const ParticipationForm = ({ data, formId, formAction, googleAnaliticsCategory, 
 
 
                                         </FormTags>
-                                        <FormTitle>Участвовать <br />в курсе</FormTitle>
+                                        
+                                        <FormTitle>Участвовать <br />{data.courseType === 'Курс' ? 'в курсе' : 'в мастер-классе'}</FormTitle>
                                         <input type="hidden" name="formParams[setted_offer_id]" /><br />
                                         <FormInput
                                             type="text"

@@ -9,6 +9,7 @@ import { graphql } from 'gatsby';
 import ogImage from '../assets/images/seo/conscious-freelance.jpg';
 import ogImageVK from '../assets/images/seo/vk/conscious-freelance.jpg';
 import VideoPresentationOffer from "../components/metaphors-in-identity-page/VideoPresentation";
+import Timetable from "../components/metaphors-in-identity-page/Timetable";
 // import CourseForWhom from "../components/course-page/freelance/ForWhom";
 // import CourseFeatures from "../components/course-page/CourseFeatures";
 // import FreelanceHardWork from "../components/course-page/freelance/FreelanceHardWork";
@@ -79,6 +80,7 @@ const GraphicMetaphorsInIdentityPage = ({ data }) => {
       <div className="section-top-block"></div>
       {/* <CourseOffer data={data.offer} /> */}
       <VideoPresentationOffer data={data.offer}/>
+      <Timetable/>
       <CourseParticipation
         data={data.offer}
         formId={`ltForm6865073`}
@@ -89,7 +91,7 @@ const GraphicMetaphorsInIdentityPage = ({ data }) => {
 
       {/* <FreelanceHardWork />
       <FreelanceSkills /> */}
-      <div id="participation-section"></div>
+      {/* <div id="participation-section"></div> */}
       {/* <FreelanceParticipation courseData={data.offer} /> */}
 
     </Layout>
