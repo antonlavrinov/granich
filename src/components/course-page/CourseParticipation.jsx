@@ -1,7 +1,7 @@
 import React from "react"
 import { Container } from "../style"
 import styled from "styled-components"
-import ParticipationForm from "./participation/ParticipationForm"
+import ParticipationForm from "./participation/form"
 import ParticipationPolicy from "./participation/ParticipationPolicy"
 
 const ParticipationSection = styled.section`
