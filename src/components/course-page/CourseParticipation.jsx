@@ -20,6 +20,12 @@ const ParticipationWrapper = styled.div`
     grid-column-gap: 0;
     grid-row-gap: 5vw;
   }
+  ${props =>
+    !props.policy &&
+    `
+    display: flex;
+    justify-content: center;
+  `}
 `
 
 const CourseParticipation = ({
@@ -35,13 +41,14 @@ const CourseParticipation = ({
   return (
     <ParticipationSection>
       <Container>
-        <ParticipationWrapper>
+        <ParticipationWrapper policy={policy}>
           <ParticipationForm
             additionalTags={additionalTags}
             googleAnaliticsCategory={googleAnaliticsCategory}
             formId={formId}
             formAction={formAction}
             data={data}
+            policy={policy}
           />
           {policy && (
             <ParticipationPolicy

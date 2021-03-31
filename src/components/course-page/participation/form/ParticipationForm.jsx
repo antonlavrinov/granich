@@ -1,6 +1,15 @@
 import styled from "styled-components"
 
-export const FormMainWrapper = styled.div``
+export const FormMainWrapper = styled.div`
+  ${props =>
+    !props.policy &&
+    `
+      width: 51%;
+      @media only screen and (max-width: 575px) {
+        width: auto;
+      }
+  `}
+`
 
 export const FormWrapper = styled.div``
 

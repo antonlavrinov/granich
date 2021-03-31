@@ -26,6 +26,7 @@ const ParticipationForm = ({
   formAction,
   googleAnaliticsCategory,
   additionalTags,
+  policy,
 }) => {
   const formEl = useRef(null)
   // const myPhoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{2})\s?-?\s?(\d{2}\)?)$/;
@@ -68,7 +69,7 @@ const ParticipationForm = ({
   }, [])
   // isInitialValid={isInitialValid}
   return (
-    <SC.FormMainWrapper>
+    <SC.FormMainWrapper policy={policy}>
       <ShakeForm
         style={{ height: "100%" }}
         pose={["shake"]}
