@@ -1,49 +1,45 @@
-import React, { useState } from 'react'
-import { Container } from './style';
-import styled from 'styled-components';
-import Logo from '../assets/svgs/granich-logo.svg';
-import VisaIcon from '../assets/svgs/Visa.svg';
-import MastercardIcon from '../assets/svgs/Mastercard.svg';
-import CloudPaymentsIcon from '../assets/svgs/CloudPayments.svg';
+import React, { useState } from "react"
+import { Container } from "./style"
+import styled from "styled-components"
+import Logo from "../assets/svgs/granich-logo.svg"
+import VisaIcon from "../assets/svgs/Visa.svg"
+import MastercardIcon from "../assets/svgs/Mastercard.svg"
+import CloudPaymentsIcon from "../assets/svgs/CloudPayments.svg"
 
 // import RobokassaIcon from '../assets/svgs/Robokassa.svg';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import Link from 'gatsby-link';
+import { CopyToClipboard } from "react-copy-to-clipboard"
+import Link from "gatsby-link"
 // import Img from "gatsby-image"
 // import { graphql, useStaticQuery } from 'gatsby'
 
-
 const BlackLogo = styled(props => <Logo {...props} />)`
-    width: 4.8vw;
-    height: 3vw;
-    min-width: 4.8vw;
-    min-height: 3vw;
-    @media only screen and (max-width: 575px) {
-        width: 16vw;
-        height: 11vw;
-        min-width: 16vw;
-        min-height: 11vw;
-
-
-    }
+  width: 4.8vw;
+  height: 3vw;
+  min-width: 4.8vw;
+  min-height: 3vw;
+  @media only screen and (max-width: 575px) {
+    width: 16vw;
+    height: 11vw;
+    min-width: 16vw;
+    min-height: 11vw;
+  }
 `
-
 
 const Visa = styled(props => <VisaIcon {...props} />)`
-    width: 5.5vw;
-    height: 3vw;
-    @media only screen and (max-width: 575px) {
-        width: 14vw;
-        height: 7.9vw;
-    }
+  width: 5.5vw;
+  height: 3vw;
+  @media only screen and (max-width: 575px) {
+    width: 14vw;
+    height: 7.9vw;
+  }
 `
 const Mastercard = styled(props => <MastercardIcon {...props} />)`
-    width: 4.8vw;
-    height: 3vw;
-    @media only screen and (max-width: 575px) {
-        width: 12.5vw;
-        height: 7.9vw;
-    }
+  width: 4.8vw;
+  height: 3vw;
+  @media only screen and (max-width: 575px) {
+    width: 12.5vw;
+    height: 7.9vw;
+  }
 `
 // const Robokassa = styled(props => <RobokassaIcon {...props} />)`
 //     width: 5vw;
@@ -55,30 +51,29 @@ const Mastercard = styled(props => <MastercardIcon {...props} />)`
 // `
 
 const CloudPayments = styled(props => <CloudPaymentsIcon {...props} />)`
-    width: 4.5vw;
-    height: 3vw;
-    transform: scale(1.2);
-    @media only screen and (max-width: 575px) {
-        width: 12.5vw;
-        height: 7.9vw;
-    }
+  width: 4.5vw;
+  height: 3vw;
+  transform: scale(1.2);
+  @media only screen and (max-width: 575px) {
+    width: 12.5vw;
+    height: 7.9vw;
+  }
 `
 
 const FooterSection = styled.footer`
-    margin-top: auto;   
-    padding: 2.9vw 0 3.6vw;
-    @media only screen and (max-width: 575px) {
-        padding: 12vw 0 12vw;
-    }
+  margin-top: auto;
+  padding: 2.9vw 0 3.6vw;
+  @media only screen and (max-width: 575px) {
+    padding: 12vw 0 12vw;
+  }
 `
 
 const FooterWrapper = styled.div`
-    display: flex;
-    align-items: flex-start;
-    @media only screen and (max-width: 575px) {
-        flex-direction: column;
-
-    }
+  display: flex;
+  align-items: flex-start;
+  @media only screen and (max-width: 575px) {
+    flex-direction: column;
+  }
 `
 
 const LogoWrapper = styled.a`
@@ -87,32 +82,29 @@ const LogoWrapper = styled.a`
   @media only screen and (max-width: 575px) {
     margin-right: 3.5vw;
   }
-
 `
 
 const FooterInfo = styled.div`
-    margin-right: 2vw;
-    letter-spacing: -0.01vw;
-    line-height: 1.4;
-    @media only screen and (max-width: 575px) {
-        margin-right: 0;
-    }
-
+  margin-right: 2vw;
+  letter-spacing: -0.01vw;
+  line-height: 1.4;
+  @media only screen and (max-width: 575px) {
+    margin-right: 0;
+  }
 `
 
 const FooterInfoYear = styled.div`
-    font-size: 1.1vw;
-    font-weight: 500;
-    // line-height: 1.4;
-    color: var(--granich-black);
-    user-select: none;
-    white-space: nowrap;
-    width: 100%;
-    @media only screen and (max-width: 575px) {
-        font-size: 3.7vw;
-    }
+  font-size: 1.1vw;
+  font-weight: 500;
+  // line-height: 1.4;
+  color: var(--granich-black);
+  user-select: none;
+  white-space: nowrap;
+  width: 100%;
+  @media only screen and (max-width: 575px) {
+    font-size: 3.7vw;
+  }
 `
-
 
 const FooterInfoMail = styled.div`
     position: relative;
@@ -148,7 +140,9 @@ const FooterInfoMail = styled.div`
         border-right: 0.55vw solid transparent;
         border-left: 0.55vw solid transparent;
         border-top: 0.55vw solid var(--granich-black);
-        ${props => props.content === 'Скопировано :)' && `
+        ${props =>
+          props.content === "Скопировано :)" &&
+          `
             border-top: 0.55vw solid var(--granich-red);
         `}
     }
@@ -170,7 +164,9 @@ const FooterInfoMail = styled.div`
         border-radius: 0.2vw;
         white-space: nowrap;
         background: var(--granich-black);
-        ${props => props.content === 'Скопировано :)' && `
+        ${props =>
+          props.content === "Скопировано :)" &&
+          `
             background: var(--granich-red);
         `}
         
@@ -188,7 +184,9 @@ const FooterInfoMail = styled.div`
             font-size: 4.5vw;
             padding: 3vw;
             top: -13vw;
-            ${props => props.content === 'Скопировано :)' && `
+            ${props =>
+              props.content === "Скопировано :)" &&
+              `
                 background: var(--granich-red);
             `}
         }
@@ -197,7 +195,9 @@ const FooterInfoMail = styled.div`
             border-right: 2vw solid transparent;
             border-left: 2vw solid transparent;
             border-top: 2vw solid var(--granich-black);
-            ${props => props.content === 'Скопировано :)' && `
+            ${props =>
+              props.content === "Скопировано :)" &&
+              `
                 border-top: 2vw solid var(--granich-red);
             `}
         }
@@ -205,69 +205,64 @@ const FooterInfoMail = styled.div`
     }
 `
 const FooterLink = styled(props => <Link {...props} />)`
-    line-height: 1.4;
-    color: var(--granich-light-grey);
+  line-height: 1.4;
+  color: var(--granich-light-grey);
+  font-size: 1.16vw;
+  margin-right: 1.3vw;
+  user-select: none;
+
+  :last-of-type {
+    margin-right: 1.2vw;
+    span {
+      letter-spacing: -0.01vw;
+    }
+  }
+  span {
+    color: inherit;
+    font-size: inherit;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    :hover {
+      border-bottom: none;
+    }
+  }
+  :hover {
     font-size: 1.16vw;
-    margin-right: 1.3vw;
-    user-select: none;
-
-
+    color: var(--granich-light-grey);
+    span {
+      border-bottom: 1px solid var(--granich-light-grey);
+    }
+  }
+  @media only screen and (max-width: 575px) {
+    font-size: 3.85vw;
+    margin-right: 5.5vw;
     :last-of-type {
-        margin-right: 1.2vw;
-        span {
-            letter-spacing: -0.01vw;
-        }
+      margin-right: 0;
     }
     span {
-
-        color: inherit;
-        font-size: inherit;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-
-        :hover {
-            border-bottom: none;
-
-        }
+      :hover {
+        border-bottom: 1px solid var(--granich-light-grey);
+      }
     }
     :hover {
-        font-size: 1.16vw;
-        color: var(--granich-light-grey);
-        span {
-            border-bottom: 1px solid var(--granich-light-grey);
-        }
+      font-size: 3.85vw;
     }
-    @media only screen and (max-width: 575px) {
-        font-size: 3.85vw;
-        margin-right: 5.5vw;
-        :last-of-type {
-            margin-right: 0;
-        }
-        span {
-            :hover {
-                border-bottom: 1px solid var(--granich-light-grey);
-            }
-        }
-        :hover {
-            font-size: 3.85vw;
-        }
-    }
-
+  }
 `
 
 const FooterCredentials = styled.div`
-    line-height: 1.4;
-    font-size: 0.8vw;
-    letter-spacing: -0.01vw;
-    color: var(--granich-light-grey);
-    margin-right: 1.4vw;
-    white-space: nowrap;
-    // user-select: none;
-    @media only screen and (max-width: 575px) {
-        font-size: 2.5vw;
-        line-height: 1.3;
-        margin-right: 3vw;
-    }
-
+  line-height: 1.4;
+  font-size: 0.8vw;
+  letter-spacing: -0.01vw;
+  color: var(--granich-light-grey);
+  margin-right: 1.4vw;
+  white-space: nowrap;
+  // user-select: none;
+  @media only screen and (max-width: 575px) {
+    font-size: 2.5vw;
+    line-height: 1.3;
+    margin-right: 3vw;
+  }
 `
 
 const FooterPayment = styled.div`
@@ -289,103 +284,112 @@ const FooterPayment = styled.div`
 `
 
 const FooterLogoAndInfo = styled.div`
-    display: flex;
-    align-items: flex-start;
-    @media only screen and (max-width: 575px) {
-        margin-bottom: 5.5vw;
-    }
+  display: flex;
+  align-items: flex-start;
+  @media only screen and (max-width: 575px) {
+    margin-bottom: 5.5vw;
+  }
 `
 
 const FooterLinks = styled.div`
-    display: flex;
-    @media only screen and (max-width: 575px) {
-        margin-bottom: 5.5vw;
-    }
+  display: flex;
+  @media only screen and (max-width: 575px) {
+    margin-bottom: 5.5vw;
+  }
 `
 const FooterCredentialsAndPayment = styled.div`
-    display: flex;
-    margin-left: auto;
-    @media only screen and (max-width: 575px) {
-        margin-left: 0;
-        align-items: center;
-
-    }
+  display: flex;
+  margin-left: auto;
+  @media only screen and (max-width: 575px) {
+    margin-left: 0;
+    align-items: center;
+  }
 `
 
 const EmptyText = styled.div`
-    opacity: 0;
-    font-size: 0;
+  opacity: 0;
+  font-size: 0;
 `
 
-
 const Footer = () => {
-    const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
+  const [tooltipEmail, setTooltipEmail] = useState("Скопировать")
 
-    // const imageData = useStaticQuery(graphql`
-    //     query cloudPayments {
-    //         placeholderImage: file(relativePath: { eq: "cloud-payments.png" }) {
-    //             childImageSharp {
-    //                 fluid(maxWidth: 200, quality: 100) {
-    //                     ...GatsbyImageSharpFluid
-    //                 }
-    //             }
-    //         }
+  // const imageData = useStaticQuery(graphql`
+  //     query cloudPayments {
+  //         placeholderImage: file(relativePath: { eq: "cloud-payments.png" }) {
+  //             childImageSharp {
+  //                 fluid(maxWidth: 200, quality: 100) {
+  //                     ...GatsbyImageSharpFluid
+  //                 }
+  //             }
+  //         }
 
-    //     }
-    // `)
+  //     }
+  // `)
 
-    // const cloudPayments = imageData.placeholderImage.childImageSharp.fluid
+  // const cloudPayments = imageData.placeholderImage.childImageSharp.fluid
 
-    return (
-        <FooterSection>
-            <Container>
-                <FooterWrapper>
-                    <FooterLogoAndInfo>
-                        <LogoWrapper href="/">
-                            <BlackLogo />
-                        </LogoWrapper>
+  return (
+    <FooterSection>
+      <Container>
+        <FooterWrapper>
+          <FooterLogoAndInfo>
+            <LogoWrapper href="/">
+              <BlackLogo />
+            </LogoWrapper>
 
-                        <FooterInfo>
-                            <EmptyText>sometext</EmptyText>
-                            <FooterInfoYear>© {new Date().getFullYear()}</FooterInfoYear>
-                            {/* <CopyToClipboard text={'hello@granich.design'}>
+            <FooterInfo>
+              <EmptyText>sometext</EmptyText>
+              <FooterInfoYear>© {new Date().getFullYear()}</FooterInfoYear>
+              {/* <CopyToClipboard text={'hello@granich.design'}>
                                 <StyledTooltip unmountHTMLWhenHide={true} theme="red" open={tooltipEmail === 'Скопировано :)' ? 1 : 0} duration={0} animateFill={false} animation="none" trigger={'mouseenter'} title={tooltipEmail} hideOnClick="false"
                                 position="top-center"  interactive >
                                     <FooterInfoMail onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')} >hello@granich.design</FooterInfoMail>
                                 </StyledTooltip>
                                 
                             </CopyToClipboard> */}
-                            <CopyToClipboard text={'hello@granich.design'}>
-
-                                <FooterInfoMail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')} >hello@granich.design</FooterInfoMail>
-
-                            </CopyToClipboard>
-
-
-                        </FooterInfo>
-                    </FooterLogoAndInfo>
-                    <FooterLinks>
-                        <FooterLink to="/public-offer"><span>Пользовательское <br />соглашение</span></FooterLink>
-                        <FooterLink to="/privacy"><span>Политика <br />конфиденциальности</span></FooterLink>
-                    </FooterLinks>
-                    <FooterCredentialsAndPayment>
-                        <FooterCredentials>
-                            ИП Гранич Вадим Владимирович <br />
-                        ОГРНИП 319784700098871 <br />
-                        ИНН 470320212730 <br />
-                        </FooterCredentials>
-                        <FooterPayment>
-                            <CloudPayments />
-                            {/* <Robokassa /> */}
-                            <Visa />
-                            <Mastercard />
-                        </FooterPayment>
-                    </FooterCredentialsAndPayment>
-
-                </FooterWrapper>
-            </Container>
-        </FooterSection>
-    )
+              <CopyToClipboard text={"hello@granich.design"}>
+                <FooterInfoMail
+                  content={tooltipEmail}
+                  onMouseLeave={() => setTooltipEmail("Скопировать")}
+                  onClick={() => setTooltipEmail("Скопировано :)")}
+                >
+                  hello@granich.design
+                </FooterInfoMail>
+              </CopyToClipboard>
+            </FooterInfo>
+          </FooterLogoAndInfo>
+          <FooterLinks>
+            <FooterLink to="/public-offer">
+              <span>
+                Пользовательское <br />
+                соглашение
+              </span>
+            </FooterLink>
+            <FooterLink to="/privacy">
+              <span>
+                Политика <br />
+                конфиденциальности
+              </span>
+            </FooterLink>
+          </FooterLinks>
+          <FooterCredentialsAndPayment>
+            <FooterCredentials>
+              ИП Гранич Вадим Владимирович <br />
+              ОГРНИП 319784700098871 <br />
+              ИНН 470320212730 <br />
+            </FooterCredentials>
+            <FooterPayment>
+              <CloudPayments />
+              {/* <Robokassa /> */}
+              <Visa />
+              <Mastercard />
+            </FooterPayment>
+          </FooterCredentialsAndPayment>
+        </FooterWrapper>
+      </Container>
+    </FooterSection>
+  )
 }
 
 export default Footer

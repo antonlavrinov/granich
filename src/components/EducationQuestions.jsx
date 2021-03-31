@@ -1,30 +1,26 @@
-import React, {useState} from 'react'
-import styled from 'styled-components';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
-import {Container} from './style';
+import React, { useState } from "react"
+import styled from "styled-components"
+import { CopyToClipboard } from "react-copy-to-clipboard"
+import { Container } from "./style"
 
-
-const EducationQuestionsSection = styled.section`
-
-`
+const EducationQuestionsSection = styled.section``
 
 const EducationQuestionsWrapper = styled.div`
-    background: #e8e8e8;
-    border-radius: 0.6vw;
-    padding: 1.8vw 2vw;
-    font-size: 1.15vw;
-    color: var(--granich-grey);
-    color: #666666;
-    font-weight: 500;
-    text-align: center;
-    margin-bottom: 2vw;
-    @media only screen and (max-width: 575px) {
-        font-size: 3.8vw;
-        border-radius: 2.5vw;
-        padding: 4vw 0;
-        line-height: 1.25;
-    }
-
+  background: #e8e8e8;
+  border-radius: 0.6vw;
+  padding: 1.8vw 2vw;
+  font-size: 1.15vw;
+  color: var(--granich-grey);
+  color: #666666;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2vw;
+  @media only screen and (max-width: 575px) {
+    font-size: 3.8vw;
+    border-radius: 2.5vw;
+    padding: 4vw 0;
+    line-height: 1.25;
+  }
 `
 
 const EducationQuestionsEmail = styled.span`
@@ -55,7 +51,9 @@ const EducationQuestionsEmail = styled.span`
         border-right: 0.55vw solid transparent;
         border-left: 0.55vw solid transparent;
         border-top: 0.55vw solid var(--granich-black);
-        ${props => props.content === 'Скопировано :)' && `
+        ${props =>
+          props.content === "Скопировано :)" &&
+          `
             border-top: 0.55vw solid var(--granich-red);
         `}
     }
@@ -77,7 +75,9 @@ const EducationQuestionsEmail = styled.span`
         border-radius: 0.2vw;
         white-space: nowrap;
         background: var(--granich-black);
-        ${props => props.content === 'Скопировано :)' && `
+        ${props =>
+          props.content === "Скопировано :)" &&
+          `
             background: var(--granich-red);
         `}
         
@@ -98,7 +98,9 @@ const EducationQuestionsEmail = styled.span`
             font-size: 4.5vw;
             padding: 3vw;
             top: -13vw;
-            ${props => props.content === 'Скопировано :)' && `
+            ${props =>
+              props.content === "Скопировано :)" &&
+              `
                 background: var(--granich-red);
             `}
         }
@@ -107,30 +109,35 @@ const EducationQuestionsEmail = styled.span`
             border-right: 2vw solid transparent;
             border-left: 2vw solid transparent;
             border-top: 2vw solid var(--granich-black);
-            ${props => props.content === 'Скопировано :)' && `
+            ${props =>
+              props.content === "Скопировано :)" &&
+              `
                 border-top: 2vw solid var(--granich-red);
             `}
         }
 
 `
 
-
 const EducationQuestions = () => {
-    const [tooltipEmail, setTooltipEmail] = useState('Скопировать')
-    return (
-        <EducationQuestionsSection>
-            <Container>
-                <EducationQuestionsWrapper>
-                    Вопросы по обучению пишите: <CopyToClipboard text={'hello@granich.design'}>
-                                                    <EducationQuestionsEmail content={tooltipEmail} onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')}>
-                                                        hello@granich.design
-                                                    </EducationQuestionsEmail>
-                                                </CopyToClipboard>
-                </EducationQuestionsWrapper>
-            </Container>
-        </EducationQuestionsSection>
-
-    )
+  const [tooltipEmail, setTooltipEmail] = useState("Скопировать")
+  return (
+    <EducationQuestionsSection>
+      <Container>
+        <EducationQuestionsWrapper>
+          Вопросы по обучению пишите:{" "}
+          <CopyToClipboard text={"hello@granich.design"}>
+            <EducationQuestionsEmail
+              content={tooltipEmail}
+              onMouseLeave={() => setTooltipEmail("Скопировать")}
+              onClick={() => setTooltipEmail("Скопировано :)")}
+            >
+              hello@granich.design
+            </EducationQuestionsEmail>
+          </CopyToClipboard>
+        </EducationQuestionsWrapper>
+      </Container>
+    </EducationQuestionsSection>
+  )
 }
 
 export default EducationQuestions

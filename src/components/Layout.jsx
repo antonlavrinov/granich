@@ -1,23 +1,20 @@
 import React from "react"
 import PropTypes from "prop-types"
-import "normalize.css";
-import {GlobalStyle} from './style';
-import '../styles/App.scss';
-import Footer from "./Footer";
-import SideButtons from "./SideButtons";
-import Cookies from './Cookies';
-
-
+import "normalize.css"
+import { GlobalStyle } from "./style"
+import "../styles/App.scss"
+import Footer from "./Footer"
+import SideButtons from "./SideButtons"
+import Cookies from "./Cookies"
 
 const Layout = ({ children }) => {
-
   return (
     <>
-        <GlobalStyle/>
-            <main>{children}</main>
-        <SideButtons/>
-        <Cookies/>
-        <Footer/>
+      <GlobalStyle />
+      <main>{children}</main>
+      <SideButtons />
+      <Cookies />
+      <Footer />
     </>
   )
 }
