@@ -6,22 +6,10 @@ import Header from "../components/global/header"
 // import CourseCurriculum from "../components/course-page/CourseCurriculum"
 import CourseParticipation from "../components/course-page/CourseParticipation"
 import { graphql } from "gatsby"
-import ogImage from "../assets/images/seo/conscious-freelance.jpg"
-import ogImageVK from "../assets/images/seo/vk/conscious-freelance.jpg"
+import ogImage from "../assets/images/seo/graphic-metaphors-in-identity.jpg"
+import ogImageVK from "../assets/images/seo/vk/graphic-metaphors-in-identity.jpg"
 import VideoPresentationOffer from "../components/metaphors-in-identity-page/video-presentation"
 import Timetable from "../components/metaphors-in-identity-page/timetable"
-// import CourseForWhom from "../components/course-page/freelance/ForWhom";
-// import CourseFeatures from "../components/course-page/CourseFeatures";
-// import FreelanceHardWork from "../components/course-page/freelance/FreelanceHardWork";
-// import CourseFreelanceBanner from "../components/course-page/freelance/CourseFreelanceBanner";
-// import CoursePaymentChoices from "../components/course-page/payment-choices/CoursePaymentChoices";
-// import Combination from "../components/course-page/freelance/Combination";
-// import FreelanceOffer from "../components/course-page/freelance/FreelanceOffer";
-// import FreelanceBefore from "../components/course-page/freelance/FreelanceBefore"
-// import FreelanceAfter from "../components/course-page/freelance/FreelanceAfter"
-// import FreelanceProblem from "../components/course-page/freelance/FreelanceProblem"
-// import FreelanceSkills from "../components/course-page/freelance/FreelanceSkills"
-// import FreelanceParticipation from "../components/course-page/freelance/FreelanceParticipation"
 
 export const contentfulQuery = graphql`
   query graphicMetaphorsQuery {
@@ -67,38 +55,32 @@ const GraphicMetaphorsInIdentityPage = ({ data }) => {
       <Header type={"dark"} />
       <SEO
         title="Графические метафоры как путь в айдентику"
-        description="Курс Графические метафоры как путь в айдентику от Вадима Гранича. Онлайн-школа Granich."
-        socialDescription="Курс для творцов, которые хотят преуспеть на фрилансе"
+        description="Курс по графическим метафорам для графических дизайнеров, которые хотят начать путь в создании айдентики (фирменных стилей)"
+        socialDescription="Курс по графическим метафорам для графических дизайнеров, которые хотят начать путь в создании айдентики (фирменных стилей)"
         keywords={[
-          "фриланс",
-          "осознанный",
+          "метафоры",
+          "айдентика",
           "гранич",
-          "freelance",
+          "identity",
           "granich",
           "conscious",
+          "metaphors",
         ]}
         ogImage={ogImage}
         ogImageVk={ogImageVK}
-        url="https://granich.design/conscious-freelance"
+        url="https://granich.design/graphic-metaphors-in-identity"
       />
       <div className="section-top-block"></div>
-      {/* <CourseOffer data={data.offer} /> */}
       <VideoPresentationOffer data={data.offer} />
       <Timetable />
       <CourseParticipation
         policy={false}
         data={data.offer}
-        formId={`ltForm6865073`}
-        formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}
-        googleAnaliticsCategory={`Отправка формы Осознанный Графдизайн`}
-        additionalTags={["Интенсивный", "С нуля"]}
+        formId={`ltForm5911337`}
+        formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1022043147`}
+        googleAnaliticsCategory={`Отправка формы Графметафоры`}
+        // additionalTags={["Интенсивный", "С нуля"]}
       />
-      {/* <FreelanceOffer /> */}
-
-      {/* <FreelanceHardWork />
-      <FreelanceSkills /> */}
-      {/* <div id="participation-section"></div> */}
-      {/* <FreelanceParticipation courseData={data.offer} /> */}
     </Layout>
   )
 }

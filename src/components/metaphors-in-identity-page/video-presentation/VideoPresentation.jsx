@@ -47,7 +47,7 @@ export const Wrapper = styled.div`
 
 export const YoutubeBlock = styled.div`
   // width: 100%;
-  height: 45vw;
+  height: 38vw;
   // padding: 3vw;
   position: relative;
 

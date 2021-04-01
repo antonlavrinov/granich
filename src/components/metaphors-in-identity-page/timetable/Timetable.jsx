@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h2`
   color: var(--granich-black);
-  font-size: 4vw;
+  font-size: 4.5vw;
   letter-spacing: -0.2vw;
   font-weight: 700;
   line-height: 1;
@@ -48,7 +48,7 @@ export const Title = styled.h2`
   @media only screen and (max-width: 575px) {
     font-size: 11vw;
     white-space: normal;
-    margin-bottom: 2vw;
+    margin-bottom: 3vw;
     span {
       white-space: normal;
       font-size: 10.4vw;
@@ -124,5 +124,55 @@ export const WarningIcon = styled(props => <WarningSign {...props} />)`
     min-width: 7vw;
     min-height: 7vw;
     margin-right: 2vw;
+  }
+`
+
+export const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.8vw;
+  @media only screen and (max-width: 575px) {
+    flex-direction: column;
+  }
+`
+
+export const Author = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 10.5vw;
+  @media only screen and (max-width: 575px) {
+    flex-direction: column;
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 2vw;
+  }
+`
+
+export const AuthorImage = styled(props => <Img {...props} />)`
+  width: 5vw;
+  height: 5vw;
+  margin-right: 1vw;
+  border-radius: 100vw;
+  border: 1.5px solid var(--granich-black);
+
+  @media only screen and (max-width: 575px) {
+    width: 17vw;
+    height: 17vw;
+    margin-bottom: 2vw;
+  }
+`
+
+export const AuthorInfo = styled.div`
+  font-size: 1.3vw;
+  line-height: 1.3;
+  color: var(--granich-light-grey);
+  span {
+    display: block;
+    font-weight: 500;
+  }
+
+  @media only screen and (max-width: 575px) {
+    font-size: 3.2vw;
   }
 `

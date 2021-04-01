@@ -17,10 +17,20 @@ const Timetable = () => {
           }
         }
       }
+
+      imageTimetableMetaphorsAuthor: file(relativePath: { eq: "author.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 250, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
   const imageData = data.imageTimetableMetaphors.childImageSharp.fluid
+  const imageAuthorData =
+    data.imageTimetableMetaphorsAuthor.childImageSharp.fluid
   const text = `Каждый этап начинается в понедельник. 
   В рамках каждого этапа мы тренируем графические метафоры 
   в новых нишах бизнеса. Ученик выбирает себе одну или несколько ниш бизнеса, по которым начинает прорабатывать графические метафоры. 
@@ -31,7 +41,16 @@ const Timetable = () => {
     <SC.Section>
       <Container>
         <SC.Wrapper>
-          <SC.Title>Расписание</SC.Title>
+          <SC.Header>
+            <SC.Title>Расписание</SC.Title>
+            <SC.Author>
+              <SC.AuthorImage fluid={imageAuthorData} />
+              <SC.AuthorInfo>
+                Курс ведёт <span>Вадим Гранич</span>
+              </SC.AuthorInfo>
+            </SC.Author>
+          </SC.Header>
+
           <SC.Info>
             <SC.Text>{text}</SC.Text>
             <SC.Warning>
