@@ -2,26 +2,21 @@ import React from "react"
 
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import styled from 'styled-components';
-import { Container } from '../components/style';
-import Header from "../components/Header";
-import VKIcon from '../assets/svgs/granich-main-team/vk.svg';
-import InstagramIcon from '../assets/svgs/granich-main-team/instagram.svg';
-import TelegramIcon from '../assets/svgs/granich-main-team/telegram.svg';
-import ogImage from '../assets/images/seo/index-main.jpg';
-import ogImageVK from '../assets/images/seo/vk/index-main.jpg';
+import styled from "styled-components"
+import { Container } from "../components/style"
+import Header from "../components/global/header"
+import VKIcon from "../assets/svgs/granich-main-team/vk.svg"
+import InstagramIcon from "../assets/svgs/granich-main-team/instagram.svg"
+import TelegramIcon from "../assets/svgs/granich-main-team/telegram.svg"
+import ogImage from "../assets/images/seo/index-main.jpg"
+import ogImageVK from "../assets/images/seo/vk/index-main.jpg"
 
-
-
-
-const NotFoundSection = styled.section`
-
-`
+const NotFoundSection = styled.section``
 
 const NotFoundWrapper = styled.div`
   background: white;
   border-radius: 0.6vw;
-  padding: 4.2vw 3.3vw ;
+  padding: 4.2vw 3.3vw;
   position: relative;
   min-height: 36.5vw;
   // height: 36.5vw;
@@ -46,7 +41,6 @@ const NotFoundTitle = styled.div`
     line-height: 1.1;
     margin-bottom: 3vw;
   }
-
 `
 
 const NotFoundText = styled.div`
@@ -106,32 +100,49 @@ const NotFoundSocial = styled.div`
   }
 `
 
-
-
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="Блог в разработке" ogImage={ogImage} ogImageVk={ogImageVK}/>
-    <Header type={'dark'}/>
+    <SEO title="Блог в разработке" ogImage={ogImage} ogImageVk={ogImageVK} />
+    <Header type={"dark"} />
     <div className="section-top-block"></div>
     <NotFoundSection>
       <Container>
         <NotFoundWrapper>
-          <NotFoundTitle>
-            Блог в разработке...
-          </NotFoundTitle>
+          <NotFoundTitle>Блог в разработке...</NotFoundTitle>
           <NotFoundText>
-            Когда мы его запустим на сайте мы оповестим на других площадках, где ведем блог школы:
-
+            Когда мы его запустим на сайте мы оповестим на других площадках, где
+            ведем блог школы:
           </NotFoundText>
           <NotFoundSocials>
             <NotFoundSocial>
-              <VKIcon/> <a href="https://vk.com/granichvk" rel="noopener noreferrer" target="_blank">vk.com/granichvk</a>
+              <VKIcon />{" "}
+              <a
+                href="https://vk.com/granichvk"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                vk.com/granichvk
+              </a>
             </NotFoundSocial>
             <NotFoundSocial>
-              <TelegramIcon/> <a href="https://t.me/granichannel" rel="noopener noreferrer" target="_blank">t.me/granichannel</a>
+              <TelegramIcon />{" "}
+              <a
+                href="https://t.me/granichannel"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                t.me/granichannel
+              </a>
             </NotFoundSocial>
             <NotFoundSocial>
-              <InstagramIcon/> <a href="https://www.instagram.com/granichgram" rel="noopener noreferrer" target="_blank">@granichgram</a>
+              <InstagramIcon />{" "}
+              <a
+                href="https://www.instagram.com/granichgram"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                @granichgram
+              </a>
             </NotFoundSocial>
           </NotFoundSocials>
           {/* <NotFoundLinksWrapper>
@@ -148,7 +159,6 @@ const NotFoundPage = () => (
           </NotFoundLinksWrapper> */}
         </NotFoundWrapper>
       </Container>
-
     </NotFoundSection>
   </Layout>
 )

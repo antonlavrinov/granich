@@ -1,18 +1,16 @@
-import React, { useState } from "react"
-import { Container } from "./style"
+import React from "react"
 import styled from "styled-components"
-import Logo from "../assets/svgs/granich-logo.svg"
-import VisaIcon from "../assets/svgs/Visa.svg"
-import MastercardIcon from "../assets/svgs/Mastercard.svg"
-import CloudPaymentsIcon from "../assets/svgs/CloudPayments.svg"
-
-// import RobokassaIcon from '../assets/svgs/Robokassa.svg';
-import { CopyToClipboard } from "react-copy-to-clipboard"
+import Logo from "../../../assets/svgs/granich-logo.svg"
+import VisaIcon from "../../../assets/svgs/Visa.svg"
+import MastercardIcon from "../../../assets/svgs/Mastercard.svg"
+import CloudPaymentsIcon from "../../../assets/svgs/CloudPayments.svg"
 import Link from "gatsby-link"
-// import Img from "gatsby-image"
-// import { graphql, useStaticQuery } from 'gatsby'
 
-const BlackLogo = styled(props => <Logo {...props} />)`
+type IClickToCopyContent = {
+  content: string
+}
+
+export const BlackLogo = styled(props => <Logo {...props} />)`
   width: 4.8vw;
   height: 3vw;
   min-width: 4.8vw;
@@ -25,7 +23,7 @@ const BlackLogo = styled(props => <Logo {...props} />)`
   }
 `
 
-const Visa = styled(props => <VisaIcon {...props} />)`
+export const Visa = styled(props => <VisaIcon {...props} />)`
   width: 5.5vw;
   height: 3vw;
   @media only screen and (max-width: 575px) {
@@ -33,7 +31,7 @@ const Visa = styled(props => <VisaIcon {...props} />)`
     height: 7.9vw;
   }
 `
-const Mastercard = styled(props => <MastercardIcon {...props} />)`
+export const Mastercard = styled(props => <MastercardIcon {...props} />)`
   width: 4.8vw;
   height: 3vw;
   @media only screen and (max-width: 575px) {
@@ -50,7 +48,7 @@ const Mastercard = styled(props => <MastercardIcon {...props} />)`
 //     }
 // `
 
-const CloudPayments = styled(props => <CloudPaymentsIcon {...props} />)`
+export const CloudPayments = styled(props => <CloudPaymentsIcon {...props} />)`
   width: 4.5vw;
   height: 3vw;
   transform: scale(1.2);
@@ -60,7 +58,7 @@ const CloudPayments = styled(props => <CloudPaymentsIcon {...props} />)`
   }
 `
 
-const FooterSection = styled.footer`
+export const Section = styled.footer`
   margin-top: auto;
   padding: 2.9vw 0 3.6vw;
   @media only screen and (max-width: 575px) {
@@ -68,7 +66,7 @@ const FooterSection = styled.footer`
   }
 `
 
-const FooterWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   align-items: flex-start;
   @media only screen and (max-width: 575px) {
@@ -76,7 +74,7 @@ const FooterWrapper = styled.div`
   }
 `
 
-const LogoWrapper = styled.a`
+export const LogoWrapper = styled.a`
   fill: var(--granich-black);
   margin-right: 0.7vw;
   @media only screen and (max-width: 575px) {
@@ -84,7 +82,7 @@ const LogoWrapper = styled.a`
   }
 `
 
-const FooterInfo = styled.div`
+export const Info = styled.div`
   margin-right: 2vw;
   letter-spacing: -0.01vw;
   line-height: 1.4;
@@ -93,7 +91,7 @@ const FooterInfo = styled.div`
   }
 `
 
-const FooterInfoYear = styled.div`
+export const InfoYear = styled.div`
   font-size: 1.1vw;
   font-weight: 500;
   // line-height: 1.4;
@@ -106,7 +104,7 @@ const FooterInfoYear = styled.div`
   }
 `
 
-const FooterInfoMail = styled.div`
+export const InfoMail = styled.div<IClickToCopyContent>`
     position: relative;
     font-weight: 500;
     font-size: 1.16vw;
@@ -204,7 +202,7 @@ const FooterInfoMail = styled.div`
 
     }
 `
-const FooterLink = styled(props => <Link {...props} />)`
+export const FooterLink = styled(props => <Link {...props} />)`
   line-height: 1.4;
   color: var(--granich-light-grey);
   font-size: 1.16vw;
@@ -250,7 +248,7 @@ const FooterLink = styled(props => <Link {...props} />)`
   }
 `
 
-const FooterCredentials = styled.div`
+export const Credentials = styled.div`
   line-height: 1.4;
   font-size: 0.8vw;
   letter-spacing: -0.01vw;
@@ -265,7 +263,7 @@ const FooterCredentials = styled.div`
   }
 `
 
-const FooterPayment = styled.div`
+export const Payment = styled.div`
     display: flex;
     margin-right: -0.3vw;
     margin-top: -0.25vw;
@@ -283,7 +281,7 @@ const FooterPayment = styled.div`
     }
 `
 
-const FooterLogoAndInfo = styled.div`
+export const LogoAndInfo = styled.div`
   display: flex;
   align-items: flex-start;
   @media only screen and (max-width: 575px) {
@@ -291,13 +289,13 @@ const FooterLogoAndInfo = styled.div`
   }
 `
 
-const FooterLinks = styled.div`
+export const Links = styled.div`
   display: flex;
   @media only screen and (max-width: 575px) {
     margin-bottom: 5.5vw;
   }
 `
-const FooterCredentialsAndPayment = styled.div`
+export const CredentialsAndPayment = styled.div`
   display: flex;
   margin-left: auto;
   @media only screen and (max-width: 575px) {
@@ -306,90 +304,7 @@ const FooterCredentialsAndPayment = styled.div`
   }
 `
 
-const EmptyText = styled.div`
+export const EmptyText = styled.div`
   opacity: 0;
   font-size: 0;
 `
-
-const Footer = () => {
-  const [tooltipEmail, setTooltipEmail] = useState("Скопировать")
-
-  // const imageData = useStaticQuery(graphql`
-  //     query cloudPayments {
-  //         placeholderImage: file(relativePath: { eq: "cloud-payments.png" }) {
-  //             childImageSharp {
-  //                 fluid(maxWidth: 200, quality: 100) {
-  //                     ...GatsbyImageSharpFluid
-  //                 }
-  //             }
-  //         }
-
-  //     }
-  // `)
-
-  // const cloudPayments = imageData.placeholderImage.childImageSharp.fluid
-
-  return (
-    <FooterSection>
-      <Container>
-        <FooterWrapper>
-          <FooterLogoAndInfo>
-            <LogoWrapper href="/">
-              <BlackLogo />
-            </LogoWrapper>
-
-            <FooterInfo>
-              <EmptyText>sometext</EmptyText>
-              <FooterInfoYear>© {new Date().getFullYear()}</FooterInfoYear>
-              {/* <CopyToClipboard text={'hello@granich.design'}>
-                                <StyledTooltip unmountHTMLWhenHide={true} theme="red" open={tooltipEmail === 'Скопировано :)' ? 1 : 0} duration={0} animateFill={false} animation="none" trigger={'mouseenter'} title={tooltipEmail} hideOnClick="false"
-                                position="top-center"  interactive >
-                                    <FooterInfoMail onMouseLeave={() => setTooltipEmail('Скопировать')} onClick={() => setTooltipEmail('Скопировано :)')} >hello@granich.design</FooterInfoMail>
-                                </StyledTooltip>
-                                
-                            </CopyToClipboard> */}
-              <CopyToClipboard text={"hello@granich.design"}>
-                <FooterInfoMail
-                  content={tooltipEmail}
-                  onMouseLeave={() => setTooltipEmail("Скопировать")}
-                  onClick={() => setTooltipEmail("Скопировано :)")}
-                >
-                  hello@granich.design
-                </FooterInfoMail>
-              </CopyToClipboard>
-            </FooterInfo>
-          </FooterLogoAndInfo>
-          <FooterLinks>
-            <FooterLink to="/public-offer">
-              <span>
-                Пользовательское <br />
-                соглашение
-              </span>
-            </FooterLink>
-            <FooterLink to="/privacy">
-              <span>
-                Политика <br />
-                конфиденциальности
-              </span>
-            </FooterLink>
-          </FooterLinks>
-          <FooterCredentialsAndPayment>
-            <FooterCredentials>
-              ИП Гранич Вадим Владимирович <br />
-              ОГРНИП 319784700098871 <br />
-              ИНН 470320212730 <br />
-            </FooterCredentials>
-            <FooterPayment>
-              <CloudPayments />
-              {/* <Robokassa /> */}
-              <Visa />
-              <Mastercard />
-            </FooterPayment>
-          </FooterCredentialsAndPayment>
-        </FooterWrapper>
-      </Container>
-    </FooterSection>
-  )
-}
-
-export default Footer

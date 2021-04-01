@@ -2,17 +2,14 @@ import React from "react"
 
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import styled from 'styled-components';
-import { Container } from '../components/style';
-import Header from "../components/Header";
-import { Link } from "gatsby";
-import ogImage from '../assets/images/seo/index-main.jpg';
-import ogImageVK from '../assets/images/seo/vk/index-main.jpg';
+import styled from "styled-components"
+import { Container } from "../components/style"
+import Header from "../components/global/header"
+import { Link } from "gatsby"
+import ogImage from "../assets/images/seo/index-main.jpg"
+import ogImageVK from "../assets/images/seo/vk/index-main.jpg"
 
-
-const NotFoundSection = styled.section`
-
-`
+const NotFoundSection = styled.section``
 
 const NotFoundWrapper = styled.div`
   background: white;
@@ -42,7 +39,6 @@ const NotFoundTitle = styled.div`
     line-height: 1.1;
     margin-bottom: 7vw;
   }
-
 `
 
 const NotFoundText = styled.div`
@@ -77,10 +73,9 @@ const NotFoundLinksWrapper = styled.div`
       }
     }
   }
-
 `
 
-const NotFoundLink = styled(props => <Link {...props}/>)`
+const NotFoundLink = styled(props => <Link {...props} />)`
   color: var(--granich-red);
   font-weight: 500;
   border-bottom: 1px solid var(--granich-red);
@@ -108,7 +103,7 @@ const NotFoundSymbol = styled.div`
   font-family: EB Garamond;
   font-style: italic;
   font-weight: 500;
-  color: #F2F2F2;
+  color: #f2f2f2;
   letter-spacing: -0.2vw;
   line-height: 0.7;
   user-select: none;
@@ -121,46 +116,54 @@ const NotFoundSymbol = styled.div`
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="Страница не найдена" ogImage={ogImage} ogImageVk={ogImageVK}/>
-    <Header type={'dark'}/>
+    <SEO title="Страница не найдена" ogImage={ogImage} ogImageVk={ogImageVK} />
+    <Header type={"dark"} />
     <div className="section-top-block"></div>
     <NotFoundSection>
       <Container>
         <NotFoundWrapper>
           <NotFoundTitle>
-          К сожалению, <br/>Такой страницы нет
+            К сожалению, <br />
+            Такой страницы нет
           </NotFoundTitle>
           <NotFoundText>
-            Зато у нас много других интересных страниц.<br/>
+            Зато у нас много других интересных страниц.
+            <br />
             Выберете самую интересную:
           </NotFoundText>
           <NotFoundLinksWrapper>
             <ul>
               <li>
-                <NotFoundLink to="/conscious-graphic-design-compilation">Осознанная подборка по графдизайну</NotFoundLink>
+                <NotFoundLink to="/conscious-graphic-design-compilation">
+                  Осознанная подборка по графдизайну
+                </NotFoundLink>
               </li>
               <li>
-                <NotFoundLink to="/conscious-freelance-compilation">Осознанная подборка по фрилансу</NotFoundLink>
+                <NotFoundLink to="/conscious-freelance-compilation">
+                  Осознанная подборка по фрилансу
+                </NotFoundLink>
               </li>
 
               <li>
-              <NotFoundLink to="/Poster-from-scratch-in-neo-geo-style">Графсистема Нео Гео. Пошаговая верстка макета.</NotFoundLink>
+                <NotFoundLink to="/Poster-from-scratch-in-neo-geo-style">
+                  Графсистема Нео Гео. Пошаговая верстка макета.
+                </NotFoundLink>
               </li>
               <li>
-              <NotFoundLink to="/Poster-from-scratch-in-techno-style">Графсистема Техно. Пошаговая верстка макета</NotFoundLink>
+                <NotFoundLink to="/Poster-from-scratch-in-techno-style">
+                  Графсистема Техно. Пошаговая верстка макета
+                </NotFoundLink>
               </li>
               <li>
-              <NotFoundLink to="/Poster-in-5-minutes">Как за 5 минут сделать плакат, чтобы клиент его утвердил</NotFoundLink>
+                <NotFoundLink to="/Poster-in-5-minutes">
+                  Как за 5 минут сделать плакат, чтобы клиент его утвердил
+                </NotFoundLink>
               </li>
-
             </ul>
-            
-
           </NotFoundLinksWrapper>
           <NotFoundSymbol>404</NotFoundSymbol>
         </NotFoundWrapper>
       </Container>
-
     </NotFoundSection>
   </Layout>
 )
