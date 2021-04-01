@@ -72,11 +72,11 @@ const Course = ({ courseData, openModal }) => {
   const arrowWhite = data.courseArrowWhite.childImageSharp.fluid
   const arrowBlack = data.courseArrowBlack.childImageSharp.fluid
 
-  if (
-    courseData.node.courseTitle === "Графические метафоры как путь в айдентику"
-  ) {
-    return null
-  }
+  // if (
+  //   courseData.node.courseTitle === "Графические метафоры как путь в айдентику"
+  // ) {
+  //   return null
+  // }
 
   return (
     <>
