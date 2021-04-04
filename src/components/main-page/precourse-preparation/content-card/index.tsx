@@ -9,7 +9,21 @@ import PodborkaContent from "./content-cards/Podborka"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import { useLocalQuery } from "./useLocalQuery"
 
-const PreparationContent = ({ content }) => {
+enum ContentTypes {
+  Youtube = "Youtube",
+  Behance = "Behance",
+  Pinterest = "Pinterest",
+  Medium = "Medium",
+  Mixed = "Youtube + Medium + Behance",
+  MixedPinterest = "Youtube + Pinterest",
+  Podborka = "Осознанная подборка",
+}
+
+type Props = {
+  content: any
+}
+
+const PreparationContent: React.FC<Props> = ({ content }) => {
   const [
     behanceIcon,
     pinterestIcon,
@@ -21,17 +35,8 @@ const PreparationContent = ({ content }) => {
     podborkaLinkIcon,
   ] = useLocalQuery()
 
-  enum ContentTypes {
-    Youtube = "Youtube",
-    Behance = "Behance",
-    Pinterest = "Pinterest",
-    Medium = "Medium",
-    Mixed = "Youtube + Medium + Behance",
-    MixedPinterest = "Youtube + Pinterest",
-    Podborka = "Осознанная подборка",
-  }
-
   const findContentExternalLink = contentType => {
+    console.log("I update")
     switch (contentType) {
       case ContentTypes.Pinterest:
         return content.contentLinkPinterest

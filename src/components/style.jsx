@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
-
+import styled from "styled-components"
+import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -42,19 +41,16 @@ export const GlobalStyle = createGlobalStyle`
     }
 
 
+    
+
+
 
 `
-
 
 export const Container = styled.div`
-    width: 75.5vw;
-    margin: 0 auto;
-    @media only screen and (max-width: 575px) {
-        width: 90vw;
-        
-      }
-
-
-
+  width: 75.5vw;
+  margin: 0 auto;
+  @media only screen and (max-width: 575px) {
+    width: 90vw;
+  }
 `
-

@@ -8,6 +8,8 @@
     "@brainhubeu/react-carousel": "^1.19.26",
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^14.1.1",
+    "@types/react": "^17.0.3",
+    "@types/react-helmet": "^6.1.0",
     "@types/styled-components": "^5.1.9",
     "babel-plugin-styled-components": "^1.10.7",
     "body-scroll-lock": "^3.1.3",

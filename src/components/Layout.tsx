@@ -4,8 +4,8 @@ import "normalize.css"
 import { GlobalStyle } from "./style"
 import "../styles/App.scss"
 import Footer from "./global/footer"
-import SideButtons from "./SideButtons"
-import Cookies from "./Cookies"
+import SideButtons from "./global/side-social-buttons"
+import Cookies from "./global/cookies"
 
 type Props = {
   children: React.ReactNode

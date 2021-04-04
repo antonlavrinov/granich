@@ -3,42 +3,47 @@ import React, { useState } from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import { graphql, PageProps } from "gatsby"
-import Offer from "../components/Offer"
-import Courses from "../components/Courses"
-import Mailing from "../components/Mailing"
+import Offer from "../components/main-page/offer"
+import Courses from "../components/main-page/courses"
+import Mailing from "../components/global/mailing"
 import Manifest from "../components/main-page/manifest"
 import Header from "../components/global/header"
 import PreCoursePreparation from "../components/main-page/precourse-preparation/content-list"
-import OurTeam from "../components/OurTeam"
-import ForGraduates from "../components/ForGraduates"
+import OurTeam from "../components/main-page/team"
+import BestGraduates from "../components/main-page/best-graduates"
+import {
+  IContentCard,
+  ICourseCard,
+  IIndexOffer,
+  ITeam,
+} from "../interfaces/main-page"
+
 // import ogImage from '../assets/images/seo/index.jpg';
 
 export const contentfulQuery = graphql`
   query contentfulQuery {
-    header: allContentfulGranichMainHeader {
-      edges {
-        node {
-          headerImage {
-            fluid(maxWidth: 2729) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          headerImageMobile {
-            fluid(maxWidth: 575) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          headerSubtitleImage {
-            fluid(maxWidth: 50) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          headerSubtitle_01
-          headerSubtitle_02
-          headerSubtitle_03
-          headerTitle
+    offer: contentfulGranichMainHeader(
+      headerTitle: { eq: "Онлайн-школа Granich" }
+    ) {
+      headerImage {
+        fluid(maxWidth: 2729) {
+          ...GatsbyContentfulFluid_withWebp
         }
       }
+      headerImageMobile {
+        fluid(maxWidth: 575) {
+          ...GatsbyContentfulFluid_withWebp
+        }
+      }
+      headerSubtitleImage {
+        fluid(maxWidth: 50) {
+          ...GatsbyContentfulFluid_withWebp
+        }
+      }
+      headerSubtitle_01
+      headerSubtitle_02
+      headerSubtitle_03
+      headerTitle
     }
     courseCards: allContentfulGranichCourse(
       sort: { fields: [courseOrderNumber], order: ASC }
@@ -156,22 +161,32 @@ export const contentfulQuery = graphql`
   }
 `
 
-//header or offer seems to be a problem
-
 type GraphQlResults = {
-  header: any
-  courseCards: any
-  contentCardsNew: any
-  contentCardsRecommended: any
-  team: any
+  offer: IIndexOffer
+  courseCards: {
+    edges: {
+      node: ICourseCard
+    }
+  }
+  contentCardsNew: {
+    nodes: IContentCard
+  }
+  contentCardsRecommended: {
+    nodes: IContentCard
+  }
+  team: {
+    edges: {
+      node: ITeam
+    }
+  }
 }
 
 const IndexPage: React.FC<PageProps<GraphQlResults>> = ({ data }) => {
-  const [mailingActive, setMailingActive] = useState(true)
+  // const [mailingActive, setMailingActive] = useState<boolean>(true)
 
-  const toggleMailingActive = boolean => {
-    setMailingActive(boolean)
-  }
+  // const toggleMailingActive = (bool: boolean): void => {
+  //   setMailingActive(bool)
+  // }
   return (
     <Layout>
       <Header type={"light"} />
@@ -191,20 +206,21 @@ const IndexPage: React.FC<PageProps<GraphQlResults>> = ({ data }) => {
         ]}
         url="https://granich.design/"
       />
-      <Offer data={data.header} />
+      <Offer data={data.offer} />
       <Courses
         data={data.courseCards}
-        toggleMailingActive={toggleMailingActive}
+        // toggleMailingActive={toggleMailingActive}
       />
 
       <Manifest />
-      {mailingActive && <Mailing />}
+      {/* {mailingActive && <Mailing />} */}
+      <Mailing />
       <div style={{ height: "0.2vw", marginTop: "0.5vw" }} id="content"></div>
       <PreCoursePreparation
         dataRecommended={data.contentCardsRecommended.nodes}
         dataNew={data.contentCardsNew.nodes}
       />
-      <ForGraduates />
+      <BestGraduates />
       <OurTeam data={data.team} />
     </Layout>
   )

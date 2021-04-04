@@ -1,93 +1,97 @@
-const path = require('path');
-const {createFilePath} = require('gatsby-source-filesystem');
+const path = require("path")
+// const { createFilePath } = require("gatsby-source-filesystem")
 
-exports.createPages = ({graphql, actions}) => {
-    const {createPage} = actions;
-    const contentContent = path.resolve('./src/templates/content-post.jsx');
-    const osoznannayaPodborkaPage = path.resolve('./src/templates/podborka.jsx');
-    return graphql(`
-        {
-            content: allContentfulGranichMainContentCard(filter: {contentType: {in: ["Youtube", "Youtube + Medium + Behance", "Youtube + Pinterest"]}}) {
-                edges {
-                    node {
-                        contentSlug
-                        contentYoutubeVideoLink
-                        contentBanner
-                    }
-                }
-            }
-            podborkaPage: allContentfulGranichMainContentCard(filter: {contentType: {in: ["Осознанная подборка"]}}) {
-              edges {
-                  node {
-                      contentSlug
-                      contentBanner
-                  }
-              }
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+  const contentContent = path.resolve("./src/templates/content-post.tsx")
+  // const osoznannayaPodborkaPage = path.resolve("./src/templates/podborka")
+  return graphql(`
+    {
+      content: allContentfulGranichMainContentCard(
+        filter: {
+          contentType: {
+            in: ["Youtube", "Youtube + Medium + Behance", "Youtube + Pinterest"]
           }
         }
-
-    `).then(result => {
-        if(result.errors) {
-            throw result.errors
+      ) {
+        edges {
+          node {
+            contentSlug
+            contentYoutubeVideoLink
+            contentBanner
+          }
         }
-        const contents = result.data.content.edges;
-        const podborkas = result.data.podborkaPage.edges;
-        contents.forEach((content) => {
-            createPage({
-                path: content.node.contentSlug,
-                component: contentContent,
-                context: {
-                    slug: content.node.contentSlug,
-                    banner: content.node.contentBanner
-                }
-            })
-        })
-        podborkas.forEach((podborka) => {
-          createPage({
-              path: podborka.node.contentSlug,
-              component: osoznannayaPodborkaPage,
-              context: {
-                  slug: podborka.node.contentSlug,
-                  banner: podborka.node.contentBanner
-              }
-          })
-      })
-    })
-}
-
-
-
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-    if (stage.startsWith("develop")) {
-      actions.setWebpackConfig({
-        resolve: {
-          alias: {
-            "react-dom": "@hot-loader/react-dom",
-          },
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+    const contents = result.data.content.edges
+    // const podborkas = result.data.podborkaPage.edges
+    contents.forEach(content => {
+      createPage({
+        path: content.node.contentSlug,
+        component: contentContent,
+        context: {
+          slug: content.node.contentSlug,
+          banner: content.node.contentBanner,
         },
       })
-    }
+    })
+    // podborkas.forEach(podborka => {
+    //   createPage({
+    //     path: podborka.node.contentSlug,
+    //     component: osoznannayaPodborkaPage,
+    //     context: {
+    //       slug: podborka.node.contentSlug,
+    //       banner: podborka.node.contentBanner,
+    //     },
+    //   })
+    // })
+  })
+}
 
-    //to remove error when opening lessons in freelance page (react spring error with webpack bundling) 
-    if (stage.startsWith("build-javascript")) {
-      actions.setWebpackConfig({
-        module: {
-          rules: [
-            {
-              test: /react-spring/,
-              sideEffects: true
-            }
-          ]
-        }
-      })
-    }
+// podborkaPage: allContentfulGranichMainContentCard(
+//   filter: { contentType: { in: ["Осознанная подборка"] } }
+// ) {
+//   edges {
+//     node {
+//       contentSlug
+//       contentBanner
+//     }
+//   }
+// }
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage.startsWith("develop")) {
+    actions.setWebpackConfig({
+      resolve: {
+        alias: {
+          "react-dom": "@hot-loader/react-dom",
+        },
+      },
+    })
   }
 
-
+  //to remove error when opening lessons in freelance page (react spring error with webpack bundling)
+  if (stage.startsWith("build-javascript")) {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /react-spring/,
+            sideEffects: true,
+          },
+        ],
+      },
+    })
+  }
+}
 
 exports.createSchemaCustomization = ({ actions }) => {
-    const { createTypes } = actions
-    const typeDefs = `
+  const { createTypes } = actions
+  const typeDefs = `
 
 
       type ContentfulGranichMainTeachers implements Node {
@@ -213,6 +217,5 @@ exports.createSchemaCustomization = ({ actions }) => {
 
 
     `
-    createTypes(typeDefs)
-  }
-
+  createTypes(typeDefs)
+}
