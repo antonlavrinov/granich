@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header> component with Dark mode should render correctly 1`] = `
+<Header
+  scrollTo={[MockFunction]}
+  type="dark"
+/>
+`;
+
+exports[`<Header> component with Light mode should render correctly 1`] = `
+<styled.header
+  id="header"
+>
+  <styled.div>
+    <styled.div>
+      <styled.a
+        href="/"
+        theme="light"
+      >
+        <Styled(Component) />
+      </styled.a>
+      <styled.div>
+        <styled.a
+          href="/"
+          theme="light"
+        >
+          <Styled(Component) />
+        </styled.a>
+        <styled.a
+          href="https://school.granich.design/cms/system/login"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <test-file-stub />
+          Войти
+        </styled.a>
+      </styled.div>
+      <styled.nav>
+        <ul>
+          <li>
+            <styled.a
+              onClick={[Function]}
+              tabIndex={0}
+              theme="light"
+            >
+              Курсы
+              <Styled(Component) />
+            </styled.a>
+          </li>
+          <li>
+            <styled.a
+              onClick={[Function]}
+              tabIndex={0}
+              theme="light"
+            >
+              Контент
+              <Styled(Component) />
+            </styled.a>
+          </li>
+          <li>
+            <styled.a
+              href="/blog"
+              rel="noopener noreferrer"
+              target="_blank"
+              theme="light"
+            >
+              Блог
+              <Styled(Component) />
+            </styled.a>
+          </li>
+        </ul>
+      </styled.nav>
+      <styled.a
+        href="https://school.granich.design/cms/system/login"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <test-file-stub />
+        Войти
+      </styled.a>
+    </styled.div>
+  </styled.div>
+</styled.header>
+`;

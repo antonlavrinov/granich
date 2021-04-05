@@ -1,14 +1,17 @@
 import React from "react"
 import { Container } from "../../style"
 import LoginButtonIcon from "../../../assets/svgs/login-button-icon.svg"
-import scrollTo from "gatsby-plugin-smoothscroll"
 import * as SC from "./Header"
 
 type HeaderProps = {
   type: "dark" | "light"
+  scrollTo?: (
+    selector: string,
+    blockPosition?: "start" | "center" | "end" | "nearest"
+  ) => boolean
 }
 
-const Header: React.FC<HeaderProps> = ({ type }) => (
+const Header: React.FC<HeaderProps> = ({ type, scrollTo = () => {} }) => (
   <SC.StyledHeader id="header">
     <Container>
       <SC.Wrapper>
@@ -52,6 +55,7 @@ const Header: React.FC<HeaderProps> = ({ type }) => (
                 <SC.NavLink to="/#content" theme={type}>
                   Контент
                   <SC.ArrowLinkBack />
+                  {/* <SC.ArrowLinkBack /> */}
                 </SC.NavLink>
               ) : (
                 <SC.NavLinkExternal

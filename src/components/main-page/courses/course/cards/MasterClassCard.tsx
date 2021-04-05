@@ -1,21 +1,15 @@
 import React from "react"
 import * as SC from "../Course"
 
-const MasterCard = ({
-  courseData,
-  empty,
-  calendar,
-  arrowWhite,
-  arrowBlack,
-}) => {
+const MasterCard = ({ courseData, icons }) => {
   return (
     <SC.Wrapper>
       <SC.Container>
-        <SC.TagList empty={empty}>
+        <SC.TagList empty={courseData.courseTypeEmpty}>
           <>
-            {courseData.node.courseTags.map((courseTag, idx) => {
+            {courseData.courseTags.map((courseTag, idx) => {
               return (
-                <SC.Tag key={idx} active={courseData.node.courseStatus}>
+                <SC.Tag key={idx} active={courseData.courseStatus}>
                   {courseTag}
                 </SC.Tag>
               )
@@ -25,17 +19,20 @@ const MasterCard = ({
 
         <SC.ImageWrapper>
           <SC.Image
-            active={courseData.node.courseStatus}
-            empty={empty}
-            fluid={courseData.node.coursePreviewImage.fluid}
+            active={courseData.courseStatus}
+            empty={courseData.courseTypeEmpty}
+            fluid={courseData.coursePreviewImage.fluid}
           ></SC.Image>
-          <SC.MainTag active={courseData.node.courseStatus} empty={empty}>
+          <SC.MainTag
+            active={courseData.courseStatus}
+            empty={courseData.courseTypeEmpty}
+          >
             Мастер-класс
           </SC.MainTag>
           <SC.Teachers>
-            {courseData.node.courseTeachers.length > 1 ? (
+            {courseData.courseTeachers.length > 1 ? (
               <>
-                {courseData.node.courseTeachers.map((teacher, idx) => {
+                {courseData.courseTeachers.map((teacher, idx) => {
                   return (
                     <SC.Teacher
                       several={true}
@@ -46,40 +43,43 @@ const MasterCard = ({
                 })}
               </>
             ) : (
-              <SC.Teacher fluid={courseData.node.courseTeachers[0].fluid} />
+              <SC.Teacher fluid={courseData.courseTeachers[0].fluid} />
             )}
           </SC.Teachers>
         </SC.ImageWrapper>
 
-        <SC.Title active={courseData.node.courseStatus}>
-          {courseData.node.courseTitle}
+        <SC.Title active={courseData.courseStatus}>
+          {courseData.courseTitle}
         </SC.Title>
-        <SC.Descr active={courseData.node.courseStatus}>
-          {courseData.node.courseDescr}
+        <SC.Descr active={courseData.courseStatus}>
+          {courseData.courseDescr}
         </SC.Descr>
       </SC.Container>
-      <SC.Button empty={empty ? 1 : 0} active={courseData.node.courseStatus}>
+      <SC.Button
+        empty={courseData.courseTypeEmpty ? 1 : 0}
+        active={courseData.courseStatus}
+      >
         <SC.ButtonContainer>
           <SC.ButtonWrapper>
-            {empty ? (
+            {courseData.courseTypeEmpty ? (
               <>
                 <SC.ButtonText empty>
                   Узнать <br />
                   об открытии
                 </SC.ButtonText>
-                <SC.ArrowIcon fluid={calendar} />
+                <SC.ArrowIcon fluid={icons.calendar} />
               </>
             ) : (
               <>
-                {courseData.node.courseStatus ? (
+                {courseData.courseStatus ? (
                   <>
                     <SC.ButtonText>Купить</SC.ButtonText>
-                    <SC.ArrowIcon fluid={arrowWhite} />
+                    <SC.ArrowIcon fluid={icons.arrowWhite} />
                   </>
                 ) : (
                   <>
                     <SC.ButtonText>Предзаказ</SC.ButtonText>
-                    <SC.ArrowIcon fluid={arrowBlack} />
+                    <SC.ArrowIcon fluid={icons.arrowBlack} />
                   </>
                 )}
               </>

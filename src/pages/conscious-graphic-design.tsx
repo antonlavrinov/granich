@@ -11,6 +11,7 @@ import CourseFeatures from "../components/course-page/CourseFeatures"
 import CourseReviews from "../components/course-page/CourseReviews"
 import CourseParticipation from "../components/course-page/CourseParticipation"
 import { graphql, PageProps } from "gatsby"
+import scrollTo from "gatsby-plugin-smoothscroll"
 import CourseAnswers from "../components/course-page/CourseAnswers"
 import Mailing from "../components/global/mailing"
 import CourseExplain from "../components/course-page/CourseExplain"
@@ -373,7 +374,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <CoursePaymentChoices
         paymentsAvailable={{ credit: true, corporate: true, abroad: true }}
       />
-      <MasterClasses data={data.courseCards} />
+      <MasterClasses data={data.courseCards.edges} />
       {!data.offer.courseStatus && <Mailing />}
       <CourseIndividualSupport />
       <CourseBanner />

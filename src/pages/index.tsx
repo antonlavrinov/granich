@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import { graphql, PageProps } from "gatsby"
+import scrollTo from "gatsby-plugin-smoothscroll"
 import Offer from "../components/main-page/offer"
 import Courses from "../components/main-page/courses"
 import Mailing from "../components/global/mailing"
@@ -189,7 +190,7 @@ const IndexPage: React.FC<PageProps<GraphQlResults>> = ({ data }) => {
   // }
   return (
     <Layout>
-      <Header type={"light"} />
+      <Header type={"light"} scrollTo={scrollTo} />
       <SEO
         title="Онлайн-школа Granich"
         description="Делаем из любви, а не страха. Курсы с осознанным подходом. Выточенно. Интенсивно. С дедлайнами."
@@ -206,9 +207,9 @@ const IndexPage: React.FC<PageProps<GraphQlResults>> = ({ data }) => {
         ]}
         url="https://granich.design/"
       />
-      <Offer data={data.offer} />
+      <Offer data={data.offer} scrollTo={scrollTo} />
       <Courses
-        data={data.courseCards}
+        data={data.courseCards.edges}
         // toggleMailingActive={toggleMailingActive}
       />
 

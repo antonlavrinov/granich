@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CourseBanner> component should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <Styled(Component)
+        fluid="imageString"
+        style={
+          Object {
+            "position": "absolute",
+          }
+        }
+      />
+      <styled.div>
+        <styled.div>
+          <styled.div>
+            <styled.div>
+              Осознанная подборка по Графдизайну
+            </styled.div>
+          </styled.div>
+          <styled.div>
+            Это специальная подборка материалов для старта в графическом дизайне. Её необязательно изучать, чтобы пройти курс. Но если у вас есть время, то рекомендую. Это повысит качество вашего обучения на курсе.
+          </styled.div>
+        </styled.div>
+        <styled.div>
+          <styled.a
+            href="https://granich.design/conscious-graphic-design-compilation"
+            target="_blank"
+          >
+            Изучить
+            <test-file-stub />
+          </styled.a>
+        </styled.div>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

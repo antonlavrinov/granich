@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Manifest> component should render correctly 1`] = `
+<styled.section
+  id="manifest"
+>
+  <styled.div>
+    <styled.div>
+      <styled.h2>
+        Делаем из любви, а не страха
+      </styled.h2>
+      <styled.div>
+        <styled.div>
+          <Styled(Component)
+            fluid="imageUrl"
+            style={
+              Object {
+                "backgroundSize": "cover",
+              }
+            }
+          />
+          <styled.div>
+            <styled.div>
+              Вадим Гранич
+            </styled.div>
+            <styled.div>
+              Создатель школы, 
+              <br />
+              автор курсов
+            </styled.div>
+          </styled.div>
+        </styled.div>
+        <styled.div>
+          <styled.p>
+            Сюда приходят, чтобы с любовью развивать в себе твердые навыки, а не из страха срочно понахвататься каких-то знаний. Поэтому, создавая курсы, я придерживаюсь трех принципов:
+          </styled.p>
+          <styled.div>
+            <ManifestRule
+              number={1}
+              text="Вся информация на курсах очищена от лишнего, грамотно подана и структурирована"
+              title="Выточено —"
+            />
+            <ManifestRule
+              number={2}
+              text="Курсы занимают много времени, акцент на практику (смотрите фильм Одержимость)"
+              title="Интенсивно —"
+            />
+            <ManifestRule
+              number={3}
+              text="Не получится просто взять курс и забыть о нем. Дедлайны будут постоянно вас толкать вперед"
+              title="С дедлайнами —"
+            />
+          </styled.div>
+        </styled.div>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.section>
+`;
+
+exports[`<ManifestRule> component should render correctly 1`] = `
+<styled.div>
+  <styled.span>
+    title
+  </styled.span>
+  text
+  <styled.div>
+    3
+  </styled.div>
+</styled.div>
+`;

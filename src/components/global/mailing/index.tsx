@@ -3,7 +3,7 @@ import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import { Formik } from "formik"
 import * as Yup from "yup"
 import posed from "react-pose"
-import { graphql, useStaticQuery } from "gatsby"
+// import { graphql, useStaticQuery } from "gatsby"
 import * as SC from "./Mailing"
 import { Container } from "../../style"
 
@@ -21,7 +21,7 @@ const ShakeForm = posed.div({
   },
 })
 
-const Mailing = () => {
+const Mailing: React.FC = () => {
   const [shakeTrigger, setShakeTrigger] = useState(3)
 
   const formEl = useRef<HTMLFormElement>(null)
@@ -48,7 +48,7 @@ const Mailing = () => {
         "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
         statUrl +
         "'/>"
-      console.log("ELEM", document.getElementById("gccounterImgContainer"))
+      // console.log("ELEM", document.getElementById("gccounterImgContainer"))
     }
 
     firstGetcourseFormScript()
@@ -61,19 +61,19 @@ const Mailing = () => {
     return props.validationSchema.isValidSync(props.initialValues)
   }
 
-  const data = useStaticQuery(graphql`
-    query mailingIcon {
-      arrowBlackRight: file(relativePath: { eq: "arrow-black-right-01.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 120) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query mailingIcon {
+  //     arrowBlackRight: file(relativePath: { eq: "arrow-black-right-01.png" }) {
+  //       childImageSharp {
+  //         fluid(maxWidth: 120) {
+  //           ...GatsbyImageSharpFluid
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
-  const arrowRight = data.arrowBlackRight.childImageSharp.fluid
+  // const arrowRight = data.arrowBlackRight.childImageSharp.fluid
 
   return (
     <SC.Section>
@@ -94,7 +94,7 @@ const Mailing = () => {
                     email: "",
                   },
                 }}
-                onSubmit={(values, { setSubmitting }, e) => {
+                onSubmit={() => {
                   formEl.current.submit()
                   trackCustomEvent({
                     category: "Подписка на рассылку",
@@ -144,8 +144,9 @@ const Mailing = () => {
                       <input type="hidden" name="formParams[setted_offer_id]" />
                       <SC.WrapperInputAndButton>
                         <SC.Input
+                          id="formParams[email]"
                           type="text"
-                          maxLength="60"
+                          maxLength={60}
                           placeholder={
                             errors.formParams &&
                             errors.formParams.email &&
@@ -162,8 +163,8 @@ const Mailing = () => {
                             errors.formParams.email &&
                             touched.formParams &&
                             touched.formParams.email
-                              ? 1
-                              : 0
+                              ? true
+                              : false
                           }
                         />
                         <SC.Button
@@ -182,7 +183,7 @@ const Mailing = () => {
                           }}
                           disabled={isSubmitting}
                         >
-                          <SC.ArrowRightButton fluid={arrowRight} />
+                          <SC.SubmitButton />
                         </SC.Button>
                       </SC.WrapperInputAndButton>
                       <SC.FormPolitikaLabel>

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CourseList> component should render correctly 1`] = `
+<Fragment>
+  <Modal
+    center={true}
+    classNames={
+      Object {
+        "modal": "mailingModal",
+        "overlay": "mailingOverlay",
+      }
+    }
+    closeIcon={<div />}
+    focusTrapped={false}
+    onClose={[Function]}
+    open={false}
+  >
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "position": "relative",
+        }
+      }
+    >
+      <styled.div
+        onClick={[Function]}
+      >
+        <test-file-stub />
+      </styled.div>
+      <Mailing />
+    </div>
+  </Modal>
+  <styled.div>
+    <Course
+      key="0"
+      openModal={[Function]}
+    />
+    <Course
+      key="0"
+      openModal={[Function]}
+    />
+    <Course
+      key="0"
+      openModal={[Function]}
+    />
+  </styled.div>
+</Fragment>
+`;

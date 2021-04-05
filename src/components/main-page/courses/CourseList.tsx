@@ -35,12 +35,12 @@ const CourseList: React.FC<Props> = ({ data }) => {
         </div>
       </Modal>
       <SC.Wrapper>
-        {data.edges.map(course => {
+        {data.map(course => {
           return (
             <Course
               openModal={openModal}
-              key={course.node.id}
-              courseData={course}
+              key={course.id}
+              courseData={course.node}
             />
           )
         })}

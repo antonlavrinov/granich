@@ -1,9 +1,17 @@
 import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
+import ArrowIcon from "../../../assets/svgs/arrow-black-right.svg"
 
-export const ArrowRightButton = styled(props => <Img {...props} />)`
+type InputProps = {
+  errorStyle?: boolean
+}
+
+export const SubmitButton = styled(props => <ArrowIcon {...props} />)`
   width: 3.6vw;
+  min-width: 3.6vw;
+  height: 3.6vw;
+  min-height: 3.6vw;
   transition: all 0.2s ease;
   :hover {
     transform: scale(1.1);
@@ -11,6 +19,9 @@ export const ArrowRightButton = styled(props => <Img {...props} />)`
 
   @media only screen and (max-width: 575px) {
     width: 11.5vw;
+    min-width: 11.5vw;
+    height: 11.5vw;
+    min-height: 11.5vw;
   }
 `
 
@@ -72,7 +83,7 @@ export const Form = styled.form`
   flex-direction: column;
 `
 
-export const Input = styled.input`
+export const Input = styled.input<InputProps>`
   height: 3.2vw;
   border: none;
   border-radius: 0.6vw;

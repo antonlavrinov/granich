@@ -60,8 +60,20 @@
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^16.13.0",
+    "@types/jest": "^26.0.22",
+    "@types/react-test-renderer": "^17.0.1",
+    "babel-jest": "^26.6.3",
+    "babel-preset-gatsby": "^1.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.1",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.12",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
     "prettier": "2.0.5",
+    "raf": "^3.4.1",
+    "react-addons-shallow-compare": "^15.6.3",
+    "react-test-renderer": "^17.0.2",
     "sass": "^1.32.8"
   },
   "keywords": [
@@ -75,7 +87,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

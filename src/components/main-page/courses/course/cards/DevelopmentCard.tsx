@@ -1,7 +1,7 @@
 import React from "react"
 import * as SC from "../Course"
 
-const DevelopmentCard = () => {
+const DevelopmentCard: React.FC = () => {
   return (
     <SC.DevelopingWrapper development>
       <SC.Container>

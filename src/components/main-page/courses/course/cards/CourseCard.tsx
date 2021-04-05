@@ -1,26 +1,23 @@
 import React from "react"
 import * as SC from "../Course"
 
-const CourseCard = ({
-  courseData,
-  empty,
-  calendar,
-  arrowWhite,
-  arrowBlack,
-}) => {
+type Props = {
+  courseData: any
+  icons: any
+}
+
+const CourseCard: React.FC<Props> = ({ courseData, icons }) => {
   const mainTagMentorType =
-    courseData.node.courseTitle === "Осознанный Фриланс"
-      ? "-наставничество"
-      : ""
+    courseData.courseTitle === "Осознанный Фриланс" ? "-наставничество" : ""
 
   return (
     <SC.Wrapper>
       <SC.Container>
-        <SC.TagList empty={empty}>
+        <SC.TagList empty={courseData.courseTypeEmpty}>
           <>
-            {courseData.node.courseTags.map((courseTag, idx) => {
+            {courseData.courseTags.map((courseTag, idx) => {
               return (
-                <SC.Tag key={idx} active={courseData.node.courseStatus}>
+                <SC.Tag key={idx} active={courseData.courseStatus}>
                   {courseTag}
                 </SC.Tag>
               )
@@ -30,17 +27,20 @@ const CourseCard = ({
 
         <SC.ImageWrapper>
           <SC.Image
-            empty={empty}
-            active={courseData.node.courseStatus}
-            fluid={courseData.node.coursePreviewImage.fluid}
+            empty={courseData.courseTypeEmpty}
+            active={courseData.courseStatus}
+            fluid={courseData.coursePreviewImage.fluid}
           ></SC.Image>
-          <SC.MainTag empty={empty} active={courseData.node.courseStatus}>
+          <SC.MainTag
+            empty={courseData.courseTypeEmpty}
+            active={courseData.courseStatus}
+          >
             Курс{mainTagMentorType}
           </SC.MainTag>
           <SC.Teachers>
-            {courseData.node.courseTeachers.length > 1 ? (
+            {courseData.courseTeachers.length > 1 ? (
               <>
-                {courseData.node.courseTeachers.map((teacher, idx) => {
+                {courseData.courseTeachers.map((teacher, idx) => {
                   return (
                     <SC.Teacher
                       several={true}
@@ -51,50 +51,53 @@ const CourseCard = ({
                 })}
               </>
             ) : (
-              <SC.Teacher fluid={courseData.node.courseTeachers[0].fluid} />
+              <SC.Teacher fluid={courseData.courseTeachers[0].fluid} />
             )}
           </SC.Teachers>
         </SC.ImageWrapper>
-        <SC.Title active={courseData.node.courseStatus}>
-          {courseData.node.courseTitle}
+        <SC.Title active={courseData.courseStatus}>
+          {courseData.courseTitle}
         </SC.Title>
-        <SC.Info active={courseData.node.courseStatus}>
-          {courseData.node.courseStart && (
-            <SC.Start active={courseData.node.courseStatus}>
-              Стартуем <br /> <span>{courseData.node.courseStart}</span>
+        <SC.Info active={courseData.courseStatus}>
+          {courseData.courseStart && (
+            <SC.Start active={courseData.courseStatus}>
+              Стартуем <br /> <span>{courseData.courseStart}</span>
             </SC.Start>
           )}
-          {courseData.node.courseDuration && (
-            <SC.Duration active={courseData.node.courseStatus}>
-              Учимся <br /> <span>{courseData.node.courseDuration}</span>
+          {courseData.courseDuration && (
+            <SC.Duration active={courseData.courseStatus}>
+              Учимся <br /> <span>{courseData.courseDuration}</span>
             </SC.Duration>
           )}
         </SC.Info>
       </SC.Container>
-      <SC.Button empty={empty ? 1 : 0} active={courseData.node.courseStatus}>
+      <SC.Button
+        empty={courseData.courseTypeEmpty ? 1 : 0}
+        active={courseData.courseStatus}
+      >
         <SC.ButtonContainer>
           <SC.ButtonWrapper>
-            {empty ? (
+            {courseData.courseTypeEmpty ? (
               <>
                 <SC.ButtonText empty>
                   Узнать <br />
                   об открытии
                 </SC.ButtonText>
-                <SC.ArrowIcon fluid={calendar} />
+                <SC.ArrowIcon fluid={icons.calendar} />
               </>
             ) : (
               <>
-                {courseData.node.courseStatus ? (
+                {courseData.courseStatus ? (
                   <>
                     <SC.ButtonText>Участвовать</SC.ButtonText>
-                    <SC.ArrowIcon fluid={arrowWhite} />
+                    <SC.ArrowIcon fluid={icons.arrowWhite} />
                   </>
                 ) : (
                   <>
                     <SC.ButtonText>
                       Узнать <br />о наборе
                     </SC.ButtonText>
-                    <SC.ArrowIcon fluid={arrowBlack} />
+                    <SC.ArrowIcon fluid={icons.arrowBlack} />
                   </>
                 )}
               </>

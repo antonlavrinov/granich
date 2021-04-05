@@ -1,7 +1,13 @@
 export interface IIndexOffer {
-  headerImage: any
-  headerImageMobile: any
-  headerSubtitleImage: any
+  headerImage: {
+    fluid: any
+  }
+  headerImageMobile: {
+    fluid: any
+  }
+  headerSubtitleImage: {
+    fluid: any
+  }
   headerSubtitle_01: string
   headerSubtitle_02: string
   headerSubtitle_03: string

@@ -1,14 +1,17 @@
 import React from "react"
 import { Container } from "../../style"
-import scrollTo from "gatsby-plugin-smoothscroll"
 import * as SC from "./Offer"
 import { IIndexOffer } from "../../../interfaces/main-page"
 
 type Props = {
   data: IIndexOffer
+  scrollTo: (
+    selector: string,
+    blockPosition?: "start" | "center" | "end" | "nearest"
+  ) => boolean
 }
 
-const Offer: React.FC<Props> = ({ data }) => {
+const Offer: React.FC<Props> = ({ data, scrollTo }) => {
   const headerImage = data.headerImage.fluid
   const headerImageMobile = data.headerImageMobile.fluid
   const headerSubtitleImage = data.headerSubtitleImage.fluid
