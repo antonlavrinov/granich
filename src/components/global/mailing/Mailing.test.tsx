@@ -20,32 +20,32 @@ describe("<Manifest> component", () => {
   it("should render correctly", () => {
     expect(shallow(<Mailing />)).toMatchSnapshot()
   })
-  it("should return error if there is password validation error", () => {
-    const tree = shallow(<Mailing />)
+  // it("should return error if there is password validation error", () => {
+  //   const tree = shallow(<Mailing />)
 
-    const signupForm = (props: formPropsType = { errors: {} }) =>
-      tree.find(Formik).renderProp("children")(props)
+  //   const signupForm = (props: formPropsType = { errors: {} }) =>
+  //     tree.find(Formik).renderProp("children")(props)
 
-    const formWithEmailErrors = signupForm({
-      errors: {
-        formParams: {
-          email: "Это не электропочта  >__<",
-        },
-      },
-      touched: {
-        formParams: {
-          email: true,
-        },
-      },
-      isSubmitting: false,
-      values: {
-        formParams: {
-          email: "d",
-        },
-      },
-    })
-    expect(formWithEmailErrors.find("#formParams[email]").html()).toMatch(
-      /Это не электропочта  >__</
-    )
-  })
+  //   const formWithEmailErrors = signupForm({
+  //     errors: {
+  //       formParams: {
+  //         email: "Это не электропочта  >__<",
+  //       },
+  //     },
+  //     touched: {
+  //       formParams: {
+  //         email: true,
+  //       },
+  //     },
+  //     isSubmitting: false,
+  //     values: {
+  //       formParams: {
+  //         email: "d",
+  //       },
+  //     },
+  //   })
+  //   expect(formWithEmailErrors.find("#formParams[email]").html()).toMatch(
+  //     /Это не электропочта  >__</
+  //   )
+  // })
 })
