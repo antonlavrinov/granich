@@ -100,7 +100,7 @@ export const NavLink = styled(props => <Link {...props} />)`
   }
 
   ${props =>
-    props.theme &&
+    props.theme === "dark" &&
     `
   color: var(--granich-black);
   :hover {
@@ -119,7 +119,7 @@ export const NavLink = styled(props => <Link {...props} />)`
       border-bottom: solid 0.5vw white;
     }
     ${props =>
-      props.theme &&
+      props.theme === "dark" &&
       `
     :hover {
       border-bottom: solid 0.5vw var(--granich-black);
@@ -264,7 +264,7 @@ export const LogoMobileWrapper = styled.a<ITheme>`
     fill: white;
     height: auto;
     ${props =>
-      props.theme &&
+      props.theme === "dark" &&
       `
       fill: var(--granich-black);
       

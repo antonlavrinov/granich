@@ -17,34 +17,59 @@ export interface IIndexOffer {
 export interface ICourseCard {
   id: string
   courseStatus: boolean
-  courseStart: string
+  courseStart?: string
   courseDescr: string
-  courseDuration: string
-  coursePreviewImage: any
+  courseDuration?: string
+  coursePreviewImage: {
+    fluid: any
+  }
   courseTags: string[]
-  courseTeachers: any
+  courseTeachers: any[]
   courseTitle: string
+  courseMainTitle: {
+    json: any
+  }
+  courseStream?: string
   courseType: string
   courseSlug: string
   courseTypeDevelopment: boolean
   courseTypeEmpty: boolean
+  courseStartAndEnd?: string
+  courseMainImage: {
+    fluid: any
+  }
+  coursePostersCollection?: any[]
+  coursePrice?: string
+  coursePolicy?: {
+    json: any
+  }
+  courseBannerSubtext?: string
+  courseBannerImage: {
+    fluid: any
+  }
 }
 
 export interface IContentCard {
   contentDescription: {
     json: any
   }
-  contentTags: null | string[]
+  contentTags: string[]
   contentTitle: string
-  contentImage: any
+  contentImage: {
+    fluid: any
+  }
   contentType: string
   contentSlug: string
-  contentPDF: any
-  contentYoutubeVideoLink: string
-  contentYoutubeTiming: string
-  contentLinkPinterest: string
-  contentLinkBehance: string
-  contentLinkMedium: string
+  contentPDF?: any
+  contentAiFileLink?: string
+  contentZIPLink?: string
+  contentYoutubeVideoLink?: string
+  contentYoutubeTiming?: string
+  contentLinkPinterest?: string
+  contentLinkBehance?: string
+  contentLinkMedium?: string
+  contentBannerSwitch?: boolean
+  contentBanner?: string
 }
 
 export interface ITeam {

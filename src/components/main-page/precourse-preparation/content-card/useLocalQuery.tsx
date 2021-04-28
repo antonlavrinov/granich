@@ -70,23 +70,16 @@ export const useLocalQuery = () => {
     }
   `)
 
-  const behanceIcon = data.behanceContentIcon.childImageSharp.fluid
-  const pinterestIcon = data.pinterestContentIcon.childImageSharp.fluid
-  const pinterestLinkIcon = data.pinterestLinkContentIcon.childImageSharp.fluid
-  const behanceLinkIcon = data.behanceLinkContentIcon.childImageSharp.fluid
-  const mediumIcon = data.contentMediumPng.childImageSharp.fluid
-  const mediumLinkIcon = data.mediumLinkContentIcon.childImageSharp.fluid
-  const youtubePng = data.contentYoutubePng.childImageSharp.fluid
-  const podborkaLinkIcon = data.podborkaLinkContentIcon.childImageSharp.fluid
+  const icons = {
+    behanceIcon: data.behanceContentIcon.childImageSharp.fluid,
+    pinterestIcon: data.pinterestContentIcon.childImageSharp.fluid,
+    pinterestLinkIcon: data.pinterestLinkContentIcon.childImageSharp.fluid,
+    behanceLinkIcon: data.behanceLinkContentIcon.childImageSharp.fluid,
+    mediumIcon: data.contentMediumPng.childImageSharp.fluid,
+    mediumLinkIcon: data.mediumLinkContentIcon.childImageSharp.fluid,
+    youtubePng: data.contentYoutubePng.childImageSharp.fluid,
+    podborkaLinkIcon: data.podborkaLinkContentIcon.childImageSharp.fluid,
+  }
 
-  return [
-    behanceIcon,
-    pinterestIcon,
-    pinterestLinkIcon,
-    behanceLinkIcon,
-    mediumIcon,
-    mediumLinkIcon,
-    youtubePng,
-    podborkaLinkIcon,
-  ]
+  return icons
 }

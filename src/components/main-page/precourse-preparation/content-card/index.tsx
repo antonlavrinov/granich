@@ -1,15 +1,9 @@
 import React from "react"
-import YoutubeMixedContent from "./content-cards/YoutubeMixed"
-import YoutubeMixedPinterestContent from "./content-cards/YoutubeMixedPinterest"
-import YoutubeContent from "./content-cards/Youtube"
-import BehanceContent from "./content-cards/Behance"
-import MediumContent from "./content-cards/Medium"
-import PinterestContent from "./content-cards/Pinterest"
-import PodborkaContent from "./content-cards/Podborka"
-import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import { useLocalQuery } from "./useLocalQuery"
+import { IContentCard } from "../../../../interfaces/main-page"
+import { PureContentCard } from "./PureContentCard"
 
-enum ContentTypes {
+export enum ContentTypes {
   Youtube = "Youtube",
   Behance = "Behance",
   Pinterest = "Pinterest",
@@ -19,24 +13,14 @@ enum ContentTypes {
   Podborka = "Осознанная подборка",
 }
 
-type Props = {
-  content: any
+type ContentProps = {
+  content: IContentCard
 }
 
-const PreparationContent: React.FC<Props> = ({ content }) => {
-  const [
-    behanceIcon,
-    pinterestIcon,
-    pinterestLinkIcon,
-    behanceLinkIcon,
-    mediumIcon,
-    mediumLinkIcon,
-    youtubePng,
-    podborkaLinkIcon,
-  ] = useLocalQuery()
+const ContentCard: React.FC<ContentProps> = ({ content }) => {
+  const icons = useLocalQuery()
 
   const findContentExternalLink = contentType => {
-    console.log("I update")
     switch (contentType) {
       case ContentTypes.Pinterest:
         return content.contentLinkPinterest
@@ -50,69 +34,12 @@ const PreparationContent: React.FC<Props> = ({ content }) => {
   }
 
   return (
-    <div
-      onClick={() =>
-        trackCustomEvent({
-          category: `Главная: контент "${content.contentTitle}"`,
-          action: "click",
-          label: "Контент",
-        })
-      }
-    >
-      {content.contentType === ContentTypes.Mixed && (
-        <YoutubeMixedContent
-          content={content}
-          behanceIcon={behanceIcon}
-          youtubePng={youtubePng}
-          mediumIcon={mediumIcon}
-        />
-      )}
-      {content.contentType === ContentTypes.Youtube && (
-        <YoutubeContent
-          pinterestLinkIcon={pinterestLinkIcon}
-          content={content}
-          youtubePng={youtubePng}
-        />
-      )}
-      {content.contentType === ContentTypes.Behance && (
-        <BehanceContent
-          contentExternalLink={findContentExternalLink(content.contentType)}
-          behanceLinkIcon={behanceLinkIcon}
-          content={content}
-          behanceIcon={behanceIcon}
-        />
-      )}
-      {content.contentType === ContentTypes.Pinterest && (
-        <PinterestContent
-          contentExternalLink={findContentExternalLink(content.contentType)}
-          pinterestLinkIcon={pinterestLinkIcon}
-          content={content}
-          pinterestIcon={pinterestIcon}
-        />
-      )}
-      {content.contentType === ContentTypes.Medium && (
-        <MediumContent
-          contentExternalLink={findContentExternalLink(content.contentType)}
-          mediumLinkIcon={mediumLinkIcon}
-          content={content}
-          mediumIcon={mediumIcon}
-        />
-      )}
-      {content.contentType === ContentTypes.Podborka && (
-        <PodborkaContent
-          podborkaLinkIcon={podborkaLinkIcon}
-          content={content}
-        />
-      )}
-      {content.contentType === ContentTypes.MixedPinterest && (
-        <YoutubeMixedPinterestContent
-          content={content}
-          youtubePng={youtubePng}
-          pinterestIcon={pinterestIcon}
-        />
-      )}
-    </div>
+    <PureContentCard
+      content={content}
+      icons={icons}
+      findContentExternalLink={findContentExternalLink}
+    />
   )
 }
 
-export default PreparationContent
+export default ContentCard

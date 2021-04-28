@@ -9,7 +9,7 @@ import { graphql, PageProps } from "gatsby"
 import ogImage from "../assets/images/seo/conscious-freelance.jpg"
 import ogImageVK from "../assets/images/seo/vk/conscious-freelance.jpg"
 // import CourseForWhom from "../components/course-page/freelance/ForWhom";
-import CourseFeatures from "../components/course-page/CourseFeatures"
+import CourseFeatures from "../components/course-page-templates/features"
 import FreelanceHardWork from "../components/course-page/freelance/FreelanceHardWork"
 import CourseFreelanceBanner from "../components/course-page/freelance/CourseFreelanceBanner"
 // import CoursePaymentChoices from "../components/course-page/payment-choices/CoursePaymentChoices"

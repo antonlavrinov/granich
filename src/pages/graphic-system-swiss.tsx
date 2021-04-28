@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import CourseOffer from "../components/course-page/CourseOffer"
+import CourseOffer from "../components/course-page-templates/offer/"
 import Header from "../components/global/header"
 import CourseExplanations from "../components/course-page/CourseExplanations"
 import CoursePortfolio from "../components/course-page/CoursePortfolio"
@@ -35,6 +35,7 @@ export const contentfulQuery = graphql`
       courseDescr
       courseStatus
       courseType
+      courseTitle
       courseMainImage {
         fluid(maxWidth: 850, quality: 90) {
           ...GatsbyContentfulFluid_withWebp

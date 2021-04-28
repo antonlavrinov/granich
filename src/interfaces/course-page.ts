@@ -49,3 +49,13 @@ export interface IPriceRange {
   pricesPrice: number
   id: string
 }
+
+export interface IFeatures {
+  id: string
+  featuresImage: {
+    fluid: string
+  }
+  featuresText: string
+  featuresTitle: string
+  featuresLink: string
+}

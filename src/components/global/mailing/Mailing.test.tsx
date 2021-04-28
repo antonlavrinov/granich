@@ -1,7 +1,8 @@
 import React from "react"
 import { shallow } from "enzyme"
 import Mailing from "."
-import { Formik } from "formik"
+import { Form, Formik } from "formik"
+import { Input } from "./Mailing"
 
 type formPropsType = {
   errors?: {
@@ -17,35 +18,35 @@ type formPropsType = {
 }
 
 describe("<Manifest> component", () => {
+  const wrapper = shallow(<Mailing />)
   it("should render correctly", () => {
-    expect(shallow(<Mailing />)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
-  // it("should return error if there is password validation error", () => {
-  //   const tree = shallow(<Mailing />)
+  it("should return error if there is email validation error", () => {
+    const signupForm = (props: formPropsType = { errors: {} }) =>
+      wrapper.find(Formik).renderProp("children")(props)
 
-  //   const signupForm = (props: formPropsType = { errors: {} }) =>
-  //     tree.find(Formik).renderProp("children")(props)
+    const formWithEmailErrors = signupForm({
+      errors: {
+        formParams: {
+          email: "Это не электропочта  >__<",
+        },
+      },
+      touched: {
+        formParams: {
+          email: true,
+        },
+      },
+      isSubmitting: false,
+      values: {
+        formParams: {
+          email: "somejibberish",
+        },
+      },
+    })
 
-  //   const formWithEmailErrors = signupForm({
-  //     errors: {
-  //       formParams: {
-  //         email: "Это не электропочта  >__<",
-  //       },
-  //     },
-  //     touched: {
-  //       formParams: {
-  //         email: true,
-  //       },
-  //     },
-  //     isSubmitting: false,
-  //     values: {
-  //       formParams: {
-  //         email: "d",
-  //       },
-  //     },
-  //   })
-  //   expect(formWithEmailErrors.find("#formParams[email]").html()).toMatch(
-  //     /Это не электропочта  >__</
-  //   )
-  // })
+    expect(formWithEmailErrors.find(Input).props().placeholder).toMatch(
+      /Это не электропочта  >__</
+    )
+  })
 })

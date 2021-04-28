@@ -29,7 +29,6 @@ export const contentfulQuery = graphql`
           ...GatsbyContentfulFluid_withWebp
         }
       }
-      courseTitle
       courseMainTitle {
         json
       }
@@ -40,6 +39,7 @@ export const contentfulQuery = graphql`
       courseStream
       courseStatus
       courseType
+      courseTitle
       coursePrice
       courseTags
       coursePostersCollection {

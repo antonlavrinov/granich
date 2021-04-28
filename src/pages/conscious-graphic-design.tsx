@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import CourseOffer from "../components/course-page/CourseOffer"
+import CourseOffer from "../components/course-page-templates/offer/"
 import Header from "../components/global/header"
 import CourseExample from "../components/course-page/CourseExample"
 import CoursePortfolio from "../components/course-page/CoursePortfolio"
 import CourseTrainingPath from "../components/course-page/CourseTrainingPath"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
-import CourseFeatures from "../components/course-page/CourseFeatures"
+import Features from "../components/course-page-templates/features"
 import CourseReviews from "../components/course-page/CourseReviews"
 import CourseParticipation from "../components/course-page/CourseParticipation"
 import { graphql, PageProps } from "gatsby"
 import scrollTo from "gatsby-plugin-smoothscroll"
-import CourseAnswers from "../components/course-page/CourseAnswers"
 import Mailing from "../components/global/mailing"
 import CourseExplain from "../components/course-page/CourseExplain"
 import ogImage from "../assets/images/seo/conscious-graphic-design-min.jpg"
@@ -25,6 +24,7 @@ import CourseHardWork from "../components/course-page/CourseHardWork"
 import CoursePaymentChoices from "../components/course-page/payment-choices/CoursePaymentChoices"
 import CourseBanner from "../components/course-page/CourseBanner"
 import MasterClasses from "../components/graph-design-page/master-classes"
+import CourseQandA from "../components/course-page-templates/q-and-a"
 
 export const contentfulQuery = graphql`
   query graphDesignQuery {
@@ -46,6 +46,7 @@ export const contentfulQuery = graphql`
       courseStream
       courseStatus
       courseType
+      courseTitle
       coursePrice
       courseTags
       coursePostersCollection {
@@ -307,16 +308,8 @@ export const contentfulQuery = graphql`
 const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
   data,
 }) => {
-  const [deckVisibility, setDeckVisibility] = useState(false)
-  useEffect(() => {
-    let timer1 = setTimeout(() => setDeckVisibility(true), 800)
-    return () => {
-      clearTimeout(timer1)
-    }
-  }, [])
   return (
     <Layout>
-      {console.log("GRAPH DESIGN OFFER", data.offer)}
       <Header type={"dark"} />
       <SEO
         title="Осознанный Графдизайн"
@@ -336,11 +329,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         url="https://granich.design/conscious-graphic-design"
       />
       <div className="section-top-block"></div>
-      <CourseOffer
-        allowDeck={true}
-        data={data.offer}
-        deckVisibility={deckVisibility}
-      />
+      <CourseOffer allowPosters={true} data={data.offer} />
       <CourseExample title={`Для кого этот курс?`} />
       <CourseExplain />
       <CourseOpportunities />
@@ -356,7 +345,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         dataHeader={data.curriculumHeader}
         data={data.curriculum}
       />
-      <CourseFeatures title="Еще пара бонусов" data={data.features} />
+      <Features title="Еще пара бонусов" data={data.features} />
       <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews} />
       <CourseHardWork
         title="«Пожалуйста, примите осознанное решение об участии на этом курсе»"
@@ -378,10 +367,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       {!data.offer.courseStatus && <Mailing />}
       <CourseIndividualSupport />
       <CourseBanner />
-      <CourseAnswers
-        data={data.answers}
-        courseStatus={data.offer.courseStatus}
-      />
+      <CourseQandA data={data.answers} courseStatus={data.offer.courseStatus} />
     </Layout>
   )
 }

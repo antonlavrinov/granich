@@ -39,7 +39,7 @@ const CourseList: React.FC<Props> = ({ data }) => {
           return (
             <Course
               openModal={openModal}
-              key={course.id}
+              key={course.node.id}
               courseData={course.node}
             />
           )
