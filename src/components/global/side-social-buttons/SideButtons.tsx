@@ -3,7 +3,7 @@ import styled from "styled-components"
 import TelegramIcon from "../../../assets/svgs/social-side-icons/social-side-icon-telegram_noshadow.svg"
 import VKIcon from "../../../assets/svgs/social-side-icons/social-side-icon-vk_noshadow.svg"
 import InstagramIcon from "../../../assets/svgs/social-side-icons/social-side-icon-instagram.svg"
-import WhatsupIcon from "../../../assets/svgs/social-side-icons/social-side-icon-whatsup_noshadow.svg"
+// import WhatsupIcon from "../../../assets/svgs/social-side-icons/social-side-icon-whatsup_noshadow.svg"
 
 export const IconLink = styled.a`
     height: 3.6vw;
@@ -43,11 +43,11 @@ export const IconLink = styled.a`
           `
             border-left: 0.55vw solid #0071BC;
         `}
-        ${props =>
+        /* ${props =>
           props.content === "Написать в WhatsApp" &&
           `
             border-left: 0.55vw solid #39B54A;
-        `}
+        `} */
         ${props =>
           props.content === "Написать в Телеграме" &&
           `
@@ -82,11 +82,11 @@ export const IconLink = styled.a`
           `
             background: #0071BC;
         `}
-        ${props =>
+        /* ${props =>
           props.content === "Написать в WhatsApp" &&
           `
             background: #39B54A;
-        `}
+        `} */
         ${props =>
           props.content === "Написать в Телеграме" &&
           `
@@ -158,20 +158,20 @@ export const Telegram = styled(props => <TelegramIcon {...props} />)`
     height: 11vw;
   }
 `
-export const Whatsup = styled(props => <WhatsupIcon {...props} />)`
-  width: 3.6vw;
-  height: 3.6vw;
-  transition: all 0.3s ease;
-  transform: translateY(0);
-  :hover {
-    cursor: pointer;
-    transform: translateY(0) scale(1.1);
-  }
-  @media only screen and (max-width: 575px) {
-    width: 11vw;
-    height: 11vw;
-  }
-`
+// export const Whatsup = styled(props => <WhatsupIcon {...props} />)`
+//   width: 3.6vw;
+//   height: 3.6vw;
+//   transition: all 0.3s ease;
+//   transform: translateY(0);
+//   :hover {
+//     cursor: pointer;
+//     transform: translateY(0) scale(1.1);
+//   }
+//   @media only screen and (max-width: 575px) {
+//     width: 11vw;
+//     height: 11vw;
+//   }
+// `
 
 export const EmailWrapper = styled.div`
     position: relative;

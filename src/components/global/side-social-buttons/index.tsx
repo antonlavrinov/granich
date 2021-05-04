@@ -54,13 +54,13 @@ const SideButtons: React.FC = () => {
               <SC.Instagram />
             </SC.IconLink>
 
-            <SC.IconLink
+            {/* <SC.IconLink
               content="Написать в WhatsApp"
               target="_blank"
               href="https://wa.me/79046434682"
             >
               <SC.Whatsup />
-            </SC.IconLink>
+            </SC.IconLink> */}
             <SC.IconLink
               content="Написать в ВК"
               target="_blank"

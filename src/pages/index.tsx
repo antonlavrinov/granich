@@ -57,7 +57,7 @@ export const contentfulQuery = graphql`
           courseDescr
           courseDuration
           coursePreviewImage {
-            fluid(maxWidth: 450) {
+            fluid(maxWidth: 600) {
               ...GatsbyContentfulFluid_withWebp
             }
           }
