@@ -8,7 +8,11 @@ import ogImageVK from "../assets/images/seo/vk/index-main.jpg"
 
 const BlogPage: React.FC = () => (
   <Layout>
-    <SEO title="Блог в разработке" ogImage={ogImage} ogImageVk={ogImageVK} />
+    <SEO
+      title="Ведём блог для дизайнеров"
+      ogImage={ogImage}
+      ogImageVk={ogImageVK}
+    />
     <Header type={"dark"} />
     <div className="section-top-block"></div>
     <Blog />

@@ -56,7 +56,7 @@ export const Socials = styled.div`
   flex-direction: column;
 `
 
-export const Social = styled.div`
+export const Social = styled.div<{ youtube?: boolean }>`
   display: flex;
   align-items: center;
   margin-right: 4vw;
@@ -68,6 +68,13 @@ export const Social = styled.div`
     margin-right: 1vw;
     width: 3.5vw;
     height: 3.5vw;
+    ${props =>
+      props.youtube &&
+      `
+          width: 4vw;
+          height: 4vw;
+          transform: translateY(5%);
+    `}
   }
   a {
     font-size: 1.8vw;
@@ -76,6 +83,7 @@ export const Social = styled.div`
       border-bottom: 1px solid var(--granich-black);
     }
   }
+
   @media only screen and (max-width: 575px) {
     margin-bottom: 5vw;
     a {
@@ -85,6 +93,20 @@ export const Social = styled.div`
       margin-right: 2.5vw;
       width: 10vw;
       height: 10vw;
+      ${props =>
+        props.youtube &&
+        `
+          width: 12vw;
+          height: 12vw;
+
+    `}
     }
+  }
+`
+
+export const Devider = styled.div`
+  height: 4vw;
+  @media only screen and (max-width: 575px) {
+    height: 5vw;
   }
 `
