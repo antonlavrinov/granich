@@ -39,9 +39,10 @@ export const Title = styled.h1`
 export const Descr = styled.div`
   margin-left: -0.3vw;
   color: white;
-  letter-spacing: 0.01vw;
-  font-size: 2.32vw;
-  line-height: 1;
+  letter-spacing: 0.05vw;
+  font-size: 2.5vw;
+  line-height: 1.2;
+
   font-family: EB Garamond;
   font-style: italic;
   position: relative;

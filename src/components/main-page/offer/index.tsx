@@ -37,7 +37,8 @@ const Offer: React.FC<Props> = ({ data, scrollTo }) => {
                 onKeyDown={() => scrollTo("#manifest")}
                 onClick={() => scrollTo("#manifest")}
               >
-                {headerSubtitle_03} <SC.UnderlineIcon />
+                {headerSubtitle_03}
+                {/* <SC.UnderlineIcon /> */}
               </span>
             </SC.Descr>
           </SC.Wrapper>
