@@ -53,11 +53,9 @@ const Course: React.FC<Props> = ({ courseData, openModal }) => {
 }
 
 export const PureCourse = ({ icons, courseData, openModal }) => {
-  // if (
-  //   courseData.courseTitle === "Графические метафоры как путь в айдентику"
-  // ) {
-  //   return null
-  // }
+  if (courseData.courseTitle === "Осознанный Фриланс") {
+    return null
+  }
   // const openModalIfEmpty = (title, bool, slug, ) => {
   //   trackCustomEvent({
   //     category: `Главная: карточка "${title}"`,
@@ -142,9 +140,7 @@ export default Course
 //     }
 //   }
 
-// if (
-//   courseData.courseTitle === "Графические метафоры как путь в айдентику"
-// ) {
+// if (courseData.courseTitle === "Осознанный Фриланс") {
 //   return null
 // }
 
