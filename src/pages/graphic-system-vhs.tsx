@@ -167,71 +167,83 @@ type GraphQlResults = {
 
 const GraphicSystemVhsPage: React.FC<PageProps<GraphQlResults>> = ({
   data,
-}) => (
-  <Layout>
-    <Header type={"dark"} />
-    <div className="section-top-block"></div>
-    <SEO
-      title="Графсистема VHS"
-      description="Мастер-класс по графической системе VHS. В него входят: PDF-презентация, Закрытый телеграм-чат, Видеолекция, Видеоинструкция, Домашнее задание, индивидуальный разбор ДЗ, Вводный урок по InDesign, Макет в портфолио, Бонусный урок."
-      keywords={[
-        "vhs",
-        "графсистема",
-        "гранич",
-        "granich",
-        "видеокассеты",
-        "аудиокассеты",
-      ]}
-      ogImage={ogImage}
-      ogImageVk={ogImageVK}
-      url="https://granich.design/graphic-system-vhs"
-    />
-    <CourseOffer data={data.VHSoffer} />
-    <CourseExplanations data={data.VHSexplanations} />
-    <CourseAuthors
-      quote="Мастер-класс создан соавторами. Исследование, запись видеолекции и инструкции — Елизавета Черникова. Дизайн-система, рекомендации и забота — Вадим Гранич."
-      text={
-        <>
-          «Я отыскала всё самое интересное и полезное про графдизайн VHS-кассет:
-          почему он появился, какие графсистемы с ним связаны, кто использует
-          его в своей айдентике и как самостоятельно создавать VHS-макеты.
-          Вдобавок, в{" "}
-          <a
-            href="https://www.pinterest.ru/vadim_granich/vhs/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Энциклопедии графдизайна
-          </a>{" "}
-          на Пинтересте есть примеры работ в графсистеме VHS»
-        </>
-      }
-      data={data.VHSteam}
-    />
-    <MasterClassExample />
-    <CoursePortfolio
-      dataHeader={data.VHSportfolioHeader}
-      masterClass
-      posters={data.VHSportfolioPosters}
-    />
-    {/* <CourseReviews dataHeader={data.VHSreviewsHeader} data={data.VHSreviews} masterClass/> */}
-    <div id="prices-range-section"></div>
-    {data.VHSoffer.courseStatus ? (
-      <CoursePriceRange
-        formId={`ltForm2774650`}
-        valueInput1={`1164222`}
-        valueInput2={`1164224`}
-        valueInput3={`1164226`}
-        valueInput4={`1164228`}
-        googleAnaliticsCategory={`Отправка формы Графсистема VHS`}
-        formPostUrl={`https://school.granich.design/pl/lite/block-public/process-html?id=855570200`}
-        data={data.VHSPricesRange}
+}) => {
+  // console.log("vhs", data)
+  if (
+    !data.VHSoffer &&
+    !data.VHSexplanations &&
+    !data.VHSteam &&
+    !data.VHSportfolioHeader &&
+    !data.VHSportfolioPosters &&
+    !data.VHSPricesRange
+  )
+    return <></>
+  return (
+    <Layout>
+      <Header type={"dark"} />
+      <div className="section-top-block"></div>
+      <SEO
+        title="Графсистема VHS"
+        description="Мастер-класс по графической системе VHS. В него входят: PDF-презентация, Закрытый телеграм-чат, Видеолекция, Видеоинструкция, Домашнее задание, индивидуальный разбор ДЗ, Вводный урок по InDesign, Макет в портфолио, Бонусный урок."
+        keywords={[
+          "vhs",
+          "графсистема",
+          "гранич",
+          "granich",
+          "видеокассеты",
+          "аудиокассеты",
+        ]}
+        ogImage={ogImage}
+        ogImageVk={ogImageVK}
+        url="https://granich.design/graphic-system-vhs"
       />
-    ) : (
-      <Mailing />
-    )}
-    <EducationQuestions />
-  </Layout>
-)
+      <CourseOffer data={data.VHSoffer} />
+      <CourseExplanations data={data.VHSexplanations} />
+      <CourseAuthors
+        quote="Мастер-класс создан соавторами. Исследование, запись видеолекции и инструкции — Елизавета Черникова. Дизайн-система, рекомендации и забота — Вадим Гранич."
+        text={
+          <>
+            «Я отыскала всё самое интересное и полезное про графдизайн
+            VHS-кассет: почему он появился, какие графсистемы с ним связаны, кто
+            использует его в своей айдентике и как самостоятельно создавать
+            VHS-макеты. Вдобавок, в{" "}
+            <a
+              href="https://www.pinterest.ru/vadim_granich/vhs/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Энциклопедии графдизайна
+            </a>{" "}
+            на Пинтересте есть примеры работ в графсистеме VHS»
+          </>
+        }
+        data={data.VHSteam}
+      />
+      <MasterClassExample />
+      <CoursePortfolio
+        dataHeader={data.VHSportfolioHeader}
+        masterClass
+        posters={data.VHSportfolioPosters}
+      />
+      {/* <CourseReviews dataHeader={data.VHSreviewsHeader} data={data.VHSreviews} masterClass/> */}
+      <div id="prices-range-section"></div>
+      {data.VHSoffer.courseStatus ? (
+        <CoursePriceRange
+          formId={`ltForm2774650`}
+          valueInput1={`1164222`}
+          valueInput2={`1164224`}
+          valueInput3={`1164226`}
+          valueInput4={`1164228`}
+          googleAnaliticsCategory={`Отправка формы Графсистема VHS`}
+          formPostUrl={`https://school.granich.design/pl/lite/block-public/process-html?id=855570200`}
+          data={data.VHSPricesRange}
+        />
+      ) : (
+        <Mailing />
+      )}
+      <EducationQuestions />
+    </Layout>
+  )
+}
 
 export default GraphicSystemVhsPage
