@@ -53,7 +53,7 @@ const Course: React.FC<Props> = ({ courseData, openModal }) => {
 }
 
 export const PureCourse = ({ icons, courseData, openModal }) => {
-  if (courseData.courseTitle === "Осознанный Фриланс") {
+  if (courseData.courseTitle === "Осознанный Фриланс" || "Granich InDesign") {
     return null
   }
   // const openModalIfEmpty = (title, bool, slug, ) => {

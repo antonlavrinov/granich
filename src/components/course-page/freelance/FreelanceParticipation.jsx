@@ -1,57 +1,55 @@
-import React, { useState } from 'react'
-import { Container } from '../../style';
-import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
-import FreelanceParticipationLogoIcon from '../../../assets/svgs/freelance/freelance-participation-logo.svg';
-import FreelanceParticipationTelegramIcon from '../../../assets/svgs/freelance/telegram-icon.svg';
-import CheckIcon from '../../../assets/svgs/freelance/freelance-participation-check-icon.svg';
-import arrowIcon from '../../../assets/images/freelance/telegram_arrow_out.png';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import DisabledForm from './DisabledForm';
-import CopyIcon from '../../../assets/svgs/copy-icon.svg';
-import RubleIcon from '../../../assets/svgs/freelance/ruble-icon.svg';
+import React, { useState } from "react"
+import { Container } from "../../style"
+import styled from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
+import FreelanceParticipationLogoIcon from "../../../assets/svgs/freelance/freelance-participation-logo.svg"
+import FreelanceParticipationTelegramIcon from "../../../assets/svgs/freelance/telegram-icon.svg"
+import CheckIcon from "../../../assets/svgs/freelance/freelance-participation-check-icon.svg"
+import arrowIcon from "../../../assets/images/freelance/telegram_arrow_out.png"
+import { CopyToClipboard } from "react-copy-to-clipboard"
+import DisabledForm from "./DisabledForm"
+import CopyIcon from "../../../assets/svgs/copy-icon.svg"
+import RubleIcon from "../../../assets/svgs/freelance/ruble-icon.svg"
 
 const Section = styled.section`
-    margin-bottom: 4vw;
-    @media only screen and (max-width: 575px) {
-        margin-bottom: 5vw;
-    }
+  margin-bottom: 4vw;
+  @media only screen and (max-width: 575px) {
+    margin-bottom: 5vw;
+  }
 `
 
-
 const MainWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: white;
-    justify-content: center;
-    padding: 6vw 4vw 7vw;
-    border-radius: 0.6vw;
-    @media only screen and (max-width: 575px) {
-        border-radius: 2.5vw;
-        padding: 8vw 6vw 8vw 6vw;
-        align-items: flex-start;
-
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  justify-content: center;
+  padding: 6vw 4vw 7vw;
+  border-radius: 0.6vw;
+  @media only screen and (max-width: 575px) {
+    border-radius: 2.5vw;
+    padding: 8vw 6vw 8vw 6vw;
+    align-items: flex-start;
+  }
 `
 
 const SectionTitle = styled.h2`
-    font-size: 7.2vw;
-    letter-spacing: -0.01rem;
-    text-align: center;
-    font-weight: 800;
-    width: 90%;
-    line-height: 0.92;
-    position: relative;
+  font-size: 7.2vw;
+  letter-spacing: -0.01rem;
+  text-align: center;
+  font-weight: 800;
+  width: 90%;
+  line-height: 0.92;
+  position: relative;
+  margin-bottom: 4vw;
+  @media only screen and (max-width: 575px) {
+    font-size: 11vw;
+    text-align: left;
     margin-bottom: 4vw;
-    @media only screen and (max-width: 575px) {
-        font-size: 11vw;
-        text-align: left;
-        margin-bottom: 4vw;
-        letter-spacing: -0.07rem;
-        line-height: 1;
-    }
+    letter-spacing: -0.07rem;
+    line-height: 1;
+  }
 `
 
 // const ParticipationStepsWrapper = styled.div`
@@ -130,38 +128,41 @@ const SectionTitle = styled.h2`
 //     }
 // `
 
-const OptionLogo = styled(props => <FreelanceParticipationLogoIcon {...props} />)`
-    width: 16vw;
-    min-width: 16vw;
-    margin-right: 1.6vw;
-    margin-bottom: 1vw;
-    @media only screen and (max-width: 575px) {
-        width: 60%;
-        margin-right: 0;
-        margin-bottom: 3vw;
-    }
-
+const OptionLogo = styled(props => (
+  <FreelanceParticipationLogoIcon {...props} />
+))`
+  width: 16vw;
+  min-width: 16vw;
+  margin-right: 1.6vw;
+  margin-bottom: 1vw;
+  @media only screen and (max-width: 575px) {
+    width: 60%;
+    margin-right: 0;
+    margin-bottom: 3vw;
+  }
 `
 
-const OptionImage = styled(props => <BackgroundImage {...props}></BackgroundImage>)`
-    width: 8vw;
-    height: 8vw;
-    min-width: 8vw;
-    min-height: 8vw;
-    border: 0.3vw solid var(--granich-black);
-    border-radius: 100vw;
-    overflow: hidden;
-    margin-right: 1.5vw;
+const OptionImage = styled(props => (
+  <BackgroundImage {...props}></BackgroundImage>
+))`
+  width: 8vw;
+  height: 8vw;
+  min-width: 8vw;
+  min-height: 8vw;
+  border: 0.3vw solid var(--granich-black);
+  border-radius: 100vw;
+  overflow: hidden;
+  margin-right: 1.5vw;
 
-    @media only screen and (max-width: 575px) {
-        width: 19vw;
-        height: 19vw;
-        min-width: 19vw;
-        min-height: 19vw;
-        // margin-bottom: 3vw;
-        margin-right: 3vw;
-        border-width: 0.7vw;
-    }
+  @media only screen and (max-width: 575px) {
+    width: 19vw;
+    height: 19vw;
+    min-width: 19vw;
+    min-height: 19vw;
+    // margin-bottom: 3vw;
+    margin-right: 3vw;
+    border-width: 0.7vw;
+  }
 `
 
 // const ParticipationStepTitle = styled.div`
@@ -176,231 +177,219 @@ const OptionImage = styled(props => <BackgroundImage {...props}></BackgroundImag
 // `
 
 const OptionNotice = styled.div`
-    font-size: 1.65vw;
-    line-height: 1.4;
-    color: var(--granich-grey);
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 1vw;
-    svg {
-        position: relative;
-        width: 2.3vw;
-        min-width: 2.3vw;
-        margin-right: 0.6vw;
-    }
-    ${props => props.narrow && `
-        width: 19vw;
-    `}
-    @media only screen and (max-width: 575px) {
-        font-size: 3.7vw;
-        width: 100%;
-        svg {
-            width: 4vw;
-            min-width: 4vw;
-            top: 0.3vw;
-            margin-right: 1vw;
-        }
-    }
-`
-
-const TelegramInstructions = styled.div`
-    display: flex;
-    align-items: flex-start;
-    // @media only screen and (max-width: 575px) {
-    //     width: 100%;
-    // }
-
-`
-
-const TelegramIcon = styled(props => <FreelanceParticipationTelegramIcon {...props} />)`
+  font-size: 1.65vw;
+  line-height: 1.4;
+  color: var(--granich-grey);
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1vw;
+  svg {
+    position: relative;
     width: 2.3vw;
     min-width: 2.3vw;
     margin-right: 0.6vw;
-    position: relative;
-    top: 0.2vw;
-    // transform: translateY(-15%);
-    @media only screen and (max-width: 575px) {
-        width: 4vw;
-        min-width: 4vw;
-        margin-right: 1vw;
-        top: 1vw;
+  }
+  ${props =>
+    props.narrow &&
+    `
+        width: 19vw;
+    `}
+  @media only screen and (max-width: 575px) {
+    font-size: 3.7vw;
+    width: 100%;
+    svg {
+      width: 4vw;
+      min-width: 4vw;
+      top: 0.3vw;
+      margin-right: 1vw;
     }
-
-
+  }
 `
 
-
-
-const TelegramInfoWrapper = styled.div`
-
+const TelegramInstructions = styled.div`
+  display: flex;
+  align-items: flex-start;
+  // @media only screen and (max-width: 575px) {
+  //     width: 100%;
+  // }
 `
+
+const TelegramIcon = styled(props => (
+  <FreelanceParticipationTelegramIcon {...props} />
+))`
+  width: 2.3vw;
+  min-width: 2.3vw;
+  margin-right: 0.6vw;
+  position: relative;
+  top: 0.2vw;
+  // transform: translateY(-15%);
+  @media only screen and (max-width: 575px) {
+    width: 4vw;
+    min-width: 4vw;
+    margin-right: 1vw;
+    top: 1vw;
+  }
+`
+
+const TelegramInfoWrapper = styled.div``
 
 const TelegramLink = styled.a`
+  color: var(--telegram);
+  font-size: 1.65vw;
+  line-height: 1.55;
+  position: relative;
+  font-weight: 500;
+  display: inline-block;
+  // margin-bottom: 0.5vw;
+  :after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: rgba(52, 162, 205, 0.4);
+  }
+  :before {
+    content: "";
+    background: url(${props => props.arrowIcon});
+    width: 1vw;
+    height: 1vw;
+    top: 0;
+    right: -1.2vw;
+    background-size: cover;
+    border-radius: 100vw;
+    position: absolute;
+  }
+
+  :hover {
     color: var(--telegram);
     font-size: 1.65vw;
-    line-height: 1.55;
-    position: relative;
+    cursor: pointer;
     font-weight: 500;
-    display: inline-block;
-    // margin-bottom: 0.5vw;
     :after {
-        position: absolute;
-        content: '';
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        height: 1px;
-        background: rgba(52,162,205,0.4);
+      background: rgba(52, 162, 205, 0.8);
+    }
+  }
+  @media only screen and (max-width: 575px) {
+    font-size: 3.7vw;
+    :after {
+      height: 0.3vw;
+      background: rgba(52, 162, 205, 0.5);
     }
     :before {
-        content: '';
-        background: url(${props => props.arrowIcon});
-        width: 1vw;
-        height: 1vw;
-        top: 0;
-        right: -1.2vw;
-        background-size: cover;
-        border-radius: 100vw;
-        position: absolute;
+      width: 2.7vw;
+      height: 2.7vw;
+      top: -0.5vw;
+      right: -3.2vw;
     }
-
-
-
-
     :hover {
-        color: var(--telegram);
-        font-size: 1.65vw;
-        cursor: pointer;
-        font-weight: 500;
-        :after {
-            background: rgba(52,162,205,0.8);
-        }
+      font-size: 3.7vw;
     }
-    @media only screen and (max-width: 575px) {
-        font-size: 3.7vw;
-        :after {
-            height: 0.3vw;
-            background: rgba(52,162,205,0.5);
-        }
-        :before {
-            width: 2.7vw;
-            height: 2.7vw;
-            top: -0.5vw;
-            right: -3.2vw;
-        }
-        :hover {
-            font-size: 3.7vw;
-        }
-    }
+  }
 `
 
 const TelegramDescr = styled.div`
-    color: var(--granich-grey);
-    font-size: 1.65vw;
-    letter-spacing: -0.015rem;
-    line-height: 1.25;
-    padding-left: 0.5vw;
-    span {
-        display: block;
-        margin: 0.2vw 0;
-    }
-    @media only screen and (max-width: 575px) {
-        font-size: 3.7vw;
-
-    }
+  color: var(--granich-grey);
+  font-size: 1.65vw;
+  letter-spacing: -0.015rem;
+  line-height: 1.25;
+  padding-left: 0.5vw;
+  span {
+    display: block;
+    margin: 0.2vw 0;
+  }
+  @media only screen and (max-width: 575px) {
+    font-size: 3.7vw;
+  }
 `
 
 const OptionTitle = styled.div`
-    font-size: 4vw;
-    font-family: Bebas Neue;
-    font-weight: normal;
-    color: rgba(0,0,0,0.25);
-    margin-bottom: 2.5vw;
+  font-size: 4vw;
+  font-family: Bebas Neue;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.25);
+  margin-bottom: 2.5vw;
+  svg {
+    width: 1.55vw;
+    fill: rgba(0, 0, 0, 0.25);
+  }
+  span {
+    position: relative;
+    color: rgba(0, 0, 0, 0.25);
+    top: -0.3vw;
+  }
+  @media only screen and (max-width: 575px) {
+    font-size: 7.2vw;
+    margin-bottom: 5vw;
     svg {
-        width: 1.55vw;
-        fill: rgba(0,0,0,0.25);
+      width: 2.8vw;
     }
     span {
-        position: relative;
-        color: rgba(0,0,0,0.25);
-        top: -0.3vw;
+      margin-top: 0vw;
+      font-size: 6vw;
+      top: -1vw;
     }
-    @media only screen and (max-width: 575px) {
-        font-size: 7.2vw;
-        margin-bottom: 5vw;
-        svg {
-            width: 2.8vw;
-        }
-        span {
-            margin-top: 0vw;
-            font-size: 6vw;
-            top: -1vw;
-            
-        }
-    }
-
+  }
 `
 
 const Option = styled.div`
-    position: relative;
-    padding-bottom: 6.5vw;
-    margin-bottom: 5vw;
+  position: relative;
+  padding-bottom: 6.5vw;
+  margin-bottom: 5vw;
+  :after {
+    content: "";
+    width: 100%;
+    height: 0.3vw;
+    background: var(--granich-black);
+    background: rgba(0, 0, 0, 0.15);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  :last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
     :after {
-        content: '';
-        width: 100%;
-        height: 0.3vw;
-        background: var(--granich-black);
-        background: rgba(0,0,0,0.15);
-        position: absolute;
-        bottom: 0;
-        left: 0;
+      display: none;
     }
-    :last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        :after {
-            display: none;
-        }
+  }
+  @media only screen and (max-width: 575px) {
+    margin-bottom: 10vw;
+    padding-bottom: 12vw;
+    :after {
+      height: 0.5vw;
     }
-    @media only screen and (max-width: 575px) {
-        margin-bottom: 10vw;
-        padding-bottom: 12vw;
-        :after {
-            height: 0.5vw;
-        }
-    }
+  }
 `
 
 const OptionWrapperCourse = styled.div`
-    display: flex;
-    justify-content: space-between;
-    @media only screen and (max-width: 575px) {
-        flex-direction: column;
-    }
+  display: flex;
+  justify-content: space-between;
+  @media only screen and (max-width: 575px) {
+    flex-direction: column;
+  }
 `
 
-
-
-const OptionWrapperMentor = styled.div`
-
-`
+const OptionWrapperMentor = styled.div``
 
 const OptionGeneralTitleWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5vw;
-    margin-top: -1vw;
-    width: 70%;
-    @media only screen and (max-width: 575px) {
-        width: 100%;
-        
-    }
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5vw;
+  margin-top: -1vw;
+  width: 70%;
+  @media only screen and (max-width: 575px) {
+    width: 100%;
+  }
 `
 
 const OptionGeneral = styled.div`
-    width: 100%;
-    min-width: 100%;
-    ${props => props.half && `
+  width: 100%;
+  min-width: 100%;
+  ${props =>
+    props.half &&
+    `
         width: 45%;
         min-width: 45%;
         @media only screen and (max-width: 575px) {
@@ -408,36 +397,35 @@ const OptionGeneral = styled.div`
             min-width: 100%;
         }
     `}
-
 `
 
 const OptionGeneralTitle = styled.div`
-    font-weight: 800;
-    font-size: 2.65vw;
-    line-height: 1.3;
-    // margin-bottom: 1.5vw;
-    @media only screen and (max-width: 575px) {
-        font-size: 5.5vw;
-        line-height: 1.2;
-
-    }
+  font-weight: 800;
+  font-size: 2.65vw;
+  line-height: 1.3;
+  // margin-bottom: 1.5vw;
+  @media only screen and (max-width: 575px) {
+    font-size: 5.5vw;
+    line-height: 1.2;
+  }
 `
 
 const OptionInfoWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 2vw;
-    ${props => props.horizontal && `
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 2vw;
+  ${props =>
+    props.horizontal &&
+    `
         flex-direction: row;
     `}
-    @media only screen and (max-width: 575px) {
-        margin-top: 4vw;
-        margin-bottom: 6vw;
-        flex-direction: column;
-    }
+  @media only screen and (max-width: 575px) {
+    margin-top: 4vw;
+    margin-bottom: 6vw;
+    flex-direction: column;
+  }
 `
-
 
 const TelegramText = styled.span`
     display: block;
@@ -476,7 +464,9 @@ const TelegramText = styled.span`
         border-right: 0.55vw solid transparent;
         border-left: 0.55vw solid transparent;
         border-top: 0.55vw solid var(--granich-black);
-        ${props => props.content === 'Скопировано :)' && `
+        ${props =>
+          props.content === "Скопировано :)" &&
+          `
             border-top: 0.55vw solid var(--granich-red);
         `}
     }
@@ -498,7 +488,9 @@ const TelegramText = styled.span`
         border-radius: 0.2vw;
         white-space: nowrap;
         background: var(--granich-black);
-        ${props => props.content === 'Скопировано :)' && `
+        ${props =>
+          props.content === "Скопировано :)" &&
+          `
             background: var(--granich-red);
         `}
         
@@ -525,7 +517,9 @@ const TelegramText = styled.span`
             font-size: 4.5vw;
             padding: 3vw;
             top: -13vw;
-            ${props => props.content === 'Скопировано :)' && `
+            ${props =>
+              props.content === "Скопировано :)" &&
+              `
                 background: var(--granich-red);
             `}
         }
@@ -534,7 +528,9 @@ const TelegramText = styled.span`
             border-right: 2vw solid transparent;
             border-left: 2vw solid transparent;
             border-top: 2vw solid var(--granich-black);
-            ${props => props.content === 'Скопировано :)' && `
+            ${props =>
+              props.content === "Скопировано :)" &&
+              `
                 border-top: 2vw solid var(--granich-red);
             `}
         }
@@ -543,121 +539,110 @@ const TelegramText = styled.span`
 
 `
 
-
-
-
-
-
 const FreelanceParticipation = ({ courseData }) => {
-
-    const data = useStaticQuery(graphql`
-        query FreelanceParticipationSectionQuery {
-            freelanceParticipationAuthor: file(relativePath: { eq: "author.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 350, quality: 100) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
+  const data = useStaticQuery(graphql`
+    query FreelanceParticipationSectionQuery {
+      freelanceParticipationAuthor: file(relativePath: { eq: "author.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 350, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
         }
-    `)
-
-    const author = data.freelanceParticipationAuthor.childImageSharp.fluid
-
-
-    const formatPrice = (num) => {
-        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+      }
     }
+  `)
 
+  const author = data.freelanceParticipationAuthor.childImageSharp.fluid
 
-    return (
-        <Section>
-            <Container>
-                <MainWrapper>
-                    <SectionTitle>
-                        Участвовать
-                    </SectionTitle>
-                    <Option>
-                        <OptionTitle>
-                            1 вариант участия <span>→</span> {courseData && formatPrice(courseData.coursePrice)} <RubleIcon />
-                        </OptionTitle>
-                        <OptionWrapperCourse>
-                            <OptionGeneral half>
-                                <OptionLogo />
-                                <OptionGeneralTitle>
-                                    Записаться на курс-наставничество Осознанный Фриланс
-                                </OptionGeneralTitle>
-                                <OptionInfoWrapper>
-                                    <OptionNotice>
-                                        <CheckIcon /> С домашними заданиями и учебной группой
-                                    </OptionNotice>
-                                    <TelegramInfo text="Хочу на Осознанный Фриланс" />
+  const formatPrice = num => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+  }
 
-                                </OptionInfoWrapper>
-                            </OptionGeneral>
-                            <DisabledForm data={courseData} />
-                        </OptionWrapperCourse>
-
-
-                    </Option>
-                    <Option>
-                        <OptionTitle>
-                            2 вариант участия <span>→</span> {formatPrice(5000)} <RubleIcon />
-                        </OptionTitle>
-                        <OptionWrapperMentor>
-                            <OptionGeneral>
-                                <OptionGeneralTitleWrapper>
-                                    <OptionImage fluid={author} />
-                                    <OptionGeneralTitle>
-                                        Провести со мной личную сессию наставничества
-                                    </OptionGeneralTitle>
-                                </OptionGeneralTitleWrapper>
-                                <OptionInfoWrapper horizontal>
-                                    <OptionNotice narrow>
-                                        <CheckIcon /> По нужной вам теме и в удобное время
-                                    </OptionNotice>
-                                    <TelegramInfo text="Хочу личную сессию наставничества" />
-                                </OptionInfoWrapper>
-                            </OptionGeneral>
-
-
-                        </OptionWrapperMentor>
-                    </Option>
-                </MainWrapper>
-            </Container>
-
-        </Section>
-    )
+  return (
+    <Section>
+      <Container>
+        <MainWrapper>
+          <SectionTitle>Участвовать</SectionTitle>
+          <Option>
+            <OptionTitle>
+              1 вариант участия <span>→</span>{" "}
+              {courseData && formatPrice(courseData.coursePrice)} <RubleIcon />
+            </OptionTitle>
+            <OptionWrapperCourse>
+              <OptionGeneral half>
+                <OptionLogo />
+                <OptionGeneralTitle>
+                  Записаться на курс-наставничество Осознанный Фриланс
+                </OptionGeneralTitle>
+                <OptionInfoWrapper>
+                  <OptionNotice>
+                    <CheckIcon /> С домашними заданиями и учебной группой
+                  </OptionNotice>
+                  <TelegramInfo text="Хочу на Осознанный Фриланс" />
+                </OptionInfoWrapper>
+              </OptionGeneral>
+              <DisabledForm data={courseData} />
+            </OptionWrapperCourse>
+          </Option>
+          <Option>
+            <OptionTitle>
+              2 вариант участия <span>→</span> {formatPrice(5000)} <RubleIcon />
+            </OptionTitle>
+            <OptionWrapperMentor>
+              <OptionGeneral>
+                <OptionGeneralTitleWrapper>
+                  <OptionImage fluid={author} />
+                  <OptionGeneralTitle>
+                    Провести со мной личную сессию наставничества
+                  </OptionGeneralTitle>
+                </OptionGeneralTitleWrapper>
+                <OptionInfoWrapper horizontal>
+                  <OptionNotice narrow>
+                    <CheckIcon /> По нужной вам теме и в удобное время
+                  </OptionNotice>
+                  <TelegramInfo text="Хочу личную сессию наставничества" />
+                </OptionInfoWrapper>
+              </OptionGeneral>
+            </OptionWrapperMentor>
+          </Option>
+        </MainWrapper>
+      </Container>
+    </Section>
+  )
 }
 
 export default FreelanceParticipation
 
-
-
-
 const TelegramInfo = ({ text }) => {
+  const [tooltipText, setTooltipText] = useState("Скопировать")
 
-    const [tooltipText, setTooltipText] = useState('Скопировать')
-
-    return (
-        <TelegramInstructions>
-            <TelegramIcon />
-            <TelegramInfoWrapper>
-                <TelegramLink arrowIcon={arrowIcon} rel="noopener noreferrer" href="https://t.me/vadim_granich" target="_blank">
-                    @vadim_granich
-                </TelegramLink>
-                <TelegramDescr>
-                    Напишите мне:
-                    <CopyToClipboard text={text}>
-                        <TelegramText content={tooltipText} onMouseLeave={() => setTooltipText('Скопировать')} onClick={() => setTooltipText('Скопировано :)')}>
-                            «{text}» <CopyIcon />
-                        </TelegramText>
-                    </CopyToClipboard>
-                </TelegramDescr>
-            </TelegramInfoWrapper>
-        </TelegramInstructions>
-    )
+  return (
+    <TelegramInstructions>
+      <TelegramIcon />
+      <TelegramInfoWrapper>
+        <TelegramLink
+          arrowIcon={arrowIcon}
+          rel="noopener noreferrer"
+          href="https://t.me/vadim_granich"
+          target="_blank"
+        >
+          @vadim_granich
+        </TelegramLink>
+        <TelegramDescr>
+          Напишите мне:
+          <CopyToClipboard text={text}>
+            <TelegramText
+              content={tooltipText}
+              onMouseLeave={() => setTooltipText("Скопировать")}
+              onClick={() => setTooltipText("Скопировано :)")}
+            >
+              «{text}» <CopyIcon />
+            </TelegramText>
+          </CopyToClipboard>
+        </TelegramDescr>
+      </TelegramInfoWrapper>
+    </TelegramInstructions>
+  )
 }
 
 // const ParticipationStep = ({ number, title, notice, image }) => {

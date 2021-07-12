@@ -1,22 +1,21 @@
-import React from 'react'
-import { Container } from '../style';
-import styled from 'styled-components';
+import React from "react"
+import { Container } from "../style"
+import styled from "styled-components"
 // import BackgroundImage from 'gatsby-background-image';
-import ArrowIcon from '../../assets/svgs/white-arrow-inter.svg';
+import ArrowIcon from "../../assets/svgs/white-arrow-inter.svg"
 // import { graphql, useStaticQuery } from 'gatsby'
 // import Img from 'gatsby-image';
 
-const Arrow = styled(props => <ArrowIcon {...props}/>)`
-    width: 1vw;
-    height: 1vw;
-    margin: 0 0.4vw;
-    @media only screen and (max-width: 575px) {
-        width: 3vw;
-        height: 3vw;
-        margin: 0 1.5vw;
-    }
+const Arrow = styled(props => <ArrowIcon {...props} />)`
+  width: 1vw;
+  height: 1vw;
+  margin: 0 0.4vw;
+  @media only screen and (max-width: 575px) {
+    width: 3vw;
+    height: 3vw;
+    margin: 0 1.5vw;
+  }
 `
-
 
 // const Telegram = styled(props => <Img {...props}/>)`
 //     width: 2.3vw;
@@ -39,40 +38,41 @@ const Arrow = styled(props => <ArrowIcon {...props}/>)`
 // `
 
 const ReviewsSection = styled.section`
-    margin-bottom: 4vw;
-    @media only screen and (max-width: 575px) {
-        margin-bottom: 3vw;
-    }
+  margin-bottom: 4vw;
+  @media only screen and (max-width: 575px) {
+    margin-bottom: 3vw;
+  }
 `
 
-
 const ReviewsWrapper = styled.div`
-    background: #E8E8E8;
-    padding: 3vw 1vw 3vw 3vw;
-    border-radius: 0.6vw;
-    @media only screen and (max-width: 575px) {
-        border-radius: 2.5vw;
-        padding: 5vw 6vw 6vw;
-    }
+  background: #e8e8e8;
+  padding: 3vw 1vw 3vw 3vw;
+  border-radius: 0.6vw;
+  @media only screen and (max-width: 575px) {
+    border-radius: 2.5vw;
+    padding: 5vw 6vw 6vw;
+  }
 `
 
 const ReviewsTitle = styled.h2`
-    color: var(--granich-black);
-    font-size: 4vw;
-    letter-spacing: -0.1vw;
-    font-weight: 700;
+  color: var(--granich-black);
+  font-size: 4vw;
+  letter-spacing: -0.1vw;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 2.7vw;
+  @media only screen and (max-width: 575px) {
+    font-size: 11vw;
+    letter-spacing: -0.7vw;
     line-height: 1;
-    margin-bottom: 2.7vw;
-    @media only screen and (max-width: 575px) {
-        font-size: 11vw;
-        letter-spacing: -0.7vw;
-        line-height: 1;
-        margin-bottom: 7vw;
-        width: 60%;
-        ${props => props.masterClass && `
+    margin-bottom: 7vw;
+    width: 60%;
+    ${props =>
+      props.masterClass &&
+      `
             width: 100%;
         `}
-    }
+  }
 `
 
 // const ReviewsList = styled.div`
@@ -132,8 +132,6 @@ const ReviewsTitle = styled.h2`
 //     }
 // `
 
-
-
 // const ReviewButtonIcons = styled.div`
 //     margin-left: auto;
 //     display: flex;
@@ -155,23 +153,23 @@ const ReviewsTitle = styled.h2`
 //     }
 // `
 
-
-
 const ReviewsFooter = styled.div`
-    display: flex;
-    align-items: center;
-    // background: #dedede;
-    border-radius: 0.5vw;
-    // padding: 1vw 3vw;
-    @media only screen and (max-width: 575px) {
-        border-radius: 1.5vw;
-        padding: 5vw 5vw 5vw;
-        flex-direction: column;
-        background: #dedede;
-        ${props => props.masterClass && `
+  display: flex;
+  align-items: center;
+  // background: #dedede;
+  border-radius: 0.5vw;
+  // padding: 1vw 3vw;
+  @media only screen and (max-width: 575px) {
+    border-radius: 1.5vw;
+    padding: 5vw 5vw 5vw;
+    flex-direction: column;
+    background: #dedede;
+    ${props =>
+      props.masterClass &&
+      `
             padding: 5vw;
         `}
-    }
+  }
 `
 
 // const ReviewsFooterTitle = styled.div`
@@ -186,70 +184,71 @@ const ReviewsFooter = styled.div`
 //         margin-top: 0;
 //         margin-bottom: 4vw;
 
-
 //     }
 // `
 
 const ReviewsLinks = styled.div`
-    display: flex;
-    // margin-left: auto;
-    @media only screen and (max-width: 575px) {
-        // margin-left: 0;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
+  display: flex;
+  // margin-left: auto;
+  @media only screen and (max-width: 575px) {
+    // margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 `
 const ReviewsText = styled.div`
-    font-size: 1.2vw;
-    max-width: 48%;
-    margin-left: 1.2vw;
-    line-height: 1.4;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    @media only screen and (max-width: 575px) {
-        font-size: 3.7vw;
-        max-width: 100%;
-        margin-top: 3vw;
-        margin-left: 0;
-    }
+  font-size: 1.2vw;
+  max-width: 48%;
+  margin-left: 1.2vw;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  @media only screen and (max-width: 575px) {
+    font-size: 3.7vw;
+    max-width: 100%;
+    margin-top: 3vw;
+    margin-left: 0;
+  }
 `
 
 const ReviewsLinkTelegram = styled.a`
-    display: flex;
-    align-items: center;
-    font-size: 1.25vw;
-    background: var(--granich-telegram-gradient);
-    border-radius: 0.3vw;
-    padding: 1.3vw 1.3vw;
-    color: white;
-    margin-right: 1vw;
-    transition: transform 0.2s ease;
-    box-shadow: .15vw .15vw .4vw rgba(0,0,0,0.25);
-    white-space: nowrap;
-    
-    :hover {
-        font-size: 1.25vw;
-        transform: scale(1.05);
-        cursor: pointer;
-        color: white;
-    }
+  display: flex;
+  align-items: center;
+  font-size: 1.25vw;
+  background: var(--granich-telegram-gradient);
+  border-radius: 0.3vw;
+  padding: 1.3vw 1.3vw;
+  color: white;
+  margin-right: 1vw;
+  transition: transform 0.2s ease;
+  box-shadow: 0.15vw 0.15vw 0.4vw rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
 
-    @media only screen and (max-width: 575px) {
-        font-size: 3.9vw;
-        border-radius: 1.3vw;
-        padding: 3.6vw 3vw;
-        box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
-        :hover {
-            font-size: 3.9vw;
-        }
-        margin-bottom: 4vw;
-        min-width: 100%;
-        width: 100%;
-        margin-right: 0;
-        justify-content: center;
+  :hover {
+    font-size: 1.25vw;
+    transform: scale(1.05);
+    cursor: pointer;
+    color: white;
+  }
+
+  @media only screen and (max-width: 575px) {
+    font-size: 3.9vw;
+    border-radius: 1.3vw;
+    padding: 3.6vw 3vw;
+    box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.25);
+    :hover {
+      font-size: 3.9vw;
     }
-    ${props => props.masterClass && `
+    margin-bottom: 4vw;
+    min-width: 100%;
+    width: 100%;
+    margin-right: 0;
+    justify-content: center;
+  }
+  ${props =>
+    props.masterClass &&
+    `
         padding: 1vw 1vw;
         margin: 0 auto;
         width: auto;
@@ -264,54 +263,50 @@ const ReviewsLinkTelegram = styled.a`
             margin: 0 auto;
         }
     `}
-
 `
 const ReviewsLinkVk = styled.a`
+  font-size: 1.25vw;
+  background: var(--granich-vk-gradient);
+  border-radius: 0.3vw;
+  padding: 0.7vw 1.5vw;
+  color: white;
+  transition: transform 0.2s ease;
+  box-shadow: 0.15vw 0.15vw 0.4vw rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  div {
+    color: inherit;
+    :last-child {
+      margin-top: 0.1vw;
+      font-size: 0.8vw;
+    }
+  }
+  :hover {
     font-size: 1.25vw;
-    background: var(--granich-vk-gradient);
-    border-radius: 0.3vw;
-    padding: 0.7vw 1.5vw;
+    transform: scale(1.05);
+    cursor: pointer;
     color: white;
-    transition: transform 0.2s ease;
-    box-shadow: .15vw .15vw .4vw rgba(0,0,0,0.25);
-    white-space: nowrap;
-    div {
-        color: inherit;
-        :last-child {
-            margin-top: 0.1vw;
-            font-size: 0.8vw;
-        }
-    }
+  }
+  @media only screen and (max-width: 575px) {
+    font-size: 3.9vw;
+    border-radius: 1.3vw;
+    padding: 1.7vw 14vw 2vw;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.25);
+    justify-content: center;
     :hover {
-        font-size: 1.25vw;
-        transform: scale(1.05);
-        cursor: pointer;
-        color: white;
+      font-size: 3.9vw;
+      text-align: center;
     }
-    @media only screen and (max-width: 575px) {
-        font-size: 3.9vw;
-        border-radius: 1.3vw;
-        padding: 1.7vw 14vw 2vw;
-        width: 100%;
-        text-align: center;
-        box-shadow: 0.5vw 0.5vw 1vw rgba(0,0,0,0.25);
-        justify-content: center;
-        :hover {
-            font-size: 3.9vw;
-            text-align: center;
-        }
-        div {
-
-            :last-child {
-                font-size: 2.5vw;
-                text-align: left;
-                margin-top: 0.3vw;
-            }
-        }
+    div {
+      :last-child {
+        font-size: 2.5vw;
+        text-align: left;
+        margin-top: 0.3vw;
+      }
     }
+  }
 `
-
-
 
 // const Review = ({image, link, telegramIcon, telegramIconOut}) => {
 //     return (
@@ -321,76 +316,103 @@ const ReviewsLinkVk = styled.a`
 //                 <span>Показать полностью</span>
 //                 <ReviewButtonIcons>
 //                     <TelegramOut fluid={telegramIconOut}/><Telegram fluid={telegramIcon}/>
-//                 </ReviewButtonIcons> 
+//                 </ReviewButtonIcons>
 //             </ReviewButton>
 //         </ReviewWrapper>
 //     )
 // }
 
+const CourseReviews = ({ data, dataHeader, masterClass }) => {
+  // const dataImage = useStaticQuery(graphql`
+  //     query reviewsIcons {
+  //         telegramReviewsIcon: file(relativePath: { eq: "graph-design/reviews/telegram-small-icon-01.png" }) {
+  //             childImageSharp {
+  //                 fluid(maxWidth: 120) {
+  //                     ...GatsbyImageSharpFluid
+  //                 }
+  //             }
+  //         }
+  //         telegramReviewsIconOut: file(relativePath: { eq: "graph-design/reviews/telegram-small-link-out-01.png" }) {
+  //             childImageSharp {
+  //                 fluid(maxWidth: 120) {
+  //                     ...GatsbyImageSharpFluid
+  //                 }
+  //             }
+  //         }
 
-const CourseReviews = ({data, dataHeader, masterClass}) => {
-    // const dataImage = useStaticQuery(graphql`
-    //     query reviewsIcons {
-    //         telegramReviewsIcon: file(relativePath: { eq: "graph-design/reviews/telegram-small-icon-01.png" }) {
-    //             childImageSharp {
-    //                 fluid(maxWidth: 120) {
-    //                     ...GatsbyImageSharpFluid
-    //                 }
-    //             }
-    //         }
-    //         telegramReviewsIconOut: file(relativePath: { eq: "graph-design/reviews/telegram-small-link-out-01.png" }) {
-    //             childImageSharp {
-    //                 fluid(maxWidth: 120) {
-    //                     ...GatsbyImageSharpFluid
-    //                 }
-    //             }
-    //         }
+  //     }
+  // `)
 
-    //     }
-    // `)
+  // const telegramIcon = dataImage.telegramReviewsIcon.childImageSharp.fluid;
+  // const telegramIconOut = dataImage.telegramReviewsIconOut.childImageSharp.fluid;
 
-    // const telegramIcon = dataImage.telegramReviewsIcon.childImageSharp.fluid;
-    // const telegramIconOut = dataImage.telegramReviewsIconOut.childImageSharp.fluid;
+  return (
+    <ReviewsSection>
+      <Container>
+        <ReviewsWrapper>
+          {!masterClass ? (
+            <ReviewsTitle>{dataHeader.reviewsHeaderTitle}</ReviewsTitle>
+          ) : (
+            <ReviewsTitle masterClass>
+              {dataHeader.reviewsHeaderTitle}
+            </ReviewsTitle>
+          )}
 
-    return (
-        <ReviewsSection>
-            <Container>
-                <ReviewsWrapper>
-                    {!masterClass ? (
-                        <ReviewsTitle>{dataHeader.reviewsHeaderTitle}</ReviewsTitle>
-                    ) : (
-                        <ReviewsTitle masterClass>{dataHeader.reviewsHeaderTitle}</ReviewsTitle>
-                    )}
-                    
-                    {/* <ReviewsList>
+          {/* <ReviewsList>
                         {data.edges.map((review) => {
                             return (
                                 <Review telegramIcon={telegramIcon} telegramIconOut={telegramIconOut} key={review.node.id} image={review.node.reviewsImage.fluid} link={review.node.reviewsLink}/>
                             )
                         })}
                     </ReviewsList> */}
-                    <ReviewsFooter masterClass={masterClass}>
-                        {!masterClass ? (
-                            <>
-                                {/* <ReviewsFooterTitle>Все отзывы о курсе:</ReviewsFooterTitle> */}
-                                <ReviewsLinks>
-                                    <ReviewsLinkTelegram target="_blank" href={dataHeader.reviewsHeaderLinkTelegram}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
-                                    {dataHeader.reviewsHeaderLinkVk && <ReviewsLinkVk target="_blank" href={dataHeader.reviewsHeaderLinkVk}><div>Архив отзывов<Arrow/>ВК</div><div>На стене Вадима Гранича</div></ReviewsLinkVk>}
-                                </ReviewsLinks>
-                                <ReviewsText>Напишите выпускникам прошлых потоков, они с радостью поделятся эмоциями от прохождения курса</ReviewsText>
-                            </>
-                          
-                        ) : (
-
-                            <ReviewsLinkTelegram masterClass target="_blank" href={dataHeader.reviewsHeaderLinkTelegram}>Все свежие отзывы<Arrow/>ТГ</ReviewsLinkTelegram>
-                        )}
-
-
-                    </ReviewsFooter>
-                </ReviewsWrapper>
-            </Container>
-        </ReviewsSection>
-    )
+          <ReviewsFooter masterClass={masterClass}>
+            {!masterClass ? (
+              <>
+                {/* <ReviewsFooterTitle>Все отзывы о курсе:</ReviewsFooterTitle> */}
+                <ReviewsLinks>
+                  <ReviewsLinkTelegram
+                    target="_blank"
+                    href={dataHeader.reviewsHeaderLinkTelegram}
+                  >
+                    Все свежие отзывы
+                    <Arrow />
+                    ТГ
+                  </ReviewsLinkTelegram>
+                  {dataHeader.reviewsHeaderLinkVk && (
+                    <ReviewsLinkVk
+                      target="_blank"
+                      href={dataHeader.reviewsHeaderLinkVk}
+                    >
+                      <div>
+                        Архив отзывов
+                        <Arrow />
+                        ВК
+                      </div>
+                      <div>На стене Вадима Гранича</div>
+                    </ReviewsLinkVk>
+                  )}
+                </ReviewsLinks>
+                <ReviewsText>
+                  Напишите выпускникам прошлых потоков, они с радостью поделятся
+                  эмоциями от прохождения курса
+                </ReviewsText>
+              </>
+            ) : (
+              <ReviewsLinkTelegram
+                masterClass
+                target="_blank"
+                href={dataHeader.reviewsHeaderLinkTelegram}
+              >
+                Все свежие отзывы
+                <Arrow />
+                ТГ
+              </ReviewsLinkTelegram>
+            )}
+          </ReviewsFooter>
+        </ReviewsWrapper>
+      </Container>
+    </ReviewsSection>
+  )
 }
 
 export default CourseReviews

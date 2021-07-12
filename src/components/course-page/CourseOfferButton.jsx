@@ -1,6 +1,5 @@
-import React from 'react'
-import styled from 'styled-components';
-
+import React from "react"
+import styled from "styled-components"
 
 const CourseOfferButton = styled(props => <Link {...props} />)`
   display: inline-flex;
@@ -15,7 +14,7 @@ const CourseOfferButton = styled(props => <Link {...props} />)`
   font-weight: 400;
   transition: all 0.2s ease;
   user-select: none;
-  box-shadow: .25vw .25vw .4vw rgba(0,0,0,0.25);
+  box-shadow: 0.25vw 0.25vw 0.4vw rgba(0, 0, 0, 0.25);
   letter-spacing: 0.05vw;
   position: relative;
   z-index: 1;
@@ -33,7 +32,9 @@ const CourseOfferButton = styled(props => <Link {...props} />)`
     font-weight: 400;
     letter-spacing: 0.06vw;
   }
-  ${props => props.type === 'Мастер-класс' && `
+  ${props =>
+    props.type === "Мастер-класс" &&
+    `
     padding: 1vw 3vw 1.2vw 4.2vw;
     
     svg {
@@ -58,26 +59,21 @@ const CourseOfferButton = styled(props => <Link {...props} />)`
     padding: 3vw 5vw 4vw 5vw;
     border-radius: 1.5vw;
     margin-bottom: 2vw;
-    box-shadow: 0.7vw 0.7vw 1.5vw rgba(0,0,0,0.3);
+    box-shadow: 0.7vw 0.7vw 1.5vw rgba(0, 0, 0, 0.3);
     :hover {
-        font-size: 5.5vw;
+      font-size: 5.5vw;
     }
     svg {
-        width: 5vw;
-        height: 5vw;
-        margin-left: 0;
-        margin-right: 1vw;
+      width: 5vw;
+      height: 5vw;
+      margin-left: 0;
+      margin-right: 1vw;
     }
   }
-
 `
 
 const CourseOfferButton = () => {
-    return (
-        <CourseOfferButton>
-
-        </CourseOfferButton>
-    )
+  return <CourseOfferButton></CourseOfferButton>
 }
 
 export default CourseOfferButton
