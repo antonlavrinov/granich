@@ -59,6 +59,10 @@ export const PureCourse = ({ icons, courseData, openModal }) => {
   ) {
     return null
   }
+
+  // if (courseData.courseTitle === "Осознанный Фриланс") {
+  //   return null
+  // }
   // const openModalIfEmpty = (title, bool, slug, ) => {
   //   trackCustomEvent({
   //     category: `Главная: карточка "${title}"`,

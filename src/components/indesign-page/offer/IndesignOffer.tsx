@@ -43,8 +43,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   svg {
-    width: 5vw;
-    height: 5vw;
+    width: 7vw;
+    height: 7vw;
     margin-bottom: 2vw;
   }
 
@@ -90,22 +90,30 @@ export const Title = styled.h1`
   letter-spacing: -0.1rem;
   line-height: 0.85;
   margin: 0;
-  margin-bottom: 3vw;
+  margin-bottom: 2vw;
   text-align: center;
   span {
-    font-family: EB Garamond;
+    /* font-family: EB Garamond; */
+    font-family: Inter;
     /* font-style: italic; */
+    font-weight: 800;
     font-size: 6.5vw;
     letter-spacing: -0.1rem;
     display: block;
-    margin-bottom: 1vw;
+    /* margin-bottom: 1vw; */
   }
   i {
-    font-family: EB Garamond;
+    /* font-family: EB Garamond; */
+    font-family: Inter;
     /* font-style: italic; */
-    font-size: 5vw;
-    letter-spacing: -0.1rem;
-    display: block;
+    font-size: 2.5vw;
+    font-style: normal;
+    color: var(--granich-red);
+    border: 0.2vw solid var(--granich-red);
+    border-radius: 0.5vw;
+    padding: 0.5vw 0.6vw;
+    /* letter-spacing: -0.1rem; */
+    display: inline-block;
   }
   @media only screen and (max-width: 575px) {
     // text-align: left;
@@ -123,9 +131,11 @@ export const Title = styled.h1`
 export const Descr = styled.div`
   text-align: center;
   span {
-    font-family: EB Garamond;
+    /* font-family: EB Garamond; */
+    font-family: Inter;
     /* font-style: italic; */
-    font-size: 3vw;
+    font-size: 2.5vw;
+    line-height: 1.4;
     /* letter-spacing: -0.1rem; */
   }
 `
@@ -181,5 +191,15 @@ export const MainTag = styled.div`
     margin-right: 3vw;
     white-space: nowrap;
     margin-bottom: 3vw;
+  }
+`
+
+export const LogoWrapper = styled.div`
+  display: flex;
+  svg {
+    :first-child {
+      width: 10vw;
+      margin-right: 2vw;
+    }
   }
 `

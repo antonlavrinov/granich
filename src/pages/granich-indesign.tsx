@@ -19,6 +19,7 @@ import {
 } from "../interfaces/course-page"
 import { ITeam } from "../interfaces/main-page"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
+import Homework from "../components/indesign-page/homework"
 
 export const contentfulQuery = graphql`
   query indesignQuery {
@@ -105,6 +106,8 @@ export const contentfulQuery = graphql`
 
 type GraphQlResults = {
   offer: ICourseOffer
+  curriculum: any
+  curriculumHeader: any
 }
 
 const GraphicMetaphorsInIdentityPage: React.FC<PageProps<GraphQlResults>> = ({
@@ -133,9 +136,11 @@ const GraphicMetaphorsInIdentityPage: React.FC<PageProps<GraphQlResults>> = ({
       <div className="section-top-block"></div>
       <IndesignOffer data={data.offer} />
       <CourseCurriculum
+        compressedHeader
         dataHeader={data.curriculumHeader}
         data={data.curriculum}
       />
+      <Homework />
       {/* <Timetable />
       <CourseParticipation
         policy={false}
