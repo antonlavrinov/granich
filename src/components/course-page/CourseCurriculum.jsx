@@ -33,11 +33,13 @@ import {
   CurriculumAccordionItem,
   CurriculumAccordionHeading,
   CurriculumContentText,
+  ContentCardsWrapper,
 } from "../curriculum/styles"
 import PlusImage from "../../assets/images/plus.png"
 import MinusImage from "../../assets/images/minus.png"
 import { useMediaQuery } from "react-responsive"
 import CurriculumHead from "../curriculum/CurriculumHead"
+import ContentCard from "../../components/main-page/precourse-preparation/content-card"
 
 // import LazyLoad from 'react-lazyload';
 
@@ -316,6 +318,15 @@ const CourseCurriculum = ({
                                   .json,
                                 options
                               )}
+                              {tab.node.contentCards && (
+                                <ContentCardsWrapper>
+                                  {tab.node.contentCards.map((el, idx) => {
+                                    return (
+                                      <ContentCard content={el} key={idx} />
+                                    )
+                                  })}
+                                </ContentCardsWrapper>
+                              )}
                             </CurriculumContentText>
                           )}
                         </>
@@ -404,6 +415,15 @@ const CourseCurriculum = ({
                                   .childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode
                                   .json,
                                 options
+                              )}
+                              {tab.node.contentCards && (
+                                <ContentCardsWrapper>
+                                  {tab.node.contentCards.map((el, idx) => {
+                                    return (
+                                      <ContentCard content={el} key={idx} />
+                                    )
+                                  })}
+                                </ContentCardsWrapper>
                               )}
                             </CurriculumContentText>
                           )}

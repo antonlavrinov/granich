@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 2vw;
+  @media only screen and (max-width: 575px) {
+    grid-template-columns: 1fr;
+    grid-gap: 5vw;
+  }
 `
 
 export const HomeworkDownload = styled.div`
@@ -19,12 +23,20 @@ export const HomeworkDownload = styled.div`
   justify-content: space-between;
   /* min-height: 100%; */
   /* align-items: center; */
+  @media only screen and (max-width: 575px) {
+    border-radius: 2.5vw;
+    padding: 6vw;
+  }
 `
 
 export const DownloadTitle = styled.div`
   color: white;
   font-size: 3vw;
   font-weight: 600;
+  @media only screen and (max-width: 575px) {
+    font-size: 10vw;
+    margin-bottom: 7vw;
+  }
 `
 
 export const DownloadButton = styled.button`
@@ -64,12 +76,13 @@ export const DownloadButton = styled.button`
   }
   @media only screen and (max-width: 575px) {
     font-size: 5.5vw;
-    margin: 0 5vw;
+    /* margin: 0 5vw; */
     padding: 3vw 5vw 4vw 5vw;
     border-radius: 1.5vw;
-    margin-bottom: 2vw;
+    margin-bottom: 4vw;
     box-shadow: 0.7vw 0.7vw 1.5vw rgba(0, 0, 0, 0.3);
     :hover {
+      transform: scale(1);
       font-size: 5.5vw;
     }
     svg {
@@ -84,6 +97,9 @@ export const DownloadButton = styled.button`
 export const DownloadNotice = styled.div`
   font-size: 1.46vw;
   color: var(--granich-grey);
+  @media only screen and (max-width: 575px) {
+    font-size: 4vw;
+  }
 `
 
 export const DownloadFooter = styled.div`
@@ -96,6 +112,10 @@ export const Consulting = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media only screen and (max-width: 575px) {
+    padding: 6vw;
+    border-radius: 2.5vw;
+  }
 `
 
 export const ConsultingTitle = styled.div`
@@ -110,11 +130,11 @@ export const ConsultingTitle = styled.div`
   letter-spacing: -0.1vw;
   @media only screen and (max-width: 575px) {
     white-space: normal;
-    font-size: 8.9vw;
+    font-size: 11vw;
     margin-left: 0;
     letter-spacing: -0.4vw;
     margin-bottom: 6.8vw;
-    line-height: 1;
+    line-height: 1.1;
   }
 `
 
@@ -133,13 +153,16 @@ export const ConsultingFooter = styled.div`
   border-radius: 0.5vw;
   padding: 1vw 1.5vw;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   /* margin-top: 3.5vw; */
   @media only screen and (max-width: 575px) {
     flex-direction: column;
     background: white;
+    /* background: grey; */
     padding: 0;
+    /* justify-content: center; */
+    /* align-items: center; */
   }
 `
 
@@ -147,6 +170,11 @@ export const ConsultingPriceText = styled.div`
   width: 8.5vw;
   font-size: 1.46vw;
   color: var(--granich-grey);
+  @media only screen and (max-width: 575px) {
+    font-size: 4vw;
+    width: 23vw;
+    margin-right: 3vw;
+  }
 `
 
 export const ConsultingPrice = styled.div`
@@ -168,14 +196,18 @@ export const ConsultingPrice = styled.div`
   }
   @media only screen and (max-width: 575px) {
     font-size: 4vw;
-    margin-bottom: 3vw;
-    margin-top: 5vw;
+    margin-bottom: 4vw;
+    /* margin-top: 5vw; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     span {
       font-size: 10.5vw;
       font-style: italic;
-      margin-left: 5vw;
+      /* margin-left: 5vw; */
       line-height: 1;
-      margin-top: -0.4vw;
+      top: -0.6vw;
+      position: relative;
       letter-spacing: -0.1vw;
     }
   }
@@ -219,13 +251,16 @@ export const ConsultingButton = styled.div`
   }
   @media only screen and (max-width: 575px) {
     font-size: 5.5vw;
-    margin: 0 5vw;
+    /* margin: 0 5vw; */
     padding: 3vw 5vw 4vw 5vw;
     border-radius: 1.5vw;
     margin-bottom: 2vw;
     box-shadow: 0.7vw 0.7vw 1.5vw rgba(0, 0, 0, 0.3);
+    align-self: center;
+    width: 100%;
     :hover {
       font-size: 5.5vw;
+      transform: scale(1);
     }
     svg {
       width: 5vw;

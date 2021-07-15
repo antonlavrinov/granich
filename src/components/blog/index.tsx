@@ -5,8 +5,14 @@ import VKIcon from "../../assets/svgs/granich-main-team/vk.svg"
 import InstagramIcon from "../../assets/svgs/granich-main-team/instagram.svg"
 import TelegramIcon from "../../assets/svgs/granich-main-team/telegram.svg"
 import YoutubeIcon from "../../assets/svgs/youtube_black.svg"
+// import MasterClassTeacherBlock from "../../components/course-page/CourseAuthors"
+import TeamMember from "../main-page/team/teacher"
 
-const Blog: React.FC = () => {
+type Props = {
+  team: any
+}
+
+const Blog: React.FC<Props> = ({ team }) => {
   return (
     <SC.Section>
       <Container>
@@ -63,6 +69,12 @@ const Blog: React.FC = () => {
             </SC.Social>
           </SC.Socials>
         </SC.Wrapper>
+        <SC.Team>
+          {team.map((el, idx) => {
+            console.log("team", el)
+            return <TeamMember key={el.node.id} teacher={el.node} />
+          })}
+        </SC.Team>
       </Container>
     </SC.Section>
   )

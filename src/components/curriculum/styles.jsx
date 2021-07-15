@@ -606,6 +606,34 @@ export const CurriculumItemFrame = styled.div`
 
 
     `}
+     ${props =>
+       props.numberOfLessons === 4 &&
+       `
+        :nth-child(1) {
+            :after {
+                width: 25%;  
+            }
+        }
+        :nth-child(2) {
+            :after {
+                width: 50%;  
+            }
+        }
+        :nth-child(3) {
+            :after {
+                width: 75%;  
+            }
+        }
+        :nth-child(4) {
+            :after {
+                width: 100%;  
+            }
+        }
+        
+
+
+
+    `}
 `
 
 export const CurriculumItemTitle = styled("h3")`
@@ -915,4 +943,15 @@ export const CurriculumAccordionItemPanel = styled(props => (
   <AccordionItemPanel {...props} />
 ))`
   padding: 2vw;
+`
+
+//content cards
+
+export const ContentCardsWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 18vw 18vw 18vw;
+  grid-gap: 2vw;
+  @media only screen and (max-width: 575px) {
+    grid-template-columns: 45vw;
+  }
 `

@@ -450,8 +450,9 @@ const CourseAuthors = ({ data, numberOfTeachers, quote, text }) => {
 
 export default CourseAuthors
 
-const MasterClassTeacherBlock = ({ numberOfTeachers, teacher }) => {
+export const MasterClassTeacherBlock = ({ numberOfTeachers, teacher }) => {
   const [tooltipEmail, setTooltipEmail] = useState("Скопировать")
+  console.log("author", teacher)
 
   const data = useStaticQuery(graphql`
     query courseAuthorsSocialIcons {

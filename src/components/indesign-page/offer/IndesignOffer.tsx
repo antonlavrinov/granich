@@ -3,32 +3,6 @@ import styled from "styled-components"
 import PotokIcon from "../../../assets/svgs/graph-design/graph-design-potok-icon.svg"
 import DateIcon from "../../../assets/svgs/graph-design/graph-design-date-icon.svg"
 
-export const Potok = styled(props => <PotokIcon {...props} />)`
-  width: 1.3vw;
-  height: 1.3vw;
-  margin-right: 0.3vw;
-  fill: white;
-  @media only screen and (max-width: 575px) {
-    width: 4.3vw;
-    height: 4vw;
-    margin-right: 1vw;
-    margin-top: -0.3vw;
-  }
-`
-
-export const Date = styled(props => <DateIcon {...props} />)`
-  width: 1.3vw;
-  height: 1.3vw;
-  fill: var(--granich-red);
-  margin-right: 0.3vw;
-  @media only screen and (max-width: 575px) {
-    width: 4.3vw;
-    height: 4vw;
-    margin-right: 1vw;
-    margin-top: -0.8vw;
-  }
-`
-
 export const Section = styled.section`
   margin-bottom: 2vw;
 `
@@ -42,44 +16,10 @@ export const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  svg {
-    width: 7vw;
-    height: 7vw;
-    margin-bottom: 2vw;
-  }
 
   @media only screen and (max-width: 575px) {
-    padding: 6vw;
+    padding: 10vw 6vw;
     border-radius: 2.5vw;
-  }
-`
-
-export const YoutubeBlock = styled.div`
-  // width: 100%;
-  height: 38vw;
-  // padding: 3vw;
-  position: relative;
-
-  iframe {
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    position: relative;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-  }
-  @media only screen and (max-width: 575px) {
-    padding: 0;
-    height: auto;
-    iframe {
-      position: relative;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      height: 43vw;
-    }
   }
 `
 
@@ -117,89 +57,68 @@ export const Title = styled.h1`
   }
   @media only screen and (max-width: 575px) {
     // text-align: left;
-    font-size: 12vw;
+    font-size: 14vw;
     letter-spacing: -0.1rem;
     margin-bottom: 6vw;
     span {
-      font-size: 12vw;
+      font-size: 14vw;
       letter-spacing: -0.05rem;
+      margin-bottom: 2vw;
       // white-space: nowrap;
+    }
+    i {
+      font-size: 5vw;
+      border: 0.4vw solid var(--granich-red);
+      border-radius: 1.5vw;
+      padding: 1vw 1.5vw;
     }
   }
 `
 
 export const Descr = styled.div`
   text-align: center;
+  line-height: 1.4;
   span {
     /* font-family: EB Garamond; */
     font-family: Inter;
     /* font-style: italic; */
     font-size: 2.5vw;
-    line-height: 1.4;
+
     /* letter-spacing: -0.1rem; */
   }
-`
-
-export const TagList = styled.div`
-  display: flex;
-  margin-bottom: 2.1vw;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
   @media only screen and (max-width: 575px) {
-    padding: 0 3.5vw;
-    max-width: 100%;
-  }
-`
-
-export const Tag = styled.div`
-  font-size: 1.2vw;
-  display: flex;
-  color: var(--granich-red);
-  border: 1.5px solid var(--granich-red);
-  padding: 0.3vw 0.8vw;
-  border-radius: 100vw;
-  margin-right: 0.5vw;
-  margin-bottom: 1vw;
-  font-weight: 500;
-  align-items: center;
-  @media only screen and (max-width: 575px) {
-    font-size: 3.7vw;
-    padding: 1.8vw 2.5vw 1.6vw;
-    margin-right: 3vw;
-    white-space: nowrap;
-    margin-bottom: 3vw;
-    line-height: 1;
-  }
-`
-
-export const MainTag = styled.div`
-  font-size: 1.2vw;
-  display: flex;
-  color: white;
-  background: var(--granich-red);
-  border: 1.5px solid var(--granich-red);
-  padding: 0.3vw 0.8vw;
-  border-radius: 100vw;
-  margin-right: 0.5vw;
-  font-weight: 500;
-  @media only screen and (max-width: 575px) {
-    font-size: 3.7vw;
-    padding: 1.6vw 2.5vw;
-    margin-right: 3vw;
-    white-space: nowrap;
-    margin-bottom: 3vw;
+    line-height: 5vw;
+    span {
+      font-size: 4vw;
+    }
   }
 `
 
 export const LogoWrapper = styled.div`
   display: flex;
+  margin-bottom: 2vw;
+  svg {
+    width: 7vw;
+    height: 7vw;
+  }
   svg {
     :first-child {
       width: 10vw;
       margin-right: 2vw;
+    }
+  }
+  @media only screen and (max-width: 575px) {
+    margin-bottom: 6vw;
+    svg {
+      width: 12vw;
+      height: 12vw;
+    }
+    svg {
+      :first-child {
+        width: 17.5vw;
+
+        margin-right: 2vw;
+      }
     }
   }
 `

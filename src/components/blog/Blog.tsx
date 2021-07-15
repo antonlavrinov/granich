@@ -8,12 +8,15 @@ export const Wrapper = styled.div`
   padding: 4.2vw 3.3vw;
   position: relative;
   min-height: 36.5vw;
+  margin-bottom: 2vw;
+
   // height: 36.5vw;
   @media only screen and (max-width: 575px) {
     border-radius: 2.5vw;
     padding: 7vw 6vw 38vw;
     height: auto;
     min-height: auto;
+    margin-bottom: 5vw;
   }
 `
 
@@ -108,5 +111,19 @@ export const Devider = styled.div`
   height: 4vw;
   @media only screen and (max-width: 575px) {
     height: 5vw;
+  }
+`
+
+export const Team = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1.6vw;
+  grid-row-gap: 1.6vw;
+  justify-content: space-between;
+  margin-bottom: 2vw;
+  @media only screen and (max-width: 575px) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 4vw;
+    margin-bottom: 5vw;
   }
 `

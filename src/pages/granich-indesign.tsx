@@ -1,23 +1,12 @@
 import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-// import CourseOffer from "../components/course-page/CourseOffer"
 import Header from "../components/global/header"
-// import CourseCurriculum from "../components/course-page/CourseCurriculum"
-import CourseParticipation from "../components/course-page/CourseParticipation"
 import { graphql, PageProps } from "gatsby"
-import ogImage from "../assets/images/seo/graphic-metaphors-in-identity.jpg"
-import ogImageVK from "../assets/images/seo/vk/graphic-metaphors-in-identity.jpg"
+import ogImage from "../assets/images/seo/granich-indesign.jpg"
+import ogImageVK from "../assets/images/seo/vk/granich-indesign.jpg"
 import IndesignOffer from "../components/indesign-page/offer"
-import Timetable from "../components/metaphors-in-identity-page/timetable"
-import {
-  ICourseExplanations,
-  ICourseOffer,
-  ICoursePortfolioHeader,
-  ICoursePortfolioPosters,
-  IPriceRange,
-} from "../interfaces/course-page"
-import { ITeam } from "../interfaces/main-page"
+import { ICourseOffer } from "../interfaces/course-page"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
 import Homework from "../components/indesign-page/homework"
 
@@ -54,6 +43,43 @@ export const contentfulQuery = graphql`
       }
       childContentfulGranichCourseCoursePolicyRichTextNode {
         json
+      }
+    }
+    contentCards: allContentfulGranichMainContentCard(
+      sort: { fields: [contentOrderDecimalNumber], order: DESC }
+      filter: {
+        contentTitle: {
+          in: [
+            "Виды гарнитур (шрифтов)"
+            "Как построить сетку. Часть 1"
+            "Как оформить абзац текста"
+          ]
+        }
+      }
+    ) {
+      nodes {
+        contentDescription {
+          json
+        }
+        contentTags
+        contentTitle
+        contentImage {
+          fluid(maxWidth: 350) {
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+        contentType
+        contentSlug
+        contentYoutubeVideoLink
+        contentPDF {
+          file {
+            url
+          }
+        }
+        contentLinkPinterest
+        contentLinkBehance
+        contentLinkMedium
+        contentYoutubeTiming
       }
     }
     curriculumHeader: contentfulGranichCourseCurriculumHeader(
@@ -108,48 +134,88 @@ type GraphQlResults = {
   offer: ICourseOffer
   curriculum: any
   curriculumHeader: any
+  contentCards: any
 }
 
 const GraphicMetaphorsInIdentityPage: React.FC<PageProps<GraphQlResults>> = ({
   data,
 }) => {
+  console.log("CURRICULUM DATA", data.contentCards)
+  const curriculumDataWithContentCards = {
+    edges: [
+      ...data?.curriculum?.edges,
+      {
+        node: {
+          id: "djfhsdjfhskd",
+          childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode: {
+            json: {
+              content: [],
+              data: {},
+              nodeType: "document",
+            },
+          },
+          childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode: null,
+          childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode: null,
+          childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode: null,
+          childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode: null,
+          childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode: {
+            json: {
+              content: [
+                {
+                  content: [
+                    {
+                      data: {},
+                      marks: [],
+                      nodeType: "text",
+                      value: "Дополнительные уроки",
+                    },
+                  ],
+                  data: {},
+                  nodeType: "paragraph",
+                },
+              ],
+              data: {},
+              nodeType: "document",
+            },
+          },
+          curriculumAttachmentTo: "Granich InDesign",
+          curriculumColumnsType: false,
+          curriculumImportantDescr: null,
+          curriculumTagName: "4 урок",
+          curriculumType: true,
+          contentCards: [...data?.contentCards?.nodes],
+        },
+      },
+    ],
+  }
   return (
     <Layout>
       <Header type={"dark"} />
       <SEO
-        title="Графические метафоры как путь в айдентику"
-        description="Курс по графическим метафорам для графических дизайнеров, которые хотят начать путь в создании айдентики (фирменных стилей)"
-        socialDescription="Курс по графическим метафорам для графических дизайнеров, которые хотят начать путь в создании айдентики (фирменных стилей)"
+        title="Granich InDesign"
+        description="Всё важное, что вам следует знать о программе Adobe InDesign + закрепление практикой"
+        socialDescription="Всё важное, что вам следует знать о программе Adobe InDesign + закрепление практикой"
         keywords={[
-          "метафоры",
-          "айдентика",
+          "indesign",
+          "free",
+          "course",
           "гранич",
-          "identity",
           "granich",
-          "conscious",
-          "metaphors",
+          "курс",
+          "индизайн",
         ]}
         ogImage={ogImage}
         ogImageVk={ogImageVK}
-        url="https://granich.design/graphic-metaphors-in-identity"
+        url="https://granich.design/granich-indesign"
       />
       <div className="section-top-block"></div>
       <IndesignOffer data={data.offer} />
       <CourseCurriculum
         compressedHeader
         dataHeader={data.curriculumHeader}
-        data={data.curriculum}
+        data={curriculumDataWithContentCards}
       />
       <Homework />
-      {/* <Timetable />
-      <CourseParticipation
-        policy={false}
-        data={data.offer}
-        formId={`ltForm5911337`}
-        formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1022043147`}
-        googleAnaliticsCategory={`Отправка формы Графметафоры`}
-        // additionalTags={["Интенсивный", "С нуля"]}
-      /> */}
     </Layout>
   )
 }

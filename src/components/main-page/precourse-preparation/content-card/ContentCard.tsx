@@ -133,6 +133,9 @@ export const WrapperLink = styled.a<PropsType>`
     transform: scale(1.03);
     cursor: pointer;
   }
+  :after {
+    background: none !important;
+  }
   @media only screen and (max-width: 575px) {
     border-radius: 1.5vw;
     min-height: 56vw;
@@ -160,6 +163,11 @@ export const WrapperExternalLink = styled.a<PropsType>`
         cursor: pointer;
         transform: scale(1.03);
     }
+    :after {
+      background: none !important;
+    }
+
+
     ${props =>
       props.pinterest &&
       `
@@ -242,6 +250,7 @@ export const Title = styled.h4`
   color: white;
   max-width: 14vw;
   margin-left: -0.2vw;
+  white-space: normal;
   @media only screen and (max-width: 575px) {
     font-size: 3.8vw;
     max-width: 100%;
