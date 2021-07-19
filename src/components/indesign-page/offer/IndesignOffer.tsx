@@ -38,7 +38,7 @@ export const Title = styled.h1`
     /* font-style: italic; */
     font-weight: 800;
     font-size: 6.5vw;
-    letter-spacing: -0.1rem;
+    letter-spacing: -0.25rem;
     display: block;
     /* margin-bottom: 1vw; */
   }

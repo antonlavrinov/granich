@@ -23,7 +23,7 @@ const Homework = () => {
             </SC.ConsultingTitle>
             <SC.ConsultingText>
               Можете оплатить его отдельно. Вдобавок, этим вы поддержите
-              создание нового бесплатного контента команды Granich
+              создание нового бесплатного контента командой Granich
             </SC.ConsultingText>
             <SC.ConsultingFooter>
               <SC.ConsultingPriceWrapper>
