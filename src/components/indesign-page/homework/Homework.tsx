@@ -61,8 +61,8 @@ export const DownloadButton = styled.button`
   align-self: flex-end;
   width: 100%;
   svg {
-    width: 1.4vw;
-    height: 1.4vw;
+    width: 2.3vw;
+    height: 2.3vw;
     margin-right: 0.8vw;
     fill: white;
   }
@@ -170,6 +170,7 @@ export const ConsultingPriceText = styled.div`
   width: 8.5vw;
   font-size: 1.46vw;
   color: var(--granich-grey);
+
   @media only screen and (max-width: 575px) {
     font-size: 4vw;
     width: 23vw;
@@ -183,6 +184,7 @@ export const ConsultingPrice = styled.div`
   font-size: 1.2vw;
   line-height: 1.3;
   color: var(--granich-grey);
+
   span {
     display: block;
     font-family: EB Garamond;
@@ -215,6 +217,7 @@ export const ConsultingPrice = styled.div`
 
 export const ConsultingPriceWrapper = styled.div`
   display: flex;
+  align-items: center;
 `
 
 export const ConsultingButton = styled.div`
