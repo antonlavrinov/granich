@@ -53,16 +53,16 @@ const Course: React.FC<Props> = ({ courseData, openModal }) => {
 }
 
 export const PureCourse = ({ icons, courseData, openModal }) => {
-  if (
-    courseData.courseTitle === "Осознанный Фриланс" ||
-    courseData.courseTitle === "Granich InDesign"
-  ) {
-    return null
-  }
-
-  // if (courseData.courseTitle === "Осознанный Фриланс") {
+  // if (
+  //   courseData.courseTitle === "Осознанный Фриланс" ||
+  //   courseData.courseTitle === "Granich InDesign"
+  // ) {
   //   return null
   // }
+
+  if (courseData.courseTitle === "Осознанный Фриланс") {
+    return null
+  }
   // const openModalIfEmpty = (title, bool, slug, ) => {
   //   trackCustomEvent({
   //     category: `Главная: карточка "${title}"`,
