@@ -8,7 +8,7 @@ import ogImageVK from "../assets/images/seo/vk/granich-indesign.jpg"
 import IndesignOffer from "../components/indesign-page/offer"
 import { ICourseOffer } from "../interfaces/course-page"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
-import Homework from "../components/indesign-page/homework"
+import HomeworkAndConsulting from "../components/indesign-page/homework-and-consulting/"
 
 export const contentfulQuery = graphql`
   query indesignQuery {
@@ -215,7 +215,7 @@ const GraphicMetaphorsInIdentityPage: React.FC<PageProps<GraphQlResults>> = ({
         dataHeader={data.curriculumHeader}
         data={curriculumDataWithContentCards}
       />
-      <Homework />
+      <HomeworkAndConsulting />
     </Layout>
   )
 }

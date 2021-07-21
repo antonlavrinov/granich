@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react"
-import * as SC from "./Homework"
+import * as SC from "./HomeworkAndConsulting"
 import DownloadIcon from "../../../assets/svgs/zip-icon_big.svg"
 
 const HomeworkForm = () => {
