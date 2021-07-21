@@ -48,6 +48,7 @@ const Homework = () => {
             openModal={openModal}
             closeModal={closeModal}
             modalIsOpen={modalIsOpen}
+            googleAnaliticsCategory="Отправка формы Получить ДЗ (Granich InDesign)"
           />
         </Modal>
         <DownloadButton type="submit" id="button9712993" onClick={openModal}>

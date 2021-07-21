@@ -87,6 +87,7 @@ const Consulting = () => {
             openModal={openModal}
             closeModal={closeModal}
             modalIsOpen={modalIsOpen}
+            googleAnaliticsCategory="Отправка формы Заказать видеоразбор ДЗ (Granich InDesign)"
             price={"→ 1500 ₽"}
           />
         </Modal>

@@ -198,6 +198,7 @@ const GraphicMetaphorsInIdentityPage: React.FC<PageProps<GraphQlResults>> = ({
         keywords={[
           "indesign",
           "free",
+          "бесплатный",
           "course",
           "гранич",
           "granich",
