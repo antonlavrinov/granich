@@ -24,13 +24,13 @@ const Blog: React.FC<Props> = ({ team }) => {
           </SC.Text>
           <SC.Socials>
             <SC.Social>
-              <VKIcon />
+              <InstagramIcon />
               <a
-                href="https://vk.com/granichvk"
+                href="https://www.instagram.com/granichgram"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                vk.com/granichvk
+                @granichgram
               </a>
             </SC.Social>
             <SC.Social>
@@ -44,13 +44,13 @@ const Blog: React.FC<Props> = ({ team }) => {
               </a>
             </SC.Social>
             <SC.Social>
-              <InstagramIcon />
+              <VKIcon />
               <a
-                href="https://www.instagram.com/granichgram"
+                href="https://vk.com/granichvk"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                @granichgram
+                vk.com/granichvk
               </a>
             </SC.Social>
           </SC.Socials>

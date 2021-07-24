@@ -12,6 +12,9 @@ import HomeworkAndConsulting from "../components/indesign-page/homework-and-cons
 
 export const contentfulQuery = graphql`
   query indesignQuery {
+    consultingAccessibility: contentfulGranichIndesignAdditionalInfo {
+      indesignConsultingAccessibility
+    }
     offer: contentfulGranichCourse(
       courseTitle: { eq: "Графические метафоры как путь в айдентику" }
     ) {
@@ -135,6 +138,7 @@ type GraphQlResults = {
   curriculum: any
   curriculumHeader: any
   contentCards: any
+  consultingAccessibility: any
 }
 
 const GraphicMetaphorsInIdentityPage: React.FC<PageProps<GraphQlResults>> = ({
@@ -216,7 +220,7 @@ const GraphicMetaphorsInIdentityPage: React.FC<PageProps<GraphQlResults>> = ({
         dataHeader={data.curriculumHeader}
         data={curriculumDataWithContentCards}
       />
-      <HomeworkAndConsulting />
+      <HomeworkAndConsulting consultingAccessibility={data.consultingAccessibility} />
     </Layout>
   )
 }

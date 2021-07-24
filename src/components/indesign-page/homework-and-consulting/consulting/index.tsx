@@ -21,7 +21,7 @@ import ClockIcon from "../../../../assets/svgs/clock.svg"
 import { Modal } from "react-responsive-modal"
 import HomeworkAndConsultingModal from "../modal"
 
-const Consulting = () => {
+const Consulting = ({consultingAccessibility}) => {
   const [modalIsOpen, setIsOpen] = useState(false)
 
   const openModal = () => {
@@ -44,7 +44,7 @@ const Consulting = () => {
               Технические задания на закрепление инструментов Adobe InDesign
             </b>
             Куратор проконтролирует, что вы поняли все важные кнопки и настройки
-            индизайна
+            Индизайна
           </span>
         </Item>
         <Item>
@@ -105,6 +105,7 @@ const Consulting = () => {
             modalIsOpen={modalIsOpen}
             googleAnaliticsCategory="Отправка формы Заказать видеоразбор ДЗ (Granich InDesign)"
             price={"→ 1500 ₽"}
+            consultingAccessibility={consultingAccessibility}
           />
         </Modal>
         <PriceWrapper>

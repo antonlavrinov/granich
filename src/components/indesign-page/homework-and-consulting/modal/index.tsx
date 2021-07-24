@@ -53,6 +53,7 @@ const HomeworkAndConsultingModal = ({
   formId,
   buttonTitle,
   price,
+  consultingAccessibility
 }) => {
   // const [tooltipEmail, setTooltipEmail] = useState("Скопировать")
   const formEl = useRef(null)

@@ -7,13 +7,13 @@ import { Modal } from "react-responsive-modal"
 import Homework from "./homework"
 import Consulting from "./consulting"
 
-const HomeworkAndConsulting = () => {
+const HomeworkAndConsulting = ({consultingAccessibility}) => {
   return (
     <SC.Section>
       <Container>
         <SC.Wrapper>
           <Homework />
-          <Consulting />
+          <Consulting consultingAccessibility={consultingAccessibility.indesignConsultingAccessibility} />
         </SC.Wrapper>
       </Container>
     </SC.Section>
