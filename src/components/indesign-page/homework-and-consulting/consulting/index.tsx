@@ -13,15 +13,17 @@ import {
   Item,
   Notice,
   Warning,
+  BusyWarning,
 } from "./Consulting"
 import "react-responsive-modal/styles.css"
 import CheckIcon from "../../../../assets/svgs/check-icon.svg"
-import WarningIcon from "../../../../assets/svgs/warning-sign.svg"
+// import WarningIcon from "../../../../assets/svgs/warning-sign.svg"
 import ClockIcon from "../../../../assets/svgs/clock.svg"
+import BusyIcon from "../../../../assets/svgs/busy-icon.svg"
 import { Modal } from "react-responsive-modal"
 import HomeworkAndConsultingModal from "../modal"
 
-const Consulting = ({consultingAccessibility}) => {
+const Consulting = ({ consultingAccessibility }) => {
   const [modalIsOpen, setIsOpen] = useState(false)
 
   const openModal = () => {
@@ -74,40 +76,53 @@ const Consulting = ({consultingAccessibility}) => {
           </span>
         </Item>
       </ItemsList>
-      <Warning>
-        <ClockIcon />
-        <span>
-          После оплаты, видеоразбор для вас запишут в течение 2‑х рабочих дней
-        </span>
-      </Warning>
+      {consultingAccessibility ? (
+        <Warning>
+          <ClockIcon />
+          <span>
+            После оплаты, видеоразбор для вас запишут в течение 2‑х рабочих дней
+          </span>
+        </Warning>
+      ) : (
+        <BusyWarning>
+          <BusyIcon />
+          <span>
+            Сейчас все кураторы загружены, возможность видеоразбора откроется
+            через пару дней
+          </span>
+        </BusyWarning>
+      )}
+
       <Footer>
-        <Modal
-          center
-          closeIcon={<div></div>}
-          open={modalIsOpen}
-          onClose={closeModal}
-          focusTrapped={false}
-          classNames={{
-            overlay: "customOverlay",
-            modal: "customModal",
-          }}
-        >
-          <HomeworkAndConsultingModal
-            // googleAnaliticsCategory={googleAnaliticsCategory}
-            formId={"ltForm3061579"}
-            formPostUrl={
-              "https://school.granich.design/pl/lite/block-public/process-html?id=1106289473"
-            }
-            title="Заказать видеоразбор ДЗ"
-            buttonTitle="Оплатить"
-            openModal={openModal}
-            closeModal={closeModal}
-            modalIsOpen={modalIsOpen}
-            googleAnaliticsCategory="Отправка формы Заказать видеоразбор ДЗ (Granich InDesign)"
-            price={"→ 1500 ₽"}
-            consultingAccessibility={consultingAccessibility}
-          />
-        </Modal>
+        {consultingAccessibility && (
+          <Modal
+            center
+            closeIcon={<div></div>}
+            open={modalIsOpen}
+            onClose={closeModal}
+            focusTrapped={false}
+            classNames={{
+              overlay: "customOverlay",
+              modal: "customModal",
+            }}
+          >
+            <HomeworkAndConsultingModal
+              // googleAnaliticsCategory={googleAnaliticsCategory}
+              formId={"ltForm3061579"}
+              formPostUrl={
+                "https://school.granich.design/pl/lite/block-public/process-html?id=1106289473"
+              }
+              title="Заказать видеоразбор ДЗ"
+              buttonTitle="Оплатить"
+              openModal={openModal}
+              closeModal={closeModal}
+              modalIsOpen={modalIsOpen}
+              googleAnaliticsCategory="Отправка формы Заказать видеоразбор ДЗ (Granich InDesign)"
+              price={"→ 1500 ₽"}
+            />
+          </Modal>
+        )}
+
         <PriceWrapper>
           <PriceText>Стоимость разбора:</PriceText>
           <Price>
@@ -115,7 +130,13 @@ const Consulting = ({consultingAccessibility}) => {
           </Price>
         </PriceWrapper>
 
-        <Button onClick={openModal}>Оплатить разбор</Button>
+        {consultingAccessibility ? (
+          <Button disabled={false} onClick={openModal}>
+            Оплатить разбор
+          </Button>
+        ) : (
+          <Button disabled={true}>Оплатить разбор</Button>
+        )}
       </Footer>
       {/* <Notice>
             Заказывая видеоразбор, вы, в том числе, можете оченить качество работы наших кураторов и осознанно сделать вывод, хотите ли вы идти на платные курсы

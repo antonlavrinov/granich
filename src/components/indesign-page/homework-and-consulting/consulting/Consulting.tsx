@@ -7,13 +7,12 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 0 1.5vw rgba(0,0,0,0.15);
+  box-shadow: 0 0 1.5vw rgba(0, 0, 0, 0.15);
   @media only screen and (max-width: 575px) {
     padding-top: 10vw;
     border-radius: 2.5vw;
   }
 `
-
 
 export const SubTitle = styled.div`
   text-align: center;
@@ -64,12 +63,10 @@ export const Text = styled.div`
 `
 
 export const ItemsList = styled.div`
-margin-bottom: 2vw;
-@media only screen and (max-width: 575px) {
-  margin-bottom: 5vw;
-}
-
-
+  margin-bottom: 2vw;
+  @media only screen and (max-width: 575px) {
+    margin-bottom: 5vw;
+  }
 `
 
 export const Item = styled.div`
@@ -139,7 +136,6 @@ export const PriceText = styled.div`
   font-size: 1.46vw;
   color: var(--granich-grey);
   margin-bottom: 1vw;
-  
 
   @media only screen and (max-width: 575px) {
     font-size: 4vw;
@@ -155,7 +151,7 @@ export const Price = styled.div`
   /* font-size: 1.vw; */
   line-height: 1.3;
   color: var(--granich-grey);
-  
+
   span {
     display: block;
     font-family: EB Garamond;
@@ -198,7 +194,7 @@ export const PriceWrapper = styled.div`
   /* padding: 0 1.5vw; */
 `
 
-export const Button = styled.div`
+export const Button = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -212,7 +208,7 @@ export const Button = styled.div`
   transition: all 0.2s ease;
   user-select: none;
   box-shadow: 0.25vw 0.25vw 0.4vw rgba(0, 0, 0, 0.25);
-  letter-spacing: 0.05vw;
+  /* letter-spacing: 0.05vw; */
   position: relative;
   z-index: 1;
   width: 100%;
@@ -230,6 +226,14 @@ export const Button = styled.div`
     font-size: 1.61vw;
     font-weight: 400;
     letter-spacing: 0.06vw;
+  }
+  :disabled {
+    background: var(--granich-silver-gradient);
+    :hover {
+      transform: none;
+      cursor: default;
+      font-size: 1.61vw;
+    }
   }
   @media only screen and (max-width: 575px) {
     font-size: 5.5vw;
@@ -258,6 +262,49 @@ export const Notice = styled.div`
   padding-top: 0;
   font-size: 1.46vw;
   line-height: 1.4;
+`
+
+export const BusyWarning = styled.div`
+  margin: 0 2vw;
+  padding: 1vw;
+  border: 2px solid rgba(203, 161, 129, 1);
+  border-radius: 0.5vw;
+
+  display: flex;
+
+  span {
+    color: rgba(203, 161, 129, 1);
+    font-size: 1.46vw;
+    line-height: 1.4;
+  }
+  svg {
+    width: 4vw;
+    height: 6vw;
+    min-width: 3.2vw;
+    min-height: 5vw;
+    margin-right: 1.5vw;
+    fill: rgba(203, 161, 129, 1);
+  }
+  @media only screen and (max-width: 575px) {
+    padding: 4vw;
+    margin: 0 5vw;
+    border-radius: 1.5vw;
+    /* margin-bottom: 5vw; */
+    span {
+      color: rgba(203, 161, 129, 1);
+      font-size: 4vw;
+      line-height: 1.4;
+    }
+    svg {
+      width: 10vw;
+      height: 14vw;
+      min-width: 10vw;
+      min-height: 14vw;
+      margin-right: 3vw;
+      position: relative;
+      top: 1vw;
+    }
+  }
 `
 
 export const Warning = styled.div`

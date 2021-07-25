@@ -17,9 +17,11 @@ export const FormTitle = styled.h2`
   line-height: 0.85;
   margin-bottom: 1.3vw;
   @media only screen and (max-width: 575px) {
-    font-size: 11vw;
+    font-size: 9.5vw;
     width: 100%;
-    margin-bottom: 8vw;
+    margin-bottom: 3vw;
+    margin-top: 2vw;
+    line-height: 1.1;
   }
 `
 export const Form = styled.form`
@@ -148,7 +150,7 @@ export const FormPolitikaLabel = styled.div`
     }
   }
   @media only screen and (max-width: 575px) {
-    font-size: 3vw;
+    font-size: 3.5vw;
     margin-top: 3vw;
   }
   ${props =>
@@ -305,6 +307,9 @@ export const FormPrice = styled.div`
   margin-top: -0.4vw;
   letter-spacing: -0.1vw;
   white-space: nowrap;
+  @media only screen and (max-width: 575px) {
+    font-size: 9.5vw;
+  }
 `
 
 export const FormSubText = styled.div`
@@ -330,7 +335,7 @@ export const FormFooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   @media only screen and (max-width: 575px) {
-    padding: 4.5vw 5vw 7vw;
+    padding: 4.5vw 5vw;
   }
 `
 
