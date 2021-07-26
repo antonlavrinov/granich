@@ -40,8 +40,6 @@ const CourseQandA = ({ data, title, description, urlText }) => {
               {description && (
                 <SC.SectionText>
                   {description}
-                  Тут мы собрали ответы на самые популярные вопросы о курсе
-                  Осознанный Графдизайн
                 </SC.SectionText>
               )}
             </SC.Header>
