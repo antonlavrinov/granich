@@ -23,7 +23,7 @@ const options = {
   },
 }
 
-const CourseQandA = ({ data }) => {
+const CourseQandA = ({ data, title, description, urlText }) => {
   const isMobile = useMediaQuery({
     query: "(max-width: 575px)",
   })
@@ -36,11 +36,14 @@ const CourseQandA = ({ data }) => {
         <SC.MainWrapper>
           <SC.Wrapper>
             <SC.Header>
-              <SC.SectionTitle>Точечные ответы о курсе</SC.SectionTitle>
-              <SC.SectionText>
-                Тут мы собрали ответы на самые популярные вопросы о курсе
-                Осознанный Графдизайн
-              </SC.SectionText>
+              <SC.SectionTitle>{title}</SC.SectionTitle>
+              {description && (
+                <SC.SectionText>
+                  {description}
+                  Тут мы собрали ответы на самые популярные вопросы о курсе
+                  Осознанный Графдизайн
+                </SC.SectionText>
+              )}
             </SC.Header>
             {isDesktop && <QandAItemDesktop data={data} options={options} />}
             {isMobile && <QandAItemMobile data={data} options={options} />}
@@ -48,14 +51,14 @@ const CourseQandA = ({ data }) => {
           <SC.FooterContainer>
             <SC.FooterWrapper>
               <SC.FooterLink onClick={() => scrollTo("#participation-section")}>
-                Вернуться к форме оплаты Курса!
+                Вернуться к форме оплаты {urlText}
                 <SC.ArrowLinkTop />
               </SC.FooterLink>
             </SC.FooterWrapper>
             <SC.FooterWrapperMobile>
               Вернуться к форме оплаты{" "}
               <SC.FooterLink onClick={() => scrollTo("#participation-section")}>
-                Курса!
+                {urlText}
                 <SC.ArrowLinkTopMobile />
               </SC.FooterLink>
             </SC.FooterWrapperMobile>

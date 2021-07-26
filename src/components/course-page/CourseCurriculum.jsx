@@ -410,6 +410,7 @@ const CourseCurriculum = ({
                             .childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && (
                             <CurriculumContentText className="link_out">
                               <EmptyText>sometext</EmptyText>
+
                               {documentToReactComponents(
                                 tab.node
                                   .childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode

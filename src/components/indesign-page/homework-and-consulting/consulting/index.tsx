@@ -34,7 +34,7 @@ const Consulting = ({ consultingAccessibility }) => {
     setIsOpen(false)
   }
   return (
-    <Wrapper>
+    <Wrapper id="participation-section">
       <SubTitle>Видеоразбор</SubTitle>
       <Title>Домашнего задания</Title>
       <Text>В домашнее задание входит:</Text>

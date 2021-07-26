@@ -9,6 +9,7 @@ import IndesignOffer from "../components/indesign-page/offer"
 import { ICourseOffer } from "../interfaces/course-page"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
 import HomeworkAndConsulting from "../components/indesign-page/homework-and-consulting/"
+import CourseQandA from "../components/course-page-templates/q-and-a"
 
 export const contentfulQuery = graphql`
   query indesignQuery {
@@ -96,6 +97,24 @@ export const contentfulQuery = graphql`
         json
       }
     }
+    answers: allContentfulGranichCourseAnswers(
+      filter: { answersAttachmentTo: { eq: "Granich InDesign" } }
+      sort: { fields: [answersOrderNumber], order: ASC }
+    ) {
+      edges {
+        node {
+          id
+          answersTagName
+          answersTagType
+          childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode {
+            json
+          }
+          childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode {
+            json
+          }
+        }
+      }
+    }
     curriculum: allContentfulGranichCourseCurriculum(
       filter: { curriculumAttachmentTo: { eq: "Granich InDesign" } }
       sort: { fields: [curriculumOrderNumber], order: ASC }
@@ -139,6 +158,7 @@ type GraphQlResults = {
   curriculumHeader: any
   contentCards: any
   consultingAccessibility: any
+  answers: any
 }
 
 const GraphicMetaphorsInIdentityPage: React.FC<PageProps<GraphQlResults>> = ({
@@ -220,7 +240,15 @@ const GraphicMetaphorsInIdentityPage: React.FC<PageProps<GraphQlResults>> = ({
         dataHeader={data.curriculumHeader}
         data={curriculumDataWithContentCards}
       />
-      <HomeworkAndConsulting consultingAccessibility={data.consultingAccessibility} />
+      <HomeworkAndConsulting
+        consultingAccessibility={data.consultingAccessibility}
+      />
+      <CourseQandA
+        data={data.answers}
+        title="Чуть подробнее"
+        description=""
+        urlText="Видеоразбора!"
+      />
     </Layout>
   )
 }

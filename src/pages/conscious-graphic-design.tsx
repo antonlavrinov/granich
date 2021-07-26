@@ -367,7 +367,12 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       {!data.offer.courseStatus && <Mailing />}
       <CourseIndividualSupport />
       <CourseBanner />
-      <CourseQandA data={data.answers} courseStatus={data.offer.courseStatus} />
+      <CourseQandA
+        data={data.answers}
+        title="Точечные ответы о курсе"
+        description="Тут мы собрали ответы на самые популярные вопросы о курсе Осознанный Графдизайн"
+        urlText="Курса!"
+      />
     </Layout>
   )
 }
