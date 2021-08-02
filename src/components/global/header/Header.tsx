@@ -13,7 +13,8 @@ interface ITheme {
 export const WhiteLogo = styled(props => <Logo {...props} />)`
   width: 4.8vw;
   min-width: 4.8vw;
-  height: 3vw;
+  height: 3.1vw;
+  min-height: 3.1vw;
   svg {
     fill: white;
   }
