@@ -293,6 +293,7 @@ export const contentfulQuery = graphql`
           id
           answersTagName
           answersTagType
+          isWrap
           childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode {
             json
           }

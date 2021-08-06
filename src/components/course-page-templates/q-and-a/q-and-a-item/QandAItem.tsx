@@ -95,6 +95,9 @@ export const CategoryColumn = styled.div`
   min-width: 27vw;
   margin-right: 2vw;
   line-height: 1.45;
+  :last-child {
+    margin-right: 0;
+  }
   p {
     font-size: 1.12vw;
     color: var(--granich-grey);
@@ -113,6 +116,11 @@ export const CategoryColumn = styled.div`
       border-color: var(--granich-grey);
     }
   }
+  ${(props) => props.isWrap && `
+    width: 30vw;
+    min-width: 30vw;
+    margin-right: 3.5vw;
+  `}
   @media only screen and (max-width: 575px) {
     width: 100%;
     min-width: 100%;
@@ -133,6 +141,11 @@ export const ContentWrapper = styled.div`
   padding-left: 11.3vw;
   padding-top: 0vw;
   padding-bottom: 1.2vw;
+  ${(props) => props.isWrap && `
+        padding-left: 2.3vw;
+        margin-top: -2vw;
+
+  `}
 `
 
 export const AccordionWrapper = styled.div`

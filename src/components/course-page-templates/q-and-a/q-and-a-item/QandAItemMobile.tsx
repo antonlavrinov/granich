@@ -16,6 +16,34 @@ function QandAItemMobile({ data, options }) {
       {data.edges.map((tab, idx) => {
         const type = tab.node.answersTagType
         const tag = tab.node.answersTagName
+        if (!tab.node.isWrap) {
+          return (
+            <>
+            {tab.node
+                .childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode && (
+                <SC.CategoryColumn>
+                  <SC.EmptyText>sometext</SC.EmptyText>
+                  {documentToReactComponents(
+                    tab.node
+                      .childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode
+                      .json,
+                    options
+                  )}
+                </SC.CategoryColumn>
+              )}
+              {tab.node
+                .childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode && (
+                <SC.CategoryColumn>
+                  {documentToReactComponents(
+                    tab.node
+                      .childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode
+                      .json,
+                    options
+                  )}
+                </SC.CategoryColumn>
+              )}</>
+          )
+        }
         return (
           <SC.AccordionItemWrapper uuid={idx} key={tab.node.id}>
             <SC.AccordionHeading>

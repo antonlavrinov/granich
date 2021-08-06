@@ -72,7 +72,7 @@ export const Descr = styled.div`
     }
   }
   @media only screen and (max-width: 575px) {
-    font-size: 7.2vw;
+    font-size: 6.8vw;
     margin-left: 1vw;
   }
 `
