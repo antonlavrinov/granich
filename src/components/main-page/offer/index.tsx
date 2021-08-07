@@ -38,7 +38,6 @@ const Offer: React.FC<Props> = ({ data, scrollTo }) => {
                 onClick={() => scrollTo("#manifest")}
               >
                 {headerSubtitle_03}
-                {/* <SC.UnderlineIcon /> */}
               </span>
             </SC.Descr>
           </SC.Wrapper>
