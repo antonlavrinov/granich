@@ -11,7 +11,7 @@ import ogImage from "../assets/images/seo/conscious-graphic-design-min.jpg"
 import ogImageVK from "../assets/images/seo/vk/conscious-graphic-design.jpg"
 
 export const contentfulQuery = graphql`
-  query graphDesignQuery {
+  query foundationGraphDesignQuery {
     foundationOffer: contentfulGranichCourse(
       courseTitle: { eq: "Фундамент Графдизайна" }
     ) {
@@ -53,6 +53,7 @@ export const contentfulQuery = graphql`
 const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
   data,
 }) => {
+    console.log("data", data)
   return (
     <Layout>
       <Header type={"dark"} />
@@ -74,11 +75,11 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         url="https://granich.design/conscious-graphic-design"
       />
       <div className="section-top-block"></div>
-      <CourseOffer allowPosters={true} data={data.offer} />
+      <CourseOffer allowPosters={true} data={data.foundationOffer} />
       <div id="participation-section"></div>
       <CourseParticipation
         policy={true}
-        data={data.offer}
+        data={data.foundationOffer}
         formId={`ltForm6865073`}
         formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}
         googleAnaliticsCategory={`Отправка формы Осознанный Графдизайн`}
