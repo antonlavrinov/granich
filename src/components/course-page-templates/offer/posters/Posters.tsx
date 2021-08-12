@@ -20,8 +20,11 @@ export const CardItem = styled(animated.div)`
   background-position: center center;
   width: 22.4vw;
   max-width: 22.4vw;
-  height: 31vw;
-  max-height: 31vw;
+  /* height: 31vw;
+  max-height: 31vw; */
+  padding: 0.6vw;
+  height: auto;
+  max-height: auto;
   will-change: transform;
   border-radius: 0.2vw;
   box-shadow: 0 0vw 1vw rgba(0, 0, 0, 0.2);
@@ -33,10 +36,11 @@ export const CardItem = styled(animated.div)`
     cursor: pointer;
   }
   @media only screen and (max-width: 575px) {
+    padding: 1.5vw;
     width: 55vw;
     max-width: 55vw;
-    height: 76vw;
-    max-height: 76vw;
+    /* height: 76vw;
+    max-height: 76vw; */
   }
 `
 
@@ -72,7 +76,8 @@ export const CircleMobile = styled.div`
 
 export const Poster = styled(props => <Img {...props} />)`
   user-select: none;
-  width: 95%;
+  /* width: 95%; */
+  width: 100%;
   div {
     user-select: none;
   }

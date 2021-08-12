@@ -9,8 +9,8 @@ import CourseTrainingPath from "../components/course-page/CourseTrainingPath"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
 import Features from "../components/course-page-templates/features"
 import CourseReviews from "../components/course-page/CourseReviews"
-import CourseParticipation from "../components/course-page/CourseParticipation"
-import { graphql, PageProps } from "gatsby"
+import CourseParticipation from "../components/course-page/CourseParticipation";
+import { graphql, PageProps } from "gatsby";
 import scrollTo from "gatsby-plugin-smoothscroll"
 import Mailing from "../components/global/mailing"
 import CourseExplain from "../components/course-page/CourseExplain"
@@ -364,7 +364,12 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <CoursePaymentChoices
         paymentsAvailable={{ credit: true, corporate: true, abroad: true }}
       />
-      <MasterClasses data={data.courseCards.edges} />
+      <MasterClasses 
+        title="Не готовы сейчас записаться на Осознанный Графдизайн?"
+        description="Тогда вы можете попробовать наши мастер‑классы. Они стоят гораздо
+        меньше, и у них нет дедлайнов."
+        data={data.courseCards.edges} 
+      />
       {!data.offer.courseStatus && <Mailing />}
       <CourseIndividualSupport />
       <CourseBanner />
@@ -372,6 +377,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         data={data.answers}
         title="Точечные ответы о курсе"
         description="Тут мы собрали ответы на самые популярные вопросы о курсе Осознанный Графдизайн"
+        urlText="Курса!"
       />
     </Layout>
   )

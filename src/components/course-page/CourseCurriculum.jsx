@@ -208,6 +208,7 @@ const CourseCurriculum = ({
   data,
   dataHeader,
   compressedHeader,
+  lessonsCount,
   courseTitle,
 }) => {
   const isMobile = useMediaQuery({
@@ -227,6 +228,7 @@ const CourseCurriculum = ({
           <CurriculumHead
             compressedHeader={compressedHeader}
             dataHeader={dataHeader}
+            lessonsCount={lessonsCount}
           />
 
           {isMobile && (

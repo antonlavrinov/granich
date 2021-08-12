@@ -41,11 +41,11 @@ const options = {
 
 
 
-const CurriculumHead = ({ dataHeader, compressedHeader }) => {
+const CurriculumHead = ({ dataHeader, compressedHeader, lessonsCount }) => {
     return (
         <>
             {compressedHeader ? (
-                <CurriculumCompressedHead dataHeader={dataHeader} />
+                <CurriculumCompressedHead dataHeader={dataHeader} lessonsCount={lessonsCount}/>
             ) : (
                     <CurriculumNormalHead dataHeader={dataHeader} />
                 )}
@@ -100,11 +100,12 @@ const CurriculumNormalHead = ({ dataHeader }) => {
 }
 
 
-const CurriculumCompressedHead = ({ dataHeader }) => {
+const CurriculumCompressedHead = ({ dataHeader, lessonsCount }) => {
     return (
         <CurriculumHeader compressedHeader>
             <CurriculumTitleAndContent compressedHeader>
                 <CurriculumHeaderTitle compressedHeader>{dataHeader.curriculumHeaderTitle}</CurriculumHeaderTitle>
+                {lessonsCount && <div>count</div>}
             </CurriculumTitleAndContent>
             {/* <CurriculumInfoWrapper >
                 <CurriculumBonusBlock compressedHeader>

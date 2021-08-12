@@ -7,18 +7,17 @@ type Props = {
   data: any
 }
 
-const MasterClasses: React.FC<Props> = ({ data }) => {
+const MasterClasses: React.FC<Props> = ({ data, title, description }) => {
   return (
     <SC.Section>
       <Container>
         <SC.Wrapper>
           <SC.SectionHeader>
             <SC.SectionTitle>
-              Не готовы сейчас записаться на Осознанный Графдизайн?
+              {title}
             </SC.SectionTitle>
             <SC.SectionDescr>
-              Тогда вы можете попробовать наши мастер‑классы. Они стоят гораздо
-              меньше, и у них нет дедлайнов.
+              {description}
             </SC.SectionDescr>
           </SC.SectionHeader>
 

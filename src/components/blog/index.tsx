@@ -4,6 +4,7 @@ import * as SC from "./Blog"
 import VKIcon from "../../assets/svgs/granich-main-team/vk.svg"
 import InstagramIcon from "../../assets/svgs/granich-main-team/instagram.svg"
 import TelegramIcon from "../../assets/svgs/granich-main-team/telegram.svg"
+import PinterestIcon from "../../assets/svgs/granich-main-team/pinterest.svg"
 import YoutubeIcon from "../../assets/svgs/youtube_black.svg"
 // import MasterClassTeacherBlock from "../../components/course-page/CourseAuthors"
 import TeamMember from "../main-page/team/teacher"
@@ -65,6 +66,21 @@ const Blog: React.FC<Props> = ({ team }) => {
                 target="_blank"
               >
                 youtube.com/c/granich
+              </a>
+            </SC.Social>
+          </SC.Socials>
+          <SC.Devider />
+          <SC.Text>Энциклопедия Графдизайна. Кладезь референсов для графических дизайнеров:</SC.Text>
+          
+          <SC.Socials>
+            <SC.Social>
+              <PinterestIcon />
+              <a
+                href="https://pin.it/2IdVLUy"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                pinterest.ru/vadim_granich
               </a>
             </SC.Social>
           </SC.Socials>

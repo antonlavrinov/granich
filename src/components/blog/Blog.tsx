@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   // height: 36.5vw;
   @media only screen and (max-width: 575px) {
     border-radius: 2.5vw;
-    padding: 7vw 6vw 38vw;
+    padding: 7vw 6vw 12vw;
     height: auto;
     min-height: auto;
     margin-bottom: 5vw;
@@ -42,7 +42,7 @@ export const Text = styled.div`
   line-height: 1.55;
   letter-spacing: 0.01vw;
   font-weight: 500;
-  margin-bottom: 3vw;
+  margin-bottom: 2.5vw;
   margin-left: -0.2vw;
   @media only screen and (max-width: 575px) {
     font-size: 5.2vw;
