@@ -24,7 +24,7 @@ export const CardItem = styled(animated.div)`
   max-height: 31vw; */
   padding: 0.6vw;
   height: auto;
-  max-height: auto;
+  /* max-height: auto; */
   will-change: transform;
   border-radius: 0.2vw;
   box-shadow: 0 0vw 1vw rgba(0, 0, 0, 0.2);
