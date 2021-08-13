@@ -227,7 +227,11 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         url="https://granich.design/conscious-graphic-design"
       />
       <div className="section-top-block"></div>
-      <CourseOffer allowPosters={true} data={data.foundationOffer} />
+      <CourseOffer 
+        allowPosters={true} 
+        data={data.foundationOffer} 
+        additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
+      />
       <CourseExample />
       <CourseExplain />
       <CourseTimetable />

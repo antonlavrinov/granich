@@ -13,12 +13,14 @@ type Props = {
   data: ICourseCard
   postersVisibility?: boolean
   allowPosters?: boolean
+  additionalText?: string
 }
 
 const CourseTemplateOffer: React.FC<Props> = ({
   data,
   postersVisibility,
   allowPosters,
+  additionalText
 }) => {
   const isDesktop = useMediaQuery({
     query: "(min-width: 575px)",
@@ -76,10 +78,16 @@ const CourseTemplateOffer: React.FC<Props> = ({
             >
               {data.courseDescr}
             </SC.Descr>
-            <SC.Button to="#participation-section">
-              <CourseArrowDown />
-              Участвовать
-            </SC.Button>
+            <SC.ButtonWrapper>
+              <SC.Button to="#participation-section">
+                <CourseArrowDown />
+                Участвовать
+              </SC.Button>
+              {additionalText && (
+                <SC.AdditionalText>{additionalText}</SC.AdditionalText>
+              )}
+            </SC.ButtonWrapper>
+            
           </SC.Info>
         </SC.Wrapper>
       </Container>

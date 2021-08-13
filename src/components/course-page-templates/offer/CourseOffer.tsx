@@ -225,6 +225,22 @@ export const Title = styled.h1<CourseInfoType>`
             }
         }
     `}
+        ${props =>
+      props.courseTitle === "Фундамент Графдизайна" &&
+      `
+        p {
+            letter-spacing: 0 !important;
+            font-size: 7vw;
+            line-height: 0.95;
+
+        }
+        @media only screen and (max-width: 575px) {
+            p {
+                font-size: 14.5vw;
+            }
+        }
+    `}
+    
     
     ${props =>
       props.courseTitle === "Графсистемы Брутализм и Антидизайн" &&
@@ -319,6 +335,15 @@ export const Descr = styled.div<CourseInfoType>`
 
 `
 
+export const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  @media only screen and (max-width: 575px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`
+
 export const Button = styled(props => <Link {...props} />)`
   display: inline-flex;
   align-items: center;
@@ -333,10 +358,9 @@ export const Button = styled(props => <Link {...props} />)`
   transition: all 0.2s ease;
   user-select: none;
   box-shadow: 0.25vw 0.25vw 0.4vw rgba(0, 0, 0, 0.25);
-  letter-spacing: 0.05vw;
   position: relative;
   z-index: 1;
-  margin-bottom: 1vw;
+  /* margin-bottom: 1vw; */
   svg {
     width: 1.4vw;
     height: 1.4vw;
@@ -388,6 +412,20 @@ export const Button = styled(props => <Link {...props} />)`
       margin-right: 1vw;
     }
   }
+`
+
+export const AdditionalText = styled.div`
+    font-size: 1vw;
+    width: 17vw;
+    margin-left: 1.5vw;
+    line-height: 1.45;
+    font-weight: 500;
+    @media only screen and (max-width: 575px) {
+        width: 90%;
+        font-size: 3.7vw;
+        padding: 0 3vw;
+        margin-top: 2vw;
+    }
 `
 
 export const Info = styled.div``
