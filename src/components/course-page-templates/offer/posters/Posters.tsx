@@ -11,6 +11,9 @@ export const CardItemWrapper = styled(animated.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+  .spring-div-inside {
+    max-height: none;
+  }
 `
 
 export const CardItem = styled(animated.div)`
@@ -31,6 +34,7 @@ export const CardItem = styled(animated.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+
 
   :hover {
     cursor: pointer;
