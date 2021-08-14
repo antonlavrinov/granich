@@ -63,6 +63,15 @@ export const CurriculumTitleAndContent = styled.div`
         margin-bottom: 1vw;
 
     `}
+      ${props =>
+    props.lessonsCount &&
+    `
+        display: flex;
+        @media only screen and (max-width: 575px) {
+          flex-direction: column;
+        }
+
+    `}
 `
 export const CurriculumHeaderTitle = styled.h2`
   color: var(--granich-black);
@@ -165,6 +174,26 @@ export const CurriculumContent = styled.div`
                 margin-right: 5vw;
             }
         }
+    `}
+      ${props =>
+    props.lessonsCount &&
+    ` 
+    margin-left: 6vw;
+    margin-top: -1.5vw;
+    i {
+
+    }
+    p {
+      width: 20vw;
+    }
+    @media only screen and (max-width: 575px) {
+          margin-top: 10vw;
+          margin-bottom: 3vw;
+            p {
+              width: 100%;
+            }
+        }
+      
     `}
 `
 

@@ -85,10 +85,10 @@ const TimetableImage = styled(props => <Img {...props} />)`
 const TimetableInfoWrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  margin-bottom: 2vw;
+  /* margin-bottom: 2vw; */
   @media only screen and (max-width: 575px) {
     flex-direction: column;
-    margin-bottom: 4vw;
+    /* margin-bottom: 4vw; */
   }
 `
 const TimetableInfoTextWrapper = styled.div`
@@ -196,7 +196,7 @@ const TimetableGifPS = styled.div`
   }
 `
 
-const CourseTimetable = () => {
+const CourseTimetable = ({noGif, noKeepCalm}) => {
   const data = useStaticQuery(graphql`
     query timetableImage {
       imageTimetable: file(
@@ -208,10 +208,20 @@ const CourseTimetable = () => {
           }
         }
       }
+      foundationImageTimetable: file(
+        relativePath: { eq: "foundation-of-graph-design/timetable-image.jpg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 700, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
   const imageData = data.imageTimetable.childImageSharp.fluid
+  const foundationimageData = data.foundationImageTimetable.childImageSharp.fluid
   const text =
     "Я выстроил Программу обучения так, что на каждый из уроков даётся 1 неделя. С понедельника по воскресенье. В день необходимо инвестировать в своё обучение хотя бы пару часов. Уроки насыщены обязательной к изучению и дополнительной информацией, поэтому откладывать обучение на последний день не стоит.  При этом домашнее задание по уроку необходимо выполнить ровно за эту неделю. Это строгий дедлайн. Иначе вы будете отстранены от обучения."
 
@@ -226,30 +236,34 @@ const CourseTimetable = () => {
           <TimetableInfoWrapper>
             <TimetableInfoTextMobile>{text}</TimetableInfoTextMobile>
             <TimetableImageWrapper>
-              <TimetableImage fluid={imageData} />
+              <TimetableImage fluid={noGif ? foundationimageData : imageData} />
             </TimetableImageWrapper>
 
             <TimetableInfoTextWrapper>
               <TimetableInfoText>{text}</TimetableInfoText>
-              <TimetableInfoGifBlock>
-                <TimetableGifWrapper>
-                  <LazyLoad once>
-                    <TimetableGif src={TimetableImageGif} alt="commitment" />
-                  </LazyLoad>
-                </TimetableGifWrapper>
-                <TimetableGifTextWrapper>
-                  <TimetableGifText>
-                    Примерно с таким настроем нужно будет погрузиться в курс. Вы
-                    придёте сюда чтобы развивать твёрдые навыки.
-                  </TimetableGifText>
-                  <TimetableGifPS>
-                    P.S. Сцена из фильма Одержимость. Философия всего курса.
-                  </TimetableGifPS>
-                </TimetableGifTextWrapper>
-              </TimetableInfoGifBlock>
+              {!noGif && (
+                <TimetableInfoGifBlock>
+                  <TimetableGifWrapper>
+                    <LazyLoad once>
+                      <TimetableGif src={TimetableImageGif} alt="commitment" />
+                    </LazyLoad>
+                  </TimetableGifWrapper>
+                  <TimetableGifTextWrapper>
+                    <TimetableGifText>
+                      Примерно с таким настроем нужно будет погрузиться в курс. Вы
+                      придёте сюда чтобы развивать твёрдые навыки.
+                    </TimetableGifText>
+                    <TimetableGifPS>
+                      P.S. Сцена из фильма Одержимость. Философия всего курса.
+                    </TimetableGifPS>
+                  </TimetableGifTextWrapper>
+                </TimetableInfoGifBlock>
+              )}
             </TimetableInfoTextWrapper>
           </TimetableInfoWrapper>
-          <CourseDontWorry />
+          {!noKeepCalm && (
+            <CourseDontWorry />
+          )}
         </TimetableWrapper>
       </Container>
     </TimetableSection>

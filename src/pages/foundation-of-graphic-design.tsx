@@ -21,7 +21,9 @@ import CourseTimetable from "../components/course-page/CourseTimetable"
 import CourseTrainingPath from "../components/course-page/CourseTrainingPath"
 import Features from "../components/course-page-templates/features"
 import CourseQandA from "../components/course-page-templates/q-and-a"
-import MasterClasses from "../components/graph-design-page/master-classes"
+// import MasterClasses from "../components/graph-design-page/master-classes"
+import VideoPresentation from "../components/course-page-templates/video-presentation"
+import AdobeIndesign from "../components/foundation-of-graph-design/adobe-indesign"
 
 export const contentfulQuery = graphql`
   query foundationGraphDesignQuery {
@@ -232,15 +234,19 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         data={data.foundationOffer} 
         additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
       />
+      <VideoPresentation />
       <CourseExample />
       <CourseExplain />
-      <CourseTimetable />
+      <CourseTimetable noGif noKeepCalm/>
       <CourseTrainingPath data={data.foundationTrainingPath}/>
-      <Features title="Еще пара бонусов" data={data.foundationFeatures}/>
       <CourseCurriculum  
         dataHeader={data.foundationCurriculumHeader}
         data={data.foundationCurriculum}
+        compressedHeader
+        lessonsCount
       />
+      <Features title="Еще пара бонусов" data={data.foundationFeatures}/>
+      
       <CourseReviews dataHeader={data.foundationReviewsHeader}/>
       <CourseHardWork
         title="«Пожалуйста, примите осознанное решение об участии на этом курсе»"
@@ -259,9 +265,9 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <CoursePaymentChoices
         paymentsAvailable={{ credit: true, corporate: true, abroad: true }}
       />
-      <MasterClasses 
-        title="Важно! Для качественного прохождения курса изучите Adobe InDesign."
-        description="Чтобы сосредоточиться на обучении графическому дизайну, мы вывели в отдельный бесплатный курс информацию по программе Adobe InDesign. В нём есть домашнее задание, которое вам следует пройти, чтобы в дальнейшем не отвлекаться на технические аспекты, и полностью погрузиться в графический дизайн. Участники Фундамента Графдизайна получают бесплатный видеоразбор ДЗ с курса Granich InDesign."
+      <AdobeIndesign 
+        title="Важно! Для качественного прохождения курса изучите Adobe InDesign."
+        description="Чтобы сосредоточиться на обучении графическому дизайну, мы вывели в отдельный бесплатный курс информацию по программе Adobe InDesign. В нём есть домашнее задание, которое вам следует пройти, чтобы в дальнейшем не отвлекаться на технические аспекты, и полностью погрузиться в графический дизайн. Участники Фундамента Графдизайна получают бесплатный видеоразбор ДЗ с курса Granich InDesign."
         data={data.foundationCourseCards.edges}
       />
       <CourseBanner />

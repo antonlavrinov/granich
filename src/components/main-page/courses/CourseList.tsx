@@ -34,7 +34,7 @@ const CourseList: React.FC<Props> = ({ data }) => {
           <Mailing />
         </div>
       </Modal>
-      <SC.Wrapper>
+      <SC.CoursesWrapper>
         {data.map(course => {
           return (
             <Course
@@ -44,7 +44,7 @@ const CourseList: React.FC<Props> = ({ data }) => {
             />
           )
         })}
-      </SC.Wrapper>
+      </SC.CoursesWrapper>
     </>
   )
 }

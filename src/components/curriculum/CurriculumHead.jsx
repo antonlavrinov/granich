@@ -103,9 +103,17 @@ const CurriculumNormalHead = ({ dataHeader }) => {
 const CurriculumCompressedHead = ({ dataHeader, lessonsCount }) => {
     return (
         <CurriculumHeader compressedHeader>
-            <CurriculumTitleAndContent compressedHeader>
+            <CurriculumTitleAndContent compressedHeader lessonsCount={lessonsCount}>
                 <CurriculumHeaderTitle compressedHeader>{dataHeader.curriculumHeaderTitle}</CurriculumHeaderTitle>
-                {lessonsCount && <div>count</div>}
+                {lessonsCount && (
+                    <>
+                       {dataHeader.childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode && (
+                            <CurriculumContent lessonsCount={lessonsCount}>
+                                {documentToReactComponents(dataHeader.childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode.json)}
+                            </CurriculumContent>
+                        )}
+                    </>
+                )}
             </CurriculumTitleAndContent>
             {/* <CurriculumInfoWrapper >
                 <CurriculumBonusBlock compressedHeader>

@@ -33,9 +33,11 @@ const CourseTemplateOffer: React.FC<Props> = ({
           <Posters postersCollection={data.coursePostersCollection} />
         </RootWrapper>
       )}
+      
 
       <Container>
         <SC.Wrapper type={data.courseType}>
+          
           <SC.Info>
             <SC.Tags className="noselect">
               <>
@@ -70,6 +72,7 @@ const CourseTemplateOffer: React.FC<Props> = ({
                 postersVisibility={postersVisibility}
               />
             )}
+            <SC.PostersLabel>Работы учеников</SC.PostersLabel>
 
             <SC.Descr
               className="noselect"

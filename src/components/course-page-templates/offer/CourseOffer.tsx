@@ -429,3 +429,19 @@ export const AdditionalText = styled.div`
 `
 
 export const Info = styled.div``
+
+export const PostersLabel = styled.div`
+  position: absolute;
+  bottom: 1.3vw;
+  right: 1.7vw;
+  z-index: 2;
+  color: var(--granich-light-grey);
+  font-size: 1vw;
+  @media only screen and (max-width: 575px) {
+    position: relative;
+    font-size: 3.7vw;
+    top: -4vw;
+    right: auto;
+    text-align: center;
+  }
+`

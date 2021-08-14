@@ -38,7 +38,7 @@ export const Section = styled.section`
   }
 `
 
-export const Wrapper = styled.div`
+export const CoursesWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 1.7vw;

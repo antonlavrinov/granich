@@ -9,10 +9,12 @@ const DontWorryWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 2vw;
   @media only screen and (max-width: 575px) {
     padding: 6vw;
     border-radius: 2.5vw;
     flex-direction: column;
+    margin-top: 4vw;
   }
 `
 
