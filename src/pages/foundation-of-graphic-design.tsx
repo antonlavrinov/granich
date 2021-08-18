@@ -26,6 +26,7 @@ import VideoPresentation from "../components/course-page-templates/video-present
 import AdobeIndesign from "../components/foundation-of-graph-design/adobe-indesign"
 import AdobeIndesignCurriculum from "../components/foundation-of-graph-design/adobe-indesign-curriculum"
 import FoundationExample from "../components/foundation-of-graph-design/foundation-example/FoundationExample"
+import FoundationForWhom from "../components/foundation-of-graph-design/for-whom"
 
 export const contentfulQuery = graphql`
   query foundationGraphDesignQuery {
@@ -284,7 +285,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         data={data.foundationOffer} 
         additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
       />
-       <CourseExplain />
+       <FoundationForWhom />
 
       <FoundationExample />
       <VideoPresentation />

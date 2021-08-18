@@ -36,7 +36,8 @@ export const Descr = styled.div`
   white-space: normal;
   span {
     font-weight: 500;
-    color: var(--granich-red);
+    /* color: var(--granich-red); */
+    color: var(--granich-black);
     border-radius: 0.2vw;
     padding: 0 0.3vw;
     font-style: normal;
