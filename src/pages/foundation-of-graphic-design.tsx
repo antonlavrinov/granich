@@ -24,6 +24,8 @@ import CourseQandA from "../components/course-page-templates/q-and-a"
 // import MasterClasses from "../components/graph-design-page/master-classes"
 import VideoPresentation from "../components/course-page-templates/video-presentation"
 import AdobeIndesign from "../components/foundation-of-graph-design/adobe-indesign"
+import AdobeIndesignCurriculum from "../components/foundation-of-graph-design/adobe-indesign-curriculum"
+import FoundationExample from "../components/foundation-of-graph-design/foundation-example/FoundationExample"
 
 export const contentfulQuery = graphql`
   query foundationGraphDesignQuery {
@@ -179,6 +181,7 @@ export const contentfulQuery = graphql`
       reviewsHeaderTitle
       reviewsHeaderLinkTelegram
       reviewsHeaderLinkVk
+      reviewsHeaderAttachmentTo
     }
     foundationAnswers: allContentfulGranichCourseAnswers(
       filter: { answersAttachmentTo: { eq: "Фундамент Графдизайна" } }
@@ -208,25 +211,72 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
   data,
 }) => {
     console.log("data", data)
+    const curriculumDataWithContentCards = {
+      edges: [
+        {
+          node: {
+            id: "djfhsdjfhskddd",
+            childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode: {
+              json: {
+                content: [],
+                data: {},
+                nodeType: "document",
+              },
+            },
+            childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode: null,
+            childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode: null,
+            childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode: null,
+            childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode: null,
+            childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode: {
+              json: {
+                content: [
+                  {
+                    content: [
+                      {
+                        data: {},
+                        marks: [],
+                        nodeType: "text",
+                        value: "Изучение программы Adobe InDesign",
+                      },
+                    ],
+                    data: {},
+                    nodeType: "paragraph",
+                  },
+                ],
+                data: {},
+                nodeType: "document",
+              },
+            },
+            curriculumAttachmentTo: "Фундамент Графдизайна",
+            curriculumColumnsType: false,
+            curriculumImportantDescr: null,
+            curriculumTagName: "Подготовка",
+            curriculumType: true,
+            customContent: (<AdobeIndesignCurriculum data={data.foundationCourseCards.edges}/>),
+            customLessonColor: "rgba(0,0,0,0.18)",
+          },
+        },
+        ...data?.foundationCurriculum?.edges,
+        
+      ],
+    }
   return (
     <Layout>
       <Header type={"dark"} />
       <SEO
         title="Фундамент Графдизайна"
-        description="Курс по графическому дизайну, построенный на авторской дизайн-системе. Вы получите твёрдую базу и научитесь аргументировать свои макеты"
+        description="Курс с дедлайнами для уверенного старта в графическом дизайне. Основан на дизайн-системе и композициях."
         keywords={[
           "графдизайн",
-          "indesign",
-          "индизайн",
-          "осознанный",
+          "фундамент",
+          "foundation",
           "гранич",
           "graphdesign",
           "granich",
-          "conscious",
         ]}
         ogImage={ogImage}
         ogImageVk={ogImageVK}
-        url="https://granich.design/conscious-graphic-design"
+        url="https://granich.design/foundation-of-graphic-design"
       />
       <div className="section-top-block"></div>
       <CourseOffer 
@@ -234,20 +284,23 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         data={data.foundationOffer} 
         additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
       />
+       <CourseExplain />
+
+      <FoundationExample />
       <VideoPresentation />
-      <CourseExample />
-      <CourseExplain />
+     
       <CourseTimetable noGif noKeepCalm/>
       <CourseTrainingPath data={data.foundationTrainingPath}/>
       <CourseCurriculum  
         dataHeader={data.foundationCurriculumHeader}
-        data={data.foundationCurriculum}
+        data={curriculumDataWithContentCards}
         compressedHeader
         lessonsCount
       />
       <Features title="Еще пара бонусов" data={data.foundationFeatures}/>
       
-      <CourseReviews dataHeader={data.foundationReviewsHeader}/>
+      <CourseReviews description="Напишите выпускникам прошлых потоков, они с радостью поделятся
+                  эмоциями от прохождения обучения" dataHeader={data.foundationReviewsHeader}/>
       <CourseHardWork
         title="«Пожалуйста, примите осознанное решение об участии на этом курсе»"
         text="Хоть я и создал на нём условия для быстрого развития твёрдых навыков, но это не произойдёт по волшебству. Вам понадобится прилагать много сил, чтобы дойти до конца."
@@ -265,16 +318,16 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <CoursePaymentChoices
         paymentsAvailable={{ credit: true, corporate: true, abroad: true }}
       />
-      <AdobeIndesign 
+      {/* <AdobeIndesign 
         title="Важно! Для качественного прохождения курса изучите Adobe InDesign."
         description="Чтобы сосредоточиться на обучении графическому дизайну, мы вывели в отдельный бесплатный курс информацию по программе Adobe InDesign. В нём есть домашнее задание, которое вам следует пройти, чтобы в дальнейшем не отвлекаться на технические аспекты, и полностью погрузиться в графический дизайн. Участники Фундамента Графдизайна получают бесплатный видеоразбор ДЗ с курса Granich InDesign."
         data={data.foundationCourseCards.edges}
-      />
+      /> */}
       <CourseBanner />
       <CourseQandA 
         data={data.foundationAnswers}
         title="Точечные ответы о курсе"
-        description="Тут мы собрали ответы на самые популярные вопросы о курсе Осознанный Графдизайн"
+        description="Тут мы собрали ответы на самые популярные вопросы о курсе Фундамент Графдизайна"
         urlText="Курса!"
       />
     </Layout>

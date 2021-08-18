@@ -21,14 +21,17 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h2`
   color: var(--granich-black);
-  font-size: 4.7vw;
+  font-size: 5.7vw;
   letter-spacing: -0.1vw;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
   margin-top: -0.6vw;
-  margin-bottom: 2vw;
+  margin-bottom: 3vw;
   line-height: 1.1;
   white-space: nowrap;
+  font-family: "EB Garamond";
+  font-style: italic;
+  /* margin-left: -1vw; */
   @media only screen and (max-width: 575px) {
     font-size: 11vw;
     white-space: normal;
@@ -41,18 +44,26 @@ export const Descr = styled.div`
     font-size: 1.55vw;
     font-weight: 500;
     margin-bottom: 3vw;
+    max-width: 35%;
+    margin-left: 2vw;
+    line-height: 1.5;
     @media only screen and (max-width: 575px) {
         font-size: 4.6vw;
-        margin-bottom: 5vw;
+        margin-bottom: 0;
         line-height: 1.5;
+        max-width: 100%;
+        margin-left: 0;
     }
 `
 
 export const YoutubeBlock = styled.div`
   // width: 100%;
-  height: 38vw;
+  /* height: 38vw; */
   // padding: 3vw;
   position: relative;
+  width: 100%;
+    height: 24.4vw;
+
 
   iframe {
     border: 2px solid rgba(0, 0, 0, 0.2);
@@ -66,6 +77,7 @@ export const YoutubeBlock = styled.div`
   @media only screen and (max-width: 575px) {
     padding: 0;
     height: auto;
+    margin-bottom: 3vw;
     iframe {
       position: relative;
       top: 0;
@@ -74,5 +86,13 @@ export const YoutubeBlock = styled.div`
       right: 0;
       height: 43vw;
     }
+  }
+`
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  @media only screen and (max-width: 575px) {
+    flex-direction: column-reverse;
   }
 `

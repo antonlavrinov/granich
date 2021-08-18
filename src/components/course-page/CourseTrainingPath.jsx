@@ -65,11 +65,26 @@ const TrainingPathBlockText = styled.div`
     color: var(--granich-black);
     margin-bottom: 0.35vw;
   }
+  i {
+    font-weight: 500;
+    color: var(--granich-red);
+    border-radius: 0.2vw;
+    padding: 0 0.3vw;
+    font-style: normal;
+    white-space: nowrap;
+    /* text-decoration: underline; */
+    background: var(--granich-light-red);
+    /* background: var(--granich-red); */
+  }
   @media only screen and (max-width: 575px) {
     padding: 0 5vw 5vw;
     font-size: 3.7vw;
     b {
       margin-bottom: 1vw;
+    }
+    i {
+      padding: 0 1vw;
+      border-radius: 0.5vw;
     }
 
     margin-top: 2vw;

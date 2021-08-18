@@ -434,14 +434,22 @@ export const PostersLabel = styled.div`
   position: absolute;
   bottom: 1.3vw;
   right: 1.7vw;
-  z-index: 2;
-  color: var(--granich-light-grey);
+  z-index: 0;
+  /* color: var(--granich-light-grey); */
+  color: rgba(0,0,0,0.23);
   font-size: 1vw;
   @media only screen and (max-width: 575px) {
-    position: relative;
-    font-size: 3.7vw;
-    top: -4vw;
+    position: absolute;
+    font-size: 3.5vw;
+    top: 95vw;
     right: auto;
+    left: 3vw;
+    bottom: auto;
     text-align: center;
+    /* text-orientation: upright; */
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+    line-height: 1.3;
+    /* max-height: 5vw; */
   }
 `

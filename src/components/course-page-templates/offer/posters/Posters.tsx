@@ -108,7 +108,7 @@ export const Placeholder = styled.div`
   width: 30vw;
   top: 0;
   right: 0;
-  z-index: 0;
+  z-index: 2;
   user-select: none;
   display: none;
   @media only screen and (max-width: 575px) {

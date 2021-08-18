@@ -768,29 +768,36 @@ export const CurriculumLesson = styled.div`
   border: 1.5px solid var(--granich-red);
   color: var(--granich-red);
   border-radius: 100vw;
-  padding: 0.4vw 0;
+  padding: 0.4vw 0.7vw;
   font-weight: 500;
   display: inline-block;
-  min-width: 5.5vw;
+  min-width: 5.6vw;
   text-align: center;
   user-select: none;
+  margin-right: 1.3vw;
   ${props =>
     !props.type &&
     `
         background: var(--granich-red);
         color: white;
     `}
+  ${props => props.customLessonColor && `
+    color: var(--granich-light-grey);
+    border-color: ${props.customLessonColor};
+
+  `}
   @media only screen and (max-width: 575px) {
-    padding: 1vw 0;
+    padding: 1vw 1.5vw;
     min-width: 15vw;
     font-size: 3.3vw;
+    margin-right: 3vw;
   }
 `
 
 export const CurriculumLessonColumn = styled.div`
-  width: 6.8vw;
+  /* width: 6.8vw; */
   @media only screen and (max-width: 575px) {
-    width: 20vw;
+    /* width: 20vw; */
   }
 `
 
@@ -846,6 +853,10 @@ export const CurriculumContentColumn = styled.div`
     min-width: 14.5vw;
     white-space: normal;
     margin-bottom: 0.7vw;
+  }
+  i {
+    color: var(--granich-black);
+    font-style: normal;
   }
   @media only screen and (max-width: 575px) {
     width: 100%;

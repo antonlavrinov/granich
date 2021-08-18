@@ -72,7 +72,9 @@ const CourseTemplateOffer: React.FC<Props> = ({
                 postersVisibility={postersVisibility}
               />
             )}
-            <SC.PostersLabel>Работы учеников</SC.PostersLabel>
+            {data.courseTitle === "Фундамент Графдизайна" && (
+              <SC.PostersLabel>Работы учеников</SC.PostersLabel>
+            )}
 
             <SC.Descr
               className="noselect"

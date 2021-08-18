@@ -204,6 +204,10 @@ const ReviewsText = styled.div`
   line-height: 1.4;
   font-weight: 500;
   letter-spacing: -0.01em;
+  ${props => props.reviewsHeaderAttachmentTo === "Фундамент Графдизайна" && `
+      font-size: 1.12vw;
+      line-height: 1.5;
+  `};
   @media only screen and (max-width: 575px) {
     font-size: 3.7vw;
     max-width: 100%;
@@ -322,7 +326,7 @@ const ReviewsLinkVk = styled.a`
 //     )
 // }
 
-const CourseReviews = ({ data, dataHeader, masterClass }) => {
+const CourseReviews = ({ data, dataHeader, masterClass, description }) => {
   // const dataImage = useStaticQuery(graphql`
   //     query reviewsIcons {
   //         telegramReviewsIcon: file(relativePath: { eq: "graph-design/reviews/telegram-small-icon-01.png" }) {
@@ -392,9 +396,8 @@ const CourseReviews = ({ data, dataHeader, masterClass }) => {
                     </ReviewsLinkVk>
                   )}
                 </ReviewsLinks>
-                <ReviewsText>
-                  Напишите выпускникам прошлых потоков, они с радостью поделятся
-                  эмоциями от прохождения курса
+                <ReviewsText reviewsHeaderAttachmentTo={dataHeader.reviewsHeaderAttachmentTo}>
+                  {description}
                 </ReviewsText>
               </>
             ) : (

@@ -135,6 +135,7 @@ const CurriculumItem = memo(
     open,
     defaultOpen = false,
     numberOfLessons,
+    customLessonColor
   }) => {
     // const [isOpen, setOpen] = useState(defaultOpen)
     const [isOpen, setOpen] = useState(
@@ -162,7 +163,7 @@ const CurriculumItem = memo(
           onClick={() => setOpen(!isOpen)}
         >
           <CurriculumLessonColumn>
-            <CurriculumLesson type={type ? 1 : 0}>{tag}</CurriculumLesson>
+            <CurriculumLesson customLessonColor={customLessonColor} type={type ? 1 : 0}>{tag}</CurriculumLesson>
           </CurriculumLessonColumn>
 
           <CurriculumItemTitle style={style}>
@@ -249,7 +250,7 @@ const CourseCurriculum = ({
                     <CurriculumAccordionHeading>
                       <AccordionItemButton className="accordion-curriculum-button">
                         <CurriculumLessonColumn>
-                          <CurriculumLesson type={type ? 1 : 0}>
+                          <CurriculumLesson type={type ? 1 : 0} customLessonColor={tab.node.customLessonColor}>
                             {tag}
                           </CurriculumLesson>
                         </CurriculumLessonColumn>
@@ -320,7 +321,8 @@ const CourseCurriculum = ({
                                   .json,
                                 options
                               )}
-                              {tab.node.contentCards && (
+                              {tab.node.customContent && tab.node.customContent}
+                              {/* {tab.node.contentCards && (
                                 <ContentCardsWrapper>
                                   {tab.node.contentCards.map((el, idx) => {
                                     return (
@@ -328,7 +330,7 @@ const CourseCurriculum = ({
                                     )
                                   })}
                                 </ContentCardsWrapper>
-                              )}
+                              )} */}
                             </CurriculumContentText>
                           )}
                         </>
@@ -358,6 +360,7 @@ const CourseCurriculum = ({
                         .json
                     }
                     tag={tab.node.curriculumTagName}
+                    customLessonColor={tab.node.customLessonColor}
                   >
                     <CurriculumContentWrapper
                       type={tab.node.curriculumType ? 1 : 0}
@@ -419,7 +422,8 @@ const CourseCurriculum = ({
                                   .json,
                                 options
                               )}
-                              {tab.node.contentCards && (
+                              {tab.node.customContent && tab.node.customContent}
+                              {/* {tab.node.contentCards && (
                                 <ContentCardsWrapper>
                                   {tab.node.contentCards.map((el, idx) => {
                                     return (
@@ -427,7 +431,7 @@ const CourseCurriculum = ({
                                     )
                                   })}
                                 </ContentCardsWrapper>
-                              )}
+                              )} */}
                             </CurriculumContentText>
                           )}
                         </>

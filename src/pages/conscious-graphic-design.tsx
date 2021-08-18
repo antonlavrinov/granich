@@ -347,7 +347,8 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         data={data.curriculum}
       />
       <Features title="Еще пара бонусов" data={data.features} />
-      <CourseReviews dataHeader={data.reviewsHeader} data={data.reviews} />
+      <CourseReviews description="Напишите выпускникам прошлых потоков, они с радостью поделятся
+                  эмоциями от прохождения курса" dataHeader={data.reviewsHeader} data={data.reviews} />
       <CourseHardWork
         title="«Пожалуйста, примите осознанное решение об участии на этом курсе»"
         text="Хоть я и создал на нём условия для быстрого развития твёрдых навыков, но это не произойдёт по волшебству. Вам понадобится прилагать много сил, чтобы дойти до конца."
