@@ -7,8 +7,8 @@ import CourseOffer from "../components/course-page-templates/offer/"
 import Header from "../components/global/header"
 import CourseParticipation from "../components/course-page/CourseParticipation"
 import { graphql, PageProps } from "gatsby"
-import ogImage from "../assets/images/seo/conscious-graphic-design-min.jpg"
-import ogImageVK from "../assets/images/seo/vk/conscious-graphic-design.jpg"
+import ogImage from "../assets/images/seo/foundation-of-graphic-design.jpg"
+import ogImageVK from "../assets/images/seo/vk/foundation-of-graphic-design.jpg"
 import CoursePaymentChoices from "../components/course-page/payment-choices/CoursePaymentChoices"
 import CourseBanner from "../components/course-page/CourseBanner"
 import Mailing from "../components/global/mailing"
@@ -290,7 +290,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <FoundationExample />
       <VideoPresentation />
      
-      <CourseTimetable noGif noKeepCalm/>
+      <CourseTimetable noGif noKeepCalm text="Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе обучение для вас закончится. Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течении недели (хотя бы два часа каждый день)."/>
       <CourseTrainingPath data={data.foundationTrainingPath}/>
       <CourseCurriculum  
         dataHeader={data.foundationCurriculumHeader}
@@ -311,9 +311,9 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <CourseParticipation
         policy={true}
         data={data.foundationOffer}
-        formId={`ltForm6865073`}
-        formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=855573236`}
-        googleAnaliticsCategory={`Отправка формы Осознанный Графдизайн`}
+        formId={`ltForm7094719`}
+        formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1127538041`}
+        googleAnaliticsCategory={`Отправка формы Фундамент Графдизайна`}
         additionalTags={["Интенсивный", "С нуля"]}
       />
       <CoursePaymentChoices

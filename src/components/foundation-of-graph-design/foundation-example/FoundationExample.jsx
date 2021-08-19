@@ -264,7 +264,7 @@ const FoundationExample = () => {
           </CourseExampleHeader>
           <CourseExampleInfoWrapper>
             <CourseExampleInfoBlock>
-              <CourseExampleImage fluid={data.foundationExample2.childImageSharp.fluid} />
+              <CourseExampleImage fluid={data.foundationExample1.childImageSharp.fluid} />
               <CourseExampleInfoText>
                 Вы кое-что слышали о шрифтах. Знакомы с цветом. Пользовались
                 jpeg. Возможно, даже делали свои макеты. Но упорядочены ли ваши

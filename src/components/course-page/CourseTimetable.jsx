@@ -196,7 +196,7 @@ const TimetableGifPS = styled.div`
   }
 `
 
-const CourseTimetable = ({noGif, noKeepCalm}) => {
+const CourseTimetable = ({noGif, noKeepCalm, text}) => {
   const data = useStaticQuery(graphql`
     query timetableImage {
       imageTimetable: file(
@@ -222,8 +222,6 @@ const CourseTimetable = ({noGif, noKeepCalm}) => {
 
   const imageData = data.imageTimetable.childImageSharp.fluid
   const foundationimageData = data.foundationImageTimetable.childImageSharp.fluid
-  const text =
-    "Я выстроил Программу обучения так, что на каждый из уроков даётся 1 неделя. С понедельника по воскресенье. В день необходимо инвестировать в своё обучение хотя бы пару часов. Уроки насыщены обязательной к изучению и дополнительной информацией, поэтому откладывать обучение на последний день не стоит.  При этом домашнее задание по уроку необходимо выполнить ровно за эту неделю. Это строгий дедлайн. Иначе вы будете отстранены от обучения."
 
   return (
     <TimetableSection>

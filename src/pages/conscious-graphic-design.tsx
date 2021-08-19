@@ -335,7 +335,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <CourseExplain />
       <CourseOpportunities />
       <CourseAftermath />
-      <CourseTimetable />
+      <CourseTimetable text="Я выстроил Программу обучения так, что на каждый из уроков даётся 1 неделя. С понедельника по воскресенье. В день необходимо инвестировать в своё обучение хотя бы пару часов. Уроки насыщены обязательной к изучению и дополнительной информацией, поэтому откладывать обучение на последний день не стоит.  При этом домашнее задание по уроку необходимо выполнить ровно за эту неделю. Это строгий дедлайн. Иначе вы будете отстранены от обучения."/>
       <CourseTrainingPath data={data.trainingPath} />
       <CoursePortfolio
         dataHeader={data.portfolioHeader}
