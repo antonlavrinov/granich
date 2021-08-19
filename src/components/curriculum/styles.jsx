@@ -845,6 +845,7 @@ export const CurriculumContentColumn = styled.div`
     font-weight: 500;
     display: block;
     color: var(--granich-black);
+
   }
 
   p {
@@ -855,9 +856,68 @@ export const CurriculumContentColumn = styled.div`
     margin-bottom: 0.7vw;
   }
   i {
-    color: var(--granich-black);
+    color: var(--granich-red);
     font-style: normal;
+    b {
+      color: var(--granich-red);
+    }
   }
+
+  ul {
+    li {
+      b {
+        font-weight: 500;
+        i {
+          font-weight: 500;
+        }
+      }
+      p {
+        position: relative;
+        color: var(--granich-black);
+        padding-left: 1.2vw;
+        :before {
+          content: "";
+          width: 0.4vw;
+          height: 0.4vw;
+          border-radius: 50%;
+          background: var(--granich-red);
+          position: absolute;
+          top: 0.6vw;
+          left: 0;
+
+        }
+    }
+  }
+  }
+  ol {
+    li {
+      b {
+        font-weight: 500;
+        i {
+          font-weight: 500;
+        }
+      }
+      p {
+        position: relative;
+        color: var(--granich-black);
+        padding-left: 1.2vw;
+        :before {
+          content: "+";
+          /* width: 0.4vw;
+          height: 0.4vw; */
+          /* border-radius: 50%; */
+          /* background: var(--granich-red); */
+          color: var(--granich-red);
+          font-weight: 500;
+          position: absolute;
+          /* top: 0.6vw; */
+          left: 0;
+
+        }
+    }
+    }
+  }
+    
   @media only screen and (max-width: 575px) {
     width: 100%;
     min-width: 100%;
@@ -867,6 +927,27 @@ export const CurriculumContentColumn = styled.div`
       min-width: 100%;
       margin-bottom: 3vw;
     }
+    ul {
+    li {
+      p {
+        padding-left: 4vw;
+        :before {
+          width: 1.1vw;
+          height: 1.1vw;
+          top: 2vw;
+          left: 0;
+
+        }
+    }
+  }
+  }
+  ol {
+    li {
+      p {
+        padding-left: 4vw;
+    }
+    }
+  }
   }
 `
 

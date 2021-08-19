@@ -4,6 +4,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import TelegramIcon from "../../../assets/svgs/telegram-plane-brands.svg"
 import Tinkoff from "../payment-choices/Tinkoff"
+import { INLINES, BLOCKS } from "@contentful/rich-text-types"
 
 const PolicyWrapper = styled.div`
   height: 100%;
@@ -24,6 +25,17 @@ const PolicyText = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  img {
+    width: 1vw;
+    height: 1vw;
+    margin-right: 0.4vw;
+    top: 0.05vw;
+    position: relative;
+  }
+  ol {
+    display: flex;
+    align-items: center;
+  }
   ul {
     background: var(--granich-red);
     display: block;
@@ -57,6 +69,13 @@ const PolicyText = styled.div`
     font-weight: 500;
   }
   @media only screen and (max-width: 575px) {
+    img {
+      width: 3.5vw;
+      height: 3.5vw;
+      margin-right: 1.5vw;
+      top: 0.3vw;
+      position: relative;
+    }
     margin-bottom: 2vw;
     p {
       font-size: 3.7vw;
@@ -241,6 +260,24 @@ const PolicyFooterEmail = styled.span`
 
 `
 
+const options = {
+  renderNode: {
+    [BLOCKS.EMBEDDED_ASSET]: node => {
+      const { file, title } = node?.data?.target?.fields
+      // const mimeType = file['en-US'].contentType
+      // const mimeGroup = mimeType.split('/')[0]
+      return (
+        <img
+          title={title ? title["en-US"] : null}
+          alt={title ? title["en-US"] : null}
+          src={file["en-US"].url}
+        />
+      )
+
+    },
+  },
+}
+
 const ParticipationPolicy = ({ data, telegram, additionalComponent }) => {
   const [tooltipEmail, setTooltipEmail] = useState("Скопировать")
   return (
@@ -248,7 +285,7 @@ const ParticipationPolicy = ({ data, telegram, additionalComponent }) => {
       {data.childContentfulGranichCourseCoursePolicyRichTextNode && (
         <PolicyText>
           {documentToReactComponents(
-            data.childContentfulGranichCourseCoursePolicyRichTextNode.json
+            data.childContentfulGranichCourseCoursePolicyRichTextNode.json, options
           )}
         </PolicyText>
       )}

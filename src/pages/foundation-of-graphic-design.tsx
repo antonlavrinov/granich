@@ -283,7 +283,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <CourseOffer 
         allowPosters={true} 
         data={data.foundationOffer} 
-        additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
+        // additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
       />
        <FoundationForWhom />
 
@@ -304,7 +304,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
                   эмоциями от прохождения обучения" dataHeader={data.foundationReviewsHeader}/>
       <CourseHardWork
         title="«Пожалуйста, примите осознанное решение об участии на этом курсе»"
-        text="Хоть я и создал на нём условия для быстрого развития твёрдых навыков, но это не произойдёт по волшебству. Вам понадобится прилагать много сил, чтобы дойти до конца."
+        text="На курсе созданы условия для быстрого развития твёрдых навыков, но это не произойдёт по волшебству. Вам понадобится прилагать много сил, чтобы дойти до конца."
       />
 
       <div id="participation-section"></div>
