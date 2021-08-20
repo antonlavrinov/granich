@@ -3,6 +3,7 @@ import { Container } from "../style"
 import styled from "styled-components"
 // import BackgroundImage from 'gatsby-background-image';
 import ArrowIcon from "../../assets/svgs/white-arrow-inter.svg"
+import TelegramIcon from "../../assets/svgs/telegram-plane-brands.svg"
 // import { graphql, useStaticQuery } from 'gatsby'
 // import Img from 'gatsby-image';
 
@@ -161,9 +162,9 @@ const ReviewsFooter = styled.div`
   // padding: 1vw 3vw;
   @media only screen and (max-width: 575px) {
     border-radius: 1.5vw;
-    padding: 5vw 5vw 5vw;
+    /* padding: 5vw 5vw 5vw; */
     flex-direction: column;
-    background: #dedede;
+    /* background: #dedede; */
     ${props =>
       props.masterClass &&
       `
@@ -228,6 +229,16 @@ const ReviewsLinkTelegram = styled.a`
   transition: transform 0.2s ease;
   box-shadow: 0.15vw 0.15vw 0.4vw rgba(0, 0, 0, 0.25);
   white-space: nowrap;
+  svg {
+    fill: white;
+    width: 1vw;
+    height: 1vw;
+    :last-child {
+      width: 1.5vw;
+      height: 1.5vw;
+      margin-left: 0.6vw;
+    }
+  }
 
   :hover {
     font-size: 1.25vw;
@@ -244,12 +255,23 @@ const ReviewsLinkTelegram = styled.a`
     :hover {
       font-size: 3.9vw;
     }
-    margin-bottom: 4vw;
+    /* margin-bottom: vw; */
     min-width: 100%;
     width: 100%;
     margin-right: 0;
     justify-content: center;
+    svg {
+    fill: white;
+    min-width: 2.5vw;
+    min-height: 2.5vw;
+    :last-child {
+      min-width: 4vw;
+      min-height: 4vw;
+      margin-left: 0.6vw;
+    }
   }
+  }
+  
   ${props =>
     props.masterClass &&
     `
@@ -380,9 +402,10 @@ const CourseReviews = ({ data, dataHeader, masterClass, description }) => {
                   >
                     Все свежие отзывы
                     <Arrow />
-                    ТГ
+                    Телеграм
+                    <TelegramIcon />
                   </ReviewsLinkTelegram>
-                  {dataHeader.reviewsHeaderLinkVk && (
+                  {/* {dataHeader.reviewsHeaderLinkVk && (
                     <ReviewsLinkVk
                       target="_blank"
                       href={dataHeader.reviewsHeaderLinkVk}
@@ -394,7 +417,7 @@ const CourseReviews = ({ data, dataHeader, masterClass, description }) => {
                       </div>
                       <div>На стене Вадима Гранича</div>
                     </ReviewsLinkVk>
-                  )}
+                  )} */}
                 </ReviewsLinks>
                 <ReviewsText reviewsHeaderAttachmentTo={dataHeader.reviewsHeaderAttachmentTo}>
                   {description}

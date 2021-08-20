@@ -300,7 +300,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       />
       <Features title="Еще пара бонусов" data={data.foundationFeatures}/>
       
-      <CourseReviews description="Напишите выпускникам прошлых потоков, они с радостью поделятся
+      <CourseReviews description="Напишите выпускникам Школы, они с радостью поделятся
                   эмоциями от прохождения обучения" dataHeader={data.foundationReviewsHeader}/>
       <CourseHardWork
         title="«Пожалуйста, примите осознанное решение об участии на этом курсе»"
