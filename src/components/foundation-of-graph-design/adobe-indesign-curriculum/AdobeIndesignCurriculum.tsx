@@ -41,7 +41,7 @@ export const Descr = styled.div`
     }
   }
   b {
-    color: var(--granich-red);
+    color: var(--granich-black);
     text-decoration: none;
     font-weight: 600;
   }
