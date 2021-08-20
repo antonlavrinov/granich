@@ -26,7 +26,7 @@ a {
 
 
 export const Descr = styled.div`
-  font-size: 1.45vw;
+  font-size: 1.15vw;
   font-weight: 500;
   /* width: 60%;
   min-width: 60%; */
@@ -34,6 +34,17 @@ export const Descr = styled.div`
   line-height: 1.5;
   margin-bottom: 2.5vw;
   white-space: normal;
+  p {
+    margin-bottom: 1vw;
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+  b {
+    color: var(--granich-red);
+    text-decoration: none;
+    font-weight: 600;
+  }
   span {
     font-weight: 500;
     /* color: var(--granich-red); */
