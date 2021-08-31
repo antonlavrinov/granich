@@ -10,6 +10,8 @@ import { ICourseOffer } from "../interfaces/course-page"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
 import HomeworkAndConsulting from "../components/indesign-page/homework-and-consulting/"
 import CourseQandA from "../components/course-page-templates/q-and-a"
+import ContentCard from "../components/main-page/precourse-preparation/content-card"
+import { ContentCardsWrapper } from "../components/curriculum/styles"
 
 export const contentfulQuery = graphql`
   query indesignQuery {
@@ -208,7 +210,13 @@ const GraphicMetaphorsInIdentityPage: React.FC<PageProps<GraphQlResults>> = ({
           curriculumImportantDescr: null,
           curriculumTagName: "4 урок",
           curriculumType: true,
-          contentCards: [...data?.contentCards?.nodes],
+          customContent: (<ContentCardsWrapper>
+            {data?.contentCards?.nodes?.map((el, idx) => {
+              return (
+                <ContentCard content={el} key={idx} />
+              )
+            })}
+          </ContentCardsWrapper>),
         },
       },
     ],

@@ -27,6 +27,9 @@ import AdobeIndesign from "../components/foundation-of-graph-design/adobe-indesi
 import AdobeIndesignCurriculum from "../components/foundation-of-graph-design/adobe-indesign-curriculum"
 import FoundationExample from "../components/foundation-of-graph-design/foundation-example/FoundationExample"
 import FoundationForWhom from "../components/foundation-of-graph-design/for-whom"
+import styled from 'styled-components';
+import TeamMember from "../components/main-page/team/teacher"
+import { Container } from "../components/style"
 
 export const contentfulQuery = graphql`
   query foundationGraphDesignQuery {
@@ -203,8 +206,75 @@ export const contentfulQuery = graphql`
         }
       }
     }
+    foundationTeam: allContentfulGranichMainTeachers(
+      filter: {
+        teacherName: {
+          in: ["Вадим Гранич", "Евгения Дроботун", "Марина Асташова"]
+        }
+      }
+      sort: { fields: [teacherOrderNumber], order: ASC }
+    ) {
+      edges {
+        node {
+          id
+          teacherDescr {
+            json
+          }
+          teacherEmail
+          teacherImage {
+            fluid(maxWidth: 250) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          teacherName
+          teacherSocialInstagram
+          teacherSocialPinterest
+          teacherSocialTelegram
+          teacherSocialVK
+          teacherSocialsOrder
+        }
+      }
+    }
     
     
+  }
+`
+
+export const Team = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1.6vw;
+  grid-row-gap: 1.6vw;
+  justify-content: space-between;
+  margin-bottom: 2vw;
+  @media only screen and (max-width: 575px) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 4vw;
+    margin-bottom: 5vw;
+  }
+`
+
+export const TeamWrapper = styled.div`
+  margin-top: 4vw;
+  @media only screen and (max-width: 575px) {
+    margin-top: 5vw;
+  }
+`
+
+export const TeamTitle = styled.div`
+    color: var(--granich-black);
+  font-size: 4.55vw;
+  letter-spacing: -0.1vw;
+  font-weight: 700;
+  line-height: 0.85;
+  margin-right: 2vw;
+  margin-bottom: 3vw;
+  @media only screen and (max-width: 575px) {
+    font-size: 11vw;
+    letter-spacing: -0.7vw;
+    line-height: 1;
+    margin-right: 0;
+    margin-bottom: 4vw;
   }
 `
 
@@ -331,6 +401,18 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         description="Тут мы собрали ответы на самые популярные вопросы о курсе Фундамент Графдизайна"
         urlText="Курса!"
       />
+      <Container>
+        <TeamWrapper>
+          <TeamTitle>Курс разрабатывали:</TeamTitle>
+          <Team>
+            {data?.foundationTeam?.edges?.map((el, idx) => {
+              console.log("team", el)
+              return <TeamMember key={el.node.id} teacher={el.node} />
+            })}
+          </Team>
+        </TeamWrapper>
+        
+      </Container>
     </Layout>
   )
 }

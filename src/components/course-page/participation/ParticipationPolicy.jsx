@@ -29,12 +29,18 @@ const PolicyText = styled.div`
     width: 1vw;
     height: 1vw;
     margin-right: 0.4vw;
-    top: 0.05vw;
+    top: 0.15vw;
+    left: -0.4
     position: relative;
   }
   ol {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 0.4vw;
+    li {
+      display: flex;
+    }
+
   }
   ul {
     background: var(--granich-red);
@@ -77,6 +83,9 @@ const PolicyText = styled.div`
       position: relative;
     }
     margin-bottom: 2vw;
+    ol {
+      margin-bottom: 2vw;
+    }
     p {
       font-size: 3.7vw;
       margin-bottom: 2vw;

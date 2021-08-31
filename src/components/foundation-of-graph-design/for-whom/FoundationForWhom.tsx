@@ -64,8 +64,8 @@ export const ItemImg = styled(Img)`
     height: 7.5vw;
     min-width: 7.5vw;
     min-height: 7.5vw;
-    background: rgba(0,0,0,0.1);
-    border-radius: 50%;
+    /* background: rgba(0,0,0,0.1); */
+    /* border-radius: 50%; */
     margin-right: 1vw;
     img {
         transform: scale(1.2);
