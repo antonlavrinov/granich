@@ -775,6 +775,7 @@ export const CurriculumLesson = styled.div`
   text-align: center;
   user-select: none;
   margin-right: 1.3vw;
+  white-space: nowrap;
   ${props =>
     !props.type &&
     `
@@ -782,7 +783,8 @@ export const CurriculumLesson = styled.div`
         color: white;
     `}
   ${props => props.customLessonColor && `
-    color: var(--granich-light-grey);
+    color: white;
+    background: ${props.customLessonColor};
     border-color: ${props.customLessonColor};
 
   `}
