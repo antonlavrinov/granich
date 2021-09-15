@@ -779,8 +779,9 @@ export const CurriculumLesson = styled.div`
   ${props =>
     !props.type &&
     `
-        background: var(--granich-red);
-        color: white;
+        border-color: rgba(0,0,0,0.2);
+        background: none;
+        color: var(--granich-grey);
     `}
   ${props => props.customLessonColor && `
     color: white;
