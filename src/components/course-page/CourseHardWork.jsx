@@ -15,7 +15,7 @@ const HardWorkWrapper = styled.section`
   border-radius: 0.6vw;
   background: var(--granich-red);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   @media only screen and (max-width: 575px) {
     padding: 6vw;
     border-radius: 2.5vw;
@@ -26,11 +26,11 @@ const HardWorkWrapper = styled.section`
 const HardWorkQuote = styled.div`
   font-family: EB Garamond;
   font-style: italic;
-  font-size: 2.8vw;
+  font-size: 2.7vw;
   color: white;
   line-height: 1.05;
-  min-width: 45%;
-  max-width: 45%;
+  min-width: 41%;
+  max-width: 41%;
   letter-spacing: -0.01em;
   @media only screen and (max-width: 575px) {
     max-width: 100%;
@@ -44,8 +44,8 @@ const HardWorkTextWrapper = styled.div`
   padding: 1.5vw 1.8vw;
   border-radius: 0.5vw;
   display: flex;
-  min-width: 55%;
-  max-width: 55%;
+  min-width: 59%;
+  max-width: 59%;
   margin-left: auto;
   span {
     color: white;
