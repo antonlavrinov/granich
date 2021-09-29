@@ -149,7 +149,7 @@ const SEO: React.FC<Props> = ({
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '176905957827936');
+        fbq('init', '405980430872280');
         fbq('track', 'PageView');`}
       </script>
     </Helmet>
