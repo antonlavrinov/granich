@@ -34,7 +34,7 @@ export const podborkaPageQuery = graphql`
       contentType
     }
     coursePodborkaBanner: contentfulGranichCourse(
-      courseTitle: { eq: "Осознанный Графдизайн" }
+      courseTitle: { eq: "Фундамент Графдизайна" }
     ) {
       courseTitle
       courseStart
@@ -52,7 +52,7 @@ export const podborkaPageQuery = graphql`
       courseTypeEmpty
     }
     graphicDesignBannerInfo: contentfulGranichCourse(
-      courseTitle: { eq: "Осознанный Графдизайн" }
+      courseTitle: { eq: "Фундамент Графдизайна" }
     ) {
       courseTitle
       courseStart
@@ -202,7 +202,7 @@ const GraphDesignCompilationPage: React.FC<Props> = ({ data }) => {
         text={
           <>
             Это материалы, использованные при создании{" "}
-            <i>Осознанного Графдизайна</i>. Их необязательно изучать, вы можете
+            <i>Фундамента Графдизайна</i>. Их необязательно изучать, вы можете
             сразу же записаться на курс<span>→</span>
           </>
         }

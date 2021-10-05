@@ -10,7 +10,7 @@ import CourseCurriculum from "../components/course-page/CourseCurriculum"
 import Features from "../components/course-page-templates/features"
 import CourseReviews from "../components/course-page/CourseReviews"
 import CourseParticipation from "../components/course-page/CourseParticipation";
-import { graphql, PageProps } from "gatsby";
+import { graphql, PageProps, navigate } from "gatsby";
 import scrollTo from "gatsby-plugin-smoothscroll"
 import Mailing from "../components/global/mailing"
 import CourseExplain from "../components/course-page/CourseExplain"
@@ -306,9 +306,17 @@ export const contentfulQuery = graphql`
   }
 `
 
+
+
 const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
+  
   data,
 }) => {
+  useEffect(() => {
+    navigate("/foundation-of-graphic-design")
+  }, [])
+  
+  return <></>
   return (
     <Layout>
       <Header type={"dark"} />
