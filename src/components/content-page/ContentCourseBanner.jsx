@@ -213,7 +213,7 @@ const Banner = ({ data, text }) => {
                     <BannerCourseButton
                       status={!data.courseStatus}
                       target="_blank"
-                      href={data.courseSlug}
+                      href={`/${data.courseSlug}`}
                     >
                       {data.courseStatus ? "Участвовать" : "Узнать о наборе"}{" "}
                       <CourseArrowOut />
@@ -222,7 +222,7 @@ const Banner = ({ data, text }) => {
                     <BannerCourseButton
                       status={!data.courseStatus}
                       target="_blank"
-                      href={data.courseSlug}
+                      href={`/${data.courseSlug}`}
                       type={data.courseType}
                     >
                       {data.courseStatus ? "Купить" : "Предзаказ"}{" "}
