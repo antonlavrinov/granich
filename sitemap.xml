@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://granich.design/how-to-design-a-grid-3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://granich.design/how-to-design-a-grid-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://granich.design/how-to-design-a-grid-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://granich.design/poster-from-scratch-in-neo-geo-style</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -12,7 +13,6 @@
 <url> <loc>https://granich.design/poster-in-5-minutes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://granich.design/create-tri-fold-brochure-in-indesign</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://granich.design/how-to-present-design-work-in-a-portfolio</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://granich.design/how-to-design-a-grid-3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://granich.design/conscious-freelance-first-lesson</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://granich.design/tipografika-uroki-dizaineram-iz-zhizni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://granich.design/magazine-layout-in-indesign-working-with-text</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
