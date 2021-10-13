@@ -60,7 +60,11 @@ export const PureCourse = ({ icons, courseData, openModal }) => {
   //   return null
   // }
 
-  if (courseData.courseTitle === "Осознанный Фриланс" || courseData.courseTitle === "Осознанный Графдизайн") {
+  if (
+    courseData.courseTitle === "Осознанный Фриланс" ||
+    courseData.courseTitle === "Графические метафоры как путь в айдентику" ||
+    courseData.courseTitle === "Осознанный Графдизайн"
+  ) {
     return null
   }
   // const openModalIfEmpty = (title, bool, slug, ) => {

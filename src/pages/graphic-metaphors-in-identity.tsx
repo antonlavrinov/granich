@@ -65,7 +65,7 @@ const GraphicMetaphorsInIdentityPage: React.FC<PageProps<GraphQlResults>> = ({
   data,
 }) => {
   console.log("metaphors", data)
-  if (!data.offer) return <></>
+  // if (!data.offer) return <></>
   return (
     <Layout>
       <Header type={"dark"} />
