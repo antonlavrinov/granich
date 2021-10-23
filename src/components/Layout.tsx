@@ -11,10 +11,10 @@ type Props = {
   children: React.ReactNode
 }
 
-const Layout: React.FC<Props> = ({ children }) => {
+const Layout: React.FC<Props> = ({ children, theme }) => {
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle theme={theme} />
       <main>{children}</main>
       <SideButtons />
       <Cookies />

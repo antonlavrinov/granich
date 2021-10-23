@@ -187,15 +187,17 @@ export const FormPolitikaLabel = styled.div`
       content: "";
       height: 1px;
       width: 100%;
-      background: rgba(228, 5, 33, 0.2);
+      background: var(--granich-red);
       position: absolute;
       bottom: -0.1vw;
       left: 0;
+      opacity: 0.3;
     }
 
     :hover {
       :after {
         background: var(--granich-red);
+        opacity: 1;
       }
     }
   }

@@ -37,6 +37,8 @@ import {
 } from "../curriculum/styles"
 import PlusImage from "../../assets/images/plus.png"
 import MinusImage from "../../assets/images/minus.png"
+import PlusImageBlue from "../../assets/images/plus_blue.png"
+import MinusImageBlue from "../../assets/images/minus_blue.png"
 import { useMediaQuery } from "react-responsive"
 import CurriculumHead from "../curriculum/CurriculumHead"
 import ContentCard from "../../components/main-page/precourse-preparation/content-card"
@@ -179,13 +181,13 @@ const CurriculumItem = memo(
             // <Plus style={{ ...toggle, opacity: children ? 1 : 0.3 }} />
             <img
               style={{ ...toggle, opacity: children ? 1 : 0.3 }}
-              src={PlusImage}
+              src={courseTitle === "Графические метафоры как путь в айдентику" ? PlusImageBlue : PlusImage}
               alt="plus"
             />
           ) : (
             <img
               style={{ ...toggle, opacity: children ? 1 : 0.3 }}
-              src={MinusImage}
+              src={courseTitle === "Графические метафоры как путь в айдентику" ? MinusImageBlue : MinusImage}
               alt="minus"
             />
             // <Minus style={{ ...toggle, opacity: children ? 1 : 0.3 }}/>
@@ -313,7 +315,7 @@ const CourseCurriculum = ({
                           )}
                           {tab.node
                             .childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && (
-                            <CurriculumContentText className="link_out">
+                            <CurriculumContentText className="link_out" courseTitle={courseTitle}>
                               <EmptyText>sometext</EmptyText>
                               {documentToReactComponents(
                                 tab.node
@@ -413,7 +415,7 @@ const CourseCurriculum = ({
                         <>
                           {tab.node
                             .childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && (
-                            <CurriculumContentText className="link_out">
+                            <CurriculumContentText className="link_out" courseTitle={courseTitle}>
                               <EmptyText>sometext</EmptyText>
 
                               {documentToReactComponents(

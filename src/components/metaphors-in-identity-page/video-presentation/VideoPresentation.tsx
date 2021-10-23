@@ -45,47 +45,49 @@ export const Wrapper = styled.div`
   }
 `
 
-export const YoutubeBlock = styled.div`
-  // width: 100%;
-  height: 38vw;
-  // padding: 3vw;
-  position: relative;
+// export const YoutubeBlock = styled.div`
+//   // width: 100%;
+//   height: 38vw;
+//   // padding: 3vw;
+//   position: relative;
 
-  iframe {
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    position: relative;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-  }
-  @media only screen and (max-width: 575px) {
-    padding: 0;
-    height: auto;
-    iframe {
-      position: relative;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      height: 43vw;
-    }
-  }
-`
+//   iframe {
+//     border: 2px solid rgba(0, 0, 0, 0.2);
+//     position: relative;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//     height: 100%;
+//   }
+//   @media only screen and (max-width: 575px) {
+//     padding: 0;
+//     height: auto;
+//     iframe {
+//       position: relative;
+//       top: 0;
+//       left: 0;
+//       bottom: 0;
+//       right: 0;
+//       height: 43vw;
+//     }
+//   }
+// `
 
 export const Title = styled.h1`
   font-size: 6.9vw;
   font-weight: 500;
   font-family: EB Garamond;
+  font-style: italic;
   letter-spacing: -0.1rem;
-  line-height: 0.85;
+  line-height: 1;
   margin: 0;
   margin-bottom: 3vw;
   text-align: center;
   span {
-    font-family: EB Garamond;
-    font-style: italic;
+    font-family: Inter;
+    font-weight: bold;
+    font-style: normal;
     font-size: 6.5vw;
     letter-spacing: -0.1rem;
     display: block;
@@ -157,4 +159,117 @@ export const MainTag = styled.div`
   }
 `
 
-export const Header = styled.div``
+export const Header = styled.div`
+  margin-bottom: 5vw;
+`
+
+export const HeaderDescr = styled.p`
+    font-size: 1.55vw;
+    font-weight: 500;
+    margin-bottom: 3vw;
+    /* width: 100 */
+    padding: 0 5vw;
+    text-align: center;
+    /* margin-left: 2vw; */
+    line-height: 1.5;
+    @media only screen and (max-width: 575px) {
+        font-size: 4.6vw;
+        margin-bottom: 0;
+        line-height: 1.5;
+    }
+`
+
+export const VideoSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5vw;
+  :last-child {
+    margin-bottom: 0;
+    .metaphors-video-section-descr {
+      margin-left: 0;
+      margin-right: 2vw;
+    }
+  }
+  @media only screen and (max-width: 575px) {
+    flex-direction: column;
+  }
+`
+
+export const VideoSectionTitle = styled.h2`
+  color: var(--granich-black);
+  /* font-size: 5.7vw; */
+  font-size: 4.45vw;
+  letter-spacing: -0.1vw;
+  font-weight: 500;
+  line-height: 1;
+  margin-top: -0.6vw;
+  margin-bottom: 3vw;
+  line-height: 1.1;
+  /* white-space: nowrap; */
+  font-family: "EB Garamond";
+  font-style: italic;
+  /* margin-left: -1vw; */
+  @media only screen and (max-width: 575px) {
+    font-size: 11vw;
+    white-space: normal;
+    margin-bottom: 5vw;
+    line-height: 1;
+  }
+`
+
+export const VideoSectionDescr = styled.div.attrs({ className: "metaphors-video-section-descr"})`
+    font-size: 1.55vw;
+    font-weight: 500;
+    margin-bottom: 3vw;
+    max-width: 35%;
+    margin-left: 2vw;
+    line-height: 1.5;
+    @media only screen and (max-width: 575px) {
+        font-size: 4.6vw;
+        margin-bottom: 0;
+        line-height: 1.5;
+        max-width: 100%;
+        margin-left: 0;
+    }
+`
+
+export const YoutubeBlock = styled.div`
+  // width: 100%;
+  /* height: 38vw; */
+  // padding: 3vw;
+  position: relative;
+  width: 100%;
+    height: 24.4vw;
+
+
+  iframe {
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+  }
+  @media only screen and (max-width: 575px) {
+    padding: 0;
+    height: auto;
+    margin-bottom: 3vw;
+    iframe {
+      position: relative;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 43vw;
+    }
+  }
+`
+
+export const VideoSectionContent = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  @media only screen and (max-width: 575px) {
+    flex-direction: column-reverse;
+  }
+`

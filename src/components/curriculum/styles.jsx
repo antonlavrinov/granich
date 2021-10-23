@@ -178,13 +178,13 @@ export const CurriculumContent = styled.div`
       ${props =>
     props.lessonsCount &&
     ` 
-    margin-left: 6vw;
+    margin-left: 5vw;
     margin-top: -1.5vw;
     i {
 
     }
     p {
-      width: 20vw;
+      width: 23.1vw;
     }
     @media only screen and (max-width: 575px) {
           margin-top: 10vw;
@@ -960,15 +960,17 @@ export const CurriculumContentText = styled.div`
   line-height: 1.45;
   width: 100%;
   b {
-    font-weight: 500;
-    color: green;
-    text-decoration: underline;
-    text-decoration-style: double;
+    /* font-weight: 500; */
+    /* color: green; */
+    /* text-decoration: underline; */
+    /* text-decoration-style: double; */
   }
+
+
   i {
     font-style: italic;
-    color: var(--granich-red);
-    font-weight: 500;
+    /* color: var(--granich-red); */
+    /* font-weight: 500; */
     // text-decoration: underline;
     // text-decoration-style: double;
   }
@@ -1007,6 +1009,30 @@ export const CurriculumContentText = styled.div`
       padding: 0;
     }
   }
+
+  ${props => props.courseTitle === "Графические метафоры как путь в айдентику" && `
+    display: flex;
+    ul {
+      display: block;
+
+      i {
+        font-style: normal;
+        padding: 0.4vw 1vw;
+        font-size: 1.15vw;
+        border-radius: 10vw;
+        border: 1px solid var(--granich-black);
+        margin-bottom: 0.5vw;
+        display: inline-block;
+        line-height: 1.3;
+      }
+
+      p {
+        margin-bottom: 1vw !important;
+        color: var(--granich-grey);
+      }
+    }
+
+  `}
   @media only screen and (max-width: 575px) {
     margin-bottom: -5vw;
     width: 100%;
