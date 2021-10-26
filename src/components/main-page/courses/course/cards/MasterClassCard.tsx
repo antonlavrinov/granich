@@ -27,7 +27,7 @@ const MasterCard = ({ courseData, icons }) => {
             active={courseData.courseStatus}
             empty={courseData.courseTypeEmpty}
           >
-            Мастер-класс
+            {courseData.courseAdditionalType ?? "Мастер-класс"}
           </SC.MainTag>
           <SC.Teachers>
             {courseData.courseTeachers.length > 1 ? (
@@ -73,12 +73,12 @@ const MasterCard = ({ courseData, icons }) => {
               <>
                 {courseData.courseStatus ? (
                   <>
-                    <SC.ButtonText>Купить</SC.ButtonText>
+                    <SC.ButtonText>{courseData.courseButtonText ?? "Купить"}</SC.ButtonText>
                     <SC.ArrowIcon fluid={icons.arrowWhite} />
                   </>
                 ) : (
                   <>
-                    <SC.ButtonText>Предзаказ</SC.ButtonText>
+                    <SC.ButtonText>{courseData.courseButtonText ?? "Предзаказ"}</SC.ButtonText>
                     <SC.ArrowIcon fluid={icons.arrowBlack} />
                   </>
                 )}

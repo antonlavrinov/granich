@@ -1010,7 +1010,7 @@ export const CurriculumContentText = styled.div`
     }
   }
 
-  ${props => props.courseTitle === "Графические метафоры как путь в айдентику" && `
+  ${props => props.courseTitle === "Графические метафоры" && `
     display: flex;
     ul {
       display: block;

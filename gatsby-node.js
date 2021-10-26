@@ -123,6 +123,8 @@ exports.createSchemaCustomization = ({ actions }) => {
         courseStartAndEnd: String
         courseStream: String
         coursePrice: String
+        courseButtonText: String
+        courseAdditionalType: String
         courseBannerSubtext: String   
         childContentfulGranichCourseCoursePolicyRichTextNode: ContentfulCoursePolicy      
       }

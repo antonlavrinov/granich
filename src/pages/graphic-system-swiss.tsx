@@ -34,6 +34,9 @@ export const contentfulQuery = graphql`
       }
       courseDescr
       courseStatus
+      courseButtonText
+      courseExternalLinkTransition
+      courseAdditionalType
       courseType
       courseTitle
       courseMainImage {

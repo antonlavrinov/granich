@@ -50,6 +50,9 @@ export const contentfulQuery = graphql`
       courseStartAndEnd
       courseStream
       courseStatus
+      courseButtonText
+      courseExternalLinkTransition
+      courseAdditionalType
       courseType
       courseTitle
       coursePrice
@@ -156,6 +159,9 @@ export const contentfulQuery = graphql`
         node {
           id
           courseStatus
+          courseButtonText
+          courseExternalLinkTransition
+          courseAdditionalType
           courseStart
           courseDescr
           courseDuration

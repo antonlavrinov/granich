@@ -11,7 +11,7 @@ const VideoPresentationOffer: React.FC<Props> = ({ data }) => {
     <SC.Section>
       <Container>
         <SC.Wrapper>
-          <SC.Header>
+          {/* <SC.Header>
             <SC.Title>
               <span>Тренировка </span>графических метафор
             </SC.Title>
@@ -35,7 +35,7 @@ const VideoPresentationOffer: React.FC<Props> = ({ data }) => {
             <SC.HeaderDescr>
               Курс для тех, кто хочет создавать графдизайн, наполненный смыслом: айдентику, упаковки, обложки книг и музыкальных альбомов
             </SC.HeaderDescr>
-          </SC.Header>
+          </SC.Header> */}
           <SC.VideoSection>
             <SC.VideoSectionTitle>
                 Курс основан на метафорах
@@ -63,7 +63,7 @@ const VideoPresentationOffer: React.FC<Props> = ({ data }) => {
           </SC.VideoSection>
           <SC.VideoSection>
             <SC.VideoSectionTitle>
-                Ещё в курсе будем говорить об образах
+                Графметафоры тесно связаны с образами
             </SC.VideoSectionTitle>
             <SC.VideoSectionContent>
                 <SC.YoutubeBlock>

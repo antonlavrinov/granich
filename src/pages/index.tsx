@@ -53,6 +53,9 @@ export const contentfulQuery = graphql`
         node {
           id
           courseStatus
+          courseButtonText
+          courseExternalLinkTransition
+          courseAdditionalType
           courseStart
           courseDescr
           courseDuration

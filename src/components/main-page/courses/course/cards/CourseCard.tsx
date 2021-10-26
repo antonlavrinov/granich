@@ -7,8 +7,6 @@ type Props = {
 }
 
 const CourseCard: React.FC<Props> = ({ courseData, icons }) => {
-  const mainTagMentorType =
-    courseData.courseTitle === "Осознанный Фриланс" ? "-наставничество" : ""
 
   return (
     <SC.Wrapper>
@@ -35,7 +33,7 @@ const CourseCard: React.FC<Props> = ({ courseData, icons }) => {
             empty={courseData.courseTypeEmpty}
             active={courseData.courseStatus}
           >
-            Курс{mainTagMentorType}
+            {courseData.courseAdditionalType ?? "Курс"}
           </SC.MainTag>
           <SC.Teachers>
             {courseData.courseTeachers.length > 1 ? (
@@ -89,13 +87,13 @@ const CourseCard: React.FC<Props> = ({ courseData, icons }) => {
               <>
                 {courseData.courseStatus ? (
                   <>
-                    <SC.ButtonText>Участвовать</SC.ButtonText>
+                    <SC.ButtonText>{courseData.courseButtonText ?? "Участвовать"}</SC.ButtonText>
                     <SC.ArrowIcon fluid={icons.arrowWhite} />
                   </>
                 ) : (
                   <>
                     <SC.ButtonText>
-                      Узнать <br />о наборе
+                      {courseData.courseButtonText ?? (<>Узнать <br />о наборе</>)}
                     </SC.ButtonText>
                     <SC.ArrowIcon fluid={icons.arrowBlack} />
                   </>

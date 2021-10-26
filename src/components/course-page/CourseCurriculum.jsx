@@ -181,13 +181,13 @@ const CurriculumItem = memo(
             // <Plus style={{ ...toggle, opacity: children ? 1 : 0.3 }} />
             <img
               style={{ ...toggle, opacity: children ? 1 : 0.3 }}
-              src={courseTitle === "Графические метафоры как путь в айдентику" ? PlusImageBlue : PlusImage}
+              src={courseTitle === "Графические метафоры" ? PlusImageBlue : PlusImage}
               alt="plus"
             />
           ) : (
             <img
               style={{ ...toggle, opacity: children ? 1 : 0.3 }}
-              src={courseTitle === "Графические метафоры как путь в айдентику" ? MinusImageBlue : MinusImage}
+              src={courseTitle === "Графические метафоры" ? MinusImageBlue : MinusImage}
               alt="minus"
             />
             // <Minus style={{ ...toggle, opacity: children ? 1 : 0.3 }}/>

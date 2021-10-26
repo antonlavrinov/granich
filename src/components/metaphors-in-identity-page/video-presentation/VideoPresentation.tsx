@@ -198,7 +198,7 @@ export const VideoSection = styled.div`
 export const VideoSectionTitle = styled.h2`
   color: var(--granich-black);
   /* font-size: 5.7vw; */
-  font-size: 4.45vw;
+  font-size: 4.1vw;
   letter-spacing: -0.1vw;
   font-weight: 500;
   line-height: 1;

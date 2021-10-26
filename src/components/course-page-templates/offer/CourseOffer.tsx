@@ -264,6 +264,23 @@ export const Title = styled.h1<CourseInfoType>`
             }
         }
     `}
+       ${props =>
+      props.courseTitle === "Графические метафоры" &&
+      `
+        p {
+            letter-spacing: 0 !important;
+            line-height: 0.95;
+        }
+        @media only screen and (max-width: 575px) {
+            p {
+                font-size: 14vw;
+                i {
+                    font-size: 13.5vw;
+                }
+            }
+        }
+    `}
+    
 `
 export const Descr = styled.div<CourseInfoType>`
     width: 35vw;
@@ -316,7 +333,7 @@ export const Descr = styled.div<CourseInfoType>`
         }
     `}
     ${props =>
-      props.courseTitle === "Осознанный Фриланс" &&
+      (props.courseTitle === "Осознанный Фриланс" || props.courseTitle === "Графические метафоры") &&
       `
         width: 38vw;
         p {
@@ -331,6 +348,7 @@ export const Descr = styled.div<CourseInfoType>`
             }
         }
     `}
+      
 
 
 `

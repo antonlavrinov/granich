@@ -40,6 +40,9 @@ export const podborkaPageQuery = graphql`
       courseStart
       courseDuration
       courseStatus
+      courseButtonText
+      courseExternalLinkTransition
+      courseAdditionalType
       courseType
       courseBannerImage {
         fluid(maxWidth: 120) {

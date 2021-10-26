@@ -36,6 +36,9 @@ export const contentfulQuery = graphql`
       courseTitle
       courseDescr
       courseStatus
+      courseButtonText
+      courseExternalLinkTransition
+      courseAdditionalType
       courseType
       courseMainImage {
         fluid(maxWidth: 850, quality: 90) {

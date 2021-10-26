@@ -27,11 +27,12 @@ import VideoPresentation from "../components/course-page-templates/video-present
 import MetaphorsForWhom from "../components/metaphors-in-identity-page/for-whom"
 import MetaphorsAuthor from "../components/metaphors-in-identity-page/metaphors-author"
 import HardWorkMetaphors from "../components/metaphors-in-identity-page/hard-work"
+import CourseOffer from "../components/course-page-templates/offer"
 
 export const contentfulQuery = graphql`
   query graphicMetaphorsQuery {
     offer: contentfulGranichCourse(
-      courseTitle: { eq: "Графические метафоры как путь в айдентику" }
+      courseTitle: { eq: "Графические метафоры" }
     ) {
       courseMainImage {
         fluid(maxWidth: 850, quality: 90) {
@@ -47,6 +48,9 @@ export const contentfulQuery = graphql`
       courseStartAndEnd
       courseStream
       courseStatus
+      courseButtonText
+      courseAdditionalType
+      courseExternalLinkTransition
       courseType
       courseTitle
       coursePrice
@@ -64,7 +68,7 @@ export const contentfulQuery = graphql`
       }
     }
     metaphorsTrainingPath: allContentfulGranichMainTrainingPath(
-      filter: { trainingPathAttachmentTo: { eq: "Графические метафоры как путь в айдентику" } }
+      filter: { trainingPathAttachmentTo: { eq: "Графические метафоры" } }
       sort: { fields: [trainingPathOrderNumber], order: ASC }
     ) {
       edges {
@@ -83,7 +87,7 @@ export const contentfulQuery = graphql`
       }
     }
     metaphorsCurriculumHeader: contentfulGranichCourseCurriculumHeader(
-      curriculumHeaderAttachmentTo: { eq: "Графические метафоры как путь в айдентику" }
+      curriculumHeaderAttachmentTo: { eq: "Графические метафоры" }
     ) {
       curriculumHeaderTitle
       childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode {
@@ -94,7 +98,7 @@ export const contentfulQuery = graphql`
       }
     }
     metaphorsCurriculum: allContentfulGranichCourseCurriculum(
-      filter: { curriculumAttachmentTo: { eq: "Графические метафоры как путь в айдентику" } }
+      filter: { curriculumAttachmentTo: { eq: "Графические метафоры" } }
       sort: { fields: [curriculumOrderNumber], order: ASC }
     ) {
       edges {
@@ -153,10 +157,12 @@ const GraphicMetaphorsInIdentityPage = ({
         ]}
         ogImage={ogImage}
         ogImageVk={ogImageVK}
-        url="https://granich.design/graphic-metaphors-in-identity"
+        url="https://granich.design/graphic-metaphors"
       />
       <div className="section-top-block"></div>
+      <CourseOffer allowPosters data={data.offer}/> 
       <VideoPresentationOffer data={data.offer} />
+      
       <MetaphorsForWhom/>
       <CourseTrainingPath data={data.metaphorsTrainingPath}/>
       <CourseCurriculum  
@@ -164,15 +170,16 @@ const GraphicMetaphorsInIdentityPage = ({
         data={data.metaphorsCurriculum}
         compressedHeader
         lessonsCount
-        courseTitle="Графические метафоры как путь в айдентику"
+        courseTitle="Графические метафоры"
       />
       
       <CourseTimetable noGif noKeepCalm text="Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе обучение для вас закончится. Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течении недели (хотя бы два часа каждый день)."/>
       <MetaphorsAuthor/>
       <HardWorkMetaphors
         title="«Пожалуйста, примите осознанное решение об участии на этом курсе»"
-        text="Курс для опытных графических дизайнеров, не менее 1 года активной работы в графдизайне"
+        text="Курс для опытных графических дизайнеров, не менее 1 года активной работы в графдизайне, а также для выпускников «Осознанного Графдизайна» и «Фундамента Графдизайна»."
       />
+      <div id="participation-section"></div>
       <CourseParticipation
         policy={true}
         data={data.offer}

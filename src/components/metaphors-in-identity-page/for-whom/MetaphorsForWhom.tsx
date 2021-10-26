@@ -54,16 +54,20 @@ export const Item = styled.div`
   /* margin-right: 6.2vw; */
   font-size: 1.5vw;
   margin-bottom: 2vw;
+  margin-right: 2vw;
+  :last-child {
+    margin-right: 0;
+  }
   @media only screen and (max-width: 575px) {
     margin-bottom: 4vw;
 }
 `
 
 export const ItemImg = styled(Img)`
-    width: 7.5vw;
-    height: 7.5vw;
-    min-width: 7.5vw;
-    min-height: 7.5vw;
+    width: 7vw;
+    height: 7vw;
+    min-width: 7vw;
+    min-height: 7vw;
     /* background: rgba(0,0,0,0.1); */
     /* border-radius: 50%; */
     margin-right: 1vw;
@@ -81,9 +85,9 @@ export const ItemImg = styled(Img)`
 `
 
 export const ItemText = styled.div`
-  font-size: 1.5vw;
+  font-size: 1.35vw;
   font-weight: 500;
-  width: 10vw;
+  /* width: 9vw; */
   line-height: 1.3;
   /* white-space: nowrap; */
   @media only screen and (max-width: 575px) {

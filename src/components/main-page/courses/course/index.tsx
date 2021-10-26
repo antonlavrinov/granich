@@ -62,7 +62,7 @@ export const PureCourse = ({ icons, courseData, openModal }) => {
 
   if (
     courseData.courseTitle === "Осознанный Фриланс" ||
-    courseData.courseTitle === "Графические метафоры как путь в айдентику" ||
+    // courseData.courseTitle === "Графические метафоры" ||
     courseData.courseTitle === "Осознанный Графдизайн"
   ) {
     return null
@@ -80,6 +80,8 @@ export const PureCourse = ({ icons, courseData, openModal }) => {
   //     return
   //   }
   // }
+
+  console.log(`course status ${courseData.courseTitle}`, courseData.courseStatus)
 
   return (
     <>
@@ -113,7 +115,8 @@ export const PureCourse = ({ icons, courseData, openModal }) => {
                   label: "Карточка курса",
                 })
               }
-              href={`/${courseData.courseSlug}`}
+              target={courseData.courseExternalLinkTransition ? "_blank" : "_self"}
+              href={courseData.courseSlug}
             >
               <>
                 {courseData.courseType === "Курс" ? (

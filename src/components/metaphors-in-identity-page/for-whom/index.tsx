@@ -59,23 +59,24 @@ const MetaphorsForWhom = () => {
           <SC.InfoWrapper>
             <SC.Items>
                 <SC.Item>
-                    <SC.ItemImg fluid={image1}/>
-                {/* <ExplainItemNumber>1</ExplainItemNumber> */}
-                <SC.ItemText>Айдентика</SC.ItemText>
+                  <SC.ItemImg fluid={image1}/>
+                  <SC.ItemText>Айдентика</SC.ItemText>
                 </SC.Item>
                 <SC.Item>
-                <SC.ItemImg fluid={image2}/>
-                {/* <ExplainItemNumber>2</ExplainItemNumber> */}
-                <SC.ItemText>Упаковка</SC.ItemText>
+                  <SC.ItemImg fluid={image2}/>
+                  <SC.ItemText>Упаковка</SC.ItemText>
                 </SC.Item>
                 <SC.Item>
-                <SC.ItemImg fluid={image3}/>
-                {/* <ExplainItemNumber>3</ExplainItemNumber> */}
-                <SC.ItemText>Обложки, плакаты</SC.ItemText>
+                  <SC.ItemImg fluid={image3}/>
+                  <SC.ItemText>Обложки книг и альбомов</SC.ItemText>
+                </SC.Item>
+                <SC.Item>
+                  <SC.ItemImg fluid={image3}/>
+                  <SC.ItemText>Афиши, плакаты</SC.ItemText>
                 </SC.Item>
             </SC.Items>
             <SC.InfoText>
-              Курс для всех, кто хочет создавать графдизайн, наполненный смыслом: айдентику, упаковки, плакаты, обложки книг и музыкальных альбомов.
+              Дизайнеру айдентики курс поможет наполнить бренд смыслом. Дизайнеру упаковки — сделать товар интереснее для покупателя. Дизайнеру обложек музыкальных альбомов и книг — передать смысл музыки и слов. Дизайнеру афиш — отразить атмосферу мероприятия, а дизайнеру плакатов — делать работы с глубоким содержанием
             </SC.InfoText>
           </SC.InfoWrapper>
         </SC.Wrapper>

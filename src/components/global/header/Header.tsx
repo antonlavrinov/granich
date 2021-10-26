@@ -231,7 +231,7 @@ export const LoginButton = styled.a`
   display: flex;
   align-items: center;
   color: white;
-  background: var(--granich-red-gradient);
+  background: linear-gradient(90deg, rgba(230,25,51,1) 0%, rgba(213,12,34,1) 50%, rgba(189,3,27,1) 100%);
   // margin-top: -1.6vw;
   margin-left: auto;
   padding: 0.6vw 1.1vw;
@@ -293,7 +293,7 @@ export const LoginMobileButton = styled.a`
     display: flex;
     align-items: center;
     color: white;
-    background: var(--granich-red-gradient);
+    background: linear-gradient(90deg, rgba(230,25,51,1) 0%, rgba(213,12,34,1) 50%, rgba(189,3,27,1) 100%);
     padding: 2vw 4.8vw 2vw 3.8vw;
     letter-spacing: 0.05vw;
     border-radius: 1.5vw;

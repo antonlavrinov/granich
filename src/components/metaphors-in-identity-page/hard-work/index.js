@@ -1,12 +1,12 @@
 import React from "react"
 import { Container } from "../../style"
 import styled from "styled-components"
-import RunIcon from "../../../assets/svgs/graph-design/graph-design-mountain.svg"
+import ElvisIcon from "../../../assets/svgs/elvis.svg"
 
 const HardWorkSection = styled.section`
-  margin-bottom: 4vw;
+  /* margin-bottom: 4vw; */
   @media only screen and (max-width: 575px) {
-    margin-bottom: 5vw;
+    /* margin-bottom: 5vw; */
   }
 `
 
@@ -50,18 +50,21 @@ const HardWorkTextWrapper = styled.div`
   span {
     color: white;
     display: block;
-    min-width: 85%;
-    max-width: 85%;
+    min-width: 75%;
+    max-width: 75%;
 
     font-size: 1.15vw;
     line-height: 1.45;
   }
   svg {
-    width: 5vw;
-    height: 6.5vw;
+    width: 7vw;
+    min-width: 7vw;
+    height: 7vw;
+    min-height: 7vw;
     margin-left: auto;
+    transform: scale(1.25);
     //  fill: #4C0101;
-    margin-right: -0.5vw;
+    /* margin-right: -0.5vw; */
     fill: var(--granich-red);
   }
   @media only screen and (max-width: 575px) {
@@ -94,7 +97,7 @@ const HardWorkMetaphors = ({ title, text }) => {
           <HardWorkQuote>{title}</HardWorkQuote>
           <HardWorkTextWrapper>
             <span>{text}</span>
-            <RunIcon />
+            <ElvisIcon />
           </HardWorkTextWrapper>
         </HardWorkWrapper>
       </Container>

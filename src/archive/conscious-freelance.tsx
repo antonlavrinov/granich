@@ -39,6 +39,9 @@ export const contentfulQuery = graphql`
       courseStartAndEnd
       courseStream
       courseStatus
+      courseButtonText
+      courseExternalLinkTransition
+      courseAdditionalType
       courseType
       coursePrice
       courseTags
