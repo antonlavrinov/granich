@@ -1,6 +1,8 @@
 import React from "react"
 import { Container } from "../../style"
 import LoginButtonIcon from "../../../assets/svgs/login-button-icon.svg"
+import GranichLogoBlack from "./granich_black.svg";
+import GranichLogoWhite from "./granich_white.svg";
 import * as SC from "./Header"
 
 type HeaderProps = {
@@ -16,11 +18,20 @@ const Header: React.FC<HeaderProps> = ({ type, scrollTo = () => {} }) => (
     <Container>
       <SC.Wrapper>
         <SC.LogoWrapper href="/" theme={type}>
-          <SC.WhiteLogo />
+          {type === "dark" ? (
+            <img src={GranichLogoBlack} alt="logo" />
+          ) : (
+            <img src={GranichLogoWhite} alt="logo" />
+          )}
+          
         </SC.LogoWrapper>
         <SC.LogoAndLoginButtonWrapper>
           <SC.LogoMobileWrapper href="/" theme={type}>
-            <SC.WhiteLogo />
+            {type === "dark" ? (
+              <img src={GranichLogoBlack} alt="logo" />
+            ) : (
+              <img src={GranichLogoWhite} alt="logo" />
+            )}
           </SC.LogoMobileWrapper>
           <SC.LoginMobileButton
             rel="noopener noreferrer"

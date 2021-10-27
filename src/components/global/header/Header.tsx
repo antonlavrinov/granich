@@ -4,6 +4,7 @@ import Logo from "../../../assets/svgs/granich-logo.svg"
 import ArrowDown from "../../../assets/svgs/header-arrow-icon-down.svg"
 import ArrowOut from "../../../assets/svgs/header-arrow-icon-out.svg"
 import ArrowBack from "../../../assets/svgs/header-arrow-back.svg"
+
 import Link from "gatsby-link"
 
 interface ITheme {
@@ -37,18 +38,30 @@ export const StyledHeader = styled.header`
 export const LogoWrapper = styled.a<ITheme>`
   display: flex;
   align-items: center;
-  fill: white;
+  /* fill: white; */
   height: auto;
   margin-right: 3.15vw;
-  ${props =>
+  /* ${props =>
     props.theme === "dark" &&
     `
     fill: var(--granich-black);
     
-    `}
+    `} */
+  img {
+    width: 3.6vw;
+    min-width: 3.6vw;
+    height: 3.6vw;
+    min-height: 3.6vw;
+  }
 
   @media only screen and (max-width: 575px) {
     display: none;
+    img {
+      width: 12vw;
+      min-width: 12vw;
+      height: 12vw;
+      min-height: 12vw;
+    }
   }
 `
 
@@ -266,6 +279,12 @@ export const LogoMobileWrapper = styled.a<ITheme>`
     align-items: center;
     fill: white;
     height: auto;
+    img {
+      width: 12vw;
+      min-width: 12vw;
+      height: 12vw;
+      min-height: 12vw;
+    }
     ${props =>
       props.theme === "dark" &&
       `
@@ -273,6 +292,15 @@ export const LogoMobileWrapper = styled.a<ITheme>`
       
       `}
   }
+`
+
+export const LogoImg = styled.img`
+
+    width:3.6vw;
+    min-width: 3.6vw;
+    height: 3.6vw;
+    min-height: 3.6vw;
+
 `
 
 export const LogoAndLoginButtonWrapper = styled.div`

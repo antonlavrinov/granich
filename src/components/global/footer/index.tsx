@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { Container } from "../../style"
 import { CopyToClipboard } from "react-copy-to-clipboard"
+// import GranichLogoBlack from "../../../assets/svgs/granich-new-black.svg";
+import GranichLogoBlack from "./granich_black.svg";
 import * as SC from "./Footer"
 
 const Footer: React.FC = () => {
@@ -12,7 +14,7 @@ const Footer: React.FC = () => {
         <SC.Wrapper>
           <SC.LogoAndInfo>
             <SC.LogoWrapper href="/">
-              <SC.BlackLogo />
+              <img alt="logo" src={GranichLogoBlack} />
             </SC.LogoWrapper>
 
             <SC.Info>

@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Logo from "../../../assets/svgs/granich-logo.svg"
+
 import VisaIcon from "../../../assets/svgs/Visa.svg"
 import MastercardIcon from "../../../assets/svgs/Mastercard.svg"
 import CloudPaymentsIcon from "../../../assets/svgs/CloudPayments.svg"
@@ -22,6 +23,7 @@ export const BlackLogo = styled(props => <Logo {...props} />)`
     min-height: 11vw;
   }
 `
+
 
 export const Visa = styled(props => <VisaIcon {...props} />)`
   width: 5.5vw;
@@ -68,17 +70,30 @@ export const Section = styled.footer`
 
 export const Wrapper = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   @media only screen and (max-width: 575px) {
     flex-direction: column;
+    align-items: flex-start;
   }
 `
 
 export const LogoWrapper = styled.a`
   fill: var(--granich-black);
-  margin-right: 0.7vw;
+  margin-right: 1vw;
+  img {
+    width: 3.6vw;
+    height: 3.6vw;
+    min-width: 3.6vw;
+    min-height: 3.6vw;
+  }
   @media only screen and (max-width: 575px) {
     margin-right: 3.5vw;
+    img {
+      width: 12vw;
+      height: 12vw;
+      min-width: 12vw;
+      min-height: 12vw;
+    }
   }
 `
 
@@ -283,7 +298,7 @@ export const Payment = styled.div`
 
 export const LogoAndInfo = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   @media only screen and (max-width: 575px) {
     margin-bottom: 5.5vw;
   }
