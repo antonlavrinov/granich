@@ -19,18 +19,18 @@ const Header: React.FC<HeaderProps> = ({ type, scrollTo = () => {} }) => (
       <SC.Wrapper>
         <SC.LogoWrapper href="/" theme={type}>
           {type === "dark" ? (
-            <img src={GranichLogoBlack} alt="logo" />
+            <img src="images/granich-logo_black.svg" alt="logo" />
           ) : (
-            <img src={GranichLogoWhite} alt="logo" />
+            <img src="images/granich-logo_white.svg" alt="logo" />
           )}
           
         </SC.LogoWrapper>
         <SC.LogoAndLoginButtonWrapper>
           <SC.LogoMobileWrapper href="/" theme={type}>
             {type === "dark" ? (
-              <img src={GranichLogoBlack} alt="logo" />
+              <img src="images/granich-logo_black.svg" alt="logo" />
             ) : (
-              <img src={GranichLogoWhite} alt="logo" />
+              <img src="images/granich-logo_white.svg" alt="logo" />
             )}
           </SC.LogoMobileWrapper>
           <SC.LoginMobileButton
