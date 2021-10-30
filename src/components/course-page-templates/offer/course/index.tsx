@@ -19,6 +19,7 @@ type Props = {
 const CourseTemplateOffer: React.FC<Props> = ({
   data,
   postersVisibility,
+  postersAuthors,
   allowPosters,
   additionalText
 }) => {
@@ -72,8 +73,8 @@ const CourseTemplateOffer: React.FC<Props> = ({
                 postersVisibility={postersVisibility}
               />
             )}
-            {data.courseTitle === "Фундамент Графдизайна" || data.courseTitle === "Графические метафоры" && (
-              <SC.PostersLabel>Работы учеников</SC.PostersLabel>
+            {postersAuthors && (
+              <SC.PostersLabel>{postersAuthors}</SC.PostersLabel>
             )}
 
             <SC.Descr

@@ -137,7 +137,7 @@ export const contentfulQuery = graphql`
 const GraphicMetaphorsInIdentityPage = ({
   data,
 }) => {
-  console.log("metaphors", data)
+  // console.log("metaphors", data)
   // if (!data.offer) return <></>
   return (
     <Layout theme="blue">
@@ -160,9 +160,8 @@ const GraphicMetaphorsInIdentityPage = ({
         url="https://granich.design/graphic-metaphors"
       />
       <div className="section-top-block"></div>
-      <CourseOffer allowPosters data={data.offer}/> 
+      <CourseOffer allowPosters data={data.offer} postersAuthors="Работы куратора курса"/> 
       <VideoPresentationOffer data={data.offer} />
-      
       <MetaphorsForWhom/>
       <CourseTrainingPath data={data.metaphorsTrainingPath}/>
       <CourseCurriculum  
@@ -172,12 +171,11 @@ const GraphicMetaphorsInIdentityPage = ({
         lessonsCount
         courseTitle="Графические метафоры"
       />
-      
-      <CourseTimetable noGif noKeepCalm text="Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе обучение для вас закончится. Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течении недели (хотя бы два часа каждый день)."/>
+      <CourseTimetable courseTitle={data.offer.courseTitle} noGif noKeepCalm text="Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе обучение для вас закончится. Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течении недели (хотя бы два часа каждый день)."/>
       <MetaphorsAuthor/>
       <HardWorkMetaphors
         title="«Пожалуйста, примите осознанное решение об участии на этом курсе»"
-        text="Курс для опытных графических дизайнеров, не менее 1 года активной работы в графдизайне, а также для выпускников «Осознанного Графдизайна» и «Фундамента Графдизайна»."
+        text="Курс для графических дизайнеров с опытом активной работы больше одного года, а также для выпускников «Осознанного Графдизайна» и «Фундамента Графдизайна»."
       />
       <div id="participation-section"></div>
       <CourseParticipation

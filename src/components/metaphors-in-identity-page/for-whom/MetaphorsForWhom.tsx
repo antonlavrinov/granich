@@ -35,7 +35,7 @@ export const Title = styled.h2`
     font-size: 9.5vw;
     margin-left: 0;
     letter-spacing: -0.1vw;
-    margin-bottom: 8vw;
+    margin-bottom: 10vw;
     line-height: 0.9;
   }
 `
@@ -45,21 +45,26 @@ export const Items = styled.div`
   margin-bottom: 1vw;
   @media only screen and (max-width: 575px) {
     flex-direction: column;
-    margin-bottom: 1vw;
+    margin-bottom: 3vw;
   }
 `
 export const Item = styled.div`
-  display: flex;
+  /* display: flex; */
   align-items: center;
   /* margin-right: 6.2vw; */
   font-size: 1.5vw;
   margin-bottom: 2vw;
-  margin-right: 2vw;
+  margin-right: 2.6vw;
   :last-child {
     margin-right: 0;
   }
   @media only screen and (max-width: 575px) {
-    margin-bottom: 4vw;
+    margin-bottom: 10vw;
+    display: flex;
+    align-items: flex-start;
+    :last-child {
+      margin-bottom: 0;
+    }
 }
 `
 
@@ -70,7 +75,7 @@ export const ItemImg = styled(Img)`
     min-height: 7vw;
     /* background: rgba(0,0,0,0.1); */
     /* border-radius: 50%; */
-    margin-right: 1vw;
+    margin-bottom: 1vw;
     img {
         /* transform: scale(1.2); */
     }
@@ -79,20 +84,40 @@ export const ItemImg = styled(Img)`
         height: 17vw;
         min-width: 17vw;
         min-height: 17vw;
+        /* margin-right: 4vw; */
         margin-right: 4vw;
+        position: relative;
+        top: -3vw;
     }
 
 `
 
 export const ItemText = styled.div`
-  font-size: 1.35vw;
+  font-size: 1.3vw;
   font-weight: 500;
   /* width: 9vw; */
-  line-height: 1.3;
+  line-height: 1.35;
+  position: relative;
+  left: 0.2vw;
+  /* width: 14vw; */
   /* white-space: nowrap; */
+  b {
+    display: block;
+    font-size: 1.55vw;
+    margin-bottom: 0.5vw;
+  }
+  p {
+    color: var(--granich-grey);
+  }
   @media only screen and (max-width: 575px) {
-    font-size: 4.5vw;
+    font-size: 3.7vw;
     margin-top: -2vw;
+    width: 90%;
+
+    b {
+      font-size: 3.7vw;
+    }
+
   }
 `
 export const InfoWrapper = styled.div`
@@ -103,12 +128,13 @@ export const InfoWrapper = styled.div`
   }
 `
 export const InfoText = styled.div`
-  font-size: 1.45vw;
-  line-height: 1.4;
+  font-size: 1.3vw;
+  line-height: 1.5;
   /* max-width: 70%;
   width: 70%; */
   font-weight: 500;
   margin-right: 1vw;
+
   /* width: 80%; */
   @media only screen and (max-width: 575px) {
     font-size: 3.7vw;

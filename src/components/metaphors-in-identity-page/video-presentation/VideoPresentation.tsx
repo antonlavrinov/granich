@@ -181,13 +181,17 @@ export const HeaderDescr = styled.p`
 
 export const VideoSection = styled.div`
   display: flex;
-  flex-direction: column;
-  margin-bottom: 5vw;
+  /* flex-direction: column; */
+  margin-bottom: 6vw;
   :last-child {
     margin-bottom: 0;
+    flex-direction: row-reverse;
+    .metaphors-video-section-content {
+      margin-left: 2vw;
+      margin-right: 0;
+    }
     .metaphors-video-section-descr {
-      margin-left: 0;
-      margin-right: 2vw;
+      letter-spacing: -0.008vw;
     }
   }
   @media only screen and (max-width: 575px) {
@@ -198,13 +202,13 @@ export const VideoSection = styled.div`
 export const VideoSectionTitle = styled.h2`
   color: var(--granich-black);
   /* font-size: 5.7vw; */
-  font-size: 4.1vw;
+  font-size: 3.8vw;
   letter-spacing: -0.1vw;
   font-weight: 500;
   line-height: 1;
-  margin-top: -0.6vw;
-  margin-bottom: 3vw;
-  line-height: 1.1;
+  margin-top: -1vw;
+  margin-bottom: 1.5vw;
+  line-height: 1.05;
   /* white-space: nowrap; */
   font-family: "EB Garamond";
   font-style: italic;
@@ -218,12 +222,13 @@ export const VideoSectionTitle = styled.h2`
 `
 
 export const VideoSectionDescr = styled.div.attrs({ className: "metaphors-video-section-descr"})`
-    font-size: 1.55vw;
+    font-size: 1.45vw;
     font-weight: 500;
-    margin-bottom: 3vw;
-    max-width: 35%;
-    margin-left: 2vw;
+    /* margin-bottom: 3vw; */
+    /* max-width: 35%; */
+    /* margin-left: 2vw; */
     line-height: 1.5;
+
     @media only screen and (max-width: 575px) {
         font-size: 4.6vw;
         margin-bottom: 0;
@@ -239,7 +244,7 @@ export const YoutubeBlock = styled.div`
   // padding: 3vw;
   position: relative;
   width: 100%;
-    height: 24.4vw;
+    height: 21vw;
 
 
   iframe {
@@ -266,10 +271,12 @@ export const YoutubeBlock = styled.div`
   }
 `
 
-export const VideoSectionContent = styled.div`
-  display: flex;
-  flex-direction: row-reverse;
+export const VideoSectionContent = styled.div.attrs({ className: "metaphors-video-section-content"})`
+  /* display: flex; */
+  /* flex-direction: row-reverse; */
+  max-width: 40%;
+  margin-right: 2vw;
   @media only screen and (max-width: 575px) {
-    flex-direction: column-reverse;
+    /* flex-direction: column-reverse; */
   }
 `

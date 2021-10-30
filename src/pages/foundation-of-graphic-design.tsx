@@ -359,6 +359,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <CourseOffer 
         allowPosters={true} 
         data={data.foundationOffer} 
+        postersAuthors="Работы учеников"
         // additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
       />
        <FoundationForWhom />
@@ -366,7 +367,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <FoundationExample />
       <VideoPresentation />
      
-      <CourseTimetable noGif noKeepCalm text="Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе обучение для вас закончится. Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течении недели (хотя бы два часа каждый день)."/>
+      <CourseTimetable courseTitle={data.foundationOffer.courseTitle} noGif noKeepCalm text="Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе обучение для вас закончится. Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течении недели (хотя бы два часа каждый день)."/>
       <CourseTrainingPath data={data.foundationTrainingPath}/>
       <CourseCurriculum  
         dataHeader={data.foundationCurriculumHeader}

@@ -196,7 +196,7 @@ const TimetableGifPS = styled.div`
   }
 `
 
-const CourseTimetable = ({noGif, noKeepCalm, text}) => {
+const CourseTimetable = ({noGif, noKeepCalm, text, courseTitle}) => {
   const data = useStaticQuery(graphql`
     query timetableImage {
       imageTimetable: file(
@@ -217,11 +217,24 @@ const CourseTimetable = ({noGif, noKeepCalm, text}) => {
           }
         }
       }
+      metaphorsImageTimetable: file(
+        relativePath: { eq: "metaphors-in-identity-page/timetable-image.jpg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 700, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
   const imageData = data.imageTimetable.childImageSharp.fluid
-  const foundationimageData = data.foundationImageTimetable.childImageSharp.fluid
+
+  const timetableImages = {
+    "Графические метафоры": data.metaphorsImageTimetable.childImageSharp.fluid,
+    "Фундамент Графдизайна": data.foundationImageTimetable.childImageSharp.fluid,
+  };
 
   return (
     <TimetableSection>
@@ -234,7 +247,7 @@ const CourseTimetable = ({noGif, noKeepCalm, text}) => {
           <TimetableInfoWrapper>
             <TimetableInfoTextMobile>{text}</TimetableInfoTextMobile>
             <TimetableImageWrapper>
-              <TimetableImage fluid={noGif ? foundationimageData : imageData} />
+              <TimetableImage fluid={noGif ? timetableImages[courseTitle] : imageData} />
             </TimetableImageWrapper>
 
             <TimetableInfoTextWrapper>

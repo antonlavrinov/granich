@@ -37,54 +37,55 @@ const VideoPresentationOffer: React.FC<Props> = ({ data }) => {
             </SC.HeaderDescr>
           </SC.Header> */}
           <SC.VideoSection>
-            <SC.VideoSectionTitle>
-                Курс основан на метафорах
-            </SC.VideoSectionTitle>
             <SC.VideoSectionContent>
-                <SC.VideoSectionDescr>
-                    Посмотрите этот урок. Если он вам понравится, то вам точно следует тренировать с нами графические метафоры. На курсе мы подробнее разберём различные подходы к метафорам.
-                </SC.VideoSectionDescr>
-                <SC.YoutubeBlock>
-                    <div className="loadingio-spinner-rolling-ta5f1nqy5p">
-                    <div className="ldio-6b142d04hhl">
-                        <div></div>
-                    </div>
-                    </div>
-                    <iframe
-                    title="youtubeFrame"
-                    width="100%"
-                    src={`https://www.youtube.com/embed/dJUDKUdmaQE?vq=hd1080`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    ></iframe>
-                </SC.YoutubeBlock>
+              <SC.VideoSectionTitle>
+                  Курс основан на метафорах
+              </SC.VideoSectionTitle>
+              <SC.VideoSectionDescr>
+                  Посмотрите этот урок. Если он вам понравится, тогда вам точно следует тренировать с нами графические метафоры. На курсе мы подробнее разберём различные подходы к метафорам.
+              </SC.VideoSectionDescr>
             </SC.VideoSectionContent>
+            <SC.YoutubeBlock>
+                <div className="loadingio-spinner-rolling-ta5f1nqy5p">
+                <div className="ldio-6b142d04hhl">
+                    <div></div>
+                </div>
+                </div>
+                <iframe
+                title="youtubeFrame"
+                width="100%"
+                src={`https://www.youtube.com/embed/dJUDKUdmaQE?vq=hd1080`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                ></iframe>
+            </SC.YoutubeBlock>
           </SC.VideoSection>
           <SC.VideoSection>
-            <SC.VideoSectionTitle>
-                Графметафоры тесно связаны с образами
-            </SC.VideoSectionTitle>
             <SC.VideoSectionContent>
-                <SC.YoutubeBlock>
-                    <div className="loadingio-spinner-rolling-ta5f1nqy5p">
-                    <div className="ldio-6b142d04hhl">
-                        <div></div>
-                    </div>
-                    </div>
-                    <iframe
-                    title="youtubeFrame"
-                    width="100%"
-                    src={`https://www.youtube.com/embed/X3MQHL72RhE`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    ></iframe>
-                </SC.YoutubeBlock>
-                <SC.VideoSectionDescr>
-                    Можно дополнительно посмотреть и этот урок. На нём мы, в том числе, даём определение образов, из чего они состоят. В рамках курса вы будете отталкиваться от раскладывания образов и переводить их в графические метафоры.
-                </SC.VideoSectionDescr>
+              <SC.VideoSectionTitle>
+                  Графметафоры связаны с образами
+              </SC.VideoSectionTitle>
+              <SC.VideoSectionDescr>
+              Можно дополнительно посмотреть и этот урок. На нём мы, в том числе, даём определение образов.
+На курсе вы будете раскладывать ниши бизнеса на образы и переводить их в графические метафоры.
+              </SC.VideoSectionDescr> 
             </SC.VideoSectionContent>
+            <SC.YoutubeBlock>
+                <div className="loadingio-spinner-rolling-ta5f1nqy5p">
+                <div className="ldio-6b142d04hhl">
+                    <div></div>
+                </div>
+                </div>
+                <iframe
+                title="youtubeFrame"
+                width="100%"
+                src={`https://www.youtube.com/embed/X3MQHL72RhE`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                ></iframe>
+            </SC.YoutubeBlock>
           </SC.VideoSection>
           
           {/* <SC.YoutubeBlock>
