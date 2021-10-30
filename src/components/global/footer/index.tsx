@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
         <SC.Wrapper>
           <SC.LogoAndInfo>
             <SC.LogoWrapper href="/">
-              <img alt="logo" src="images/granich-logo_black.svg" />
+              <img alt="logo" src="/images/granich-logo_black.svg" />
             </SC.LogoWrapper>
 
             <SC.Info>
