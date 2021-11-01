@@ -83,6 +83,7 @@ export const PureCourse = ({ icons, courseData, openModal }) => {
 
   console.log(`course status ${courseData.courseTitle}`, courseData.courseStatus)
 
+
   return (
     <>
       {courseData.courseTypeDevelopment ? (
@@ -91,7 +92,9 @@ export const PureCourse = ({ icons, courseData, openModal }) => {
         <>
           {courseData.courseTypeEmpty ? (
             <SC.LinkModal
+              clickable={courseData.courseTitle === "Арт-Директич"}
               onClick={() => {
+                if (courseData.courseTitle === "Арт-Директич") return;
                 openModal()
                 trackCustomEvent({
                   category: `Главная: карточка "${courseData.courseTitle}"`,

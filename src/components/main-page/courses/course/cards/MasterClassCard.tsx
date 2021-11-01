@@ -64,8 +64,8 @@ const MasterCard = ({ courseData, icons }) => {
             {courseData.courseTypeEmpty ? (
               <>
                 <SC.ButtonText empty>
-                  Узнать <br />
-                  об открытии
+                  {courseData.courseButtonText ?? (<>Узнать <br />
+                  об открытии</>)}
                 </SC.ButtonText>
                 <SC.ArrowIcon fluid={icons.calendar} />
               </>

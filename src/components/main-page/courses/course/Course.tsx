@@ -30,6 +30,14 @@ export const LinkModal = styled.div`
   :hover {
     cursor: pointer;
   }
+
+  ${props => props.clickable && `
+    :hover {
+      cursor: default;
+    }
+    
+
+  `}
   // @media only screen and (max-width: 575px) {
   //     // border-radius: 1.5vw;
   //     // box-shadow: 0 0 1.5vw rgba(0,0,0,0.25);
@@ -303,11 +311,11 @@ export const ButtonWrapper = styled.div`
 `
 export const ButtonText = styled.div`
   color: white;
-  font-size: 1.45vw;
+  font-size: 1.4vw;
   font-weight: 500;
   line-height: 0.95;
   margin-left: 0.3vw;
-  margin-top: -0.5vw;
+  margin-top: -0.2vw;
   ${props =>
     props.development &&
     `
