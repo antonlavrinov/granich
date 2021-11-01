@@ -1068,6 +1068,29 @@ export const CurriculumContentText = styled.div`
         }
       }
     }
+    ${props => props.courseTitle === "Графические метафоры" && `
+      display: block;
+      ul {
+        display: block;
+        i {
+          padding: 1vw 2vw;
+          font-size: 3.7vw;
+          border-radius: 50vw;
+          margin-bottom: 2vw;
+        }
+
+        b {
+          margin-bottom: 2vw;
+          display: block;
+        }
+
+        p {
+          margin-bottom: 1vw !important;
+          color: var(--granich-grey);
+        }
+      }
+
+    `}
   }
 `
 

@@ -250,7 +250,7 @@ const CourseCurriculum = ({
                 return (
                   <CurriculumAccordionItem key={tab.node.id}>
                     <CurriculumAccordionHeading>
-                      <AccordionItemButton className="accordion-curriculum-button">
+                      <AccordionItemButton className={`accordion-curriculum-button ${courseTitle === "Графические метафоры" ? "blue-theme" : "" }`}>
                         <CurriculumLessonColumn>
                           <CurriculumLesson type={type ? 1 : 0} customLessonColor={tab.node.customLessonColor}>
                             {tag}

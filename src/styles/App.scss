@@ -504,10 +504,36 @@ div[data-accordion-component="AccordionItemHeading"] {
     line-height: 1;
 }
 
+.accordion-curriculum-button.blue-theme::before {
+    content: '';
+    position: absolute;
+    top: 3vw;
+    right: 1.5%;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 6vw;
+    color: white;
+    cursor: pointer;
+    width: 6vw;
+    height: 6vw;
+    display: flex;
+    flex-direction: row;
+    background: url(../assets/images/plus_blue.png);
+    background-size: cover;
+    justify-content: center;
+    line-height: 1;
+}
+
 
 .accordion-curriculum-button[aria-expanded='true']::before {
     content: '';
     background: url(../assets/images/minus.png);
+    background-size: cover;
+}
+
+.accordion-curriculum-button.blue-theme[aria-expanded='true']::before {
+    content: '';
+    background: url(../assets/images/minus_blue.png);
     background-size: cover;
 }
 

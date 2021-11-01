@@ -273,9 +273,9 @@ export const Title = styled.h1<CourseInfoType>`
         }
         @media only screen and (max-width: 575px) {
             p {
-                font-size: 14vw;
+                font-size: 14.8vw;
                 i {
-                    font-size: 13.5vw;
+                    font-size: 15.5vw;
                 }
             }
         }

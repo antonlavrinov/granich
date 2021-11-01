@@ -24,6 +24,10 @@ export const AuthorInfoWrapper = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 3vw;
+    @media only screen and (max-width: 575px) {
+      flex-direction: column;
+      margin-bottom: 5vw;
+    }
 `
 
 export const AuthorImg = styled(Img)`
@@ -32,6 +36,12 @@ export const AuthorImg = styled(Img)`
     border-radius: 50%;
     border: 2px solid var(--granich-black);
     margin-right: 2vw;
+    @media only screen and (max-width: 575px) {
+      width: 30vw;
+      height: 30vw;
+      margin-right: 0;
+      margin-bottom: 3vw;
+    }
 `
 
 export const AuthorInfo = styled.div`
@@ -44,12 +54,27 @@ export const AuthorInfo = styled.div`
         font-size: 1.55vw;
         margin-bottom: 1vw;
     }
+    @media only screen and (max-width: 575px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      span {
+        padding: 1vw 2vw;
+        font-size: 3.7vw;
+        margin-bottom: 3vw;
+      }
+    }
 `
 
 export const AuthorName = styled.div`
     font-size: 3vw;
     font-weight: 700;
     margin-bottom: 1vw;
+    @media only screen and (max-width: 575px) {
+      font-size: 6.8vw;
+      margin-bottom: 2vw;
+      text-align: center;
+    }
 `
 
 export const AuthorDescr = styled.div`
@@ -57,12 +82,21 @@ export const AuthorDescr = styled.div`
   line-height: 1.45;
   width: 25vw;
   color: var(--granich-grey);
+  @media only screen and (max-width: 575px) {
+    font-size: 3.7vw;
+    width: 80%;
+    text-align: center;
+  }
 `
 
 export const AuthorMore = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    @media only screen and (max-width: 575px) {
+      flex-direction: column;
+      align-items: center;
+    }
 
 `
 
@@ -74,6 +108,13 @@ export const ArrowRight = styled(ArrowRightIcon)`
     position: relative;
     top: -1vw;
     left: -0.5vw;
+    @media only screen and (max-width: 575px) {
+      transform: rotate(90deg);
+      margin: 7vw 0;
+      width: 10vw;
+      top: -2vw;
+      left: 0;
+    }
 `
 
 export const AuthorWarning = styled.div`
@@ -81,6 +122,10 @@ export const AuthorWarning = styled.div`
     width: 45%;
     line-height: 1.4;
     font-weight: 500;
+    @media only screen and (max-width: 575px) {
+      font-size: 3.7vw;
+      width: 100%;
+    }
 `
 
 export const AuthorBlogWrapper = styled.div`
@@ -90,28 +135,55 @@ export const AuthorBlogWrapper = styled.div`
     border-radius: 1vw;
     padding: 1.8vw;
     max-width: 47%;
+    @media only screen and (max-width: 575px) {
+      max-width: 100%;
+      width: 100%;
+      padding: 3vw;
+      border-radius: 1.5vw;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 5vw;
+    }
 `
 
 export const AuthorBlogImg = styled(Img)`
     min-width: 5vw;
     min-height: 5vw;
+    width: 5vw;
+    height: 5vw;
     border-radius: 50%;
     margin-right: 1vw;
+    @media only screen and (max-width: 575px) {
+      min-width: 20vw;
+      min-height: 20vw;
+      margin-right: 0;
+      margin-bottom: 3vw;
+    }
 `
 
 export const AuthorBlogInfo = styled.div`
     font-size: 1.35vw;
+    @media only screen and (max-width: 575px) {
+      font-size: 3.7vw;
+      text-align: center;
+    }
 `
 
 export const AuthorBlogTitle = styled.div`
     font-weight: 600;
     margin-bottom: 0.5vw;
+    @media only screen and (max-width: 575px) {
+      margin-bottom: 2vw;
+    }
 `
 
 export const AuthorBlogDescr = styled.div`
     color: var(--granich-grey);
     margin-bottom: 1vw;
     line-height: 1.35;
+    @media only screen and (max-width: 575px) {
+      margin-bottom: 4vw;
+    }
 `
 
 export const TelegramButton = styled.a`

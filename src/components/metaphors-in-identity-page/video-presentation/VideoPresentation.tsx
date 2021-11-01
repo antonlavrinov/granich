@@ -94,11 +94,11 @@ export const Title = styled.h1`
   }
   @media only screen and (max-width: 575px) {
     // text-align: left;
-    font-size: 12vw;
+    font-size: 11vw;
     letter-spacing: -0.1rem;
     margin-bottom: 6vw;
     span {
-      font-size: 12vw;
+      font-size: 11vw;
       letter-spacing: -0.05rem;
       // white-space: nowrap;
     }
@@ -196,6 +196,14 @@ export const VideoSection = styled.div`
   }
   @media only screen and (max-width: 575px) {
     flex-direction: column;
+    margin-bottom: 10vw;
+
+    :last-child {
+      flex-direction: column;
+      .metaphors-video-section-content {
+        margin-left: 0;
+      }
+    }
   }
 `
 
@@ -214,7 +222,7 @@ export const VideoSectionTitle = styled.h2`
   font-style: italic;
   /* margin-left: -1vw; */
   @media only screen and (max-width: 575px) {
-    font-size: 11vw;
+    font-size: 10.5vw;
     white-space: normal;
     margin-bottom: 5vw;
     line-height: 1;
@@ -224,14 +232,11 @@ export const VideoSectionTitle = styled.h2`
 export const VideoSectionDescr = styled.div.attrs({ className: "metaphors-video-section-descr"})`
     font-size: 1.45vw;
     font-weight: 500;
-    /* margin-bottom: 3vw; */
-    /* max-width: 35%; */
-    /* margin-left: 2vw; */
     line-height: 1.5;
 
     @media only screen and (max-width: 575px) {
         font-size: 4.6vw;
-        margin-bottom: 0;
+        margin-bottom: 5vw;
         line-height: 1.5;
         max-width: 100%;
         margin-left: 0;
@@ -278,5 +283,7 @@ export const VideoSectionContent = styled.div.attrs({ className: "metaphors-vide
   margin-right: 2vw;
   @media only screen and (max-width: 575px) {
     /* flex-direction: column-reverse; */
+    max-width: 100%;
+    margin-right: 0;
   }
 `

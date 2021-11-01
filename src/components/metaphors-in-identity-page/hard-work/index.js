@@ -32,6 +32,7 @@ const HardWorkQuote = styled.div`
   min-width: 41%;
   max-width: 41%;
   letter-spacing: -0.01em;
+  margin-top: -0.7vw;
   @media only screen and (max-width: 575px) {
     max-width: 100%;
     font-size: 7.5vw;
@@ -44,8 +45,8 @@ const HardWorkTextWrapper = styled.div`
   padding: 1.5vw 1.8vw;
   border-radius: 0.5vw;
   display: flex;
-  min-width: 59%;
-  max-width: 59%;
+  min-width: 57%;
+  max-width: 57%;
   margin-left: auto;
   span {
     color: white;
@@ -53,7 +54,7 @@ const HardWorkTextWrapper = styled.div`
     min-width: 75%;
     max-width: 75%;
 
-    font-size: 1.15vw;
+    font-size: 1.35vw;
     line-height: 1.45;
   }
   svg {
@@ -62,7 +63,7 @@ const HardWorkTextWrapper = styled.div`
     height: 7vw;
     min-height: 7vw;
     margin-left: auto;
-    transform: scale(1.25);
+    transform: scale(1.5);
     //  fill: #4C0101;
     /* margin-right: -0.5vw; */
     fill: var(--granich-red);
@@ -76,15 +77,15 @@ const HardWorkTextWrapper = styled.div`
     span {
       max-width: 100%;
       min-width: 100%;
-      font-size: 3.7vw;
+      font-size: 3.55vw;
       line-height: 1.35;
       margin-bottom: 2vw;
     }
     svg {
-      width: 20vw;
+      width: 30vw;
       margin: 0 auto;
       transform: translateX(5%);
-      height: 27vw;
+      height: 30vw;
     }
   }
 `

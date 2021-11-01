@@ -53,7 +53,7 @@ export const Item = styled.div`
   align-items: center;
   /* margin-right: 6.2vw; */
   font-size: 1.5vw;
-  margin-bottom: 2vw;
+  /* margin-bottom: 2vw; */
   margin-right: 2.6vw;
   :last-child {
     margin-right: 0;
