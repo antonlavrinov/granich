@@ -170,7 +170,6 @@ type GraphQlResults = {
 const GraphicSystemVhsPage: React.FC<PageProps<GraphQlResults>> = ({
   data,
 }) => {
-  // console.log("vhs", data)
   if (
     !data.VHSoffer &&
     !data.VHSexplanations &&

@@ -127,7 +127,6 @@ export const contentfulQuery = graphql`
 const OsoznannyFreelancePage: React.FC<PageProps<GraphQlResults>> = ({
   data,
 }) => {
-  // console.log("vhs", data)
   if (
     !data.offer &&
     !data.curriculumHeader &&

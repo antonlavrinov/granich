@@ -5,7 +5,7 @@ import { useShowMore } from "./hooks"
 import * as SC from "./PreCoursePreparation"
 import { multiPropsFilter } from "./utils"
 
-const PreCoursePreparation = ({ dataRecommended, dataNew }) => {
+const PreCoursePreparation = ({ dataRecommended }) => {
   //initial data contents(recommended)
   const [data, setData] = useState(dataRecommended)
 
@@ -18,15 +18,15 @@ const PreCoursePreparation = ({ dataRecommended, dataNew }) => {
   })
 
   // TOP FILTERS ('Рекомендуемое, Новое')
-  const [filterData, setFilterData] = useState("Рекомендуемое")
-  const [topFilters, setTopFilters] = useState([
-    { name: "Рекомендуемое", active: true },
-    { name: "Новое", active: false },
-  ])
+  // const [filterData, setFilterData] = useState("Рекомендуемое")
+  // const [topFilters, setTopFilters] = useState([
+  //   { name: "Рекомендуемое", active: true },
+  //   { name: "Новое", active: false },
+  // ])
 
   useEffect(() => {
     const contentTagsArray = []
-    data.map(content => {
+    dataRecommended.map(content => {
       // contentContentsArray.push(content.node)
       content.contentTags.forEach(contentTag => {
         contentTagsArray.push(contentTag)
@@ -52,7 +52,7 @@ const PreCoursePreparation = ({ dataRecommended, dataNew }) => {
 
     setContentTags(tags)
     // setDataCopy(dataCopyArray)
-  }, [data])
+  }, [dataRecommended])
 
   //BUTTON SHOW MORE
   const [contentPagination, setContentPagination, contentShown] = useShowMore(
@@ -91,41 +91,41 @@ const PreCoursePreparation = ({ dataRecommended, dataNew }) => {
     setContentTags(newArray)
   }
 
-  const toggleTopFilterActive = (topFilter): void => {
-    const resetFilters = []
-    topFilters.forEach(filter => {
-      resetFilters.push({ ...filter, active: false })
-    })
-    const idx = resetFilters.findIndex(filter => filter.name === topFilter.name)
-    const oldItem = resetFilters[idx]
-    const newItem = {
-      ...oldItem,
-      active: true,
-    }
-    const newArray = [
-      ...resetFilters.slice(0, idx),
-      newItem,
-      ...resetFilters.slice(idx + 1),
-    ]
+  // const toggleTopFilterActive = (topFilter): void => {
+  //   const resetFilters = []
+  //   topFilters.forEach(filter => {
+  //     resetFilters.push({ ...filter, active: false })
+  //   })
+  //   const idx = resetFilters.findIndex(filter => filter.name === topFilter.name)
+  //   const oldItem = resetFilters[idx]
+  //   const newItem = {
+  //     ...oldItem,
+  //     active: true,
+  //   }
+  //   const newArray = [
+  //     ...resetFilters.slice(0, idx),
+  //     newItem,
+  //     ...resetFilters.slice(idx + 1),
+  //   ]
 
-    setTopFilters(newArray)
-  }
+  //   setTopFilters(newArray)
+  // }
 
-  const triggerFilteringNewAndRecommended = (filter): void => {
-    if (filterData === filter.name) {
-      return
-    }
-    setFilterData(filter.name)
-    if (filter.name === "Рекомендуемое") {
-      setData(dataRecommended)
-    } else {
-      setData(dataNew)
-    }
-    const emptyFilters = {
-      contentTags: [],
-    }
-    setFilters(emptyFilters)
-  }
+  // const triggerFilteringNewAndRecommended = (filter): void => {
+  //   if (filterData === filter.name) {
+  //     return
+  //   }
+  //   setFilterData(filter.name)
+  //   if (filter.name === "Рекомендуемое") {
+  //     setData(dataRecommended)
+  //   } else {
+  //     setData(dataNew)
+  //   }
+  //   const emptyFilters = {
+  //     contentTags: [],
+  //   }
+  //   setFilters(emptyFilters)
+  // }
 
   // const filteredContents = multiPropsFilter(contentContents, filters);
 
@@ -151,7 +151,7 @@ const PreCoursePreparation = ({ dataRecommended, dataNew }) => {
                 </p>
               </SC.Text>
             </SC.Header>
-            <SC.Filters>
+            {/* <SC.Filters>
               {topFilters.map((filter, idx) => {
                 return (
                   <SC.Filter
@@ -166,7 +166,7 @@ const PreCoursePreparation = ({ dataRecommended, dataNew }) => {
                   </SC.Filter>
                 )
               })}
-            </SC.Filters>
+            </SC.Filters> */}
             <SC.Tags>
               <SC.TagsTitle>Поиск по тегам:</SC.TagsTitle>
               {contentTags.map((contentTag, idx) => {
@@ -189,13 +189,13 @@ const PreCoursePreparation = ({ dataRecommended, dataNew }) => {
           </SC.MobileWrapper>
           <SC.ContentList>
             {filteredContents
-              .slice(0, contentPagination)
+              // .slice(0, contentPagination)
               .map((content, idx) => {
                 return <ContentCard key={idx} content={content} />
               })}
           </SC.ContentList>
 
-          {filteredContents.length > 12 && (
+          {/* {filteredContents.length > 12 && (
             <>
               {contentShown < filteredContents.length && (
                 <SC.ButtonMore
@@ -205,7 +205,7 @@ const PreCoursePreparation = ({ dataRecommended, dataNew }) => {
                 </SC.ButtonMore>
               )}
             </>
-          )}
+          )} */}
         </SC.Wrapper>
       </Container>
     </SC.Section>

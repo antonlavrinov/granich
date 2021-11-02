@@ -209,7 +209,6 @@ const CourseTrainingPath = ({ data }) => {
             return (
               <TrainingPathBlockWrapper key={item.node.id}>
                 <TrainingPathBlockContainer>
-                  {/* {console.log(item.node.trainingPathImage)} */}
                   {item.node.trainingPathImage.length > 1 ? (
                     <>
                       {item.node.trainingPathImage.map((itemImage, idx) => {

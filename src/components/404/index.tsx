@@ -19,16 +19,20 @@ const NotFound: React.FC = () => {
           <SC.LinksWrapper>
             <ul>
               <li>
+                <SC.NotFoundLink to="/Poster-in-5-minutes">
+                  Как за 5 минут сделать плакат, чтобы клиент его утвердил
+                </SC.NotFoundLink>
+              </li>
+              <li>
                 <SC.NotFoundLink to="/conscious-graphic-design-compilation">
                   Осознанная подборка по графдизайну
                 </SC.NotFoundLink>
               </li>
               <li>
-                <SC.NotFoundLink to="/conscious-freelance-compilation">
-                  Осознанная подборка по фрилансу
+                <SC.NotFoundLink to="/types-of-typefaces">
+                  Виды гарнитур (шрифтов)
                 </SC.NotFoundLink>
               </li>
-
               <li>
                 <SC.NotFoundLink to="/Poster-from-scratch-in-neo-geo-style">
                   Графсистема Нео Гео. Пошаговая верстка макета.
@@ -37,11 +41,6 @@ const NotFound: React.FC = () => {
               <li>
                 <SC.NotFoundLink to="/Poster-from-scratch-in-techno-style">
                   Графсистема Техно. Пошаговая верстка макета
-                </SC.NotFoundLink>
-              </li>
-              <li>
-                <SC.NotFoundLink to="/Poster-in-5-minutes">
-                  Как за 5 минут сделать плакат, чтобы клиент его утвердил
                 </SC.NotFoundLink>
               </li>
             </ul>

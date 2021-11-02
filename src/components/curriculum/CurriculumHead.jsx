@@ -28,7 +28,6 @@ const options = {
         },
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
             const { title, file } = node.data.target.fields;
-            // console.log('NODE', node)
             return <img
                 alt={title ? title['en-US'] : null}
                 src={file['en-US'].url}

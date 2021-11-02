@@ -287,7 +287,6 @@ export const TeamTitle = styled.div`
 const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
   data,
 }) => {
-    console.log("data", data)
     const curriculumDataWithContentCards = {
       edges: [
         {
@@ -413,7 +412,6 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
           <TeamTitle>Курс разрабатывали:</TeamTitle>
           <Team>
             {data?.foundationTeam?.edges?.map((el, idx) => {
-              console.log("team", el)
               return <TeamMember key={el.node.id} teacher={el.node} />
             })}
           </Team>

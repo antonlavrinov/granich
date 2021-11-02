@@ -81,7 +81,7 @@ export const PureCourse = ({ icons, courseData, openModal }) => {
   //   }
   // }
 
-  console.log(`course status ${courseData.courseTitle}`, courseData.courseStatus)
+
 
 
   return (

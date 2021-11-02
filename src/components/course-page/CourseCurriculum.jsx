@@ -66,11 +66,11 @@ const options = {
       }
     },
     [INLINES.EMBEDDED_ENTRY]: node => {
-      console.log("NODE EMBED ENTRY", node)
+      // console.log("NODE EMBED ENTRY", node)
     },
     [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
-      console.log("NODE BLOCK EMBED ENTRY", node)
-      console.log("NODE BLOCK EMBED ENTRY children", children)
+      // console.log("NODE BLOCK EMBED ENTRY", node)
+      // console.log("NODE BLOCK EMBED ENTRY children", children)
     },
     [BLOCKS.EMBEDDED_ASSET]: node => {
       const { file, title } = node.data.target.fields

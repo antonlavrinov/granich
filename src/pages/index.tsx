@@ -222,7 +222,7 @@ const IndexPage: React.FC<PageProps<GraphQlResults>> = ({ data }) => {
       <div style={{ height: "0.2vw", marginTop: "0.5vw" }} id="content"></div>
       <PreCoursePreparation
         dataRecommended={data.contentCardsRecommended.nodes}
-        dataNew={data.contentCardsNew.nodes}
+        // dataNew={data.contentCardsNew.nodes}
       />
       <BestGraduates />
       <OurTeam data={data.team} />

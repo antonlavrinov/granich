@@ -87,7 +87,6 @@ const Blog: React.FC<Props> = ({ team }) => {
         </SC.Wrapper>
         <SC.Team>
           {team.map((el, idx) => {
-            console.log("team", el)
             return <TeamMember key={el.node.id} teacher={el.node} />
           })}
         </SC.Team>

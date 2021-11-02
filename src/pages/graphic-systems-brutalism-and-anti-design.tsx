@@ -190,7 +190,7 @@ type GraphQlResults = {
 const GraphicSystemBrutalismAntiPage: React.FC<PageProps<GraphQlResults>> = ({
   data,
 }) => {
-  // console.log("brutalism", data)
+
   if (
     !data.BrutalismAntiOffer &&
     !data.BrutalismAntiExplanations &&

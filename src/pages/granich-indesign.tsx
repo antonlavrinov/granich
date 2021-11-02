@@ -170,7 +170,6 @@ type GraphQlResults = {
 const GraphicMetaphorsInIdentityPage: React.FC<PageProps<GraphQlResults>> = ({
   data,
 }) => {
-  console.log("CURRICULUM DATA", data.contentCards)
   const curriculumDataWithContentCards = {
     edges: [
       ...data?.curriculum?.edges,

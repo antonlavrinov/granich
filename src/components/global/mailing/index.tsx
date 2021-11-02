@@ -34,8 +34,6 @@ const Mailing: React.FC = () => {
       loc.value = window.location.href
       let ref = document.getElementById("2588475f67e38dc85f8ref")
       ref.value = document.referrer
-      console.log("LOCATION", window.location.href)
-      console.log("VALUE", document.referrer)
     }
     //Кодировка формы для Геткурса
     const secondGetcourseFormScript = () => {
