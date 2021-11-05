@@ -118,7 +118,7 @@ export const FormInput = styled.input`
   ${props =>
     props.errorStyle &&
     `
-        border: 1px solid var(--granich-red);
+        border: 1px solid rgb(228, 5, 33);
         box-shadow: inset 0 0 0.5vw rgba(228, 5, 33, 0.4);
         @media only screen and (max-width: 575px) {
             box-shadow: inset 0 0 1.2vw rgba(228, 5, 33, 0.4);
@@ -225,7 +225,7 @@ export const FormPolitikaLabel = styled.div`
 
 export const ErrorMessage = styled.div`
   font-size: 1vw;
-  color: var(--granich-red);
+  color: rgb(228, 5, 33);
   margin-left: 0.4vw;
   margin-bottom: 0.5vw;
   // white-space: nowrap;

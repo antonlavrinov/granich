@@ -189,13 +189,13 @@ const PreCoursePreparation = ({ dataRecommended }) => {
           </SC.MobileWrapper>
           <SC.ContentList>
             {filteredContents
-              // .slice(0, contentPagination)
+              .slice(0, contentPagination)
               .map((content, idx) => {
                 return <ContentCard key={idx} content={content} />
               })}
           </SC.ContentList>
 
-          {/* {filteredContents.length > 12 && (
+          {filteredContents.length > 12 && (
             <>
               {contentShown < filteredContents.length && (
                 <SC.ButtonMore
@@ -205,7 +205,7 @@ const PreCoursePreparation = ({ dataRecommended }) => {
                 </SC.ButtonMore>
               )}
             </>
-          )} */}
+          )}
         </SC.Wrapper>
       </Container>
     </SC.Section>
