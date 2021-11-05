@@ -211,7 +211,6 @@ const IndexPage: React.FC<PageProps<GraphQlResults>> = ({ data }) => {
         url="https://granich.design/"
       />
       <Offer data={data.offer} scrollTo={scrollTo} />
-      <nosnippet>
         <Courses
           data={data.courseCards.edges}
           // toggleMailingActive={toggleMailingActive}
@@ -226,8 +225,7 @@ const IndexPage: React.FC<PageProps<GraphQlResults>> = ({ data }) => {
           // dataNew={data.contentCardsNew.nodes}
         />
         <BestGraduates />
-        <OurTeam data={data.team} />
-      </nosnippet>   
+        <OurTeam data={data.team} /> 
     </Layout>
   )
 }
