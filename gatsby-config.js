@@ -7,7 +7,7 @@ const { BLOCKS } = require('@contentful/rich-text-types')
 module.exports = {
   siteMetadata: {
     title: `Онлайн-школа Granich`,
-    description: `Делаем из любви, а не страха. Курсы с осознанным подходом. Выточенно. Интенсивно. С дедлайнами.`,
+    description: `Онлайн-школа Granich. Делаем из любви, а не страха. Курсы с осознанным подходом. Выточенно. Интенсивно. С дедлайнами.`,
     author: `Вадим Гранич`,
     keywords: `школа, осознанность, фриланс, графический, дизайн, granich, гранич, графдизайн, курсы`,
     ogImage: `images/index.jpg`,
