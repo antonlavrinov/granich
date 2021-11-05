@@ -6,8 +6,8 @@ import Header from "../components/global/header"
 // import CourseCurriculum from "../components/course-page/CourseCurriculum"
 import CourseParticipation from "../components/course-page/CourseParticipation"
 import { graphql, PageProps } from "gatsby"
-import ogImage from "../assets/images/seo/graphic-metaphors-in-identity.jpg"
-import ogImageVK from "../assets/images/seo/vk/graphic-metaphors-in-identity.jpg"
+import ogImage from "../assets/images/seo/graphic-metaphors.jpg"
+import ogImageVK from "../assets/images/seo/vk/graphic-metaphors.jpg"
 import VideoPresentationOffer from "../components/metaphors-in-identity-page/video-presentation"
 import Timetable from "../components/metaphors-in-identity-page/timetable"
 import {
@@ -143,9 +143,9 @@ const GraphicMetaphorsInIdentityPage = ({
     <Layout theme="blue">
       <Header type={"dark"} />
       <SEO
-        title="Тренировка графических метафор"
-        description="Курс по графическим метафорам для графических дизайнеров, которые хотят начать путь в создании айдентики (фирменных стилей)"
-        socialDescription="Курс по графическим метафорам для графических дизайнеров, которые хотят начать путь в создании айдентики (фирменных стилей)"
+        title="Графические метафоры"
+        description="Курс для тех, кто хочет создавать графдизайн, наполненный смыслом: айдентику, упаковки, афиши, обложки книг и музыкальных альбомов"
+        socialDescription="Курс для тех, кто хочет создавать графдизайн, наполненный смыслом: айдентику, упаковки, афиши, обложки книг и музыкальных альбомов"
         keywords={[
           "метафоры",
           "айдентика",
