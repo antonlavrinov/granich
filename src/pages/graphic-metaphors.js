@@ -181,7 +181,7 @@ const GraphicMetaphorsInIdentityPage = ({
       <CourseParticipation
         policy={true}
         data={data.offer}
-        formId={`ltForm5911337`}
+        formId={`ltForm9450584`}
         formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1022043147`}
         googleAnaliticsCategory={`Отправка формы Графметафоры`}
         // additionalTags={["Интенсивный", "С нуля"]}
