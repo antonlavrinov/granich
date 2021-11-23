@@ -37,6 +37,7 @@ const SEO: React.FC<Props> = ({
   url,
   ogImageVk,
   socialDescription,
+  noIndex,
 }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -140,6 +141,7 @@ const SEO: React.FC<Props> = ({
       meta={defaultMeta.concat(propMeta)}
     >
       {url && <link rel="canonical" href={metaOgUrl} />}
+      {noIndex && <meta name="robots" content="noindex" />}
       <script>
         {`!function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

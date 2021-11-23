@@ -30,6 +30,7 @@ import FoundationForWhom from "../components/foundation-of-graph-design/for-whom
 import styled from 'styled-components';
 import TeamMember from "../components/main-page/team/teacher"
 import { Container } from "../components/style"
+import FoundationPortfolio from "../components/foundation-of-graph-design/foundation-portfolio"
 
 export const contentfulQuery = graphql`
   query foundationGraphDesignQuery {
@@ -84,6 +85,22 @@ export const contentfulQuery = graphql`
           featuresText
           featuresTitle
           featuresLink
+        }
+      }
+    }
+    foundationPosters: allContentfulGranichPoster(
+      sort: { fields: [posterOrderNumber], order: ASC }
+    ) {
+      edges {
+        node {
+          id
+          posterImage {
+            fluid(maxWidth: 1000) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          posterAuthor
+          posterStream
         }
       }
     }
@@ -336,6 +353,8 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         
       ],
     }
+
+    console.log("posters", data?.foundationPosters)
   return (
     <Layout>
       <Header type={"dark"} />
@@ -362,6 +381,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         // additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
       />
        <FoundationForWhom />
+       {/* <FoundationPortfolio posters={data?.foundationPosters.edges} /> */}
 
       <FoundationExample />
       <VideoPresentation />
