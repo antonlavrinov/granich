@@ -9,7 +9,7 @@ export const Section = styled.section`
 `;
 
 export const Wrapper = styled.div`
-    padding: 4vw 2vw;
+    padding: 3vw 2vw 2vw;
     background: white;
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
@@ -48,6 +48,8 @@ export const PosterWrapper = styled.div`
     position: relative;
     border-radius: 0.5vw;
     overflow: hidden;
+    /* outline: 1px solid rgba(0,0,0,0.1); */
+    box-shadow: 0 0 0.5vw rgba(0,0,0,0.15)
 `;
 
 export const ShowMoreWrapper = styled.div`
@@ -55,21 +57,41 @@ export const ShowMoreWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20vw 0 3vw;
+    padding: 12vw 0 0;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
+    /* :hover {
+        cursor: pointer;
+    } */
 
     button {
         font-size: 1.35vw;
         display: block;
-        padding: 1vw 3vw;
-        background: none;
+        padding: 1.2vw 0;
+        background: var(--granich-grey);
+        background: rgba(0,0,0,0.05);
+        border-radius: 0.5vw;
+        width: 100%;
+        position: relative;
+        color: var(--granich-grey);
+        /* :after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 1px solid rgba(0,0,0,0.15);
+        } */
         :hover {
             cursor: pointer;
-            
+            background: rgba(0,0,0,0.08);
+            /* :after {
+                border-bottom: none;
+            } */
         }
+
     }
 `;
 
@@ -79,7 +101,8 @@ export const Image = styled(Img)`
 
 export const PosterAuthor = styled.div`
     background: var(--granich-black);
-    padding: 1vw;
+    /* background: rgb(30, 30, 30); */
+    padding: 1.5vw 1vw 1vw;
     margin-top: -8px;
 `;
 
@@ -87,8 +110,8 @@ export const AuthorStream = styled.div`
     color: white;
     border: 1px solid white;
     display: inline-block;
-    padding: 0.3vw 0.6vw;
-    border-radius: 1vw;
+    padding: 0.3vw 0.5vw;
+    border-radius: 100vw;
     font-size: 0.9vw;
     margin-bottom: 0.4vw;
 `;

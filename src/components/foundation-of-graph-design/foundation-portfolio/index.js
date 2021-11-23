@@ -104,8 +104,8 @@ const FoundationPortfolio = ({posters}) => {
                 </Masonry>
             </SC.MasonryOverflow>
             {!isShowMore && (
-                <SC.ShowMoreWrapper onClick={() => setIsShowMore(true)}>
-                    <button>Показать ещё</button>
+                <SC.ShowMoreWrapper >
+                    <button onClick={() => setIsShowMore(true)}>Показать ещё</button>
                 </SC.ShowMoreWrapper>
             )}
         </SC.MasonryWrapper>
