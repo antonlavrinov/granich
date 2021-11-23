@@ -26,11 +26,11 @@ const PolicyText = styled.div`
   flex-direction: column;
   align-items: flex-start;
   img {
-    width: 1vw;
-    height: 1vw;
+    width: 1.5vw;
+    height: 1.5vw;
     margin-right: 0.4vw;
     top: 0.15vw;
-    left: -0.4
+    /* left: -0.4; */
     position: relative;
   }
   ol {
@@ -43,12 +43,14 @@ const PolicyText = styled.div`
 
   }
   ul {
-    background: var(--granich-red);
-    display: block;
-    padding: 0.4vw 1vw;
+    /* background: var(--granich-red); */
+    display: flex;
+    /* padding: 0.4vw 1vw; */
     border-radius: 0.6vw;
-    margin-bottom: 1vw;
+    margin-bottom: 0.5vw;
+    /* margin: 0; */
     li {
+      line-height: 0;
       p {
         color: white;
       }
@@ -76,13 +78,13 @@ const PolicyText = styled.div`
   }
   @media only screen and (max-width: 575px) {
     img {
-      width: 3.5vw;
-      height: 3.5vw;
+      width: 5vw;
+      height: 5vw;
       margin-right: 1.5vw;
-      top: 0.3vw;
+      /* top: 0.3vw; */
       position: relative;
     }
-    margin-bottom: 2vw;
+    /* margin-bottom: 2vw; */
     ol {
       margin-bottom: 2vw;
     }
@@ -92,8 +94,9 @@ const PolicyText = styled.div`
       letter-spacing: -0.08vw;
     }
     ul {
-      padding: 0.4vw 2vw;
+      /* padding: 0.4vw 2vw; */
       border-radius: 1.8vw;
+      margin-bottom: 2.5vw;
     }
   }
 `
@@ -273,8 +276,7 @@ const options = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: node => {
       const { file, title } = node?.data?.target?.fields
-      // const mimeType = file['en-US'].contentType
-      // const mimeGroup = mimeType.split('/')[0]
+
       return (
         <img
           title={title ? title["en-US"] : null}

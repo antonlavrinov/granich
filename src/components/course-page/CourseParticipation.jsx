@@ -4,6 +4,7 @@ import styled from "styled-components"
 import ParticipationForm from "./participation/form"
 import ParticipationPolicy from "./participation/ParticipationPolicy"
 
+
 const ParticipationSection = styled.section`
   margin-bottom: 4vw;
   @media only screen and (max-width: 575px) {
