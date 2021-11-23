@@ -14,8 +14,8 @@ import { graphql, PageProps, navigate } from "gatsby";
 import scrollTo from "gatsby-plugin-smoothscroll"
 import Mailing from "../components/global/mailing"
 import CourseExplain from "../components/course-page/CourseExplain"
-import ogImage from "../assets/images/seo/conscious-graphic-design.jpg"
-import ogImageVK from "../assets/images/seo/vk/conscious-graphic-design.jpg"
+// import ogImage from "../assets/images/seo/conscious-graphic-design.jpg"
+// import ogImageVK from "../assets/images/seo/vk/conscious-graphic-design.jpg"
 import CourseIndividualSupport from "../components/course-page/CourseIndividualSupport"
 import CourseTimetable from "../components/course-page/CourseTimetable"
 import CourseAftermath from "../components/course-page/CourseAftermath"
@@ -339,8 +339,8 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
           "granich",
           "conscious",
         ]}
-        ogImage={ogImage}
-        ogImageVk={ogImageVK}
+        // ogImage={ogImage}
+        // ogImageVk={ogImageVK}
         url="https://granich.design/conscious-graphic-design"
       />
       <div className="section-top-block"></div>
