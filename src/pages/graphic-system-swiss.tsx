@@ -11,7 +11,7 @@ import { graphql, PageProps } from "gatsby"
 import EducationQuestions from "../components/global/education-questions"
 import CourseAuthors from "../components/course-page/CourseAuthors"
 import MasterClassExample from "../components/course-page/MasterClassExample"
-import ogImage from "../assets/images/seo/graphic-system-swiss-min.jpg"
+import ogImage from "../assets/images/seo/graphic-system-swiss.jpg"
 import ogImageVK from "../assets/images/seo/vk/graphic-system-swiss.jpg"
 import {
   ICourseExplanations,

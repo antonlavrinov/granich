@@ -14,7 +14,7 @@ import { graphql, PageProps, navigate } from "gatsby";
 import scrollTo from "gatsby-plugin-smoothscroll"
 import Mailing from "../components/global/mailing"
 import CourseExplain from "../components/course-page/CourseExplain"
-import ogImage from "../assets/images/seo/conscious-graphic-design-min.jpg"
+import ogImage from "../assets/images/seo/conscious-graphic-design.jpg"
 import ogImageVK from "../assets/images/seo/vk/conscious-graphic-design.jpg"
 import CourseIndividualSupport from "../components/course-page/CourseIndividualSupport"
 import CourseTimetable from "../components/course-page/CourseTimetable"

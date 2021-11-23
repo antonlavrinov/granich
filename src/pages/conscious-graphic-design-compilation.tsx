@@ -10,7 +10,7 @@ import Tools from "../components/content-page/Tools"
 import Video from "../components/content-page/Video"
 import Wishes from "../components/content-page/Wishes"
 import PodborkaOffer from "../components/content-page/PodborkaOffer"
-import ogImageGraphDesign from "../assets/images/seo/conscious-graphic-design-compilation-min.jpg"
+import ogImageGraphDesign from "../assets/images/seo/conscious-graphic-design-compilation.jpg"
 import ogImageVKGraphDesign from "../assets/images/seo/vk/conscious-graphic-design-compilation.jpg"
 import ContentCourseBanner from "../components/content-page/ContentCourseBanner"
 
