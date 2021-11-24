@@ -9,7 +9,7 @@ export const Section = styled.section`
 `;
 
 export const Wrapper = styled.div`
-    padding: 3vw 2vw 2vw;
+    padding: 3vw 1vw 2vw;
     background: white;
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
@@ -21,9 +21,10 @@ export const SectionTitle = styled.h2`
   color: var(--granich-black);
   font-size: 4.55vw;
   letter-spacing: -0.2vw;
+  padding: 0 1.5vw;
   font-weight: 700;
   line-height: 0.85;
-  margin-bottom: 3vw;
+  /* margin-bottom: 3vw; */
 
   @media only screen and (max-width: 575px) {
     font-size: 11vw;
@@ -39,6 +40,7 @@ export const MasonryWrapper = styled.div`
 
 export const MasonryOverflow = styled.div`
     position: relative;
+    padding: 3vw 1vw;
     overflow-y: hidden;
     max-height: ${({ isShowMore }) => isShowMore ? "auto" : "70vw"};
     
@@ -49,7 +51,24 @@ export const PosterWrapper = styled.div`
     border-radius: 0.5vw;
     overflow: hidden;
     /* outline: 1px solid rgba(0,0,0,0.1); */
-    box-shadow: 0 0 0.5vw rgba(0,0,0,0.15)
+    box-shadow: 0 0 0.5vw rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+
+    [data-rmiz-btn-open] {
+        cursor: pointer;
+    }
+
+    :hover {
+        transform: scale(1.07);
+        cursor: pointer;
+        .poster-author {
+            bottom: -4vw;
+            /* visibility: hidden; */
+            opacity: 0;
+            /* z-index: -1; */
+            
+        }
+    }
 `;
 
 export const ShowMoreWrapper = styled.div`
@@ -99,11 +118,21 @@ export const Image = styled(Img)`
     width: "100%";
 `;
 
-export const PosterAuthor = styled.div`
-    background: var(--granich-black);
+export const PosterAuthor = styled.div.attrs({ className: "poster-author"})`
+    /* background: var(--granich-black); */
+    background: linear-gradient(0deg, rgba(0,0,0,0.7) 55%, rgba(0,0,0,0) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     /* background: rgb(30, 30, 30); */
-    padding: 1.5vw 1vw 1vw;
+    padding: 2.5vw 0.6vw 0.7vw;
     margin-top: -8px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    opacity: 1;
+
 `;
 
 export const AuthorStream = styled.div`
@@ -112,11 +141,16 @@ export const AuthorStream = styled.div`
     display: inline-block;
     padding: 0.3vw 0.5vw;
     border-radius: 100vw;
-    font-size: 0.9vw;
-    margin-bottom: 0.4vw;
+    font-size: 0.7vw;
+    /* margin-bottom: 0.4vw; */
+    margin-right: 0.5vw;
+    white-space: nowrap;
 `;
 
 export const AuthorName = styled.div`
     color: white;
-    font-size: 1.15vw;
+    font-size: 0.8vw;
+    position: relative;
+    line-height: 1.3;
+    /* top: -0.15vw; */
 `;

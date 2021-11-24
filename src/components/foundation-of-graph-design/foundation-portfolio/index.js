@@ -86,7 +86,7 @@ const FoundationPortfolio = ({posters}) => {
     <SC.Section>
       <Container>
           <SC.Wrapper>
-          <SC.SectionTitle>Портфолио учеников</SC.SectionTitle>
+          <SC.SectionTitle>Некоторые работы учеников</SC.SectionTitle>
         <SC.MasonryWrapper>
             <SC.MasonryOverflow isShowMore={isShowMore}>
                 <Masonry columns={4} spacing={2} style={{margin: 0}}>
