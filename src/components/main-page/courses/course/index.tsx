@@ -119,7 +119,7 @@ export const PureCourse = ({ icons, courseData, openModal }) => {
                 })
               }
               target={courseData.courseExternalLinkTransition ? "_blank" : "_self"}
-              href={courseData.courseSlug}
+              href={`/${courseData.courseSlug}`}
             >
               <>
                 {courseData.courseType === "Курс" ? (
