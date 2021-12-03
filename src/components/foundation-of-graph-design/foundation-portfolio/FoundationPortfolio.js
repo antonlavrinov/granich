@@ -119,38 +119,36 @@ export const Image = styled(Img)`
 `;
 
 export const PosterAuthor = styled.div.attrs({ className: "poster-author"})`
-    /* background: var(--granich-black); */
     background: linear-gradient(0deg, rgba(0,0,0,0.7) 55%, rgba(0,0,0,0) 100%);
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    /* background: rgb(30, 30, 30); */
     padding: 2.5vw 0.6vw 0.7vw;
     margin-top: -8px;
-    display: flex;
-    align-items: center;
+    /* display: flex; */
+    /* align-items: center; */
     transition: all 0.3s ease;
     opacity: 1;
-
+    margin-right: 0.5vw;
 `;
 
-export const AuthorStream = styled.div`
-    color: white;
-    border: 1px solid white;
+export const Course = styled.div`
+    color: rgba(256,256,256,0.7);
+    /* color: var(--granich-grey); */
     display: inline-block;
-    padding: 0.3vw 0.5vw;
-    border-radius: 100vw;
-    font-size: 0.7vw;
-    /* margin-bottom: 0.4vw; */
-    margin-right: 0.5vw;
-    white-space: nowrap;
+    display: block;
+    font-size: 0.9vw;
+    /* margin-left: 0.2vw; */
 `;
 
 export const AuthorName = styled.div`
+    display: inline-block;
+    display: block;
     color: white;
-    font-size: 0.8vw;
+    font-size: 0.9vw;
     position: relative;
     line-height: 1.3;
-    /* top: -0.15vw; */
+    margin-right: 0.2vw;
+    font-weight: bold;
 `;

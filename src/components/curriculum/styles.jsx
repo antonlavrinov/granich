@@ -825,8 +825,6 @@ export const CurriculumContainer = styled.div`
 `
 
 export const CurriculumContentWrapper = styled.div`
-  display: flex;
-  align-items: flex-start;
   padding-left: 5.8vw;
   padding-top: 0vw;
   padding-bottom: 1.2vw;
@@ -835,6 +833,11 @@ export const CurriculumContentWrapper = styled.div`
     `
         padding-left: 7.3vw;
     `}
+`
+
+export const CurriculumContentColumnsWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
 `
 
 export const CurriculumContentColumn = styled.div`
@@ -955,10 +958,11 @@ export const CurriculumContentColumn = styled.div`
 `
 
 export const CurriculumContentText = styled.div`
-  padding: 1vw;
+  /* padding: 1vw; */
   font-size: 1.25vw;
   line-height: 1.45;
   width: 100%;
+  /* margin-top: 5vw; */
   b {
     /* font-weight: 500; */
     /* color: green; */

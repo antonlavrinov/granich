@@ -27,6 +27,7 @@ import {
   // CurriculumTitleAndContent,
   // CurriculumBonusBlock,
   // CurriculumContent,
+  CurriculumContentColumnsWrapper,
   CurriculumAccordeon,
   EmptyText,
   CurriculumAccordionMobile,
@@ -246,7 +247,6 @@ const CourseCurriculum = ({
                   tab.node
                     .childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode
                     .json
-
                 return (
                   <CurriculumAccordionItem key={tab.node.id}>
                     <CurriculumAccordionHeading>
@@ -305,6 +305,17 @@ const CourseCurriculum = ({
                               )}
                             </CurriculumContentColumn>
                           )}
+                          {tab.node.childContentfulGranichCourseCurriculumCurriculumAdditionalBlockRichTextNode && (
+                            <CurriculumContentText className="link_out" courseTitle={courseTitle}>
+                              <EmptyText>sometext</EmptyText>
+                              {documentToReactComponents(
+                                tab.node
+                                  .childContentfulGranichCourseCurriculumCurriculumAdditionalBlockRichTextNode
+                                  .json,
+                                options
+                              )}
+                            </CurriculumContentText>
+                          )}
                         </>
                       ) : (
                         <>
@@ -324,15 +335,6 @@ const CourseCurriculum = ({
                                 options
                               )}
                               {tab.node.customContent && tab.node.customContent}
-                              {/* {tab.node.contentCards && (
-                                <ContentCardsWrapper>
-                                  {tab.node.contentCards.map((el, idx) => {
-                                    return (
-                                      <ContentCard content={el} key={idx} />
-                                    )
-                                  })}
-                                </ContentCardsWrapper>
-                              )} */}
                             </CurriculumContentText>
                           )}
                         </>
@@ -368,7 +370,7 @@ const CourseCurriculum = ({
                       type={tab.node.curriculumType ? 1 : 0}
                     >
                       {tab.node.curriculumColumnsType ? (
-                        <>
+                        <CurriculumContentColumnsWrapper>
                           {tab.node
                             .childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && (
                             <CurriculumContentColumn>
@@ -410,12 +412,12 @@ const CourseCurriculum = ({
                               )}
                             </CurriculumContentColumn>
                           )}
-                        </>
+                        </CurriculumContentColumnsWrapper>
                       ) : (
                         <>
                           {tab.node
                             .childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && (
-                            <CurriculumContentText className="link_out" courseTitle={courseTitle}>
+                            <CurriculumContentText  className="link_out" courseTitle={courseTitle}>
                               <EmptyText>sometext</EmptyText>
 
                               {documentToReactComponents(
@@ -425,18 +427,20 @@ const CourseCurriculum = ({
                                 options
                               )}
                               {tab.node.customContent && tab.node.customContent}
-                              {/* {tab.node.contentCards && (
-                                <ContentCardsWrapper>
-                                  {tab.node.contentCards.map((el, idx) => {
-                                    return (
-                                      <ContentCard content={el} key={idx} />
-                                    )
-                                  })}
-                                </ContentCardsWrapper>
-                              )} */}
                             </CurriculumContentText>
                           )}
                         </>
+                      )}
+                      {tab.node.childContentfulGranichCourseCurriculumCurriculumAdditionalBlockRichTextNode && (
+                        <CurriculumContentText style={{ marginTop: "2vw" }} className="link_out" courseTitle={courseTitle}>
+                          <EmptyText>sometext</EmptyText>
+                          {documentToReactComponents(
+                            tab.node
+                              .childContentfulGranichCourseCurriculumCurriculumAdditionalBlockRichTextNode
+                              .json,
+                            options
+                          )}
+                        </CurriculumContentText>
                       )}
                     </CurriculumContentWrapper>
                   </CurriculumItem>

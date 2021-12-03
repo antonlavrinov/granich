@@ -143,6 +143,7 @@ export const contentfulQuery = graphql`
           id
           curriculumAttachmentTo
           curriculumImportantDescr
+
           childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode {
             json
           }
@@ -154,6 +155,9 @@ export const contentfulQuery = graphql`
             json
           }
           childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode {
+            json
+          }
+          childContentfulGranichCourseCurriculumCurriculumAdditionalBlockRichTextNode {
             json
           }
           childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode {

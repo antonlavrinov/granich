@@ -96,8 +96,11 @@ const FoundationPortfolio = ({posters}) => {
                                 <SC.Image fluid={item.node.posterImage.fluid} alt="poster"/>
                             </Zoom>
                             <SC.PosterAuthor>
-                                <SC.AuthorStream>{item.node.posterStream}</SC.AuthorStream>
                                 <SC.AuthorName>{item.node.posterAuthor}</SC.AuthorName>
+                                
+                                <SC.Course>
+                                  {/* {"/ "} */}
+                                  {item.node.posterStream}</SC.Course>
                             </SC.PosterAuthor>
                         </SC.PosterWrapper>
                     ))}
