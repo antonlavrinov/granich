@@ -379,13 +379,13 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       />
       <div className="section-top-block"></div>
       <CourseOffer 
-        allowPosters={true} 
+        // allowPosters={false} 
         data={data.foundationOffer} 
-        postersAuthors="Работы учеников"
+        // postersAuthors="Работы учеников"
         // additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
       />
        <FoundationForWhom />
-       {/* <FoundationPortfolio posters={data?.foundationPosters.edges} /> */}
+       <FoundationPortfolio posters={data?.foundationPosters.edges} />
 
       <FoundationExample />
       <VideoPresentation />

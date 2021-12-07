@@ -29,7 +29,7 @@ const CourseTemplateOffer: React.FC<Props> = ({
 
   return (
     <SC.Section>
-      {postersVisibility && isDesktop && (
+      {postersVisibility && allowPosters && isDesktop && (
         <RootWrapper>
           <Posters postersCollection={data.coursePostersCollection} />
         </RootWrapper>
@@ -66,7 +66,16 @@ const CourseTemplateOffer: React.FC<Props> = ({
             >
               {documentToReactComponents(data.courseMainTitle.json)}
             </SC.Title>
-
+            {!allowPosters && (
+              <SC.MainImage
+                imgStyle={{
+                  objectFit: "contain",
+                  objectPosition: "right center",
+                }}
+                fluid={data.courseMainImage.fluid}
+                courseTitle={data.courseTitle}
+              />
+            )}
             {allowPosters && (
               <PostersWrapper
                 data={data}

@@ -5,11 +5,6 @@ import DateIcon from "../../../assets/svgs/graph-design/graph-design-date-icon.s
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 
-type CourseInfoType = {
-  type?: string
-  courseTitle?: string
-}
-
 export const Potok = styled(props => <PotokIcon {...props} />)`
   width: 1.3vw;
   height: 1.3vw;
@@ -58,7 +53,6 @@ export const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: right;
-
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -71,7 +65,7 @@ export const Wrapper = styled.div`
   }
 `
 
-export const MainImage = styled(props => <Img {...props} />)`
+export const MainImage = styled(Img)`
   position: absolute !important;
   width: 100% !important;
   top: 0;
@@ -83,6 +77,9 @@ export const MainImage = styled(props => <Img {...props} />)`
     margin-bottom: 5vw;
     position: relative !important;
     width: 100% !important;
+    ${({ courseTitle }) => courseTitle === "Фундамент Графдизайна" && `
+      margin-bottom: 0;
+    `}
   }
 `
 
@@ -138,7 +135,7 @@ export const MainTag = styled.div`
   }
 `
 
-export const Title = styled.h1<CourseInfoType>`
+export const Title = styled.h1`
     line-height: 0.8;
     margin-left: -0.3vw;
     margin: 0;
@@ -235,6 +232,7 @@ export const Title = styled.h1<CourseInfoType>`
 
         }
         @media only screen and (max-width: 575px) {
+            margin-bottom: 0;
             p {
                 font-size: 14.5vw;
             }
@@ -282,7 +280,7 @@ export const Title = styled.h1<CourseInfoType>`
     `}
     
 `
-export const Descr = styled.div<CourseInfoType>`
+export const Descr = styled.div`
     width: 35vw;
     font-size: 1.55vw;
     margin-bottom: 1.5vw;
@@ -348,9 +346,6 @@ export const Descr = styled.div<CourseInfoType>`
             }
         }
     `}
-      
-
-
 `
 
 export const ButtonWrapper = styled.div`
@@ -378,7 +373,6 @@ export const Button = styled(props => <Link {...props} />)`
   box-shadow: 0.25vw 0.25vw 0.4vw rgba(0, 0, 0, 0.25);
   position: relative;
   z-index: 1;
-  /* margin-bottom: 1vw; */
   svg {
     width: 1.4vw;
     height: 1.4vw;
@@ -453,7 +447,6 @@ export const PostersLabel = styled.div`
   bottom: 1.3vw;
   right: 1.7vw;
   z-index: 0;
-  /* color: var(--granich-light-grey); */
   color: rgba(0,0,0,0.23);
   font-size: 1vw;
   @media only screen and (max-width: 575px) {
@@ -464,10 +457,8 @@ export const PostersLabel = styled.div`
     left: 3vw;
     bottom: auto;
     text-align: center;
-    /* text-orientation: upright; */
     writing-mode: tb-rl;
     transform: rotate(-180deg);
     line-height: 1.3;
-    /* max-height: 5vw; */
   }
 `

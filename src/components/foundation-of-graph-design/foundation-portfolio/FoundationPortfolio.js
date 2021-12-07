@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
     border-radius: 0.6vw;
     @media only screen and (max-width: 575px) {
         border-radius: 2.5vw;
+        padding: 5vw 1vw 2vw;
     }
 `;
 
@@ -30,7 +31,8 @@ export const SectionTitle = styled.h2`
     font-size: 11vw;
     letter-spacing: -0.7vw;
     line-height: 1;
-    margin-bottom: 4vw;
+    margin-bottom: 2vw;
+    padding: 0 4vw;
   }
 `
 
@@ -43,6 +45,10 @@ export const MasonryOverflow = styled.div`
     padding: 3vw 1vw;
     overflow-y: hidden;
     max-height: ${({ isShowMore }) => isShowMore ? "auto" : "70vw"};
+
+    @media only screen and (max-width: 575px) {
+        max-height: ${({ isShowMore }) => isShowMore ? "auto" : "200vw"};
+    }
     
 `;
 
@@ -69,6 +75,19 @@ export const PosterWrapper = styled.div`
             
         }
     }
+
+    @media only screen and (max-width: 575px) {
+        border-radius: 1.5vw;
+
+        :hover {
+            transform: none;
+            cursor: pointer;
+            .poster-author {
+                bottom: 0;
+                opacity: 1;
+            }
+        }
+    }
 `;
 
 export const ShowMoreWrapper = styled.div`
@@ -81,11 +100,9 @@ export const ShowMoreWrapper = styled.div`
     bottom: 0;
     left: 0;
     width: 100%;
-    /* :hover {
-        cursor: pointer;
-    } */
 
     button {
+        margin: 0 2.5vw 2vw;
         font-size: 1.35vw;
         display: block;
         padding: 1.2vw 0;
@@ -95,22 +112,20 @@ export const ShowMoreWrapper = styled.div`
         width: 100%;
         position: relative;
         color: var(--granich-grey);
-        /* :after {
-            position: absolute;
-            content: "";
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            border-bottom: 1px solid rgba(0,0,0,0.15);
-        } */
         :hover {
             cursor: pointer;
             background: rgba(0,0,0,0.08);
-            /* :after {
-                border-bottom: none;
-            } */
         }
 
+    }
+
+    @media only screen and (max-width: 575px) {
+        padding: 30vw 0 0;
+        button {
+            font-size: 3.7vw;
+            padding: 3vw 0;
+            border-radius: 1.5vw;
+        }
     }
 `;
 
@@ -126,20 +141,24 @@ export const PosterAuthor = styled.div.attrs({ className: "poster-author"})`
     width: 100%;
     padding: 2.5vw 0.6vw 0.7vw;
     margin-top: -8px;
-    /* display: flex; */
-    /* align-items: center; */
     transition: all 0.3s ease;
     opacity: 1;
     margin-right: 0.5vw;
+
+    @media only screen and (max-width: 575px) {
+        padding: 5vw 2vw 2vw;
+    }
 `;
 
 export const Course = styled.div`
     color: rgba(256,256,256,0.7);
-    /* color: var(--granich-grey); */
     display: inline-block;
     display: block;
     font-size: 0.9vw;
-    /* margin-left: 0.2vw; */
+
+    @media only screen and (max-width: 575px) {
+        font-size: 2.7vw;
+    }
 `;
 
 export const AuthorName = styled.div`
@@ -151,4 +170,8 @@ export const AuthorName = styled.div`
     line-height: 1.3;
     margin-right: 0.2vw;
     font-weight: bold;
+
+    @media only screen and (max-width: 575px) {
+        font-size: 2.7vw;
+    }
 `;
