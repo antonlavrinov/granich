@@ -28,6 +28,10 @@ import MetaphorsForWhom from "../components/metaphors-in-identity-page/for-whom"
 import MetaphorsAuthor from "../components/metaphors-in-identity-page/metaphors-author"
 import HardWorkMetaphors from "../components/metaphors-in-identity-page/hard-work"
 import CourseOffer from "../components/course-page-templates/offer"
+import ParticipationRestriction from "../components/metaphors-in-identity-page/participation-restriction"
+import { useQueryParam, NumberParam } from "use-query-params";
+
+
 
 export const contentfulQuery = graphql`
   query graphicMetaphorsQuery {
@@ -137,7 +141,9 @@ export const contentfulQuery = graphql`
 const GraphicMetaphorsInIdentityPage = ({
   data,
 }) => {
-  // console.log("metaphors", data)
+
+  const [permission] = useQueryParam("permission", NumberParam);
+  console.log("permission", permission)
   // if (!data.offer) return <></>
   return (
     <Layout theme="blue">
@@ -178,14 +184,18 @@ const GraphicMetaphorsInIdentityPage = ({
         text="Курс для графических дизайнеров с опытом активной работы больше одного года, а также для выпускников «Осознанного Графдизайна»."
       />
       <div id="participation-section"></div>
-      <CourseParticipation
-        policy={true}
-        data={data.offer}
-        formId={`ltForm9450584`}
-        formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1022043147`}
-        googleAnaliticsCategory={`Отправка формы Графметафоры`}
-        // additionalTags={["Интенсивный", "С нуля"]}
-      />
+      <div style={{ position: "relative" }}>
+        <CourseParticipation
+          policy={true}
+          data={data.offer}
+          formId={`ltForm9450584`}
+          formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1022043147`}
+          googleAnaliticsCategory={`Отправка формы Графметафоры`}
+          
+          // additionalTags={["Интенсивный", "С нуля"]}
+        />
+        {!permission && <ParticipationRestriction />}
+      </div>
     </Layout>
   )
 }

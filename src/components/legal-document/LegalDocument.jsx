@@ -345,18 +345,18 @@ const LegalDocument = ({date, type, mainText, dataPdf, additionalInfo}) => {
                     <LegalDocumentMainContainer>
                         <LegalDocumentLeftBlock>
                             <LegalDocumentInfoBlock>
-                                <LegalDocumentInfoBlockPDFButton download target="_blank" href={dataPdf}>
+                                {/* <LegalDocumentInfoBlockPDFButton download target="_blank" href={dataPdf}>
                                     PDF<Download/>
-                                </LegalDocumentInfoBlockPDFButton>
+                                </LegalDocumentInfoBlockPDFButton> */}
                                 <LegalDocumentInfoBlockText>
                                     {documentToReactComponents(additionalInfo)}
                                 </LegalDocumentInfoBlockText>
                             </LegalDocumentInfoBlock>
                         </LegalDocumentLeftBlock>
                         <LegalDocumentRightBlock>
-                            <LegalDocumentInfoBlockPDFButtonMobile download target="_blank" href={dataPdf}>
+                            {/* <LegalDocumentInfoBlockPDFButtonMobile download target="_blank" href={dataPdf}>
                                 PDF<Download/>
-                            </LegalDocumentInfoBlockPDFButtonMobile>
+                            </LegalDocumentInfoBlockPDFButtonMobile> */}
                             <LegalDocumentDate>
                                 {date}
                             </LegalDocumentDate>

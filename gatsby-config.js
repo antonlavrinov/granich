@@ -64,6 +64,7 @@ module.exports = {
 
     `gatsby-plugin-smoothscroll`,
     `gatsby-background-image`,
+    "gatsby-plugin-use-query-params",
 
     `gatsby-plugin-styled-components`,
     {

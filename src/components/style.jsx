@@ -49,7 +49,7 @@ export const GlobalStyle = createGlobalStyle`
 
 `
 
-export const Container = styled.div`
+export const Container = styled.div.attrs({ className: "container"})`
   width: 75.5vw;
   margin: 0 auto;
   @media only screen and (max-width: 575px) {
