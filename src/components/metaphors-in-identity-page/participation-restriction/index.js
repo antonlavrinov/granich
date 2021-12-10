@@ -18,7 +18,7 @@ const ParticipationRestriction = () => {
                 </SC.RestionWarningTitle>
                 <SC.RestionWarningInfo>
                     <SC.RestionionWarningText>
-                        Для этого отправьте ссылку на своё портфолио куратору курса в телеграм 
+                        Для этого отправьте ссылку на своё портфолио куратору курса в телеграм 
                     </SC.RestionionWarningText>
                     <SC.RestionWarningTelegramButton rel="noopener noreferrer" target="_blank" href="https://t.me/lissabilberry">
                         Отправить портфолио <TelegramIcon/>
