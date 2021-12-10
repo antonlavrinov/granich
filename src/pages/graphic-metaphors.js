@@ -166,7 +166,7 @@ const GraphicMetaphorsInIdentityPage = ({
         url="https://granich.design/graphic-metaphors"
       />
       <div className="section-top-block"></div>
-      <CourseOffer allowPosters data={data.offer} postersAuthors="Работы куратора курса"/> 
+      <CourseOffer permission={permission} allowPosters data={data.offer} postersAuthors="Работы куратора курса"/> 
       <VideoPresentationOffer data={data.offer} />
       <MetaphorsForWhom/>
       <CourseTrainingPath data={data.metaphorsTrainingPath}/>

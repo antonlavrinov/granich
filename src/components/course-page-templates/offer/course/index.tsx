@@ -22,7 +22,8 @@ const CourseTemplateOffer: React.FC<Props> = ({
   postersVisibility,
   postersAuthors,
   allowPosters,
-  additionalText
+  additionalText,
+  permission
 }) => {
   const isDesktop = useMediaQuery({
     query: "(min-width: 575px)",
@@ -95,8 +96,9 @@ const CourseTemplateOffer: React.FC<Props> = ({
               {data.courseDescr}
             </SC.Descr>
             <SC.ButtonWrapper>
-              <SC.Button onClick={() => {scrollTo("#participation-section"); console.log("scroll")}} 
-              // to="#participation-section"
+              <SC.Button 
+              // onClick={() => {scrollTo("#participation-section"); console.log("scroll")}} 
+              to={`${permission ? "?permission=1" : ""}#participation-section`}
               >
                 <CourseArrowDown />
                 Участвовать
