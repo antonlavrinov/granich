@@ -357,7 +357,8 @@ export const ButtonWrapper = styled.div`
   }
 `
 
-export const Button = styled(props => <Link {...props} />)`
+// export const Button = styled(props => <Link {...props} />)`
+export const Button = styled.button`
   display: inline-flex;
   align-items: center;
   color: white;

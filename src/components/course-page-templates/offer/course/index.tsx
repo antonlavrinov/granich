@@ -8,6 +8,7 @@ import Posters from "../posters"
 import { ICourseCard } from "../../../../interfaces/main-page"
 import PostersWrapper from "../posters/PostersWrapper"
 import { RootWrapper } from "../posters/Posters"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 type Props = {
   data: ICourseCard
@@ -94,7 +95,9 @@ const CourseTemplateOffer: React.FC<Props> = ({
               {data.courseDescr}
             </SC.Descr>
             <SC.ButtonWrapper>
-              <SC.Button to="#participation-section">
+              <SC.Button onClick={() => {scrollTo("#participation-section"); console.log("scroll")}} 
+              // to="#participation-section"
+              >
                 <CourseArrowDown />
                 Участвовать
               </SC.Button>
