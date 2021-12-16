@@ -60,6 +60,8 @@ export const PureCourse = ({ icons, courseData, openModal }) => {
   //   return null
   // }
 
+  const isExternalLink = courseData.courseTitle === "Бесплатная кириллица";
+
   if (
     courseData.courseTitle === "Осознанный Фриланс" ||
     // courseData.courseTitle === "Графические метафоры" ||
@@ -119,7 +121,7 @@ export const PureCourse = ({ icons, courseData, openModal }) => {
                 })
               }
               target={courseData.courseExternalLinkTransition ? "_blank" : "_self"}
-              href={`/${courseData.courseSlug}`}
+              href={`${!isExternalLink ? "/" : ""}${courseData.courseSlug}`}
             >
               <>
                 {courseData.courseType === "Курс" ? (
