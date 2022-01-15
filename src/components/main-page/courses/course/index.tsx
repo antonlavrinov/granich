@@ -65,7 +65,8 @@ export const PureCourse = ({ icons, courseData, openModal }) => {
   if (
     courseData.courseTitle === "Осознанный Фриланс" ||
     // courseData.courseTitle === "Графические метафоры" ||
-    courseData.courseTitle === "Осознанный Графдизайн"
+    courseData.courseTitle === "Осознанный Графдизайн" ||
+    courseData.courseTitle === "Плакатный Графдизайн"
   ) {
     return null
   }
