@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
 
             <SC.Info>
               <SC.EmptyText>sometext</SC.EmptyText>
-              <SC.InfoYear>© {new Date().getFullYear()}</SC.InfoYear>
+              <SC.InfoYear>© 2018–{new Date().getFullYear()}</SC.InfoYear>
               <CopyToClipboard text={"hello@granich.design"}>
                 <SC.InfoMail
                   content={tooltipEmail}

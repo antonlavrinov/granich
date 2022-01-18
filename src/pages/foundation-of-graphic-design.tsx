@@ -427,7 +427,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <CourseBanner />
       <CourseQandA 
         data={data.foundationAnswers}
-        title="Точечные ответы о курсе"
+        title="FAQ о курсах школы"
         description="Тут мы собрали ответы на самые популярные вопросы о курсе Фундамент Графдизайна"
         urlText="Курса!"
       />

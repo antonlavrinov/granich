@@ -208,6 +208,15 @@ const CourseTimetable = ({noGif, noKeepCalm, text, courseTitle}) => {
           }
         }
       }
+      posterImageTimetable: file(
+        relativePath: { eq: "poster-graphic-design/timetable-image.jpg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 700, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       foundationImageTimetable: file(
         relativePath: { eq: "foundation-of-graph-design/timetable-image.jpg" }
       ) {
@@ -234,6 +243,7 @@ const CourseTimetable = ({noGif, noKeepCalm, text, courseTitle}) => {
   const timetableImages = {
     "Графические метафоры": data.metaphorsImageTimetable.childImageSharp.fluid,
     "Фундамент Графдизайна": data.foundationImageTimetable.childImageSharp.fluid,
+    "Плакатный Графдизайн": data.posterImageTimetable.childImageSharp.fluid,
   };
 
   return (

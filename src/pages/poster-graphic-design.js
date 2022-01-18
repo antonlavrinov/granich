@@ -24,9 +24,9 @@ import CourseQandA from "../components/course-page-templates/q-and-a"
 // import MasterClasses from "../components/graph-design-page/master-classes"
 import VideoPresentation from "../components/course-page-templates/video-presentation"
 import AdobeIndesign from "../components/foundation-of-graph-design/adobe-indesign"
-import AdobeIndesignCurriculum from "../components/foundation-of-graph-design/adobe-indesign-curriculum"
-import FoundationExample from "../components/foundation-of-graph-design/foundation-example/FoundationExample"
-import FoundationForWhom from "../components/foundation-of-graph-design/for-whom"
+import PinterestCompilationCurriculum from "../components/poster-graphic-design/pinterest-compilation-curriculum"
+import PosterExample from "../components/poster-graphic-design/poster-example/PosterExample"
+import PosterForWhom from "../components/poster-graphic-design/for-whom"
 import styled from 'styled-components';
 import TeamMember from "../components/main-page/team/teacher"
 import { Container } from "../components/style"
@@ -35,7 +35,7 @@ import FoundationPortfolio from "../components/foundation-of-graph-design/founda
 export const contentfulQuery = graphql`
   query posterGraphDesignQuery {
     posterOffer: contentfulGranichCourse(
-      courseTitle: { eq: "Фундамент Графдизайна" }
+      courseTitle: { eq: "Плакатный Графдизайн" }
     ) {
       courseMainImage {
         fluid(maxWidth: 850, quality: 90) {
@@ -71,7 +71,7 @@ export const contentfulQuery = graphql`
       }
     }
     posterFeatures: allContentfulGranichCourseFeatures(
-      filter: { featuresAttachmentTo: { eq: "Фундамент Графдизайна" } }
+      filter: { featuresAttachmentTo: { eq: "Плакатный Графдизайн" } }
       sort: { fields: [featuresOrderNumber], order: ASC }
     ) {
       edges {
@@ -105,7 +105,7 @@ export const contentfulQuery = graphql`
       }
     }
     posterTrainingPath: allContentfulGranichMainTrainingPath(
-      filter: { trainingPathAttachmentTo: { eq: "Фундамент Графдизайна" } }
+      filter: { trainingPathAttachmentTo: { eq: "Плакатный Графдизайн" } }
       sort: { fields: [trainingPathOrderNumber], order: ASC }
     ) {
       edges {
@@ -124,7 +124,7 @@ export const contentfulQuery = graphql`
       }
     }
     posterCurriculumHeader: contentfulGranichCourseCurriculumHeader(
-      curriculumHeaderAttachmentTo: { eq: "Фундамент Графдизайна" }
+      curriculumHeaderAttachmentTo: { eq: "Плакатный Графдизайн" }
     ) {
       curriculumHeaderTitle
       childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode {
@@ -135,7 +135,7 @@ export const contentfulQuery = graphql`
       }
     }
     posterCurriculum: allContentfulGranichCourseCurriculum(
-      filter: { curriculumAttachmentTo: { eq: "Фундамент Графдизайна" } }
+      filter: { curriculumAttachmentTo: { eq: "Плакатный Графдизайн" } }
       sort: { fields: [curriculumOrderNumber], order: ASC }
     ) {
       edges {
@@ -206,8 +206,31 @@ export const contentfulQuery = graphql`
         }
       }
     }
+    posterContentCard: contentfulGranichMainContentCard(
+      contentTitle: { eq: "Энциклопедия Графдизайна" }
+    ) {
+
+        contentDescription {
+          json
+        }
+        contentTags
+        contentTitle
+        contentImage {
+          fluid(maxWidth: 350) {
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+        contentType
+        contentSlug
+        contentYoutubeVideoLink
+        contentYoutubeTiming
+        contentLinkPinterest
+        contentLinkBehance
+        contentLinkMedium
+
+    }
     posterReviewsHeader: contentfulGranichCourseReviewsHeader(
-      reviewsHeaderAttachmentTo: { eq: "Фундамент Графдизайна" }
+      reviewsHeaderAttachmentTo: { eq: "Плакатный Графдизайн" }
     ) {
       reviewsHeaderTitle
       reviewsHeaderLinkTelegram
@@ -215,7 +238,7 @@ export const contentfulQuery = graphql`
       reviewsHeaderAttachmentTo
     }
     posterAnswers: allContentfulGranichCourseAnswers(
-      filter: { answersAttachmentTo: { eq: "Фундамент Графдизайна" } }
+      filter: { answersAttachmentTo: { eq: "Плакатный Графдизайн" } }
       sort: { fields: [answersOrderNumber], order: ASC }
     ) {
       edges {
@@ -333,7 +356,7 @@ const OsoznannyGraphDesignPage = ({
                         data: {},
                         marks: [],
                         nodeType: "text",
-                        value: "Изучение программы Adobe InDesign",
+                        value: "Энциклопедия Графдизайна",
                       },
                     ],
                     data: {},
@@ -344,12 +367,12 @@ const OsoznannyGraphDesignPage = ({
                 nodeType: "document",
               },
             },
-            curriculumAttachmentTo: "Фундамент Графдизайна",
+            curriculumAttachmentTo: "Плакатный Графдизайн",
             curriculumColumnsType: false,
             curriculumImportantDescr: null,
             curriculumTagName: "⚠ Подготовка",
             curriculumType: true,
-            customContent: (<AdobeIndesignCurriculum data={data.posterCourseCards.edges}/>),
+            customContent: (<PinterestCompilationCurriculum data={data.posterContentCard}/>),
             customLessonColor: "var(--granich-red)",
           },
         },
@@ -359,6 +382,7 @@ const OsoznannyGraphDesignPage = ({
     }
 
     console.log("posters", data?.posterPosters)
+    console.log("content", data.posterContentCards)
   return (
     <Layout>
       <Header type={"dark"} />
@@ -384,11 +408,11 @@ const OsoznannyGraphDesignPage = ({
         // postersAuthors="Работы учеников"
         // additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
       />
-       <FoundationForWhom />
+       <PosterForWhom />
        <FoundationPortfolio posters={data?.posterPosters.edges} />
 
-      <FoundationExample />
-      <VideoPresentation />
+      <PosterExample />
+      <VideoPresentation data={data.posterContentCard} />
      
       <CourseTimetable courseTitle={data.posterOffer.courseTitle} noGif noKeepCalm text="Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе вы не получите разбор куратора по этому домашнему заданию (в том числе не сможете делать творческий макет из этого ДЗ). Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течении недели (хотя бы два часа каждый день)."/>
       <CourseTrainingPath data={data.posterTrainingPath}/>
@@ -413,8 +437,8 @@ const OsoznannyGraphDesignPage = ({
         data={data.posterOffer}
         formId={`ltForm7094719`}
         formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1127538041`}
-        googleAnaliticsCategory={`Отправка формы Фундамент Графдизайна`}
-        additionalTags={["Интенсивный", "С нуля"]}
+        googleAnaliticsCategory={`Отправка формы Плакатный Графдизайн`}
+        additionalTags={["Интенсивный"]}
       />
       <CoursePaymentChoices
         paymentsAvailable={{ credit: true, corporate: true, abroad: true }}
@@ -424,14 +448,14 @@ const OsoznannyGraphDesignPage = ({
         description="Чтобы сосредоточиться на обучении графическому дизайну, мы вывели в отдельный бесплатный курс информацию по программе Adobe InDesign. В нём есть домашнее задание, которое вам следует пройти, чтобы в дальнейшем не отвлекаться на технические аспекты, и полностью погрузиться в графический дизайн. Участники Фундамента Графдизайна получают бесплатный видеоразбор ДЗ с курса Granich InDesign."
         data={data.posterCourseCards.edges}
       /> */}
-      <CourseBanner />
+      {/* <CourseBanner /> */}
       <CourseQandA 
         data={data.posterAnswers}
-        title="Точечные ответы о курсе"
-        description="Тут мы собрали ответы на самые популярные вопросы о курсе Фундамент Графдизайна"
+        title="FAQ о курсах школы"
+        description="Тут мы собрали ответы на самые популярные вопросы о курсе Плакатный Графдизайн"
         urlText="Курса!"
       />
-      <Container>
+      {/* <Container>
         <TeamWrapper>
           <TeamTitle>Курс разрабатывали:</TeamTitle>
           <Team>
@@ -441,7 +465,7 @@ const OsoznannyGraphDesignPage = ({
           </Team>
         </TeamWrapper>
         
-      </Container>
+      </Container> */}
     </Layout>
   )
 }
