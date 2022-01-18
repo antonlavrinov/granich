@@ -1,23 +1,35 @@
 import React from 'react'
-import ContentCard from '../../main-page/precourse-preparation/content-card';
 import { Container } from '../../style';
 import * as SC from './VideoPresentation';
 
-const VideoPresentation = ({data}) => {
+const VideoPresentation = () => {
     return (
         <SC.Section>
             <Container>
                 <SC.Wrapper>
                     <SC.Title>
-                        Курс основан на энциклопедии графического дизайна
+                        Курс основан на композициях
                     </SC.Title>
                     <SC.Content>
-                        <SC.StyledContentCard  >
-                            <ContentCard content={data} />
-                        </SC.StyledContentCard>
+                    <SC.YoutubeBlock>
+                            <div className="loadingio-spinner-rolling-ta5f1nqy5p">
+                            <div className="ldio-6b142d04hhl">
+                                <div></div>
+                            </div>
+                            </div>
+                            <iframe
+                            title="youtubeFrame"
+                            width="100%"
+                            src={`https://www.youtube.com/embed/9AC-Z_mmBIE`}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            ></iframe>
+                        </SC.YoutubeBlock>
                         <SC.Descr>
-                            Я с командой уже долгое время систематизирую различные визуальные решения для коммерческих дизайнеров. Всё это мы собираем в так называемую Энциклопедию Графдизайна. Это огромный систематизированный кладезь референсов для графических и веб-дизайнеров. Именно на базе энциклопедии мы разработали курс Плакатный Графдизайн.
+                            Посмотрите этот урок. Если он вам понравится, то вы точно влюбитесь в Фундамент Графдизайна. На нём мы подробнее разберём эту и другие важные композиции.
                         </SC.Descr>
+                        
                     </SC.Content>
                     
                 </SC.Wrapper>
