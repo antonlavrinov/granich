@@ -8,6 +8,7 @@ const VideoPresentation = () => {
             <Container>
                 <SC.Wrapper>
                     <SC.Title>
+                        
                         Курс основан на композициях
                     </SC.Title>
                     <SC.Content>
