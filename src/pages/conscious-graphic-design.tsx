@@ -360,7 +360,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         dataHeader={data.curriculumHeader}
         data={data.curriculum}
       />
-      <Features title="Еще пара бонусов" data={data.features} />
+      <Features title="Ещё пара бонусов" data={data.features} />
       <CourseReviews description="Напишите выпускникам прошлых потоков, они с радостью поделятся
                   эмоциями от прохождения курса" dataHeader={data.reviewsHeader} data={data.reviews} />
       <CourseHardWork
@@ -390,7 +390,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <CourseBanner />
       <CourseQandA
         data={data.answers}
-        title="FAQ о курсах школы"
+        title="FAQ о курсах Школы"
         description="Тут мы собрали ответы на самые популярные вопросы о курсе Осознанный Графдизайн"
         urlText="Курса!"
       />

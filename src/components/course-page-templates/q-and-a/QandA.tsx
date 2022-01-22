@@ -101,10 +101,11 @@ export const SectionTitle = styled.h2`
   font-size: 4.55vw;
   letter-spacing: -0.1vw;
   font-weight: 700;
-  line-height: 0.85;
+  line-height: 1;
   margin-right: 2vw;
   width: 40vw;
   min-width: 40vw;
+  margin-top: -0.3vw;
   @media only screen and (max-width: 575px) {
     font-size: 11vw;
     letter-spacing: -0.7vw;
@@ -112,6 +113,7 @@ export const SectionTitle = styled.h2`
     margin-right: 0;
     margin-bottom: 4vw;
     width: 100%;
+    margin-top: 0;
   }
 `
 

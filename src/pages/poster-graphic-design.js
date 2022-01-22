@@ -89,6 +89,7 @@ export const contentfulQuery = graphql`
       }
     }
     posterPosters: allContentfulGranichPoster(
+      filter: { featuresAttachmentTo: { eq: "Плакатный Графдизайн" } }
       sort: { fields: [posterOrderNumber], order: ASC }
     ) {
       edges {
@@ -422,7 +423,7 @@ const OsoznannyGraphDesignPage = ({
         compressedHeader
         lessonsCount
       />
-      <Features title="Еще пара бонусов" data={data.posterFeatures}/>
+      <Features title="Ещё пара бонусов" data={data.posterFeatures}/>
       
       <CourseReviews description="Напишите выпускникам Школы, они с радостью поделятся
                   эмоциями от прохождения обучения" dataHeader={data.posterReviewsHeader}/>
@@ -451,7 +452,7 @@ const OsoznannyGraphDesignPage = ({
       {/* <CourseBanner /> */}
       <CourseQandA 
         data={data.posterAnswers}
-        title="FAQ о курсах школы"
+        title="FAQ о курсах Школы"
         description="Тут мы собрали ответы на самые популярные вопросы о курсе Плакатный Графдизайн"
         urlText="Курса!"
       />

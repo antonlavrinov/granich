@@ -16,7 +16,7 @@ display: flex;
 /* flex-direction: row-reverse; */
 align-items: start;
 padding: 2vw 0;
-width: 50vw;
+width: 55vw;
 ${CoursesWrapper} {
  grid-template-columns: 1fr;
  margin-right: 3vw;
@@ -25,6 +25,7 @@ color: grey;
 p {
   padding-right: 0;
   margin-bottom: 0.5vw;
+  color: white;
 }
 a {
     border: none;
@@ -50,6 +51,7 @@ export const Descr = styled.div`
   white-space: normal;
   p {
     margin-bottom: 1vw;
+    color: var(--granich-black);
     :last-child {
       margin-bottom: 0;
     }

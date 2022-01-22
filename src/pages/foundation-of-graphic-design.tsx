@@ -89,6 +89,7 @@ export const contentfulQuery = graphql`
       }
     }
     foundationPosters: allContentfulGranichPoster(
+      filter: { featuresAttachmentTo: { eq: "Фундамент Графдизайна" } }
       sort: { fields: [posterOrderNumber], order: ASC }
     ) {
       edges {
@@ -398,7 +399,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         compressedHeader
         lessonsCount
       />
-      <Features title="Еще пара бонусов" data={data.foundationFeatures}/>
+      <Features title="Ещё пара бонусов" data={data.foundationFeatures}/>
       
       <CourseReviews description="Напишите выпускникам Школы, они с радостью поделятся
                   эмоциями от прохождения обучения" dataHeader={data.foundationReviewsHeader}/>
@@ -427,7 +428,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <CourseBanner />
       <CourseQandA 
         data={data.foundationAnswers}
-        title="FAQ о курсах школы"
+        title="FAQ о курсах Школы"
         description="Тут мы собрали ответы на самые популярные вопросы о курсе Фундамент Графдизайна"
         urlText="Курса!"
       />
