@@ -89,7 +89,7 @@ export const contentfulQuery = graphql`
       }
     }
     posterPosters: allContentfulGranichPoster(
-      filter: { featuresAttachmentTo: { eq: "Плакатный Графдизайн" } }
+      filter: { posterAttachmentTo: { eq: "Плакатный Графдизайн" } }
       sort: { fields: [posterOrderNumber], order: ASC }
     ) {
       edges {
