@@ -77,7 +77,6 @@ export const StyledContent = styled.div`
       height: 1.5vw;
       width: 1.5vw;
       background: url("./images/arrow-white-newpage-01.png");
-      /* background: url(../assets/images/arrow_out.png); */
       background-size: cover;
       z-index: 1;
     }
@@ -86,50 +85,25 @@ export const StyledContent = styled.div`
       position: absolute;
       border-bottom: 1.5px solid white;
       width: 100%;
-      bottom: 0.1vw;
+      bottom: 0.25vw;
       left: 0;
     }
   }
-`
+  @media only screen and (max-width: 575px) {
+    font-size: 4vw;
+    i {
+      font-size: 5.5vw;
+      font-weight: 400;
+    }
 
-// export const Tooltip = styled(Tippy)`
-//   background: white;
-//   border-radius: 3px;
-//   line-height: 1.3;
-//   pointer-events: none;
-
-//   .tippy-content {
-//     padding: 10px 10px;
-//     overflow: hidden;
-//   }
-
-//   .tippy-arrow {
-//     &:before {
-//       background: none;
-//       transform: scaleX(0.7);
-//       border-left: 7px solid transparent;
-//       border-right: 7px solid transparent;
-//     }
-//   }
-
-//   &[data-placement^='bottom'] {
-//     bottom: 0;
-//     .tippy-arrow {
-//       &:before {
-//         border-bottom-color: white;
-//         filter: drop-shadow(0px -1px 0px black);
-//       }
-//     }
-//   }
-
-//   &[data-placement^='top'] {
-//     top: 0;
-//     .tippy-arrow {
-//       &:before {
-//         border-top-color: white;
-//         bottom: -7.5px;
-//         filter: drop-shadow(0px 1px 0px black);
-//       }
-//     }
-//   }
-// `;
+    a {
+      :after {
+        right: -5vw;
+        height: 4vw;
+        width: 4vw;
+      }
+      :before {
+        bottom: 1vw;
+      }
+    }
+`;

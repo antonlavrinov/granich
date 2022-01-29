@@ -803,12 +803,38 @@ div[data-accordion-component="AccordionItemHeading"] {
 
 .tippy-popper {
     margin-bottom: 1.5vw;
-    top: 1.5vw !important;
+
+    max-width: 100% !important;
+    @media only screen and (max-width: 575px) {
+        top: 2vw !important;
+    }
 }
 .tippy-tooltip {
     background: linear-gradient(90deg, rgba(230,25,51,1) 0%, rgba(213,12,34,1) 30%, rgba(189,3,27,1) 70%) !important;
     padding: 0.8vw 1.2vw !important;
     box-shadow: 0.25vw 0.25vw 0.4vw rgb(0 0 0 / 25%);
+    @media only screen and (max-width: 575px) {
+        padding: 2vw 2.7vw !important;
+    }
+}
+
+.tippy-popper[x-placement^=bottom] {
+    top: 0.1vw !important;
+    @media only screen and (max-width: 575px) {
+        top: 0vw !important;
+    }
+}
+
+.tippy-popper[x-placement^=top] {
+    top: 1.5vw !important;
+    @media only screen and (max-width: 575px) {
+        top: 2vw !important;
+    }
+}
+
+.tippy-popper[x-placement^=bottom] [x-arrow] {
+    border-bottom-color: rgba(189,3,27,1) !important;
+    // top: -1vw !important;
 }
 
 .arrow-regular {
