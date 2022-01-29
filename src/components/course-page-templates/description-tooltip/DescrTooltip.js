@@ -76,7 +76,7 @@ export const StyledContent = styled.div`
       right: -2vw;
       height: 1.5vw;
       width: 1.5vw;
-      background: url("./images/arrow-white-newpage-01.png");
+      background: url("/images/arrow-white-newpage-01.png");
       background-size: cover;
       z-index: 1;
     }
