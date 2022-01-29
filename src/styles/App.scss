@@ -801,4 +801,21 @@ div[data-accordion-component="AccordionItemHeading"] {
 
 }
 
+.tippy-popper {
+    margin-bottom: 1.5vw;
+    top: 1.5vw !important;
+}
+.tippy-tooltip {
+    background: linear-gradient(90deg, rgba(230,25,51,1) 0%, rgba(213,12,34,1) 30%, rgba(189,3,27,1) 70%) !important;
+    padding: 0.8vw 1.2vw !important;
+    box-shadow: 0.25vw 0.25vw 0.4vw rgb(0 0 0 / 25%);
+}
+
+.arrow-regular {
+    border-top-color: rgba(189,3,27,1) !important;
+}
+
+.tippy-tooltip-content {
+    padding: 0 !important;
+}
 @import './base/_media';

@@ -31,6 +31,8 @@ import styled from 'styled-components';
 import TeamMember from "../components/main-page/team/teacher"
 import { Container } from "../components/style"
 import FoundationPortfolio from "../components/foundation-of-graph-design/foundation-portfolio"
+import DescrTooltip from "../components/course-page-templates/description-tooltip"
+import DescrTooltipContent from "../components/course-page-templates/description-tooltip/DescrTooltipContent"
 
 export const contentfulQuery = graphql`
   query posterGraphDesignQuery {
@@ -405,7 +407,8 @@ const OsoznannyGraphDesignPage = ({
       <div className="section-top-block"></div>
       <CourseOffer 
         // allowPosters={false} 
-        data={data.posterOffer} 
+        data={data.posterOffer}
+        courseDescr={(<>Курс с дедлайнами для <DescrTooltip content={(<DescrTooltipContent/>)}><span>продвинутого</span></DescrTooltip> развития в графическом дизайне. Основан на графических системах</>)}
         // postersAuthors="Работы учеников"
         // additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
       />

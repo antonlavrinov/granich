@@ -9,6 +9,7 @@ import { ICourseCard } from "../../../../interfaces/main-page"
 import PostersWrapper from "../posters/PostersWrapper"
 import { RootWrapper } from "../posters/Posters"
 import scrollTo from "gatsby-plugin-smoothscroll"
+import DescrTooltip from "../../description-tooltip"
 
 type Props = {
   data: ICourseCard
@@ -23,7 +24,8 @@ const CourseTemplateOffer: React.FC<Props> = ({
   postersAuthors,
   allowPosters,
   additionalText,
-  permission
+  permission,
+  courseDescr,
 }) => {
   const isDesktop = useMediaQuery({
     query: "(min-width: 575px)",
@@ -93,7 +95,7 @@ const CourseTemplateOffer: React.FC<Props> = ({
               courseTitle={data.courseTitle}
               type={data.courseType}
             >
-              {data.courseDescr}
+              {courseDescr ? courseDescr : data.courseDescr}
             </SC.Descr>
             <SC.ButtonWrapper>
               <SC.Button 
