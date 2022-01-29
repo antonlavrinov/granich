@@ -42,6 +42,7 @@ export const StyledContent = styled.div`
     font-size: 2vw;
     line-height: 1;
     display: block;
+    white-space: nowrap;
   }
 
   span {
