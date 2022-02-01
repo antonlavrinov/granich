@@ -13,7 +13,7 @@ const FoundationForWhom = () => {
     query posterForWhom {
       posterForWhomImage1: file(
         relativePath: {
-          eq: "foundation-of-graph-design/newbees.png"
+          eq: "poster-graphic-design/graphic-designers.png"
         }
       ) {
         childImageSharp {
@@ -24,7 +24,7 @@ const FoundationForWhom = () => {
       }
       posterForWhomImage2: file(
         relativePath: {
-          eq: "foundation-of-graph-design/supervisors.png"
+          eq: "poster-graphic-design/web-designers.png"
         }
       ) {
         childImageSharp {
@@ -35,7 +35,7 @@ const FoundationForWhom = () => {
       }
       posterForWhomImage3: file(
         relativePath: {
-          eq: "foundation-of-graph-design/marketers.png"
+          eq: "poster-graphic-design/identity-designers.png"
         }
       ) {
         childImageSharp {
@@ -51,6 +51,8 @@ const FoundationForWhom = () => {
   const image2 = data.posterForWhomImage2.childImageSharp.fluid
   const image3 = data.posterForWhomImage3.childImageSharp.fluid
 
+  // console.log("image", data.posterForWhomImage1);
+
   return (
     <SC.Section>
       <Container>
@@ -59,18 +61,18 @@ const FoundationForWhom = () => {
           <SC.InfoWrapper>
             <SC.Items>
                 <SC.Item>
-                  {/* <SC.ItemImg fluid={image1}/> */}
-                  <SC.Plain/>
+                  <SC.ItemImg fluid={image1}/>
+                  {/* <SC.Plain/> */}
                   <SC.ItemText>Графические дизайнеры</SC.ItemText>
                 </SC.Item>
                 <SC.Item>
-                  {/* <SC.ItemImg fluid={image2}/> */}
-                  <SC.Plain/>
+                  <SC.ItemImg fluid={image2}/>
+                  {/* <SC.Plain/> */}
                   <SC.ItemText>Веб-дизайнеры</SC.ItemText>
                 </SC.Item>
                 <SC.Item>
-                  {/* <SC.ItemImg fluid={image3}/> */}
-                  <SC.Plain/>
+                  <SC.ItemImg fluid={image3}/>
+                  {/* <SC.Plain/> */}
                   <SC.ItemText>Дизайнеры айдентики</SC.ItemText>
                 </SC.Item>
             </SC.Items>

@@ -65,6 +65,7 @@ export const ItemImg = styled(Img)`
     height: 7.5vw;
     min-width: 7.5vw;
     min-height: 7.5vw;
+    overflow: visible !important;
     /* background: rgba(0,0,0,0.1); */
     /* border-radius: 50%; */
     margin-right: 1vw;
@@ -95,6 +96,7 @@ export const ItemText = styled.div`
   font-size: 1.5vw;
   font-weight: 500;
   line-height: 1.5;
+
   /* max-width: 20%; */
   /* white-space: nowrap; */
   @media only screen and (max-width: 575px) {
@@ -114,8 +116,9 @@ export const InfoText = styled.div`
   line-height: 1.4;
   /* max-width: 70%;
   width: 70%; */
-  font-weight: 500;
+  /* font-weight: 500; */
   margin-right: 1vw;
+  color: var(--granich-grey);
   @media only screen and (max-width: 575px) {
     font-size: 3.7vw;
     margin-bottom: 3vw;

@@ -11,11 +11,12 @@ const VideoPresentation = ({data}) => {
                 <SC.Wrapper>
                         <SC.StyledContentCard  >
                             <ContentCard content={data} />
+                            <SC.Hint><Arrow/><span>*Тык*, чтобы глянуть, <br/>о чём речь</span></SC.Hint>
                         </SC.StyledContentCard>
                     <SC.Content>
                         
                         <SC.Title>
-                        <SC.Hint><Arrow/><span>*Тык*, чтобы глянуть, <br/>о чём речь</span></SC.Hint>
+                        
                             Курс основан на <span>Энциклопедии графдизайна</span>
                         </SC.Title>
                         <SC.Descr>

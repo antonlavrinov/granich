@@ -7,16 +7,21 @@ export const StyledContentCard = styled.div`
     padding-right: 0 !important;
   } */
   margin-right: 3vw;
-  min-width: 16vw;
+  min-width: 17.4vw;
+  @media only screen and (max-width: 575px) {
+      /* flex-direction: column; */
+      max-width: 45vw;
+      margin-bottom: 4vw;
+  }
     
 `;
 
 export const Wrapper = styled.div`
-display: flex;
+
 /* flex-direction: row-reverse; */
 align-items: start;
 padding: 2vw 0;
-width: 55vw;
+width: 56.5vw;
 ${CoursesWrapper} {
  grid-template-columns: 1fr;
  margin-right: 3vw;
@@ -35,8 +40,16 @@ a {
     }
 }
   @media only screen and (max-width: 575px) {
-      flex-direction: column;
+      /* flex-direction: column; */
+      width: 100%;
   }
+`
+
+export const Light = styled.div`
+    display: block;
+    color: var(--granich-light-grey);
+    margin-top: 1vw;
+    font-weight: 400;
 `
 
 
@@ -107,3 +120,27 @@ export const Descr = styled.div`
 //     flex-direction: column;
 //   }
 // `
+
+export const InDesignContent = styled.div`
+    display: flex;
+   @media only screen and (max-width: 575px) {
+     flex-direction: column;
+     .courses-list {
+        max-width: 45vw;
+        margin-bottom: 5vw;
+      }
+   }
+`
+
+export const PinterestContent = styled.div`
+  display: flex;
+  margin-bottom: 3vw;
+
+  @media only screen and (max-width: 575px) {
+     flex-direction: column;
+     .content-card {
+        max-width: 45vw;
+        margin-bottom: 5vw;
+      }
+   }
+`

@@ -105,6 +105,18 @@ const TimetableInfoText = styled.div`
   line-height: 1.45;
   margin-bottom: 2vw;
   font-weight: 500;
+  i {
+    font-weight: 500;
+    /* color: var(--granich-red); */
+    color: var(--granich-black);
+    border-radius: 0.2vw;
+    padding: 0 0.3vw;
+    font-style: normal;
+    white-space: nowrap;
+    /* text-decoration: underline; */
+    background: var(--granich-light-red);
+    /* background: var(--granich-red); */
+  }
   @media only screen and (max-width: 575px) {
     display: none;
   }
@@ -118,6 +130,15 @@ const TimetableInfoTextMobile = styled.div`
     line-height: 1.45;
     margin-bottom: 6vw;
     font-weight: 500;
+    i {
+      font-weight: 500;
+      color: var(--granich-black);
+      font-style: normal;
+      white-space: nowrap;
+      background: var(--granich-light-red);
+      padding: 0 1vw;
+      border-radius: 0.5vw;
+    }
   }
 `
 

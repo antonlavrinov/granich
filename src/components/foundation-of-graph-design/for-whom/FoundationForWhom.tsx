@@ -101,7 +101,8 @@ export const InfoText = styled.div`
   line-height: 1.4;
   /* max-width: 70%;
   width: 70%; */
-  font-weight: 500;
+  /* font-weight: 500; */
+  color: var(--granich-grey);
   margin-right: 1vw;
   @media only screen and (max-width: 575px) {
     font-size: 3.7vw;

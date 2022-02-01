@@ -375,7 +375,7 @@ const OsoznannyGraphDesignPage = ({
             curriculumImportantDescr: null,
             curriculumTagName: "⚠ Подготовка",
             curriculumType: true,
-            customContent: (<PinterestCompilationCurriculum data={data.posterContentCard}/>),
+            customContent: (<PinterestCompilationCurriculum dataInDesign={data.posterCourseCards.edges} dataPinterest={data.posterContentCard}/>),
             customLessonColor: "var(--granich-red)",
           },
         },
@@ -384,8 +384,8 @@ const OsoznannyGraphDesignPage = ({
       ],
     }
 
-    console.log("posters", data?.posterPosters)
-    console.log("content", data.posterContentCards)
+    // console.log("posters", data?.posterPosters)
+    // console.log("content", data.posterContentCards)
   return (
     <Layout>
       <Header type={"dark"} />
@@ -394,8 +394,9 @@ const OsoznannyGraphDesignPage = ({
         description="Курс с дедлайнами для уверенного старта в графическом дизайне. Основан на дизайн-системе и композициях."
         keywords={[
           "графдизайн",
-          "фундамент",
+          "продвинутый",
           "poster",
+          "плакат",
           "гранич",
           "graphdesign",
           "granich",
@@ -418,7 +419,7 @@ const OsoznannyGraphDesignPage = ({
       <PosterExample />
       <VideoPresentation data={data.posterContentCard} />
      
-      <CourseTimetable courseTitle={data.posterOffer.courseTitle} noGif noKeepCalm text="Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе вы не получите разбор куратора по этому домашнему заданию (в том числе не сможете делать творческий макет из этого ДЗ). Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течении недели (хотя бы два часа каждый день)."/>
+      <CourseTimetable courseTitle={data.posterOffer.courseTitle} noGif noKeepCalm text={(<>Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе вы не получите разбор куратора по этому домашнему заданию (в том числе не сможете делать творческий макет из этого ДЗ). Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течении недели <i>(хотя бы два часа каждый день).</i></>)}/>
       <CourseTrainingPath data={data.posterTrainingPath}/>
       <CourseCurriculum  
         dataHeader={data.posterCurriculumHeader}

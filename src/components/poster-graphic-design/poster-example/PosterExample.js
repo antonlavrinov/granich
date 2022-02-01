@@ -1,6 +1,7 @@
 import React from "react"
 import { Container } from "../../style"
 import styled from "styled-components"
+import ArrowRight from "../../../assets/svgs/poster-graphic-design/arrow-right.svg"
 import ExampleArrowIcon from "../../../assets/svgs/graph-design/graph-design-example-arrow.svg"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
@@ -49,7 +50,7 @@ const LongArrowMobile = styled(props => <LongArrowMobileIcon {...props} />)`
 
 const CourseExampleHeader = styled.div`
   display: flex;
-  margin-bottom: 4vw;
+  margin-bottom: 3vw;
   @media only screen and (max-width: 575px) {
     flex-direction: column;
     align-items: center;
@@ -157,22 +158,70 @@ const CourseExampleTitle = styled.h2`
 `
 
 const CourseExampleInfoWrapper = styled.div`
+  /* display: flex; */
+  /* justify-content: space-between; */
+  @media only screen and (max-width: 575px) {
+    /* flex-direction: column; */
+  }
+`
+
+const ImagesWrapper = styled.div`
+  /* display: block; */
   display: flex;
   justify-content: space-between;
+  position: relative;
+  align-items: center;
+  svg {
+    position: absolute;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%, -50%);
+    width: 4vw;
+    fill: rgba(0,0,0,0.2);
+    z-index: 1;
+  }
   @media only screen and (max-width: 575px) {
     flex-direction: column;
+    svg {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      width: 10vw;
+    }
   }
 `
 const CourseExampleImage = styled(Img)`
-  min-width: 45%;
-  /* height: 11.25vw; */
-  margin-bottom: 0;
-  margin-right: 2vw;
-  /* background-size: cover;
-  background-size: auto 100%; */
+  /* margin-bottom: 3vw; */
+  width: 30vw;
+  position: relative;
+  top: -1vw;
+  /* display: block; */
   @media only screen and (max-width: 575px) {
-    height: 29.5vw;
-    margin-top: 8vw;
+    /* display: none; */
+    width: 100%;
+
+    margin-bottom: 4vw;
+  }
+`
+
+const CourseExampleImageExample = styled(Img)`
+  /* margin-bottom: 3vw; */
+  width: 30vw;
+  /* display: block; */
+  @media only screen and (max-width: 575px) {
+    /* display: none; */
+    width: 100%;
+    margin-top: 2vw;
+    margin-bottom: 15vw;
+  }
+`
+
+const CourseExampleImageMobile = styled(Img)`
+  display: none;
+  @media only screen and (max-width: 575px) {
+    display: block;
+    margin-bottom: 5vw;
+    margin-top: 1vw;
   }
 `
 
@@ -192,7 +241,9 @@ const CourseExampleInfoText = styled.div`
   /* color: var(--granich-grey); */
   font-size: 1.35vw;
   line-height: 1.45;
-  font-weight: 500;
+  /* font-weight: 500; */
+  color: var(--granich-grey);
+  margin-top: 1vw;
   @media only screen and (max-width: 575px) {
     font-size: 3.7vw;
   }
@@ -218,7 +269,25 @@ const PosterExample = () => {
         }
       }
       posterExample1: file(
-        relativePath: { eq: "poster-graphic-design/graphic-system.png" }
+        relativePath: { eq: "poster-graphic-design/what-is-graphic-system.jpg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 1200) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      posterExample2: file(
+        relativePath: { eq: "graph-design/example/example-01.jpg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      posterExampleMobile: file(
+        relativePath: { eq: "poster-graphic-design/what-is-graphic-system_mobile.jpg" }
       ) {
         childImageSharp {
           fluid(maxWidth: 500) {
@@ -248,12 +317,19 @@ const PosterExample = () => {
                 Что за графические системы?
             </CourseExampleTitle>
           </CourseExampleHeader>
-          <CourseExampleInfoWrapper>
-            <CourseExampleImage fluid={data.posterExample1.childImageSharp.fluid} />
+            <ImagesWrapper>
+              <CourseExampleImageExample fluid={data.posterExample2.childImageSharp.fluid} />
+              <ArrowRight/>
+              <CourseExampleImage fluid={data.posterExample1.childImageSharp.fluid} />
+            </ImagesWrapper>
             <CourseExampleInfoText>
               Графическая система это набор правил по дизайну элементов и принципам вёрстки для конкретного графического стиля. Позволяет вам систематизировано отталкиваться при разработке, в том числе, своих стилей. А также создаёт продвинутую базу насмотренности.
             </CourseExampleInfoText>
-          </CourseExampleInfoWrapper> 
+          {/* <CourseExampleInfoWrapper> */}
+
+            {/* <CourseExampleImageMobile fluid={data.posterExampleMobile.childImageSharp.fluid} /> */}
+            
+          {/* </CourseExampleInfoWrapper>  */}
           {/* <ExampleArrow /> */}
         </CourseExampleWrapper>
       </Container>
