@@ -1137,10 +1137,11 @@ export const CurriculumContentText = styled.div`
         display: block;
         width: 100%;
         i {
-          padding: 1vw 2vw;
+          padding: 0;
+          // padding: 1vw 2vw;
           font-size: 3.7vw;
-          border-radius: 50vw;
-          margin-bottom: 2vw;
+          // border-radius: 50vw;
+          // margin-bottom: 2vw;
         }
 
         b {
