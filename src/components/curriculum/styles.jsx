@@ -1037,6 +1037,42 @@ export const CurriculumContentText = styled.div`
     }
 
   `}
+  ${props => props.courseTitle === "Плакатный Графдизайн" && `
+    display: flex;
+    padding-left: 1.2vw;
+    ul {
+      display: block;
+      margin-bottom: 0;
+      width: 26vw;
+      margin-right: 2vw !important;
+      &:first-child {
+        
+      }
+
+      b {
+        margin-bottom: 0.5vw !important;
+        display: block;
+      }
+
+      i {
+        // font-style: normal;
+        // padding: 0.4vw 1vw;
+        // font-size: 1.15vw;
+        // border-radius: 10vw;
+        // border: 1px solid var(--granich-black);
+        // margin-bottom: 0.5vw;
+        // display: inline-block;
+        // line-height: 1.3;
+        color: var(--granich-grey);
+      }
+
+      p {
+        margin-bottom: 0 !important;
+        color: var(--granich-grey);
+      }
+    }
+
+  `}
   @media only screen and (max-width: 575px) {
     margin-bottom: -5vw;
     width: 100%;
@@ -1076,6 +1112,30 @@ export const CurriculumContentText = styled.div`
       display: block;
       ul {
         display: block;
+        i {
+          padding: 1vw 2vw;
+          font-size: 3.7vw;
+          border-radius: 50vw;
+          margin-bottom: 2vw;
+        }
+
+        b {
+          margin-bottom: 2vw;
+          display: block;
+        }
+
+        p {
+          margin-bottom: 1vw !important;
+          color: var(--granich-grey);
+        }
+      }
+
+    `}
+        ${props => props.courseTitle === "Плакатный Графдизайн" && `
+      display: block;
+      ul {
+        display: block;
+        width: 100%;
         i {
           padding: 1vw 2vw;
           font-size: 3.7vw;

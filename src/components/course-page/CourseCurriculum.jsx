@@ -415,6 +415,7 @@ const CourseCurriculum = ({
                         </CurriculumContentColumnsWrapper>
                       ) : (
                         <>
+                          {console.log("dffd", courseTitle)}
                           {tab.node
                             .childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode && (
                             <CurriculumContentText  className="link_out" courseTitle={courseTitle}>

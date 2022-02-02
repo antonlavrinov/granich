@@ -426,6 +426,7 @@ const OsoznannyGraphDesignPage = ({
         data={curriculumDataWithContentCards}
         compressedHeader
         lessonsCount
+        courseTitle="Плакатный Графдизайн"
       />
       <Features title="Ещё пара бонусов" data={data.posterFeatures}/>
       
