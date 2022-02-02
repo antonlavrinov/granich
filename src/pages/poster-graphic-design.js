@@ -7,8 +7,8 @@ import CourseOffer from "../components/course-page-templates/offer/"
 import Header from "../components/global/header"
 import CourseParticipation from "../components/course-page/CourseParticipation"
 import { graphql, PageProps } from "gatsby"
-import ogImage from "../assets/images/seo/foundation-of-graphic-design.jpg"
-import ogImageVK from "../assets/images/seo/vk/foundation-of-graphic-design.jpg"
+import ogImage from "../assets/images/seo/poster-graphic-design.jpg"
+import ogImageVK from "../assets/images/seo/vk/poster-graphic-design.jpg"
 import CoursePaymentChoices from "../components/course-page/payment-choices/CoursePaymentChoices"
 import CourseBanner from "../components/course-page/CourseBanner"
 import Mailing from "../components/global/mailing"
@@ -440,8 +440,8 @@ const OsoznannyGraphDesignPage = ({
       <CourseParticipation
         policy={true}
         data={data.posterOffer}
-        formId={`ltForm7094719`}
-        formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1127538041`}
+        formId={`ltForm3506729`}
+        formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1307782162`}
         googleAnaliticsCategory={`Отправка формы Плакатный Графдизайн`}
         additionalTags={["Интенсивный"]}
       />

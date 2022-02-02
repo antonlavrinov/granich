@@ -278,7 +278,7 @@ const PosterExample = () => {
         }
       }
       posterExample2: file(
-        relativePath: { eq: "graph-design/example/example-01.jpg" }
+        relativePath: { eq: "graph-design/example/example-02.jpg" }
       ) {
         childImageSharp {
           fluid(maxWidth: 500) {
