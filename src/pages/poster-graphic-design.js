@@ -410,7 +410,7 @@ const OsoznannyGraphDesignPage = ({
       <CourseOffer 
         // allowPosters={false} 
         data={data.posterOffer}
-        courseDescr={(<><DescrTooltip content={(<DescrTooltipContent/>)}><span>2 ступень</span></DescrTooltip>учебной программы графического дизайна. Интенсивный курс с дедлайнами. Основан на графических системах.</>)}
+        courseDescr={(<><DescrTooltip content={(<DescrTooltipContent/>)}><span>2 ступень</span></DescrTooltip> учебной программы графического дизайна. Интенсивный курс с дедлайнами. Основан на графических системах.</>)}
         // postersAuthors="Работы учеников"
         // additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
       />
