@@ -406,10 +406,11 @@ const OsoznannyGraphDesignPage = ({
         url="https://granich.design/poster-graphic-design"
       />
       <div className="section-top-block"></div>
+      {/* <DescrTooltip content={(<DescrTooltipContent/>)}><span>продвинутого</span></DescrTooltip> развития в графическом дизайне. Основан на графических системах */}
       <CourseOffer 
         // allowPosters={false} 
         data={data.posterOffer}
-        courseDescr={(<>Курс с дедлайнами для <DescrTooltip content={(<DescrTooltipContent/>)}><span>продвинутого</span></DescrTooltip> развития в графическом дизайне. Основан на графических системах</>)}
+        courseDescr={(<>2 ступень учебной программы графического дизайна. Интенсивный курс с дедлайнами. Основан на графических системах.</>)}
         // postersAuthors="Работы учеников"
         // additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
       />

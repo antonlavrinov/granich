@@ -73,7 +73,7 @@ const FoundationForWhom = () => {
                 <SC.Item>
                   <SC.ItemImg fluid={image3}/>
                   {/* <SC.Plain/> */}
-                  <SC.ItemText>Дизайнеры айдентики</SC.ItemText>
+                  <SC.ItemText>Медиа дизайнеры</SC.ItemText>
                 </SC.Item>
             </SC.Items>
             <SC.InfoText>
