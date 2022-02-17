@@ -209,6 +209,10 @@ const ReviewsText = styled.div`
       font-size: 1.12vw;
       line-height: 1.5;
   `};
+  ${props => props.reviewsHeaderAttachmentTo === "Графические метафоры" && `
+    font-size: 1.12vw;
+    line-height: 1.5;
+  `};
   @media only screen and (max-width: 575px) {
     font-size: 3.7vw;
     max-width: 100%;
