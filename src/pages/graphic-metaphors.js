@@ -205,8 +205,7 @@ const GraphicMetaphorsInIdentityPage = ({
           
           // additionalTags={["Интенсивный", "С нуля"]}
         />
-                {/* {!permission && data.offer.courseStatus && <ParticipationRestriction />} */}
-        {!permission && <ParticipationRestriction />}
+        {!permission && data.offer.courseStatus && <ParticipationRestriction />}
       </div>
     </Layout>
   )
