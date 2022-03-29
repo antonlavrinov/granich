@@ -257,12 +257,12 @@ export const Title = styled.h4`
   }
 `
 
-export const Image = styled(props => (
-  <BackgroundImage {...props}></BackgroundImage>
-))`
+export const Image = styled.img`
   margin-bottom: 1vw;
-  max-height: 7.8vw;
-  min-height: 7.8vw;
+  /* max-height: 7.8vw;
+  min-height: 7.8vw; */
+  width: 100%;
+  object-fit: cover;
   height: 7.8vw;
   @media only screen and (max-width: 575px) {
     max-height: 21vw;

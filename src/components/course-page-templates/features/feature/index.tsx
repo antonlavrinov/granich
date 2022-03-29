@@ -11,7 +11,7 @@ type Props = {
 const Feature: React.FC<Props> = ({ image, title, text, link }) => {
   return (
     <SC.Wrapper>
-      <SC.Image fluid={image} />
+      <SC.Image src={image} />
       <SC.Text>
         {link ? (
           <SC.Link href={link} target="_blank">

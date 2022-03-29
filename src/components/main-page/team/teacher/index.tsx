@@ -31,7 +31,7 @@ const TeamMember = ({ teacher }) => {
   return (
     <SC.Wrapper>
       <SC.Header>
-        <SC.Image fluid={teacher.teacherImage.fluid}></SC.Image>
+        <SC.Image src={teacher.teacherImage.src}></SC.Image>
         <SC.Socials>
           <SC.SocialIcons>
             {teacher.teacherSocialTelegram && (

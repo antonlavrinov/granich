@@ -21,119 +21,118 @@ import FreelanceProblem from "../components/course-page/freelance/FreelanceProbl
 import FreelanceSkills from "../components/course-page/freelance/FreelanceSkills"
 import FreelanceParticipation from "../components/course-page/freelance/FreelanceParticipation"
 
-export const contentfulQuery = graphql`
-  query freelanceQuery {
-    offer: contentfulGranichCourse(courseTitle: { eq: "Осознанный Фриланс" }) {
-      courseMainImage {
-        fluid(maxWidth: 850, quality: 90) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-      }
-      courseTitle
-      courseMainTitle {
-        json
-      }
-      courseDescr
-      courseStart
-      courseDuration
-      courseStartAndEnd
-      courseStream
-      courseStatus
-      courseButtonText
-      courseExternalLinkTransition
-      courseAdditionalType
-      courseType
-      coursePrice
-      courseTags
-      coursePostersCollection {
-        fluid(maxWidth: 600, quality: 100) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-        resize(width: 600, quality: 100) {
-          src
-        }
-      }
-      childContentfulGranichCourseCoursePolicyRichTextNode {
-        json
-      }
-    }
+// export const contentfulQuery = graphql`
+//   query freelanceQuery {
+//     offer: contentfulGranichCourse(courseTitle: { eq: "Осознанный Фриланс" }) {
+//       courseMainImage {
+//         fluid(maxWidth: 850, quality: 90) {
+//           ...GatsbyContentfulFluid_withWebp
+//         }
+//       }
+//       courseTitle
+//       courseMainTitle {
+//         json
+//       }
+//       courseDescr
+//       courseStart
+//       courseDuration
+//       courseStartAndEnd
+//       courseStream
+//       courseStatus
+//       courseButtonText
+//       courseExternalLinkTransition
+//       courseAdditionalType
+//       courseType
+//       coursePrice
+//       courseTags
+//       coursePostersCollection {
+//         fluid(maxWidth: 600, quality: 100) {
+//           ...GatsbyContentfulFluid_withWebp
+//         }
+//         resize(width: 600, quality: 100) {
+//           src
+//         }
+//       }
+//       childContentfulGranichCourseCoursePolicyRichTextNode {
+//         json
+//       }
+//     }
 
-    curriculumHeader: contentfulGranichCourseCurriculumHeader(
-      curriculumHeaderAttachmentTo: { eq: "Осознанный Фриланс" }
-    ) {
-      curriculumHeaderTitle
-      childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode {
-        json
-      }
-      curriculumHeaderInfo {
-        json
-      }
-    }
-    curriculum: allContentfulGranichCourseCurriculum(
-      filter: { curriculumAttachmentTo: { eq: "Осознанный Фриланс" } }
-      sort: { fields: [curriculumOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          curriculumAttachmentTo
-          curriculumImportantDescr
-          childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode {
-            json
-          }
-          curriculumTagName
-          curriculumType
-          curriculumImportantDescr
-          curriculumColumnsType
-          childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode {
-            json
-          }
-          childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode {
-            json
-          }
-          childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode {
-            json
-          }
-          childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode {
-            json
-          }
-          childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode {
-            json
-          }
-        }
-      }
-    }
-    features: allContentfulGranichCourseFeatures(
-      filter: { featuresAttachmentTo: { eq: "Осознанный Фриланс" } }
-      sort: { fields: [featuresOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          featuresImage {
-            fluid(maxWidth: 120) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          featuresText
-          featuresTitle
-          featuresLink
-        }
-      }
-    }
-  }
-`
+//     curriculumHeader: contentfulGranichCourseCurriculumHeader(
+//       curriculumHeaderAttachmentTo: { eq: "Осознанный Фриланс" }
+//     ) {
+//       curriculumHeaderTitle
+//       childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode {
+//         json
+//       }
+//       curriculumHeaderInfo {
+//         json
+//       }
+//     }
+//     curriculum: allContentfulGranichCourseCurriculum(
+//       filter: { curriculumAttachmentTo: { eq: "Осознанный Фриланс" } }
+//       sort: { fields: [curriculumOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           curriculumAttachmentTo
+//           curriculumImportantDescr
+//           childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode {
+//             json
+//           }
+//           curriculumTagName
+//           curriculumType
+//           curriculumImportantDescr
+//           curriculumColumnsType
+//           childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode {
+//             json
+//           }
+//         }
+//       }
+//     }
+//     features: allContentfulGranichCourseFeatures(
+//       filter: { featuresAttachmentTo: { eq: "Осознанный Фриланс" } }
+//       sort: { fields: [featuresOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           featuresImage {
+//             fluid(maxWidth: 120) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           featuresText
+//           featuresTitle
+//           featuresLink
+//         }
+//       }
+//     }
+//   }
+// `
 
-const OsoznannyFreelancePage: React.FC<PageProps<GraphQlResults>> = ({
-  data,
-}) => {
-  if (
-    !data.offer &&
-    !data.curriculumHeader &&
-    !data.curriculum &&
-    !data.features
-  )
-    return <></>
+const OsoznannyFreelancePage = () => {
+  return <></>
+  // if (
+  //   !data.offer &&
+  //   !data.curriculumHeader &&
+  //   !data.curriculum &&
+  //   !data.features
+  // )
+  //   return <></>
   return (
     <Layout>
       <Header type={"dark"} />

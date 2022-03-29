@@ -128,13 +128,13 @@ module.exports = {
     `gatsby-transformer-sharp`,
 
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: 'yej6fivg4hs3',
-        accessToken: 'qM75FANyENYf6D1mk7FPZmm4IG4tMGyQKGkvF5LRJQ4',
-      }
-    },
+    // {
+    //   resolve: `gatsby-source-contentful`,
+    //   options: {
+    //     spaceId: 'yej6fivg4hs3',
+    //     accessToken: 'qM75FANyENYf6D1mk7FPZmm4IG4tMGyQKGkvF5LRJQ4',
+    //   }
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

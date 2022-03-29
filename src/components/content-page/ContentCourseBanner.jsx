@@ -35,7 +35,7 @@ const BannerContentWrapper = styled.div`
   }
 `
 
-const BannerImage = styled(props => <Img {...props} />)`
+const BannerImage = styled.img`
   width: 9.8vw;
   bottom: 0;
   left: 3.1vw;
@@ -194,12 +194,10 @@ const Banner = ({ data, text }) => {
     <BannerSection>
       <Container>
         <BannerWrapper>
-          {data.courseBannerImage && (
-            <BannerImage
-              style={{ position: "absolute" }}
-              fluid={data.courseBannerImage.fluid}
-            />
-          )}
+          <BannerImage
+            style={{ position: "absolute" }}
+            src="/images/course-banner.png"
+          />
           <BannerContentWrapper>
             <BannerContentMain>{text}</BannerContentMain>
             <BannerContentButton>

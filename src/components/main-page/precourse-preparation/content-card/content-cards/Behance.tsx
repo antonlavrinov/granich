@@ -23,7 +23,7 @@ const BehanceContent: React.FC<BehanceContentProps> = ({
             return <SC.Tag key={idx}>{contentTag}</SC.Tag>
           })}
         </SC.TagList>
-        <SC.Image fluid={content.contentImage.fluid}></SC.Image>
+        <SC.Image src={content.contentImage.src}></SC.Image>
         <SC.Title>{content.contentTitle}</SC.Title>
         <SC.Descr>
           {documentToReactComponents(content.contentDescription.json)}

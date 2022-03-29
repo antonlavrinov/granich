@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import Header from "../components/global/header"
 import SEO from "../components/seo"
-import { graphql } from "gatsby"
+// import { graphql } from "gatsby"
 import Mailing from "../components/global/mailing"
 import Banner from "../components/global/banner"
 import Books from "../components/content-page/Books"
@@ -13,165 +13,163 @@ import PodborkaOffer from "../components/content-page/PodborkaOffer"
 import ogImageGraphDesign from "../assets/images/seo/conscious-graphic-design-compilation.jpg"
 import ogImageVKGraphDesign from "../assets/images/seo/vk/conscious-graphic-design-compilation.jpg"
 import ContentCourseBanner from "../components/content-page/ContentCourseBanner"
+import data from "../data/pages/conscious-graphic-design-compilation";
+import dataIndex from "../data/pages/index";
+// export const podborkaPageQuery = graphql`
+//   query ContentfulGraphDesignCompilation {
+//     contentfulPodborka: contentfulGranichMainContentCard(
+//       contentSlug: { eq: "conscious-graphic-design-compilation" }
+//     ) {
+//       contentSlug
+//       contentTitle
+//       contentYoutubeVideoLink
+//       contentLinkBehance
+//       contentLinkMedium
+//       contentPDF {
+//         file {
+//           url
+//         }
+//       }
+//       contentBannerSwitch
+//       contentTags
+//       contentType
+//     }
+//     coursePodborkaBanner: contentfulGranichCourse(
+//       courseTitle: { eq: "Фундамент Графдизайна" }
+//     ) {
+//       courseTitle
+//       courseStart
+//       courseDuration
+//       courseStatus
+//       courseButtonText
+//       courseExternalLinkTransition
+//       courseAdditionalType
+//       courseType
+//       courseBannerImage {
+//         fluid(maxWidth: 120) {
+//           ...GatsbyContentfulFluid_withWebp
+//         }
+//       }
+//       courseBannerSubtext
+//       courseSlug
+//       courseTags
+//       courseTypeEmpty
+//     }
+//     graphicDesignBannerInfo: contentfulGranichCourse(
+//       courseTitle: { eq: "Фундамент Графдизайна" }
+//     ) {
+//       courseTitle
+//       courseStart
+//       courseDuration
+//       courseStatus
+//       courseButtonText
+//       courseExternalLinkTransition
+//       courseAdditionalType
+//       courseType
+//       courseBannerImage {
+//         fluid(maxWidth: 120) {
+//           ...GatsbyContentfulFluid_withWebp
+//         }
+//       }
+//       courseBannerSubtext
+//       courseSlug
+//       courseTags
+//       courseTypeEmpty
+//     }
+//     videoPodborkaGraphDesign: allContentfulGranichCollectionVideo(
+//       filter: { videoAttachmentTo: { eq: "Осознанный графдизайн" } }
+//       sort: { fields: [videoOrderDecimalNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
 
-export const podborkaPageQuery = graphql`
-  query ContentfulGraphDesignCompilation {
-    contentfulPodborka: contentfulGranichMainContentCard(
-      contentSlug: { eq: "conscious-graphic-design-compilation" }
-    ) {
-      contentSlug
-      contentTitle
-      contentYoutubeVideoLink
-      contentLinkBehance
-      contentLinkMedium
-      contentPDF {
-        file {
-          url
-        }
-      }
-      contentBannerSwitch
-      contentTags
-      contentType
-    }
-    coursePodborkaBanner: contentfulGranichCourse(
-      courseTitle: { eq: "Фундамент Графдизайна" }
-    ) {
-      courseTitle
-      courseStart
-      courseDuration
-      courseStatus
-      courseButtonText
-      courseExternalLinkTransition
-      courseAdditionalType
-      courseType
-      courseBannerImage {
-        fluid(maxWidth: 120) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-      }
-      courseBannerSubtext
-      courseSlug
-      courseTags
-      courseTypeEmpty
-    }
-    graphicDesignBannerInfo: contentfulGranichCourse(
-      courseTitle: { eq: "Фундамент Графдизайна" }
-    ) {
-      courseTitle
-      courseStart
-      courseDuration
-      courseStatus
-      courseButtonText
-      courseExternalLinkTransition
-      courseAdditionalType
-      courseType
-      courseBannerImage {
-        fluid(maxWidth: 120) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-      }
-      courseBannerSubtext
-      courseSlug
-      courseTags
-      courseTypeEmpty
-    }
-    videoPodborkaGraphDesign: allContentfulGranichCollectionVideo(
-      filter: { videoAttachmentTo: { eq: "Осознанный графдизайн" } }
-      sort: { fields: [videoOrderDecimalNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
+//           videoImagePreview {
+//             fluid(maxWidth: 800, quality: 70) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           videoTiming
+//           videoText {
+//             json
+//           }
+//           childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode {
+//             json
+//           }
 
-          videoImagePreview {
-            fluid(maxWidth: 800, quality: 70) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          videoTiming
-          videoText {
-            json
-          }
-          childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode {
-            json
-          }
+//           videoCategory
+//           videoPageLink
+//           videoContentIcons
+//         }
+//       }
+//     }
 
-          videoCategory
-          videoPageLink
-          videoContentIcons
-        }
-      }
-    }
+//     booksPodborkaGraphDesign: allContentfulGranichCollectionBooks(
+//       filter: { booksAttachmentTo: { eq: "Осознанный графдизайн" } }
+//       sort: { fields: [booksOrderDecimalNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           booksImage {
+//             fluid(maxWidth: 800, quality: 70) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           booksText {
+//             json
+//           }
+//           childContentfulGranichCollectionBooksBooksLinksRichTextNode {
+//             json
+//           }
 
-    booksPodborkaGraphDesign: allContentfulGranichCollectionBooks(
-      filter: { booksAttachmentTo: { eq: "Осознанный графдизайн" } }
-      sort: { fields: [booksOrderDecimalNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          booksImage {
-            fluid(maxWidth: 800, quality: 70) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          booksText {
-            json
-          }
-          childContentfulGranichCollectionBooksBooksLinksRichTextNode {
-            json
-          }
+//           booksCategory
+//         }
+//       }
+//     }
 
-          booksCategory
-        }
-      }
-    }
+//     toolsPodborkaGraphDesign: allContentfulGranichCollectionTools(
+//       filter: { toolsAttachmentTo: { eq: "Осознанный графдизайн" } }
+//       sort: { fields: [toolsOrderDecimalNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           toolsImage {
+//             fluid(maxWidth: 190, quality: 70) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           toolsText {
+//             json
+//           }
+//           childContentfulGranichCollectionToolsToolsLinksRichTextNode {
+//             json
+//           }
+//         }
+//       }
+//     }
 
-    toolsPodborkaGraphDesign: allContentfulGranichCollectionTools(
-      filter: { toolsAttachmentTo: { eq: "Осознанный графдизайн" } }
-      sort: { fields: [toolsOrderDecimalNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          toolsImage {
-            fluid(maxWidth: 190, quality: 70) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          toolsText {
-            json
-          }
-          childContentfulGranichCollectionToolsToolsLinksRichTextNode {
-            json
-          }
-        }
-      }
-    }
+//     offerPodborkaGraphDesign: contentfulGranichCollectionOffer(
+//       collectionOfferAttachmentTo: { eq: "Осознанный графдизайн" }
+//     ) {
+//       collectionOfferTitle {
+//         json
+//       }
+//       collectionOfferMainImage {
+//         fluid(maxWidth: 850) {
+//           ...GatsbyContentfulFluid_withWebp
+//         }
+//       }
+//       childContentfulGranichCollectionOfferCollectionOfferDescrWithAssetRichTextNode {
+//         json
+//       }
+//     }
+//   }
+// `
 
-    offerPodborkaGraphDesign: contentfulGranichCollectionOffer(
-      collectionOfferAttachmentTo: { eq: "Осознанный графдизайн" }
-    ) {
-      collectionOfferTitle {
-        json
-      }
-      collectionOfferMainImage {
-        fluid(maxWidth: 850) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-      }
-      childContentfulGranichCollectionOfferCollectionOfferDescrWithAssetRichTextNode {
-        json
-      }
-    }
-  }
-`
-
-type Props = {
-  data: any
-}
-
-const GraphDesignCompilationPage: React.FC<Props> = ({ data }) => {
+const GraphDesignCompilationPage = () => {
+  const foundationOffer = dataIndex.courseCards.edges.find((el) => el.node.courseTitle === "Фундамент Графдизайна")?.node;
   return (
     <Layout>
       <Header type="dark" />
@@ -196,12 +194,12 @@ const GraphDesignCompilationPage: React.FC<Props> = ({ data }) => {
       />
 
       <div className="section-top-block"></div>
-      {data.contentfulPodborka.contentBannerSwitch && (
+      {/* {data.contentfulPodborka.contentBannerSwitch && (
         <Banner data={data.coursePodborkaBanner} />
-      )}
+      )} */}
 
       <PodborkaOffer
-        tags={data.contentfulPodborka.contentTags}
+        tags={dataIndex.contentCardsRecommended.nodes.find(el => el.contentTitle === "Осознанная Подборка по Графдизайну").contentTags}
         dataContentPodborka={data.offerPodborkaGraphDesign}
       />
       <ContentCourseBanner
@@ -212,7 +210,7 @@ const GraphDesignCompilationPage: React.FC<Props> = ({ data }) => {
             сразу же записаться на курс<span>→</span>
           </>
         }
-        data={data.graphicDesignBannerInfo}
+        data={foundationOffer}
       />
 
       <Video

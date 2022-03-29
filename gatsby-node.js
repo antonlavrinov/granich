@@ -1,41 +1,52 @@
 const path = require("path")
+const contentData = require("./src/data/pages/index");
 // const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const contentContent = path.resolve("./src/templates/content-post.tsx")
   // const osoznannayaPodborkaPage = path.resolve("./src/templates/podborka")
-  return graphql(`
-    {
-      content: allContentfulGranichMainContentCard(
-        filter: {
-          contentType: {
-            in: ["Youtube", "Youtube + Medium + Behance", "Youtube + Pinterest"]
-          }
-        }
-      ) {
-        edges {
-          node {
-            contentSlug
-            contentYoutubeVideoLink
-            contentBanner
-          }
-        }
-      }
-    }
-  `).then(result => {
-    if (result.errors) {
-      throw result.errors
-    }
-    const contents = result.data.content.edges
+  // return graphql(`
+  //   {
+  //     content: allContentfulGranichMainContentCard(
+  //       filter: {
+  //         contentType: {
+  //           in: ["Youtube", "Youtube + Medium + Behance", "Youtube + Pinterest"]
+  //         }
+  //       }
+  //     ) {
+  //       edges {
+  //         node {
+  //           contentSlug
+  //           contentYoutubeVideoLink
+  //           contentBanner
+  //         }
+  //       }
+  //     }
+  //   }
+  // `).then(result => {
+
+    const contents = contentData.contentCardsRecommended.nodes;
+    // console.log("CONTENT DATA", contents);
     // const podborkas = result.data.podborkaPage.edges
-    contents.forEach(content => {
+    contents.filter(el => el.contentType === "Youtube" || el.contentType === "Youtube + Medium + Behance" || el.contentType === "Pinterest").forEach(content => {
       createPage({
-        path: content.node.contentSlug,
+        path: content.contentSlug,
         component: contentContent,
         context: {
-          slug: content.node.contentSlug,
-          banner: content.node.contentBanner,
+          slug: content.contentSlug,
+          banner: content.contentBanner,
+          contentTitle: content.contentTitle,
+          contentYoutubeVideoLink: content.contentYoutubeVideoLink,
+          contentLinkBehance: content.contentLinkBehance,
+          contentLinkPinterest: content.contentLinkPinterest,
+          contentLinkMedium: content.contentLinkMedium,
+          contentPDF: content.contentPDF,
+          contentZIPLink: content.contentZIPLink,
+          contentBannerSwitch: content.contentBannerSwitch,
+          contentTags: content.contentTags,
+          contentType: content.contentType,
+          contentAiFileLink: content.contentAiFileLink,
         },
       })
     })
@@ -49,7 +60,6 @@ exports.createPages = ({ graphql, actions }) => {
     //     },
     //   })
     // })
-  })
 }
 
 // podborkaPage: allContentfulGranichMainContentCard(

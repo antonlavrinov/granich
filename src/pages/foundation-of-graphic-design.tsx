@@ -31,242 +31,244 @@ import styled from 'styled-components';
 import TeamMember from "../components/main-page/team/teacher"
 import { Container } from "../components/style"
 import FoundationPortfolio from "../components/foundation-of-graph-design/foundation-portfolio"
+import data from "../data/pages/foundation-of-graphic-design";
+import dataIndex from "../data/pages/index";
 
-export const contentfulQuery = graphql`
-  query foundationGraphDesignQuery {
-    foundationOffer: contentfulGranichCourse(
-      courseTitle: { eq: "Фундамент Графдизайна" }
-    ) {
-      courseMainImage {
-        fluid(maxWidth: 850, quality: 90) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-      }
-      courseMainTitle {
-        json
-      }
-      courseDescr
-      courseStart
-      courseDuration
-      courseStartAndEnd
-      courseStream
-      courseStatus
-      courseButtonText
-      courseExternalLinkTransition
-      courseAdditionalType
-      courseType
-      courseTitle
-      coursePrice
-      courseTags
-      coursePostersCollection {
-        fluid(maxWidth: 600, quality: 100) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-        resize(width: 600, quality: 100) {
-          src
-        }
-      }
-      childContentfulGranichCourseCoursePolicyRichTextNode {
-        json
-      }
-    }
-    foundationFeatures: allContentfulGranichCourseFeatures(
-      filter: { featuresAttachmentTo: { eq: "Фундамент Графдизайна" } }
-      sort: { fields: [featuresOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          featuresImage {
-            fluid(maxWidth: 120) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          featuresText
-          featuresTitle
-          featuresLink
-        }
-      }
-    }
-    foundationPosters: allContentfulGranichPoster(
-      filter: { posterAttachmentTo: { eq: "Фундамент Графдизайна" } }
-      sort: { fields: [posterOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          posterImage {
-            fluid(maxWidth: 1000) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          posterAuthor
-          posterStream
-        }
-      }
-    }
-    foundationTrainingPath: allContentfulGranichMainTrainingPath(
-      filter: { trainingPathAttachmentTo: { eq: "Фундамент Графдизайна" } }
-      sort: { fields: [trainingPathOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          trainingPathImage {
-            fluid(maxWidth: 1200, quality: 70) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          trainingPathTitle
-          trainingPathText {
-            json
-          }
-        }
-      }
-    }
-    foundationCurriculumHeader: contentfulGranichCourseCurriculumHeader(
-      curriculumHeaderAttachmentTo: { eq: "Фундамент Графдизайна" }
-    ) {
-      curriculumHeaderTitle
-      childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode {
-        json
-      }
-      curriculumHeaderInfo {
-        json
-      }
-    }
-    foundationCurriculum: allContentfulGranichCourseCurriculum(
-      filter: { curriculumAttachmentTo: { eq: "Фундамент Графдизайна" } }
-      sort: { fields: [curriculumOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          curriculumAttachmentTo
-          curriculumImportantDescr
+// export const contentfulQuery = graphql`
+//   query foundationGraphDesignQuery {
+//     foundationOffer: contentfulGranichCourse(
+//       courseTitle: { eq: "Фундамент Графдизайна" }
+//     ) {
+//       courseMainImage {
+//         fluid(maxWidth: 850, quality: 90) {
+//           ...GatsbyContentfulFluid_withWebp
+//         }
+//       }
+//       courseMainTitle {
+//         json
+//       }
+//       courseDescr
+//       courseStart
+//       courseDuration
+//       courseStartAndEnd
+//       courseStream
+//       courseStatus
+//       courseButtonText
+//       courseExternalLinkTransition
+//       courseAdditionalType
+//       courseType
+//       courseTitle
+//       coursePrice
+//       courseTags
+//       coursePostersCollection {
+//         fluid(maxWidth: 600, quality: 100) {
+//           ...GatsbyContentfulFluid_withWebp
+//         }
+//         resize(width: 600, quality: 100) {
+//           src
+//         }
+//       }
+//       childContentfulGranichCourseCoursePolicyRichTextNode {
+//         json
+//       }
+//     }
+//     foundationFeatures: allContentfulGranichCourseFeatures(
+//       filter: { featuresAttachmentTo: { eq: "Фундамент Графдизайна" } }
+//       sort: { fields: [featuresOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           featuresImage {
+//             fluid(maxWidth: 120) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           featuresText
+//           featuresTitle
+//           featuresLink
+//         }
+//       }
+//     }
+//     foundationPosters: allContentfulGranichPoster(
+//       filter: { posterAttachmentTo: { eq: "Фундамент Графдизайна" } }
+//       sort: { fields: [posterOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           posterImage {
+//             fluid(maxWidth: 1000) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           posterAuthor
+//           posterStream
+//         }
+//       }
+//     }
+//     foundationTrainingPath: allContentfulGranichMainTrainingPath(
+//       filter: { trainingPathAttachmentTo: { eq: "Фундамент Графдизайна" } }
+//       sort: { fields: [trainingPathOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           trainingPathImage {
+//             fluid(maxWidth: 1200, quality: 70) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           trainingPathTitle
+//           trainingPathText {
+//             json
+//           }
+//         }
+//       }
+//     }
+//     foundationCurriculumHeader: contentfulGranichCourseCurriculumHeader(
+//       curriculumHeaderAttachmentTo: { eq: "Фундамент Графдизайна" }
+//     ) {
+//       curriculumHeaderTitle
+//       childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode {
+//         json
+//       }
+//       curriculumHeaderInfo {
+//         json
+//       }
+//     }
+//     foundationCurriculum: allContentfulGranichCourseCurriculum(
+//       filter: { curriculumAttachmentTo: { eq: "Фундамент Графдизайна" } }
+//       sort: { fields: [curriculumOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           curriculumAttachmentTo
+//           curriculumImportantDescr
 
-          childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode {
-            json
-          }
-          curriculumTagName
-          curriculumType
-          curriculumImportantDescr
-          curriculumColumnsType
-          childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode {
-            json
-          }
-          childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode {
-            json
-          }
-          childContentfulGranichCourseCurriculumCurriculumAdditionalBlockRichTextNode {
-            json
-          }
-          childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode {
-            json
-          }
-          childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode {
-            json
-          }
-          childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode {
-            json
-          }
-        }
-      }
-    }
-    foundationCourseCards: allContentfulGranichCourse(
-      filter: { courseTitle: { eq: "Granich InDesign" } }
-      sort: { fields: [courseOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          courseStatus
-          courseButtonText
-          courseExternalLinkTransition
-          courseAdditionalType
-          courseStart
-          courseDescr
-          courseDuration
-          coursePreviewImage {
-            fluid(maxWidth: 450) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          courseTags
-          courseTeachers {
-            id
-            fluid(maxWidth: 100) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          courseTitle
-          courseType
-          courseSlug
-          courseTypeDevelopment
-          courseTypeEmpty
-        }
-      }
-    }
-    foundationReviewsHeader: contentfulGranichCourseReviewsHeader(
-      reviewsHeaderAttachmentTo: { eq: "Фундамент Графдизайна" }
-    ) {
-      reviewsHeaderTitle
-      reviewsHeaderLinkTelegram
-      reviewsHeaderLinkVk
-      reviewsHeaderAttachmentTo
-    }
-    foundationAnswers: allContentfulGranichCourseAnswers(
-      filter: { answersAttachmentTo: { eq: "Фундамент Графдизайна" } }
-      sort: { fields: [answersOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          answersTagName
-          answersTagType
-          isWrap
-          childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode {
-            json
-          }
-          childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode {
-            json
-          }
-        }
-      }
-    }
-    foundationTeam: allContentfulGranichMainTeachers(
-      filter: {
-        teacherName: {
-          in: ["Вадим Гранич", "Евгения Дроботун", "Марина Асташова"]
-        }
-      }
-      sort: { fields: [teacherOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          teacherDescr {
-            json
-          }
-          teacherEmail
-          teacherImage {
-            fluid(maxWidth: 250) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          teacherName
-          teacherSocialInstagram
-          teacherSocialPinterest
-          teacherSocialTelegram
-          teacherSocialVK
-          teacherSocialsOrder
-        }
-      }
-    }
+//           childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode {
+//             json
+//           }
+//           curriculumTagName
+//           curriculumType
+//           curriculumImportantDescr
+//           curriculumColumnsType
+//           childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseCurriculumCurriculumAdditionalBlockRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode {
+//             json
+//           }
+//         }
+//       }
+//     }
+//     foundationCourseCards: allContentfulGranichCourse(
+//       filter: { courseTitle: { eq: "Granich InDesign" } }
+//       sort: { fields: [courseOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           courseStatus
+//           courseButtonText
+//           courseExternalLinkTransition
+//           courseAdditionalType
+//           courseStart
+//           courseDescr
+//           courseDuration
+//           coursePreviewImage {
+//             fluid(maxWidth: 450) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           courseTags
+//           courseTeachers {
+//             id
+//             fluid(maxWidth: 100) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           courseTitle
+//           courseType
+//           courseSlug
+//           courseTypeDevelopment
+//           courseTypeEmpty
+//         }
+//       }
+//     }
+//     foundationReviewsHeader: contentfulGranichCourseReviewsHeader(
+//       reviewsHeaderAttachmentTo: { eq: "Фундамент Графдизайна" }
+//     ) {
+//       reviewsHeaderTitle
+//       reviewsHeaderLinkTelegram
+//       reviewsHeaderLinkVk
+//       reviewsHeaderAttachmentTo
+//     }
+//     foundationAnswers: allContentfulGranichCourseAnswers(
+//       filter: { answersAttachmentTo: { eq: "Фундамент Графдизайна" } }
+//       sort: { fields: [answersOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           answersTagName
+//           answersTagType
+//           isWrap
+//           childContentfulGranichCourseAnswersAnswersFirstColumnRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseAnswersAnswersSecondColumnRichTextNode {
+//             json
+//           }
+//         }
+//       }
+//     }
+//     foundationTeam: allContentfulGranichMainTeachers(
+//       filter: {
+//         teacherName: {
+//           in: ["Вадим Гранич", "Евгения Дроботун", "Марина Асташова"]
+//         }
+//       }
+//       sort: { fields: [teacherOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           teacherDescr {
+//             json
+//           }
+//           teacherEmail
+//           teacherImage {
+//             fluid(maxWidth: 250) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           teacherName
+//           teacherSocialInstagram
+//           teacherSocialPinterest
+//           teacherSocialTelegram
+//           teacherSocialVK
+//           teacherSocialsOrder
+//         }
+//       }
+//     }
     
     
-  }
-`
+//   }
+// `
 
 export const Team = styled.div`
   display: grid;
@@ -306,9 +308,9 @@ export const TeamTitle = styled.div`
   }
 `
 
-const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
-  data,
-}) => {
+const OsoznannyGraphDesignPage = () => {
+  const foundationOffer = dataIndex.courseCards.edges.find((el) => el.node.courseTitle === "Фундамент Графдизайна")?.node;
+  // console.log("foundationOffer", foundationOffer)
     const curriculumDataWithContentCards = {
       edges: [
         {
@@ -350,7 +352,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
             curriculumImportantDescr: null,
             curriculumTagName: "⚠ Подготовка",
             curriculumType: true,
-            customContent: (<AdobeIndesignCurriculum data={data.foundationCourseCards.edges}/>),
+            customContent: (<AdobeIndesignCurriculum data={dataIndex.courseCards.edges.filter(el => el.node.courseTitle === "Granich InDesign")}/>),
             customLessonColor: "var(--granich-red)",
           },
         },
@@ -359,7 +361,8 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       ],
     }
 
-    console.log("posters", data?.foundationPosters)
+    // console.log("data", data);
+    // console.log("posters", data?.foundationPosters)
   return (
     <Layout>
       <Header type={"dark"} />
@@ -381,7 +384,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <div className="section-top-block"></div>
       <CourseOffer 
         // allowPosters={false} 
-        data={data.foundationOffer} 
+        data={foundationOffer} 
         // postersAuthors="Работы учеников"
         // additionalText={"Этот курс является первой из трёх частей учебной программы Осознанного Графдизайна"} 
       />
@@ -391,7 +394,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <FoundationExample />
       <VideoPresentation />
      
-      <CourseTimetable courseTitle={data.foundationOffer.courseTitle} noGif noKeepCalm text={(<>Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе вы не получите разбор куратора по этому домашнему заданию (в том числе не сможете делать творческий макет из этого ДЗ). Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течение недели <i>(хотя бы два часа каждый день).</i></>)}/>
+      <CourseTimetable courseTitle={foundationOffer.courseTitle} noGif noKeepCalm text={(<>Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе вы не получите разбор куратора по этому домашнему заданию (в том числе не сможете делать творческий макет из этого ДЗ). Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течение недели <i>(хотя бы два часа каждый день).</i></>)}/>
       <CourseTrainingPath data={data.foundationTrainingPath}/>
       <CourseCurriculum  
         dataHeader={data.foundationCurriculumHeader}
@@ -411,7 +414,7 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
       <div id="participation-section"></div>
       <CourseParticipation
         policy={true}
-        data={data.foundationOffer}
+        data={foundationOffer}
         formId={`ltForm7094719`}
         formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1127538041`}
         googleAnaliticsCategory={`Отправка формы Фундамент Графдизайна`}
@@ -436,7 +439,10 @@ const OsoznannyGraphDesignPage: React.FC<PageProps<GraphQlResults>> = ({
         <TeamWrapper>
           <TeamTitle>Курс разрабатывали:</TeamTitle>
           <Team>
-            {data?.foundationTeam?.edges?.map((el, idx) => {
+            {dataIndex.team.edges.filter((el) => {
+              const condition = el.node.teacherName === "Вадим Гранич" || el.node.teacherName === "Евгения Дроботун" || el.node.teacherName === "Марина Асташова";
+              return condition;
+            }).map((el, idx) => {
               return <TeamMember key={el.node.id} teacher={el.node} />
             })}
           </Team>

@@ -74,7 +74,7 @@ const Posters = ({ postersCollection }: Props) => {
             <SC.Poster
               draggable={false}
               className="noselect"
-              fluid={postersCollection[i].fluid}
+              src={postersCollection[i].src}
             />
           </SC.CardItem>
         </SC.CardItemWrapper>

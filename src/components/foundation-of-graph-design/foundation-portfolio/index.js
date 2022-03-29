@@ -24,7 +24,7 @@ const FoundationPortfolio = ({posters}) => {
                     {posters.map((item, index) => (
                         <SC.PosterWrapper key={index}>
                             <Zoom wrapStyle={{display: "block", cursor: "pointer"}}>
-                                <SC.Image fluid={item.node.posterImage.fluid} alt="poster"/>
+                                <SC.Image src={item.node.posterImage.src} alt="poster"/>
                             </Zoom>
                             <SC.PosterAuthor>
                                 <SC.AuthorName>{item.node.posterAuthor}</SC.AuthorName>

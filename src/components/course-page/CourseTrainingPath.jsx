@@ -128,8 +128,8 @@ const TrainingPathBlockImage = styled.div`
     `}
 `
 
-const TrainingPathImage = styled(props => <Img {...props} />)`
-  width: 100%;
+const TrainingPathImage = styled.img`
+  height: 100%;
   background-size: cover;
   box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.4);
   @media only screen and (max-width: 575px) {
@@ -216,7 +216,7 @@ const CourseTrainingPath = ({ data }) => {
                           <TrainingPathBlockImage key={idx} half>
                             <Zoom>
                               <TrainingPathImage
-                                fluid={itemImage.fluid}
+                                src={itemImage.src}
                               ></TrainingPathImage>
                             </Zoom>
                           </TrainingPathBlockImage>
@@ -227,7 +227,7 @@ const CourseTrainingPath = ({ data }) => {
                     <TrainingPathBlockImage>
                       <Zoom>
                         <TrainingPathImage
-                          fluid={item.node.trainingPathImage[0].fluid}
+                          src={item.node.trainingPathImage[0].src}
                         ></TrainingPathImage>
                       </Zoom>
                     </TrainingPathBlockImage>

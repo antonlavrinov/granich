@@ -1,47 +1,40 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Header from "../components/global/header"
-import { graphql, PageProps } from "gatsby"
+// import { graphql, PageProps } from "gatsby"
 import LegalDocument from "../components/legal-document/LegalDocument"
 import SEO from "../components/seo"
 import ogImage from "../assets/images/seo/index-main.jpg"
 import ogImageVK from "../assets/images/seo/vk/index-main.jpg"
+import data from "../data/pages/privacy";
 
-export const contentfulQuery = graphql`
-  query contentfulQueryPrivacy {
-    privacy: allContentfulGranichLegalDoc(
-      filter: { legalDocType: { in: ["Политика конфиденциальности"] } }
-    ) {
-      edges {
-        node {
-          childContentfulGranichLegalDocLegalDocTextRichTextNode {
-            json
-          }
-          legalDocDate
-          legalDocType
-          legalDocAdditionalInfo {
-            json
-          }
-          legalDocPDF {
-            file {
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const contentfulQuery = graphql`
+//   query contentfulQueryPrivacy {
+//     privacy: allContentfulGranichLegalDoc(
+//       filter: { legalDocType: { in: ["Политика конфиденциальности"] } }
+//     ) {
+//       edges {
+//         node {
+//           childContentfulGranichLegalDocLegalDocTextRichTextNode {
+//             json
+//           }
+//           legalDocDate
+//           legalDocType
+//           legalDocAdditionalInfo {
+//             json
+//           }
+//           legalDocPDF {
+//             file {
+//               url
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
-type GraphQlResults = {
-  privacy: {
-    edges: {
-      node: any
-    }
-  }
-}
-
-const PrivacyPage: React.FC<PageProps<GraphQlResults>> = ({ data }) => {
+const PrivacyPage = () => {
   const mainText =
     data.privacy.edges[0].node
       .childContentfulGranichLegalDocLegalDocTextRichTextNode.json
@@ -49,6 +42,7 @@ const PrivacyPage: React.FC<PageProps<GraphQlResults>> = ({ data }) => {
   const date = data.privacy.edges[0].node.legalDocDate
   const docType = data.privacy.edges[0].node.legalDocType
   const additionalInfo = data.privacy.edges[0].node.legalDocAdditionalInfo.json
+
   return (
     <Layout>
       <SEO

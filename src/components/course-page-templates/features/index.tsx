@@ -22,7 +22,7 @@ const Features: React.FC<Props> = ({ data, title }) => {
               <Feature
                 key={feature.node.id}
                 link={feature.node.featuresLink}
-                image={feature.node.featuresImage.fluid}
+                image={feature.node.featuresImage.src}
                 title={feature.node.featuresTitle}
                 text={feature.node.featuresText}
               />

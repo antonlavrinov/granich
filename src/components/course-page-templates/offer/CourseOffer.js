@@ -65,9 +65,10 @@ export const Wrapper = styled.div`
   }
 `
 
-export const MainImage = styled(Img)`
+export const MainImage = styled.img`
   position: absolute !important;
-  width: 100% !important;
+  width: auto;
+  height: 100%;
   top: 0;
   right: 0;
   bottom: 0;

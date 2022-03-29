@@ -78,7 +78,7 @@ export const CircleMobile = styled.div`
   }
 `
 
-export const Poster = styled(props => <Img {...props} />)`
+export const Poster = styled.img`
   user-select: none;
   /* width: 95%; */
   width: 100%;

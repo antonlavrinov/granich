@@ -27,7 +27,7 @@ const CourseCard: React.FC<Props> = ({ courseData, icons }) => {
           <SC.Image
             empty={courseData.courseTypeEmpty}
             active={courseData.courseStatus}
-            fluid={courseData.coursePreviewImage.fluid}
+            src={courseData.coursePreviewImage.src}
           ></SC.Image>
           <SC.MainTag
             empty={courseData.courseTypeEmpty}
@@ -38,18 +38,18 @@ const CourseCard: React.FC<Props> = ({ courseData, icons }) => {
           <SC.Teachers>
             {courseData.courseTeachers.length > 1 ? (
               <>
-                {courseData.courseTeachers.map((teacher, idx) => {
+                {courseData.courseTeachers.map(({ src }, idx) => {
                   return (
                     <SC.Teacher
                       several={true}
                       key={idx}
-                      fluid={teacher.fluid}
+                      src={src}
                     />
                   )
                 })}
               </>
             ) : (
-              <SC.Teacher fluid={courseData.courseTeachers[0].fluid} />
+              <SC.Teacher src={courseData.courseTeachers[0].src} />
             )}
           </SC.Teachers>
         </SC.ImageWrapper>

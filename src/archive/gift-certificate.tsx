@@ -7,41 +7,42 @@ import SEO from "../components/seo"
 import ogImage from "../assets/images/seo/index-main.jpg"
 import ogImageVK from "../assets/images/seo/vk/index-main.jpg"
 
-export const contentfulQuery = graphql`
-  query contentfulQueryGiftCertificate {
-    giftCertificate: allContentfulGranichLegalDoc(
-      filter: { legalDocType: { in: ["Подарочный сертификат"] } }
-    ) {
-      edges {
-        node {
-          childContentfulGranichLegalDocLegalDocTextRichTextNode {
-            json
-          }
-          legalDocDate
-          legalDocType
-          legalDocAdditionalInfo {
-            json
-          }
-          legalDocPDF {
-            file {
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const contentfulQuery = graphql`
+//   query contentfulQueryGiftCertificate {
+//     giftCertificate: allContentfulGranichLegalDoc(
+//       filter: { legalDocType: { in: ["Подарочный сертификат"] } }
+//     ) {
+//       edges {
+//         node {
+//           childContentfulGranichLegalDocLegalDocTextRichTextNode {
+//             json
+//           }
+//           legalDocDate
+//           legalDocType
+//           legalDocAdditionalInfo {
+//             json
+//           }
+//           legalDocPDF {
+//             file {
+//               url
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
-const GiftCertificatePage: React.FC<PageProps<GraphQlResults>> = ({ data }) => {
-  const mainText =
-    data.giftCertificate.edges[0].node
-      .childContentfulGranichLegalDocLegalDocTextRichTextNode.json
-  const dataPdf = data.giftCertificate.edges[0].node.legalDocPDF.file.url
-  const date = data.giftCertificate.edges[0].node.legalDocDate
-  const docType = data.giftCertificate.edges[0].node.legalDocType
-  const additionalInfo =
-    data.giftCertificate.edges[0].node.legalDocAdditionalInfo.json
+const GiftCertificatePage = () => {
+  // const mainText =
+  //   data.giftCertificate.edges[0].node
+  //     .childContentfulGranichLegalDocLegalDocTextRichTextNode.json
+  // const dataPdf = data.giftCertificate.edges[0].node.legalDocPDF.file.url
+  // const date = data.giftCertificate.edges[0].node.legalDocDate
+  // const docType = data.giftCertificate.edges[0].node.legalDocType
+  // const additionalInfo =
+  //   data.giftCertificate.edges[0].node.legalDocAdditionalInfo.json
+    return <></>
   return (
     <Layout>
       <SEO

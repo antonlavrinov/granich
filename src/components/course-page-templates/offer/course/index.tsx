@@ -76,7 +76,7 @@ const CourseTemplateOffer: React.FC<Props> = ({
                   objectFit: "contain",
                   objectPosition: "right center",
                 }}
-                fluid={data.courseMainImage.fluid}
+                src={data.courseMainImage.src}
                 courseTitle={data.courseTitle}
               />
             )}

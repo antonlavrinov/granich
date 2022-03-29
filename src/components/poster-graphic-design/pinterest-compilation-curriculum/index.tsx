@@ -7,6 +7,7 @@ import * as SC from "./PinterestCompilationCurriculum"
 
 const PinterestCompilationCurriculum = ({ dataInDesign, dataPinterest }) => {
     // console.log("data", data)
+    console.log("data pint", dataPinterest)
     return (
         <SC.Wrapper>
             <SC.PinterestContent>

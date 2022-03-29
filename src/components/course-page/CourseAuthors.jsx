@@ -179,9 +179,7 @@ const TeacherHeader = styled.div`
     margin-bottom: 3vw;
   }
 `
-const TeacherImage = styled(props => (
-  <BackgroundImage {...props}></BackgroundImage>
-))`
+const TeacherImage = styled.img`
   width: 5.1vw;
   height: 5.1vw;
   border-radius: 100vw;
@@ -504,7 +502,7 @@ export const MasterClassTeacherBlock = ({ numberOfTeachers, teacher }) => {
       <TeacherHeader>
         <TeacherImage
           numberOfTeachers={numberOfTeachers}
-          fluid={teacher.teacherImage.fluid}
+          src={teacher.teacherImage.src}
         ></TeacherImage>
         <TeacherSocials>
           <TeacherSocialIcons numberOfTeachers={numberOfTeachers}>

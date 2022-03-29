@@ -40,7 +40,7 @@ const ToolsItemWrapper = styled.div`
   }
 `
 
-const ToolsItemImage = styled(props => <Img {...props} />)`
+const ToolsItemImage = styled.img`
   height: auto;
   width: 5.7vw;
   display: flex;
@@ -178,7 +178,7 @@ const ToolsItem = ({ text, image, links }) => {
     <ToolsItemWrapper>
       <ToolsItemInfo>
         <ToolsItemInfoDetails>
-          <ToolsItemImage fluid={image} />
+          <ToolsItemImage src={image} />
           <ToolsItemInfoLinks className="collection_link">
             {documentToReactComponents(links.json, options)}
           </ToolsItemInfoLinks>
@@ -206,7 +206,7 @@ const Tools = ({ data }) => {
               {data.map(toolsItem => {
                 return (
                   <ToolsItem
-                    image={toolsItem.node.toolsImage.fluid}
+                    image={toolsItem.node.toolsImage.src}
                     key={toolsItem.node.id}
                     links={
                       toolsItem.node

@@ -66,13 +66,16 @@ const ExplanationsBlockTitle = styled.h3`
   }
 `
 
-const ExplanationsImage = styled(props => <BackgroundImage {...props} />)`
+const ExplanationsImage = styled.img`
   width: 100%;
   height: 19vw;
+  padding: 0 1vw;
   margin-bottom: 1.5vw;
+  object-fit: cover;
   @media only screen and (max-width: 575px) {
     height: 60vw;
     margin-bottom: 6vw;
+    padding: 0 8vw;
   }
 `
 
@@ -143,7 +146,7 @@ const ExplanationsBlock = ({ image, title, text }) => {
       <ExplanationsBlockTitle>{title}</ExplanationsBlockTitle>
       <ExplanationsImage
         style={{ backgroundSize: "auto 100%" }}
-        fluid={image}
+        src={image}
       ></ExplanationsImage>
       <ExplanationsBlockTextBlock>
         <ExplanationsBlockTextLine>
@@ -166,7 +169,7 @@ const CourseExplanations = ({ data }) => {
             return (
               <ExplanationsBlock
                 key={explanation.node.id}
-                image={explanation.node.explanationsImage.fluid}
+                image={explanation.node.explanationsImage.src}
                 title={explanation.node.explanationsTitle}
                 text={explanation.node.explanationsText.json}
               />

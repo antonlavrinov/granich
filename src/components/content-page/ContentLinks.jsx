@@ -223,60 +223,60 @@ const ContentLinks = ({ data }) => {
       <Container>
         <ContentLinksWrapper
           exists={
-            data.contentfulContent.contentPDF ||
-            data.contentfulContent.contentLinkMedium ||
-            data.contentfulContent.contentLinkBehance ||
-            data.contentfulContent.contentLinkPinterest ||
-            data.contentfulContent.contentAiFileLink ||
-            data.contentfulContent.contentZIPLink
+            data.contentPDF ||
+            data.contentLinkMedium ||
+            data.contentLinkBehance ||
+            data.contentLinkPinterest ||
+            data.contentAiFileLink ||
+            data.contentZIPLink
           }
         >
-          {data.contentfulContent.contentPDF && (
+          {data.contentPDF && (
             <ContentLink
               type="PDF"
               text={"Скачайте и изучайте урок оффлайн в любое время"}
               title={"Скачать PDF"}
-              link={data.contentfulContent.contentPDF.file.url}
+              link={data.contentPDF.file.url}
             />
           )}
-          {data.contentfulContent.contentZIPLink && (
+          {data.contentZIPLink && (
             <ContentLink
               type="ZIP"
               text={"В нём все необходимые материалы урока"}
               title={"Скачать ZIP-архив"}
-              link={data.contentfulContent.contentZIPLink}
+              link={data.contentZIPLink}
             />
           )}
-          {data.contentfulContent.contentLinkMedium && (
+          {data.contentLinkMedium && (
             <ContentLink
               type="Medium"
               text={"Читайте урок в формате статьи на Медиуме "}
               title={"Читать на Медиуме"}
-              link={data.contentfulContent.contentLinkMedium}
+              link={data.contentLinkMedium}
             />
           )}
-          {data.contentfulContent.contentLinkBehance && (
+          {data.contentLinkBehance && (
             <ContentLink
               type="Behance"
               text={"Смотрите и добавьте материал себе на Биханс"}
               title={"Смотреть на Бихансе"}
-              link={data.contentfulContent.contentLinkBehance}
+              link={data.contentLinkBehance}
             />
           )}
-          {data.contentfulContent.contentLinkPinterest && (
+          {data.contentLinkPinterest && (
             <ContentLink
               type="Pinterest"
               text={"Подробнее о материале на доске Пинтереста"}
               title={"Смотреть на Пинтересте"}
-              link={data.contentfulContent.contentLinkPinterest}
+              link={data.contentLinkPinterest}
             />
           )}
-          {data.contentfulContent.contentAiFileLink && (
+          {data.contentAiFileLink && (
             <ContentLink
               type="Illustrator"
               text={"Все слайды расположены на отдельных артбордах"}
               title={"Скачать Ai-файл урока"}
-              link={data.contentfulContent.contentAiFileLink}
+              link={data.contentAiFileLink}
             />
           )}
         </ContentLinksWrapper>

@@ -27,9 +27,7 @@ const PodborkaOfferSection = styled.section`
   }
 `
 
-const PodborkaOfferWrapper = styled(props => (
-  <BackgroundImage {...props}></BackgroundImage>
-))`
+const PodborkaOfferWrapper = styled.div`
   background: white;
   border-radius: 0.6vw;
   padding: 2.5vw 2.7vw 4.4vw;
@@ -40,6 +38,9 @@ const PodborkaOfferWrapper = styled(props => (
   background-size: auto 100%;
   background-position: right;
   overflow: hidden;
+  ${props => props.src && `
+    background-image: url(${props.src});
+  `}
   @media only screen and (max-width: 575px) {
     display: none;
   }
@@ -56,10 +57,12 @@ const PodborkaOfferWrapperMobile = styled.section`
   }
 `
 
-const PodborkaOfferMainImage = styled(props => <Img {...props} />)`
+const PodborkaOfferMainImage = styled.img`
   @media only screen and (max-width: 575px) {
     // margin-bottom: 5vw;
     height: 80vw;
+    width: 100%;
+    object-fit: cover;
   }
 `
 
@@ -169,12 +172,12 @@ const PodborkaOfferDescr = styled.div`
   }
 `
 
-const PodborkaOffer = ({ tags, dataContentPodborka }) => {
+const PodborkaOffer = ({ tags = [], dataContentPodborka }) => {
   return (
     <PodborkaOfferSection>
       <Container>
         <PodborkaOfferWrapper
-          fluid={dataContentPodborka.collectionOfferMainImage.fluid}
+          src={dataContentPodborka.collectionOfferMainImage.src}
         >
           <PodborkaOfferTags>
             {tags.map((tag, idx) => {
@@ -209,7 +212,7 @@ const PodborkaOffer = ({ tags, dataContentPodborka }) => {
           <PodborkaOfferMainImage
             loading="eager"
             fadeIn={false}
-            fluid={dataContentPodborka.collectionOfferMainImage.fluid}
+            src={dataContentPodborka.collectionOfferMainImage.src}
           />
           <PodborkaOfferDescr>
             {documentToReactComponents(

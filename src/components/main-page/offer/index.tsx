@@ -1,24 +1,39 @@
 import React from "react"
 import { Container } from "../../style"
 import * as SC from "./Offer"
-import { IIndexOffer } from "../../../interfaces/main-page"
+import { graphql, useStaticQuery } from "gatsby"
 
-type Props = {
-  data: IIndexOffer
-  scrollTo: (
-    selector: string,
-    blockPosition?: "start" | "center" | "end" | "nearest"
-  ) => boolean
-}
+const Offer = ({ scrollTo }) => {
 
-const Offer: React.FC<Props> = ({ data, scrollTo }) => {
-  const headerImage = data.headerImage.fluid
-  const headerImageMobile = data.headerImageMobile.fluid
-  const headerSubtitleImage = data.headerSubtitleImage.fluid
-  const headerSubtitle_01 = data.headerSubtitle_01
-  const headerSubtitle_02 = data.headerSubtitle_02
-  const headerSubtitle_03 = data.headerSubtitle_03
-  const headerTitle = data.headerTitle
+  const images = useStaticQuery(graphql`
+    query indexImages {
+      headerImage: file(relativePath: { eq: "background.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 2729) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      headerImageMobile: file(relativePath: { eq: "background_mobile.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 575) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      headerSubtitleImage: file(relativePath: { eq: "flags.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 50) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  const headerImage = images.headerImage.childImageSharp.fluid
+  const headerImageMobile = images.headerImageMobile.childImageSharp.fluid
+  const headerSubtitleImage = images.headerSubtitleImage.childImageSharp.fluid
 
   return (
     <>
@@ -27,18 +42,18 @@ const Offer: React.FC<Props> = ({ data, scrollTo }) => {
         <SC.MainImageMobile fluid={headerImageMobile} />
         <Container>
           <SC.Wrapper>
-            <SC.Title>{headerTitle}</SC.Title>
+            <SC.Title>Онлайн-школа Granich</SC.Title>
             <SC.Descr>
-              {headerSubtitle_01}{" "}
+              Осознанно развиваем {" "}
               <SC.FlagsImg alt="flags" fluid={headerSubtitleImage} /> <br />{" "}
-              {headerSubtitle_02}{" "}
-              <span
+              твёрдые навыки дизайнеров
+              {/* <span
                 role="button"
                 onKeyDown={() => scrollTo("#manifest")}
                 onClick={() => scrollTo("#manifest")}
               >
-                {headerSubtitle_03}
-              </span>
+                {" "}
+              </span> */}
             </SC.Descr>
           </SC.Wrapper>
         </Container>

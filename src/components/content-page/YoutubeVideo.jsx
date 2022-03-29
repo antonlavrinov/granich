@@ -128,7 +128,7 @@ const YoutubeVideo = ({ data }) => {
         <YoutubeWrapper>
           <YoutubeBlock>
             <ContentInfoTagsMobile>
-              {data.contentfulContent.contentTags.map((tag, idx) => {
+              {data.contentTags.map((tag, idx) => {
                 return <ContentInfoTag key={idx}>{tag}</ContentInfoTag>
               })}
             </ContentInfoTagsMobile>
@@ -137,11 +137,11 @@ const YoutubeVideo = ({ data }) => {
                 <div></div>
               </div>
             </div>
-            {data.contentfulContent.contentYoutubeVideoLink && (
+            {data.contentYoutubeVideoLink && (
               <iframe
                 title="youtubeFrame"
                 width="100%"
-                src={`${data.contentfulContent.contentYoutubeVideoLink}?vq=hd1080`}
+                src={`${data.contentYoutubeVideoLink}?vq=hd1080`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -151,10 +151,10 @@ const YoutubeVideo = ({ data }) => {
           <ContentInfo>
             <Youtube />
             <ContentInfoTitle>
-              {data.contentfulContent.contentTitle}
+              {data.contentTitle}
             </ContentInfoTitle>
             <ContentInfoTags>
-              {data.contentfulContent.contentTags.map((tag, idx) => {
+              {data.contentTags.map((tag, idx) => {
                 return <ContentInfoTag key={idx}>{tag}</ContentInfoTag>
               })}
             </ContentInfoTags>

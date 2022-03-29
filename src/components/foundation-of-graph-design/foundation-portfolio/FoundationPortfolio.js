@@ -129,8 +129,9 @@ export const ShowMoreWrapper = styled.div`
     }
 `;
 
-export const Image = styled(Img)`
-    width: "100%";
+export const Image = styled.img`
+    width: 100%;
+    /* height: 100%; */
 `;
 
 export const PosterAuthor = styled.div.attrs({ className: "poster-author"})`

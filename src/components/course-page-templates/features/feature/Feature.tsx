@@ -78,13 +78,14 @@ export const Link = styled.a`
   }
 `
 
-export const Image = styled(props => <Img {...props} />)`
+export const Image = styled.img`
   width: 4.8vw;
   min-width: 4.8vw;
   height: 4.8vw;
   margin-right: 1vw;
   position: relative;
   z-index: 1;
+  object-fit: cover;
   @media only screen and (max-width: 575px) {
     width: 20vw;
     min-width: 20vw;

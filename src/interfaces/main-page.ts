@@ -10,7 +10,6 @@ export interface IIndexOffer {
   }
   headerSubtitle_01: string
   headerSubtitle_02: string
-  headerSubtitle_03: string
   headerTitle: string
 }
 

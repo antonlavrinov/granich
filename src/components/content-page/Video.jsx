@@ -124,8 +124,10 @@ const VideoItemWrapper = styled.div`
 
 const VideoItemWrapperLink = styled.a``
 
-const VideoItemImage = styled(props => <BackgroundImage {...props} />)`
+const VideoItemImage = styled.img`
   height: 17vw;
+  width: 100%;
+  object-fit: cover;
   margin-bottom: 1vw;
   display: flex;
   justify-content: center;
@@ -138,6 +140,8 @@ const VideoItemImage = styled(props => <BackgroundImage {...props} />)`
   }
   @media only screen and (max-width: 575px) {
     height: 40vw;
+    width: 100%;
+    object-fit: cover;
     margin-bottom: 5vw;
   }
 `
@@ -356,7 +360,7 @@ const VideoItem = ({
         href={videoPageLink}
         rel="noopener noreferrer"
       >
-        <VideoItemImage fluid={image}>{/* <Youtube/> */}</VideoItemImage>
+        <VideoItemImage src={image}>{/* <Youtube/> */}</VideoItemImage>
         <VideoItemInfo>
           <VideoItemInfoDetails>
             <VideoItemNumber>{`№${number}`}</VideoItemNumber>
@@ -494,7 +498,7 @@ const Video = ({ data, topDescription, categoryTwo, categoryThree }) => {
                   <React.Fragment key={videoItem.node.id}>
                     <VideoItem
                       timing={videoItem.node.videoTiming}
-                      image={videoItem.node.videoImagePreview.fluid}
+                      image={videoItem.node.videoImagePreview.src}
                       //  setIsOpen={openModal}
                       videoPageLink={videoItem.node.videoPageLink}
                       pdfIcon={pdf}
@@ -529,7 +533,7 @@ const Video = ({ data, topDescription, categoryTwo, categoryThree }) => {
                   <React.Fragment key={videoItem.node.id}>
                     <VideoItem
                       timing={videoItem.node.videoTiming}
-                      image={videoItem.node.videoImagePreview.fluid}
+                      image={videoItem.node.videoImagePreview.src}
                       //  setIsOpen={openModal}
                       videoPageLink={videoItem.node.videoPageLink}
                       pdfIcon={pdf}

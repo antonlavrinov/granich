@@ -254,17 +254,10 @@ export const Title = styled.h3`
   }
 `
 
-export const Image = styled(props => (
-  <BackgroundImage {...props}></BackgroundImage>
-))`
-  min-height: 15.5vw;
+export const Image = styled.img`
   width: 100%;
-  position: relative;
-  @media only screen and (max-width: 575px) {
-    min-height: 38vw;
-    max-height: 38vw;
-    height: 38vw;
-  }
+  /* position: relative; */
+  object-fit: cover;
   ${props =>
     (props.empty || !props.active) &&
     `
@@ -274,6 +267,12 @@ export const Image = styled(props => (
 
 export const ImageWrapper = styled.div`
   position: relative;
+  height: 15.5vw;
+  overflow: hidden;
+  @media only screen and (max-width: 575px) {
+    height: 38vw;
+  }
+
 `
 
 export const Button = styled.div`
@@ -422,9 +421,7 @@ export const Teachers = styled.div`
     padding: 1vw;
   }
 `
-export const Teacher = styled(props => (
-  <BackgroundImage {...props}></BackgroundImage>
-))`
+export const Teacher = styled.img`
   border-radius: 100vw;
   margin-top: -0.2vw;
   margin-right: 0;

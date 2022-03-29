@@ -21,7 +21,7 @@ const MasterCard = ({ courseData, icons }) => {
           <SC.Image
             active={courseData.courseStatus}
             empty={courseData.courseTypeEmpty}
-            fluid={courseData.coursePreviewImage.fluid}
+            src={courseData.coursePreviewImage.src}
           ></SC.Image>
           <SC.MainTag
             active={courseData.courseStatus}
@@ -37,13 +37,13 @@ const MasterCard = ({ courseData, icons }) => {
                     <SC.Teacher
                       several={true}
                       key={idx}
-                      fluid={teacher.fluid}
+                      src={teacher.src}
                     />
                   )
                 })}
               </>
             ) : (
-              <SC.Teacher fluid={courseData.courseTeachers[0].fluid} />
+              <SC.Teacher src={courseData.courseTeachers[0].src} />
             )}
           </SC.Teachers>
         </SC.ImageWrapper>

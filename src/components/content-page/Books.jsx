@@ -108,9 +108,10 @@ const BooksItemWrapper = styled.div`
   }
 `
 
-const BooksItemImage = styled(props => <Img {...props} />)`
+const BooksItemImage = styled.img`
   height: 17vw;
   width: 100%;
+  object-fit: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,10 +254,10 @@ const BooksItem = ({ text, number, image, links }) => {
     <BooksItemWrapper>
       {isDesktop && (
         <Zoom>
-          <BooksItemImage fluid={image}></BooksItemImage>
+          <BooksItemImage src={image}></BooksItemImage>
         </Zoom>
       )}
-      {isMobile && <BooksItemImage fluid={image}></BooksItemImage>}
+      {isMobile && <BooksItemImage src={image}></BooksItemImage>}
       <BooksItemInfo>
         <BooksItemInfoDetails>
           <BooksItemNumber>{`№${number}`}</BooksItemNumber>
@@ -308,7 +309,7 @@ const Books = ({ data, categoryTwo, categoryThree }) => {
                 return (
                   <React.Fragment key={booksItem.node.id}>
                     <BooksItem
-                      image={booksItem.node.booksImage.fluid}
+                      image={booksItem.node.booksImage.src}
                       number={idx + 1}
                       links={
                         booksItem.node
@@ -335,7 +336,7 @@ const Books = ({ data, categoryTwo, categoryThree }) => {
                   return (
                     <React.Fragment key={booksItem.node.id}>
                       <BooksItem
-                        image={booksItem.node.booksImage.fluid}
+                        image={booksItem.node.booksImage.src}
                         number={firstCategory.length + idx + 1}
                         links={
                           booksItem.node

@@ -202,9 +202,10 @@ const PortfolioOnePagersWrapper = styled.div`
   }
 `
 
-const PortfolioOnePager = styled(props => <Img {...props} />)`
+const PortfolioOnePager = styled.img`
   height: 22.7vw;
   width: 100%;
+  object-fit: cover;
   transition: transform 0.2s ease;
   :hover {
     transform: scale(1.05);
@@ -417,7 +418,7 @@ const CoursePortfolio = ({ posters, multiPages, masterClass, dataHeader }) => {
               return (
                 <Zoom key={idx}>
                   <PortfolioOnePager
-                    fluid={poster.node.portfolioMedia[0].fluid}
+                    src={poster.node.portfolioMedia[0].src}
                   ></PortfolioOnePager>
                 </Zoom>
               )

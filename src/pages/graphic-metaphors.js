@@ -5,20 +5,10 @@ import SEO from "../components/seo"
 import Header from "../components/global/header"
 // import CourseCurriculum from "../components/course-page/CourseCurriculum"
 import CourseParticipation from "../components/course-page/CourseParticipation"
-import { graphql, PageProps } from "gatsby"
+// import { graphql, PageProps } from "gatsby"
 import ogImage from "../assets/images/seo/graphic-metaphors.jpg"
 import ogImageVK from "../assets/images/seo/vk/graphic-metaphors.jpg"
 import VideoPresentationOffer from "../components/metaphors-in-identity-page/video-presentation"
-import Timetable from "../components/metaphors-in-identity-page/timetable"
-import {
-  ICourseExplanations,
-  ICourseOffer,
-  ICoursePortfolioHeader,
-  ICoursePortfolioPosters,
-  IPriceRange,
-} from "../interfaces/course-page"
-import { ITeam } from "../interfaces/main-page"
-import CourseHardWork from "../components/course-page/CourseHardWork"
 import CourseTrainingPath from "../components/course-page/CourseTrainingPath"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
 import CourseTimetable from "../components/course-page/CourseTimetable"
@@ -30,130 +20,128 @@ import HardWorkMetaphors from "../components/metaphors-in-identity-page/hard-wor
 import CourseOffer from "../components/course-page-templates/offer"
 import ParticipationRestriction from "../components/metaphors-in-identity-page/participation-restriction"
 import { useQueryParam, NumberParam } from "use-query-params";
-import CourseReviews from "../components/course-page/CourseReviews"
+import CourseReviews from "../components/course-page/CourseReviews";
+import dataIndex from "../data/pages/index";
+import data from "../data/pages/graphic-metaphors";
 
 
 
-export const contentfulQuery = graphql`
-  query graphicMetaphorsQuery {
-    offer: contentfulGranichCourse(
-      courseTitle: { eq: "Графические метафоры" }
-    ) {
-      courseMainImage {
-        fluid(maxWidth: 850, quality: 90) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-      }
-      courseMainTitle {
-        json
-      }
-      courseDescr
-      courseStart
-      courseDuration
-      courseStartAndEnd
-      courseStream
-      courseStatus
-      courseButtonText
-      courseAdditionalType
-      courseExternalLinkTransition
-      courseType
-      courseTitle
-      coursePrice
-      courseTags
-      coursePostersCollection {
-        fluid(maxWidth: 600, quality: 100) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-        resize(width: 600, quality: 100) {
-          src
-        }
-      }
-      childContentfulGranichCourseCoursePolicyRichTextNode {
-        json
-      }
-    }
-    metaphorsTrainingPath: allContentfulGranichMainTrainingPath(
-      filter: { trainingPathAttachmentTo: { eq: "Графические метафоры" } }
-      sort: { fields: [trainingPathOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          trainingPathImage {
-            fluid(maxWidth: 1200, quality: 70) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          trainingPathTitle
-          trainingPathText {
-            json
-          }
-        }
-      }
-    }
-    metaphorsCurriculumHeader: contentfulGranichCourseCurriculumHeader(
-      curriculumHeaderAttachmentTo: { eq: "Графические метафоры" }
-    ) {
-      curriculumHeaderTitle
-      childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode {
-        json
-      }
-      curriculumHeaderInfo {
-        json
-      }
-    }
-    metaphorsReviewsHeader: contentfulGranichCourseReviewsHeader(
-      reviewsHeaderAttachmentTo: { eq: "Графические метафоры" }
-    ) {
-      reviewsHeaderTitle
-      reviewsHeaderLinkTelegram
-      reviewsHeaderLinkVk
-      reviewsHeaderAttachmentTo
-    }
-    metaphorsCurriculum: allContentfulGranichCourseCurriculum(
-      filter: { curriculumAttachmentTo: { eq: "Графические метафоры" } }
-      sort: { fields: [curriculumOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          curriculumAttachmentTo
-          curriculumImportantDescr
-          childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode {
-            json
-          }
-          curriculumTagName
-          curriculumType
-          curriculumImportantDescr
-          curriculumColumnsType
-          childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode {
-            json
-          }
-          childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode {
-            json
-          }
-          childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode {
-            json
-          }
-          childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode {
-            json
-          }
-          childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode {
-            json
-          }
-        }
-      }
-    }
-  }
-`
+// export const contentfulQuery = graphql`
+//   query graphicMetaphorsQuery {
+//     offer: contentfulGranichCourse(
+//       courseTitle: { eq: "Графические метафоры" }
+//     ) {
+//       courseMainImage {
+//         fluid(maxWidth: 850, quality: 90) {
+//           ...GatsbyContentfulFluid_withWebp
+//         }
+//       }
+//       courseMainTitle {
+//         json
+//       }
+//       courseDescr
+//       courseStart
+//       courseDuration
+//       courseStartAndEnd
+//       courseStream
+//       courseStatus
+//       courseButtonText
+//       courseAdditionalType
+//       courseExternalLinkTransition
+//       courseType
+//       courseTitle
+//       coursePrice
+//       courseTags
+//       coursePostersCollection {
+//         fluid(maxWidth: 600, quality: 100) {
+//           ...GatsbyContentfulFluid_withWebp
+//         }
+//         resize(width: 600, quality: 100) {
+//           src
+//         }
+//       }
+//       childContentfulGranichCourseCoursePolicyRichTextNode {
+//         json
+//       }
+//     }
+//     metaphorsTrainingPath: allContentfulGranichMainTrainingPath(
+//       filter: { trainingPathAttachmentTo: { eq: "Графические метафоры" } }
+//       sort: { fields: [trainingPathOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           trainingPathImage {
+//             fluid(maxWidth: 1200, quality: 70) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           trainingPathTitle
+//           trainingPathText {
+//             json
+//           }
+//         }
+//       }
+//     }
+//     metaphorsCurriculumHeader: contentfulGranichCourseCurriculumHeader(
+//       curriculumHeaderAttachmentTo: { eq: "Графические метафоры" }
+//     ) {
+//       curriculumHeaderTitle
+//       childContentfulGranichCourseCurriculumHeaderCurriculumHeaderSummaryRichTextNode {
+//         json
+//       }
+//       curriculumHeaderInfo {
+//         json
+//       }
+//     }
+//     metaphorsReviewsHeader: contentfulGranichCourseReviewsHeader(
+//       reviewsHeaderAttachmentTo: { eq: "Графические метафоры" }
+//     ) {
+//       reviewsHeaderTitle
+//       reviewsHeaderLinkTelegram
+//       reviewsHeaderLinkVk
+//       reviewsHeaderAttachmentTo
+//     }
+//     metaphorsCurriculum: allContentfulGranichCourseCurriculum(
+//       filter: { curriculumAttachmentTo: { eq: "Графические метафоры" } }
+//       sort: { fields: [curriculumOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           curriculumAttachmentTo
+//           curriculumImportantDescr
+//           childContentfulGranichCourseCurriculumCurriculumTitleWithAssetRichTextNode {
+//             json
+//           }
+//           curriculumTagName
+//           curriculumType
+//           curriculumImportantDescr
+//           curriculumColumnsType
+//           childContentfulGranichCourseCurriculumCurriculumFirstColumnRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseCurriculumCurriculumFourthColumnRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseCurriculumCurriculumImportantTextRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseCurriculumCurriculumSecondColumnRichTextNode {
+//             json
+//           }
+//           childContentfulGranichCourseCurriculumCurriculumThirdColumnRichTextNode {
+//             json
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
-const GraphicMetaphorsInIdentityPage = ({
-  data,
-}) => {
-
+const GraphicMetaphorsInIdentityPage = () => {
   const [permission] = useQueryParam("permission", NumberParam);
-  console.log("permission", permission)
-  // if (!data.offer) return <></>
+  const metaphorsOffer = dataIndex.courseCards.edges.find((el) => el.node.courseTitle === "Графические метафоры")?.node;
   return (
     <Layout theme="blue">
       <Header type={"dark"} />
@@ -175,8 +163,8 @@ const GraphicMetaphorsInIdentityPage = ({
         url="https://granich.design/graphic-metaphors"
       />
       <div className="section-top-block"></div>
-      <CourseOffer permission={permission} allowPosters data={data.offer} postersAuthors="Работы куратора курса"/> 
-      <VideoPresentationOffer data={data.offer} />
+      <CourseOffer permission={permission} allowPosters data={metaphorsOffer} postersAuthors="Работы куратора курса"/> 
+      <VideoPresentationOffer />
       <MetaphorsForWhom/>
       <CourseTrainingPath data={data.metaphorsTrainingPath}/>
       <CourseCurriculum  
@@ -188,7 +176,7 @@ const GraphicMetaphorsInIdentityPage = ({
       />
       <CourseReviews description="Напишите выпускникам Школы, они с радостью поделятся
             эмоциями от прохождения обучения" dataHeader={data.metaphorsReviewsHeader}/>
-      <CourseTimetable courseTitle={data.offer.courseTitle} noGif noKeepCalm text="Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе обучение для вас закончится. Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течение недели (хотя бы два часа каждый день)."/>
+      <CourseTimetable courseTitle={metaphorsOffer.courseTitle} noGif noKeepCalm text="Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе обучение для вас закончится. Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течение недели (хотя бы два часа каждый день)."/>
       <MetaphorsAuthor/>
       <HardWorkMetaphors
         title="«Пожалуйста, примите осознанное решение об участии на этом курсе»"
@@ -198,14 +186,14 @@ const GraphicMetaphorsInIdentityPage = ({
       <div style={{ position: "relative" }}>
         <CourseParticipation
           policy={true}
-          data={data.offer}
+          data={metaphorsOffer}
           formId={`ltForm9450584`}
           formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1022043147`}
           googleAnaliticsCategory={`Отправка формы Графметафоры`}
           
           // additionalTags={["Интенсивный", "С нуля"]}
         />
-        {!permission && data.offer.courseStatus && <ParticipationRestriction />}
+        {!permission && metaphorsOffer.courseStatus && <ParticipationRestriction />}
       </div>
     </Layout>
   )

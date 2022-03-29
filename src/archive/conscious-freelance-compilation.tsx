@@ -14,139 +14,140 @@ import ogImageFreelance from "../assets/images/seo/conscious-freelance-compilati
 import ogImageVKFreelance from "../assets/images/seo/vk/conscious-freelance-compilation.jpg"
 import ContentCourseBanner from "../components/content-page/ContentCourseBanner"
 
-export const podborkaPageQuery = graphql`
-  query ContentfulFreelanceCompilation {
-    contentfulPodborka: contentfulGranichMainContentCard(
-      contentSlug: { eq: "conscious-freelance-compilation" }
-    ) {
-      contentSlug
-      contentTitle
-      contentYoutubeVideoLink
-      contentLinkBehance
-      contentLinkMedium
-      contentPDF {
-        file {
-          url
-        }
-      }
-      contentBannerSwitch
-      contentTags
-      contentType
-    }
-    coursePodborkaBanner: contentfulGranichCourse(
-      courseTitle: { eq: "Осознанный Фриланс" }
-    ) {
-      courseTitle
-      courseStart
-      courseDuration
-      courseStatus
-      courseButtonText
-      courseExternalLinkTransition
-      courseAdditionalType
-      courseType
-      courseBannerImage {
-        fluid(maxWidth: 120) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-      }
-      courseBannerSubtext
-      courseSlug
-      courseTags
-      courseTypeEmpty
-    }
+// export const podborkaPageQuery = graphql`
+//   query ContentfulFreelanceCompilation {
+//     contentfulPodborka: contentfulGranichMainContentCard(
+//       contentSlug: { eq: "conscious-freelance-compilation" }
+//     ) {
+//       contentSlug
+//       contentTitle
+//       contentYoutubeVideoLink
+//       contentLinkBehance
+//       contentLinkMedium
+//       contentPDF {
+//         file {
+//           url
+//         }
+//       }
+//       contentBannerSwitch
+//       contentTags
+//       contentType
+//     }
+//     coursePodborkaBanner: contentfulGranichCourse(
+//       courseTitle: { eq: "Осознанный Фриланс" }
+//     ) {
+//       courseTitle
+//       courseStart
+//       courseDuration
+//       courseStatus
+//       courseButtonText
+//       courseExternalLinkTransition
+//       courseAdditionalType
+//       courseType
+//       courseBannerImage {
+//         fluid(maxWidth: 120) {
+//           ...GatsbyContentfulFluid_withWebp
+//         }
+//       }
+//       courseBannerSubtext
+//       courseSlug
+//       courseTags
+//       courseTypeEmpty
+//     }
 
-    videoPodborkaFreelance: allContentfulGranichCollectionVideo(
-      filter: { videoAttachmentTo: { eq: "Осознанный фриланс" } }
-      sort: { fields: [videoOrderDecimalNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          videoImagePreview {
-            fluid(maxWidth: 800, quality: 70) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          videoTiming
-          videoText {
-            json
-          }
-          childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode {
-            json
-          }
+//     videoPodborkaFreelance: allContentfulGranichCollectionVideo(
+//       filter: { videoAttachmentTo: { eq: "Осознанный фриланс" } }
+//       sort: { fields: [videoOrderDecimalNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           videoImagePreview {
+//             fluid(maxWidth: 800, quality: 70) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           videoTiming
+//           videoText {
+//             json
+//           }
+//           childContentfulGranichCollectionVideoVideoAdditionalLinksRichTextNode {
+//             json
+//           }
 
-          videoCategory
-          videoPageLink
-          videoContentIcons
-        }
-      }
-    }
+//           videoCategory
+//           videoPageLink
+//           videoContentIcons
+//         }
+//       }
+//     }
 
-    booksPodborkaFreelance: allContentfulGranichCollectionBooks(
-      filter: { booksAttachmentTo: { eq: "Осознанный фриланс" } }
-      sort: { fields: [booksOrderDecimalNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          booksImage {
-            fluid(maxWidth: 800, quality: 70) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          booksText {
-            json
-          }
-          childContentfulGranichCollectionBooksBooksLinksRichTextNode {
-            json
-          }
+//     booksPodborkaFreelance: allContentfulGranichCollectionBooks(
+//       filter: { booksAttachmentTo: { eq: "Осознанный фриланс" } }
+//       sort: { fields: [booksOrderDecimalNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           booksImage {
+//             fluid(maxWidth: 800, quality: 70) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           booksText {
+//             json
+//           }
+//           childContentfulGranichCollectionBooksBooksLinksRichTextNode {
+//             json
+//           }
 
-          booksCategory
-        }
-      }
-    }
+//           booksCategory
+//         }
+//       }
+//     }
 
-    toolsPodborkaFreelance: allContentfulGranichCollectionTools(
-      filter: { toolsAttachmentTo: { eq: "Осознанный фриланс" } }
-      sort: { fields: [toolsOrderDecimalNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          toolsImage {
-            fluid(maxWidth: 190, quality: 70) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          toolsText {
-            json
-          }
-          childContentfulGranichCollectionToolsToolsLinksRichTextNode {
-            json
-          }
-        }
-      }
-    }
+//     toolsPodborkaFreelance: allContentfulGranichCollectionTools(
+//       filter: { toolsAttachmentTo: { eq: "Осознанный фриланс" } }
+//       sort: { fields: [toolsOrderDecimalNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           toolsImage {
+//             fluid(maxWidth: 190, quality: 70) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           toolsText {
+//             json
+//           }
+//           childContentfulGranichCollectionToolsToolsLinksRichTextNode {
+//             json
+//           }
+//         }
+//       }
+//     }
 
-    offerPodborkaFreelance: contentfulGranichCollectionOffer(
-      collectionOfferAttachmentTo: { eq: "Осознанный фриланс" }
-    ) {
-      collectionOfferTitle {
-        json
-      }
-      collectionOfferMainImage {
-        fluid(maxWidth: 850) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-      }
-      childContentfulGranichCollectionOfferCollectionOfferDescrWithAssetRichTextNode {
-        json
-      }
-    }
-  }
-`
+//     offerPodborkaFreelance: contentfulGranichCollectionOffer(
+//       collectionOfferAttachmentTo: { eq: "Осознанный фриланс" }
+//     ) {
+//       collectionOfferTitle {
+//         json
+//       }
+//       collectionOfferMainImage {
+//         fluid(maxWidth: 850) {
+//           ...GatsbyContentfulFluid_withWebp
+//         }
+//       }
+//       childContentfulGranichCollectionOfferCollectionOfferDescrWithAssetRichTextNode {
+//         json
+//       }
+//     }
+//   }
+// `
 
-const PodborkaPage = ({ data }) => {
+const PodborkaPage = () => {
+  return <></>
   return (
     <Layout>
       <Header type="dark" />

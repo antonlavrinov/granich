@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import BackgroundImage from "gatsby-background-image"
 import Img from "gatsby-image"
 
 export const SocialIcon = styled(props => <Img {...props} />)`
@@ -47,14 +46,13 @@ export const Header = styled.div`
     margin-bottom: 3vw;
   }
 `
-export const Image = styled(props => (
-  <BackgroundImage {...props}></BackgroundImage>
-))`
+
+export const Image = styled.img`
   width: 5.1vw;
   height: 5.1vw;
   border-radius: 100vw;
   overflow: hidden;
-  border: 1.5px solid var(--granich-black);
+  outline: 1.5px solid var(--granich-black);
   background-color: var(--granich-grey);
   @media only screen and (max-width: 575px) {
     width: 19.5vw;

@@ -24,116 +24,116 @@ import {
 import { ITeam } from "../interfaces/main-page"
 import Mailing from "../components/global/mailing"
 
-export const contentfulQuery = graphql`
-  query graphicSystemVHSQuery {
-    VHSoffer: contentfulGranichCourse(courseTitle: { eq: "Графсистема VHS" }) {
-      courseTags
-      courseMainTitle {
-        json
-      }
-      courseDescr
-      courseStatus
-      courseButtonText
-      courseAdditionalType
-      courseType
-      courseTitle
-      courseMainImage {
-        fluid(maxWidth: 850, quality: 90) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-      }
-    }
-    VHSexplanations: allContentfulGranichCourseExplanations(
-      filter: { explanationsAttachmentTo: { eq: "Графсистема VHS" } }
-      sort: { fields: [explanationsOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          explanationsImage {
-            fluid(maxWidth: 450) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          explanationsTitle
-          explanationsText {
-            json
-          }
-        }
-      }
-    }
-    VHSteam: allContentfulGranichMainTeachers(
-      filter: { teacherName: { in: ["Вадим Гранич", "Елизавета Черникова"] } }
-      sort: { fields: [teacherOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          teacherDescr {
-            json
-          }
-          teacherEmail
-          teacherImage {
-            fluid(maxWidth: 250) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          teacherName
-          teacherSocialInstagram
-          teacherSocialPinterest
-          teacherSocialTelegram
-          teacherSocialVK
-          teacherSocialsOrder
-        }
-      }
-    }
-    VHSportfolioHeader: contentfulGranichCoursePortfolioHeader(
-      portfolioHeaderAttachmentTo: { eq: "Графсистема VHS" }
-    ) {
-      portfolioHeaderTitle
-      childContentfulGranichCoursePortfolioHeaderPortfolioHeaderSummaryRichTextNode {
-        json
-      }
-      portfolioHeaderInfo {
-        json
-      }
-    }
-    VHSportfolioPosters: allContentfulGranichCoursePortfolio(
-      filter: {
-        portfolioAttachmentTo: { eq: "Графсистема VHS" }
-        portfolioType: { eq: "Одностраничный" }
-      }
-      sort: { fields: [portfolioOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          portfolioMedia {
-            fluid(maxWidth: 800) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-        }
-      }
-    }
-    VHSPricesRange: allContentfulGranichCoursePricesRange(
-      filter: { pricesAttachmentTo: { eq: "Графсистема VHS" } }
-      sort: { fields: [pricesOrderNumber], order: ASC }
-    ) {
-      edges {
-        node {
-          pricesTitle
-          pricesText {
-            json
-          }
-          pricesSubtext
-          pricesPrice
-          id
-        }
-      }
-    }
-  }
-`
+// export const contentfulQuery = graphql`
+//   query graphicSystemVHSQuery {
+//     VHSoffer: contentfulGranichCourse(courseTitle: { eq: "Графсистема VHS" }) {
+//       courseTags
+//       courseMainTitle {
+//         json
+//       }
+//       courseDescr
+//       courseStatus
+//       courseButtonText
+//       courseAdditionalType
+//       courseType
+//       courseTitle
+//       courseMainImage {
+//         fluid(maxWidth: 850, quality: 90) {
+//           ...GatsbyContentfulFluid_withWebp
+//         }
+//       }
+//     }
+//     VHSexplanations: allContentfulGranichCourseExplanations(
+//       filter: { explanationsAttachmentTo: { eq: "Графсистема VHS" } }
+//       sort: { fields: [explanationsOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           explanationsImage {
+//             fluid(maxWidth: 450) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           explanationsTitle
+//           explanationsText {
+//             json
+//           }
+//         }
+//       }
+//     }
+//     VHSteam: allContentfulGranichMainTeachers(
+//       filter: { teacherName: { in: ["Вадим Гранич", "Елизавета Черникова"] } }
+//       sort: { fields: [teacherOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           teacherDescr {
+//             json
+//           }
+//           teacherEmail
+//           teacherImage {
+//             fluid(maxWidth: 250) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           teacherName
+//           teacherSocialInstagram
+//           teacherSocialPinterest
+//           teacherSocialTelegram
+//           teacherSocialVK
+//           teacherSocialsOrder
+//         }
+//       }
+//     }
+//     VHSportfolioHeader: contentfulGranichCoursePortfolioHeader(
+//       portfolioHeaderAttachmentTo: { eq: "Графсистема VHS" }
+//     ) {
+//       portfolioHeaderTitle
+//       childContentfulGranichCoursePortfolioHeaderPortfolioHeaderSummaryRichTextNode {
+//         json
+//       }
+//       portfolioHeaderInfo {
+//         json
+//       }
+//     }
+//     VHSportfolioPosters: allContentfulGranichCoursePortfolio(
+//       filter: {
+//         portfolioAttachmentTo: { eq: "Графсистема VHS" }
+//         portfolioType: { eq: "Одностраничный" }
+//       }
+//       sort: { fields: [portfolioOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           portfolioMedia {
+//             fluid(maxWidth: 800) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//         }
+//       }
+//     }
+//     VHSPricesRange: allContentfulGranichCoursePricesRange(
+//       filter: { pricesAttachmentTo: { eq: "Графсистема VHS" } }
+//       sort: { fields: [pricesOrderNumber], order: ASC }
+//     ) {
+//       edges {
+//         node {
+//           pricesTitle
+//           pricesText {
+//             json
+//           }
+//           pricesSubtext
+//           pricesPrice
+//           id
+//         }
+//       }
+//     }
+//   }
+// `
 
 type GraphQlResults = {
   VHSoffer: ICourseOffer
@@ -167,18 +167,17 @@ type GraphQlResults = {
 
 // const authorText = (<>«Я отыскала всё самое интересное и полезное про графдизайн VHS-кассет: почему он появился, какие графсистемы с ним связаны, кто использует его в своей айдентике и как самостоятельно создавать VHS-макеты. Вдобавок, в <a href="https://www.pinterest.ru/vadim_granich/vhs/" target="_blank" rel="noopener noreferrer">Энциклопедии графдизайна</a> на Пинтересте есть примеры работ в графсистеме VHS»</>)
 
-const GraphicSystemVhsPage: React.FC<PageProps<GraphQlResults>> = ({
-  data,
-}) => {
-  if (
-    !data.VHSoffer &&
-    !data.VHSexplanations &&
-    !data.VHSteam &&
-    !data.VHSportfolioHeader &&
-    !data.VHSportfolioPosters &&
-    !data.VHSPricesRange
-  )
-    return <></>
+const GraphicSystemVhsPage = () => {
+  return <></>
+  // if (
+  //   !data.VHSoffer &&
+  //   !data.VHSexplanations &&
+  //   !data.VHSteam &&
+  //   !data.VHSportfolioHeader &&
+  //   !data.VHSportfolioPosters &&
+  //   !data.VHSPricesRange
+  // )
+  //   return <></>
   return (
     <Layout>
       <Header type={"dark"} />

@@ -32,7 +32,7 @@ const MasterClassTemplateOffer: React.FC<Props> = ({ data }) => {
                 objectFit: "contain",
                 objectPosition: "right center",
               }}
-              fluid={data.courseMainImage.fluid}
+              src={data.courseMainImage.src}
             />
 
             <SC.Descr
