@@ -52,7 +52,7 @@ export const Image = styled.img`
   height: 5.1vw;
   border-radius: 100vw;
   overflow: hidden;
-  outline: 1.5px solid var(--granich-black);
+  border: 1.5px solid var(--granich-black);
   background-color: var(--granich-grey);
   @media only screen and (max-width: 575px) {
     width: 19.5vw;
