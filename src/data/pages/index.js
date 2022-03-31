@@ -4174,7 +4174,7 @@ module.exports = {
                         //     "srcSetWebp": "//images.ctfassets.net/yej6fivg4hs3/1247wqQYoq4nGg47H8s7jJ/fce55ff976a17d5db68db5b1516cb53c/author-greyscale_2.jpg?w=63&h=63&q=50&fm=webp 63w,\n//images.ctfassets.net/yej6fivg4hs3/1247wqQYoq4nGg47H8s7jJ/fce55ff976a17d5db68db5b1516cb53c/author-greyscale_2.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/yej6fivg4hs3/1247wqQYoq4nGg47H8s7jJ/fce55ff976a17d5db68db5b1516cb53c/author-greyscale_2.jpg?w=250&h=250&q=50&fm=webp 250w,\n//images.ctfassets.net/yej6fivg4hs3/1247wqQYoq4nGg47H8s7jJ/fce55ff976a17d5db68db5b1516cb53c/author-greyscale_2.jpg?w=375&h=375&q=50&fm=webp 375w,\n//images.ctfassets.net/yej6fivg4hs3/1247wqQYoq4nGg47H8s7jJ/fce55ff976a17d5db68db5b1516cb53c/author-greyscale_2.jpg?w=500&h=500&q=50&fm=webp 500w",
                         //     "sizes": "(max-width: 250px) 100vw, 250px"
                         // }
-                        src: "/images/team/238.jpg"
+                        src: "/images/team/vadim.jpg"
                     },
                     "teacherName": "Вадим Гранич",
                     "teacherSocialInstagram": "https://www.instagram.com/granichblog",
@@ -4323,7 +4323,7 @@ module.exports = {
                         //     "srcSetWebp": "//images.ctfassets.net/yej6fivg4hs3/5ztzvHrnMqZwmyTBQsGy9q/18a6d70b302286e07653bcbd63914e03/andrei_pavlushin.jpg?w=63&h=63&q=50&fm=webp 63w,\n//images.ctfassets.net/yej6fivg4hs3/5ztzvHrnMqZwmyTBQsGy9q/18a6d70b302286e07653bcbd63914e03/andrei_pavlushin.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/yej6fivg4hs3/5ztzvHrnMqZwmyTBQsGy9q/18a6d70b302286e07653bcbd63914e03/andrei_pavlushin.jpg?w=250&h=250&q=50&fm=webp 250w",
                         //     "sizes": "(max-width: 250px) 100vw, 250px"
                         // }
-                        src: "/images/team/233.jpg"
+                        src: "/images/team/andrey.jpg"
                     },
                     "teacherName": "Андрей Павлушин",
                     "teacherSocialInstagram": "https://www.instagram.com/andrepavlushin/",
@@ -4431,7 +4431,7 @@ module.exports = {
                         //     "srcSetWebp": "//images.ctfassets.net/yej6fivg4hs3/3zcaqjJqOnbZBxEuVfN4KU/d2f2086eafe474ee6454cfebeff8b0a8/elizaveta_chernikova.jpg?w=63&h=63&q=50&fm=webp 63w,\n//images.ctfassets.net/yej6fivg4hs3/3zcaqjJqOnbZBxEuVfN4KU/d2f2086eafe474ee6454cfebeff8b0a8/elizaveta_chernikova.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/yej6fivg4hs3/3zcaqjJqOnbZBxEuVfN4KU/d2f2086eafe474ee6454cfebeff8b0a8/elizaveta_chernikova.jpg?w=250&h=250&q=50&fm=webp 250w",
                         //     "sizes": "(max-width: 250px) 100vw, 250px"
                         // }
-                        src: "/images/team/260.jpg"
+                        src: "/images/team/liza.jpg"
                     },
                     "teacherName": "Елизавета Черникова",
                     "teacherSocialInstagram": null,
@@ -4582,7 +4582,7 @@ module.exports = {
                         //     "srcSetWebp": "//images.ctfassets.net/yej6fivg4hs3/7BQrlfB0flvNo0iV6tWbgz/806b4001101c3e3d92c10170114b1254/______________________________.jpg?w=63&h=63&q=50&fm=webp 63w,\n//images.ctfassets.net/yej6fivg4hs3/7BQrlfB0flvNo0iV6tWbgz/806b4001101c3e3d92c10170114b1254/______________________________.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/yej6fivg4hs3/7BQrlfB0flvNo0iV6tWbgz/806b4001101c3e3d92c10170114b1254/______________________________.jpg?w=250&h=250&q=50&fm=webp 250w",
                         //     "sizes": "(max-width: 250px) 100vw, 250px"
                         // }
-                        src: "/images/team/412.jpg"
+                        src: "/images/team/katya.jpg"
                     },
                     "teacherName": "Екатерина Зырянова",
                     "teacherSocialInstagram": null,
