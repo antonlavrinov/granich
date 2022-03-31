@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Img from "gatsby-image";
+import Zoom from "react-medium-image-zoom"
 
 export const Section = styled.section`
   margin-bottom: 4vw;
@@ -7,6 +8,10 @@ export const Section = styled.section`
     margin-bottom: 5vw;
   }
 `;
+
+export const StyledZoom = styled(Zoom)`
+
+`
 
 export const Wrapper = styled.div`
     padding: 3vw 1vw 2vw;
@@ -59,6 +64,8 @@ export const PosterWrapper = styled.div`
     /* outline: 1px solid rgba(0,0,0,0.1); */
     box-shadow: 0 0 0.5vw rgba(0,0,0,0.15);
     transition: all 0.2s ease;
+    min-width: 14vw;
+    min-height: 14vw;
 
     [data-rmiz-btn-open] {
         cursor: pointer;
@@ -78,6 +85,8 @@ export const PosterWrapper = styled.div`
 
     @media only screen and (max-width: 575px) {
         border-radius: 1.5vw;
+        min-width: 30vw;
+        min-height: 30vw;
 
         :hover {
             transform: none;
@@ -131,7 +140,15 @@ export const ShowMoreWrapper = styled.div`
 
 export const Image = styled.img`
     width: 100%;
+
+    height: 100% !important;
+
+    object-fit: cover;
     /* height: 100%; */
+    @media only screen and (max-width: 575px) {
+        /* min-width: 30vw;
+        min-height: 30vw; */
+    }
 `;
 
 export const PosterAuthor = styled.div.attrs({ className: "poster-author"})`
