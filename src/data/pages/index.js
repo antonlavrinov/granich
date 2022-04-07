@@ -4713,7 +4713,7 @@ module.exports = {
                                         {
                                             "data": {},
                                             "marks": [],
-                                            "value": "Куратор Фундамента Графдизайна",
+                                            "value": "Куратор Плакатного Графдизайна",
                                             "nodeType": "text"
                                         }
                                     ],
@@ -4747,6 +4747,106 @@ module.exports = {
                         "Instagram",
                         "Behance",
                         "Pinterest"
+                    ],
+                    "teacherCategory": "Кураторы"
+                }
+            },
+            {
+                "node": {
+                    "id": "335b962534-c7b7-573f-8147-d284f903c40e",
+                    "teacherDescr": {
+                        "json": {
+                            "data": {},
+                            "content": [
+                                {
+                                    "data": {},
+                                    "content": [
+                                        {
+                                            "data": {},
+                                            "marks": [],
+                                            "value": "Куратор Плакатного Графдизайна",
+                                            "nodeType": "text"
+                                        }
+                                    ],
+                                    "nodeType": "paragraph"
+                                }
+                            ],
+                            "nodeType": "document"
+                        }
+                    },
+                    "teacherEmail": "umbriaco@live.ru",
+                    "teacherImage": {
+                        // "fluid": {
+                        //     "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAAUABQDAREAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAACAQABQb/xAApEAABAwMCBAYDAAAAAAAAAAABAgMEBQYRABIHITFBCBQiMlFhE6LR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AKLvsa1qDUKTBp9AhN3DWpzNMgMujLZeWfevvsQMqOPjHfQd3ePgyXZdh1uvRrip1XqUBjzgiN0NllLgR6lIzlSgSAQMEdtBqm7Gs0tpWiVKjBY3fi3YwToDDevFpM7xKUOo3C9Hl2pR6p5QIYcIQGVEJWsqHPI6kjujHTloGXX+INr8PrSrNyt22mPOhUhxMVMma6ESmm0HAyTtwvkByON3IqzoBSz4wZ2weetdUqQean40oJS597Sk7T9Z0BybnOJprhIC8OIHqz0KScfqNBku9q5OpqKfIqTzsFASBHKsIIT7QQOuO2dBK1UpO30uBA+EoT/NB//Z",
+                        //     "aspectRatio": 1,
+                        //     "src": "//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=250&q=50",
+                        //     "srcSet": "//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=63&h=63&q=50 63w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=125&h=125&q=50 125w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=250&h=250&q=50 250w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=375&h=375&q=50 375w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=450&h=450&q=50 450w",
+                        //     "srcWebp": "//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=250&q=50&fm=webp",
+                        //     "srcSetWebp": "//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=63&h=63&q=50&fm=webp 63w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=250&h=250&q=50&fm=webp 250w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=375&h=375&q=50&fm=webp 375w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=450&h=450&q=50&fm=webp 450w",
+                        //     "sizes": "(max-width: 250px) 100vw, 250px"
+                        // }
+                        src: "/images/team/vadim_kovalev.png"
+                    },
+                    "teacherName": "Вадим Ковалёв",
+                    "teacherSocialInstagram": null,
+                    "teacherSocialPinterest": null,
+                    "teacherSocialTelegram": "https://t.me/vadim_um2",
+                    "teacherSocialBehance": "https://www.behance.net/umbriaco",
+                    "teacherSocialVK": "https://vk.com/umbriaco",
+                    "teacherSocialsOrder": [
+                        "Telegram",
+                        "Vk",
+                        "Behance",
+                    ],
+                    "teacherCategory": "Кураторы"
+                }
+            },
+            {
+                "node": {
+                    "id": "4455435b962534-c7b7-573f-8147-d284f903c40e",
+                    "teacherDescr": {
+                        "json": {
+                            "data": {},
+                            "content": [
+                                {
+                                    "data": {},
+                                    "content": [
+                                        {
+                                            "data": {},
+                                            "marks": [],
+                                            "value": "Куратор Фундамента Графдизайна",
+                                            "nodeType": "text"
+                                        }
+                                    ],
+                                    "nodeType": "paragraph"
+                                }
+                            ],
+                            "nodeType": "document"
+                        }
+                    },
+                    "teacherEmail": "zeno.citi@gmail.com",
+                    "teacherImage": {
+                        // "fluid": {
+                        //     "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAAUABQDAREAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAACAQABQb/xAApEAABAwMCBAYDAAAAAAAAAAABAgMEBQYRABIHITFBCBQiMlFhE6LR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AKLvsa1qDUKTBp9AhN3DWpzNMgMujLZeWfevvsQMqOPjHfQd3ePgyXZdh1uvRrip1XqUBjzgiN0NllLgR6lIzlSgSAQMEdtBqm7Gs0tpWiVKjBY3fi3YwToDDevFpM7xKUOo3C9Hl2pR6p5QIYcIQGVEJWsqHPI6kjujHTloGXX+INr8PrSrNyt22mPOhUhxMVMma6ESmm0HAyTtwvkByON3IqzoBSz4wZ2weetdUqQean40oJS597Sk7T9Z0BybnOJprhIC8OIHqz0KScfqNBku9q5OpqKfIqTzsFASBHKsIIT7QQOuO2dBK1UpO30uBA+EoT/NB//Z",
+                        //     "aspectRatio": 1,
+                        //     "src": "//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=250&q=50",
+                        //     "srcSet": "//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=63&h=63&q=50 63w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=125&h=125&q=50 125w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=250&h=250&q=50 250w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=375&h=375&q=50 375w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=450&h=450&q=50 450w",
+                        //     "srcWebp": "//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=250&q=50&fm=webp",
+                        //     "srcSetWebp": "//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=63&h=63&q=50&fm=webp 63w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=250&h=250&q=50&fm=webp 250w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=375&h=375&q=50&fm=webp 375w,\n//images.ctfassets.net/yej6fivg4hs3/1N7iufybMMiIyC3xQ8bT2t/96f1573aa56728cdd2ef63f774b2746a/____.jpg?w=450&h=450&q=50&fm=webp 450w",
+                        //     "sizes": "(max-width: 250px) 100vw, 250px"
+                        // }
+                        src: "/images/team/vlad_sadovsky.jpeg"
+                    },
+                    "teacherName": "Владислав Садовский",
+                    "teacherSocialInstagram": "https://www.instagram.com/drabaslav/",
+                    "teacherSocialPinterest": "https://www.pinterest.ca/drabaslav",
+                    "teacherSocialTelegram": "https://t.me/pansadowski",
+                    "teacherSocialBehance": null,
+                    "teacherSocialVK": null,
+                    "teacherSocialsOrder": [
+                        "Telegram",
+                        "Instagram",
+                        "Pinterest",
                     ],
                     "teacherCategory": "Кураторы"
                 }
