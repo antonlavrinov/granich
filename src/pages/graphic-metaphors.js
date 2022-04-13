@@ -12,7 +12,7 @@ import VideoPresentationOffer from "../components/metaphors-in-identity-page/vid
 import CourseTrainingPath from "../components/course-page/CourseTrainingPath"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
 import CourseTimetable from "../components/course-page/CourseTimetable"
-import VideoPresentation from "../components/course-page-templates/video-presentation"
+// import VideoPresentation from "../components/course-page-templates/video-presentation"
 // import FoundationForWhom from "../components/foundation-of-graph-design/for-whom"
 import MetaphorsForWhom from "../components/metaphors-in-identity-page/for-whom"
 import MetaphorsAuthor from "../components/metaphors-in-identity-page/metaphors-author"
@@ -23,6 +23,7 @@ import { useQueryParam, NumberParam } from "use-query-params";
 import CourseReviews from "../components/course-page/CourseReviews";
 import dataIndex from "../data/pages/index";
 import data from "../data/pages/graphic-metaphors";
+import MetaphorsPortfolio from "../components/metaphors-in-identity-page/metaphors-portfolio"
 
 
 
@@ -166,6 +167,7 @@ const GraphicMetaphorsInIdentityPage = () => {
       <CourseOffer permission={permission} allowPosters data={metaphorsOffer} postersAuthors="Работы куратора курса"/> 
       <VideoPresentationOffer />
       <MetaphorsForWhom/>
+      <MetaphorsPortfolio posters={data?.metaphorsPosters.edges} />
       <CourseTrainingPath data={data.metaphorsTrainingPath}/>
       <CourseCurriculum  
         dataHeader={data.metaphorsCurriculumHeader}
