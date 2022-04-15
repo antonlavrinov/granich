@@ -228,7 +228,8 @@ const IndexPage = () => {
           // dataNew={data.contentCardsNew.nodes}
         />
         <BestGraduates />
-        <OurTeam data={data.team} /> 
+        {/* {console.log("team", data.team.edges.filter((el) => !(el.node.teacherName === "Евгения Дроботун" || el.node.teacherName === "Юлия Сакова" || el.node.teacherName === "Марина Асташова")))} */}
+        <OurTeam data={data.team.edges.filter((el) => !(el.node.teacherName === "Евгения Дроботун" || el.node.teacherName === "Юлия Сакова" || el.node.teacherName === "Марина Асташова"))} /> 
     </Layout>
   )
 }

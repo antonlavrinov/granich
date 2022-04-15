@@ -1,20 +1,16 @@
 import React from "react"
-import { ITeam } from "../../../interfaces/main-page"
 import { Container } from "../../style"
 import * as SC from "./OurTeam"
 import TeamMember from "./teacher"
 
-type Props = {
-  data: ITeam
-}
-
-const OurTeam: React.FC<Props> = ({ data }) => {
+const OurTeam = ({ data }) => {
+  // console.log("data", data.map((el) => el))
   return (
     <SC.Section>
       <Container>
         <SC.CategoryTitle>Авторы</SC.CategoryTitle>
         <SC.Wrapper>
-          {data.edges.map((teacher, idx) => {
+          {data.map((teacher, idx) => {
             return (
               <React.Fragment key={teacher.node.id}>
                 {teacher.node.teacherCategory === "Авторы" && (
@@ -26,7 +22,7 @@ const OurTeam: React.FC<Props> = ({ data }) => {
         </SC.Wrapper>
         <SC.CategoryTitle>Кураторы</SC.CategoryTitle>
         <SC.Wrapper>
-          {data.edges.map((teacher, idx) => {
+          {data.map((teacher, idx) => {
             return (
               <React.Fragment key={teacher.node.id}>
                 {teacher.node.teacherCategory === "Кураторы" && (
@@ -38,7 +34,7 @@ const OurTeam: React.FC<Props> = ({ data }) => {
         </SC.Wrapper>
         <SC.CategoryTitle>Координаторы</SC.CategoryTitle>
         <SC.Wrapper>
-          {data.edges.map((teacher, idx) => {
+          {data.map((teacher, idx) => {
             return (
               <React.Fragment key={teacher.node.id}>
                 {teacher.node.teacherCategory === "Координаторы" && (
