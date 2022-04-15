@@ -477,7 +477,7 @@ module.exports = {
             {
                 "node": {
                     "id": "9159840e-df91-541b-8ff9-4e272bbabb88",
-                    "courseStatus": true,
+                    "courseStatus": false,
                     "courseButtonText": null,
                     "courseExternalLinkTransition": false,
                     "courseAdditionalType": null,
@@ -904,7 +904,7 @@ module.exports = {
                     "courseButtonText": null,
                     "courseExternalLinkTransition": false,
                     "courseAdditionalType": null,
-                    "courseStart": "14 марта",
+                    "courseStart": "16 мая",
                     "courseDescr": "Курс для тех, кто хочет создавать графдизайн, наполненный смыслом: айдентику, упаковки, афиши, обложки книг и музыкальных альбомов",
                     "courseDuration": "5 недель",
                     "coursePreviewImage": {
@@ -985,8 +985,8 @@ module.exports = {
                             "nodeType": "document"
                         }
                     },
-                    "courseStartAndEnd": "14.03 → 17.04",
-                    "courseStream": "4",
+                    "courseStartAndEnd": "16.05 → 19.06",
+                    "courseStream": "5",
                     "coursePrice": "12000",
                     "coursePostersCollection": [
                         {
@@ -1126,7 +1126,7 @@ module.exports = {
                                                     "content": [
                                                         {
                                                             "nodeType": "text",
-                                                            "value": "⚠ Набор на 4 поток закрыт, в ближайшее время откроется набор на следующий, 5 поток.",
+                                                            "value": "⚠ Внимание! Прочтите перед оплатой:",
                                                             "marks": [
                                                                 {
                                                                     "type": "italic"
