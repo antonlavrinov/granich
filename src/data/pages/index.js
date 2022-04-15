@@ -900,7 +900,7 @@ module.exports = {
             {
                 "node": {
                     "id": "44204071-00e8-5282-9601-7a055e1dcf2f",
-                    "courseStatus": false,
+                    "courseStatus": true,
                     "courseButtonText": null,
                     "courseExternalLinkTransition": false,
                     "courseAdditionalType": null,
@@ -987,7 +987,7 @@ module.exports = {
                     },
                     "courseStartAndEnd": "16.05 → 19.06",
                     "courseStream": "5",
-                    "coursePrice": "12000",
+                    "coursePrice": "14000",
                     "coursePostersCollection": [
                         {
                             // "fluid": {
