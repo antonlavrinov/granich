@@ -21,7 +21,6 @@ import {
   ICourseReviewsHeader,
   IPriceRange,
 } from "../interfaces/course-page"
-import { ITeam } from "../interfaces/main-page"
 import Mailing from "../components/global/mailing"
 
 // export const contentfulQuery = graphql`
@@ -134,36 +133,6 @@ import Mailing from "../components/global/mailing"
 //     }
 //   }
 // `
-
-type GraphQlResults = {
-  VHSoffer: ICourseOffer
-  VHSexplanations: {
-    edges: {
-      node: ICourseExplanations
-    }
-  }
-  VHSteam: {
-    edges: {
-      node: ITeam
-    }
-  }
-  VHSportfolioHeader: {
-    edges: {
-      node: ICoursePortfolioHeader
-    }
-  }
-
-  VHSportfolioPosters: {
-    edges: {
-      node: ICoursePortfolioPosters
-    }
-  }
-  VHSPricesRange: {
-    edges: {
-      node: IPriceRange
-    }
-  }
-}
 
 // const authorText = (<>«Я отыскала всё самое интересное и полезное про графдизайн VHS-кассет: почему он появился, какие графсистемы с ним связаны, кто использует его в своей айдентике и как самостоятельно создавать VHS-макеты. Вдобавок, в <a href="https://www.pinterest.ru/vadim_granich/vhs/" target="_blank" rel="noopener noreferrer">Энциклопедии графдизайна</a> на Пинтересте есть примеры работ в графсистеме VHS»</>)
 

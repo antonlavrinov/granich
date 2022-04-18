@@ -1,7 +1,7 @@
 import React from "react"
 import { ContentCardsWrapper } from "../../curriculum/styles"
-import CourseList from "../../main-page/courses/CourseList"
-import ContentCard from "../../main-page/precourse-preparation/content-card"
+import CourseList from "../../index/courses/CourseList"
+import ContentCard from "../../index/precourse-preparation/content-card"
 import { Container } from "../../style"
 import * as SC from "./PinterestCompilationCurriculum"
 

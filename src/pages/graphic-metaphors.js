@@ -24,6 +24,7 @@ import CourseReviews from "../components/course-page/CourseReviews";
 import dataIndex from "../data/pages/index";
 import data from "../data/pages/graphic-metaphors";
 import MetaphorsPortfolio from "../components/metaphors-in-identity-page/metaphors-portfolio"
+import { useStaticQuery, graphql } from "gatsby";
 
 
 
@@ -143,6 +144,23 @@ import MetaphorsPortfolio from "../components/metaphors-in-identity-page/metapho
 const GraphicMetaphorsInIdentityPage = () => {
   const [permission] = useQueryParam("permission", NumberParam);
   const metaphorsOffer = dataIndex.courseCards.edges.find((el) => el.node.courseTitle === "Графические метафоры")?.node;
+  
+  // const offerImages = useStaticQuery(graphql`
+  //   query metaphorsOfferImages {
+  //     allFile(filter: {relativeDirectory: {eq: "metaphors-in-identity-page/portfolio"}}) {
+  //       edges {
+  //         node {
+  //           childImageSharp {
+  //             fluid(maxWidth: 600, quality: 90) {
+  //               ...GatsbyImageSharpFluid
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
+  
   return (
     <Layout theme="blue">
       <Header type={"dark"} />

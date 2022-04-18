@@ -42,7 +42,7 @@ import PlusImageBlue from "../../assets/images/plus_blue.png"
 import MinusImageBlue from "../../assets/images/minus_blue.png"
 import { useMediaQuery } from "react-responsive"
 import CurriculumHead from "../curriculum/CurriculumHead"
-import ContentCard from "../../components/main-page/precourse-preparation/content-card"
+import ContentCard from "../index/precourse-preparation/content-card"
 
 // import LazyLoad from 'react-lazyload';
 

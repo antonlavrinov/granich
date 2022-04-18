@@ -1,5 +1,5 @@
 import styled from "styled-components"
-// import Img from "gatsby-image";
+import Img from "gatsby-image";
 
 export const Section = styled.section`
   margin-bottom: 4vw;
@@ -136,11 +136,10 @@ export const ShowMoreWrapper = styled.div`
     }
 `;
 
-export const Image = styled.img`
+export const Image = styled(Img)`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* width: 100; */
 `;
 
 export const PosterAuthor = styled.div.attrs({ className: "poster-author"})`

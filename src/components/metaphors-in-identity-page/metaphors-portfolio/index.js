@@ -1,17 +1,26 @@
-import React, { useState } from "react"
+import React from "react"
+import { graphql, useStaticQuery } from "gatsby";
 import { Container } from "../../style";
-import Masonry from '@mui/lab/Masonry';
 import * as SC from "./style";
 import Zoom from "react-medium-image-zoom"
-import { useMediaQuery } from "react-responsive"
 
 const MetaphorsPortfolio = ({posters}) => {
 
-    const [ isShowMore, setIsShowMore ] = useState(false);
-
-    const isMobile = useMediaQuery({
-      query: "(max-width: 575px)",
-    })
+  const data = useStaticQuery(graphql`
+    query metaphorsOfferImages {
+      allFile(filter: {relativeDirectory: {eq: "metaphors-in-identity-page/portfolio"}}) {
+        edges {
+          node {
+            childImageSharp {
+              fluid(maxWidth: 600, quality: 90) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
 
   return (
     <SC.Section>
@@ -20,25 +29,18 @@ const MetaphorsPortfolio = ({posters}) => {
           <SC.SectionTitle>Некоторые работы учеников</SC.SectionTitle>
         <SC.MasonryWrapper>
             <SC.MasonryOverflow isShowMore="true">
-                {/* <Masonry columns={isMobile ? 2 : 4} spacing={2} style={{margin: 0}}> */}
-                    {posters.map((item, index) => (
-                        <SC.PosterWrapper key={index}>
-                            <Zoom wrapStyle={{display: "block", height: "100%", cursor: "pointer"}}>
-                                <SC.Image src={item.node.posterImage.src} alt="poster"/>
-                            </Zoom>
-                            <SC.PosterAuthor>
-                                <SC.AuthorName>{item.node.posterAuthor}</SC.AuthorName>
-                                <SC.Course>{item.node.posterStream}</SC.Course>
-                            </SC.PosterAuthor>
-                        </SC.PosterWrapper>
-                    ))}
-                {/* </Masonry> */}
+                {posters.map((item, index) => (
+                    <SC.PosterWrapper key={index}>
+                        <Zoom wrapStyle={{display: "block", height: "100%", cursor: "pointer"}}>
+                            <SC.Image fluid={data.allFile.edges[index].node.childImageSharp.fluid} alt="poster"/>
+                        </Zoom>
+                        <SC.PosterAuthor>
+                            <SC.AuthorName>{item.node.posterAuthor}</SC.AuthorName>
+                            <SC.Course>{item.node.posterStream}</SC.Course>
+                        </SC.PosterAuthor>
+                    </SC.PosterWrapper>
+                ))}
             </SC.MasonryOverflow>
-            {/* {!isShowMore && (
-                <SC.ShowMoreWrapper >
-                    <button onClick={() => setIsShowMore(true)}>Показать ещё</button>
-                </SC.ShowMoreWrapper>
-            )} */}
         </SC.MasonryWrapper>
           </SC.Wrapper>
         

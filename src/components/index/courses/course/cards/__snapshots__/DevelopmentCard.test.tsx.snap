@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DevelopmentCard> component should render correctly 1`] = `
+<styled.div
+  development={true}
+>
+  <styled.div>
+    <styled.div>
+      <styled.div
+        development={true}
+      />
+      <styled.div
+        development={true}
+      />
+      <styled.div
+        development={true}
+      />
+    </styled.div>
+    <styled.div>
+      <Styled(Component) />
+    </styled.div>
+    <styled.div>
+      <div />
+      <div />
+    </styled.div>
+    <styled.div>
+      <div />
+      <div />
+      <div />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    development={true}
+  >
+    <styled.div
+      development={true}
+    >
+      <styled.div>
+        <styled.div
+          development={true}
+        >
+          Разрабатываем...
+        </styled.div>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

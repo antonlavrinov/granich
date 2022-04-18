@@ -28,7 +28,7 @@ import PinterestCompilationCurriculum from "../components/poster-graphic-design/
 import PosterExample from "../components/poster-graphic-design/poster-example/PosterExample"
 import PosterForWhom from "../components/poster-graphic-design/for-whom"
 import styled from 'styled-components';
-import TeamMember from "../components/main-page/team/teacher"
+import TeamMember from "../components/index/team/teacher"
 import { Container } from "../components/style"
 import FoundationPortfolio from "../components/foundation-of-graph-design/foundation-portfolio"
 import DescrTooltip from "../components/course-page-templates/description-tooltip"

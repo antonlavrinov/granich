@@ -1,5 +1,5 @@
 import React from 'react'
-import ContentCard from '../../main-page/precourse-preparation/content-card';
+import ContentCard from '../../index/precourse-preparation/content-card';
 import { Container } from '../../style';
 import * as SC from './VideoPresentation';
 import Arrow from "/src/assets/svgs/poster-graphic-design/arrow.svg";

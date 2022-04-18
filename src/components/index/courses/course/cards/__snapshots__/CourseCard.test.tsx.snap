@@ -1,0 +1,391 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Course> component Course card Empty should render correctly 1`] = `
+<Fragment>
+  <styled.div
+    onClick={[Function]}
+  >
+    <CourseCard
+      courseData={
+        Object {
+          "courseDescr": "some descr",
+          "courseDuration": "some date",
+          "coursePreviewImage": Object {
+            "fluid": "imageUrl",
+          },
+          "courseSlug": "slug",
+          "courseStart": "course start",
+          "courseStatus": true,
+          "courseTags": Array [
+            "1",
+            "2",
+          ],
+          "courseTeachers": Array [
+            Object {
+              "fluid": "imageUrl",
+              "id": 3,
+            },
+            Object {
+              "fluid": "imageUrl",
+              "id": 4,
+            },
+          ],
+          "courseTitle": "title",
+          "courseType": "Курс",
+          "courseTypeDevelopment": false,
+          "courseTypeEmpty": true,
+          "id": 0,
+        }
+      }
+      icons={
+        Object {
+          "arrowBlack": "arrowBlackIcon",
+          "arrowWhite": "arrowWhiteIcon",
+          "calendar": "calendarIcon",
+        }
+      }
+    />
+  </styled.div>
+</Fragment>
+`;
+
+exports[`<Course> component Course card should render correctly 1`] = `
+<Fragment>
+  <styled.a
+    href="/slug"
+    onClick={[Function]}
+  >
+    <CourseCard
+      courseData={
+        Object {
+          "courseDescr": "some descr",
+          "courseDuration": "some date",
+          "coursePreviewImage": Object {
+            "fluid": "imageUrl",
+          },
+          "courseSlug": "slug",
+          "courseStart": "course start",
+          "courseStatus": true,
+          "courseTags": Array [
+            "1",
+            "2",
+          ],
+          "courseTeachers": Array [
+            Object {
+              "fluid": "imageUrl",
+              "id": 3,
+            },
+            Object {
+              "fluid": "imageUrl",
+              "id": 4,
+            },
+          ],
+          "courseTitle": "title",
+          "courseType": "Курс",
+          "courseTypeDevelopment": false,
+          "courseTypeEmpty": false,
+          "id": 0,
+        }
+      }
+      icons={
+        Object {
+          "arrowBlack": "arrowBlackIcon",
+          "arrowWhite": "arrowWhiteIcon",
+          "calendar": "calendarIcon",
+        }
+      }
+    />
+  </styled.a>
+</Fragment>
+`;
+
+exports[`<Course> component Development card should render correctly 1`] = `
+<Fragment>
+  <DevelopmentCard />
+</Fragment>
+`;
+
+exports[`<Course> component MasterClass card Empty should render correctly 1`] = `
+<Fragment>
+  <styled.div
+    onClick={[Function]}
+  >
+    <MasterCard
+      courseData={
+        Object {
+          "courseDescr": "some descr",
+          "courseDuration": "some date",
+          "coursePreviewImage": Object {
+            "fluid": "imageUrl",
+          },
+          "courseSlug": "slug",
+          "courseStart": "course start",
+          "courseStatus": true,
+          "courseTags": Array [
+            "1",
+            "2",
+          ],
+          "courseTeachers": Array [
+            Object {
+              "fluid": "imageUrl",
+              "id": 3,
+            },
+            Object {
+              "fluid": "imageUrl",
+              "id": 4,
+            },
+          ],
+          "courseTitle": "title",
+          "courseType": "Мастер-класс",
+          "courseTypeDevelopment": false,
+          "courseTypeEmpty": true,
+          "id": 0,
+        }
+      }
+      icons={
+        Object {
+          "arrowBlack": "arrowBlackIcon",
+          "arrowWhite": "arrowWhiteIcon",
+          "calendar": "calendarIcon",
+        }
+      }
+    />
+  </styled.div>
+</Fragment>
+`;
+
+exports[`<Course> component MasterClass card should render correctly 1`] = `
+<Fragment>
+  <styled.a
+    href="/slug"
+    onClick={[Function]}
+  >
+    <MasterCard
+      courseData={
+        Object {
+          "courseDescr": "some descr",
+          "courseDuration": "some date",
+          "coursePreviewImage": Object {
+            "fluid": "imageUrl",
+          },
+          "courseSlug": "slug",
+          "courseStart": "course start",
+          "courseStatus": true,
+          "courseTags": Array [
+            "1",
+            "2",
+          ],
+          "courseTeachers": Array [
+            Object {
+              "fluid": "imageUrl",
+              "id": 3,
+            },
+            Object {
+              "fluid": "imageUrl",
+              "id": 4,
+            },
+          ],
+          "courseTitle": "title",
+          "courseType": "Мастер-класс",
+          "courseTypeDevelopment": false,
+          "courseTypeEmpty": false,
+          "id": 0,
+        }
+      }
+      icons={
+        Object {
+          "arrowBlack": "arrowBlackIcon",
+          "arrowWhite": "arrowWhiteIcon",
+          "calendar": "calendarIcon",
+        }
+      }
+    />
+  </styled.a>
+</Fragment>
+`;
+
+exports[`<CourseCard> component Active  should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div
+      empty={false}
+    >
+      <styled.div
+        active={true}
+        key="0"
+      >
+        1
+      </styled.div>
+      <styled.div
+        active={true}
+        key="1"
+      >
+        2
+      </styled.div>
+    </styled.div>
+    <styled.div>
+      <Styled(Component)
+        active={true}
+        empty={false}
+        fluid="imageUrl"
+      />
+      <styled.div
+        active={true}
+        empty={false}
+      >
+        Курс
+      </styled.div>
+      <styled.div>
+        <Styled(Component)
+          fluid="imageUrl"
+          key="0"
+          several={true}
+        />
+        <Styled(Component)
+          fluid="imageUrl"
+          key="1"
+          several={true}
+        />
+      </styled.div>
+    </styled.div>
+    <styled.h3
+      active={true}
+    >
+      title
+    </styled.h3>
+    <styled.div
+      active={true}
+    >
+      <styled.div
+        active={true}
+      >
+        Стартуем 
+        <br />
+         
+        <span>
+          course start
+        </span>
+      </styled.div>
+      <styled.div
+        active={true}
+      >
+        Учимся 
+        <br />
+         
+        <span>
+          some date
+        </span>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    active={true}
+    empty={0}
+  >
+    <styled.div>
+      <styled.div>
+        <styled.div>
+          Участвовать
+        </styled.div>
+        <Styled(Component)
+          fluid="arrowWhiteIcon"
+        />
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`<CourseCard> component Not Active  should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div
+      empty={false}
+    >
+      <styled.div
+        active={false}
+        key="0"
+      >
+        1
+      </styled.div>
+      <styled.div
+        active={false}
+        key="1"
+      >
+        2
+      </styled.div>
+    </styled.div>
+    <styled.div>
+      <Styled(Component)
+        active={false}
+        empty={false}
+        fluid="imageUrl"
+      />
+      <styled.div
+        active={false}
+        empty={false}
+      >
+        Курс
+      </styled.div>
+      <styled.div>
+        <Styled(Component)
+          fluid="imageUrl"
+          key="0"
+          several={true}
+        />
+        <Styled(Component)
+          fluid="imageUrl"
+          key="1"
+          several={true}
+        />
+      </styled.div>
+    </styled.div>
+    <styled.h3
+      active={false}
+    >
+      title
+    </styled.h3>
+    <styled.div
+      active={false}
+    >
+      <styled.div
+        active={false}
+      >
+        Стартуем 
+        <br />
+         
+        <span>
+          course start
+        </span>
+      </styled.div>
+      <styled.div
+        active={false}
+      >
+        Учимся 
+        <br />
+         
+        <span>
+          some date
+        </span>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    active={false}
+    empty={0}
+  >
+    <styled.div>
+      <styled.div>
+        <styled.div>
+          Узнать 
+          <br />
+          о наборе
+        </styled.div>
+        <Styled(Component)
+          fluid="arrowBlackIcon"
+        />
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

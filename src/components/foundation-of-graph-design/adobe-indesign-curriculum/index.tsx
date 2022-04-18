@@ -1,5 +1,5 @@
 import React from "react"
-import CourseList from "../../main-page/courses/CourseList"
+import CourseList from "../../index/courses/CourseList"
 import { Container } from "../../style"
 import * as SC from "./AdobeIndesignCurriculum"
 

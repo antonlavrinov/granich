@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Course> component Course card Empty should render correctly 1`] = `
+<Fragment>
+  <styled.div
+    onClick={[Function]}
+  >
+    <CourseCard
+      courseData={
+        Object {
+          "courseDescr": "some descr",
+          "courseDuration": "some date",
+          "coursePreviewImage": Object {
+            "fluid": "imageUrl",
+          },
+          "courseSlug": "slug",
+          "courseStart": "course start",
+          "courseStatus": true,
+          "courseTags": Array [
+            "1",
+            "2",
+          ],
+          "courseTeachers": Array [
+            Object {
+              "fluid": "imageUrl",
+              "id": 3,
+            },
+            Object {
+              "fluid": "imageUrl",
+              "id": 4,
+            },
+          ],
+          "courseTitle": "title",
+          "courseType": "Курс",
+          "courseTypeDevelopment": false,
+          "courseTypeEmpty": true,
+          "id": 0,
+        }
+      }
+      icons={
+        Object {
+          "arrowBlack": "arrowBlackIcon",
+          "arrowWhite": "arrowWhiteIcon",
+          "calendar": "calendarIcon",
+        }
+      }
+    />
+  </styled.div>
+</Fragment>
+`;
+
+exports[`<Course> component Course card should render correctly 1`] = `
+<Fragment>
+  <styled.a
+    href="/slug"
+    onClick={[Function]}
+  >
+    <CourseCard
+      courseData={
+        Object {
+          "courseDescr": "some descr",
+          "courseDuration": "some date",
+          "coursePreviewImage": Object {
+            "fluid": "imageUrl",
+          },
+          "courseSlug": "slug",
+          "courseStart": "course start",
+          "courseStatus": true,
+          "courseTags": Array [
+            "1",
+            "2",
+          ],
+          "courseTeachers": Array [
+            Object {
+              "fluid": "imageUrl",
+              "id": 3,
+            },
+            Object {
+              "fluid": "imageUrl",
+              "id": 4,
+            },
+          ],
+          "courseTitle": "title",
+          "courseType": "Курс",
+          "courseTypeDevelopment": false,
+          "courseTypeEmpty": false,
+          "id": 0,
+        }
+      }
+      icons={
+        Object {
+          "arrowBlack": "arrowBlackIcon",
+          "arrowWhite": "arrowWhiteIcon",
+          "calendar": "calendarIcon",
+        }
+      }
+    />
+  </styled.a>
+</Fragment>
+`;
+
+exports[`<Course> component Development card should render correctly 1`] = `
+<Fragment>
+  <DevelopmentCard />
+</Fragment>
+`;
+
+exports[`<Course> component MasterClass card Empty should render correctly 1`] = `
+<Fragment>
+  <styled.div
+    onClick={[Function]}
+  >
+    <MasterCard
+      courseData={
+        Object {
+          "courseDescr": "some descr",
+          "courseDuration": "some date",
+          "coursePreviewImage": Object {
+            "fluid": "imageUrl",
+          },
+          "courseSlug": "slug",
+          "courseStart": "course start",
+          "courseStatus": true,
+          "courseTags": Array [
+            "1",
+            "2",
+          ],
+          "courseTeachers": Array [
+            Object {
+              "fluid": "imageUrl",
+              "id": 3,
+            },
+            Object {
+              "fluid": "imageUrl",
+              "id": 4,
+            },
+          ],
+          "courseTitle": "title",
+          "courseType": "Мастер-класс",
+          "courseTypeDevelopment": false,
+          "courseTypeEmpty": true,
+          "id": 0,
+        }
+      }
+      icons={
+        Object {
+          "arrowBlack": "arrowBlackIcon",
+          "arrowWhite": "arrowWhiteIcon",
+          "calendar": "calendarIcon",
+        }
+      }
+    />
+  </styled.div>
+</Fragment>
+`;
+
+exports[`<Course> component MasterClass card should render correctly 1`] = `
+<Fragment>
+  <styled.a
+    href="/slug"
+    onClick={[Function]}
+  >
+    <MasterCard
+      courseData={
+        Object {
+          "courseDescr": "some descr",
+          "courseDuration": "some date",
+          "coursePreviewImage": Object {
+            "fluid": "imageUrl",
+          },
+          "courseSlug": "slug",
+          "courseStart": "course start",
+          "courseStatus": true,
+          "courseTags": Array [
+            "1",
+            "2",
+          ],
+          "courseTeachers": Array [
+            Object {
+              "fluid": "imageUrl",
+              "id": 3,
+            },
+            Object {
+              "fluid": "imageUrl",
+              "id": 4,
+            },
+          ],
+          "courseTitle": "title",
+          "courseType": "Мастер-класс",
+          "courseTypeDevelopment": false,
+          "courseTypeEmpty": false,
+          "id": 0,
+        }
+      }
+      icons={
+        Object {
+          "arrowBlack": "arrowBlackIcon",
+          "arrowWhite": "arrowWhiteIcon",
+          "calendar": "calendarIcon",
+        }
+      }
+    />
+  </styled.a>
+</Fragment>
+`;

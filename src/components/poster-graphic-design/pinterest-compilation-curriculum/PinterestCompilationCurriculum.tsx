@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { CoursesWrapper } from "../../main-page/courses/Courses"
-import ContentCard from "../../main-page/precourse-preparation/content-card"
+import { CoursesWrapper } from "../../index/courses/Courses"
+import ContentCard from "../../index/precourse-preparation/content-card"
 
 export const StyledContentCard = styled.div`
   /* p {

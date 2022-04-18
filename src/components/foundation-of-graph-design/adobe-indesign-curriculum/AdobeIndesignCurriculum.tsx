@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { CoursesWrapper } from "../../main-page/courses/Courses"
+import { CoursesWrapper } from "../../index/courses/Courses"
 
 
 
