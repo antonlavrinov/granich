@@ -8,6 +8,10 @@ import ogImage from "../assets/images/seo/index-main.jpg"
 import ogImageVK from "../assets/images/seo/vk/index-main.jpg"
 import data from "../data/pages/public-offer";
 
+// console.log("dffddf");
+
+
+
 // export const contentfulQuery = graphql`
 //   query contentfulQueryPublicOffer {
 //     publicOffer: allContentfulGranichLegalDoc(

@@ -20,11 +20,12 @@ import HardWorkMetaphors from "../components/metaphors-in-identity-page/hard-wor
 import CourseOffer from "../components/course-page-templates/offer"
 import ParticipationRestriction from "../components/metaphors-in-identity-page/participation-restriction"
 import { useQueryParam, NumberParam } from "use-query-params";
-import CourseReviews from "../components/course-page/CourseReviews";
+// import CourseReviews from "../components/course-page/CourseReviews";
 import dataIndex from "../data/pages/index";
 import data from "../data/pages/graphic-metaphors";
 import MetaphorsPortfolio from "../components/metaphors-in-identity-page/metaphors-portfolio"
-import { useStaticQuery, graphql } from "gatsby";
+// import { useStaticQuery, graphql } from "gatsby";
+import Reviews from "../components/global/reviews"
 
 
 
@@ -194,8 +195,9 @@ const GraphicMetaphorsInIdentityPage = () => {
         lessonsCount
         courseTitle="Графические метафоры"
       />
-      <CourseReviews description="Напишите выпускникам Школы, они с радостью поделятся
-            эмоциями от прохождения обучения" dataHeader={data.metaphorsReviewsHeader}/>
+      {/* <CourseReviews description="Напишите выпускникам Школы, они с радостью поделятся
+            эмоциями от прохождения обучения" dataHeader={data.metaphorsReviewsHeader}/> */}
+      <Reviews />
       <CourseTimetable courseTitle={metaphorsOffer.courseTitle} noGif noKeepCalm text="Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе обучение для вас закончится. Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течение недели (хотя бы два часа каждый день)."/>
       <MetaphorsAuthor/>
       <HardWorkMetaphors
