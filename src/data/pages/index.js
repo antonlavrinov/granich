@@ -53,11 +53,11 @@ module.exports = {
             {
                 "node": {
                     "id": "f515c943-564a-539b-9da1-697ae7b05ecf",
-                    "courseStatus": false,
+                    "courseStatus": true,
                     "courseButtonText": null,
                     "courseExternalLinkTransition": false,
                     "courseAdditionalType": null,
-                    "courseStart": "11 апреля",
+                    "courseStart": "16 мая",
                     "courseDescr": "1 ступень учебной программы графического дизайна. Интенсивный курс с дедлайнами. Основан на дизайн-системе и композициях.",
                     "courseDuration": "5 недель",
                     "coursePreviewImage": {
@@ -139,8 +139,8 @@ module.exports = {
                             "nodeType": "document"
                         }
                     },
-                    "courseStartAndEnd": "11.04 → 15.05",
-                    "courseStream": "7",
+                    "courseStartAndEnd": "16.05 → 19.06",
+                    "courseStream": "8",
                     "coursePrice": "16000",
                     // "coursePostersCollection": [
                     //     {
@@ -477,11 +477,11 @@ module.exports = {
             {
                 "node": {
                     "id": "9159840e-df91-541b-8ff9-4e272bbabb88",
-                    "courseStatus": false,
+                    "courseStatus": true,
                     "courseButtonText": null,
                     "courseExternalLinkTransition": false,
                     "courseAdditionalType": null,
-                    "courseStart": "11 апреля",
+                    "courseStart": "23 мая",
                     "courseDescr": "2 ступень учебной программы графического дизайна. Интенсивный курс с дедлайнами. Основан на графических системах.",
                     "courseDuration": "6 недель",
                     "coursePreviewImage": {
@@ -563,8 +563,8 @@ module.exports = {
                             "nodeType": "document"
                         }
                     },
-                    "courseStartAndEnd": "11.04 → 22.05",
-                    "courseStream": "2",
+                    "courseStartAndEnd": "23.05 → 3.07",
+                    "courseStream": "3",
                     // "coursePostersCollection": [
                     //     {
                     //         "fluid": {
