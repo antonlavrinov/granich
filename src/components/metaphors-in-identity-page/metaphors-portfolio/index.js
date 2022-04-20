@@ -32,7 +32,7 @@ const MetaphorsPortfolio = ({posters}) => {
                 {posters.map((item, index) => (
                     <SC.PosterWrapper key={index}>
                         <Zoom wrapStyle={{display: "block", height: "100%", cursor: "pointer"}}>
-                            <SC.Image fluid={data.allFile.edges[index].node.childImageSharp.fluid} alt="poster"/>
+                            <SC.Image src={`/images/graphic-metaphors/portfolio/${index}.jpg`} alt="poster"/>
                         </Zoom>
                         <SC.PosterAuthor>
                             <SC.AuthorName>{item.node.posterAuthor}</SC.AuthorName>

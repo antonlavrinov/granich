@@ -195,8 +195,6 @@ const GraphicMetaphorsInIdentityPage = () => {
         lessonsCount
         courseTitle="Графические метафоры"
       />
-      {/* <CourseReviews description="Напишите выпускникам Школы, они с радостью поделятся
-            эмоциями от прохождения обучения" dataHeader={data.metaphorsReviewsHeader}/> */}
       <Reviews />
       <CourseTimetable courseTitle={metaphorsOffer.courseTitle} noGif noKeepCalm text="Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе обучение для вас закончится. Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течение недели (хотя бы два часа каждый день)."/>
       <MetaphorsAuthor/>
@@ -212,8 +210,6 @@ const GraphicMetaphorsInIdentityPage = () => {
           formId={`ltForm9450584`}
           formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1022043147`}
           googleAnaliticsCategory={`Отправка формы Графметафоры`}
-          
-          // additionalTags={["Интенсивный", "С нуля"]}
         />
         {!permission && metaphorsOffer.courseStatus && <ParticipationRestriction />}
       </div>
