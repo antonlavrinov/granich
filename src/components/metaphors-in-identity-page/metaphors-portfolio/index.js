@@ -1,8 +1,8 @@
-import React from "react"
+import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Container } from "../../style";
 import * as SC from "./style";
-import Zoom from "react-medium-image-zoom"
+import Zoom from "react-medium-image-zoom";
 
 const MetaphorsPortfolio = ({posters}) => {
 

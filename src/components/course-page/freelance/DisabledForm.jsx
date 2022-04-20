@@ -264,7 +264,7 @@ const ParticipationWarning = styled.div`
 
   z-index: 10;
   svg {
-    fill: #830404;
+    fill: var(--granich-dark-red);
     width: 4vw;
     min-width: 4vw;
     margin-right: 1.2vw;

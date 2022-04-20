@@ -171,7 +171,7 @@ export const WrapperExternalLink = styled.a<PropsType>`
     ${props =>
       props.pinterest &&
       `
-        background: #830404;
+        background: var(--granich-dark-red);
     `}
     ${props =>
       props.behance &&

@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     * {
         font-family: 'Inter', sans-serif;
         --granich-red: ${props => props.theme === "blue" ? "rgb(0,70,255)" : "rgb(228, 5, 33)"};
+        --granich-dark-red: #830404;
         --granich-black: #2d2d2d;
         --granich-background-color: #f2f2f2;
         --granich-grey: #888989;

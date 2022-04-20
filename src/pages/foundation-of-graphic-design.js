@@ -419,6 +419,7 @@ const OsoznannyGraphDesignPage = () => {
         formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1127538041`}
         googleAnaliticsCategory={`Отправка формы Фундамент Графдизайна`}
         additionalTags={["Интенсивный", "С нуля"]}
+        individualSupport
       />
       <CoursePaymentChoices
         paymentsAvailable={{ credit: true, corporate: true, abroad: true }}

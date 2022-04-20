@@ -117,6 +117,7 @@ export const ReviewerTelegram = styled.a`
 
   svg {
     width: 1vw;
+    height: 1vw;
     fill: var(--granich-telegram);
     margin-right: 0.2vw;
   }
@@ -132,6 +133,7 @@ export const ReviewerTelegram = styled.a`
 
     svg {
       width: 3vw;
+      height: 3vw;
       margin-right: 1vw;
     }
 

@@ -11,7 +11,7 @@ export const FormMainWrapper = styled.div`
   `}
 `
 
-export const FormWrapper = styled.div``
+export const FormWrapper = styled.div``;
 
 export const FormContainer = styled.div`
   padding: 2vw 0vw 1vw 2.7vw;
@@ -80,8 +80,6 @@ export const FormTitle = styled.h2`
 export const Form = styled.form`
   height: 100%;
   position: relative;
-  background: white;
-  border-radius: 0.6vw;
   display: flex;
   flex-direction: column;
   @media only screen and (max-width: 575px) {
@@ -91,6 +89,18 @@ export const Form = styled.form`
     }
   }
 `
+export const FormMain = styled.div`
+  background: white;
+  height: 100%;
+  border-radius: 0.6vw;
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (max-width: 575px) {
+    border-radius: 2.5vw;
+  }
+`;
+
 export const FormInput = styled.input`
   border-radius: 0.8vw;
   border: none;

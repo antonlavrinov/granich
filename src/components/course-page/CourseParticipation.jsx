@@ -38,6 +38,7 @@ const CourseParticipation = ({
   telegram,
   additionalComponent,
   policy,
+  individualSupport,
 }) => {
   return (
     <ParticipationSection>
@@ -50,6 +51,7 @@ const CourseParticipation = ({
             formAction={formAction}
             data={data}
             policy={policy}
+            individualSupport={individualSupport}
           />
           {policy && (
             <ParticipationPolicy

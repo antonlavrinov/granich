@@ -813,9 +813,29 @@ div[data-accordion-component="AccordionItemHeading"] {
     background: linear-gradient(90deg, rgba(230,25,51,1) 0%, rgba(213,12,34,1) 30%, rgba(189,3,27,1) 70%) !important;
     padding: 0.8vw 1.2vw !important;
     box-shadow: 0.25vw 0.25vw 0.4vw rgb(0 0 0 / 25%);
+
+    .arrow-regular {
+        border-top-color: rgba(189,3,27,1) !important;
+    }
+
     @media only screen and (max-width: 575px) {
         padding: 2vw 2.7vw !important;
     }
+    
+}
+
+.tippy-tooltip.light-theme {
+  background: white !important;
+  padding: 0.8vw 1.2vw !important;
+  box-shadow: 0.25vw 0.25vw 0.4vw rgb(0 0 0 / 25%);
+
+  .arrow-regular {
+    border-top-color: white !important;
+  }
+
+  @media only screen and (max-width: 575px) {
+      padding: 2vw 2.7vw !important;
+  }
 }
 
 .tippy-popper[x-placement^=bottom] {
@@ -835,10 +855,6 @@ div[data-accordion-component="AccordionItemHeading"] {
 .tippy-popper[x-placement^=bottom] [x-arrow] {
     border-bottom-color: rgba(189,3,27,1) !important;
     // top: -1vw !important;
-}
-
-.arrow-regular {
-    border-top-color: rgba(189,3,27,1) !important;
 }
 
 .tippy-tooltip-content {

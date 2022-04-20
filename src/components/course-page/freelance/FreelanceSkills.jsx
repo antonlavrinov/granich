@@ -70,7 +70,7 @@ const SkillsQuote = styled.div`
 `
 
 const SkillsTextWrapper = styled.div`
-  background: #830404;
+  background: var(--granich-dark-red);
   padding: 1.5vw 1.8vw;
   border-radius: 0.5vw;
   display: flex;

@@ -117,7 +117,7 @@ export const WarningIcon = styled(props => <WarningSign {...props} />)`
   min-width: 3vw;
   min-height: 3vw;
   margin-right: 1vw;
-  fill: #830404;
+  fill: var(--granich-dark-red);
   @media only screen and (max-width: 575px) {
     width: 7vw;
     height: 7vw;
