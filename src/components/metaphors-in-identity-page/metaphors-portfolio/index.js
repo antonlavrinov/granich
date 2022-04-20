@@ -6,21 +6,21 @@ import Zoom from "react-medium-image-zoom";
 
 const MetaphorsPortfolio = ({posters}) => {
 
-  const data = useStaticQuery(graphql`
-    query metaphorsOfferImages {
-      allFile(filter: {relativeDirectory: {eq: "metaphors-in-identity-page/portfolio"}}) {
-        edges {
-          node {
-            childImageSharp {
-              fluid(maxWidth: 600, quality: 90) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+  // const data = useStaticQuery(graphql`
+  //   query metaphorsOfferImages {
+  //     allFile(filter: {relativeDirectory: {eq: "metaphors-in-identity-page/portfolio"}}) {
+  //       edges {
+  //         node {
+  //           childImageSharp {
+  //             fluid(maxWidth: 600, quality: 90) {
+  //               ...GatsbyImageSharpFluid
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
 
   return (
     <SC.Section>
