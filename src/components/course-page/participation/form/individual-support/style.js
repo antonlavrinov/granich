@@ -182,7 +182,7 @@ export const AdditionalInfo = styled.div`
   @media only screen and (max-width: 575px) {
     margin-left: 18vw;
     margin-top: 0;
-    font-size: 2.75vw;
+    font-size: 2.7vw;
     display: flex;
 
     svg {
@@ -192,6 +192,7 @@ export const AdditionalInfo = styled.div`
       height: 6vw;
       margin-right: 2vw;
       position: relative;
+      fill: rgba(256, 256, 256, 0.3);
     }
   }
 `;
