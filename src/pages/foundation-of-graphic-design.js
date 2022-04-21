@@ -448,7 +448,6 @@ const OsoznannyGraphDesignPage = () => {
             })}
           </Team>
         </TeamWrapper>
-        
       </Container>
     </Layout>
   )

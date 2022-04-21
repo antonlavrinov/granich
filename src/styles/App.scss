@@ -824,12 +824,17 @@ div[data-accordion-component="AccordionItemHeading"] {
     
 }
 
+.tippy-popper[x-placement^=bottom] [x-arrow] {
+  border-bottom-color: rgba(189,3,27,1) !important;
+}
+
 .tippy-tooltip.light-theme {
   background: white !important;
   padding: 0.8vw 1.2vw !important;
   box-shadow: 0.25vw 0.25vw 0.4vw rgb(0 0 0 / 25%);
 
   .arrow-regular {
+    border-bottom-color: white !important;
     border-top-color: white !important;
   }
 
@@ -850,11 +855,6 @@ div[data-accordion-component="AccordionItemHeading"] {
     @media only screen and (max-width: 575px) {
         top: 2vw !important;
     }
-}
-
-.tippy-popper[x-placement^=bottom] [x-arrow] {
-    border-bottom-color: rgba(189,3,27,1) !important;
-    // top: -1vw !important;
 }
 
 .tippy-tooltip-content {

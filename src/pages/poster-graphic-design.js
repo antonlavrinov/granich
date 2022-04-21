@@ -449,6 +449,7 @@ const OsoznannyGraphDesignPage = () => {
         formAction={`https://school.granich.design/pl/lite/block-public/process-html?id=1307782162`}
         googleAnaliticsCategory={`Отправка формы Плакатный Графдизайн`}
         additionalTags={["Интенсивный"]}
+        individualSupport
       />
       <CoursePaymentChoices
         paymentsAvailable={{ credit: true, corporate: true, abroad: true }}

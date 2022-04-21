@@ -24,7 +24,7 @@ const IndividualSupport = () => {
       <SC.MainInfoWrapper>
         <SC.AuthorImage fluid={authorImage.placeholderImage.childImageSharp.fluid} />
         <SC.MainInfo>
-          <SC.Title><b>Индивидуальное прохождение курса </b>с Вадимом Граничем (основателем Школы)</SC.Title>
+          <SC.Title><b>Индивидуальное прохождение курса </b>с Вадимом Граничем (основателем Школы)</SC.Title>
           <SC.Form>
             <SC.Price>50 000₽</SC.Price>
             <SC.Button target="_blank" href="https://t.me/vadim_granich">
@@ -37,13 +37,17 @@ const IndividualSupport = () => {
       <Tooltip
         html={(
           <SC.TooltipContent>
-            dfjkfdsjkjsdfdsf dfjkhdsf dfjkdhsfkjfdhs dfkjdsfkjdshf sdfkhdsfkjfhsd dsfkhsdfkjdshf dfskhdskjdsf
+            Вы можете пройти курс по стандартной стоимости, в учебной группе с кураторами, которых подготавливал Гранич. Или можете пройти курс индивидуально с Граничем. Это дороже, однако, есть свои плюсы:
+            <span>поблажки по дедлайнам</span>
+            <span>ответы по теории непосредственно от создателя Курса</span>
+            <span>возможность обсуждать дополнительные вопросы из мира графического дизайна, выходя за рамки Курса</span>
           </SC.TooltipContent>
         )}
         animation="shift"
         theme="light"
         arrow
         interactive
+        // trigger="click"
       >
         <SC.AdditionalInfo>
           <InfoIcon />

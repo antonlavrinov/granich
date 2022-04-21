@@ -360,7 +360,7 @@ const ParticipationForm = ({
                   />
                   <input type="hidden" name="isHtmlWidget" value="1" />
                 </SC.FormMain>
-                {/* {individualSupport && <IndividualSupport />} */}
+                {individualSupport && <IndividualSupport />}
               </SC.Form>
             )
           }}

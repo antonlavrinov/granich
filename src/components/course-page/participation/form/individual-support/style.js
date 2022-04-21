@@ -11,6 +11,8 @@ export const Wrapper = styled.div`
 
   @media only screen and (max-width: 575px) {
     border-radius: 0 0 2.5vw 2.5vw;
+    padding: 4.5vw 4vw 5vw;
+    flex-direction: column;
   }
 `;
 
@@ -29,10 +31,11 @@ export const AuthorImage = styled(Img)`
   outline: 2px solid white;
   
   @media only screen and (max-width: 575px) {
-    width: 20vw;
-    height: 20vw;
-    min-width: 20vw;
-    min-height: 20vw;
+    width: 15vw;
+    height: 15vw;
+    min-width: 15vw;
+    min-height: 15vw;
+    margin-right: 3vw;
   }
 `;
 
@@ -40,6 +43,11 @@ export const MainInfo = styled.div`
   min-width: 18vw;
   margin-right: 1.2vw;
   margin-top: 0.3vw;
+
+  @media only screen and (max-width: 575px) {
+    margin-right: 0;
+    min-width: auto;
+  }
 `;
 
 export const Title = styled.div`
@@ -52,12 +60,21 @@ export const Title = styled.div`
     color: white;
     display: block;
   }
+
+  @media only screen and (max-width: 575px) {
+    font-size: 3.08vw;
+    margin-bottom: 2vw;
+  }
 `;
 
 export const Form = styled.div`
   display: flex;
   align-items: center;
   margin-left: -0.2vw;
+
+  @media only screen and (max-width: 575px) {
+    margin-bottom: 2vw;
+  }
 `;
 
 export const Price = styled.div`
@@ -67,6 +84,11 @@ export const Price = styled.div`
   font-style: italic;
   font-weight: 500;
   margin-right: 1vw;
+
+  @media only screen and (max-width: 575px) {
+    font-size: 8vw;
+    margin-right: 4vw;
+  }
 `;
 
 export const Button = styled.a`
@@ -100,8 +122,8 @@ export const Button = styled.a`
   }
 
   @media only screen and (max-width: 575px) {
-    font-size: 4.4vw;
-    padding: 3vw 8vw;
+    font-size: 2.5vw;
+    padding: 2vw;
     border-radius: 1.5vw;
     box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.25);
 
@@ -110,12 +132,15 @@ export const Button = styled.a`
     }
 
     svg {
-      width: 11vw;
-      height: 11vw;
+      width: 4vw;
+      height: 4vw;
+      transform: scale(1.3);
+      margin-right: 1vw;
     }
     
     :hover {
       transform: none;
+      font-size: 2.5vw;
     }
   }
 `;
@@ -133,6 +158,7 @@ export const AdditionalInfo = styled.div`
     right: 0.6vw;
     top: 0;
     width: 1.2vw;
+    height: 1.2vw;
     fill: rgba(256, 256, 256, 0.35);
     transition: fill 0.1s ease;
   }
@@ -145,8 +171,66 @@ export const AdditionalInfo = styled.div`
       fill: rgba(256, 256, 256, 0.45);
     }
   }
+
+  @media only screen and (max-width: 575px) {
+    margin-left: 18vw;
+    margin-top: 0;
+    font-size: 2.75vw;
+
+    svg {
+      right: 13vw;
+      width: 3vw;
+      height: 3vw;
+      top: 0.4vw;
+    }
+  }
 `;
 
 export const TooltipContent = styled.div`
-  max-width: 5vw;
+  max-width: 20vw;
+  color: var(--granich-grey);
+  line-height: 1.3;
+  text-align: left;
+  padding: 0.2vw;
+
+  span {
+    display: block;
+    margin: 0.5vw 0;
+    color: var(--granich-grey);
+    position: relative;
+    padding-left: 0.8vw;
+
+    :after {
+      content: "";
+      position: absolute;
+      top: 0.4vw;
+      left: 0;
+      width: 0.25vw;
+      height: 0.25vw;
+      background: var(--granich-grey);
+      border-radius: 50%;
+    }
+  }
+
+  @media only screen and (max-width: 575px) {
+    padding: 1vw;
+    font-size: 2.75vw;
+    max-width: 60vw;
+
+    span {
+      padding-left: 2vw;
+      margin: 1vw 0;
+
+      :after {
+        content: "";
+        position: absolute;
+        top: 1.4vw;
+        left: 0;
+        width: 0.7vw;
+        height: 0.7vw;
+        background: var(--granich-grey);
+        border-radius: 50%;
+      }
+    }
+  }
 `;

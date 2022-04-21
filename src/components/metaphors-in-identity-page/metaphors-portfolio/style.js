@@ -25,7 +25,6 @@ export const SectionTitle = styled.h2`
   padding: 0 1.5vw;
   font-weight: 700;
   line-height: 0.85;
-  /* margin-bottom: 3vw; */
 
   @media only screen and (max-width: 575px) {
     font-size: 11vw;
@@ -62,7 +61,6 @@ export const PosterWrapper = styled.div`
     position: relative;
     border-radius: 0.5vw;
     overflow: hidden;
-    /* outline: 1px solid rgba(0,0,0,0.1); */
     box-shadow: 0 0 0.5vw rgba(0,0,0,0.15);
     transition: all 0.2s ease;
     width: 100%;
@@ -72,28 +70,25 @@ export const PosterWrapper = styled.div`
     }
 
     :hover {
-        transform: scale(1.07);
-        cursor: pointer;
-        .poster-author {
-            bottom: -4vw;
-            /* visibility: hidden; */
-            opacity: 0;
-            /* z-index: -1; */
-            
-        }
+      transform: scale(1.07);
+      cursor: pointer;
+      .poster-author {
+          bottom: -4vw;
+          opacity: 0;
+      }
     }
 
     @media only screen and (max-width: 575px) {
-        border-radius: 1.5vw;
+      border-radius: 1.5vw;
 
-        :hover {
-            transform: none;
-            cursor: pointer;
-            .poster-author {
-                bottom: 0;
-                opacity: 1;
-            }
-        }
+      :hover {
+          transform: none;
+          cursor: pointer;
+          .poster-author {
+              bottom: 0;
+              opacity: 1;
+          }
+      }
     }
 `;
 
@@ -109,29 +104,29 @@ export const ShowMoreWrapper = styled.div`
     width: 100%;
 
     button {
-        margin: 0 2.5vw 2vw;
-        font-size: 1.35vw;
-        display: block;
-        padding: 1.2vw 0;
-        background: var(--granich-grey);
-        background: rgba(0,0,0,0.05);
-        border-radius: 0.5vw;
-        width: 100%;
-        position: relative;
-        color: var(--granich-grey);
-        :hover {
-            cursor: pointer;
-            background: rgba(0,0,0,0.08);
-        }
-
+      margin: 0 2.5vw 2vw;
+      font-size: 1.35vw;
+      display: block;
+      padding: 1.2vw 0;
+      background: var(--granich-grey);
+      background: rgba(0,0,0,0.05);
+      border-radius: 0.5vw;
+      width: 100%;
+      position: relative;
+      color: var(--granich-grey);
+      :hover {
+          cursor: pointer;
+          background: rgba(0,0,0,0.08);
+      }
     }
 
     @media only screen and (max-width: 575px) {
         padding: 30vw 0 0;
+
         button {
-            font-size: 3.7vw;
-            padding: 3vw 0;
-            border-radius: 1.5vw;
+          font-size: 3.7vw;
+          padding: 3vw 0;
+          border-radius: 1.5vw;
         }
     }
 `;
