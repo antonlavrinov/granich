@@ -28,7 +28,7 @@ export const AuthorImage = styled(Img)`
   border-radius: 50%;
   overflow: hidden;
   margin-right: 0.8vw;
-  outline: 2px solid white;
+  border: 2px solid white;
   
   @media only screen and (max-width: 575px) {
     width: 15vw;
@@ -62,8 +62,14 @@ export const Title = styled.div`
   }
 
   @media only screen and (max-width: 575px) {
-    font-size: 3.08vw;
+    font-size: 2.7vw;
     margin-bottom: 2vw;
+    white-space: nowrap;
+
+    b {
+      font-size: 3.1vw;
+      white-space: nowrap;
+    }
   }
 `;
 
@@ -136,6 +142,7 @@ export const Button = styled.a`
       height: 4vw;
       transform: scale(1.3);
       margin-right: 1vw;
+      
     }
     
     :hover {
@@ -176,12 +183,15 @@ export const AdditionalInfo = styled.div`
     margin-left: 18vw;
     margin-top: 0;
     font-size: 2.75vw;
+    display: flex;
 
     svg {
-      right: 13vw;
-      width: 3vw;
-      height: 3vw;
-      top: 0.4vw;
+      display: block;
+      right: auto;
+      width: 6vw;
+      height: 6vw;
+      margin-right: 2vw;
+      position: relative;
     }
   }
 `;
