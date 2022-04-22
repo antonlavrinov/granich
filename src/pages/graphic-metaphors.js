@@ -25,7 +25,7 @@ import dataIndex from "../data/pages/index";
 import data from "../data/pages/graphic-metaphors";
 import MetaphorsPortfolio from "../components/metaphors-in-identity-page/metaphors-portfolio"
 // import { useStaticQuery, graphql } from "gatsby";
-import Reviews from "../components/global/reviews"
+import ReviewsWithStudents from "../components/global/reviews/ReviewsWithStudents";
 
 
 
@@ -195,7 +195,7 @@ const GraphicMetaphorsInIdentityPage = () => {
         lessonsCount
         courseTitle="Графические метафоры"
       />
-      <Reviews />
+      <ReviewsWithStudents />
       <CourseTimetable courseTitle={metaphorsOffer.courseTitle} noGif noKeepCalm text="Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе обучение для вас закончится. Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течение недели (хотя бы два часа каждый день)."/>
       <MetaphorsAuthor/>
       <HardWorkMetaphors

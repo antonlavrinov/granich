@@ -435,8 +435,7 @@ const OsoznannyGraphDesignPage = () => {
       />
       <Features title="Ещё пара бонусов" data={data.posterFeatures}/>
       
-      <CourseReviews description="Напишите выпускникам Школы, они с радостью поделятся
-                  эмоциями от прохождения обучения" dataHeader={data.posterReviewsHeader}/>
+      <CourseReviews description={(<>Отзывы о курсе можете посмотреть в Телеграм-канале отзывов по тегу <span>#плакатный_графдизайн</span></>)} dataHeader={data.posterReviewsHeader}/>
       <CourseHardWork
         title="«Пожалуйста, примите осознанное решение об участии на этом курсе»"
         text="На курсе созданы условия для быстрого развития твёрдых навыков, но это не произойдёт по волшебству. Вам понадобится прилагать много сил, чтобы дойти до конца (хотя бы 2 часа ежедневно)."

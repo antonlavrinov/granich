@@ -33,6 +33,7 @@ import { Container } from "../components/style";
 import FoundationPortfolio from "../components/foundation-of-graph-design/foundation-portfolio";
 import data from "../data/pages/foundation-of-graphic-design";
 import dataIndex from "../data/pages/index";
+import Reviews from "../components/global/reviews";
 
 // export const contentfulQuery = graphql`
 //   query foundationGraphDesignQuery {
@@ -404,8 +405,8 @@ const OsoznannyGraphDesignPage = () => {
       />
       <Features title="Ещё пара бонусов" data={data.foundationFeatures}/>
       
-      <CourseReviews description="Напишите выпускникам Школы, они с радостью поделятся
-                  эмоциями от прохождения обучения" dataHeader={data.foundationReviewsHeader}/>
+      <CourseReviews description={(<>Отзывы о курсе можете посмотреть в Телеграм-канале отзывов по тегу <span>#фундамент_графдизайна</span></>)} dataHeader={data.foundationReviewsHeader}/>
+      {/* <Reviews /> */}
       <CourseHardWork
         title="«Пожалуйста, примите осознанное решение об участии на этом курсе»"
         text="На курсе созданы условия для быстрого развития твёрдых навыков, но это не произойдёт по волшебству. Вам понадобится прилагать много сил, чтобы дойти до конца (хотя бы 2 часа ежедневно)."

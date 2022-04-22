@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
     border-radius: 0 0 2.5vw 2.5vw;
     padding: 4.5vw 4vw 5vw;
     flex-direction: column;
+    align-items: end;
   }
 `;
 

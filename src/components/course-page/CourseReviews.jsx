@@ -47,6 +47,7 @@ const ReviewsSection = styled.section`
 
 const ReviewsWrapper = styled.div`
   background: #e8e8e8;
+  // background: white;
   padding: 3vw 1vw 3vw 3vw;
   border-radius: 0.6vw;
   @media only screen and (max-width: 575px) {
@@ -200,13 +201,20 @@ const ReviewsLinks = styled.div`
 `
 const ReviewsText = styled.div`
   font-size: 1.2vw;
-  max-width: 48%;
+  max-width: 50%;
   margin-left: 1.2vw;
   line-height: 1.4;
   font-weight: 500;
   letter-spacing: -0.01em;
+
+  span {
+    font-size: 1.25vw;
+    font-weight: 500;
+    color: var(--granich-telegram);
+    
+  }
   ${props => props.reviewsHeaderAttachmentTo === "Фундамент Графдизайна" && `
-      font-size: 1.12vw;
+      font-size: 1.25vw;
       line-height: 1.5;
   `};
   ${props => props.reviewsHeaderAttachmentTo === "Графические метафоры" && `
@@ -218,6 +226,10 @@ const ReviewsText = styled.div`
     max-width: 100%;
     margin-top: 3vw;
     margin-left: 0;
+
+    span {
+      font-size: 3.7vw;
+    }
   }
 `
 

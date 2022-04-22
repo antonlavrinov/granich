@@ -25,19 +25,6 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const SectionTitle = styled.div`
-  font-size: 4vw;
-  font-weight: 700;
-  letter-spacing: -0.1vw;
-  margin-bottom: 2.4vw;
-  @media only screen and (max-width: 575px) {
-    font-size: 11vw;
-    margin-bottom: 4vw;
-    letter-spacing: -0.7vw;
-    line-height: 1;
-  }
-`
-
 const BlockStyle = css`
   padding: 1.5vw;
   background: white;
@@ -50,6 +37,25 @@ const BlockStyle = css`
     border-radius: 2.5vw;
   }
 `;
+
+export const WrapperWithBackground = styled.div`
+  ${BlockStyle};
+  display: flex;
+  align-items: center;
+`;
+
+export const SectionTitle = styled.div`
+  font-size: 4vw;
+  font-weight: 700;
+  letter-spacing: -0.1vw;
+  margin-bottom: 2.4vw;
+  @media only screen and (max-width: 575px) {
+    font-size: 11vw;
+    margin-bottom: 4vw;
+    letter-spacing: -0.7vw;
+    line-height: 1;
+  }
+`
 
 export const Review = styled.div`
   ${BlockStyle};
@@ -177,6 +183,11 @@ export const TelegramChannelImage = styled.img`
   margin: 0 auto;
   margin-bottom: 1.7vw;
 
+  ${(props => props.isSingle && `
+    margin-bottom: 0;
+    margin-right: 2vw;
+  `)}
+
   @media only screen and (max-width: 575px) {
     width: 20vw;
     height: 20vw;
@@ -194,6 +205,10 @@ export const TelegramChannelText = styled.div`
     color: #36ADE0;
     font-weight: 500;
   }
+
+  ${(props => props.isSingle && `
+    text-align: left;
+  `)}
 
   @media only screen and (max-width: 575px) {
     font-size: 3.8vw;
