@@ -156,10 +156,16 @@ export const Button = styled.a`
 export const AdditionalInfo = styled.div`
   color: rgba(256, 256, 256, 0.45);
   font-size: 0.9vw;
-  line-height: 1.25;
+  line-height: 1.35;
   transition: color 0.1s ease;
   margin-top: 0.3vw;
   position: relative;
+  /* display: inline-block; */
+  text-decoration: underline dotted;
+  /* line-height: 1.5 !important; */
+  /* border-bottom: 1.5px dashed rgba(256,256,256,0.2); */
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(256,256,256,0.3);
 
   svg {
     position: absolute;
