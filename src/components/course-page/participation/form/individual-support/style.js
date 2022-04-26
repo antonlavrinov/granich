@@ -191,12 +191,16 @@ export const AdditionalInfo = styled.div`
     margin-top: 0;
     font-size: 2.7vw;
     display: flex;
+    align-items: center;
 
     svg {
       display: block;
       right: auto;
+      /* top: 1vw; */
       width: 6vw;
       height: 6vw;
+      min-width: 6vw;
+      min-height: 6vw;
       margin-right: 2vw;
       position: relative;
       fill: rgba(256, 256, 256, 0.3);
