@@ -26,6 +26,7 @@ import data from "../data/pages/graphic-metaphors";
 import MetaphorsPortfolio from "../components/metaphors-in-identity-page/metaphors-portfolio"
 // import { useStaticQuery, graphql } from "gatsby";
 import ReviewsWithStudents from "../components/global/reviews/ReviewsWithStudents";
+import MetaphorsOffer from "../components/metaphors-in-identity-page/offer"
 
 
 
@@ -184,6 +185,7 @@ const GraphicMetaphorsInIdentityPage = () => {
       />
       <div className="section-top-block"></div>
       <CourseOffer permission={permission} allowPosters data={metaphorsOffer} postersAuthors="Работы куратора курса"/> 
+      <MetaphorsOffer data={metaphorsOffer} />
       <VideoPresentationOffer />
       <MetaphorsForWhom/>
       <MetaphorsPortfolio posters={data?.metaphorsPosters.edges} />

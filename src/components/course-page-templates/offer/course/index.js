@@ -7,8 +7,8 @@ import * as SC from "../CourseOffer"
 import Posters from "../posters"
 import PostersWrapper from "../posters/PostersWrapper"
 import { RootWrapper } from "../posters/Posters"
-import scrollTo from "gatsby-plugin-smoothscroll"
-import DescrTooltip from "../../description-tooltip"
+// import scrollTo from "gatsby-plugin-smoothscroll"
+// import DescrTooltip from "../../description-tooltip"
 
 const CourseTemplateOffer = ({
   data,
@@ -30,11 +30,8 @@ const CourseTemplateOffer = ({
           <Posters postersCollection={data.coursePostersCollection} />
         </RootWrapper>
       )}
-      
-
       <Container>
         <SC.Wrapper type={data.courseType}>
-          
           <SC.Info>
             <SC.Tags className="noselect">
               <>
@@ -81,7 +78,6 @@ const CourseTemplateOffer = ({
             {postersAuthors && (
               <SC.PostersLabel>{postersAuthors}</SC.PostersLabel>
             )}
-
             <SC.Descr
               className="noselect"
               courseTitle={data.courseTitle}
@@ -101,7 +97,6 @@ const CourseTemplateOffer = ({
                 <SC.AdditionalText>{additionalText}</SC.AdditionalText>
               )}
             </SC.ButtonWrapper>
-            
           </SC.Info>
         </SC.Wrapper>
       </Container>
