@@ -548,7 +548,7 @@ module.exports = {
                                                     "type": "bold"
                                                 }
                                             ],
-                                            "value": "Докрутка творческих макетов\n",
+                                            "value": "Докрутка итогового проекта\n",
                                             "nodeType": "text"
                                         },
                                         {
