@@ -184,7 +184,7 @@ const GraphicMetaphorsInIdentityPage = () => {
         url="https://granich.design/graphic-metaphors"
       />
       <div className="section-top-block"></div>
-      <CourseOffer permission={permission} allowPosters data={metaphorsOffer} postersAuthors="Работы куратора курса"/> 
+      {/* <CourseOffer permission={permission} allowPosters data={metaphorsOffer} postersAuthors="Работы куратора курса"/>  */}
       <MetaphorsOffer data={metaphorsOffer} />
       <VideoPresentationOffer />
       <MetaphorsForWhom/>
