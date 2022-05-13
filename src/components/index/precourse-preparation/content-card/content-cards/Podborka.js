@@ -1,21 +1,18 @@
 import React from "react"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import * as SC from "../ContentCard"
-import { MediumContentProps } from "./types"
 
-const MediumContent: React.FC<MediumContentProps> = ({
+const PodborkaContent = ({
   content,
-  mediumIcon,
-  mediumLinkIcon,
-  contentExternalLink,
+  podborkaLinkIcon,
 }) => {
   return (
-    <SC.WrapperExternalLink
+    <SC.WrapperLink
       className="content"
-      medium
-      rel="noopener noreferrer"
-      href={contentExternalLink}
+      podborka
+      href={`/${content.contentSlug}`}
       target="_blank"
+      type={content.contentType}
     >
       <SC.Container>
         <SC.TagList>
@@ -29,15 +26,14 @@ const MediumContent: React.FC<MediumContentProps> = ({
           {documentToReactComponents(content.contentDescription.json)}
         </SC.Descr>
       </SC.Container>
-      <SC.Button medium>
+      <SC.Button podborka>
         <SC.ButtonText>Изучить</SC.ButtonText>
         <SC.IconsWrapper>
-          <SC.LinkIcon fluid={mediumIcon} />
-          <SC.LinkOutIcon fluid={mediumLinkIcon} />
+          <SC.PodborkaOut fluid={podborkaLinkIcon} />
         </SC.IconsWrapper>
       </SC.Button>
-    </SC.WrapperExternalLink>
+    </SC.WrapperLink>
   )
 }
 
-export default MediumContent
+export default PodborkaContent

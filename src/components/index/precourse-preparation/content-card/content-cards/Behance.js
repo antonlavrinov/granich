@@ -1,9 +1,8 @@
 import React from "react"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import * as SC from "../ContentCard"
-import { BehanceContentProps } from "./types"
 
-const BehanceContent: React.FC<BehanceContentProps> = ({
+const BehanceContent = ({
   content,
   behanceIcon,
   behanceLinkIcon,

@@ -1,8 +1,7 @@
 import React from "react"
 import * as SC from "../ContentCard"
-import { YoutubeMixedPinterestContentProps } from "./types"
 
-const YoutubeMixedPinterestContent: React.FC<YoutubeMixedPinterestContentProps> = ({
+const YoutubeMixedPinterestContent = ({
   content,
   youtubePng,
   pinterestIcon,

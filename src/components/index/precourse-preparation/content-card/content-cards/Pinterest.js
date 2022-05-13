@@ -1,19 +1,20 @@
 import React from "react"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import * as SC from "../ContentCard"
-import { PodborkaContentProps } from "./types"
 
-const PodborkaContent: React.FC<PodborkaContentProps> = ({
+const PinterestContent = ({
   content,
-  podborkaLinkIcon,
+  pinterestIcon,
+  pinterestLinkIcon,
+  contentExternalLink,
 }) => {
   return (
-    <SC.WrapperLink
+    <SC.WrapperExternalLink
       className="content"
-      podborka
-      href={`/${content.contentSlug}`}
+      pinterest
+      rel="noopener noreferrer"
+      href={contentExternalLink}
       target="_blank"
-      type={content.contentType}
     >
       <SC.Container>
         <SC.TagList>
@@ -27,14 +28,16 @@ const PodborkaContent: React.FC<PodborkaContentProps> = ({
           {documentToReactComponents(content.contentDescription.json)}
         </SC.Descr>
       </SC.Container>
-      <SC.Button podborka>
+      <SC.Button pinterest
+       >
         <SC.ButtonText>Изучить</SC.ButtonText>
         <SC.IconsWrapper>
-          <SC.PodborkaOut fluid={podborkaLinkIcon} />
+          <SC.PinterestIcon fluid={pinterestIcon} />
+          <SC.PinterestOutIcon fluid={pinterestLinkIcon} />
         </SC.IconsWrapper>
       </SC.Button>
-    </SC.WrapperLink>
+    </SC.WrapperExternalLink>
   )
 }
 
-export default PodborkaContent
+export default PinterestContent

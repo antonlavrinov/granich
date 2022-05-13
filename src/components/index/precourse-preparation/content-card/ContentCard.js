@@ -1,18 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import BackgroundImage from "gatsby-image"
 import Img from "gatsby-image"
-// import { OutboundLink } from "gatsby-plugin-google-analytics"
-
-type PropsType = {
-  youtube?: boolean
-  podborka?: boolean
-  pinterest?: boolean
-  behance?: boolean
-  medium?: boolean
-  mixed?: boolean
-  mixedPinterest?: boolean
-}
 
 export const PodborkaOut = styled(props => <Img {...props} />)`
   width: 2.3vw;
@@ -121,7 +109,7 @@ export const BehanceOutIcon = styled(props => <Img {...props} />)`
   }
 `
 
-export const WrapperLink = styled.a<PropsType>`
+export const WrapperLink = styled.a`
   background: #2b2b2b;
   border-radius: 0.5vw;
   display: flex;
@@ -150,7 +138,7 @@ export const WrapperLink = styled.a<PropsType>`
     `}
 `
 
-export const WrapperExternalLink = styled.a<PropsType>`
+export const WrapperExternalLink = styled.a`
     background: red;
     border-radius: 0.5vw;
     display: flex;
@@ -296,7 +284,7 @@ export const Descr = styled.div`
   }
 `
 
-export const Button = styled.div<PropsType>`
+export const Button = styled.div`
     background: none;
     border-radius: 0 0 0.5vw 0.5vw;
     margin-top: auto;
@@ -304,6 +292,7 @@ export const Button = styled.div<PropsType>`
     justify-content: space-between;
     padding: 1vw 1.1vw 1vw;
     align-items: center;
+
     ${props =>
       props.youtube &&
       `
@@ -337,6 +326,7 @@ export const Button = styled.div<PropsType>`
       `
         align-items: flex-start;
     `}
+    
 
     @media only screen and (max-width: 575px) {
         border-radius: 0 0 1.5vw 1.5vw;
@@ -424,7 +414,7 @@ export const ButtonBlockTitle = styled.div`
   }
 `
 
-export const ButtonReadBlockWrapper = styled.div<PropsType>`
+export const ButtonReadBlockWrapper = styled.div`
   margin-bottom: -0.6vw;
   display: flex;
   flex-direction: column;

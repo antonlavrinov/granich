@@ -900,7 +900,7 @@ module.exports = {
             {
                 "node": {
                     "id": "44204071-00e8-5282-9601-7a055e1dcf2f",
-                    "courseStatus": true,
+                    "courseStatus": false,
                     "courseButtonText": null,
                     "courseExternalLinkTransition": false,
                     "courseAdditionalType": null,

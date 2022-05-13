@@ -17,7 +17,7 @@ import CourseExplain from "../components/course-page/CourseExplain";
 import CourseHardWork from "../components/course-page/CourseHardWork";
 import CourseReviews from "../components/course-page/CourseReviews";
 import CourseCurriculum from "../components/course-page/CourseCurriculum";
-import CourseTimetable from "../components/course-page/CourseTimetable";
+import CourseTimetable from "../components/course-page/course-timetable";
 import CourseTrainingPath from "../components/course-page/CourseTrainingPath";
 import Features from "../components/course-page-templates/features";
 import CourseQandA from "../components/course-page-templates/q-and-a";

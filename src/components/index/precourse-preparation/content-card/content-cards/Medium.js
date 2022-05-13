@@ -1,18 +1,17 @@
 import React from "react"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import * as SC from "../ContentCard"
-import { PinterestContentProps } from "./types"
 
-const PinterestContent: React.FC<PinterestContentProps> = ({
+const MediumContent = ({
   content,
-  pinterestIcon,
-  pinterestLinkIcon,
+  mediumIcon,
+  mediumLinkIcon,
   contentExternalLink,
 }) => {
   return (
     <SC.WrapperExternalLink
       className="content"
-      pinterest
+      medium
       rel="noopener noreferrer"
       href={contentExternalLink}
       target="_blank"
@@ -29,15 +28,15 @@ const PinterestContent: React.FC<PinterestContentProps> = ({
           {documentToReactComponents(content.contentDescription.json)}
         </SC.Descr>
       </SC.Container>
-      <SC.Button pinterest>
+      <SC.Button medium>
         <SC.ButtonText>Изучить</SC.ButtonText>
         <SC.IconsWrapper>
-          <SC.PinterestIcon fluid={pinterestIcon} />
-          <SC.PinterestOutIcon fluid={pinterestLinkIcon} />
+          <SC.LinkIcon fluid={mediumIcon} />
+          <SC.LinkOutIcon fluid={mediumLinkIcon} />
         </SC.IconsWrapper>
       </SC.Button>
     </SC.WrapperExternalLink>
   )
 }
 
-export default PinterestContent
+export default MediumContent

@@ -1,8 +1,7 @@
 import React from "react"
 import * as SC from "../ContentCard"
-import { YoutubeContentProps } from "./types"
 
-const YoutubeContent: React.FC<YoutubeContentProps> = ({
+const YoutubeContent = ({
   content,
   youtubePng,
   pinterestLinkIcon,

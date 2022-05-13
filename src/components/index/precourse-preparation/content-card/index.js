@@ -1,35 +1,40 @@
 import React from "react"
-import YoutubeMixedContent from "./content-cards/YoutubeMixed"
-import YoutubeMixedPinterestContent from "./content-cards/YoutubeMixedPinterest"
-import YoutubeContent from "./content-cards/Youtube"
 import BehanceContent from "./content-cards/Behance"
 import MediumContent from "./content-cards/Medium"
 import PinterestContent from "./content-cards/Pinterest"
 import PodborkaContent from "./content-cards/Podborka"
+import YoutubeContent from "./content-cards/Youtube"
+import YoutubeMixed from "./content-cards/YoutubeMixed"
+import YoutubeMixedPinterestContent from "./content-cards/YoutubeMixedPinterest"
+import { useLocalQuery } from "./useLocalQuery"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
-import { IContentCard } from "../../../../interfaces/index"
-import { ContentTypes } from "."
 
-type PureContentProps = {
-  content: IContentCard
-  icons: {
-    behanceIcon: string
-    pinterestIcon: string
-    pinterestLinkIcon: string
-    behanceLinkIcon: string
-    mediumIcon: string
-    mediumLinkIcon: string
-    youtubePng: string
-    podborkaLinkIcon: string
-  }
-  findContentExternalLink: (contentType: string) => string
+const contentTypes = {
+  Youtube: "Youtube",
+  Behance: "Behance",
+  Pinterest: "Pinterest",
+  Medium: "Medium",
+  Mixed: "Youtube + Medium + Behance",
+  MixedPinterest: "Youtube + Pinterest",
+  Podborka: "Осознанная подборка",
 }
 
-export const PureContentCard: React.FC<PureContentProps> = ({
-  content,
-  icons,
-  findContentExternalLink,
-}) => {
+const ContentCard = ({ content }) => {
+  const icons = useLocalQuery()
+
+  const findContentExternalLink = contentType => {
+    switch (contentType) {
+      case contentTypes.Pinterest:
+        return content.contentLinkPinterest
+      case contentTypes.Behance:
+        return content.contentLinkBehance
+      case contentTypes.Medium:
+        return content.contentLinkMedium
+      default:
+        return "/"
+    }
+  }
+
   return (
     <div
       onClick={() =>
@@ -40,22 +45,22 @@ export const PureContentCard: React.FC<PureContentProps> = ({
         })
       }
     >
-      {content.contentType === ContentTypes.Mixed && (
-        <YoutubeMixedContent
+      {content.contentType === contentTypes.Mixed && (
+        <YoutubeMixed
           content={content}
           behanceIcon={icons.behanceIcon}
           youtubePng={icons.youtubePng}
           mediumIcon={icons.mediumIcon}
         />
       )}
-      {content.contentType === ContentTypes.Youtube && (
+      {content.contentType === contentTypes.Youtube && (
         <YoutubeContent
           pinterestLinkIcon={icons.pinterestLinkIcon}
           content={content}
           youtubePng={icons.youtubePng}
         />
       )}
-      {content.contentType === ContentTypes.Behance && (
+      {content.contentType === contentTypes.Behance && (
         <BehanceContent
           contentExternalLink={findContentExternalLink(content.contentType)}
           behanceLinkIcon={icons.behanceLinkIcon}
@@ -63,7 +68,7 @@ export const PureContentCard: React.FC<PureContentProps> = ({
           behanceIcon={icons.behanceIcon}
         />
       )}
-      {content.contentType === ContentTypes.Pinterest && (
+      {content.contentType === contentTypes.Pinterest && (
         <PinterestContent
           contentExternalLink={findContentExternalLink(content.contentType)}
           pinterestLinkIcon={icons.pinterestLinkIcon}
@@ -71,7 +76,7 @@ export const PureContentCard: React.FC<PureContentProps> = ({
           pinterestIcon={icons.pinterestIcon}
         />
       )}
-      {content.contentType === ContentTypes.Medium && (
+      {content.contentType === contentTypes.Medium && (
         <MediumContent
           contentExternalLink={findContentExternalLink(content.contentType)}
           mediumLinkIcon={icons.mediumLinkIcon}
@@ -79,13 +84,13 @@ export const PureContentCard: React.FC<PureContentProps> = ({
           mediumIcon={icons.mediumIcon}
         />
       )}
-      {content.contentType === ContentTypes.Podborka && (
+      {content.contentType === contentTypes.Podborka && (
         <PodborkaContent
           podborkaLinkIcon={icons.podborkaLinkIcon}
           content={content}
         />
       )}
-      {content.contentType === ContentTypes.MixedPinterest && (
+      {content.contentType === contentTypes.MixedPinterest && (
         <YoutubeMixedPinterestContent
           content={content}
           youtubePng={icons.youtubePng}
@@ -95,3 +100,5 @@ export const PureContentCard: React.FC<PureContentProps> = ({
     </div>
   )
 }
+
+export default ContentCard

@@ -17,7 +17,7 @@ import CourseExplain from "../components/course-page/CourseExplain"
 import CourseHardWork from "../components/course-page/CourseHardWork"
 import CourseReviews from "../components/course-page/CourseReviews"
 import CourseCurriculum from "../components/course-page/CourseCurriculum"
-import CourseTimetable from "../components/course-page/CourseTimetable"
+import CourseTimetable from "../components/course-page/course-timetable"
 import CourseTrainingPath from "../components/course-page/CourseTrainingPath"
 import Features from "../components/course-page-templates/features"
 import CourseQandA from "../components/course-page-templates/q-and-a"
@@ -424,7 +424,7 @@ const OsoznannyGraphDesignPage = () => {
       <PosterExample />
       <VideoPresentation data={pinterestEncyclopedia} />
      
-      <CourseTimetable courseTitle={posterOffer.courseTitle} noGif noKeepCalm text={(<>Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе вы не получите разбор куратора по этому домашнему заданию (в том числе не сможете делать творческий макет из этого ДЗ). Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течение недели <i>(хотя бы два часа каждый день).</i></>)}/>
+      <CourseTimetable withCards courseTitle={posterOffer.courseTitle} noGif noKeepCalm text={(<>Программа обучения выстроена так, что на каждый урок с ДЗ даётся неделя — с понедельника по воскресенье. За этот срок нужно изучить материалы урока и отправить выполненное по ним ДЗ — иначе вы не получите разбор куратора по этому домашнему заданию (в том числе не сможете делать творческий макет из этого ДЗ). Уроки насыщены обязательной к изучению и дополнительной информацией, так что лучше не затягивать и распределять нагрузку равномерно в течение недели <i>(хотя бы два часа каждый день).</i></>)}/>
       <CourseTrainingPath data={data.posterTrainingPath}/>
       <CourseCurriculum  
         dataHeader={data.posterCurriculumHeader}
