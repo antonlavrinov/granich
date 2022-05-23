@@ -214,7 +214,7 @@ export const TimetableGifPS = styled.div`
 
 export const BehanceContentCards = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1vw;
   margin-top: 4.5vw;
   position: relative;
@@ -356,6 +356,7 @@ export const Image = styled.img`
   width: 100%;
   object-fit: cover;
   height: 10vw;
+  height: 12vw;
 
   @media only screen and (max-width: 575px) {
     height: 29vw;

@@ -129,6 +129,14 @@ const CourseTimetable = ({noGif, noKeepCalm, text, courseTitle, withCards}) => {
                   imageUrl: "/images/poster-graphic-design/timetable-behance-cases/05.jpg",
                   link: "https://www.behance.net/gallery/141076167/Redesign-of-the-cyber-schools-instagram-profile",
                 },
+                // {
+                //   imageUrl: "/images/poster-graphic-design/timetable-behance-cases/06.jpg",
+                //   link: "https://www.behance.net/gallery/142537241/Farm-Bird-Food-Packaging-Design-and-Identity",
+                // },
+                {
+                  imageUrl: "/images/poster-graphic-design/timetable-behance-cases/07.jpg",
+                  link: "https://www.behance.net/gallery/141287597/redizajn-instagram-profilja",
+                },
               ].map(({ imageUrl, link }) => (
                 <SC.WrapperExternalLink
                     className="content"
