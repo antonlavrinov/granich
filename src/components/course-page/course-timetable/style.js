@@ -216,6 +216,7 @@ export const BehanceContentCards = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1vw;
+  
   margin-top: 4.5vw;
   position: relative;
   svg {
