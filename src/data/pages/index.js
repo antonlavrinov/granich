@@ -900,11 +900,11 @@ module.exports = {
             {
                 "node": {
                     "id": "44204071-00e8-5282-9601-7a055e1dcf2f",
-                    "courseStatus": false,
+                    "courseStatus": true,
                     "courseButtonText": null,
                     "courseExternalLinkTransition": false,
                     "courseAdditionalType": null,
-                    "courseStart": "16 мая",
+                    "courseStart": "20 июня",
                     "courseDescr": "Курс для тех, кто хочет создавать графдизайн, наполненный смыслом: айдентику, упаковки, афиши, обложки книг и музыкальных альбомов",
                     "courseDuration": "5 недель",
                     "coursePreviewImage": {
@@ -985,8 +985,8 @@ module.exports = {
                             "nodeType": "document"
                         }
                     },
-                    "courseStartAndEnd": "16.05 → 19.06",
-                    "courseStream": "5",
+                    "courseStartAndEnd": "20.06 → 24.07",
+                    "courseStream": "6",
                     "coursePrice": "14000",
                     "coursePostersCollection": [
                         {
