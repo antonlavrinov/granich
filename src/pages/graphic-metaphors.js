@@ -145,6 +145,7 @@ import MetaphorsOffer from "../components/metaphors-in-identity-page/offer"
 
 const GraphicMetaphorsInIdentityPage = () => {
   const [permission] = useQueryParam("permission", NumberParam);
+  // console.log("permission", permission)
   const metaphorsOffer = dataIndex.courseCards.edges.find((el) => el.node.courseTitle === "Графические метафоры")?.node;
   
   // const offerImages = useStaticQuery(graphql`
@@ -185,7 +186,7 @@ const GraphicMetaphorsInIdentityPage = () => {
       />
       <div className="section-top-block"></div>
       {/* <CourseOffer permission={permission} allowPosters data={metaphorsOffer} postersAuthors="Работы куратора курса"/>  */}
-      <MetaphorsOffer data={metaphorsOffer} />
+      <MetaphorsOffer data={metaphorsOffer} permission={permission} />
       <VideoPresentationOffer />
       <MetaphorsForWhom/>
       <MetaphorsPortfolio posters={data?.metaphorsPosters.edges} />

@@ -4,7 +4,7 @@ import * as SC from "./style";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import CourseArrowDown from "../../../assets/svgs/course-arrow-down-27.svg"
 
-const MetaphorsOffer = ({ data, permission = true }) => {
+const MetaphorsOffer = ({ data, permission }) => {
   return (
     <SC.Section>
       <Container>
