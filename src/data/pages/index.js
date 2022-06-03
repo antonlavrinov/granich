@@ -477,11 +477,11 @@ module.exports = {
             {
                 "node": {
                     "id": "9159840e-df91-541b-8ff9-4e272bbabb88",
-                    "courseStatus": false,
+                    "courseStatus": true,
                     "courseButtonText": null,
                     "courseExternalLinkTransition": false,
                     "courseAdditionalType": null,
-                    "courseStart": "23 мая",
+                    "courseStart": "4 июля",
                     "courseDescr": "2 ступень учебной программы графического дизайна. Интенсивный курс с дедлайнами. Основан на графических системах.",
                     "courseDuration": "6 недель",
                     "coursePreviewImage": {
@@ -563,8 +563,8 @@ module.exports = {
                             "nodeType": "document"
                         }
                     },
-                    "courseStartAndEnd": "23.05 → 3.07",
-                    "courseStream": "3",
+                    "courseStartAndEnd": "4.07 → 14.08",
+                    "courseStream": "4",
                     // "coursePostersCollection": [
                     //     {
                     //         "fluid": {
