@@ -121,10 +121,10 @@ const CourseTimetable = ({noGif, noKeepCalm, text, courseTitle, withCards}) => {
                   imageUrl: "/images/poster-graphic-design/timetable-behance-cases/03.jpg",
                   link: "https://www.behance.net/gallery/141394269/Content-redesign-for-the-theatre",
                 },
-                {
-                  imageUrl: "/images/poster-graphic-design/timetable-behance-cases/04.png",
-                  link: "https://www.behance.net/gallery/142241941/rjadom-%29",
-                },
+                // {
+                //   imageUrl: "/images/poster-graphic-design/timetable-behance-cases/04.png",
+                //   link: "https://www.behance.net/gallery/142241941/rjadom-%29",
+                // },
                 {
                   imageUrl: "/images/poster-graphic-design/timetable-behance-cases/05.jpg",
                   link: "https://www.behance.net/gallery/141076167/Redesign-of-the-cyber-schools-instagram-profile",
@@ -136,6 +136,14 @@ const CourseTimetable = ({noGif, noKeepCalm, text, courseTitle, withCards}) => {
                 {
                   imageUrl: "/images/poster-graphic-design/timetable-behance-cases/07.jpg",
                   link: "https://www.behance.net/gallery/141287597/redizajn-instagram-profilja",
+                },
+                {
+                  imageUrl: "/images/poster-graphic-design/timetable-behance-cases/08.jpg",
+                  link: "https://www.behance.net/gallery/145157801/redizajn-instagram-profilja",
+                },
+                {
+                  imageUrl: "/images/poster-graphic-design/timetable-behance-cases/09.jpg",
+                  link: "https://www.behance.net/gallery/144721709/Instagram-Redesign-for-Time-Travel-Center",
                 },
               ].map(({ imageUrl, link }) => (
                 <SC.WrapperExternalLink

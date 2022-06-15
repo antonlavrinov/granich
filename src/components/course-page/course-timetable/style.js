@@ -356,11 +356,12 @@ export const BehanceIcon = styled(props => <Img {...props} />)`
 export const Image = styled.img`
   width: 100%;
   object-fit: cover;
-  height: 10vw;
-  height: 12vw;
+  height: 13vw;
+  max-height: 13vw;
 
   @media only screen and (max-width: 575px) {
     height: 29vw;
+    max-height: 29vw;
   }
 `
 
