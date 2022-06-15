@@ -153,7 +153,9 @@ const CourseTimetable = ({noGif, noKeepCalm, text, courseTitle, withCards}) => {
                     href={link}
                     target="_blank"
                   >
-                    <SC.Image src={imageUrl}></SC.Image>
+                    <SC.ImageWrapper>
+                      <SC.Image src={imageUrl}/>
+                    </SC.ImageWrapper>
                     <SC.Button>
                       <SC.ButtonText>Полный кейс</SC.ButtonText>
                       <SC.IconsWrapper>

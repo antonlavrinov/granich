@@ -266,8 +266,8 @@ export const WrapperExternalLink = styled.a`
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
-    height: 16.5vw;
-    max-height: 16.5vw;
+    /* height: 16.5vw;
+    max-height: 16.5vw; */
     box-shadow: 0 0 1vw rgba(0,0,0,0.2);
     border: 1.5px solid rgba(0,0,0,0.15);
     :hover {
@@ -282,8 +282,8 @@ export const WrapperExternalLink = styled.a`
         /* min-height: 56vw; */
         box-shadow: 0 0 3vw rgba(0,0,0,0.1);
         border-radius: 1.5vw;
-        height: 40vw;
-        max-height: 40vw;
+        /* height: 40vw;
+        max-height: 40vw; */
         :hover {
             transform: none;
         }
@@ -365,6 +365,16 @@ export const Image = styled.img`
     max-height: 29vw;
   } */
 `
+
+export const ImageWrapper = styled.div`
+  height: 13vw;
+  max-height: 13vw;
+
+  @media only screen and (max-width: 575px) {
+    height: 29vw;
+    max-height: 29vw;
+  }
+`;
 
 export const ArrowText = styled.div`
   position: absolute;
