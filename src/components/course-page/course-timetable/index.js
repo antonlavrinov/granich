@@ -145,6 +145,10 @@ const CourseTimetable = ({noGif, noKeepCalm, text, courseTitle, withCards}) => {
                   imageUrl: "/images/poster-graphic-design/timetable-behance-cases/09.jpg",
                   link: "https://www.behance.net/gallery/144721709/Instagram-Redesign-for-Time-Travel-Center",
                 },
+                {
+                  imageUrl: "/images/poster-graphic-design/timetable-behance-cases/10.jpg",
+                  link: "https://www.behance.net/gallery/145414517/redizajn-instagram-profilja",
+                },
               ].map(({ imageUrl, link }) => (
                 <SC.WrapperExternalLink
                     className="content"
